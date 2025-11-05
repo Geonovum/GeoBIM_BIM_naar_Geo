@@ -1,0 +1,1 @@
+# Attribuut abstractie
