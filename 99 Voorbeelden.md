@@ -1,0 +1,91 @@
+# Meer inhoud
+
+## Definities
+<dfn>Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor _definitie_ is betekenis of beschrijving.
+
+## Afbeeldingen
+
+Afbeeldingen krijgen een nummer en vermelding in de figurenlijst [[[#tof]]].
+
+![Tekstueel alternatief voor toegankelijkheid](media/Bomos_levenscyclus.svg "Onderschrift")
+
+## Referenties
+
+Referenties kunnen op drie plaatsen staan:
+
+- In SpecRef [Specref](https://www.specref.org/)
+- In de organisatie configuraties [[SemVer]]. Deze zijn te vinden op [tools.geostandaarden.nl](https://github.com/Geonovum/tools.geostandaarden.nl/blob/main/tools.geostandaarden.nl/respec/config/geonovum-config.js).
+- In het document, zoals [[MIM12]]. Deze zijn te vinden in `js/config.js`.
+
+Referentie uit organisatie lijst [[SemVer]] of de locale lijst [[MIM12]]. Lijst staat in `organisation-config.js`. Alleen referenties die in de tekst voorkomen worden getoond.
+
+We gebruiken een <a>definitie</a> om een woord te omschrijven.
+
+## Optioneel
+
+De onderstaande secties (_Conformiteit_ e.d.) zijn optioneel, zie `index.html`:
+
+```
+<body>
+  <section id="abstract" data-include-format="markdown" data-include="abstract.md"></section>
+  <section id="sotd"></section><!-- Wordt automatisch gevuld -->
+  <section data-include-format="markdown" class="informative" data-include="ch01.md"></section>
+  <section data-include-format="markdown" data-include="ch02.md"></section>
+  <!-- Hieronder optionele secties. Worden automatisch gevuld -->
+  <section id='conformance'></section>
+  <section id='tof'></section>
+  <section id="index"></section>
+</body>
+```
+
+
+# Voorbeelden
+
+<p class="note" title="index">
+Dit hoofdstuk is toegevoegd met `class="informative"` in `config.js`.
+</p>
+
+Hier staat een tabel. Als de juiste style gekozen is ziet deze er goed uit.
+
+| Sleutel | Waarde |
+| ------- | ------ |
+| key     | Deze waarde bevat een lange tekst zodat te zien is of de kolombreedte dynamisch wordt bepaald |
+
+
+# Definities
+<dfn>Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor _definitie_ is betekenis of beschrijving.
+
+## Afbeeldingen
+
+Afbeeldingen krijgen een nummer en vermelding in de figurenlijst [[[#tof]]].
+
+![Tekstueel alternatief voor toegankelijkheid](media/Bomos_levenscyclus.svg "Onderschrift")
+
+## Referenties
+
+Referenties kunnen op drie plaatsen staan:
+
+- In SpecRef [Specref](https://www.specref.org/)
+- In de organisatie configuraties [[SemVer]]. Deze zijn te vinden op [tools.geostandaarden.nl](https://github.com/Geonovum/tools.geostandaarden.nl/blob/main/tools.geostandaarden.nl/respec/config/geonovum-config.js).
+- In het document, zoals [[MIM12]]. Deze zijn te vinden in `js/config.js`.
+
+Referentie uit organisatie lijst [[SemVer]] of de locale lijst [[MIM12]]. Lijst staat in `organisation-config.js`. Alleen referenties die in de tekst voorkomen worden getoond.
+
+We gebruiken een <a>definitie</a> om een woord te omschrijven.
+
+## Optioneel
+
+De onderstaande secties (_Conformiteit_ e.d.) zijn optioneel, zie `index.html`:
+
+```
+<body>
+  <section id="abstract" data-include-format="markdown" data-include="abstract.md"></section>
+  <section id="sotd"></section><!-- Wordt automatisch gevuld -->
+  <section data-include-format="markdown" class="informative" data-include="ch01.md"></section>
+  <section data-include-format="markdown" data-include="ch02.md"></section>
+  <!-- Hieronder optionele secties. Worden automatisch gevuld -->
+  <section id='conformance'></section>
+  <section id='tof'></section>
+  <section id="index"></section>
+</body>
+```

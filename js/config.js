@@ -3,7 +3,7 @@ let respecConfig = {
   useLabel: true,
 
   // TODO: title is verplicht! Neem hieronder de titel van het document op
-  title: "Geonovum template voor ReSpec",
+  title: "GeoBIM BIM naar Geo brengen",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
   specStatus: "wv",                 // Werkversie
   //specStatus: "cv",               // Consultatieversie
@@ -15,8 +15,8 @@ let respecConfig = {
   //specType: "NO",                 // Norm
   //specType: "ST",                 // Standaard
   //specType: "IM",                 // Informatie Model
-  //specType: "PR",                 // Praktijkrichtlijn
-  specType: "HR",                   // HandReiking
+  specType: "PR",                 // Praktijkrichtlijn
+  //specType: "HR",                   // HandReiking
   //specType: "WA",                 // Werkafspraak
   //specType: "BD",                 // Beheer Documentatie
   //specType: "AL",                 // Algemeen document
@@ -57,7 +57,7 @@ let respecConfig = {
   editors:
     [
       {
-        name: "voornaam achternaam",
+        name: "Rolf Jonker",
         company: "Geonovum",
         companyURL: "https://www.geonovum.nl",
       }
@@ -68,15 +68,35 @@ let respecConfig = {
   authors:
     [
       {
-        name: "voornaam achternaam",
-        company: "Geonovum",
-        companyURL: "https://www.geonovum.nl",
+        name: "Jasper van der Vaart",
+        company: "TU Delft",
+        companyURL: "https://3d.bk.tudelft.nl/",
+      },
+      {
+        name: "Jeffrey Truijens",
+        company: "VDNDP",
+        companyURL: "https://vdndp.nl/",
+      },
+      {
+        name: "Wouter Lubbers",
+        company: "Semmtech",
+        companyURL: "https://semmtech.com/",
+      },
+      {
+        name: "Amir Hakim",
+        company: "Future Insight",
+        companyURL: "https://www.futureinsight.nl/",
+      },
+      {
+        name: "Dirkjan Schenau",
+        company: "Van Hattum en Blankevoort",
+        companyURL: "https://www.vhbinfra.nl/",
       }
     ],
 
   // TODO: Vul de github URL in.
   //neem hier de URL van de github repository op waar het respec document in staat
-  github: "https://github.com/Geonovum/NL-ReSpec-template",
+  github: "https://github.com/Geonovum/GeoBIM_BIM_naar_Geo/",
 
   // Create PDF and link to file in header (optional):
   // TODO: Change the filename as preferred.
