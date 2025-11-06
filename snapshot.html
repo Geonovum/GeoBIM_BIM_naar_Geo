@@ -1397,7 +1397,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
@@ -1464,7 +1464,7 @@ ul.index code{color:inherit}
 <pre aria-busy="false"><code class="hljs">Cannot GET /abstract.md</code></pre>
 
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">1.3 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-detail-level-of-development"><bdi class="secno">1.3.1 </bdi>Level of Detail &amp; Level of Development</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml"><bdi class="secno">1.3.1.1 </bdi>CityGML</a></li><li class="tocline"><a class="tocxref" href="#tud"><bdi class="secno">1.3.1.2 </bdi>TUD</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen"><bdi class="secno">1.3.1.3 </bdi>Uitbreidingen &amp; aanpassingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandstype"><bdi class="secno">1.3.2 </bdi>Bestandstype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">1.3.2.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">1.3.2.2 </bdi>GeoJSON</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#methodes-van-bim-naar-geo-brengen"><bdi class="secno">2. </bdi>Methodes van BIM naar Geo Brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#standaarden"><bdi class="secno">2.1 </bdi>Standaarden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.1.1 </bdi>IFC</a></li><li class="tocline"><a class="tocxref" href="#citygml-cityjson"><bdi class="secno">2.1.2 </bdi>CityGML/CityJSON</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">3. </bdi>Eisen aan het BIM-model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatie-levering-specificatie"><bdi class="secno">3.1 </bdi>Informatie Levering Specificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toolkit"><bdi class="secno">4. </bdi>Toolkit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#handleiding-howto"><bdi class="secno">4.1 </bdi>Handleiding/HowTo</a></li><li class="tocline"><a class="tocxref" href="#plugins-tooling"><bdi class="secno">4.2 </bdi>Plugins/Tooling</a></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">5. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">5.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">5.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">5.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">5.4 </bdi>Optioneel</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">5.5 </bdi>Voorbeelden</a></li><li class="tocline"><a class="tocxref" href="#definities-0"><bdi class="secno">5.6 </bdi>Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen-0"><bdi class="secno">5.6.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties-0"><bdi class="secno">5.6.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel-0"><bdi class="secno">5.6.3 </bdi>Optioneel</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">6. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">7. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">1.3 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-detail-level-of-development"><bdi class="secno">1.3.1 </bdi>Level of Detail &amp; Level of Development</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml"><bdi class="secno">1.3.1.1 </bdi>CityGML</a></li><li class="tocline"><a class="tocxref" href="#tud"><bdi class="secno">1.3.1.2 </bdi>TUD</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen"><bdi class="secno">1.3.1.3 </bdi>Uitbreidingen &amp; aanpassingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandstype"><bdi class="secno">1.3.2 </bdi>Bestandstype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">1.3.2.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">1.3.2.2 </bdi>GeoJSON</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">2.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">2.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">2.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">2.4 </bdi>Optioneel</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">2.5 </bdi>Voorbeelden</a></li><li class="tocline"><a class="tocxref" href="#definities-0"><bdi class="secno">2.6 </bdi>Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen-0"><bdi class="secno">2.6.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties-0"><bdi class="secno">2.6.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel-0"><bdi class="secno">2.6.3 </bdi>Optioneel</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">4. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section class="informative" id="introductie"><div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
@@ -1527,11 +1527,16 @@ ul.index code{color:inherit}
 <section id="citygml-xml-citygml-cityjson"><div class="header-wrapper"><h5 id="x1-3-2-1-citygml-xml-citygml-cityjson"><bdi class="secno">1.3.2.1 </bdi>CityGML XML &amp; CityGML CityJSON</h5><a class="self-link" href="#citygml-xml-citygml-cityjson" aria-label="Permalink for Section 1.3.2.1"></a></div>
 </section><section id="geojson"><div class="header-wrapper"><h5 id="x1-3-2-2-geojson"><bdi class="secno">1.3.2.2 </bdi>GeoJSON</h5><a class="self-link" href="#geojson" aria-label="Permalink for Section 1.3.2.2"></a></div>
 </section></section></section></section>
-<section id="methodes-van-bim-naar-geo-brengen"><div class="header-wrapper"><h2 id="x2-methodes-van-bim-naar-geo-brengen"><bdi class="secno">2. </bdi>Methodes van BIM naar Geo Brengen</h2><a class="self-link" href="#methodes-van-bim-naar-geo-brengen" aria-label="Permalink for Section 2."></a></div>
-<section id="standaarden"><div class="header-wrapper"><h3 id="x2-1-standaarden"><bdi class="secno">2.1 </bdi>Standaarden</h3><a class="self-link" href="#standaarden" aria-label="Permalink for Section 2.1"></a></div>
-<section id="ifc"><div class="header-wrapper"><h4 id="x2-1-1-ifc"><bdi class="secno">2.1.1 </bdi>IFC</h4><a class="self-link" href="#ifc" aria-label="Permalink for Section 2.1.1"></a></div>
-</section><section id="citygml-cityjson"><div class="header-wrapper"><h4 id="x2-1-2-citygml-cityjson"><bdi class="secno">2.1.2 </bdi>CityGML/CityJSON</h4><a class="self-link" href="#citygml-cityjson" aria-label="Permalink for Section 2.1.2"></a></div>
-</section></section></section>
+<section>
+
+
+<meta charset="utf-8">
+<title>Error</title>
+
+
+<pre aria-busy="false"><code class="hljs">Cannot GET /02%20Methode%20van%20BIM%20naar%20Geo%20brengen.md</code></pre>
+
+</section>
 <section>
 
 
@@ -1552,25 +1557,38 @@ ul.index code{color:inherit}
 <pre aria-busy="false"><code class="hljs">Cannot GET /04%20Attribuut%20abstractie.md</code></pre>
 
 </section>
-<section id="eisen-aan-het-bim-model"><div class="header-wrapper"><h2 id="x3-eisen-aan-het-bim-model"><bdi class="secno">3. </bdi>Eisen aan het BIM-model</h2><a class="self-link" href="#eisen-aan-het-bim-model" aria-label="Permalink for Section 3."></a></div>
-<section id="informatie-levering-specificatie"><div class="header-wrapper"><h3 id="x3-1-informatie-levering-specificatie"><bdi class="secno">3.1 </bdi>Informatie Levering Specificatie</h3><a class="self-link" href="#informatie-levering-specificatie" aria-label="Permalink for Section 3.1"></a></div>
-</section></section>
-<section id="toolkit"><div class="header-wrapper"><h2 id="x4-toolkit"><bdi class="secno">4. </bdi>Toolkit</h2><a class="self-link" href="#toolkit" aria-label="Permalink for Section 4."></a></div>
-<section id="handleiding-howto"><div class="header-wrapper"><h3 id="x4-1-handleiding-howto"><bdi class="secno">4.1 </bdi>Handleiding/HowTo</h3><a class="self-link" href="#handleiding-howto" aria-label="Permalink for Section 4.1"></a></div>
-</section><section id="plugins-tooling"><div class="header-wrapper"><h3 id="x4-2-plugins-tooling"><bdi class="secno">4.2 </bdi>Plugins/Tooling</h3><a class="self-link" href="#plugins-tooling" aria-label="Permalink for Section 4.2"></a></div>
-</section></section>
-<section id="meer-inhoud"><div class="header-wrapper"><h2 id="x5-meer-inhoud"><bdi class="secno">5. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 5."></a></div>
-<section id="definities"><div class="header-wrapper"><h3 id="x5-1-definities"><bdi class="secno">5.1 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 5.1"></a></div>
+<section>
+
+
+<meta charset="utf-8">
+<title>Error</title>
+
+
+<pre aria-busy="false"><code class="hljs">Cannot GET /05%20Eisen%20aan%20het%20BIM-model.md</code></pre>
+
+</section>
+<section>
+
+
+<meta charset="utf-8">
+<title>Error</title>
+
+
+<pre aria-busy="false"><code class="hljs">Cannot GET /06%20Toepassingen.md</code></pre>
+
+</section>
+<section id="meer-inhoud"><div class="header-wrapper"><h2 id="x2-meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 2."></a></div>
+<section id="definities"><div class="header-wrapper"><h3 id="x2-1-definities"><bdi class="secno">2.1 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 2.1"></a></div>
 <p><dfn id="dfn-definitie" tabindex="0" aria-haspopup="dialog">Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor <em>definitie</em> is betekenis of beschrijving.</p>
-</section><section id="afbeeldingen"><div class="header-wrapper"><h3 id="x5-2-afbeeldingen"><bdi class="secno">5.2 </bdi>Afbeeldingen</h3><a class="self-link" href="#afbeeldingen" aria-label="Permalink for Section 5.2"></a></div>
-<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">7. </bdi>Lijst met figuren</a>.</p>
+</section><section id="afbeeldingen"><div class="header-wrapper"><h3 id="x2-2-afbeeldingen"><bdi class="secno">2.2 </bdi>Afbeeldingen</h3><a class="self-link" href="#afbeeldingen" aria-label="Permalink for Section 2.2"></a></div>
+<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">4. </bdi>Lijst met figuren</a>.</p>
 <p>
       </p><figure id="fig-onderschrift">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
         <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
-</section><section id="referenties"><div class="header-wrapper"><h3 id="x5-3-referenties"><bdi class="secno">5.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 5.3"></a></div>
+</section><section id="referenties"><div class="header-wrapper"><h3 id="x2-3-referenties"><bdi class="secno">2.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 2.3"></a></div>
 <p>Referenties kunnen op drie plaatsen staan:</p>
 <ul>
 <li>In SpecRef <a href="https://www.specref.org/">Specref</a></li>
@@ -1579,7 +1597,7 @@ ul.index code{color:inherit}
 </ul>
 <p>Referentie uit organisatie lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>] of de locale lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
-</section><section id="optioneel"><div class="header-wrapper"><h3 id="x5-4-optioneel"><bdi class="secno">5.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 5.4"></a></div>
+</section><section id="optioneel"><div class="header-wrapper"><h3 id="x2-4-optioneel"><bdi class="secno">2.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 2.4"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
 <pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -1592,7 +1610,7 @@ ul.index code{color:inherit}
   <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre>
-</section><section id="voorbeelden"><div class="header-wrapper"><h3 id="x5-5-voorbeelden"><bdi class="secno">5.5 </bdi>Voorbeelden</h3><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 5.5"></a></div>
+</section><section id="voorbeelden"><div class="header-wrapper"><h3 id="x2-5-voorbeelden"><bdi class="secno">2.5 </bdi>Voorbeelden</h3><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 2.5"></a></div>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
 Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config.js</code>.
 </p></div>
@@ -1610,17 +1628,17 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <td>Deze waarde bevat een lange tekst zodat te zien is of de kolombreedte dynamisch wordt bepaald</td>
 </tr>
 </tbody></table>
-</section><section id="definities-0"><div class="header-wrapper"><h3 id="x5-6-definities"><bdi class="secno">5.6 </bdi>Definities</h3><a class="self-link" href="#definities-0" aria-label="Permalink for Section 5.6"></a></div>
+</section><section id="definities-0"><div class="header-wrapper"><h3 id="x2-6-definities"><bdi class="secno">2.6 </bdi>Definities</h3><a class="self-link" href="#definities-0" aria-label="Permalink for Section 2.6"></a></div>
 <p><dfn class="respec-offending-element" title="This is defined more than once in the document." id="respec-offender-this-is-defined-more-than-once-in-the-document" tabindex="0" aria-haspopup="dialog">Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor <em>definitie</em> is betekenis of beschrijving.</p>
-<section id="afbeeldingen-0"><div class="header-wrapper"><h4 id="x5-6-1-afbeeldingen"><bdi class="secno">5.6.1 </bdi>Afbeeldingen</h4><a class="self-link" href="#afbeeldingen-0" aria-label="Permalink for Section 5.6.1"></a></div>
-<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">7. </bdi>Lijst met figuren</a>.</p>
+<section id="afbeeldingen-0"><div class="header-wrapper"><h4 id="x2-6-1-afbeeldingen"><bdi class="secno">2.6.1 </bdi>Afbeeldingen</h4><a class="self-link" href="#afbeeldingen-0" aria-label="Permalink for Section 2.6.1"></a></div>
+<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">4. </bdi>Lijst met figuren</a>.</p>
 <p>
       </p><figure id="fig-onderschrift-0">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
         <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
-</section><section id="referenties-0"><div class="header-wrapper"><h4 id="x5-6-2-referenties"><bdi class="secno">5.6.2 </bdi>Referenties</h4><a class="self-link" href="#referenties-0" aria-label="Permalink for Section 5.6.2"></a></div>
+</section><section id="referenties-0"><div class="header-wrapper"><h4 id="x2-6-2-referenties"><bdi class="secno">2.6.2 </bdi>Referenties</h4><a class="self-link" href="#referenties-0" aria-label="Permalink for Section 2.6.2"></a></div>
 <p>Referenties kunnen op drie plaatsen staan:</p>
 <ul>
 <li>In SpecRef <a href="https://www.specref.org/">Specref</a></li>
@@ -1629,7 +1647,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 </ul>
 <p>Referentie uit organisatie lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>] of de locale lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-2">definitie</a> om een woord te omschrijven.</p>
-</section><section id="optioneel-0"><div class="header-wrapper"><h4 id="x5-6-3-optioneel"><bdi class="secno">5.6.3 </bdi>Optioneel</h4><a class="self-link" href="#optioneel-0" aria-label="Permalink for Section 5.6.3"></a></div>
+</section><section id="optioneel-0"><div class="header-wrapper"><h4 id="x2-6-3-optioneel"><bdi class="secno">2.6.3 </bdi>Optioneel</h4><a class="self-link" href="#optioneel-0" aria-label="Permalink for Section 2.6.3"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
 <pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -1649,8 +1667,8 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 
 
 
-<section id="conformance"><div class="header-wrapper"><h2 id="x6-conformiteit"><bdi class="secno">6. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 6."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
-<section id="tof"><div class="header-wrapper"><h2 id="x7-lijst-met-figuren"><bdi class="secno">7. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 7."></a></div><ul class="tof">
+<section id="conformance"><div class="header-wrapper"><h2 id="x3-conformiteit"><bdi class="secno">3. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
+<section id="tof"><div class="header-wrapper"><h2 id="x4-lijst-met-figuren"><bdi class="secno">4. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 4."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Onderschrift</span></a>
   </li><li class="tofline">
@@ -1665,9 +1683,9 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
     <ul>
       <li>
       <a class="index-term" href="#dfn-definitie">definitie van</a> 
-    <span class="print-only">§5.1</span></li><li>
+    <span class="print-only">§2.1</span></li><li>
       <a class="index-term" href="#respec-offender-this-is-defined-more-than-once-in-the-document">definitie van</a> 
-    <span class="print-only">§5.6</span></li>
+    <span class="print-only">§2.6</span></li>
     </ul>
   </li>
   </ul>
@@ -1698,9 +1716,9 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-definitie-1" title="§ 5.3 Referenties">§ 5.3 Referenties</a> 
+      <a href="#ref-for-dfn-definitie-1" title="§ 2.3 Referenties">§ 2.3 Referenties</a> 
     </li><li>
-      <a href="#ref-for-dfn-definitie-2" title="§ 5.6.2 Referenties">§ 5.6.2 Referenties</a> 
+      <a href="#ref-for-dfn-definitie-2" title="§ 2.6.2 Referenties">§ 2.6.2 Referenties</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-respec-offender-this-is-defined-more-than-once-in-the-document" aria-label="Links in this document to definition: Definitie">
