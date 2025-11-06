@@ -33,9 +33,12 @@ De CityGML3.0 standaard beschrijft 4 opvolgende niveaus (LoD0-3) waarbij de geom
 * LoD2: Een representatie van een gebouw of kamer als een blok vorm waarbij de oppervlaktes die het dak representeren zijn verfijnd.  
 * LoD3: Een representatie van een gebouw of kamer als een schil. Dit is de enige LoD die gevelopeningen en overhang ondersteunt.
 
+![Voorbeeld van de 4 LoD beschrven door de CityGML3.0 standaard](media/2_achtergrond/LoDCityGML.png "De 4 LoD beschreven door de CityGML3.0 standaard")
+
 De CityGML3.0 standaard ondersteunt de in CityGML2.0 beschreven LoD4 niet meer. De in CityGML3.0 standaard beschreven LoD kunnen worden gebruikt voor zowel exterieur als interieur. In CityGML2.0 kon LoD0-3 alleen gebruikt worden voor het beschrijven van het exterieur van een gebouw. LoD4 was in CityGML2.0 de enige representatie van een gebouw met interieur. Daarnaast was LoD4 anders opgebouwd dan LoD0-3. LoD0-3 waren schillen terwijl LoD4 dit niet was. Objecten zoals ramen, vloeren en meubels werden ondersteunt in LoD4. LoD4 kon worden geïnterpreteerd als een 1:1 conversie van een BIM model in de GIS omgeving. Ondanks het feit dat LoD4 officieel niet meer ondersteunt, komt het in de praktijk nog voor om moeizame/trage/complexe conversie te ontwijken.
 
 ### TUD
+
 Het CityGML LoD framework is relatief open. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om te begrijpen hoe een model verschilt van het gebouw dat het op een versimpelde wijze representeert. In 2016 heeft Biljecki et al. een verfijning geschreven dat voortbouwt op het LoD framework beschreven in de CityGML standaard. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt dus overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is beter dan die van de CityGML standaard maar helaas is er nog steeds niet altijd even duidelijk. Op basis van meerdere bronnen kon de volgende definitie worden opgebouwd:
 
 * LoD0.0: Een bounding surface om een gebouw of cluster van gebouwen.
@@ -55,6 +58,8 @@ Het CityGML LoD framework is relatief open. Dit maakt het makkelijk om een model
 * LoD3.2: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan 1m.
 * LoD3.3: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan 0.2m.
 
+![Voorbeeld van de 16 LoD beschrven door de TUD](media/2_achtergrond/lodtud.png "De 16 LoD beschreven door de TUD in 2016")
+
 Er is enige onzekerheid over het gebruik van een voetprint of geprojecteerde dak contour. De documentatie lijkt te wijzen op het gebruik van een geprojecteerde dak contour bij LoD0.2, 0.3 en 1.2. Dit is echter nergens expliciet genoemd. In de praktijk zijn er situaties waar de footprint contour wordt gebruikt. Dit gebruik wordt dan ook uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gemaakt door een opwaartse extrusie van de voetprint te verfijnen met de dakoppervlaktes.
 
 ### Uitbreidingen & aanpassingen
@@ -67,4 +72,59 @@ Ook BIM als bron brengt unieke problemen met zich mee waar maar in beperkte mate
 
 ### CityGML XML & CityGML CityJSON
 
-### GeoJSON 
+CityGML is een open datamodel voor het opslaan van 3D GIS data. CityGML defineerd verschillende objecten (classes) en hun relaties voor de meeste relevantie topografische objecten gebruikt in stedelijke en regionale modellen. In tegenstelling tot mesh bestand types zoals OBJ en STL maakt CityGML het mogelijk om ook attributen voor ieder object op te slaan.
+
+CityGML is zowel een encoding als een datamodel. Dit kan voor onduidelijkheden zorgen. CityGML komt voor een in GML en een CityJSON encoding. De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat lastig is door menselijke gebruikers te doorgronden. Een alternatief is de CityJSON encoding. Dit is een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door menselijke gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder). CityJSON komt echter ook met nadelen. Zo is niet het gehele CityGML datamodel is inbegrepen in de CityJSON encoding. CityJSON is veel flexibeler, dit zorgt er voor dat er ook veel meer fouten in de bestanden terecht kunnen komen als er onzorgvuldig om mee wordt gegaan. Ook word CityGML XML door meer GIS software ondersteunt dan CityGML CityJSON.
+
+Er is software beschikbaar die CityGML bestanden van encoding kan omzetten. Dit overbrugt de problemen die aanwezig zijn bij het beperken tot een enkele encoding.
+
+| dataset | CityJSON v2.0 | CityGML-XML v3.0 | textures | details | compression |
+|-|-|-|-|-|-|
+| 3DBAG      | 7.0MB | 40MB    | none | Buildings in LoD 0, 1.2, 1.3, 2.2; multiple attributes                                          | **5.7X**   |
+| Den Haag   | 2.7MB | 19MB    | none | 'Tile 01', Buildings (in LoD2) and Terrain are merged                                           | **7.0X**   |
+| Ingolstadt | 4.8MB | 40MB    | none | Buildings in LoD3; multiple attributes                                                          | **8.3X**   |
+| Montréal   | 5.6MB | 53MB   | none | Tile 'VM05'. Buildings in LoD2                                                                  | **9.5X**   |
+| New York   | 110MB | 682MB  | none | Tile 'DA13'. Buildings in LoD2                                                                  | **6X**     |
+| Railway    | 4.5MB | 39MB   | ZIP  | CityGML demo. Buildings, Railway, Terrain, Vegetation (with Geometry Templates), Water, Tunnels | **8.7X**   |
+| Rotterdam  | 2.7MB | 18MB   | ZIP  | Neighbourhood 'Delfshaven'. Buildings in LoD2                                                   | **6.7X**   |
+| Vienna     | 5.6MB | 40MB   | ZIP  | Buildings in LoD2                                                                               | **7.1X**   |
+| Zürich     | 293MB | 2100MB | none | Buildings in LoD2                                                                               | **7X**     |
+
+In de onderstaande code fragmenten  kan de XML (boven) en CityJSON (onder) encoding van CityGML vergeleken worden. Deze twee fragmenten laten de definitie zien van hetzelfde object met een aantal attributen. De geometrie is verwijderd uit de fragmenten . Het is duidelijk te zien dat de XML encoding veel meer karakters nodig heeft om dezelfde informatie over te brengen. Dit draagt bij aan de extra bestandsgrootte.
+
+```xml
+<cityObjectMember>
+	<bldg:Building gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16">
+		<gml:name>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}</gml:name>
+		<bldg:consistsOfBuildingPart>
+	<bldg:BuildingPart gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1">
+		<gml:name>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}</gml:name>
+		<gen:doubleAttribute name="RelativeEavesHeight"><gen:value>3.133</gen:value></gen:doubleAttribute>
+		<gen:doubleAttribute name="AbsoluteEavesHeight"><gen:value>7.717</gen:value></gen:doubleAttribute>
+		<gen:doubleAttribute name="RelativeRidgeHeight"><gen:value>3.133</gen:value></gen:doubleAttribute>
+		<gen:doubleAttribute name="AbsoluteRidgeHeight"><gen:value>7.717</gen:value></gen:doubleAttribute>
+
+            ...
+
+    </bldg:BuildingPart>
+</cityObjectMember>
+```
+
+```json
+"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
+    "type": "BuildingPart",
+    "attributes": {
+        "roofType": "1000",
+        "RelativeEavesHeight": 3.133,
+        "RelativeRidgeHeight": 3.133,
+        "AbsoluteEavesHeight": 7.717,
+        "AbsoluteRidgeHeight": 7.717
+    },
+
+    ...
+
+}
+```
+
+
+### GeoJSON
