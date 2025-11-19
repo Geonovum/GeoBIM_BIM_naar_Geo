@@ -33,9 +33,13 @@ De CityGML3.0 standaard beschrijft 4 opvolgende niveaus (LoD0-3) waarbij de geom
 * LoD2: Een representatie van een gebouw of kamer als een blok vorm waarbij de oppervlaktes die het dak representeren zijn verfijnd.  
 * LoD3: Een representatie van een gebouw of kamer als een schil. Dit is de enige LoD die gevelopeningen en overhang ondersteunt.
 
-![Voorbeeld van de 4 LoD beschrven door de CityGML3.0 standaard](media/2_achtergrond/LoDCityGML.png "De 4 LoD beschreven door de CityGML3.0 standaard")
+![Voorbeeld van de 4 LoD beschrven door de CityGML3.0 standaard](media/2_achtergrond/LoDCityGML.png "De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail)")
 
 De CityGML3.0 standaard ondersteunt de in CityGML2.0 beschreven LoD4 niet meer. De in CityGML3.0 standaard beschreven LoD kunnen worden gebruikt voor zowel exterieur als interieur. In CityGML2.0 kon LoD0-3 alleen gebruikt worden voor het beschrijven van het exterieur van een gebouw. LoD4 was in CityGML2.0 de enige representatie van een gebouw met interieur. Daarnaast was LoD4 anders opgebouwd dan LoD0-3. LoD0-3 waren schillen terwijl LoD4 dit niet was. Objecten zoals ramen, vloeren en meubels werden ondersteunt in LoD4. LoD4 kon worden geïnterpreteerd als een 1:1 conversie van een BIM model in de GIS omgeving. Ondanks het feit dat LoD4 officieel niet meer ondersteunt, komt het in de praktijk nog voor om moeizame/trage/complexe conversie te ontwijken.
+
+Ook al wordt het niet expliciet genoemd lijkt het dat het LoD framework vooral toepasbaar is op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden niet direct behandeld. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework zo open en flexibel is.
+
+<!-- TODO:Een afbeelding toevoegen van een brug or ander infrastructuur object dat is versimpelt volgens het LoD framework -->
 
 ### TUD
 
@@ -58,10 +62,13 @@ Het CityGML LoD framework is relatief open. Dit maakt het makkelijk om een model
 * LoD3.2: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan 1m.
 * LoD3.3: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan 0.2m.
 
-![Voorbeeld van de 16 LoD beschrven door de TUD](media/2_achtergrond/lodtud.png "De 16 LoD beschreven door de TUD in 2016")
+![Voorbeeld van de 16 LoD beschrven door de TUD](media/2_achtergrond/lodtud.png "De 16 LoD beschreven door de [TUD](https://3d.bk.tudelft.nl/lod/) in 2016")
 
 Er is enige onzekerheid over het gebruik van een voetprint of geprojecteerde dak contour. De documentatie lijkt te wijzen op het gebruik van een geprojecteerde dak contour bij LoD0.2, 0.3 en 1.2. Dit is echter nergens expliciet genoemd. In de praktijk zijn er situaties waar de footprint contour wordt gebruikt. Dit gebruik wordt dan ook uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gemaakt door een opwaartse extrusie van de voetprint te verfijnen met de dakoppervlaktes.
 
+Net zoals bij het CityGML LoD framework lijkt dit framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework zo open en flexibel is. Bouwwerken zoals bruggen, tunnels en sluizen worden niet direct behandeld. In theorie kunnen de meeste LoDs toegepast worden op deze bouwwerken maar de bruikbaarheid is niet uitgebreid onderzocht.
+
+Meer informatie over het [TUD LoD framework](https://repository.tudelft.nl/record/uuid:2d49a066-4e79-4608-b31f-bce54d92d0b5).
 ### Uitbreidingen & aanpassingen
 
 In meer of mindere mate worden deze twee LoD frameworks aangehouden. Maar dit betekent niet dat ze perfect zijn. Er zijn nog steeds aspecten die niet duidelijk zijn gedefinieerd en bepaalde niveaus passen slecht op de werkelijkheid. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe bronnen te gebruiken om GIS modellen op te baseren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en is in 3.0 nog steeds vergelijkbaar met de 1.0 versie. De TUD verscherping komt uit 2016, bijna 10 jaar geleden. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks.  
@@ -126,5 +133,8 @@ In de onderstaande code fragmenten kan de [XML](https://3d.bk.tudelft.nl/opendat
 }
 ```
 
+Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www.ogc.org/standards/citygml/). Het OGC behandeld vooral het data model en de GML/XML encoding. Meer informatie over de CityJSON encoding kan worden gevonden op de [CitySJON website](https://www.cityjson.org/).
 
 ### GeoJSON
+
+GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
