@@ -73,17 +73,17 @@ Net zoals bij het CityGML LoD framework is dit framework vooral toepasbaar op ge
 
 Meer informatie over het [TUD LoD framework](https://repository.tudelft.nl/record/uuid:2d49a066-4e79-4608-b31f-bce54d92d0b5).
 
-### Uitbreidingen & aanpassingen
+### Uitbreidingen & aanpassingen van de LoD frameworks
 
 In meer of mindere mate worden deze twee LoD frameworks gebruikt in de praktijk. Maar dit betekent niet dat ze geen beperkingen kennen. Zoals eerder opgemerkt, is een standaard nooit af. En ook voor deze twee frameworks geldt dat er nog steeds aspecten zijn die niet duidelijk zijn gedefinieerd. Modellen zoals deze beschikbaar zijn in de praktijk passen niet altijd helemaal op deze LoD modellen. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en is in 3.0 nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TUD verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks. Voor deze praktijk richtlijn is het met name relevant om te kijken naar BIM als nieuwe data bron voor 3D GIS bestanden en welke nieuwe (of aangepaste) LoDs hiermee kunnen worden gegenereerd.  
 
-Ook BIM als bron brengt unieke problemen met zich mee waar maar in beperkte mate rekening mee wordt gehouden bij de beschreven LoD frameworks. Recentelijk is er onderzoek gedaan naar mogelijke alternatieve LoD die hier rekening mee houden. Dit onderzoek kan worden gevonden in dit document: ... . In appendix ... kan de implementatie in een BIM2GEO converter van het TUD LoD framework worden gevonden. In plaats van vervangende LoD zijn hier kleine aanpassingen gedaan in het LoD framework om rekening te houden de unieke beperkingen maar ook mogelijkheden van BIM.
+Recentelijk is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als data bron. Dit onderzoek kan worden gevonden in dit document: ... . In appendix ... kan de implementatie in een BIM2GEO converter van het TUD LoD framework worden gevonden. In plaats van vervangende LoD zijn hier kleine aanpassingen gedaan in het LoD framework om rekening te houden de unieke beperkingen maar ook mogelijkheden van BIM.
 
 ## Bestandstype
 
 ### CityGML XML & CityGML CityJSON
 
-CityGML is een open conceptueel datamodel voor het opslaan van 3D GIS data. CityGML defineerd verschillende objecten (classes) en hun relaties voor de meeste relevantie topografische objecten zoals gebruikt in stedelijke en regionale modellen. In tegenstelling tot mesh bestand types zoals OBJ en STL maakt CityGML het mogelijk om ook attributen voor ieder object op te slaan.
+CityGML is een open conceptueel datamodel voor het opslaan van 3D GIS data. CityGML defineert verschillende objecten (classes) en hun relaties voor de meeste relevantie topografische objecten zoals gebruikt in stedelijke en regionale modellen. In tegenstelling tot mesh bestand types zoals OBJ en STL maakt CityGML het mogelijk om ook attributen voor ieder object op te slaan.
 
 CityGML is zowel een encoding als een datamodel. Dit kan tot verwarring leiden. Voor het conceptuele data model CityGML, is zowel een GML als een JSON encoding beschikbaar en sinds recent ook een linked data encoding. 
 De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat lastig om te lezen door gebruikers. Een alternatief is [CityJSON](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json), een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder, zie [CityJSON bestandsgrootte](https://www.cityjson.org/filesize/) voor meer informatie ). CityJSON komt echter ook met beperkingen. Zo zijn er bepaalde keuzes gemaakt en is daarmee niet het gehele CityGML datamodel in de CityJSON encoding beschikbaar. CityJSON is vatbaarder voor niet standaard gebruik.
@@ -138,11 +138,12 @@ In de onderstaande code fragmenten kan de [XML](https://3d.bk.tudelft.nl/opendat
 }
 ```
 
-Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www.ogc.org/standards/citygml/). Het OGC behandeld vooral het data model en de GML/XML encoding. Meer informatie over de CityJSON encoding kan worden gevonden op de [CitySJON website](https://www.cityjson.org/).
+Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www.ogc.org/standards/citygml/). OGC heeft het data model voor de GML/XML encoding ontwikkeld. De CityJSON encoding is ontwikkeld onder leiding van de TU Delft en is later door OGC vastgesteld als community standaard. Meer over CityJSON kan worden gevonden op de [CitySJON website](https://www.cityjson.org/).
 
 ### GeoJSON
 
 GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
+
 
 
 
