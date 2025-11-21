@@ -47,7 +47,7 @@ Ook al wordt het niet expliciet genoemd, in de praktijk lijkt het LoD framework 
 Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om vast te stellen hoe een model verschilt van het model dat een gebouw op een versimpelde wijze representeert. In 2016 heeft [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) daarom een verfijning geschreven dat voortbouwt op het LoD framework beschreven in de CityGML standaard. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard, maar zou op sommige punten verbeterd kunnen worden om de definitie van een bepaald LoD nog beter te beschrijven. 
 Wat dat betreft is een standaard nooit af. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.
 
-Op basis van meerdere bronnen, kunnen de LoDs van het verfijnde framework op de volgende manier worden gedefinieerd:
+Op basis van meerdere bronnen,kunnen de LoDs van het verfijnde framework op de volgende manier worden gedefinieerd:
 
 * LoD0.0: Een bounding surface om een gebouw of cluster van gebouwen.
 * LoD0.1: Een 2D projectie van alle "grote" elementen van een gebouw (>4m, > 10m2) geplaatst op grondniveau.
@@ -72,9 +72,10 @@ Het framework is niet expliciet over het gebruik van een footprint of geprojecte
 Net zoals bij het CityGML LoD framework is dit framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden niet beschreven. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel maar de bruikbaarheid is niet uitgebreid onderzocht.
 
 Meer informatie over het [TUD LoD framework](https://repository.tudelft.nl/record/uuid:2d49a066-4e79-4608-b31f-bce54d92d0b5).
+
 ### Uitbreidingen & aanpassingen
 
-In meer of mindere mate worden deze twee LoD frameworks aangehouden. Maar dit betekent niet dat ze perfect zijn. Er zijn nog steeds aspecten die niet duidelijk zijn gedefinieerd en bepaalde niveaus passen slecht op de werkelijkheid. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe bronnen te gebruiken om GIS modellen op te baseren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en is in 3.0 nog steeds vergelijkbaar met de 1.0 versie. De TUD verscherping komt uit 2016, bijna 10 jaar geleden. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks.  
+In meer of mindere mate worden deze twee LoD frameworks gebruikt in de praktijk. Maar dit betekent niet dat ze geen beperkingen kennen. Zoals eerder opgemerkt, is een standaard nooit af. En ook voor deze twee frameworks geldt dat er nog steeds aspecten zijn die niet duidelijk zijn gedefinieerd. Modellen zoals deze beschikbaar zijn in de praktijk passen niet altijd helemaal op deze LoD modellen. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en is in 3.0 nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TUD verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks. Voor deze praktijk richtlijn is het met name relevant om te kijken naar BIM als nieuwe data bron voor 3D GIS bestanden en welke nieuwe (of aangepaste) LoDs hiermee kunnen worden gegenereerd.  
 
 Ook BIM als bron brengt unieke problemen met zich mee waar maar in beperkte mate rekening mee wordt gehouden bij de beschreven LoD frameworks. Recentelijk is er onderzoek gedaan naar mogelijke alternatieve LoD die hier rekening mee houden. Dit onderzoek kan worden gevonden in dit document: ... . In appendix ... kan de implementatie in een BIM2GEO converter van het TUD LoD framework worden gevonden. In plaats van vervangende LoD zijn hier kleine aanpassingen gedaan in het LoD framework om rekening te houden de unieke beperkingen maar ook mogelijkheden van BIM.
 
@@ -142,6 +143,7 @@ Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www
 ### GeoJSON
 
 GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
+
 
 
 
