@@ -42,9 +42,12 @@ Ook al wordt het niet expliciet genoemd, in de praktijk lijkt het LoD framework 
 
 <!-- TODO:Een afbeelding toevoegen van een brug or ander infrastructuur object dat is versimpelt volgens het LoD framework -->
 
-### Verfijnd LoD framework 3D Geoinformation research group, TU Delft
+### Verfijnd LoD framework 3D Geoinformation, TU Delft
 
-Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om vast te stellen hoe een model verschilt van het model dat een gebouw op een versimpelde wijze representeert. In 2016 heeft [Biljecki et al.]{https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf} daarom een verfijning geschreven dat voortbouwt op het LoD framework beschreven in de CityGML standaard. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is beter dan die van de CityGML standaard, maar zou op sommige punten verbeterd kunnen worden om de definitie van een bepaald LoD nog beter te beschrijven. Op basis van meerdere bronnen, kunnen de LoDs op de volgende manier worden gedefinieerd:
+Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om vast te stellen hoe een model verschilt van het model dat een gebouw op een versimpelde wijze representeert. In 2016 heeft [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) daarom een verfijning geschreven dat voortbouwt op het LoD framework beschreven in de CityGML standaard. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard, maar zou op sommige punten verbeterd kunnen worden om de definitie van een bepaald LoD nog beter te beschrijven. 
+Wat dat betreft is een standaard nooit af. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.
+
+Op basis van meerdere bronnen, kunnen de LoDs van het verfijnde framework op de volgende manier worden gedefinieerd:
 
 * LoD0.0: Een bounding surface om een gebouw of cluster van gebouwen.
 * LoD0.1: Een 2D projectie van alle "grote" elementen van een gebouw (>4m, > 10m2) geplaatst op grondniveau.
@@ -79,11 +82,12 @@ Ook BIM als bron brengt unieke problemen met zich mee waar maar in beperkte mate
 
 ### CityGML XML & CityGML CityJSON
 
-CityGML is een open datamodel voor het opslaan van 3D GIS data. CityGML defineerd verschillende objecten (classes) en hun relaties voor de meeste relevantie topografische objecten gebruikt in stedelijke en regionale modellen. In tegenstelling tot mesh bestand types zoals OBJ en STL maakt CityGML het mogelijk om ook attributen voor ieder object op te slaan.
+CityGML is een open conceptueel datamodel voor het opslaan van 3D GIS data. CityGML defineerd verschillende objecten (classes) en hun relaties voor de meeste relevantie topografische objecten zoals gebruikt in stedelijke en regionale modellen. In tegenstelling tot mesh bestand types zoals OBJ en STL maakt CityGML het mogelijk om ook attributen voor ieder object op te slaan.
 
-CityGML is zowel een encoding als een datamodel. Dit kan voor onduidelijkheden zorgen. CityGML komt voor een in GML en een CityJSON encoding. De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat lastig is door menselijke gebruikers te doorgronden. Een alternatief is de CityJSON encoding. Dit is een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door menselijke gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder, zie [CityJSON bestandsgrootte](https://www.cityjson.org/filesize/) voor meer informatie ). CityJSON komt echter ook met nadelen. Zo is niet het gehele CityGML datamodel is inbegrepen in de CityJSON encoding. CityJSON is vatbaarder voor niet standaard gebruik. Ook word CityGML XML door meer GIS software ondersteunt dan CityGML CityJSON.
+CityGML is zowel een encoding als een datamodel. Dit kan tot verwarring leiden. Voor het conceptuele data model CityGML, is zowel een GML als een JSON encoding beschikbaar en sinds recent ook een linked data encoding. 
+De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat lastig om te lezen door gebruikers. Een alternatief is [CityJSON](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json), een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder, zie [CityJSON bestandsgrootte](https://www.cityjson.org/filesize/) voor meer informatie ). CityJSON komt echter ook met beperkingen. Zo zijn er bepaalde keuzes gemaakt en is daarmee niet het gehele CityGML datamodel in de CityJSON encoding beschikbaar. CityJSON is vatbaarder voor niet standaard gebruik.
 
-Er is software beschikbaar die CityGML bestanden van encoding kan omzetten. Dit overbrugt de problemen die aanwezig zijn bij het beperken tot een enkele encoding.
+Er is software beschikbaar die CityGML bestanden van de ene naar de andere encoding kan omzetten, waardoor afhankelijk van de toepassing de ene of de andere encodig kan worden gebruikt.
 
 | dataset | CityJSON v2.0 | CityGML-XML v3.0 | textures | details | compression |
 |-|-|-|-|-|-|
@@ -138,6 +142,7 @@ Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www
 ### GeoJSON
 
 GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
+
 
 
 
