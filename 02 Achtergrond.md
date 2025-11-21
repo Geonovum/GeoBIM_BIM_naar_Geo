@@ -16,13 +16,14 @@ Over het algemeen is een gebouw in een BIM-bestand op het hoogst beschikbare det
 
 ## Level of Detail & Level of Development
 
-“Level of Detail” (LoD) lijkt erg veel op de BIM term “Level of Development” (LoD). Niet alleen de afkortingen lijken erg op elkaar maar ook wat ermee wordt beschreven. Hierdoor worden de twee termen vaak door elkaar gehaald, als wordt de term "Level of Development' steeds minder gebruikt in de BIM-wereld en is het LoD concept juist een veelgebruikte term in de GIS-wereld.
+“Level of Detail” (LoD) lijkt erg veel op de BIM term “Level of Development” (LoD). Niet alleen de afkortingen lijken erg op elkaar maar ook wat ermee wordt beschreven. Hierdoor worden de twee termen door elkaar gebruikt, al wordt de term "Level of Development' steeds minder gebruikt in de BIM-wereld en is het LoD concept juist een breed ingebed concept in de GIS-wereld.
 
-In BIM wordt “Level of Development” gebruikt om aan te geven hoe gedetailleerd zowel de geometrie en de verbonden informatie van een BIM model is. Er is enige onenigheid over hoeveel niveaus er zijn, maar ze worden aangeduid met een nummer dat bestaat uit 3 getallen (bijv. LoD400).
+In BIM wordt “Level of Development” gebruikt om het ontwikkelniveau (en daarmee gepaard gaand detailniveau) aan te duiden van zowel de geometrie als de verbonden informatie van een BIM model is. Er bestaan verschillende zienswijzen over hoeveel niveaus er zijn. Deze worden aangeduid met een nummer dat bestaat uit 3 getallen (bijv. LoD400).
 
-In BIM wordt de term “Level of Detail” ook gebruikt. Vaak wordt dit gebruikt als een synoniem voor “Level of Development”. Wij ervoor gekozen om de term “Level of Development” aan te houden als het over de BIM term gaat en “Level of Detail” als het over de GIS term gaat om het zo, hopelijk, iets duidelijker te houden.
+In BIM wordt de term “Level of Detail” ook gebruikt. Vaak wordt dit gebruikt als een synoniem voor “Level of Development”. Wij kiezen ervoor om de term “Level of Development” aan te houden als het over BIM gaat en “Level of Detail” als het over GIS gaat om het duidelijker te houden.
 
-In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd de geometrie is van een GIS model. Hier wordt ook vaak globale informatie over het type oppervlaktes aan toegevoegd, maar in de praktijk wordt GIS LoD ook vaak gebruikt zonder dit element. Het grote verschil tissen BIM LoD en GIS LoD is dat in de meest gebruikte GIS LoD frameworks over het algemeen alle andere attributen niet als belangrijk wordt beschouwd. Net als bij BIM is er enige onenigheid over hoeveel niveaus bestaan. De twee meest gebruikte frameworks geven twee verschillende hoeveelheden. De CityGML3.0 standaard geeft 4 verschillende niveaus, allemaal aangegeven met een enkel getal (bijv. LoD2). De TUD ontwikkelde standaard split de niveaus beschreven door de CityGML3.0 standaard in 4en. Dit komt uit op 16 verschillende niveaus beschreven met 2 getallen gescheiden door een punt (bijv. LoD2.2).
+In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd de geometrie is van een GIS model. Hier wordt ook vaak globale informatie over het type oppervlaktes aan toegevoegd, maar in de praktijk wordt GIS LoD ook vaak gebruikt zonder dit vlak-element. Het grote verschil tissen BIM LoD en GIS LoD is dat in de meest gebruikte GIS LoD frameworks over het algemeen alle andere attributen niet als belangrijk worden beschouwd. In GIS, worden de hoofdniveaus (LoD1, LoD2, LoD3) breed ondersteund, Maar er zijn in de loop der tijd verschillende verfijningen voorgesteld.
+De CityGML3.0 standaard definieert 4 hoofdniveaus, allemaal aangegeven met een enkel getal (bijv. LoD2). De TUD heeft deze hoofdniveaus verfijnd, waarbij op ieder niveau vier andere, subniveaus worden beschreven. Dit heeft geresulteerd in 16 verschillende niveaus beschreven met 2 getallen gescheiden door een punt (bijv. LoD2.2). Deze indeling wordt in de praktijk ook veel gebruikt.
 
 ### CityGML
 
@@ -138,5 +139,6 @@ Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www
 ### GeoJSON
 
 GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
+
 
 
