@@ -32,7 +32,7 @@ De CityGML3.0 standaard beschrijft vier opvolgende niveaus (LoD0 tot LoD3) waarb
 * LoD0: Een representatie van een gebouw of vertrek met niet volumetrische geometrie zoals een punt, vlak (polygoon) of meerdere vlakken (voor bijvoorbeeld de 'footprint' of 'roofprint').
 * LoD1: Een representatie van een gebouw of vertrek als een blok vorm.
 * LoD2: Een representatie van een gebouw of vertrek als een volume met (meestal) verticale muren, waarbij de vlakken die het dak representeren zijn verfijnd.  
-* LoD3: Een representatie van een gebouw of vertrek als een schil. Dit is de enige LoD die gevelopeningen en overhang in 3D ondersteunt.
+* LoD3: Een representatie van een gebouw of vertrek als een schil. Dit is de enige LoD die gevelopeningen ondersteunt.
 
 ![Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard](media/2_achtergrond/LoDCityGML.png "De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail)")
 
@@ -42,32 +42,31 @@ Ook al wordt het niet expliciet genoemd, in de praktijk lijkt het LoD framework 
 
 <!-- TODO:Een afbeelding toevoegen van een brug or ander infrastructuur object dat is versimpelt volgens het LoD framework -->
 
-### TUD
+### Verfijnd LoD framework 3D Geoinformation research group, TU Delft
 
-Het CityGML LoD framework is relatief open. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om te begrijpen hoe een model verschilt van het gebouw dat het op een versimpelde wijze representeert. In 2016 heeft Biljecki et al. een verfijning geschreven dat voortbouwt op het LoD framework beschreven in de CityGML standaard. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt dus overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is beter dan die van de CityGML standaard maar helaas is er nog steeds niet altijd even duidelijk. Op basis van meerdere bronnen kon de volgende definitie worden opgebouwd:
+Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om vast te stellen hoe een model verschilt van het model dat een gebouw op een versimpelde wijze representeert. In 2016 heeft [Biljecki et al.]{https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf} daarom een verfijning geschreven dat voortbouwt op het LoD framework beschreven in de CityGML standaard. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is beter dan die van de CityGML standaard, maar zou op sommige punten verbeterd kunnen worden om de definitie van een bepaald LoD nog beter te beschrijven. Op basis van meerdere bronnen, kunnen de LoDs op de volgende manier worden gedefinieerd:
 
 * LoD0.0: Een bounding surface om een gebouw of cluster van gebouwen.
 * LoD0.1: Een 2D projectie van alle "grote" elementen van een gebouw (>4m, > 10m2) geplaatst op grondniveau.
 * LoD0.2: Een 2D projectie van alle elementen van een gebouw geplaatst op grondniveau en optioneel aangevuld door een kopie van dit oppervlakte op de tophoogte van het gebouw.
 * LoD0.3: Een 2D projectie van alle elementen van een gebouw geplaatst op grondniveau en aangevuld met een 2D projectie van alle losse dakelementen geplaatst op de tophoogte van ieder element.
 * LoD1.0: Een bounding box om een gebouw of cluster van gebouwen.
-* LoD1.1: Een opwaartse extrusie van LoD0.1 naar de maximale gebouwhoogte.
-* LoD1.2: Een opwaartse extrusie van het LoD0.2 grondoppervlak naar de maximale gebouwhoogte.
+* LoD1.2: Een opwaartse extrusie van het LoD0.2 grondoppervlak naar de maximale gebouwhoogte (vaak de noklijn).
 * LoD1.3: Een neerwaartse extrusie van ieder LoD0.3 dakelement tot grondniveau en samengevoegd tot een enkel volume.
 * LoD2.0: Een neerwaartse extrusie van ieder groot dak element (>4m, > 10m2) tot grondniveau samengevoegd tot een enkel volume.
 * LoD2.1: Een neerwaartse extrusie van ieder dak element tot grondniveau samengevoegd tot een enkel volume.
-* LoD2.2: Een neerwaartse extrusie van ieder dak element en dak bovenbouw (zoals dakkapellen) tot grondniveau samengevoegd tot een enkel volume.
+* LoD2.2: Een neerwaartse extrusie van ieder dak element en dak bovenbouw (zoals dakkapellen) met minimale omvang tot grondniveau samengevoegd tot een enkel volume.
 * LoD2.3: LoD2.2 uitgebreid met expliciet gemodelleerde overhang als deze groter is dan 0.2m.
-* LoD3.0: LoD2.2 aangevuld met gedetailleerde informatie verkregen vanuit de lucht. Dit kan ramen, schoorstenen en dakkappelen bevatten. LoD3.2 detail op het dak.
-* LoD3.1: LoD2.2 aangevuld met gedetailleerde informatie verkregen vanaf de grond. Dit kan uitkragingen/overhang, ramen en deuren bevatten. LoD3.2 detail op de façade.
-* LoD3.2: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan 1m.
-* LoD3.3: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan 0.2m.
+* LoD3.0: LoD2.2 aangevuld met gedetailleerde informatie, zoals ramen, schoorstenen en dakkappelen. LoD3.2 detail op het dak.
+* LoD3.1: LoD2.2 aangevuld met gedetailleerde informatie verkregen vanaf de grond. Deze LoD kan uitkragingen/overhang, ramen en deuren bevatten. LoD3.2 detail op de gevel (façade).
+* LoD3.2: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan (bijvoorbeeld) 1m.
+* LoD3.3: Gedetailleerd schilmodel van het gebouw met elementen die groter zijn dan (bijvoorbeeld) 0.2m.
 
 ![Voorbeeld van de 16 LoD beschrven door de TUD](media/2_achtergrond/lodtud.png "De 16 LoD beschreven door de [TUD](https://3d.bk.tudelft.nl/lod/) in 2016")
 
-Er is enige onzekerheid over het gebruik van een voetprint of geprojecteerde dak contour. De documentatie lijkt te wijzen op het gebruik van een geprojecteerde dak contour bij LoD0.2, 0.3 en 1.2. Dit is echter nergens expliciet genoemd. In de praktijk zijn er situaties waar de footprint contour wordt gebruikt. Dit gebruik wordt dan ook uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gemaakt door een opwaartse extrusie van de voetprint te verfijnen met de dakoppervlaktes.
+Het framework is niet expliciet over het gebruik van een voetprint of geprojecteerde dak contour bij de verschillende LoD-representaties. In de documentatie wordt het in praktijk veel gebruikte geprojecteerde dak contour bij LoD0.2, 0.3 en 1.2 genoemd, maar wordt het gebruik van de footprint niet uitgesloten. In de praktijk wordt soms ook de footprint contour gebruikt. De footprint-gebaseerde geometrie kan worden uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gegenereerd door een opwaartse extrusie van de footprint, welke wordt verfijnd met dakvlakken.
 
-Net zoals bij het CityGML LoD framework lijkt dit framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework zo open en flexibel is. Bouwwerken zoals bruggen, tunnels en sluizen worden niet direct behandeld. In theorie kunnen de meeste LoDs toegepast worden op deze bouwwerken maar de bruikbaarheid is niet uitgebreid onderzocht.
+Net zoals bij het CityGML LoD framework is dit framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden niet beschreven. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel maar de bruikbaarheid is niet uitgebreid onderzocht.
 
 Meer informatie over het [TUD LoD framework](https://repository.tudelft.nl/record/uuid:2d49a066-4e79-4608-b31f-bce54d92d0b5).
 ### Uitbreidingen & aanpassingen
@@ -139,6 +138,7 @@ Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www
 ### GeoJSON
 
 GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
+
 
 
 
