@@ -22,23 +22,23 @@ In BIM wordt “Level of Development” gebruikt om het ontwikkelniveau (en daar
 
 In BIM wordt de term “Level of Detail” ook gebruikt. Vaak wordt dit gebruikt als een synoniem voor “Level of Development”. Wij kiezen ervoor om de term “Level of Development” aan te houden als het over BIM gaat en “Level of Detail” als het over GIS gaat om het duidelijker te houden.
 
-In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd de geometrie is van een GIS model. Hier wordt ook vaak globale informatie over het type oppervlaktes aan toegevoegd, maar in de praktijk wordt GIS LoD ook vaak gebruikt zonder dit vlak-element. Het grote verschil tissen BIM LoD en GIS LoD is dat in de meest gebruikte GIS LoD frameworks over het algemeen alle andere attributen niet als belangrijk worden beschouwd. In GIS, worden de hoofdniveaus (LoD1, LoD2, LoD3) breed ondersteund, Maar er zijn in de loop der tijd verschillende verfijningen voorgesteld.
+In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd de geometrie is van een GIS model. Hier wordt ook vaak globale informatie over het type oppervlaktes aan toegevoegd, maar in de praktijk wordt GIS LoD ook vaak gebruikt zonder dit vlak-element. Het grote verschil tussen BIM LoD en GIS LoD is dat in de meest gebruikte GIS LoD frameworks over het algemeen attributen minder belangrijk zijn. In GIS, worden de hoofdniveaus (LoD0, LoD1, LoD2, LoD3, zie verder) breed ondersteund, Maar er zijn in de loop der tijd verschillende verfijningen voorgesteld.
 De CityGML3.0 standaard definieert 4 hoofdniveaus, allemaal aangegeven met een enkel getal (bijv. LoD2). De TUD heeft deze hoofdniveaus verfijnd, waarbij op ieder niveau vier andere, subniveaus worden beschreven. Dit heeft geresulteerd in 16 verschillende niveaus beschreven met 2 getallen gescheiden door een punt (bijv. LoD2.2). Deze indeling wordt in de praktijk ook veel gebruikt.
 
 ### CityGML
 
-De CityGML3.0 standaard beschrijft 4 opvolgende niveaus (LoD0-3) waarbij de geometrie van een model meer gedetailleerd wordt met een hoger LoD. Dit framework gebruikt geen attributen of andere semantische informatie voor een onderscheid tussen de niveaus. De documentatie van ieder niveau is vrij beperkt en open voor interpretatie. Op basis van meerdere bronnen kon de volgende definitie worden opgebouwd:
+De CityGML3.0 standaard beschrijft vier opvolgende niveaus (LoD0 tot LoD3) waarbij de geometrie van een model meer gedetailleerd wordt met een hoger LoD. Dit framework gebruikt nauwelijks attributen of andere semantische informatie voor een onderscheid tussen de niveaus. De documentatie van ieder niveau is vrij algmeen, om verschillende interpretaties en daarmee implementaties mogelijk te maken. Vaak zijn daarom verfijningen nodig om data eisen voor specifieke toepassingen te beschrijven. Op basis van meerdere bronnen kon de volgende definitie worden gegeven ten aanzien van gebouwen:
 
-* LoD0: Een representatie van een gebouw of kamer met niet volumetrische geometrie zoals een punt, oppervlakte of meerdere oppervlaktes.
-* LoD1: Een representatie van een gebouw of kamer als een blok vorm.
-* LoD2: Een representatie van een gebouw of kamer als een blok vorm waarbij de oppervlaktes die het dak representeren zijn verfijnd.  
-* LoD3: Een representatie van een gebouw of kamer als een schil. Dit is de enige LoD die gevelopeningen en overhang ondersteunt.
+* LoD0: Een representatie van een gebouw of vertrek met niet volumetrische geometrie zoals een punt, vlak (polygoon) of meerdere vlakken (voor bijvoorbeeld de 'footprint' of 'roofprint').
+* LoD1: Een representatie van een gebouw of vertrek als een blok vorm.
+* LoD2: Een representatie van een gebouw of vertrek als een volume met (meestal) verticale muren, waarbij de vlakken die het dak representeren zijn verfijnd.  
+* LoD3: Een representatie van een gebouw of vertrek als een schil. Dit is de enige LoD die gevelopeningen en overhang in 3D ondersteunt.
 
-![Voorbeeld van de 4 LoD beschrven door de CityGML3.0 standaard](media/2_achtergrond/LoDCityGML.png "De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail)")
+![Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard](media/2_achtergrond/LoDCityGML.png "De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail)")
 
-De CityGML3.0 standaard ondersteunt de in CityGML2.0 beschreven LoD4 niet meer. De in CityGML3.0 standaard beschreven LoD kunnen worden gebruikt voor zowel exterieur als interieur. In CityGML2.0 kon LoD0-3 alleen gebruikt worden voor het beschrijven van het exterieur van een gebouw. LoD4 was in CityGML2.0 de enige representatie van een gebouw met interieur. Daarnaast was LoD4 anders opgebouwd dan LoD0-3. LoD0-3 waren schillen terwijl LoD4 dit niet was. Objecten zoals ramen, vloeren en meubels werden ondersteunt in LoD4. LoD4 kon worden geïnterpreteerd als een 1:1 conversie van een BIM model in de GIS omgeving. Ondanks het feit dat LoD4 officieel niet meer ondersteunt, komt het in de praktijk nog voor om moeizame/trage/complexe conversie te ontwijken.
+De CityGML3.0 standaard ondersteunt de in CityGML2.0 beschreven LoD4 niet meer. LoD4 was bedoeld voor de binnenkant van gebouwen. De in CityGML3.0 standaard beschreven LoDs kunnen worden gebruikt voor zowel exterieur als interieur. Terwijl in CityGML2.0 LoD0 tot LoD3 alleen gebruikt werd voor het beschrijven van het exterieur van een gebouw. Daarnaast was LoD4 anders opgebouwd dan LoD0-3. De buitenkant kon op meerdere detailniveaus worden beschreven (LoD0-3), terwijl er slechts één niveau voor LoD4 was. Objecten zoals ramen, vloeren en meubels werden ondersteunt in LoD4. LoD4 kon worden geïnterpreteerd als een 1:1 conversie van een BIM model in de GIS omgeving. Ondanks het feit dat LoD4 officieel niet meer wordt ondersteund, komt het in de praktijk nog voor om moeizame/trage/complexe conversie te vermijden.
 
-Ook al wordt het niet expliciet genoemd lijkt het dat het LoD framework vooral toepasbaar is op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden niet direct behandeld. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework zo open en flexibel is.
+Ook al wordt het niet expliciet genoemd, in de praktijk lijkt het LoD framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden niet zo expliciet beschreven als gebouwen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het LoD framework van CityGML open en flexibel is.
 
 <!-- TODO:Een afbeelding toevoegen van een brug or ander infrastructuur object dat is versimpelt volgens het LoD framework -->
 
@@ -139,6 +139,7 @@ Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www
 ### GeoJSON
 
 GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.
+
 
 
 
