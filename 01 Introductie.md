@@ -1,12 +1,13 @@
 # Introductie
 
+Building Information Modelling (BIM) en Geografisch informatiesystemen (GIS) worden algemeen erkend als aanvullende bronnen van informatie. Waar BIM modellen worden gebruikt om een enkel gebouw, bouwwerk of kunstwerk in hoog detail te representeren worden GIS modellen gebruikt om grotere regio's te representeren met minder detail. Het integreren van deze twee databronnen kan zeer nuttig zijn voor zowel de BIM als GIS wereld.
 
+Ondanks het feit dat BIM en GIS gedeeltelijk dezelfde bouwwerken modelleren op verschillende schaal en detail niveau is de integratie tussen beide lastig. Beide velden hebben een andere modelleer benadering die overbrugt moet worden om succesvol BIM-modellen naar GIS te brengen.
+
+Het essentiële verschil tussen BIM en GIS is dat in BIM alle objecten los van elkaar en als volumes gemodelleerd zijn. Iedere wand, deur en vloer zijn losse gesloten objecten. In GIS wordt een gebouw gerepresenteerd als een enkel gesloten object. Er is geen scheiding tussen verschillende objecten die samen het gebouw vormen. Er zijn verschillende manieren om dit verschil te overbruggen. Er zijn bijvoorbeeld softwarepakketten die het mogelijk maken om BIM modellen en GIS modellen in dezelfde omgeving te openen. Dit is vrij makkelijk voor de gebruiker en stelt weinig eisen aan de BIM modellen. De keerzijde is dat dit de mogelijkheden beperkt om de BIM modellen in de GIS omgeving te gebruiken en het bindt de gebruiker vaak aan een enkele software omgeving/leverancier. Er zijn software pakketten die het mogelijk maken om BIM modellen (gedeeltelijk) 1:1 te vertalen naar een GIS data formaat. Ook dit stelt relatief weinig eisen aan de BIM modellen maar resulteert in modellen die vooral voor visualisatie bruikbaar zijn. Als laatste zijn er software oplossing die BIM modellen omzetten naar GIS conforme bestanden. Deze oplossingen resulteren in goed bruikbare GIS modellen, maar stellen relatief strenge eisen aan de BIM modellen die gebruikt kunnen worden als input.
+
+De laatste oplossing is interessant voor het integreren van BIM in een GIS omgeving. Helaas zijn de eisen waaraan de BIM modellen moeten voldoen om tot een goed resultaat te leiden vaak onduidelijk en slecht gedocumenteerd. Aanvullend moeten er extra stappen genomen worden om aan deze eisen te voldoen omdat niet alle BIM modelleersoftware modellen op een correcte manier opslaat. Vaak is een expert nodig om de BIM modellen aan te passen voordat ze voldoen aan alle eisen om tot een goed conversie resultaat te komen. De uitdaging hier is het ontwikkelen van breed gedragen, gestandaardiseerde oplossingen met duidelijke handreikingen zodat deze BIM-naar-Geo oplossingen ook beschikbaar komen voor klein-tot-middelgrote projecten waar niet altijd de benodigde expertise beschikbaar is.
 
 # Leeswijzer
 
-
-
-
 # Toepassingsgebied
-
-
