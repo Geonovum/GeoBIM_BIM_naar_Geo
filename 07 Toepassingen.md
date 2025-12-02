@@ -2,16 +2,16 @@
 
 ## Handleiding/HowTo
 
-| Applicatie | IFC direct openen | 1:1 conversie | Gefilterde 1:1 conversie | Shell extractie | CityGML LoD support | CityJSON LoD support |
+| Applicatie | BIM/IFC direct openen | 1:1 vertaling | Gefilterde 1:1 vertaling | Shell extractie | CityGML LoD support | CityJSON LoD support |
 |-|-|-|-|-|-|-|
-| ESRI ArcGIS Pro| ✅ | ✅ | ✅ | 🔶 | ❌ | ❌ |
-| Save Software FME| ❌ | ✅ | ✅ | 🔶 | ❌ | ❌ |
+| ESRI ArcGIS Pro| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | IFC2GeoJSON | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Save Software FME | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| IfcConvert | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | BIMShell | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
 | IfcEnvelopeExtractor | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ✅ = volledige support
-🔶 = gedeeltelijke/non-standaard support
 ❌ = geen support
 
 # BIM bestanden in GIS omgeving brengen
