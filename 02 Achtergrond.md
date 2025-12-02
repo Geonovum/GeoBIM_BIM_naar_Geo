@@ -14,7 +14,7 @@ De manier waarop ruimtes binnen het gebouw worden gerepresenteerd zijn daarenteg
 
 Over het algemeen is een gebouw in een BIM-bestand op het hoogst beschikbare detailniveau gerepresenteerd. In een GIS bestand is dit vaak niet het geval. Een gebouw kan op meerde manieren gerepresenteerd worden in een enkel 3D GIS-bestand. Dit kan variëren van zeer gedetailleerde volumetrische vormen tot een zeer versimpelde non-volumetrische oppervlakte. Deze variatie in beschikbare representaties is aanwezig om toepassingen op verschillende detailniveaus mogelijk te maken, maar ook omdat GIS data bronnen niet altijd alle data beschikbaar hebben om alle gebouwen op dezelfde manier te reconstrueren. Het is dus mogelijk om lagere precisie data te combineren met hogere precisie data als er maar beperkte data bronnen beschikbaar zijn. De verschillende kwaliteit representaties worden “Level of Detail” (LoD) genoemd.
 
-## Level of Detail & Level of Development
+## Level of Detail, Level of Development en Level Of Information Need
 
 “Level of Detail” (LoD) lijkt erg veel op de BIM term “Level of Development” (LoD). Niet alleen de afkortingen lijken erg op elkaar maar ook wat ermee wordt beschreven. Hierdoor worden de twee termen door elkaar gebruikt, al wordt de term "Level of Development' steeds minder gebruikt in de BIM-wereld en is het LoD concept juist een breed ingebed concept in de GIS-wereld.
 
