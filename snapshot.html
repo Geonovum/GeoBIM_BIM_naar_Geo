@@ -1712,75 +1712,6 @@ ul.index code{color:inherit}
 </code></pre>
 </section></section></section>
 <section id="methodes-van-bim-naar-geo-brengen"><div class="header-wrapper"><h2 id="x3-methodes-van-bim-naar-geo-brengen"><bdi class="secno">3. </bdi>Methodes van BIM naar Geo Brengen</h2><a class="self-link" href="#methodes-van-bim-naar-geo-brengen" aria-label="Permalink for Section 3."></a></div>
-<table>
-<thead>
-<tr>
-<th>Applicatie</th>
-<th>BIM/IFC direct openen</th>
-<th>1:1 vertaling</th>
-<th>Gefilterde 1:1 vertaling</th>
-<th>Shell extractie</th>
-<th>CityGML LoD support</th>
-<th>CityJSON LoD support</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ESRI ArcGIS Pro</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>IFC2GeoJSON</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Save Software FME</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>IfcConvert</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>BIMShell</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>IfcEnvelopeExtractor</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-</tbody></table>
-<p>✅ = volledige support
-❌ = geen support</p>
 <p>Er zijn een aantal verschillen de software pakketten beschikbaar die het mogelijk maken om BIM modellen binnen een GIS omgeving te brengen. De methodes die deze applicaties gebruiken kunnen worden ingedeeld in een aantal groepen:</p>
 <ul>
 <li>Direct BIM/IFC openen</li>
@@ -1803,6 +1734,7 @@ ul.index code{color:inherit}
 <p>Schil modellen met een lagere precisie stellen ook lagere eisen aan het BIM model dat verwerkt word. Zo kunnen blok modellen of voxelisaties worden gemaakt van bijna alle BIM modellen, ook schets/klad modellen. Hoe hoger de verwachte precisie van het GIS model, hoe strenger de eisen en hoe complexer het proces om ze te creëren.</p>
 <p>De prijs voor het succesvol genereren van deze schil modellen ten opzichte van 1:1 vertaling brengt ook een beloning met zich mee. De resulterende schil modellen hebben een kleine bestandsgrootte en worden volledig ondersteunt door GIS software. Dit zijn de enige modellen die voor complexe analyses gebruikt kunnen worden. Deze modellen kunnen ook gebruik worden om bestaande stedelijke modellen aan te vullen of zelfs de kwaliteit van representaties binnen een model te verbeteren.</p>
 </section><section id="hybride-extractie"><div class="header-wrapper"><h3 id="x3-4-hybride-extractie"><bdi class="secno">3.4 </bdi>Hybride extractie</h3><a class="self-link" href="#hybride-extractie" aria-label="Permalink for Section 3.4"></a></div>
+
 </section><section id="vertaling-naar-gis-conforme-objecten"><div class="header-wrapper"><h3 id="x3-5-vertaling-naar-gis-conforme-objecten"><bdi class="secno">3.5 </bdi>Vertaling naar GIS conforme objecten</h3><a class="self-link" href="#vertaling-naar-gis-conforme-objecten" aria-label="Permalink for Section 3.5"></a></div>
 <section id="bimshell"><div class="header-wrapper"><h4 id="x3-5-1-bimshell"><bdi class="secno">3.5.1 </bdi>BIMShell</h4><a class="self-link" href="#bimshell" aria-label="Permalink for Section 3.5.1"></a></div>
 </section><section id="ifcenvelopeextractor"><div class="header-wrapper"><h4 id="x3-5-2-ifcenvelopeextractor"><bdi class="secno">3.5.2 </bdi>IfcEnvelopeExtractor</h4><a class="self-link" href="#ifcenvelopeextractor" aria-label="Permalink for Section 3.5.2"></a></div>
@@ -1872,9 +1804,9 @@ ul.index code{color:inherit}
 <thead>
 <tr>
 <th>Applicatie</th>
-<th>IFC direct openen</th>
-<th>1:1 conversie</th>
-<th>Gefilterde 1:1 conversie</th>
+<th>BIM/IFC direct openen</th>
+<th>1:1 vertaling</th>
+<th>Gefilterde 1:1 vertaling</th>
 <th>Shell extractie</th>
 <th>CityGML LoD support</th>
 <th>CityJSON LoD support</th>
@@ -1885,7 +1817,16 @@ ul.index code{color:inherit}
 <td>✅</td>
 <td>✅</td>
 <td>✅</td>
-<td>🔶</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>IFC2GeoJSON</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
 <td>❌</td>
 <td>❌</td>
 </tr>
@@ -1894,12 +1835,12 @@ ul.index code{color:inherit}
 <td>❌</td>
 <td>✅</td>
 <td>✅</td>
-<td>🔶</td>
+<td>❌</td>
 <td>❌</td>
 <td>❌</td>
 </tr>
 <tr>
-<td>IFC2GeoJSON</td>
+<td>IfcConvert</td>
 <td>❌</td>
 <td>✅</td>
 <td>✅</td>
@@ -1927,7 +1868,6 @@ ul.index code{color:inherit}
 </tr>
 </tbody></table>
 <p>✅ = volledige support
-🔶 = gedeeltelijke/non-standaard support
 ❌ = geen support</p>
 </section><section id="bim-bestanden-in-gis-omgeving-brengen"><div class="header-wrapper"><h3 id="x5-2-bim-bestanden-in-gis-omgeving-brengen"><bdi class="secno">5.2 </bdi>BIM bestanden in GIS omgeving brengen</h3><a class="self-link" href="#bim-bestanden-in-gis-omgeving-brengen" aria-label="Permalink for Section 5.2"></a></div>
 <section id="esri-arcgis-pro"><div class="header-wrapper"><h4 id="x5-2-1-esri-arcgis-pro"><bdi class="secno">5.2.1 </bdi>ESRI ArcGIS Pro</h4><a class="self-link" href="#esri-arcgis-pro" aria-label="Permalink for Section 5.2.1"></a></div>

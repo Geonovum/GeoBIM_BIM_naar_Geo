@@ -1,17 +1,5 @@
 # Methodes van BIM naar Geo Brengen
 
-| Applicatie | BIM/IFC direct openen | 1:1 vertaling | Gefilterde 1:1 vertaling | Shell extractie | CityGML LoD support | CityJSON LoD support |
-|-|-|-|-|-|-|-|
-| ESRI ArcGIS Pro| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| IFC2GeoJSON | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Save Software FME | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| IfcConvert | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| BIMShell | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
-| IfcEnvelopeExtractor | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
-
-✅ = volledige support
-❌ = geen support
-
 Er zijn een aantal verschillen de software pakketten beschikbaar die het mogelijk maken om BIM modellen binnen een GIS omgeving te brengen. De methodes die deze applicaties gebruiken kunnen worden ingedeeld in een aantal groepen:
 
 * Direct BIM/IFC openen
@@ -51,6 +39,7 @@ De prijs voor het succesvol genereren van deze schil modellen ten opzichte van 1
 # Hybride extractie
 
 
+<!--- plaatsing text beneden uitzoeken --->
 # Vertaling naar GIS conforme objecten
 
 ## BIMShell
