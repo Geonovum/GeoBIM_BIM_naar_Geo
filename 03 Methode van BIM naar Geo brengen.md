@@ -1,26 +1,55 @@
 # Methodes van BIM naar Geo Brengen
 
-| Applicatie | IFC direct openen | 1:1 conversie | Gefilterde 1:1 conversie | Shell extractie | CityGML LoD support | CityJSON LoD support |
+| Applicatie | BIM/IFC direct openen | 1:1 vertaling | Gefilterde 1:1 vertaling | Shell extractie | CityGML LoD support | CityJSON LoD support |
 |-|-|-|-|-|-|-|
-| ESRI ArcGIS Pro| ✅ | ✅ | ✅ | 🔶 | ❌ | ❌ |
-| Save Software FME| ❌ | ✅ | ✅ | 🔶 | ❌ | ❌ |
+| ESRI ArcGIS Pro| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | IFC2GeoJSON | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Save Software FME | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| IfcConvert | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | BIMShell | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
 | IfcEnvelopeExtractor | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ✅ = volledige support
-🔶 = gedeeltelijke/non-standaard support
 ❌ = geen support
 
-# BIM bestanden in GIS omgeving brengen
+Er zijn een aantal verschillen de software pakketten beschikbaar die het mogelijk maken om BIM modellen binnen een GIS omgeving te brengen. De methodes die deze applicaties gebruiken kunnen worden ingedeeld in een aantal groepen:
 
-## ESRI ArcGIS Pro
+* Direct BIM/IFC openen
+* (Gefilterde) 1:1 vertaling
+* Shell extractie
+
+Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleinde.
+
+# Direct BIM/IFC openen
+
+Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit zorgt ervoor dat integratie tussen de twee erg makkelijk is. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source applicaties die een gebruiker binden aan het de software die deze softwareleverancier aanlevert. Integratie tussen verschillende software van andere leveranciers is vaak lastig of zelfs onmogelijk. Dit beperkt de gebruiker tot een relatief kleine selectie aan analyses mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
 # 1:1 vertaling
 
-## Save Software FME
+Om vrij te komen van een gesloten software ecosysteem kan worden gekozen voor een 1:1 vertaling van het BIM bestand. Hier binnen kan onderscheid worden gemaakt tussen 1:1 conversie van de geometrie of een complete 1:1 mapping. Het verschil tussen de twee is dat een 1:1 mapping de attributen van het IFC model in tact houd terwijl een conversie van de geometrie alleen de geometrie overzet en de attributen negeert.
 
-## IFC2GeoJSON
+Het resulterende bestand van een 1:1 mapping is effectief een IFC model met een GIS extensie. Deze bestanden maken is een makkelijk en relatief snel proces. Tijdens de conversie kunnen weinig fouten optreden. Het resulterende bestand kan worden geopend door iedere software die de GIS encoding ondersteund. In dat opzicht is het veelzijdiger dan de vorige optie die de gebruiker bindt aan een software omgeving.
+
+Echter komt deze methode met veel beperkingen. Ookal heeft het bestand een GIS encoding, het volgt niet het GIS datamodel. Dit betekend dat viewers het bestand wel kunnen openen maar dat analyses maar beperkt kunnen worden toegepast. De analyse software verwacht een ander datamodel en dit kan resulteren in trage, onbetrouwbare of niet functionele analyses. Aanvullend zijn de 1:1 mappings bestanden erg zwaar, een stedelijk model gevuld met deze modellen zal veel problemen kunnen geven.
+
+Een beperkte remedie is een gefilterde 1:1 mapping. Hierbij worden alleen de objecten die deel uitmaken van de buitengevel van een gebouw naar de GIS encoding omgezet. Dit kan op een aantal verschillende manieren geïmplementeerd worden maar de meest voorkomende maakt gebruik van een object attribuut (bijvoorbeeld [isExternal](https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/property/IsExternal.htm) in IFC). Dit is een gemakkelijke en snelle filtering en zal tijdens de conversie weinig problemen opleveren. Echter vertrouwd deze methode op het correcte gebruik van de attributen door de makers van het model. Het correcte gebruik van attributen kan niet altijd worden gegarandeerd (mensen maken fouten, zijn onbekend met het attribuut of het belang ervan) en mogelijk moet daarom het resulterende model gecorrigeerd worden.
+
+Als de gefilterde 1:1 vertaling correct is uitgevoerd adresseert het echter alleen in beperkte maken de resulterende bestandsgrootte. Het omgezette model is nog steeds een IFC model in een GIS encoding en brengt verder dezelfde problemen met zich mee als de ongefilterde 1:1 vertaling.
+
+De 1:1 conversie van alleen de geometrie heeft geometrisch dezelfde beperkingen als de 1:1 mapping. Echter zal het resulterende bestand een nog minder ruimte innemen door het ontbreken van attribuut data.
+
+# Shell extractie
+
+Een bestand dat correct het GIS data model volgt kan alleen worden gecreëerd door een vorm van shell extractie. Bij shell extractie wordt een schil model gemaakt van een (of meer) BIM model(len). Dit is een lossy process, zowel voor de geometrie als de attributen gaat data gaat verloren. Volumetrische externe objecten zoals wanden en daken worden oppervlaktes die deel zijn van een enkele volumetrische schil. Interne elementen kunnen volledig vervallen. Dit proces is dus ook niet omkeerbaar.
+
+Aanvullen is shell extractie ook een complex proces waarbij problemen kunnen optreden. Schil modellen met een hoge precisie kunnen alleen gecreëerd worden van BIM modellen die voldoen aan strenge eisen. Deze eisen zijn niet alleen semantisch maar ook geometrisch, hierdoor is het lastig deze eisen af te dwingen met een IDS/ILS. Zelfs als alle eisen nageleefd worden zijn er omstandigheden waar het schil model niet correct gemaakt kan worden.
+
+Schil modellen met een lagere precisie stellen ook lagere eisen aan het BIM model dat verwerkt word. Zo kunnen blok modellen of voxelisaties worden gemaakt van bijna alle BIM modellen, ook schets/klad modellen. Hoe hoger de verwachte precisie van het GIS model, hoe strenger de eisen en hoe complexer het proces om ze te creëren.
+
+De prijs voor het succesvol genereren van deze schil modellen ten opzichte van 1:1 vertaling brengt ook een beloning met zich mee. De resulterende schil modellen hebben een kleine bestandsgrootte en worden volledig ondersteunt door GIS software. Dit zijn de enige modellen die voor complexe analyses gebruikt kunnen worden. Deze modellen kunnen ook gebruik worden om bestaande stedelijke modellen aan te vullen of zelfs de kwaliteit van representaties binnen een model te verbeteren.
+
+# Hybride extractie
+
 
 # Vertaling naar GIS conforme objecten
 
@@ -28,7 +57,7 @@
 
 ## IfcEnvelopeExtractor
 
-De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet een 1:1 omzetting van IFC naar een ander GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van Biljecki et al. Aanvullend zijn er een aantal experimentele LoDs en een 1:1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.
+De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet alleen een 1:1 omzetting van IFC naar een ander GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van Biljecki et al. Aanvullend zijn er een aantal experimentele LoDs en een 1:1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.
 
 De applicatie is toegankelijk via de [GitHub pagina](https://github.com/tudelft3d/IFC_BuildingEnvExtractor). Hier zijn de source code en gecompilde executables beschikbaar. De gecompilde executables zijn beschikbaar voor zowel Windows als Linux (Ubuntu). Gedetaillerde informatie over de methodes die ontwikkeld zijn in de code om de conversie uit te voeren, kan worden gevonden in het [technische report](https://research.tudelft.nl/en/publications/bim2geo-converter/) van versie 0.2.6. Dit report is gebaseerd op een eerdere versie van de code, versie 0.3.x is de huidige versie, waarbij de dieper liggende logica gelijk of vergelijkbaar is gebleven.
 
