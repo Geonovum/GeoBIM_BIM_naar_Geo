@@ -69,11 +69,11 @@ Controle over de applicatie kan op twee manieren worden uitgeoefend, via een Gra
 
 Niet ieder model kan door de IfcEnvelopeExtractor direct verwerkt worden. De software applicatie is ontwikkeld om te werken op veel verschillende modellen, maar niet ieder probleem kan ontweken worden. Daarom moeten modellen mogelijk handmatige gecorrigeerd worden voordat ze kunnen worden verwerkt. Er zijn aantal onderwerpen waarvan het aangeraden wordt om te controleren/corrigeren voor verwerking. Als alleen de buitenkant van het gebouw/bouwwerkt geexporteerd/converteerd moet worden hoeft alleen de georeferentie en het IfcClass gebruik gechecked te worden. Als ook de binnenkant geexporteerd/converteerd moet worden is het ook aangeraden dat de IfcSpace hiërarchie en de IfcBuildingStorey gerelateerde objecten gechecked worden.
 
-##### Georeferencing
+**Georeferencing**
 
 De IfcEnvelopeExtractor neemt de georeferentie over van het IFC bestand. Dit betekend dat als het model correct gegeorefereerd is dat het GIS model direct op de correcte locatie zal worden geplaatst. Echter is de aanwezigheid en kwaliteit van de georeferentie in IFC niet altijd gegarandeerd. Applicaties zoals [IfcGref](https://ifcgref.bk.tudelft.nl/) maken het mogelijk om correcte georeferentie data van een bestand te controleren en eventueel toe te voegen of te corrigeren. De online versie van IfcGref kan IFC bestanden van maximaal 100mb verwerken. Als de bestanden zwaarder zijn dan 100mb kan vanaf de [GitHub pagina](https://github.com/tudelft3d/ifcgref) de code verkregen worden om de applicatie lokaal te gebruiken. De 100mb limiet is dan niet meer aanwezig.
 
-##### Class gebruik
+**Class gebruik**
 
 De IfcEnvelopeExtractor gebruikt maar een sub-set van de IfcClasses die beschikbaar zijn in een volledig IFC bestand. De classes die gebruikt worden zijn classes die tastbare objecten/geometrie vertegenwoordigen die ruimtes van elkaar scheiden. Bijvoorbeeld wanden, deuren en ramen. Deze objecten scheiden kamers van elkaar, maar ook de kamers binnen een gebouw en de lucht aan de buitenkant van een gebouw. Meubels en leidingen zijn ook tastbaar, maar scheiden niet ruimtes van elkaar, dus meestal spelen deze geen rol bij het overzetten van IFC naar GIS.
 
@@ -85,7 +85,7 @@ Het is belangrijk dat de classes in een bestand dus correct gebruikt worden. All
 
 Als dit niet het geval is zal een IFC bestand met de hand moeten worden gecorrigeerd voordat de applicatie het bestand kan verwerken. Met de hand kunnen veel objecten verwijderd worden of de class type van een object veranderd worden.
 
-##### IfcSpace gebruik
+**IfcSpace gebruik**
 
 De IfcEnvelopeExtractor maakt het ook mogelijk om binnenruimtes te exporteren. Bij v3.0.x is dit nog steeds zwaar gebaseerd op de IfcSpace class in het IFC bestand. Een IFC bestand kan drie verschillende compositie type kamers hebben: COMPLEX, ELEMENT en PARTIAL. COMPLEX betekend dat de IfcSpace een groep of cluster van kamers/ruimtes representeert. ELEMENT betekend dat de IfcSpace een enkele kamer/ruimte representeert. PARTIAL betekend dat de IfcSpace een deel van een kamer/ruimte representeert. De applicatie gebruikt alleen de ELEMENT IfcSpace objecten.
 
@@ -93,7 +93,7 @@ In bijna ieder model waarbij kamers/ruimtes zijn gegroepeerd is de compositie ty
 
 Dit zorgt er helaas voor dat als er complexe groeperingen van ruimtes in een IFC bestand aanwezig zijn dat deze altijd met de hand zullen moeten worden gecorrigeerd als interieur  output gewild is. Als geen interieur output gewild is dan kunnen de foutive IfcSpace objecten negeert worden. Net zoals bij de tastbare objecten negeerd de applicatie objecten die niet direct nodig zijn.
 
-##### IfcBuildingStorey gerelateerde objecten
+**IfcBuildingStorey gerelateerde objecten**
 
 De IfcEnvelopeExtractor maakt het mogelijk om verdiepingen of informatie gerelateerd aan de verdiepingen te exporteren. Voor LoD0.2 en LoD0.3 export word een horizontale doorsnede gemaakt door het gebouw om een oppervlakte, of groep van oppervlaktes te maken. Voor LoD0.2 wordt dit door alle gebruikte objecten van het IFC model gedaan. Maar voor de LoD0.3 doorsnede worden alleen de objecten gebruikt die via IfcRelContainedInSpatialStructure objecten aan de verdieping (IfcBuildingStorey) gerelateerd zijn.
 
@@ -105,7 +105,7 @@ Een groter probleem is als een object met de goede verdieping is gerelateerd maa
 
 Zoals eerder vermeld kan de applicatie op twee manieren ingesteld worden, via de GUI en via de ConfigJSON. Als eerste behandelen we de GUI. Aanvullend worden via de ConfigJSON alle instellingen behandeld die niet via de GUI configureerbaar zijn.
 
-##### GUI
+**GUI**
 
 De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn.
 
@@ -121,7 +121,7 @@ Als eerste is dat "Footprint based abstraction". "Footprint based abstraction" w
 
 Alse tweede is dat "Approximate areas and volumes". Zoals het woord "approximate" al suggereerd is dit een inschatting en niet de daadwerkelijke waarde. IFC is een complex format en het is niet altijd mogelijk om een gesloten volume te creeeren. Hierdoor is het niet altijd mogelijk om een correcte inschatting te maken van het volume van een model. Als "Approximate areas and volumes" wordt aangezet dan worden de volumes en oppervlaktes van de meeste objecten die geexporteerd worden berekend met behulp van de voxelisatie. De kwaliteit en betrouwbaarhied van deze resultaten zijn erg afhangkelijk van de grootte van de voxels die zijn gekozen.
 
-##### ConfigJSON
+**ConfigJSON**
 
 #### Samenvoegen van GIS bestanden
 
