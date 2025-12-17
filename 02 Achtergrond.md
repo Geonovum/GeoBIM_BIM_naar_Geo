@@ -97,17 +97,17 @@ De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatyp
 
 Er is software beschikbaar die CityGML bestanden van de ene naar de andere encoding kan omzetten, waardoor afhankelijk van de toepassing de ene of de andere encodig kan worden gebruikt.
 
-| dataset | CityJSON v2.0 | CityGML-XML v3.0 | textures | details | compression |
-|-|-|-|-|-|-|
-| 3DBAG      | 7.0MB | 40MB    | none | Buildings in LoD 0, 1.2, 1.3, 2.2; multiple attributes                                          | **5.7X**   |
-| Den Haag   | 2.7MB | 19MB    | none | 'Tile 01', Buildings (in LoD2) and Terrain are merged                                           | **7.0X**   |
-| Ingolstadt | 4.8MB | 40MB    | none | Buildings in LoD3; multiple attributes                                                          | **8.3X**   |
-| Montréal   | 5.6MB | 53MB   | none | Tile 'VM05'. Buildings in LoD2                                                                  | **9.5X**   |
-| New York   | 110MB | 682MB  | none | Tile 'DA13'. Buildings in LoD2                                                                  | **6X**     |
-| Railway    | 4.5MB | 39MB   | ZIP  | CityGML demo. Buildings, Railway, Terrain, Vegetation (with Geometry Templates), Water, Tunnels | **8.7X**   |
-| Rotterdam  | 2.7MB | 18MB   | ZIP  | Neighbourhood 'Delfshaven'. Buildings in LoD2                                                   | **6.7X**   |
-| Vienna     | 5.6MB | 40MB   | ZIP  | Buildings in LoD2                                                                               | **7.1X**   |
-| Zürich     | 293MB | 2100MB | none | Buildings in LoD2                                                                               | **7X**     |
+| dataset | CityJSON v2.0 | CityGML-XML v3.0 | textures | compression |
+|-|-|-|-|-|
+| 3DBAG      | 7.0MB | 40MB    | none | **5.7X**   |
+| Den Haag   | 2.7MB | 19MB    | none | **7.0X**   |
+| Ingolstadt | 4.8MB | 40MB    | none | **8.3X**   |
+| Montréal   | 5.6MB | 53MB   | none | **9.5X**   |
+| New York   | 110MB | 682MB  | none | **6X**     |
+| Railway    | 4.5MB | 39MB   | ZIP | **8.7X**   |
+| Rotterdam  | 2.7MB | 18MB   | ZIP  | **6.7X**   |
+| Vienna     | 5.6MB | 40MB   | ZIP  | **7.1X**   |
+| Zürich     | 293MB | 2100MB | none  | **7X**     |
 
 In de onderstaande code fragmenten kan de [XML](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/citygml/DenHaag_01.xml) (boven) en [CityJSON](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json) (onder) encoding van CityGML vergeleken worden. Deze twee fragmenten laten de definitie zien van hetzelfde object met een aantal attributen. De geometrie is verwijderd uit de fragmenten. Het is duidelijk te zien dat de XML encoding veel meer karakters nodig heeft om dezelfde informatie over te brengen. Dit draagt bij aan de extra bestandsgrootte.
 

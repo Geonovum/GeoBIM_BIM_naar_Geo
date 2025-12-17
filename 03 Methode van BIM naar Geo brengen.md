@@ -22,15 +22,15 @@ Zowel een 1:1 conversie van de geometrie als een 1:1 mapping resulteerd in een b
 
 ![Verschil tussen een gefilterde en ongefilterde 1:1 vertaling/mapping](media/03_methodes/VerschilFiltered_1_1.jpg "Wireframe representatie die het verschil tussen een gefilterde (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft")
 
-Een 1:1 vertaald bestand komt met veel beperkingen. Ookal heeft het bestand een GIS encoding, het volgt niet het GIS datamodel. Dit betekend dat de meeste viewers het bestand wel kunnen openen maar dat analyses maar beperkt kunnen worden toegepast. De analyse software verwacht een ander datamodel en dit kan resulteren in trage, onbetrouwbare of niet functionele analyses. Aanvullend zijn de 1:1 mappings bestanden erg zwaar, een stedelijk model gevuld met deze soort modellen zal veel problemen kunnen geven.
+Een 1:1 vertaald bestand komt met veel beperkingen. Ookal heeft het bestand een GIS encoding, volgt het niet het GIS datamodel. Dit betekend dat de meeste viewers het bestand wel kunnen openen maar dat analyses maar beperkt kunnen worden toegepast. De analyse software verwacht een ander datamodel en dit kan resulteren in trage, onbetrouwbare of niet functionele analyses. Aanvullend zijn de 1:1 mappings bestanden erg zwaar, een stedelijk model gevuld met deze soort modellen zal veel problemen kunnen geven.
 
-| model | Nestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB)*|  Bestandsgrootte CityJSON LoD3.2 shell extractie (KB)| compression |
+| model | Bestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB)*| Bestandsgrootte Gefilterde CityJSON 1:1 mapping (KB) | Bestandsgrootte CityJSON LoD3.2 shell extractie (KB) |
 |-|-|-|-|-|
-| Huis 1    | 490     |  | 31  |    |
-| Huis 2    | 2.511   |  | 84  |    |
-| kantoor 1 | 10.678  |  | 577 |    |
-| kantoor 2 | 20.795  |  | 667 |    |
-| Flat      | 199.709 |  |     |    |
+| Huis 1    | 490     | | | 31  |
+| Huis 2    | 2.511   | | | 84  |
+| kantoor 1 | 10.678  | | | 577 |
+| kantoor 2 | 20.795  | | | 667 |
+| Flat      | 199.709 | | |     |
 
 *Enkel de IfcBeam, IfcColumn, IfcCovering, IfcCurtainWall, IfcDoor, IfcMember, IfcPlate, IfcRoof, IfcSlab, IfcWall, IfcWallStandardCase, IfcWindow classes en gerelateerde attributen zijn overgezet
 

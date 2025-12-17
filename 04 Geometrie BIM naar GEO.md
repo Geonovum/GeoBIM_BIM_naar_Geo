@@ -16,6 +16,18 @@ De IfcEnvelopeExtractor roteerde de bounding box zo dat het volume van de result
 
 ### Voxelisatie
 
+Een alternative shell extractie methode die wordt gebruikt is voxelisatie. Voxelisatie benaderd de vorm van een gebouw/bouwwerk met behulp van VOlumetriche piXELS (voxels). De resulterende vorm kan worden gezien als een blokkendoos representatie van het input model. Dit is op dit moment geen standaard GIS vorm die wordt ondersteund door de geaccepteerde LoD frameworks. Echter wordt dit wel als belangrijk beschouwd. Voxelisatie kan namelijk aspecten van een gebouw opslaan die verder alleen in hele complexe LoD modellen beschikbaar is (LoD3+), zoals overhang en gevelopeningen.
 
+Voxelisatie komt echter met unieke problemen waarvoor nog geen standaard methode voor is opgesteld. Zo is de vorm van het gevoxeliseerde model afhankelijk van de voxelgrootte en de rotatie van de grid dat gebruikt werd tijdens de voxelisatie. 
+
+<!-- niet standaard, wel handig -->
+<!-- voxelgrootte en rotatie -->
+<!-- onbetrouwbare data -->
 
 ### Hoge resolutie schil
+
+
+
+<!-- verschil in pre-filtering, classe selectie, voxel filtering -->
+<!-- verschil in output van een enkele tool -->
+<!-- verschil in surface detection, ray casting, voxel assisted ray casting, alpha shapes -->
