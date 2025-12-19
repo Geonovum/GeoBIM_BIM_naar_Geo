@@ -1402,7 +1402,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
@@ -1976,13 +1976,39 @@ ul.index code{color:inherit}
 </section><section id="applicatie-instellen"><div class="header-wrapper"><h6 id="x5-4-2-1-2-applicatie-instellen"><bdi class="secno">5.4.2.1.2 </bdi>Applicatie instellen</h6><a class="self-link" href="#applicatie-instellen" aria-label="Permalink for Section 5.4.2.1.2"></a></div>
 <p>Zoals eerder vermeld kan de applicatie op twee manieren ingesteld worden, via de GUI en via de ConfigJSON. Als eerste behandelen we de GUI. Aanvullend worden via de ConfigJSON alle instellingen behandeld die niet via de GUI configureerbaar zijn.</p>
 <p><strong>GUI</strong></p>
-<p>De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn.</p>
-<p>De eerste groep zijn de algemene I/O instellingen. Waar staat de input opgeslagen en waar moet de output naar geschreven worden. Dit kan worden geconfigureerd door de bestandslocaties in de text balken in te vullen of via de "browse" button. De applicatie support meerdere input bestanden. Dut modellen die zijn opgesplits in aspect modellen kunnen door de applicatie gebruikt worden. Het is aan te raden om modellen/bestanden waarvan het bekend is dat ze geen belang spelen voor het omzetten van de geometrie naar GIS niet bij te selecteren. Bijvoorbeeld modellen met alleen leidingen hoeven niet als input gebruikt te worden. Om de IFC objecten te selecteren die belangrijk zijn voor de omzetting leest het programma ieder IFC bestand in om vervolgens de selectie te maken. Als de selectie gedeeltelijk van te voren gemaakt kan worden door bepaalde bestanden buiten te sluiten dan zal dit het omzettingsprocess versnellen.</p>
-<p>De tweede groep zijn de gewilde output LoD. Dit is een lijst aan beschikbare LoD die de tool kan genereren. Afhankelijk van het doel van de GIS export kan hier een selectie van gemaakt worden. De LoD zijn gesorteerd in complexiteit. De eerste rij is relatief simpel te genereren, de tweede rij is lastiger en de derde rij zijn vrij complex.</p>
-<p>Onderaan deze groep is het ook mogelijk om extra output te genereren in .obj of .STEP. De tool zal altijd een CityJSON bestand genereren. Maar het is mogelijk om kopien te maken in .obj en .STEP. Deze bestanden zullen niet de semantische informatie bevatten die de CityJSON output bezit. De bestanden supporten ook geen multi LoD, daarom wordt iedere LoD in een los bestand geplaatst. Deze kopie bestanden hebben dezelfde naam als de gekozen output naam, maar ze zullen eLoDxx en iLoDxx toegevoegd hebben om de buiten en binnenkant van het gebouw te representeren. Waarbij de xx vervangen wordt door de daadwerkelijke LoD.</p>
-<p>De derde groep zijn de aanvullende instellingen. Dit zijn instellingen die een abstractie extra detail kan geven, of juist detail kan wegnemen. Zo kan bijvoorbeeld via deze instellingingen gekozen worden voor alleen een export van het interieur. Er zijn twee instellingen die niet extreem buidelijk zijn en extra uitleg nodig hebben.</p>
-<p>Als eerste is dat "Footprint based abstraction". "Footprint based abstraction" wil zeggen dat de modellen worden gelimiteerd door de voetprint. Voor LoD1.2, 1.3 en 2.2 worden de oppervlaktes die het dak representeren naar de voetprint hoogte geextrudeerd. Dit betekend dat het dak de omvang van het gebouw bepaald. Als het dak over de voetprint van het gebouw heenhangt dan wordt het uiteindelijk grondoppervlak van de LoD1.2, 1.3 en 2.2 abstractie groter dan de daadwerkelijke voetprint. Als "Footprint based abstraction" wordt aangezet dan worden de dakoppervlaktes eerst bijgesneden zodat er nergens overhang is over de voetprint. Hierdoor zijn de grondoppervlaktes van LoD1.2, 1.3 en 2.2 identiek aan de voetprint van het gebouw. Een bijeffect hiervan is dat als er overhang in het gebouw aanwezig is de dakoppervlaktes nu kleiner zijn de de LoD0.2, 0.3 en 0.4.</p>
-<p>Alse tweede is dat "Approximate areas and volumes". Zoals het woord "approximate" al suggereerd is dit een inschatting en niet de daadwerkelijke waarde. IFC is een complex format en het is niet altijd mogelijk om een gesloten volume te creeeren. Hierdoor is het niet altijd mogelijk om een correcte inschatting te maken van het volume van een model. Als "Approximate areas and volumes" wordt aangezet dan worden de volumes en oppervlaktes van de meeste objecten die geexporteerd worden berekend met behulp van de voxelisatie. De kwaliteit en betrouwbaarhied van deze resultaten zijn erg afhangkelijk van de grootte van de voxels die zijn gekozen.</p>
+<p>
+      </p><figure id="fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">
+        <img src="media/07_toepassingen/menus.jpg" alt="De GUI van de IfcEnvelopeExtractor">
+        <figcaption><a class="self-link" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></figcaption>
+      </figure>
+    <p></p>
+<p>De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn. In de afbeelding hierboven zijn de groepen weergegeven.</p>
+<ul>
+<li>A: Algemene I/O instellingen</li>
+<li>B: Verwachte output LoD en encoding</li>
+<li>C: Aanvullende instellingen</li>
+<li>D: Numerieke parameters</li>
+<li>E: Geometrische parameters</li>
+</ul>
+<p>De eerste groep zijn de algemene I/O instellingen (A). Dit gaat over waar de input bestanden staan en waar de output naartoe moet worden geschreven. Dit kan worden geconfigureerd door de bestandslocaties in de tekst balken in te vullen of via de "browse" button. De applicatie support meerdere input bestanden. Dus modellen die zijn opgesplitst in aspect modellen kunnen door de applicatie gebruikt worden. Het is aan te raden om modellen/bestanden waarvan het bekend is dat ze geen belang spelen voor de omzetting niet als input te gebruiken. Bijvoorbeeld modellen met alleen leidingen hoeven niet als input gebruikt te worden. Om de IFC objecten te selecteren die belangrijk zijn voor de omzetting leest het programma ieder IFC bestand in om vervolgens de selectie te maken. Als de selectie gedeeltelijk van te voren gemaakt kan worden door bepaalde bestanden buiten te sluiten dan zal dit het omzettingsprocess versnellen.</p>
+<p>De tweede groep zijn de verwachte output LoD en encoding (B). Afhankelijk van het doel van de GIS export kan hier een selectie van gemaakt worden. De eerste drie rijen van deze lijst is gesorteerd in complexiteit. De vierde rij valt hierbuiten, in deze rij staat de 1:1 vertaling/mapping. Dit zijn meestal relatief trage processen die maar in beperkte mate complex zijn.</p>
+<p>
+      </p><figure id="fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt">
+        <img src="media/07_toepassingen/output_alt_encoding.JPG" alt="Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt">
+        <figcaption><a class="self-link" href="#fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.</span></figcaption>
+      </figure>
+    <p></p>
+<p>Onderaan deze groep kan de encoding aangevuld worden. De tool zal altijd een CityJSON bestand genereren. Maar het is mogelijk om extra kopieën te genereren in .obj en/of .STEP encodig. Deze bestanden zijn enkel geometrisch. Semantische data zoals attributen woren niet in deze bestanden opgeslagen. De bestanden ondersteunen ook geen multi LoD, daarom wordt iedere LoD in een los bestand geplaatst. Deze kopieën hebben dezelfde naam als de gekozen output naam, maar ze zullen eLoDxx en iLoDxx toegevoegd hebben om de buiten- en binnenkant van het gebouw te representeren. Waarbij de xx vervangen wordt door de daadwerkelijke LoD. Deze instelling is nog niet volledige ondersteund voor iedere LoD door de software</p>
+<p>De derde groep zijn de aanvullende instellingen (C). Dit zijn instellingen die een abstractie extra detail kan geven, of juist detail kan wegnemen. Zo kan bijvoorbeeld via deze instellingingen gekozen worden voor alleen een export van het interieur. Er zijn twee instellingen die niet per se voor zichzelf spreken en extra uitleg nodig hebben.</p>
+<p>De eerste is "Footprint based abstraction". "Footprint based abstraction" dicteert of de modellen moeten worden gelimiteerd door de voetafdruk. Voor LoD1.2, 1.3 en 2.2 worden de oppervlaktes die het dak representeren naar de voetafdruk hoogte geëxtrudeerd. Dit betekend dat het dak de omvang van het gebouw bepaald. Als het dak over de voetafdruk van het gebouw heen hangt dan wordt het uiteindelijk grondoppervlak van de LoD1.2, 1.3 en 2.2 abstractie groter dan de daadwerkelijke voetafdruk. Als "Footprint based abstraction" wordt aangezet dan worden de dakoppervlaktes eerst bijgesneden zodat er nergens overhang is over de voetafdruk. Hierdoor zijn de grondoppervlaktes van LoD1.2, 1.3 en 2.2 identiek aan de daadwerkelijke voetafdruk van het gebouw. Een bijeffect hiervan is dat als er overhang in het gebouw aanwezig is de dakoppervlaktes nu kleiner zijn de LoD0.2, 0.3 en 0.4.</p>
+
+
+<p>De tweede is "Approximate areas and volumes". Zoals het woord "approximate" suggereert is dit een inschatting en niet de daadwerkelijke waarde. IFC modellen zijn geometrisch complex en het is niet altijd mogelijk om een gesloten schil te creëren. Zonder een geslote schil is het moeilijk de het volume te berekenen. Als "Approximate areas and volumes" wordt aangezet dan worden de volumes en oppervlaktes van de schillen berekend op basis van de voxelisatie. De kwaliteit en betrouwbaarheid van deze resultaten zijn erg afhankelijk van de grootte van de voxels die zijn gekozen.</p>
+<p>De vierde groep zijn de Numerieke parameters (D). Dit zijn de enige numerieke controle die de gebruiker over de applicatie heeft. De tool gebruikt voxels voor veel processen, hierdoor is het lastig om een correcte grootte te kiezen. Over het algemeen is iets kleiner dan de grootte van de kleinste nis gedeeld door twee in het model een goede waarde. Mocht dit onbekend zijn dan is 0.2 meter meestal goed.</p>
+<p>De voetafdruk hoogte is de waarde waarop de voetafdruk zich bevindt. Voor de meeste input modellen moet dit met de hand gemeten worden. Vaak is 0 correct, maar soms wordt het lokale coördinatensysteem gebruikt om foutieve georeferencie te compenseren. Als het IFC model gemaakt is volgens de <a href="https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/">BIM basis ILS</a> van DigiGO dan kan de automatische instelling gebruikt worden om de tool zelf de voetafdruk hoogte te vinden. Het programma zoekt dan naar een verdieping die begint met "00" dat wordt gevolgd door een spatie.</p>
+<p>De vijfde groep zijn de Geometrische parameters(E). Deze instellingen gaan over de geometrie van het IFC bestand dat de tool gebruikt. De bovenste rij zijn drie check boxes die gaan over het tekst vak eronder. Dit tekst vak laat alle IFC classes zien de worden gebruikt door de software. De IfcBuildingElementProxy objecten kunnen hier aan toegevoegd worden door "Ignore Proxy Elements" uit te zetten. De standaard objecten worden uit deze lijst gehaald door "Use default div Object" uit te zetten. Er kunnen zelf object classes toegevoegd worden aan het tekst vak door het te ontgrendelen door "Custom div objects" aan te zetten. De software gebruikt alleen bestaande <a href="https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/link/alphabeticalorder-entities.htm">IfcClasses</a>. Dit is niet hoofdletter gevoelig.</p>
+<p>De onderste rij zijn weer drie check boxes. Dit zijn nog enkele losse instellingen die gerelateerd zijn aan de geometrie van het IFC bestand. "Use simple geo" dicteerd of void objecten moeten worden toegepast op volumetrische objecten. "Use high precision" dicteerd of een precisie van 1e-6m of 1e-4m moet worden gebruikt. "Use voxel filtering" dicteerd of er moet worden gefilterd met voxel intersecties voordat complexere filters worden toegepast. Voxels gebruiken om te filteren is sneller, maar ook minder precies.</p>
+<p>Als de instellingen zijn bepaald kan het programma direct worden gestart door de "Run" knop in te drukken, of een ConfigJSON kan worden gemaakt door de "Generate" knop te drukken.</p>
 <p><strong>ConfigJSON</strong></p>
 </section><section id="samenvoegen-van-gis-bestanden"><div class="header-wrapper"><h6 id="x5-4-2-1-3-samenvoegen-van-gis-bestanden"><bdi class="secno">5.4.2.1.3 </bdi>Samenvoegen van GIS bestanden</h6><a class="self-link" href="#samenvoegen-van-gis-bestanden" aria-label="Permalink for Section 5.4.2.1.3"></a></div>
 <p>De output van de BIM2Geo converter is een model van een enkel bouwwerk, of (afhankelijk van de BIM model) een relatief kleine cluster van gebowuen. Om dit model in de omgeving the plaatsen is het mogelijk om de CityJSON output samen te voegen met een CityJSON tegel van bijvoorbeeld de 3D bag. Op dit moment is het nog niet mogelijk om dit direct met de BIM2Geo converter te doen. Een alternatieve oplossing is het gebruiken van <a href="https://github.com/cityjson/cjio">cijo</a> (CityJSON/io).</p>
@@ -1994,7 +2020,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD00.jpg" alt="Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">17</bdi></a> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></figcaption>
       </figure>
     <p></p>
 <p>2D bounding box representatie van het input BIM model.</p>
@@ -2017,7 +2043,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD02.jpg" alt="Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">18</bdi></a> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>Simpel 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2052,7 +2078,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD03.jpg" alt="Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">17</bdi></a> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">19</bdi></a> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2081,7 +2107,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD04.jpg" alt="Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">18</bdi></a> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">20</bdi></a> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak dezelfde vorm behoud als de geometrische bron. Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2104,7 +2130,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD10.jpg" alt="Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">19</bdi></a> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">21</bdi></a> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D bounding box representatie van het input BIM model.</p>
@@ -2121,7 +2147,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD12.jpg" alt="Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">20</bdi></a> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">22</bdi></a> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model met unform vlakke boven en onder oppervlaktes.</p>
@@ -2148,7 +2174,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD13.jpg" alt="Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">21</bdi></a> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">23</bdi></a> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model met vlakke oppervlaktes. Ieder oppervlak heeft een normaal richting met een z-component dat gelijk is aan 1 of 0.</p>
@@ -2165,7 +2191,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD22.jpg" alt="Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">22</bdi></a> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">24</bdi></a> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model.</p>
@@ -2188,7 +2214,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD32.jpg" alt="Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">23</bdi></a> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">25</bdi></a> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>3D volumetrische representatie van het input BIM model.</p>
@@ -2211,7 +2237,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD40.jpg" alt="Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">24</bdi></a> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">26</bdi></a> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren.</p>
@@ -2228,7 +2254,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD41.jpg" alt="Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">25</bdi></a> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">27</bdi></a> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van de ruimte scheidende objecten van het input BIM model.</p>
@@ -2245,7 +2271,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD42.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">26</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">28</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van van het input BIM model.</p>
@@ -2259,6 +2285,12 @@ ul.index code{color:inherit}
 </li>
 </ul>
 </section><section id="lod5-0-lodv"><div class="header-wrapper"><h6 id="x5-4-2-2-13-lod5-0-lodv"><bdi class="secno">5.4.2.2.13 </bdi>LoD5.0/LoDv</h6><a class="self-link" href="#lod5-0-lodv" aria-label="Permalink for Section 5.4.2.2.13"></a></div>
+<p>
+      </p><figure id="fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">
+        <img src="media/07_toepassingen/LoD50.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">Figuur <bdi class="figno">29</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+      </figure>
+    <p></p>
 <p>3D voxelisatie representatie van het model.</p>
 <p>De representatie bestaat uit:</p>
 <ul>
@@ -2270,8 +2302,8 @@ ul.index code{color:inherit}
 </li>
 <li>Binnenschil<ul>
 <li>$n \geq 1$.</li>
-<li>Type: <em>CeilingSurface</em>, <em>FloorSurface</em> of <em>InteriorWallSurface</em></li>
-<li>Volume dat per kamer is door alle interne oppervlaktes van de voxelistaie te isoleren. Dit is niet gebaseerd op de IfcSpace objecten maar de ruimte scheidende objecten. De naam en attributen van de kamer kan wel worden gebaseerd op de IfcSpace objecten.</li>
+<li>Type: geen types geimplementeerd</li>
+<li>Volume dat per kamer is door alle interne oppervlaktes van de voxelisatie te isoleren. Dit is niet gebaseerd op de IfcSpace objecten maar de ruimte scheidende objecten. De naam en attributen van de kamer kan wel worden gebaseerd op de IfcSpace objecten.</li>
 </ul>
 </li>
 </ul>
@@ -2285,7 +2317,7 @@ ul.index code{color:inherit}
 <p>
       </p><figure id="fig-onderschrift">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">27</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">30</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties"><div class="header-wrapper"><h3 id="x6-3-referenties"><bdi class="secno">6.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 6.3"></a></div>
@@ -2335,7 +2367,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>
       </p><figure id="fig-onderschrift-0">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">28</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">31</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties-0"><div class="header-wrapper"><h4 id="x6-6-2-referenties"><bdi class="secno">6.6.2 </bdi>Referenties</h4><a class="self-link" href="#referenties-0" aria-label="Permalink for Section 6.6.2"></a></div>
@@ -2398,33 +2430,39 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
   </li><li class="tofline">
     <a class="tocxref" href="#fig-de-spoorzone-van-delft-is-een-gebied-waar-veel-nieuwbouw-plaatsvind-en-laat-zien-dat-3dbag-vertraagd-update-twee-gebouwen-zijn-wel-aanwezig-in-2dbag-de-grijze-uitlijnen-maar-een-3d-representatie-is-nog-niet-beschikbaar-bim-gebaseerde-gis-modellen-kunnen-hier-een-uitkomst-bieden"><span class="self-link">Figuur <bdi class="figno">14</bdi></span> <span class="fig-title">De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update. Twee gebouwen zijn wel aanwezig in 2Dbag (de grijze uitlijnen) maar een 3D representatie is nog niet beschikbaar. BIM gebaseerde GIS modellen kunnen hier een uitkomst bieden.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">15</bdi></span> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></a>
+    <a class="tocxref" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker"><span class="self-link">Figuur <bdi class="figno">15</bdi></span> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">16</bdi></span> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt"><span class="self-link">Figuur <bdi class="figno">16</bdi></span> <span class="fig-title">Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">17</bdi></span> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">17</bdi></span> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">18</bdi></span> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">18</bdi></span> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">19</bdi></span> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">19</bdi></span> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">20</bdi></span> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">20</bdi></span> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">21</bdi></span> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">21</bdi></span> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">22</bdi></span> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">22</bdi></span> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">23</bdi></span> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">23</bdi></span> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">24</bdi></span> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">24</bdi></span> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">25</bdi></span> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">25</bdi></span> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">26</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">26</bdi></span> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">27</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">27</bdi></span> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">28</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">28</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0"><span class="self-link">Figuur <bdi class="figno">29</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">30</bdi></span> <span class="fig-title">Onderschrift</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">31</bdi></span> <span class="fig-title">Onderschrift</span></a>
   </li>
       </ul></section>
 <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
