@@ -3,7 +3,7 @@
 ## Handleiding/HowTo
 
 | Applicatie | BIM/IFC direct openen | 1:1 vertaling | Gefilterde 1:1 vertaling | Shell extractie | CityGML LoD support | CityJSON LoD support |
-|-|-|-|-|-|-|-|
+| - | - | - | - | - | - | - |
 | ESRI ArcGIS Pro| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | IFC2GeoJSON | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | Save Software FME | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
@@ -18,16 +18,17 @@
 
 ## ESRI ArcGIS Pro
 
+# 1:1 vertaling/mapping
+
 ## Save Software FME
 
+# Shell extraction
 
 ## BIMShell
 
-# Plugins/Tooling
-
 ## IfcEnvelopeExtractor
 
-De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet een 1:1 omzetting van IFC naar een ander GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van Biljecki et al. Aanvullend zijn er een aantal experimentele LoDs en een 1:1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.
+De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet alleen een 1:1 omzetting van IFC naar een ander GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf). Aanvullend zijn er een aantal experimentele LoDs en een 1:1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.
 
 De applicatie is toegankelijk via de [GitHub pagina](https://github.com/tudelft3d/IFC_BuildingEnvExtractor). Hier zijn de source code en gecompilde executables beschikbaar. De gecompilde executables zijn beschikbaar voor zowel Windows als Linux (Ubuntu). Gedetaillerde informatie over de methodes die ontwikkeld zijn in de code om de conversie uit te voeren, kan worden gevonden in het [technische report](https://research.tudelft.nl/en/publications/bim2geo-converter/) van versie 0.2.6. Dit report is gebaseerd op een eerdere versie van de code, versie 0.3.x is de huidige versie, waarbij de dieper liggende logica gelijk of vergelijkbaar is gebleven.
 
@@ -97,5 +98,225 @@ Alse tweede is dat "Approximate areas and volumes". Zoals het woord "approximate
 
 De output van de BIM2Geo converter is een model van een enkel bouwwerk, of (afhankelijk van de BIM model) een relatief kleine cluster van gebowuen. Om dit model in de omgeving the plaatsen is het mogelijk om de CityJSON output samen te voegen met een CityJSON tegel van bijvoorbeeld de 3D bag. Op dit moment is het nog niet mogelijk om dit direct met de BIM2Geo converter te doen. Een alternatieve oplossing is het gebruiken van [cijo](https://github.com/cityjson/cjio) (CityJSON/io).
 
+### Output specificatie
+
+De IfcEnvelopeExtractor ondersteunt 12 verschillende "reguliere" LoD. Deze LoD volgen een aangepaste LoD framework dat zowel het framework van de CityGML2.0/3.0 standaard en van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) combineerd en op uitbreid. Een deel van de verschillen komt voort uit benodigde interpretatie van regels die niet duidelijk gedefinieerd zijn in de gebruikte/bestaande frameworks. Aanvullend is het framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) gebaseerd op modellen die zijn gemaakt op basis in-situ metingen gecombineerd met 2D polygonen. Hier zitten andere beperkingen aan dan aan modellen gebaseerd op BIM. Hierdoor zijn niet alle aspecten van het framework passend.
+
+Een deel van de volgende samenvatting van de output kan ook worden gevonden in het technische rapport van de [IfcEnvelopeExtractor V0.2.6](https://repository.tudelft.nl/file/File_5924bb4a-a5e4-42ff-b1ed-48168728d12a?preview=1). Dit document geeft ook een uitgebreide uitleg over de methodes die zijn gebruikt om de abstractie modellen te creëren. Echter is versie V0.3.2 van de software beschikbaar tijdens het schrijven van dit document. V0.3.2 gebruikt een aantal andere regels en methodes. Daarnaast is ook de mogelijke output uitgebreid, LoD4 werd nog niet ondersteunt door v0.2.
+
+Niet iedere LoD die beschikbaar is in het framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) wordt behandeld in deze lijst. Dat betekend niet dat ze niet belangrijk zijn, alleen dat de exctractor deze LoD niet als output genereerd.
+
+#### LoD0.0
+
+![Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD00.jpg "Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT")
+
+2D bounding box representatie van het input BIM model.
+
+De representatie bestaat uit:
+
+* Dak oppervlak
+  * $n = 1$
+  * Type: _RoofSurface_ of _+ProjectedRoofOutline_ als geen voetafdruk extractie is gekozen.
+  * Het bovenoppervlak van de kleinst georiënteerde bounding box om het totale model heen.
+* Grond/voetafdruk oppervlak
+  * $n = 1$
+  * Type: _GroundSurface_
+  * Het bovenoppervlak van de kleinst georiënteerde bounding box alle objecten die +-0.5 m zijn geplaatst van de voetafdruk
+
+#### LoD0.2
+
+![Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD02.jpg "Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven")
+
+Simpel 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).
+
+De representatie bestaat uit:
+
+* Dak oppervlak
+  * $n \geq 1$
+  * Type: _RoofSurface_ of _+ProjectedRoofOutline_ als geen voetafdruk extractie is gekozen.
+  * Een oppervlak dat is gemaakt door alle top oppervlaktes van de dak structuur to projecteren op de xy vlak. De geprojecteerde oppervlaktes die tegen elkaar rusten worden samengevoegd. Deze oppervlaktes worden op de voetafdruk hoogte geplaatst als geen voetafdruk output wordt gegenereerd. Als er wel voetafdruk output wordt gegenereerd worden deze oppervlaktes op de max z hoogte van het BIM model geplaatst.
+* Grond/voetafdruk oppervlak
+  * $n \geq 1$
+  * Type: _GroundSurface_
+  * Een oppervlak dat is gemaakt door een sectie te maken door het hele IFC model ter hoogte van de voetafdruk z waarde. Horizontale oppervlaktes die dicht bij deze sectiehoogte liggen (±0.15m) worden ook aan deze selectie toegevoegd. De resulterende vlakke oppervlaktes worden samengevoegd. De binnenringen die schachten en vergelijkbare elementen representeren worden verwijderd. Deze representatie is identiek voor de LoD0.3 and 0.4 grond/voetafdruk oppervlak.
+* Verdiepingsoppervlak
+  * Als IFC bestand _IfcBuildingStorey_ objecten bevat $n \geq 1$ anders $n = 0$.
+  * Type: _FloorSurface_
+  * Oppervlaktes die zijn gemaakt door een sectie te maken door het hele IFC model ter hoogte van iedere verdieping. Horizontale oppervlaktes die dicht bij deze sectiehoogte liggen (±0.15m) worden ook aan deze selectie toegevoegd. De resulterende vlakke oppervlaktes worden samengevoegd.
+* Kamer oppervlak
+  * Als IFC bestand _IfcSpace_ objecten bevat $n \geq 1$ anders $n = 0$.
+  * Type: _+ProjectedCeilingOutline_
+  * Oppervlaktes die zijn gemaakt door, per kamer, de plafond oppervlaktes plat te projecteren op de minimale z hoogte van de kamer. Deze vlakke oppervlaktes worden samengevoegd om een oppervlak te maken per kamer.
+
+#### LoD0.3
+
+![Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD03.jpg "Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven")
+
+2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).
+
+De representatie bestaat uit:
+
+* Dak oppervlak
+  * $n \geq 1$
+  * Type: _RoofSurface_
+  * Oppervlaktes die zijn gemaakt op basis van de dak structuur van het input model. De top oppervlaktes van het dak worden geïsoleerd en gegroepeerd als ze elkaar aanraken of snijden. Per groep wordt een plat oppervlak gemaakt door deze groepen plat te projecteren, samen te voegen en op de top z hoogte te plaatsen van de originele groep. Overlap tussen de verschillende oppervlaktes wordt geëlimineerd door de lager gelegen oppervlaktes te trimmen.
+* Grond/voetafdruk oppervlak
+  * $n \geq 1$
+  * Type: _GroundSurface_
+  * Een oppervlak dat is gemaakt door een sectie te maken door het hele IFC model ter hoogte van de voetafdruk z waarde. Horizontale oppervlaktes die dicht bij deze sectiehoogte liggen (±0.15m) worden ook aan deze selectie toegevoegd. De resulterende vlakke oppervlaktes worden samengevoegd. De binnenringen die schachten en vergelijkbare elementen representeren worden verwijderd. Deze representatie is identiek voor de LoD0.2 and 0.4 grond/voetafdruk oppervlak.
+* Verdiepings oppervlak
+  * Als IFC bestand _IfcBuildingStorey_ objecten bevat $n \geq 1$ anders $n = 0$.
+  * Type: _FloorSurface_ en _OuterFloorSurface_
+  * Oppervlaktes die zijn gemaakt door een sectie te maken door het hele IFC model ter hoogte van iedere verdieping. Horizontale oppervlaktes die dicht bij deze sectiehoogte liggen (±0.15m) worden ook aan deze selectie toegevoegd. Voor ieder oppervlak wordt getest of het binnen of buiten het gebouw ligt. Per group worden de vlakke oppervlaktes worden samengevoegd.
+
+#### LoD0.4
+
+![Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD04.jpg "Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.")
+
+2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak dezelfde vorm behoud als de geometrische bron. Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).
+
+De representatie bestaat uit:
+
+* Dak oppervlak
+  * $n \geq 1$
+  * Type: _RoofSurface_
+  * Oppervlaktes die zijn gemaakt op basis van de dak structuur van het input model. De top oppervlaktes van het dak worden geisoleerd en gegroepeerd als ze elkaar aanraken of snijden. Overlap tussen de verschillende oppervlaktes wordt geelimineerd door de lager gelegen oppervlaktes te trimmen.
+* Grond/voetafdruk oppervlak
+  * $n \geq 1$
+  * Type: _GroundSurface_
+  * Een oppervlak dat is gemaakt door een sectie te maken door het hele IFC model ter hoogte van de voetafdruk z waarde. Horizontale oppervlaktes die dicht bij deze sectiehoogte liggen (±0.15m) worden ook aan deze selectie toegevoegd. De resulterende vlakke oppervlaktes worden samengevoegd. De binnenringen die schachten en vergelijkbare elementen representeren worden verwijderd. Deze representatie is identiek voor de LoD0.2 and 0.3 grond/voetafdruk oppervlak.
+
+#### LoD1.0
+
+![Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD10.jpg "Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.")
+
+3D bounding box representatie van het input BIM model.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n = 1$
+  * Type: _RoofSurface_, _GroundSurface_ of _WallSurface_
+  * De kleinst georiënteerde bounding box om het totale model heen.
+
+#### LoD1.2
+
+![Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD12.jpg "Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven")
+
+2.5D volumetrische representatie van het input BIM model met unform vlakke boven en onder oppervlaktes.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n \geq 1$
+  * Type: _RoofSurface_, _GroundSurface_ of _WallSurface_
+  * Volume kan gemaakt worden op twee manieren:
+    * door het LoD0.2 dakoppervlak naar de grondhoogte te extruderen
+    * door het LoD0.2 grondoppervlak naar de tophoogte van het gebouw te extruderen.
+* Binnenschil
+  * Als IFC bestand _IfcBuildingStorey_ objecten bevat $n \geq 1$ anders $n = 0$.
+  * Type: _CeilingSurface_, _FloorSurface_ of _InteriorWallSurface_
+  * Volume dat per kamer is gemaakt door de LoD0.2 _+ProjectedCeilingOutline_ represenatie te extruderen naar de tophoogte van de kamer.
+
+#### LoD1.3
+
+![Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD13.jpg "Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.")
+
+2.5D volumetrische representatie van het input BIM model met vlakke oppervlaktes. Ieder oppervlak heeft een normaal richting met een z-component dat gelijk is aan 1 of 0.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n \geq 1$
+  * Type: _RoofSurface_, _GroundSurface_ of _WallSurface_
+  * Volume dat is gemaakt door de LoD0.3 dakoppervlaktes naar de grondhoogte te extruderen. De resulterende volumes worden samengevoegd. Het is mogelijk om dit volume bij te trimmen zodat de voetafdruk van dit volume overeen komt de de LoD0.2 voetafdruk.
+
+#### LoD2.2
+
+![Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD22.jpg "Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven")
+
+2.5D volumetrische representatie van het input BIM model.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n \geq 1$
+  * Type: _RoofSurface_, _GroundSurface_ of _WallSurface_
+  * Volume dat is gemaakt door de LoD0.4 dakoppervlaktes naar de grondhoogte te extruderen. De resulterende volumes worden samengevoegd. Het is mogelijk om dit volume bij te trimmen zodat de voetafdruk van dit volume overeen komt de de LoD0.2 voetafdruk.
+* Binnenschil
+  * Als IFC bestand _IfcBuildingStorey_ objecten bevat $n \geq 1$ anders $n = 0$.
+  * Type: _CeilingSurface_, _FloorSurface_ of _InteriorWallSurface_
+  * Volume dat per kamer is gemaakt door de plafondoppervlaktes van de kamer te extruderen naar de minimale vloer hoogte van de kamer.
+
+#### LoD3.2
+
+![Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD32.jpg "Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven")
+
+3D volumetrische representatie van het input BIM model.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n \geq 1$
+  * Type: _RoofSurface_, _GroundSurface_, _WallSurface_, _Window_ of _Door_
+  * Volume dat is gemaakt door alle (deels) externe oppervlaktes te filteren met behulp van raycasting. Deze oppervlaktes worden met elkaar getrimd en de getrimde delen die aan de buitenkant van het gebouw liggen worden samengevoegd.
+* Binnenschil
+  * Als IFC bestand _IfcBuildingStorey_ objecten bevat $n \geq 1$ anders $n = 0$.
+  * Type: _CeilingSurface_, _FloorSurface_ of _InteriorWallSurface_
+  * Volume dat per kamer is gemaakt door de IfcSpace vorm over te nemen.
+
+#### LoD4.0
+
+![Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD40.jpg "Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.")
+
+3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren.
+
+De representatie bestaat uit:
+
+* Complex
+  * Als objecten met IsExternal aanwezig zijn $n \geq 1$ anders $n = 0$
+  * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
+  * Groep van volumes dat is verzameld door de ruimte scheidende IFC objecten met het attribuut IsExternal dat de waarde True heeft in het model 1:1 over te zetten.
+
+#### LoD4.1
+
+![Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD41.jpg "Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.")
+
+3D complex (geen schil) representatie van de ruimte scheidende objecten van het input BIM model.
+
+De representatie bestaat uit:
+
+* Complex
+  * $n \geq 1$
+  * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
+  * Groep van volumes dat is verzameld door de IFC objecten die zijn gekozen als ruimte scheidende objecten 1:1 over te zetten.
+
+#### LoD4.2
+
+![Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD42.jpg "Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.")
+
+3D complex (geen schil) representatie van van het input BIM model.
+
+De representatie bestaat uit:
+
+* Complex
+  * $n \geq 1$
+  * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
+  * Groep van volumes dat is verzameld door de IFC objecten 1:1 over te zetten. Deze abstractie gebruikt geen versimpelde representatie van de ramen en deuren zoals de rest van de abstractie wel doet.
+
+#### LoD5.0/LoDv
+
+3D voxelisatie representatie van het model.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n \geq 1$
+  * Type: _RoofSurface_, _GroundSurface_, _WallSurface_, _Window_ of _Door_
+  * Volume dat is gemaakt door alle externe oppervlaktes van de voxelisatie te isoleren. Op basis van van de soort IFC objecten die de voxels snijden kunnen deze oppervlaktes een type gegeven worden. oppervlaktes met hetzelfde type worden samengevoegd.
+* Binnenschil
+  * $n \geq 1$.
+  * Type: _CeilingSurface_, _FloorSurface_ of _InteriorWallSurface_
+  * Volume dat per kamer is door alle interne oppervlaktes van de voxelistaie te isoleren. Dit is niet gebaseerd op de IfcSpace objecten maar de ruimte scheidende objecten. De naam en attributen van de kamer kan wel worden gebaseerd op de IfcSpace objecten.
 
 ## IFC2GeoJSON
