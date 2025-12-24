@@ -24,13 +24,13 @@ Zowel een 1:1 conversie van de geometrie als een 1:1 mapping resulteerd in een b
 
 Een 1:1 vertaald bestand komt met beperkingen. Ookal heeft het bestand een GIS encoding, het volgt niet het GIS datamodel. Dit betekend dat de meeste viewers het bestand wel kunnen openen maar dat analyses maar beperkt gebruik kunnen maken van deze soort bestanden. De analyse software verwacht een ander datamodel en dit kan resulteren in trage, onbetrouwbare of niet functionele analyses. Aanvullend zijn de 1:1 mappings bestanden erg zwaar, een stedelijk model gevuld met deze soort modellen zal veel problemen kunnen geven.
 
-| model | Bestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB) | Bestandsgrootte Gefilterde CityJSON 1:1 mapping (KB) | Bestandsgrootte CityJSON LoD3.2 shell extractie (KB) |
+| Model | Bestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB) | Bestandsgrootte gefilterde CityJSON 1:1 mapping (KB) | Bestandsgrootte CityJSON LoD3.2 shell extractie (KB) |
 | - | - | - | - | - |
-| Huis 1    | 490     | 177     | | 31  |
-| Huis 2    | 2.511   | 450     | 238 | 84  |
-| kantoor 1 | 10.678  | 2.114   | | 577 |
-| kantoor 2 | 20.795  | 16.210  | | 667 |
-| Flat      | 199.709 | 492.584 | 14.017 | 3.052 |
+| Huis 1    | 490     | 177 (36%)      | 106 (22%)   | 31 (6%)    |
+| Huis 2    | 2.511   | 450 (18%)      | 238 (9%)    | 84 (1%)    |
+| kantoor 1 | 10.678  | 2.114 (20%)    | 1.094 (10%) | 577 (5%)   |
+| kantoor 2 | 20.795  | 16.210 (78%)   | 5.756 (28%) | 667 (3%)   |
+| Flat      | 199.709 | 492.584 (246%) | 14.017 (7%) | 3.052 (2%) |
 
 Een beperkte remedie voor de bestandsgrootte is een gefilterde 1:1 mapping. Hierbij worden alleen de objecten die deel uitmaken van de buitengevel van een gebouw naar de GIS encoding omgezet. Dit kan op een aantal verschillende manieren geïmplementeerd worden maar de meest voorkomende maakt gebruik van een object attribuut (bijvoorbeeld [isExternal](https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/property/IsExternal.htm) in IFC). Dit is een gemakkelijke en snelle filtering en zal tijdens de conversie weinig problemen opleveren. Echter vertrouwd deze methode op het correcte gebruik van de attributen door de makers van het model. Het correcte gebruik van attributen kan niet altijd worden gegarandeerd (mensen maken fouten, zijn onbekend met het attribuut of het belang ervan) en mogelijk moet daarom het resulterende model gecorrigeerd worden.
 
