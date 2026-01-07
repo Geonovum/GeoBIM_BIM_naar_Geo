@@ -1,3 +1,5 @@
+# Achtergrondinformatie
+
 # Soorten informatie
 
 Zowel BIM- als Geo-modellen maken deel uit van een breder informatielandschap. In de ISO 19650-1 wordt informatie in drie soorten onderverdeeld:
