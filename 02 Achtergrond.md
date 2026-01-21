@@ -1,3 +1,5 @@
+# Achtergrondinformatie
+
 # Soorten informatie
 
 Zowel BIM- als Geo-modellen maken deel uit van een breder informatielandschap. In de ISO 19650-1 wordt informatie in drie soorten onderverdeeld:
@@ -32,7 +34,7 @@ Om enerzijds in een GIS-omgeving te kunnen worden toegepast en anderzijds in een
 
 ![Wireframe representatie van een BIM en GIS model.](media/2_achtergrond/Verschil_IFC_GIS.JPG "Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).")
 
-De manier waarop ruimtes binnen het gebouw worden gerepresenteerd zijn daarentegen wel vergelijkbaar tussen BIM en volumetrische GIS modellen. Beide gebruiken een enkele volumtrische vorm om een unieke ruimte aan te duiden. Deze volumetrische vorm kan worden gezien als een gesloten schil die de grens tussen het gebouw en de lucht van een ruimte aanduidt of een ruimte in een gebouw.
+De manier waarop ruimtes binnen het gebouw worden gerepresenteerd zijn daarentegen wel vergelijkbaar tussen BIM en volumetrische GIS modellen. Beide gebruiken een enkele volumetrische vorm om een unieke ruimte aan te duiden. Deze volumetrische vorm kan worden gezien als een gesloten schil die de grens tussen het gebouw en de lucht van een ruimte aanduidt of een ruimte in een gebouw.
 
 ![Representatie van de kamers in een BIM en GIS model.](media/2_achtergrond/Verschil_IFC_GIS_kames.JPG "Representatie van de kamers in een BIM model (links) en GIS model (rechts).")
 
@@ -200,6 +202,35 @@ Recentelijk is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS mod
   <p><strong>AANBEVELING:</strong> Zijn er aanbevelingen? Voor het gebruik van LOD's? Moeten we daar een strakke definitie van hebben?  </p>
 </aside>
 
+
+#### LoD1 & 1.0 vorm orientatie
+
+In de CityGML3.0 standaard wordt LoD1 beschreven op twee verschillende manieren: "LOD1 – Block model / extrusion objects". Een blok model en een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 & 1.3 vormen gebazeerd op extrusie. Volgens [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf): " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". Dit maakt het duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.
+
+![Verschil tussen vormen die binnen LoD1 zouden kunnen vallen volgens de LoD1 definitie van de CityGML3.0 standaard](media/2_achtergrond/verschil_box_extr.jpg "Een blok model (midden) en een extrusie model (rechts) kunnen erg van elkaar verschillen terwijl ze hetzelfde gebouw representeren (links). Beide representaties kunnen LoD1 zijn volgens de CityGML3.0.")
+
+Het is onduidelijk welke regels er gebruikt moeten worden bij het ontwikkelen van de blokvorm. Bijvoorbeeld, is de blokvorm altijd zo gevormt dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt met de term blokvorm in de standaarden, maar dit staat echter nergens expliciet gedefinieerd.
+
+![Verschil tussen de oriëntatie van een bounding box en de resulterende vorm](media/2_achtergrond/verschil_boundingbox.jpg "Het mogelijk extreme verschil tussen een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts) gebaseerd op hetzelfde bron model (links). Het verschil van beide vormen is 31.346m$^3$")
+
+#### Voetafdruk of dak omtrek als bron
+
+LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is echter onduidelijk welke oppervlaktes de beperkende oppervlaktes voor deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk.
+
+Opvallend is dat voor ruimtes de CityGML3.0 standaard wel erg duidelijk is: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". Hier wordt duidelijk de voetafdruk genoemd als bronoppervlak voor de extrusie. Net zoals de CityGML standaard is [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) ook een stuk onduidelijker voor buitenschillen: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op wat de beperkende bron voor de extrusie is.
+
+![Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen](media/2_achtergrond/verschil_voet_dak.jpg "LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dak omtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m$^3$")
+
+Deze onduidelijkheid komt ook naar voren bij implementaties van deze frameworks. Zo is het 2DBAG/3DBAG inconsistent in de toepassing van het [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) framework. Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat een gebaseerd is op de dak omtrek en de ander op de voetafdruk.
+
+![Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG](media/2_achtergrond/3Dbag_verschillende_bron.JPG "Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2")
+
+<!-- De fotos van de gebouwen moet worden verwisseld met eigen fotos -->
+
+<!-- meer voorbeelden? -->
+
+Zowel de voetafdruk als de dak omtrek zijn bruikbaar, maar op dit moment is het vaak onduidelijk voor de gebruiker welk oppervlak als bron voor de extrusie wordt gebruikt.
+
 ## Bestandstype
 
 <mark> moet onderstaande er wel in? </mark> 
@@ -214,17 +245,17 @@ De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatyp
 
 Er is software beschikbaar die CityGML bestanden van de ene naar de andere encoding kan omzetten, waardoor afhankelijk van de toepassing de ene of de andere encodig kan worden gebruikt.
 
-| dataset | CityJSON v2.0 | CityGML-XML v3.0 | textures | details | compression |
-|-|-|-|-|-|-|
-| 3DBAG      | 7.0MB | 40MB    | none | Buildings in LoD 0, 1.2, 1.3, 2.2; multiple attributes                                          | **5.7X**   |
-| Den Haag   | 2.7MB | 19MB    | none | 'Tile 01', Buildings (in LoD2) and Terrain are merged                                           | **7.0X**   |
-| Ingolstadt | 4.8MB | 40MB    | none | Buildings in LoD3; multiple attributes                                                          | **8.3X**   |
-| Montréal   | 5.6MB | 53MB   | none | Tile 'VM05'. Buildings in LoD2                                                                  | **9.5X**   |
-| New York   | 110MB | 682MB  | none | Tile 'DA13'. Buildings in LoD2                                                                  | **6X**     |
-| Railway    | 4.5MB | 39MB   | ZIP  | CityGML demo. Buildings, Railway, Terrain, Vegetation (with Geometry Templates), Water, Tunnels | **8.7X**   |
-| Rotterdam  | 2.7MB | 18MB   | ZIP  | Neighbourhood 'Delfshaven'. Buildings in LoD2                                                   | **6.7X**   |
-| Vienna     | 5.6MB | 40MB   | ZIP  | Buildings in LoD2                                                                               | **7.1X**   |
-| Zürich     | 293MB | 2100MB | none | Buildings in LoD2                                                                               | **7X**     |
+| dataset | CityJSON v2.0 | CityGML-XML v3.0 | textures | compression |
+|-|-|-|-|-|
+| 3DBAG      | 7.0MB | 40MB    | none | **5.7X**   |
+| Den Haag   | 2.7MB | 19MB    | none | **7.0X**   |
+| Ingolstadt | 4.8MB | 40MB    | none | **8.3X**   |
+| Montréal   | 5.6MB | 53MB   | none | **9.5X**   |
+| New York   | 110MB | 682MB  | none | **6X**     |
+| Railway    | 4.5MB | 39MB   | ZIP | **8.7X**   |
+| Rotterdam  | 2.7MB | 18MB   | ZIP  | **6.7X**   |
+| Vienna     | 5.6MB | 40MB   | ZIP  | **7.1X**   |
+| Zürich     | 293MB | 2100MB | none  | **7X**     |
 
 In de onderstaande code fragmenten kan de [XML](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/citygml/DenHaag_01.xml) (boven) en [CityJSON](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json) (onder) encoding van CityGML vergeleken worden. Deze twee fragmenten laten de definitie zien van hetzelfde object met een aantal attributen. De geometrie is verwijderd uit de fragmenten. Het is duidelijk te zien dat de XML encoding veel meer karakters nodig heeft om dezelfde informatie over te brengen. Dit draagt bij aan de extra bestandsgrootte.
 
@@ -289,4 +320,8 @@ GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, 
 De Industry Foundation Classes (IFC) zijn een set van gestandaardiseerde, digitale beschrijvingen van de gebouwde omgeving voor Bouw Informatie Modellen (BIM). IFC is een open internationale standaard voor het delen van data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien. De standaard wordt voornamelijk gebruikt in de Architectuur, Engineering en Constructie (AEC) industrie. IFC bestaat uit een schema, een documentatie, property (kenmerken) en quantity (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om Gebouwen, Wegen, Spoor, Waterwegen en Havenfaciliteiten te modelleren. 
 
 In deze praktijrichtlijn wordt de BIM naar GEO workflow beschreven voor open uitwisseling van BIM en GEO. Hiervoor baseert de praktijkrichtlijn zich voornamelijk op IFC uitwisselformaat voor BIM en CitGML (JSON-encoding) voor GEO. 
+
+## Impliciete en expliciete geometrie
+
+<mark> IFC kan zowel impliciete als expliciete geometry opslaan,  CityJSON, CityGML en GeoJSON kan enkel expliciete geometry opslaan, syntax een stuk compacter dan IFC maar door complexe expliciete geometry kan CityJSON opblasen </mark>
 

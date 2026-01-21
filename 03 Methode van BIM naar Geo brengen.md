@@ -1,6 +1,6 @@
 # Methodes van BIM naar Geo Brengen
 
-Er zijn een aantal verschillende mogelijkheden om BIM modellen naar een GIS omgeving te brengen. De methodese kunnen worden ingedeeld in een aantal groepen: 
+Er zijn een aantal verschillende mogelijkheden om BIM modellen naar een GIS omgeving te brengen. De methodes kunnen worden ingedeeld in een aantal groepen: 
 
 * Direct BIM/IFC openen en combineren met GEO
 * (Gefilterde) 1:1 vertaling van BIM naar GEO
@@ -9,7 +9,8 @@ Er zijn een aantal verschillende mogelijkheden om BIM modellen naar een GIS omge
 Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleinde.
 
 # Direct BIM/IFC openen
-Er zijn softwarepakketten en toepassingen die het mogelijk maken om open BIM en open GIS modellen te openen in één enkele omgeving/viewer. Dit zorgt ervoor dat integratie tussen de twee erg makkelijk is. <mark> De eisen waaraan een BIM model moet voldoen zijn simpel. Het BIM-model hoeft geen perfecte semantiek of informatiestructuur te bevatten. Vaak is goemetie en een beperkte set attributen genoeg. Het openen van het model in de GIS omgeving is relatief snel.</mark>  Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen de viewer. De applicaties die dit faciliteren zijn vaak applicaties die een gebruiker binden aan een softwareleverancier die dit aanlevert. Integratie tussen verschillende software van andere leveranciers is vaak lastig of zelfs onmogelijk. Dit beperkt de gebruiker tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het lastig om met andere partijen samen te werken of de data publiekelijk te delen.
+
+Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is een erg makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanlevert. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
 <!-- Iemand met meer kennis kan hier meer info over direct BIM/IFC openen aan toevoegen -->
 
@@ -103,13 +104,13 @@ Bijvoorbeeld: Een zonlichtsimulatie test alle vlakken die mogelijk zonlicht ontv
 
 Aanvullend zijn de 1:1 mappings bestanden erg zwaar, een stedelijk model gevuld met deze soort modellen zal veel problemen kunnen geven.
 
-| model | Bestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB)*|  Bestandsgrootte CityJSON LoD3.2 shell extractie (KB)| compression |
-|-|-|-|-|-|
-| Huis 1    | 490     |  | 31  |    |
-| Huis 2    | 2.511   |  | 84  |    |
-| kantoor 1 | 10.678  |  | 577 |    |
-| kantoor 2 | 20.795  |  | 667 |    |
-| Flat      | 199.709 |  |     |    |
+| Model | Bestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB) | Bestandsgrootte gefilterde CityJSON 1:1 mapping (KB) | Bestandsgrootte CityJSON LoD3.2 shell extractie (KB) |
+| - | - | - | - | - |
+| Huis 1    | 490     | 177 (36%)      | 106 (22%)   | 31 (6%)    |
+| Huis 2    | 2.511   | 450 (18%)      | 238 (9%)    | 84 (1%)    |
+| kantoor 1 | 10.678  | 2.114 (20%)    | 1.094 (10%) | 577 (5%)   |
+| kantoor 2 | 20.795  | 16.210 (78%)   | 5.756 (28%) | 667 (3%)   |
+| Flat      | 199.709 | 492.584 (246%) | 14.017 (7%) | 3.052 (2%) |
 
 *Enkel de IfcBeam, IfcColumn, IfcCovering, IfcCurtainWall, IfcDoor, IfcMember, IfcPlate, IfcRoof, IfcSlab, IfcWall, IfcWallStandardCase, IfcWindow classes en gerelateerde attributen zijn overgezet
 
@@ -118,7 +119,6 @@ Een beperkte remedie voor de bestandsgrootte is een gefilterde 1:1 mapping. Hier
 De 1:1 conversie van alleen de geometrie heeft geometrisch dezelfde beperkingen als de 1:1 mapping. Echter zal het resulterende bestand een kleinere bestandsgrootte hebben door het ontbreken van attribuut data.
 
 ![Verschil tussen een gefilterde en ongefilterde 1:1 vertaling/mapping](media/03_methodes/VerschilFiltered_1_1.jpg "Wireframe representatie die het verschil tussen een gefilterde (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft")
-
 
 # Shell extractie
 
@@ -136,14 +136,14 @@ Het genereren van schil modellen van BIM bestaden is vooral beschikbaar als expe
   <p><strong>AANBEVELING:</strong> Welke aanbeveling voor shell-extractie doen wij? </p>
 </aside>
 
-Ondanks al deze problemen leveren deze schil modellen op basis van een BIM bron ook erg veel voordelen. De resulterende modellen hebben een kleine bestandsgrootte en worden ondersteunt door vrijwel alle beschikbare GIS software. Deze modellen zijn daarnaast ook de enige modellen die vrijwel blind voor complexe analyses gebruikt kunnen worden.
+Ondanks al deze problemen leveren deze schil modellen op basis van een BIM bron ook erg veel voordelen. De resulterende modellen hebben een kleine bestandsgrootte en worden ondersteunt door vrijwel alle beschikbare GIS software. Deze modellen zijn daarnaast ook de enige modellen die voor complexe GIS analyses gebruikt kunnen worden.
 
 ![Verschil tussen huidige 3D bag kwaliteit modellen en de theoretisch mogelijke kwaliteit van BIM gebaseerde GIS schil modellen](media/03_methodes/Verschil_3Dbag_BIM.jpg "De hoogste kwaliteit beschikbare modellen in 3DBAG zijn LoD2.2 modellen (links). Als BIM als GIS geometrie op grote schaal zou kunnen worden toegepast zou dit kunnen worden verrijkt naar LoD3.2/3.3 (rechts).")
 
-Deze schil modellen zijn niet alleen waardevol voor de realisatie of analyse van het gebouw dat is omgezet. Deze modellen kunnen ook worden gebruik om bestaande stedelijke modellen aan te vullen of te verrijken. De kwaliteit van BIM modellen is hoger dan die van remote-sensing metinging (zoals laserscans) waarop de meeste stedelijke modellen zijn gebaseerd. De GIS modellen van een BIM bron kunnen daardoor dus ook een hogere kwaliteit/meer detail hebben. GIS schil modellen van een BIM bron kunnen aanvullend worden gebruikt in stedelijke GIS modellen. Daarnaast kan een BIM model sneller worden omgezet naar een GIS schil model dan de in-situ metingen meestal worden gedaan. Daardoor kunnen de modellen ook gebruikt worden om een stedelijk model sneller te updaten.
+Deze schil modellen zijn niet alleen waardevol voor de realisatie of analyse van het gebouw dat is omgezet maar kunnen ook worden gebruik om bestaande stedelijke modellen aan te vullen of te verrijken. De kwaliteit van BIM modellen is hoger dan die van remote-sensing metinging (zoals laserscans) waarop de meeste stedelijke modellen zijn gebaseerd. De GIS modellen van een BIM bron kunnen daardoor dus ook een hogere kwaliteit/meer detail hebben. GIS schil modellen van een BIM bron kunnen aanvullend worden gebruikt in stedelijke GIS modellen. Daarnaast kan een BIM model sneller worden omgezet naar een GIS schil model dan de in-situ metingen meestal worden gedaan. Daardoor kunnen de modellen ook gebruikt worden om een stedelijk model sneller te updaten.
 
 ![De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update.](media/03_methodes/3DBAG_missingreps.JPG "De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update. Twee gebouwen zijn wel aanwezig in 2Dbag (de grijze uitlijnen) maar een 3D representatie is nog niet beschikbaar. BIM gebaseerde GIS modellen kunnen hier een uitkomst bieden.")
 
 # Hybride extractie
 
-Eventuele middenwegen tussen 1:1 en shell extractie is ook onderzocht. 
+Eventuele middenwegen tussen 1:1 en shell extractie is ook onderzocht. <mark> Wat dan? </mark>
