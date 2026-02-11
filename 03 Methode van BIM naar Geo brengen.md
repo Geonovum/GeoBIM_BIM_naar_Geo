@@ -12,7 +12,12 @@ Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleind
 
 Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is een erg makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanlevert. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
-<!-- Iemand met meer kennis kan hier meer info over direct BIM/IFC openen aan toevoegen -->
+Bijvoorbeeld: https://www.esri.com/en-us/arcgis/products/arcgis-geobim/
+Bijvoorbeeld: Autodesk Infraworks? 
+Bijvoorbeeld: Bentley OpenCities? 
+Bijvoorbeeld: FME? 
+
+<mark> Iemand met meer kennis kan hier meer info over direct BIM/IFC openen aan toevoegen </mark>
 
 # Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML) 
 
@@ -30,7 +35,7 @@ GeoJSON is een zeer populaire codering voor geospatiale vectorgegevens. GeoJSON 
 
 Elke IFC-instantie wordt een GeoJSON feature. De properties van deze feature kan men gebruiken om de ifc-entiteit en de attributen weer te geven. 
 
-Voorbeeld input IFC 
+Voorbeeld input IFC van een deur
 ```step
 #14632=IFCLOCALPLACEMENT(#39,#14631);
 #14638=IFCARBITRARYPROFILEDEFWITHVOIDS(.AREA.,'schuifdeur',#14635,(#14637));
@@ -94,7 +99,7 @@ Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Wanne
 | tabel_chairs | 705 | 48.641 |
 | kievitsweg_R25 | 13.706 | 65.386 |
 
-Een voorbeeld tool om van ifc naar geojson te gaan is [ifc2gis converter](https://citygeometrix.com/ifc2gis/)
+Een voorbeeld tool om van ifc naar geojson te converteren is [ifc2gis converter](https://citygeometrix.com/ifc2gis/)
 
 ## CityGML en CityJSON
 Het is ook mogelijk om een 1 op 1 vertaling naar CityGML (JSON encoding) te maken. Voor een BIM gebouw-model wordt een directe mapping vertaald naar de entiteiten "Building", "Buildingpart" en "Buildingroom" zoals deze in het CityGML/CityJSON schema bestaan. Dit geeft meer betekenis aan de dataset dan de directe GeoJSON vertaling. De IFC-attributen vertaalt men direct naar de CityJSON "attributes".

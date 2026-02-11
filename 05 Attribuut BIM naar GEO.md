@@ -8,8 +8,14 @@ NEN2767-4
 
 ## Geo Classificatie standaarden
 IMBOR
-NEN 3610
+
 DOOR
+
+
+NEN 3610
+IMKL
+IMBAG
+IMBGT
 
 ## Mapping van Attributen
 
