@@ -1402,14 +1402,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
     <h2>
       Geonovum Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2025-03-28">29 januari 2026</time>
+      <time class="dt-published" datetime="2025-03-28">11 februari 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1471,7 +1471,7 @@ ul.index code{color:inherit}
 <pre aria-busy="false"><code class="hljs">Cannot GET /abstract.md</code></pre>
 
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">2. </bdi>Achtergrondinformatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#soorten-informatie"><bdi class="secno">2.1 </bdi>Soorten informatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">2.1.1 </bdi>Documentatie</a></li><li class="tocline"><a class="tocxref" href="#alfanumeriek"><bdi class="secno">2.1.2 </bdi>Alfanumeriek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">2.2 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-information-need"><bdi class="secno">2.2.1 </bdi>Level of Information Need</a></li><li class="tocline"><a class="tocxref" href="#lod-framwework"><bdi class="secno">2.2.2 </bdi>LoD Framwework</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verfijnd-lod-framework-3d-geoinformation-tu-delft"><bdi class="secno">2.2.2.1 </bdi>Verfijnd LoD framework 3D Geoinformation, TU Delft</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.2.2 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lod1-1-0-vorm-orientatie"><bdi class="secno">2.2.2.2.1 </bdi>LoD1 &amp; 1.0 vorm orientatie</a></li><li class="tocline"><a class="tocxref" href="#voetafdruk-of-dak-omtrek-als-bron"><bdi class="secno">2.2.2.2.2 </bdi>Voetafdruk of dak omtrek als bron</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandstype"><bdi class="secno">2.2.3 </bdi>Bestandstype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">2.2.3.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.2.3.2 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.2.3.3 </bdi>IFC</a></li></ol></li><li class="tocline"><a class="tocxref" href="#impliciete-en-expliciete-geometrie"><bdi class="secno">2.2.4 </bdi>Impliciete en expliciete geometrie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#methodes-van-bim-naar-geo-brengen"><bdi class="secno">3. </bdi>Methodes van BIM naar Geo Brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#direct-bim-ifc-openen"><bdi class="secno">3.1 </bdi>Direct BIM/IFC openen</a></li><li class="tocline"><a class="tocxref" href="#directe-1-op-1-vertaling-van-ifc-naar-geojson-of-cityjson-citygml"><bdi class="secno">3.2 </bdi>Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geojson-0"><bdi class="secno">3.2.1 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#citygml-en-cityjson"><bdi class="secno">3.2.2 </bdi>CityGML en CityJSON</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</a></li><li class="tocline"><a class="tocxref" href="#hybride-extractie"><bdi class="secno">3.4 </bdi>Hybride extractie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">4. </bdi>Eisen aan het BIM-model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatie-levering-specificatie"><bdi class="secno">4.1 </bdi>Informatie Levering Specificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toolkit"><bdi class="secno">5. </bdi>Toolkit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#handleiding-howto"><bdi class="secno">5.1 </bdi>Handleiding/HowTo</a></li><li class="tocline"><a class="tocxref" href="#bim-bestanden-in-gis-omgeving-brengen"><bdi class="secno">5.2 </bdi>BIM bestanden in GIS omgeving brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#esri-arcgis-pro"><bdi class="secno">5.2.1 </bdi>ESRI ArcGIS Pro</a></li></ol></li><li class="tocline"><a class="tocxref" href="#x1-1-vertaling-mapping"><bdi class="secno">5.3 </bdi>1:1 vertaling/mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#save-software-fme"><bdi class="secno">5.3.1 </bdi>Save Software FME</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extraction"><bdi class="secno">5.4 </bdi>Shell extraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bimshell"><bdi class="secno">5.4.1 </bdi>BIMShell</a></li><li class="tocline"><a class="tocxref" href="#ifcenvelopeextractor"><bdi class="secno">5.4.2 </bdi>IfcEnvelopeExtractor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#workflow"><bdi class="secno">5.4.2.1 </bdi>Workflow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bestands-correctie"><bdi class="secno">5.4.2.1.1 </bdi>bestands correctie</a></li><li class="tocline"><a class="tocxref" href="#applicatie-instellen"><bdi class="secno">5.4.2.1.2 </bdi>Applicatie instellen</a></li><li class="tocline"><a class="tocxref" href="#samenvoegen-van-gis-bestanden"><bdi class="secno">5.4.2.1.3 </bdi>Samenvoegen van GIS bestanden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#output-specificatie"><bdi class="secno">5.4.2.2 </bdi>Output specificatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lod0-0"><bdi class="secno">5.4.2.2.1 </bdi>LoD0.0</a></li><li class="tocline"><a class="tocxref" href="#lod0-2"><bdi class="secno">5.4.2.2.2 </bdi>LoD0.2</a></li><li class="tocline"><a class="tocxref" href="#lod0-3"><bdi class="secno">5.4.2.2.3 </bdi>LoD0.3</a></li><li class="tocline"><a class="tocxref" href="#lod0-4"><bdi class="secno">5.4.2.2.4 </bdi>LoD0.4</a></li><li class="tocline"><a class="tocxref" href="#lod1-0"><bdi class="secno">5.4.2.2.5 </bdi>LoD1.0</a></li><li class="tocline"><a class="tocxref" href="#lod1-2"><bdi class="secno">5.4.2.2.6 </bdi>LoD1.2</a></li><li class="tocline"><a class="tocxref" href="#lod1-3"><bdi class="secno">5.4.2.2.7 </bdi>LoD1.3</a></li><li class="tocline"><a class="tocxref" href="#lod2-2"><bdi class="secno">5.4.2.2.8 </bdi>LoD2.2</a></li><li class="tocline"><a class="tocxref" href="#lod3-2"><bdi class="secno">5.4.2.2.9 </bdi>LoD3.2</a></li><li class="tocline"><a class="tocxref" href="#lod4-0"><bdi class="secno">5.4.2.2.10 </bdi>LoD4.0</a></li><li class="tocline"><a class="tocxref" href="#lod4-1"><bdi class="secno">5.4.2.2.11 </bdi>LoD4.1</a></li><li class="tocline"><a class="tocxref" href="#lod4-2"><bdi class="secno">5.4.2.2.12 </bdi>LoD4.2</a></li><li class="tocline"><a class="tocxref" href="#lod5-0-lodv"><bdi class="secno">5.4.2.2.13 </bdi>LoD5.0/LoDv</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#ifc2geojson"><bdi class="secno">5.4.3 </bdi>IFC2GeoJSON</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">6.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">6.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">6.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">6.4 </bdi>Optioneel</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</a></li><li class="tocline"><a class="tocxref" href="#definities-0"><bdi class="secno">6.6 </bdi>Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen-0"><bdi class="secno">6.6.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties-0"><bdi class="secno">6.6.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel-0"><bdi class="secno">6.6.3 </bdi>Optioneel</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">2. </bdi>Achtergrondinformatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#soorten-informatie"><bdi class="secno">2.1 </bdi>Soorten informatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">2.1.1 </bdi>Documentatie</a></li><li class="tocline"><a class="tocxref" href="#alfanumeriek"><bdi class="secno">2.1.2 </bdi>Alfanumeriek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">2.2 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-information-need-en-level-of-development"><bdi class="secno">2.2.1 </bdi>Level of Information Need en Level Of Development</a></li><li class="tocline"><a class="tocxref" href="#level-of-detail-lod-framwework"><bdi class="secno">2.2.2 </bdi>Level of Detail (LoD) Framwework</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</a></li><li class="tocline"><a class="tocxref" href="#bestandstype"><bdi class="secno">2.2.4 </bdi>Bestandstype</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">2.2.4.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.2.4.2 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.2.4.3 </bdi>IFC</a></li></ol></li><li class="tocline"><a class="tocxref" href="#impliciete-en-expliciete-geometrie"><bdi class="secno">2.2.5 </bdi>Impliciete en expliciete geometrie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#methodes-van-bim-naar-geo-brengen"><bdi class="secno">3. </bdi>Methodes van BIM naar Geo Brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#direct-bim-ifc-openen"><bdi class="secno">3.1 </bdi>Direct BIM/IFC openen</a></li><li class="tocline"><a class="tocxref" href="#directe-1-op-1-vertaling-van-ifc-naar-geojson-of-cityjson-citygml"><bdi class="secno">3.2 </bdi>Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geojson-0"><bdi class="secno">3.2.1 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#citygml-en-cityjson"><bdi class="secno">3.2.2 </bdi>CityGML en CityJSON</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</a></li><li class="tocline"><a class="tocxref" href="#hybride-extractie"><bdi class="secno">3.4 </bdi>Hybride extractie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">4. </bdi>Eisen aan het BIM-model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatie-levering-specificatie"><bdi class="secno">4.1 </bdi>Informatie Levering Specificatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#toolkit"><bdi class="secno">5. </bdi>Toolkit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#handleiding-howto"><bdi class="secno">5.1 </bdi>Handleiding/HowTo</a></li><li class="tocline"><a class="tocxref" href="#bim-bestanden-in-gis-omgeving-brengen"><bdi class="secno">5.2 </bdi>BIM bestanden in GIS omgeving brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#esri-arcgis-pro"><bdi class="secno">5.2.1 </bdi>ESRI ArcGIS Pro</a></li></ol></li><li class="tocline"><a class="tocxref" href="#x1-1-vertaling-mapping"><bdi class="secno">5.3 </bdi>1:1 vertaling/mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#save-software-fme"><bdi class="secno">5.3.1 </bdi>Save Software FME</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extraction"><bdi class="secno">5.4 </bdi>Shell extraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bimshell"><bdi class="secno">5.4.1 </bdi>BIMShell</a></li><li class="tocline"><a class="tocxref" href="#ifcenvelopeextractor"><bdi class="secno">5.4.2 </bdi>IfcEnvelopeExtractor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#workflow"><bdi class="secno">5.4.2.1 </bdi>Workflow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bestands-correctie"><bdi class="secno">5.4.2.1.1 </bdi>bestands correctie</a></li><li class="tocline"><a class="tocxref" href="#applicatie-instellen"><bdi class="secno">5.4.2.1.2 </bdi>Applicatie instellen</a></li><li class="tocline"><a class="tocxref" href="#samenvoegen-van-gis-bestanden"><bdi class="secno">5.4.2.1.3 </bdi>Samenvoegen van GIS bestanden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#output-specificatie"><bdi class="secno">5.4.2.2 </bdi>Output specificatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lod0-0"><bdi class="secno">5.4.2.2.1 </bdi>LoD0.0</a></li><li class="tocline"><a class="tocxref" href="#lod0-2"><bdi class="secno">5.4.2.2.2 </bdi>LoD0.2</a></li><li class="tocline"><a class="tocxref" href="#lod0-3"><bdi class="secno">5.4.2.2.3 </bdi>LoD0.3</a></li><li class="tocline"><a class="tocxref" href="#lod0-4"><bdi class="secno">5.4.2.2.4 </bdi>LoD0.4</a></li><li class="tocline"><a class="tocxref" href="#lod1-0"><bdi class="secno">5.4.2.2.5 </bdi>LoD1.0</a></li><li class="tocline"><a class="tocxref" href="#lod1-2"><bdi class="secno">5.4.2.2.6 </bdi>LoD1.2</a></li><li class="tocline"><a class="tocxref" href="#lod1-3"><bdi class="secno">5.4.2.2.7 </bdi>LoD1.3</a></li><li class="tocline"><a class="tocxref" href="#lod2-2"><bdi class="secno">5.4.2.2.8 </bdi>LoD2.2</a></li><li class="tocline"><a class="tocxref" href="#lod3-2"><bdi class="secno">5.4.2.2.9 </bdi>LoD3.2</a></li><li class="tocline"><a class="tocxref" href="#lod4-0"><bdi class="secno">5.4.2.2.10 </bdi>LoD4.0</a></li><li class="tocline"><a class="tocxref" href="#lod4-1"><bdi class="secno">5.4.2.2.11 </bdi>LoD4.1</a></li><li class="tocline"><a class="tocxref" href="#lod4-2"><bdi class="secno">5.4.2.2.12 </bdi>LoD4.2</a></li><li class="tocline"><a class="tocxref" href="#lod5-0-lodv"><bdi class="secno">5.4.2.2.13 </bdi>LoD5.0/LoDv</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#ifc2geojson"><bdi class="secno">5.4.3 </bdi>IFC2GeoJSON</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">6.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">6.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">6.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">6.4 </bdi>Optioneel</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</a></li><li class="tocline"><a class="tocxref" href="#definities-0"><bdi class="secno">6.6 </bdi>Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen-0"><bdi class="secno">6.6.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties-0"><bdi class="secno">6.6.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel-0"><bdi class="secno">6.6.3 </bdi>Optioneel</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section id="introductie"><div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div>
@@ -1524,8 +1524,8 @@ ul.index code{color:inherit}
         <figcaption><a class="self-link" href="#fig-representatie-van-de-kamers-in-een-bim-model-links-en-gis-model-rechts">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">Representatie van de kamers in een BIM model (links) en GIS model (rechts).</span></figcaption>
       </figure>
     <p></p>
-<p>Over het algemeen is een gebouw in een BIM-bestand op het hoogst beschikbare detailniveau gerepresenteerd. In een GIS-bestand is dit vaak niet het geval. Een gebouw kan op meerde manieren gerepresenteerd worden in een enkel GIS-bestand. Dit kan variëren van zeer gedetailleerde volumetrische vormen tot zeer versimpelde non-volumetrische oppervlakte. Deze variatie in beschikbare representaties is aanwezig om toepassingen op verschillende detailniveaus mogelijk te maken, maar ook omdat GIS data bronnen niet altijd alle data beschikbaar hebben om alle gebouwen op dezelfde manier te reconstrueren. Het is dus mogelijk om lagere precisie data te combineren met hogere precisie data als er maar beperkte data bronnen beschikbaar zijn. Om de verschillende kwaliteit van de representaties aan te douden wordt de term “Level of Detail” (LoD) gebruikt.</p>
-<section id="level-of-information-need"><div class="header-wrapper"><h4 id="x2-2-1-level-of-information-need"><bdi class="secno">2.2.1 </bdi>Level of Information Need</h4><a class="self-link" href="#level-of-information-need" aria-label="Permalink for Section 2.2.1"></a></div>
+<p>Over het algemeen is een gebouw in een BIM-bestand op het hoogst beschikbare detailniveau gerepresenteerd. In een GIS-bestand is dit vaak niet het geval. Een gebouw kan op meerde manieren gerepresenteerd worden in een enkel GIS-bestand. Dit kan variëren van zeer gedetailleerde volumetrische vormen tot zeer versimpelde non-volumetrische oppervlakte. Deze variatie in beschikbare representaties is aanwezig om toepassingen op verschillende detailniveaus mogelijk te maken, maar ook omdat GIS data bronnen niet altijd alle data beschikbaar hebben om alle gebouwen op dezelfde manier te reconstrueren. Het is dus mogelijk om lagere precisie data te combineren met hogere precisie data als er maar beperkte data bronnen beschikbaar zijn. Om de verschillende kwaliteit van de representaties aan te duiden wordt de term in GIS, “Level of Detail” (LoD) gebruikt. In BIM is er ook een manier om de granulariteit van decompositie en detail te duiden. Hier voor kan men het Level Of Information Need (LOIN) gebruiken en/of het Level Of Development (LOD) en Level of Detail (LOD) gebruiken. Dat de GIS level of Detail en BIM Level of Detail (LOD) en Level Of Development dezelfde afkorting (LoD) gebruiken zorgt voor verwarring. </p>
+<section id="level-of-information-need-en-level-of-development"><div class="header-wrapper"><h4 id="x2-2-1-level-of-information-need-en-level-of-development"><bdi class="secno">2.2.1 </bdi>Level of Information Need en Level Of Development</h4><a class="self-link" href="#level-of-information-need-en-level-of-development" aria-label="Permalink for Section 2.2.1"></a></div>
 <p>De ISO 19650, de procesnorm voor informatiemanagement, schrijft voor dat in het BIM-werk een Level of Information Need moet worden gedefinieerd. In de EN 17412-1 staat beschreven hoe men dat doet. Voor geometrische informatie worden binnen het BIM-domein afspraken gemaakt over: </p>
 <table>
   <caption> Level Of Information Need aspecten </caption>
@@ -1566,9 +1566,67 @@ ul.index code{color:inherit}
 </tbody></table>
 
 <p>Ook maakt men naast de hierboven genoemde aspecten afspraken over decompositieniveau. Tekent men een afvalbak als één geheel object, bestaat deze uit één losse bak en één losse poer of is deze nog verder gedecomponeerd? </p>
-<p>Naast het hierboven beschreven Level Of Information Need bestaat binnen het BIM-domein het Level Of Development (LOD). Dit wordt gebruikt om het ontwikkelniveau aan te duiden van zowel de geometrie als de verbonden informatie. De niveaus worden aangeduid met een nummer dat bestaat uit 3 getallen (bijv. LoD400).</p>
-<p>Er bestaan verschillende intrepetaties over hoeveel LOD niveaus er zijn en wat de inhoud hiervan precies betekent. </p>
-</section><section id="lod-framwework"><div class="header-wrapper"><h4 id="x2-2-2-lod-framwework"><bdi class="secno">2.2.2 </bdi>LoD Framwework</h4><a class="self-link" href="#lod-framwework" aria-label="Permalink for Section 2.2.2"></a></div>
+<p>Naast het hierboven beschreven Level Of Information Need bestaat binnen het BIM-domein het Level Of Development (LOD). Dit Level of Development is gedefinieerd door het American Institue of Architects (AIA) en doorontwikkeld door het <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/">BIMForum</a>. Dit wordt gebruikt om het ontwikkelniveau aan te duiden van zowel de geometrie als de verbonden informatie. Er bestaan verschillende intrepetaties over hoeveel LOD niveaus er zijn en wat de inhoud hiervan precies betekent. Om hier meer eenduidigheid in te krijgen heeft het BIM-forum een update van de definities gedaan. De ontwikkelniveaus die onderscheiden worden zijn: </p>
+<ul>
+<li><p><strong>LOD100 - Concept niveau</strong></p>
+<ul>
+<li>Het model bevat: Generieke massa van een bouwwerk. Oppervlakte, hoogte, inhoud, volume, locatie en orientatie kunnen worden gemodelleerd in 2D, 3D of ander soort data. </li>
+<li>Het model is bedoeld voor: Analyse, kostenramingen of planning.</li>
+<li>Geometrie: Conceptuele massa's van het totaal model en symbolische elementen. Informatie over elementen kunnen afgeleid worden uit andere model elementen (b.v. Het aantal verdiepingen kan men afleiden uit een 3D gebouwmodel)</li>
+</ul>
+</li>
+<li><p><strong>LOD200 - Globale geometrie</strong></p>
+<ul>
+<li>Het model bevat: Elementen van het model zijn gemodelleerd als geabstraheerde systemen of samenstellingen met benaderde hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
+<li>Het model is bedoeld voor: Analyse, kostenramingen of planning.</li>
+<li>Geometrie: Gemodelleerde elementen kunnen worden gezien als abstracte ruimtereserveringen, vaak als herkenbaar element. Het afleiden van informatie uit deze modellen is een schatting/benadering.</li>
+</ul>
+</li>
+<li><p><strong>LOD300 - Nauwkeurige geometry</strong></p>
+<ul>
+<li>Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
+<li>Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.</li>
+<li>Geometrie: Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint.</li>
+</ul>
+</li>
+<li><p><strong>LOD350 - Nauwkeurige geometry (met aansluiting)</strong></p>
+<ul>
+<li>Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. En heeft de koppeling naar andere elementen van systemen of samenstellingen. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
+<li>Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.</li>
+<li>Geometrie: Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint</li>
+</ul>
+</li>
+<li><p><strong>LOD400 – Adapted to realization/ execution</strong></p>
+<ul>
+<li>Het model bevat: Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie, orientatie en complete fabricatie, samenstellign en detail informatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
+<li>Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.</li>
+<li>Geometrie: Onderdelen hebben voldoende detail en nauwkeurigheid voor fabricage/constructie. Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint</li>
+</ul>
+</li>
+<li><p><strong>LOD 500 – “as built”</strong></p>
+<ul>
+<li>Het model bevat: Elementen van het model zijn gemodelleerd als construeerde samenstellingen met accurate en actuele hoeveelheden, afmetingen, vorm, locatie, orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
+<li>Het model is bedoeld voor: Generiek gebruik </li>
+<li>Geometrie: Dit level is geen "extra level" dat iets extra toevoegt op de voorgaande LOD's, maar is een afronding van alle voorgaande LOD's. Aangevuld met de werkelijke uitvoering van het bouwwerk.</li>
+</ul>
+</li>
+</ul>
+<p>Elke opvolgende LOD bouwt voort op het vorige level. Een BIM-model kan verschillende LOD's voor verschillende elementen in één model bevatten.  </p>
+<p>Voorbeeld van de verschilende LOD's van één kolom.</p>
+<figure id="LODS-van-een-kolom">
+      <img src="./media/LOD/Level_Of_Development_Kolom.png" alt="Verschillende LOD's van een kolom" height="500">
+      <figcaption><a class="self-link" href="#LODS-van-een-kolom">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-LODS-van-een-kolom"></a>
+        <span class="fig-title">
+        Verschillende LOD's van een kolom <br> 
+        Copyright © 2025 by BIMForum, All rights reserved, CC BY-NC-ND 4.0 <br>
+        <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/" target="_blank">Level of Development (LOD) Specification</a>
+        </span>
+      </span></figcaption>
+</figure>
+
+<p>Level Of Information Need en Level Of Development vullen elkaar aan. De Levels Of Development kunnen worden gebruikt om het detailniveau van een object te duiden in het LOIN Raamwerk. </p>
+</section><section id="level-of-detail-lod-framwework"><div class="header-wrapper"><h4 id="x2-2-2-level-of-detail-lod-framwework"><bdi class="secno">2.2.2 </bdi>Level of Detail (LoD) Framwework</h4><a class="self-link" href="#level-of-detail-lod-framwework" aria-label="Permalink for Section 2.2.2"></a></div>
 <p>In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd de geometrie is van een GIS model. Het onderscheidt zich van BIM Level of Development doordat informatie buiten de geometrie, zoals attributen of documenten van minder belang zijn voor de classificatie. </p>
 <p>De GIS Level Of Details worden gedefinieerd in de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail">CityGML3.0</a> standaard. De standaard definieert 4 hoofdniveaus, LOD0 tot LOD3. Hierbij krijgt de geometrie van een model bij hoger LOD niveau meer detail. De hoofdniveaus worden breed ondersteund in toepassingen.</p>
 <p>De documentatie van CityGML over LOD is algemeen. Op basis van meerdere bronnen <mark> welke bronnen </mark> kon de volgende definitie worden gegeven ten aanzien van gebouwen:</p>
@@ -1578,27 +1636,35 @@ ul.index code{color:inherit}
 <li>LoD2: Een representatie van een gebouw of vertrek als een volume met (meestal) verticale muren, waarbij de vlakken die het dak representeren zijn verfijnd.  </li>
 <li>LoD3: Een representatie van een gebouw of vertrek als een schil. Dit is de enige LoD die gevelopeningen ondersteunt.</li>
 </ul>
-<p>
-      </p><figure id="fig-de-4-lod-beschreven-door-de-citygml3-0-standaard-https-docs-ogc-org-guides-20-066-html-overview-section-levelsofdetail">
-        <img src="media/2_achtergrond/LoDCityGML.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard">
-        <figcaption><a class="self-link" href="#fig-de-4-lod-beschreven-door-de-citygml3-0-standaard-https-docs-ogc-org-guides-20-066-html-overview-section-levelsofdetail">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail)</span></figcaption>
-      </figure>
-    <p></p>
+<figure id="Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard">
+      <img src="./media/2_achtergrond/LoDCityGML.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard">
+      <figcaption><a class="self-link" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard"></a>
+        <span class="fig-title">
+        Voorbeeld van de 4 LoDs beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" target="_blank">CityGML3.0 standaard</a>.
+        </span>
+      </span></figcaption>
+</figure>
+
 <p>De in CityGML3.0 standaard beschreven LoDs kunnen worden gebruikt voor zowel exterieur als interieur. In CityGML 2.0 was er een aparte LoD voor interieur, LoD4. Deze was anders opgebouwd dan LoD0-3. LoD0-3 kent een structuur waarbij de buitenkant een enkele schil is die het model representeert. LoD4 volgt een BIM achtige structuur waarbij de representatie van het gebouw bestaat uit losse objecten. LoD4 kan worden geïnterpreteerd als een (gefilterde) 1:1 conversie van een BIM model. Ondanks het feit dat LoD4 officieel niet meer wordt ondersteund, komt het in de praktijk nog voor om complexe conversie te vermijden.</p>
 <p>Ook al wordt het niet expliciet genoemd, in de praktijk lijkt het LoD framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden in de documentatie niet zo uitgebreid beschreven als gebouwen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het LoD framework van CityGML open en flexibel is. De verschillend LoD abstracties van infrastructurele bouwwerken lijkt minder bruikbaar. Oorzaak hiervan is dat gebouwen en infrasctuctuur bouwwerken erg van vorm verschillen.</p>
-<p>
-      </p><figure id="fig-de-4-lod-beschreven-door-de-citygml3-0-standaard-https-docs-ogc-org-guides-20-066-html-overview-section-levelsofdetail-toegepast-op-een-brug-model">
-        <img src="media/2_achtergrond/LoDCityGMLBrug.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard toegepast op een brug model">
-        <figcaption><a class="self-link" href="#fig-de-4-lod-beschreven-door-de-citygml3-0-standaard-https-docs-ogc-org-guides-20-066-html-overview-section-levelsofdetail-toegepast-op-een-brug-model">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail) toegepast op een brug model</span></figcaption>
-      </figure>
-    <p></p>
-<section id="verfijnd-lod-framework-3d-geoinformation-tu-delft"><div class="header-wrapper"><h5 id="x2-2-2-1-verfijnd-lod-framework-3d-geoinformation-tu-delft"><bdi class="secno">2.2.2.1 </bdi>Verfijnd LoD framework 3D Geoinformation, TU Delft</h5><a class="self-link" href="#verfijnd-lod-framework-3d-geoinformation-tu-delft" aria-label="Permalink for Section 2.2.2.1"></a></div>
+<figure id="Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model">
+      <img src="./media/2_achtergrond/LoDCityGMLBrug.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard">
+      <figcaption><a class="self-link" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model">Figuur <bdi class="figno">6</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model"></a>
+        <span class="fig-title">
+        Voorbeeld van de 4 LoDs beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" target="_blank">CityGML3.0 standaard</a> toegepast op een brug model.
+        </span>
+      </span></figcaption>
+</figure>
+
+<p><strong>Verfijnd LoD framework 3D Geoinformation, TU Delft</strong></p>
 <p>Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar maakt het ook moeilijk om vast te stellen hoe een abstractie verschilt van het originele gebouw in de werkelijkheid. In 2016 heeft <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> daarom een verfijning geschreven dat voortbouwt op het CityGML LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo wordt bijvoorbeeld LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard, maar zou op sommige punten verbeterd kunnen worden om de definitie van een bepaald LoD nog beter te beschrijven. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.</p>
 <p>Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de volgende manier worden gedefinieerd:</p>
 <table>
   <caption> Uitbreiding van het LoD Framework </caption>
   <tbody><tr>
-    <th> Level </th>
+    <th style="width:75px;"> Level </th>
     <th> Beschrijving </th>
   </tr>
   <tr>
@@ -1610,8 +1676,7 @@ ul.index code{color:inherit}
     <td> Een 2D projectie van alle "grote" elementen van een gebouw (&gt;4m, &gt; 10m2) geplaatst op grondniveau. </td>    
   </tr>
   <tr>
-    <td>
-    </td><td> LoD0.2 </td>
+    <td> LoD0.2 </td>
     <td> Een 2D projectie van alle elementen van een gebouw geplaatst op grondniveau en optioneel aangevuld door een kopie van dit oppervlakte op de tophoogte van het gebouw.</td>
   </tr>
   
@@ -1665,63 +1730,94 @@ ul.index code{color:inherit}
   </tr>  
 </tbody></table>
 
-<p>
-      </p><figure id="fig-de-16-lod-beschreven-door-de-tud-https-3d-bk-tudelft-nl-lod-in-2016">
-        <img src="media/2_achtergrond/lodtud.png" alt="Voorbeeld van de 16 LoD beschrven door de TUD">
-        <figcaption><a class="self-link" href="#fig-de-16-lod-beschreven-door-de-tud-https-3d-bk-tudelft-nl-lod-in-2016">Figuur <bdi class="figno">6</bdi></a> <span class="fig-title">De 16 LoD beschreven door de [TUD](https://3d.bk.tudelft.nl/lod/) in 2016</span></figcaption>
-      </figure>
-    <p></p>
-<p>Het framework is niet expliciet over het gebruik van een footprint of geprojecteerde dak contour bij de verschillende LoD-representaties. In de documentatie wordt het, in praktijk veel gebruikte, geprojecteerde dak contour bij LoD0.2, 0.3 en 1.2 genoemd. Maar het gebruik van de footprint wordt niet uitgesloten. In de praktijk wordt soms ook de footprint contour gebruikt. De footprint-gebaseerde geometrie kan worden uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gegenereerd door een opwaartse extrusie van de footprint, welke wordt verfijnd met dakvlakken.</p>
-<p>Net zoals bij het CityGML LoD framework lijkt dit framework vooral toepasbaar op gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden niet beschreven in de documentatie. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel maar de bruikbaarheid is niet uitgebreid onderzocht.</p>
-<p>Meer informatie over het <a href="https://repository.tudelft.nl/record/uuid:2d49a066-4e79-4608-b31f-bce54d92d0b5">TUD LoD framework</a>.</p>
-</section><section id="uitbreidingen-aanpassingen-van-de-lod-frameworks"><div class="header-wrapper"><h5 id="x2-2-2-2-uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.2.2 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</h5><a class="self-link" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks" aria-label="Permalink for Section 2.2.2.2"></a></div>
-<p>De twee LoD frameworks worden beide gebruikt in de praktijk. Voor beide frameworks geldt dat er nog steeds aspecten zijn die niet duidelijk zijn gedefinieerd. Modellen die in de praktijk beschikbaar zijn passen niet altijd helemaal op deze LoD frameworks. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TUD verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks. Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als nieuwe data bron voor 3D GIS bestanden en welke nieuwe (of aangepaste) LoDs hiermee kunnen worden gegenereerd.  </p>
-<p>Recentelijk is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als data bron. Dit onderzoek kan worden gevonden in dit document: ... . In appendix ... kan de implementatie in een BIM2GEO converter van het TUD LoD framework worden gevonden. In plaats van vervangende LoD zijn hier kleine aanpassingen gedaan in het LoD framework om rekening te houden de unieke beperkingen maar ook mogelijkheden van BIM.</p>
+
+<figure id="Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft">
+      <img src="./media/2_achtergrond/lodtud.png" alt="Voorbeeld van de 16 LoD's beschreven door de TU Delft">
+      <figcaption><a class="self-link" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"></a>
+        <span class="fig-title">
+        Voorbeeld van de 16 LoD's beschrven door de  <a href="https://3d.bk.tudelft.nl/lod/" target="_blank">TU Delft</a> in 2016.
+        </span>
+      </span></figcaption>
+</figure>
+
+<p>Het framework is niet expliciet over het gebruik van een footprint of geprojecteerde dak contour bij de verschillende LoD-representaties. In de documentatie wordt het, in praktijk veel gebruikte, geprojecteerde dak contour bij LoD0.2, LoD0.3 en LoD1.2 genoemd. Maar het gebruik van de footprint wordt niet uitgesloten. In de praktijk wordt soms ook de footprint contour gebruikt. De footprint-gebaseerde geometrie kan worden uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gegenereerd door een opwaartse extrusie van de footprint, welke wordt verfijnd met dakvlakken.</p>
+<p>Net zoals bij het CityGML LoD framework lijkt dit framework vooral toepasbaar op gebouwen. Infrastructureke bouwwerken zoals bruggen, tunnels en sluizen worden niet beschreven in de documentatie. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel is, maar de bruikbaarheid is niet uitgebreid onderzocht.</p>
+</section><section id="uitbreidingen-aanpassingen-van-de-lod-frameworks"><div class="header-wrapper"><h4 id="x2-2-3-uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</h4><a class="self-link" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks" aria-label="Permalink for Section 2.2.3"></a></div>
+<p>Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Voor beide frameworks geldt dat er nog steeds aspecten zijn die niet duidelijk zijn gedefinieerd. Modellen die in de praktijk beschikbaar zijn passen niet altijd helemaal op deze LoD frameworks. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks. Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. Normaliter gaat men uit van veldmetingen om de LOD's te vormen. </p>
+<p>In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als databron. In de eindrapportage van het onderzoek naar een <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf">BIM2GEO convertor</a> vindt men in appendix 7 de implementatie van het TUD LoD framework in de BIM2GEO converter. Er zijn kleine aanpassingen gedaan in het LoD framework zodat men rekening kan houden met de unieke beperkingen en mogelijkheden van BIM.</p>
 <p><mark> Zou dit een inspiratie kunnen zijn voor een verfijning van de LoDs? zie inwinningsregels <a href="https://geonovum.github.io/IMGeo-objectenhandboek/pand">https://geonovum.github.io/IMGeo-objectenhandboek/pand</a> </mark></p>
-<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="6"><span>Noot</span><span class="issue-label">: Voorbeeld van een aanbeveling? LOD's?</span></div><aside class="">
-  <p><strong>AANBEVELING:</strong> Zijn er aanbevelingen? Voor het gebruik van LOD's? Moeten we daar een strakke definitie van hebben?  </p>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span><span class="issue-label">: Gebruik het aangepast BIM naar Geo conversie LoD Framework</span></div><aside class="">
+  <p><strong>AANBEVELING:</strong> Gebruik voor BIM naar Geo conversie het aangepast LoD Framework zoals beschreven in de <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf" target="_blank" rel="noopener"> BIM2GEO Converter eindrapportage</a> </p>
 </aside></div>
 
+<p><mark>Klopt bovenstaande?</mark></p>
+<p><strong>LoD1 &amp; 1.0 vorm orientatie</strong></p>
+<p>In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 &amp; 1.3 vormen gebazeerd op extrusie. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.</p>
+<figure id="LOD1-block-model-van-een-BIM-model">
+      <img src="./media/2_achtergrond/verschil_box_extr.jpg" alt="Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts).">
+      <figcaption><a class="self-link" href="#LOD1-block-model-van-een-BIM-model">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-LOD1-block-model-van-een-BIM-model"></a>
+        <span class="fig-title">
+        Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts). 
+        </span>
+      </span></figcaption>
+</figure>
 
-<section id="lod1-1-0-vorm-orientatie"><div class="header-wrapper"><h6 id="x2-2-2-2-1-lod1-1-0-vorm-orientatie"><bdi class="secno">2.2.2.2.1 </bdi>LoD1 &amp; 1.0 vorm orientatie</h6><a class="self-link" href="#lod1-1-0-vorm-orientatie" aria-label="Permalink for Section 2.2.2.2.1"></a></div>
-<p>In de CityGML3.0 standaard wordt LoD1 beschreven op twee verschillende manieren: "LOD1 – Block model / extrusion objects". Een blok model en een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 &amp; 1.3 vormen gebazeerd op extrusie. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". Dit maakt het duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.</p>
-<p>
-      </p><figure id="fig-een-blok-model-midden-en-een-extrusie-model-rechts-kunnen-erg-van-elkaar-verschillen-terwijl-ze-hetzelfde-gebouw-representeren-links-beide-representaties-kunnen-lod1-zijn-volgens-de-citygml3-0">
-        <img src="media/2_achtergrond/verschil_box_extr.jpg" alt="Verschil tussen vormen die binnen LoD1 zouden kunnen vallen volgens de LoD1 definitie van de CityGML3.0 standaard">
-        <figcaption><a class="self-link" href="#fig-een-blok-model-midden-en-een-extrusie-model-rechts-kunnen-erg-van-elkaar-verschillen-terwijl-ze-hetzelfde-gebouw-representeren-links-beide-representaties-kunnen-lod1-zijn-volgens-de-citygml3-0">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">Een blok model (midden) en een extrusie model (rechts) kunnen erg van elkaar verschillen terwijl ze hetzelfde gebouw representeren (links). Beide representaties kunnen LoD1 zijn volgens de CityGML3.0.</span></figcaption>
-      </figure>
-    <p></p>
-<p>Het is onduidelijk welke regels er gebruikt moeten worden bij het ontwikkelen van de blokvorm. Bijvoorbeeld, is de blokvorm altijd zo gevormt dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt met de term blokvorm in de standaarden, maar dit staat echter nergens expliciet gedefinieerd.</p>
-<p>
-      </p><figure id="fig-het-mogelijk-extreme-verschil-tussen-een-kleinste-bounding-box-geroteerd-rond-de-z-as-midden-en-een-boundingbox-die-noord-west-georienteerd-is-rechts-gebaseerd-op-hetzelfde-bron-model-links-het-verschil-van-beide-vormen-is-31-346m-3">
-        <img src="media/2_achtergrond/verschil_boundingbox.jpg" alt="Verschil tussen de oriëntatie van een bounding box en de resulterende vorm">
-        <figcaption><a class="self-link" href="#fig-het-mogelijk-extreme-verschil-tussen-een-kleinste-bounding-box-geroteerd-rond-de-z-as-midden-en-een-boundingbox-die-noord-west-georienteerd-is-rechts-gebaseerd-op-hetzelfde-bron-model-links-het-verschil-van-beide-vormen-is-31-346m-3">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Het mogelijk extreme verschil tussen een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts) gebaseerd op hetzelfde bron model (links). Het verschil van beide vormen is 31.346m$^3$</span></figcaption>
-      </figure>
-    <p></p>
-</section><section id="voetafdruk-of-dak-omtrek-als-bron"><div class="header-wrapper"><h6 id="x2-2-2-2-2-voetafdruk-of-dak-omtrek-als-bron"><bdi class="secno">2.2.2.2.2 </bdi>Voetafdruk of dak omtrek als bron</h6><a class="self-link" href="#voetafdruk-of-dak-omtrek-als-bron" aria-label="Permalink for Section 2.2.2.2.2"></a></div>
-<p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is echter onduidelijk welke oppervlaktes de beperkende oppervlaktes voor deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk.</p>
-<p>Opvallend is dat voor ruimtes de CityGML3.0 standaard wel erg duidelijk is: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". Hier wordt duidelijk de voetafdruk genoemd als bronoppervlak voor de extrusie. Net zoals de CityGML standaard is <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> ook een stuk onduidelijker voor buitenschillen: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op wat de beperkende bron voor de extrusie is.</p>
-<p>
-      </p><figure id="fig-lod1-2-representatie-van-het-aula-gebouw-van-de-tu-delft-gebaseerd-op-de-dak-omtrek-links-met-rood-is-het-deel-is-aangeven-dat-zou-vervallen-ten-opzicht-van-een-voetafdruk-gebaseerde-extrusie-het-vervallende-deel-is-rechts-geisoleerd-weergegeven-het-verschil-in-volume-tussen-de-twee-resulterende-vormen-is-ongeveer-54-000m-3">
-        <img src="media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen">
-        <figcaption><a class="self-link" href="#fig-lod1-2-representatie-van-het-aula-gebouw-van-de-tu-delft-gebaseerd-op-de-dak-omtrek-links-met-rood-is-het-deel-is-aangeven-dat-zou-vervallen-ten-opzicht-van-een-voetafdruk-gebaseerde-extrusie-het-vervallende-deel-is-rechts-geisoleerd-weergegeven-het-verschil-in-volume-tussen-de-twee-resulterende-vormen-is-ongeveer-54-000m-3">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dak omtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m$^3$</span></figcaption>
-      </figure>
-    <p></p>
-<p>Deze onduidelijkheid komt ook naar voren bij implementaties van deze frameworks. Zo is het 2DBAG/3DBAG inconsistent in de toepassing van het <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> framework. Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat een gebaseerd is op de dak omtrek en de ander op de voetafdruk.</p>
-<p>
-      </p><figure id="fig-voorbeeld-van-het-verschillende-gebruik-van-bronoppervlaktes-voor-de-extrusie-in-het-3dbag-links-in-de-figuur-is-de-aula-van-de-tu-delft-gevisualiseerd-de-3dbag-representatie-van-dit-gebouw-is-duidelijk-gebaseerd-op-de-dak-omtrek-rechts-is-gebouw-echo-de-twee-halfronde-kokers-aan-de-voorgevel-in-de-3dbag-representatie-duiden-aan-dat-de-voetafdruk-waarin-de-draaideuren-van-de-entree-zijn-gerepresenteerd-is-gebruikt-als-basis-voor-de-extrusie-beide-3dbag-representaties-zijn-lod2-2">
-        <img src="media/2_achtergrond/3Dbag_verschillende_bron.JPG" alt="Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG">
-        <figcaption><a class="self-link" href="#fig-voorbeeld-van-het-verschillende-gebruik-van-bronoppervlaktes-voor-de-extrusie-in-het-3dbag-links-in-de-figuur-is-de-aula-van-de-tu-delft-gevisualiseerd-de-3dbag-representatie-van-dit-gebouw-is-duidelijk-gebaseerd-op-de-dak-omtrek-rechts-is-gebouw-echo-de-twee-halfronde-kokers-aan-de-voorgevel-in-de-3dbag-representatie-duiden-aan-dat-de-voetafdruk-waarin-de-draaideuren-van-de-entree-zijn-gerepresenteerd-is-gebruikt-als-basis-voor-de-extrusie-beide-3dbag-representaties-zijn-lod2-2">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2</span></figcaption>
-      </figure>
-    <p></p>
+<p>Het is van belang dat de regels die gebruikt dienen te worden bij het ontwikkelen van de blokvorm beter gedefinieerd worden. Bijvoorbeeld, is de blokvorm altijd zo gevormt dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen van het coordinaatreferentiestelsel? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt in de CityGML standaard met de term blokvorm. Dit staat echter nergens expliciet gedefinieerd.</p>
+<figure id="LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box">
+      <img src="./media/2_achtergrond/verschil_boundingbox.jpg" alt="Een mogelijk extreem verschil tussen een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts) gebaseerd op hetzelfde bron model (links). Het verschil van beide vormen is 31.346m3"> 
+      <figcaption><a class="self-link" href="#LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"></a>
+        <span class="fig-title">
+        Een BIM-model (links) kan men converteren naar een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts). Het verschil van beide vormen in dit voorbeeld is 31.346m<sup>3</sup> 
+        </span>
+      </span></figcaption>
+</figure>
+
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom vorm en orientatie voor conversie</span></div><aside class="">
+  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van vorm en orientatie voor BIM naar GEO conversie. Voor vorm zou dit kunnen zijn: LoD1.0 is een bounding box model georiënteerd rond de z-as. 
+</p></aside></div>
+
+<p><strong>Voetafdruk of dak omtrek als bron</strong></p>
+<p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de beperkende oppervlaktes voor deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk.</p>
+<p>Opvallend is dat voor ruimtes de CityGML3.0 standaard wel erg duidelijk is: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". Hier wordt duidelijk de voetafdruk genoemd, als bronoppervlak voor de extrusie. Voor de buitenschil is de CityGML standaard en <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> een stuk onduidelijker: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op wat de beperkende bron voor de extrusie is.</p>
+<figure id="Verschil-tussen-footprint-roofedge">
+      <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen"> 
+      <figcaption><a class="self-link" href="#Verschil-tussen-footprint-roofedge">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"></a>
+        <span class="fig-title">
+        LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
+        </span>
+      </span></figcaption>
+</figure>
+
+<p>Deze onduidelijkheid komt ook naar voren bij implementaties van deze frameworks. Zo is het 2DBAG/3DBAG inconsistent in de toepassing van het <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> framework. Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat één gebaseerd is op de dak omtrek en de ander op de voetafdruk.</p>
+<figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG">
+      <img src="./media/2_achtergrond/3Dbag_verschillende_bron.jpg" alt="Voorbeeld verschil ronoppervlak extrusie 3DBAG"> 
+      <figcaption><a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-Voorbeeld-verschil-bronoppervlak-extrusie-3DBAGx"></a>
+        <span class="fig-title">
+        Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2
+        </span>
+      </span></figcaption>
+</figure>
+
+<p><mark> foto's aanpassen </mark></p>
 
 
 
 
 <p>Zowel de voetafdruk als de dak omtrek zijn bruikbaar, maar op dit moment is het vaak onduidelijk voor de gebruiker welk oppervlak als bron voor de extrusie wordt gebruikt.</p>
-</section></section></section><section id="bestandstype"><div class="header-wrapper"><h4 id="x2-2-3-bestandstype"><bdi class="secno">2.2.3 </bdi>Bestandstype</h4><a class="self-link" href="#bestandstype" aria-label="Permalink for Section 2.2.3"></a></div>
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom voetafdruk of dakomtrek</span></div><aside class="">
+  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van voetafdruk of dakomtrek voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als bron gebruikt wordt.  
+</p></aside></div>
+
+
+
+</section><section id="bestandstype"><div class="header-wrapper"><h4 id="x2-2-4-bestandstype"><bdi class="secno">2.2.4 </bdi>Bestandstype</h4><a class="self-link" href="#bestandstype" aria-label="Permalink for Section 2.2.4"></a></div>
 <p><mark> moet onderstaande er wel in? </mark> </p>
-<section id="citygml-xml-citygml-cityjson"><div class="header-wrapper"><h5 id="x2-2-3-1-citygml-xml-citygml-cityjson"><bdi class="secno">2.2.3.1 </bdi>CityGML XML &amp; CityGML CityJSON</h5><a class="self-link" href="#citygml-xml-citygml-cityjson" aria-label="Permalink for Section 2.2.3.1"></a></div>
+<section id="citygml-xml-citygml-cityjson"><div class="header-wrapper"><h5 id="x2-2-4-1-citygml-xml-citygml-cityjson"><bdi class="secno">2.2.4.1 </bdi>CityGML XML &amp; CityGML CityJSON</h5><a class="self-link" href="#citygml-xml-citygml-cityjson" aria-label="Permalink for Section 2.2.4.1"></a></div>
 <p>CityGML is een open conceptueel datamodel voor het opslaan van 3D Geo data. CityGML defineert verschillende objecten (classes) en hun relaties voor de meest relevante topografische objecten zoals gebruikt in stedelijke en regionale modellen. In tegenstelling tot mesh bestand types zoals OBJ en STL maakt CityGML het mogelijk om ook attributen voor ieder object op te slaan.</p>
 <p>Naast een datamodel is CityGML ook een data encoding. De gelijke benaming van het datamodel en data encoding kan tot verwarring leiden. Voor het conceptuele data model CityGML, is zowel een CityGML, JSON en linked data encoding beschikbaar.</p>
 <p>De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat ook lastig is om te lezen door gebruikers. Een alternatief is <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json">CityJSON</a>, een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder en zie <a href="https://www.cityjson.org/filesize/">CityJSON bestandsgrootte</a> voor meer informatie). CityJSON komt echter ook met beperkingen. Zo is niet het gehele CityGML datamodel in de CityJSON encoding beschikbaar. Ook is CityJSON vatbaarder voor niet standaard gebruik.</p>
@@ -1832,7 +1928,7 @@ ul.index code{color:inherit}
 }
 </code></pre>
 <p>Meer informatie over CityGML kan worden gevonden op de <a href="https://www.ogc.org/standards/citygml/">OGC website</a>. OGC heeft het data model voor de GML/XML encoding ontwikkeld. De CityJSON encoding is ontwikkeld onder leiding van de TU Delft en is later door OGC vastgesteld als community standaard. Meer over CityJSON kan worden gevonden op de <a href="https://www.cityjson.org/">CitySJON website</a>.</p>
-</section><section id="geojson"><div class="header-wrapper"><h5 id="x2-2-3-2-geojson"><bdi class="secno">2.2.3.2 </bdi>GeoJSON</h5><a class="self-link" href="#geojson" aria-label="Permalink for Section 2.2.3.2"></a></div>
+</section><section id="geojson"><div class="header-wrapper"><h5 id="x2-2-4-2-geojson"><bdi class="secno">2.2.4.2 </bdi>GeoJSON</h5><a class="self-link" href="#geojson" aria-label="Permalink for Section 2.2.4.2"></a></div>
 <p>GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.</p>
 <pre><code class="json hljs" aria-busy="false">
 "type": "Feature",
@@ -1848,10 +1944,10 @@ ul.index code{color:inherit}
       ...
 }
 </code></pre>
-</section><section id="ifc"><div class="header-wrapper"><h5 id="x2-2-3-3-ifc"><bdi class="secno">2.2.3.3 </bdi>IFC</h5><a class="self-link" href="#ifc" aria-label="Permalink for Section 2.2.3.3"></a></div>
+</section><section id="ifc"><div class="header-wrapper"><h5 id="x2-2-4-3-ifc"><bdi class="secno">2.2.4.3 </bdi>IFC</h5><a class="self-link" href="#ifc" aria-label="Permalink for Section 2.2.4.3"></a></div>
 <p>De Industry Foundation Classes (IFC) zijn een set van gestandaardiseerde, digitale beschrijvingen van de gebouwde omgeving voor Bouw Informatie Modellen (BIM). IFC is een open internationale standaard voor het delen van data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien. De standaard wordt voornamelijk gebruikt in de Architectuur, Engineering en Constructie (AEC) industrie. IFC bestaat uit een schema, een documentatie, property (kenmerken) en quantity (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om Gebouwen, Wegen, Spoor, Waterwegen en Havenfaciliteiten te modelleren. </p>
 <p>In deze praktijrichtlijn wordt de BIM naar GEO workflow beschreven voor open uitwisseling van BIM en GEO. Hiervoor baseert de praktijkrichtlijn zich voornamelijk op IFC uitwisselformaat voor BIM en CitGML (JSON-encoding) voor GEO. </p>
-</section></section><section id="impliciete-en-expliciete-geometrie"><div class="header-wrapper"><h4 id="x2-2-4-impliciete-en-expliciete-geometrie"><bdi class="secno">2.2.4 </bdi>Impliciete en expliciete geometrie</h4><a class="self-link" href="#impliciete-en-expliciete-geometrie" aria-label="Permalink for Section 2.2.4"></a></div>
+</section></section><section id="impliciete-en-expliciete-geometrie"><div class="header-wrapper"><h4 id="x2-2-5-impliciete-en-expliciete-geometrie"><bdi class="secno">2.2.5 </bdi>Impliciete en expliciete geometrie</h4><a class="self-link" href="#impliciete-en-expliciete-geometrie" aria-label="Permalink for Section 2.2.5"></a></div>
 <p><mark> IFC kan zowel impliciete als expliciete geometry opslaan,  CityJSON, CityGML en GeoJSON kan enkel expliciete geometry opslaan, syntax een stuk compacter dan IFC maar door complexe expliciete geometry kan CityJSON opblasen </mark></p>
 </section></section></section>
 <section id="methodes-van-bim-naar-geo-brengen"><div class="header-wrapper"><h2 id="x3-methodes-van-bim-naar-geo-brengen"><bdi class="secno">3. </bdi>Methodes van BIM naar Geo Brengen</h2><a class="self-link" href="#methodes-van-bim-naar-geo-brengen" aria-label="Permalink for Section 3."></a></div>
@@ -1871,7 +1967,7 @@ ul.index code{color:inherit}
 <p>De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig worden ifc-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie en vergroot de bestandsgrootte.</p>
 <figure id="Mesh_van_Geometrie">
       <img src="./media\Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau">
-    <figcaption><a class="self-link" href="#Mesh_van_Geometrie">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Mesh_van_Geometrien"></a><span class="fig-title">Meshing van geometrie op verschillend detailniveau</span></span></figcaption>
+    <figcaption><a class="self-link" href="#Mesh_van_Geometrie">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Mesh_van_Geometrien"></a><span class="fig-title">Meshing van geometrie op verschillend detailniveau</span></span></figcaption>
 </figure>
 
 <section id="geojson-0"><div class="header-wrapper"><h4 id="x3-2-1-geojson"><bdi class="secno">3.2.1 </bdi>GeoJSON</h4><a class="self-link" href="#geojson-0" aria-label="Permalink for Section 3.2.1"></a></div>
@@ -2029,7 +2125,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-wireframe-representatie-die-het-verschil-tussen-een-gefilterde-rechts-en-ongefilterde-links-1-1-vertaling-mapping-weergeeft">
         <img src="media/03_methodes/VerschilFiltered_1_1.jpg" alt="Verschil tussen een gefilterde en ongefilterde 1:1 vertaling/mapping">
-        <figcaption><a class="self-link" href="#fig-wireframe-representatie-die-het-verschil-tussen-een-gefilterde-rechts-en-ongefilterde-links-1-1-vertaling-mapping-weergeeft">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Wireframe representatie die het verschil tussen een gefilterde (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-wireframe-representatie-die-het-verschil-tussen-een-gefilterde-rechts-en-ongefilterde-links-1-1-vertaling-mapping-weergeeft">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Wireframe representatie die het verschil tussen een gefilterde (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft</span></figcaption>
       </figure>
     <p></p>
 </section></section><section id="shell-extractie"><div class="header-wrapper"><h3 id="x3-3-shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</h3><a class="self-link" href="#shell-extractie" aria-label="Permalink for Section 3.3"></a></div>
@@ -2037,13 +2133,13 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-een-wireframe-representatie-van-een-bim-model-links-en-een-exterieur-gis-model-rechts-1">
         <img src="media/2_achtergrond/Verschil_IFC_GIS.JPG" alt="Wireframe representatie van een BIM en GIS model.">
-        <figcaption><a class="self-link" href="#fig-een-wireframe-representatie-van-een-bim-model-links-en-een-exterieur-gis-model-rechts-1">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-een-wireframe-representatie-van-een-bim-model-links-en-een-exterieur-gis-model-rechts-1">Figuur <bdi class="figno">14</bdi></a> <span class="fig-title">Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).</span></figcaption>
       </figure>
     <p></p>
 <p>Aanvullend is shell extractie ook een complex proces waarbij problemen kunnen optreden. Schil modellen met een hoge precisie kunnen alleen gecreëerd worden van BIM modellen die voldoen aan strenge eisen. Deze eisen zijn niet alleen semantisch maar ook geometrisch. Dit maakt het lastig om deze eisen af te dwingen met een Informatie Levering Specificatie (ILS/IDS). Zelfs als alle eisen nageleefd worden zijn er omstandigheden waar het schil model niet correct gemaakt kan worden.</p>
 <p>Schil modellen met een lagere precisie stellen ook lagere eisen aan het BIM model dat verwerkt wordt. Zo kunnen blok modellen of voxelisaties worden gemaakt van bijna alle BIM modellen, ook van schets/klad modellen. Hoe hoger de verwachte precisie van het GIS model, hoe strenger de eisen en hoe complexer het proces om ze te creëren.</p>
 <p>Het genereren van schil modellen van BIM bestaden is vooral beschikbaar als expermintele software. Verschillende methodes worden nog steeds ontwikkeld en onderzocht, er is nog geen standaard methode voor deze processen gedefineerd. Dit zorgt ervoor dat de beschikbare software werken met andere methodes en dus ook andere output kunnen genereren op basis van dezelfde BIM input. Daarnaast werken niet alle shell extractie software volgens het LoD framework dat in GIS wordt aangehouden. Zo genereert de toepassing<a href="https://bimshell.app/">BIMShell</a> alleen een hoge kwaliteit schil en een voxelisatie. De toepassing <a href="https://github.com/tudelft3d/IFC_BuildingEnvExtractor">IfcEnvelopeExtractor</a> volgt een aangepaste/niet standaard intepretatie van het LoD framework van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>. Dit zorgt ervoor dat de output erg kan verschillen tussen verschillende toepassingen en software pakketten.</p>
-<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>Noot</span><span class="issue-label">: Aanbeveling voor shell-extractie standaard?</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span><span class="issue-label">: Aanbeveling voor shell-extractie standaard?</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Welke aanbeveling voor shell-extractie doen wij? </p>
 </aside></div>
 
@@ -2051,14 +2147,14 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-de-hoogste-kwaliteit-beschikbare-modellen-in-3dbag-zijn-lod2-2-modellen-links-als-bim-als-gis-geometrie-op-grote-schaal-zou-kunnen-worden-toegepast-zou-dit-kunnen-worden-verrijkt-naar-lod3-2-3-3-rechts">
         <img src="media/03_methodes/Verschil_3Dbag_BIM.jpg" alt="Verschil tussen huidige 3D bag kwaliteit modellen en de theoretisch mogelijke kwaliteit van BIM gebaseerde GIS schil modellen">
-        <figcaption><a class="self-link" href="#fig-de-hoogste-kwaliteit-beschikbare-modellen-in-3dbag-zijn-lod2-2-modellen-links-als-bim-als-gis-geometrie-op-grote-schaal-zou-kunnen-worden-toegepast-zou-dit-kunnen-worden-verrijkt-naar-lod3-2-3-3-rechts">Figuur <bdi class="figno">14</bdi></a> <span class="fig-title">De hoogste kwaliteit beschikbare modellen in 3DBAG zijn LoD2.2 modellen (links). Als BIM als GIS geometrie op grote schaal zou kunnen worden toegepast zou dit kunnen worden verrijkt naar LoD3.2/3.3 (rechts).</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-de-hoogste-kwaliteit-beschikbare-modellen-in-3dbag-zijn-lod2-2-modellen-links-als-bim-als-gis-geometrie-op-grote-schaal-zou-kunnen-worden-toegepast-zou-dit-kunnen-worden-verrijkt-naar-lod3-2-3-3-rechts">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">De hoogste kwaliteit beschikbare modellen in 3DBAG zijn LoD2.2 modellen (links). Als BIM als GIS geometrie op grote schaal zou kunnen worden toegepast zou dit kunnen worden verrijkt naar LoD3.2/3.3 (rechts).</span></figcaption>
       </figure>
     <p></p>
 <p>Deze schil modellen zijn niet alleen waardevol voor de realisatie of analyse van het gebouw dat is omgezet maar kunnen ook worden gebruik om bestaande stedelijke modellen aan te vullen of te verrijken. De kwaliteit van BIM modellen is hoger dan die van remote-sensing metinging (zoals laserscans) waarop de meeste stedelijke modellen zijn gebaseerd. De GIS modellen van een BIM bron kunnen daardoor dus ook een hogere kwaliteit/meer detail hebben. GIS schil modellen van een BIM bron kunnen aanvullend worden gebruikt in stedelijke GIS modellen. Daarnaast kan een BIM model sneller worden omgezet naar een GIS schil model dan de in-situ metingen meestal worden gedaan. Daardoor kunnen de modellen ook gebruikt worden om een stedelijk model sneller te updaten.</p>
 <p>
       </p><figure id="fig-de-spoorzone-van-delft-is-een-gebied-waar-veel-nieuwbouw-plaatsvind-en-laat-zien-dat-3dbag-vertraagd-update-twee-gebouwen-zijn-wel-aanwezig-in-2dbag-de-grijze-uitlijnen-maar-een-3d-representatie-is-nog-niet-beschikbaar-bim-gebaseerde-gis-modellen-kunnen-hier-een-uitkomst-bieden">
         <img src="media/03_methodes/3DBAG_missingreps.JPG" alt="De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update.">
-        <figcaption><a class="self-link" href="#fig-de-spoorzone-van-delft-is-een-gebied-waar-veel-nieuwbouw-plaatsvind-en-laat-zien-dat-3dbag-vertraagd-update-twee-gebouwen-zijn-wel-aanwezig-in-2dbag-de-grijze-uitlijnen-maar-een-3d-representatie-is-nog-niet-beschikbaar-bim-gebaseerde-gis-modellen-kunnen-hier-een-uitkomst-bieden">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update. Twee gebouwen zijn wel aanwezig in 2Dbag (de grijze uitlijnen) maar een 3D representatie is nog niet beschikbaar. BIM gebaseerde GIS modellen kunnen hier een uitkomst bieden.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-de-spoorzone-van-delft-is-een-gebied-waar-veel-nieuwbouw-plaatsvind-en-laat-zien-dat-3dbag-vertraagd-update-twee-gebouwen-zijn-wel-aanwezig-in-2dbag-de-grijze-uitlijnen-maar-een-3d-representatie-is-nog-niet-beschikbaar-bim-gebaseerde-gis-modellen-kunnen-hier-een-uitkomst-bieden">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update. Twee gebouwen zijn wel aanwezig in 2Dbag (de grijze uitlijnen) maar een 3D representatie is nog niet beschikbaar. BIM gebaseerde GIS modellen kunnen hier een uitkomst bieden.</span></figcaption>
       </figure>
     <p></p>
 </section><section id="hybride-extractie"><div class="header-wrapper"><h3 id="x3-4-hybride-extractie"><bdi class="secno">3.4 </bdi>Hybride extractie</h3><a class="self-link" href="#hybride-extractie" aria-label="Permalink for Section 3.4"></a></div>
@@ -2194,7 +2290,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">
         <img src="media/07_toepassingen/menus.jpg" alt="De GUI van de IfcEnvelopeExtractor">
-        <figcaption><a class="self-link" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">Figuur <bdi class="figno">17</bdi></a> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></figcaption>
       </figure>
     <p></p>
 <p>De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn. In de afbeelding hierboven zijn de groepen weergegeven.</p>
@@ -2210,7 +2306,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt">
         <img src="media/07_toepassingen/output_alt_encoding.JPG" alt="Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt">
-        <figcaption><a class="self-link" href="#fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt">Figuur <bdi class="figno">17</bdi></a> <span class="fig-title">Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt">Figuur <bdi class="figno">18</bdi></a> <span class="fig-title">Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.</span></figcaption>
       </figure>
     <p></p>
 <p>Onderaan deze groep kan de encoding aangevuld worden. De tool zal altijd een CityJSON bestand genereren. Maar het is mogelijk om extra kopieën te genereren in .obj en/of .STEP encodig. Deze bestanden zijn enkel geometrisch. Semantische data zoals attributen woren niet in deze bestanden opgeslagen. De bestanden ondersteunen ook geen multi LoD, daarom wordt iedere LoD in een los bestand geplaatst. Deze kopieën hebben dezelfde naam als de gekozen output naam, maar ze zullen eLoDxx en iLoDxx toegevoegd hebben om de buiten- en binnenkant van het gebouw te representeren. Waarbij de xx vervangen wordt door de daadwerkelijke LoD. Deze instelling is nog niet volledige ondersteund voor iedere LoD door de software</p>
@@ -2219,7 +2315,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-het-verschil-tussen-een-lod2-2-vorm-die-gebaseerd-is-op-de-roof-outline-midden-en-een-lod2-2-vorm-die-is-beperkt-door-de-voetafdruk-rechts-beide-modellen-zijn-gebaseerd-op-dezelfde-input-links">
         <img src="media/07_toepassingen/footprintrestrictedex.jpg" alt="Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline, en een LoD2.2 vorm die is beperkt door de voetafdruk">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-het-verschil-tussen-een-lod2-2-vorm-die-gebaseerd-is-op-de-roof-outline-midden-en-een-lod2-2-vorm-die-is-beperkt-door-de-voetafdruk-rechts-beide-modellen-zijn-gebaseerd-op-dezelfde-input-links">Figuur <bdi class="figno">18</bdi></a> <span class="fig-title">Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline (midden), en een LoD2.2 vorm die is beperkt door de voetafdruk (rechts). Beide modellen zijn gebaseerd op dezelfde input (links).</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-het-verschil-tussen-een-lod2-2-vorm-die-gebaseerd-is-op-de-roof-outline-midden-en-een-lod2-2-vorm-die-is-beperkt-door-de-voetafdruk-rechts-beide-modellen-zijn-gebaseerd-op-dezelfde-input-links">Figuur <bdi class="figno">19</bdi></a> <span class="fig-title">Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline (midden), en een LoD2.2 vorm die is beperkt door de voetafdruk (rechts). Beide modellen zijn gebaseerd op dezelfde input (links).</span></figcaption>
       </figure>
     <p></p>
 <p>De tweede is "Approximate areas and volumes". Zoals het woord "approximate" suggereert is dit een inschatting en niet de daadwerkelijke waarde. IFC modellen zijn geometrisch complex en het is niet altijd mogelijk om een gesloten schil te creëren. Zonder een geslote schil is het moeilijk de het volume te berekenen. Als "Approximate areas and volumes" wordt aangezet dan worden de volumes en oppervlaktes van de schillen berekend op basis van de voxelisatie. De kwaliteit en betrouwbaarheid van deze resultaten zijn erg afhankelijk van de grootte van de voxels die zijn gekozen.</p>
@@ -2239,7 +2335,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD00.jpg" alt="Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">19</bdi></a> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">20</bdi></a> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></figcaption>
       </figure>
     <p></p>
 <p>2D bounding box representatie van het input BIM model.</p>
@@ -2262,7 +2358,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD02.jpg" alt="Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">20</bdi></a> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">21</bdi></a> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>Simpel 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2297,7 +2393,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD03.jpg" alt="Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">21</bdi></a> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">22</bdi></a> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2326,7 +2422,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD04.jpg" alt="Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">22</bdi></a> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">23</bdi></a> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak dezelfde vorm behoud als de geometrische bron. Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2349,7 +2445,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD10.jpg" alt="Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">23</bdi></a> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">24</bdi></a> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D bounding box representatie van het input BIM model.</p>
@@ -2366,7 +2462,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD12.jpg" alt="Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">24</bdi></a> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">25</bdi></a> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model met unform vlakke boven en onder oppervlaktes.</p>
@@ -2393,7 +2489,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD13.jpg" alt="Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">25</bdi></a> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">26</bdi></a> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model met vlakke oppervlaktes. Ieder oppervlak heeft een normaal richting met een z-component dat gelijk is aan 1 of 0.</p>
@@ -2410,7 +2506,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD22.jpg" alt="Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">26</bdi></a> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">27</bdi></a> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model.</p>
@@ -2433,7 +2529,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">
         <img src="media/07_toepassingen/LoD32.jpg" alt="Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">27</bdi></a> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">28</bdi></a> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>3D volumetrische representatie van het input BIM model.</p>
@@ -2456,7 +2552,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD40.jpg" alt="Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">28</bdi></a> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">29</bdi></a> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren.</p>
@@ -2473,7 +2569,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD41.jpg" alt="Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">29</bdi></a> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">30</bdi></a> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van de ruimte scheidende objecten van het input BIM model.</p>
@@ -2490,7 +2586,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
         <img src="media/07_toepassingen/LoD42.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">30</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">31</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van van het input BIM model.</p>
@@ -2507,7 +2603,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">
         <img src="media/07_toepassingen/LoD50.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">Figuur <bdi class="figno">31</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">Figuur <bdi class="figno">32</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D voxelisatie representatie van het model.</p>
@@ -2536,7 +2632,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <p>
       </p><figure id="fig-onderschrift">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">32</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">33</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties"><div class="header-wrapper"><h3 id="x6-3-referenties"><bdi class="secno">6.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 6.3"></a></div>
@@ -2562,7 +2658,7 @@ Veel viewers kunnen een GeoJSON, CityJSON of CityGML bestand wel openen. Ondanks
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre>
 </section><section id="voorbeelden"><div class="header-wrapper"><h3 id="x6-5-voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</h3><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 6.5"></a></div>
-<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
+<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
 Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config.js</code>.
 </p></div>
 
@@ -2586,7 +2682,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>
       </p><figure id="fig-onderschrift-0">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">33</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">34</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties-0"><div class="header-wrapper"><h4 id="x6-6-2-referenties"><bdi class="secno">6.6.2 </bdi>Referenties</h4><a class="self-link" href="#referenties-0" aria-label="Permalink for Section 6.6.2"></a></div>
@@ -2627,65 +2723,109 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
   </li><li class="tofline">
     <a class="tocxref" href="#fig-representatie-van-de-kamers-in-een-bim-model-links-en-gis-model-rechts"><span class="self-link">Figuur <bdi class="figno">3</bdi></span> <span class="fig-title">Representatie van de kamers in een BIM model (links) en GIS model (rechts).</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-4-lod-beschreven-door-de-citygml3-0-standaard-https-docs-ogc-org-guides-20-066-html-overview-section-levelsofdetail"><span class="self-link">Figuur <bdi class="figno">4</bdi></span> <span class="fig-title">De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail)</span></a>
+    <a class="tocxref" href="#LODS-van-een-kolom"><span class="self-link">Figuur <bdi class="figno">4</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Verschillende LOD's van een kolom <br> 
+        Copyright © 2025 by BIMForum, All rights reserved, CC BY-NC-ND 4.0 <br>
+        <span target="_blank">Level of Development (LOD) Specification</span>
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-4-lod-beschreven-door-de-citygml3-0-standaard-https-docs-ogc-org-guides-20-066-html-overview-section-levelsofdetail-toegepast-op-een-brug-model"><span class="self-link">Figuur <bdi class="figno">5</bdi></span> <span class="fig-title">De 4 LoD beschreven door de [CityGML3.0 standaard](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail) toegepast op een brug model</span></a>
+    <a class="tocxref" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard"><span class="self-link">Figuur <bdi class="figno">5</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Voorbeeld van de 4 LoDs beschreven door de <span target="_blank">CityGML3.0 standaard</span>.
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-16-lod-beschreven-door-de-tud-https-3d-bk-tudelft-nl-lod-in-2016"><span class="self-link">Figuur <bdi class="figno">6</bdi></span> <span class="fig-title">De 16 LoD beschreven door de [TUD](https://3d.bk.tudelft.nl/lod/) in 2016</span></a>
+    <a class="tocxref" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model"><span class="self-link">Figuur <bdi class="figno">6</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Voorbeeld van de 4 LoDs beschreven door de <span target="_blank">CityGML3.0 standaard</span> toegepast op een brug model.
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-een-blok-model-midden-en-een-extrusie-model-rechts-kunnen-erg-van-elkaar-verschillen-terwijl-ze-hetzelfde-gebouw-representeren-links-beide-representaties-kunnen-lod1-zijn-volgens-de-citygml3-0"><span class="self-link">Figuur <bdi class="figno">7</bdi></span> <span class="fig-title">Een blok model (midden) en een extrusie model (rechts) kunnen erg van elkaar verschillen terwijl ze hetzelfde gebouw representeren (links). Beide representaties kunnen LoD1 zijn volgens de CityGML3.0.</span></a>
+    <a class="tocxref" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"><span class="self-link">Figuur <bdi class="figno">7</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Voorbeeld van de 16 LoD's beschrven door de  <span target="_blank">TU Delft</span> in 2016.
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-het-mogelijk-extreme-verschil-tussen-een-kleinste-bounding-box-geroteerd-rond-de-z-as-midden-en-een-boundingbox-die-noord-west-georienteerd-is-rechts-gebaseerd-op-hetzelfde-bron-model-links-het-verschil-van-beide-vormen-is-31-346m-3"><span class="self-link">Figuur <bdi class="figno">8</bdi></span> <span class="fig-title">Het mogelijk extreme verschil tussen een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts) gebaseerd op hetzelfde bron model (links). Het verschil van beide vormen is 31.346m$^3$</span></a>
+    <a class="tocxref" href="#LOD1-block-model-van-een-BIM-model"><span class="self-link">Figuur <bdi class="figno">8</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts). 
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-lod1-2-representatie-van-het-aula-gebouw-van-de-tu-delft-gebaseerd-op-de-dak-omtrek-links-met-rood-is-het-deel-is-aangeven-dat-zou-vervallen-ten-opzicht-van-een-voetafdruk-gebaseerde-extrusie-het-vervallende-deel-is-rechts-geisoleerd-weergegeven-het-verschil-in-volume-tussen-de-twee-resulterende-vormen-is-ongeveer-54-000m-3"><span class="self-link">Figuur <bdi class="figno">9</bdi></span> <span class="fig-title">LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dak omtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m$^3$</span></a>
+    <a class="tocxref" href="#LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"><span class="self-link">Figuur <bdi class="figno">9</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Een BIM-model (links) kan men converteren naar een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts). Het verschil van beide vormen in dit voorbeeld is 31.346m<sup>3</sup> 
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-voorbeeld-van-het-verschillende-gebruik-van-bronoppervlaktes-voor-de-extrusie-in-het-3dbag-links-in-de-figuur-is-de-aula-van-de-tu-delft-gevisualiseerd-de-3dbag-representatie-van-dit-gebouw-is-duidelijk-gebaseerd-op-de-dak-omtrek-rechts-is-gebouw-echo-de-twee-halfronde-kokers-aan-de-voorgevel-in-de-3dbag-representatie-duiden-aan-dat-de-voetafdruk-waarin-de-draaideuren-van-de-entree-zijn-gerepresenteerd-is-gebruikt-als-basis-voor-de-extrusie-beide-3dbag-representaties-zijn-lod2-2"><span class="self-link">Figuur <bdi class="figno">10</bdi></span> <span class="fig-title">Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2</span></a>
+    <a class="tocxref" href="#Verschil-tussen-footprint-roofedge"><span class="self-link">Figuur <bdi class="figno">10</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Mesh_van_Geometrie"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Meshing van geometrie op verschillend detailniveau</span></span></a>
+    <a class="tocxref" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-wireframe-representatie-die-het-verschil-tussen-een-gefilterde-rechts-en-ongefilterde-links-1-1-vertaling-mapping-weergeeft"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">Wireframe representatie die het verschil tussen een gefilterde (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft</span></a>
+    <a class="tocxref" href="#Mesh_van_Geometrie"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Meshing van geometrie op verschillend detailniveau</span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-een-wireframe-representatie-van-een-bim-model-links-en-een-exterieur-gis-model-rechts-1"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title">Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).</span></a>
+    <a class="tocxref" href="#fig-wireframe-representatie-die-het-verschil-tussen-een-gefilterde-rechts-en-ongefilterde-links-1-1-vertaling-mapping-weergeeft"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title">Wireframe representatie die het verschil tussen een gefilterde (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-hoogste-kwaliteit-beschikbare-modellen-in-3dbag-zijn-lod2-2-modellen-links-als-bim-als-gis-geometrie-op-grote-schaal-zou-kunnen-worden-toegepast-zou-dit-kunnen-worden-verrijkt-naar-lod3-2-3-3-rechts"><span class="self-link">Figuur <bdi class="figno">14</bdi></span> <span class="fig-title">De hoogste kwaliteit beschikbare modellen in 3DBAG zijn LoD2.2 modellen (links). Als BIM als GIS geometrie op grote schaal zou kunnen worden toegepast zou dit kunnen worden verrijkt naar LoD3.2/3.3 (rechts).</span></a>
+    <a class="tocxref" href="#fig-een-wireframe-representatie-van-een-bim-model-links-en-een-exterieur-gis-model-rechts-1"><span class="self-link">Figuur <bdi class="figno">14</bdi></span> <span class="fig-title">Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-spoorzone-van-delft-is-een-gebied-waar-veel-nieuwbouw-plaatsvind-en-laat-zien-dat-3dbag-vertraagd-update-twee-gebouwen-zijn-wel-aanwezig-in-2dbag-de-grijze-uitlijnen-maar-een-3d-representatie-is-nog-niet-beschikbaar-bim-gebaseerde-gis-modellen-kunnen-hier-een-uitkomst-bieden"><span class="self-link">Figuur <bdi class="figno">15</bdi></span> <span class="fig-title">De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update. Twee gebouwen zijn wel aanwezig in 2Dbag (de grijze uitlijnen) maar een 3D representatie is nog niet beschikbaar. BIM gebaseerde GIS modellen kunnen hier een uitkomst bieden.</span></a>
+    <a class="tocxref" href="#fig-de-hoogste-kwaliteit-beschikbare-modellen-in-3dbag-zijn-lod2-2-modellen-links-als-bim-als-gis-geometrie-op-grote-schaal-zou-kunnen-worden-toegepast-zou-dit-kunnen-worden-verrijkt-naar-lod3-2-3-3-rechts"><span class="self-link">Figuur <bdi class="figno">15</bdi></span> <span class="fig-title">De hoogste kwaliteit beschikbare modellen in 3DBAG zijn LoD2.2 modellen (links). Als BIM als GIS geometrie op grote schaal zou kunnen worden toegepast zou dit kunnen worden verrijkt naar LoD3.2/3.3 (rechts).</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker"><span class="self-link">Figuur <bdi class="figno">16</bdi></span> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></a>
+    <a class="tocxref" href="#fig-de-spoorzone-van-delft-is-een-gebied-waar-veel-nieuwbouw-plaatsvind-en-laat-zien-dat-3dbag-vertraagd-update-twee-gebouwen-zijn-wel-aanwezig-in-2dbag-de-grijze-uitlijnen-maar-een-3d-representatie-is-nog-niet-beschikbaar-bim-gebaseerde-gis-modellen-kunnen-hier-een-uitkomst-bieden"><span class="self-link">Figuur <bdi class="figno">16</bdi></span> <span class="fig-title">De spoorzone van Delft is een gebied waar veel nieuwbouw plaatsvind en laat zien dat 3DBAG vertraagd update. Twee gebouwen zijn wel aanwezig in 2Dbag (de grijze uitlijnen) maar een 3D representatie is nog niet beschikbaar. BIM gebaseerde GIS modellen kunnen hier een uitkomst bieden.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt"><span class="self-link">Figuur <bdi class="figno">17</bdi></span> <span class="fig-title">Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.</span></a>
+    <a class="tocxref" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker"><span class="self-link">Figuur <bdi class="figno">17</bdi></span> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-het-verschil-tussen-een-lod2-2-vorm-die-gebaseerd-is-op-de-roof-outline-midden-en-een-lod2-2-vorm-die-is-beperkt-door-de-voetafdruk-rechts-beide-modellen-zijn-gebaseerd-op-dezelfde-input-links"><span class="self-link">Figuur <bdi class="figno">18</bdi></span> <span class="fig-title">Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline (midden), en een LoD2.2 vorm die is beperkt door de voetafdruk (rechts). Beide modellen zijn gebaseerd op dezelfde input (links).</span></a>
+    <a class="tocxref" href="#fig-voorbeeld-van-de-resulterende-bestanden-als-alternatieve-encoding-output-wordt-gebruikt"><span class="self-link">Figuur <bdi class="figno">18</bdi></span> <span class="fig-title">Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">19</bdi></span> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-het-verschil-tussen-een-lod2-2-vorm-die-gebaseerd-is-op-de-roof-outline-midden-en-een-lod2-2-vorm-die-is-beperkt-door-de-voetafdruk-rechts-beide-modellen-zijn-gebaseerd-op-dezelfde-input-links"><span class="self-link">Figuur <bdi class="figno">19</bdi></span> <span class="fig-title">Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline (midden), en een LoD2.2 vorm die is beperkt door de voetafdruk (rechts). Beide modellen zijn gebaseerd op dezelfde input (links).</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">20</bdi></span> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">20</bdi></span> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">21</bdi></span> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">21</bdi></span> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">22</bdi></span> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">22</bdi></span> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">23</bdi></span> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">23</bdi></span> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">24</bdi></span> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">24</bdi></span> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">25</bdi></span> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">25</bdi></span> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">26</bdi></span> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">26</bdi></span> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">27</bdi></span> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">27</bdi></span> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">28</bdi></span> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">28</bdi></span> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">29</bdi></span> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">29</bdi></span> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">30</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">30</bdi></span> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0"><span class="self-link">Figuur <bdi class="figno">31</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">31</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">32</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0"><span class="self-link">Figuur <bdi class="figno">32</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">33</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">33</bdi></span> <span class="fig-title">Onderschrift</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">34</bdi></span> <span class="fig-title">Onderschrift</span></a>
   </li>
       </ul></section>
 <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
