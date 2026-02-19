@@ -1759,9 +1759,9 @@ De uitdaging van fundamentele oplossingen voor Geo- en BIM- integratie, is het o
 <p>Het framework is niet expliciet over het gebruik van een footprint of geprojecteerde dak contour bij de verschillende LoD-representaties. In de documentatie wordt het, in praktijk veel gebruikte, geprojecteerde dak contour bij LoD0.2, LoD0.3 en LoD1.2 genoemd, omdat deze 3D modellen vaak op basis van data inwinning vanuit de lucht worden gegenereerd. Maar het gebruik van de footprint wordt niet uitgesloten. In de praktijk wordt soms ook de footprint contour gebruikt. De footprint-gebaseerde geometrie kan worden uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gegenereerd door een opwaartse extrusie van de footprint, welke wordt verfijnd met dakvlakken.</p>
 <p>Net zoals bij het CityGML LoD framework is dit framework ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel is, maar dit vraagt om verdere verfijningen.</p>
 </section><section id="uitbreidingen-aanpassingen-van-de-lod-frameworks"><div class="header-wrapper"><h4 id="x2-2-3-uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</h4><a class="self-link" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks" aria-label="Permalink for Section 2.2.3"></a></div>
-<p>Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, omdat er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
+<p>Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, omdat er recent nieuwe technologieën beschikbaar zijn gekomen die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
 Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. Bij het opstellen van de eerdere frameworks, werd uit gegaan van metingen om de LOD's te vormen.</p>
-<p>In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als databron. In de eindrapportage van het onderzoek naar een <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf">BIM2GEO convertor</a> vindt men in appendix 7 de implementatie van het TUD LoD framework in de BIM2GEO converter. Er zijn kleine aanpassingen gedaan in het LoD framework zodat men rekening kan houden met de unieke beperkingen en mogelijkheden van BIM.</p>
+<p>In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als databron. In de eindrapportage van het onderzoek naar een <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf">BIM2GEO convertor</a> vindt men in appendix 7 de implementatie van het TUD LoD framework in de BIM2GEO converter. Er zijn kleine aanpassingen gedaan in het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen.</p>
 <p><mark> Zou dit een inspiratie kunnen zijn voor een verfijning van de LoDs? zie inwinningsregels <a href="https://geonovum.github.io/IMGeo-objectenhandboek/pand">https://geonovum.github.io/IMGeo-objectenhandboek/pand</a> </mark></p>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span><span class="issue-label">: Gebruik het aangepast BIM naar Geo conversie LoD Framework</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Gebruik voor BIM naar Geo conversie het aangepast LoD Framework zoals beschreven in de <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf" target="_blank" rel="noopener"> BIM2GEO Converter eindrapportage</a> </p>
@@ -1911,23 +1911,23 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 </tr>
 </tbody></table>
 <p>In de onderstaande code fragmenten kan de <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/citygml/DenHaag_01.xml">XML</a> (boven) en <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json">CityJSON</a> (onder) encoding van CityGML vergeleken worden. Deze twee fragmenten laten de definitie zien van hetzelfde object met een aantal attributen. De geometrie is verwijderd uit de fragmenten. Het is duidelijk te zien dat de XML encoding veel meer karakters nodig heeft om dezelfde informatie over te brengen. Dit draagt bij aan de extra bestandsgrootte.</p>
-<pre><code class="xml hljs" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">cityObjectMember</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bldg:Building</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gml:name</span>&gt;</span>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}<span class="hljs-tag">&lt;/<span class="hljs-name">gml:name</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">bldg:consistsOfBuildingPart</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bldg:BuildingPart</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gml:name</span>&gt;</span>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}<span class="hljs-tag">&lt;/<span class="hljs-name">gml:name</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"RelativeEavesHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>3.133<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"AbsoluteEavesHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>7.717<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"RelativeRidgeHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>3.133<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"AbsoluteRidgeHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>7.717<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
+<pre><code class="xml" aria-busy="true">&lt;cityObjectMember&gt;
+    &lt;bldg:Building gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16"&gt;
+        &lt;gml:name&gt;{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}&lt;/gml:name&gt;
+        &lt;bldg:consistsOfBuildingPart&gt;
+    &lt;bldg:BuildingPart gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1"&gt;
+        &lt;gml:name&gt;{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}&lt;/gml:name&gt;
+        &lt;gen:doubleAttribute name="RelativeEavesHeight"&gt;&lt;gen:value&gt;3.133&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+        &lt;gen:doubleAttribute name="AbsoluteEavesHeight"&gt;&lt;gen:value&gt;7.717&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+        &lt;gen:doubleAttribute name="RelativeRidgeHeight"&gt;&lt;gen:value&gt;3.133&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+        &lt;gen:doubleAttribute name="AbsoluteRidgeHeight"&gt;&lt;gen:value&gt;7.717&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
 
             ...
 
-    <span class="hljs-tag">&lt;/<span class="hljs-name">bldg:BuildingPart</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">cityObjectMember</span>&gt;</span>
+    &lt;/bldg:BuildingPart&gt;
+&lt;/cityObjectMember&gt;
 </code></pre>
-<pre><code class="json hljs" aria-busy="false">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
+<pre><code class="json" aria-busy="true">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
     "type": "BuildingPart",
     "attributes": {
         "roofType": "1000",
@@ -1944,7 +1944,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 <p>Meer informatie over CityGML kan worden gevonden op de <a href="https://www.ogc.org/standards/citygml/">OGC website</a>. OGC heeft het data model voor de GML/XML encoding ontwikkeld. De CityJSON encoding is ontwikkeld onder leiding van de TU Delft en is later door OGC vastgesteld als community standaard. Meer over CityJSON kan worden gevonden op de <a href="https://www.cityjson.org/">CitySJON website</a>.</p>
 </section><section id="geojson"><div class="header-wrapper"><h4 id="x2-3-2-geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</h4><a class="self-link" href="#geojson" aria-label="Permalink for Section 2.3.2"></a></div>
 <p>GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.</p>
-<pre><code class="json hljs" aria-busy="false">
+<pre><code class="json" aria-busy="true">
 "type": "Feature",
     "properties": {
     "objectID": "GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1 Park",
@@ -1973,7 +1973,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 <title>Error</title>
 
 
-<pre aria-busy="false"><code class="hljs">Cannot GET /03%20Methode%20van%20BIM%20naar%20GEO%20brengen.md</code></pre>
+<pre aria-busy="true">Cannot GET /03%20Methode%20van%20BIM%20naar%20GEO%20brengen.md</pre>
 
 </section>
 <section id="geometrie-bim-naar-geo"><div class="header-wrapper"><h2 id="x3-geometrie-bim-naar-geo"><bdi class="secno">3. </bdi>Geometrie BIM naar GEO</h2><a class="self-link" href="#geometrie-bim-naar-geo" aria-label="Permalink for Section 3."></a></div>
@@ -2083,7 +2083,7 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <title>Error</title>
 
 
-<pre aria-busy="false"><code class="hljs">Cannot GET /07%20Toepassingen.md</code></pre>
+<pre aria-busy="true">Cannot GET /07%20Toepassingen.md</pre>
 
 </section>
 <section id="meer-inhoud"><div class="header-wrapper"><h2 id="x6-meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 6."></a></div>
@@ -2108,16 +2108,16 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
 </section><section id="optioneel"><div class="header-wrapper"><h3 id="x6-4-optioneel"><bdi class="secno">6.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 6.4"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<pre><code aria-busy="true">&lt;body&gt;
+  &lt;section id="abstract" data-include-format="markdown" data-include="abstract.md"&gt;&lt;/section&gt;
+  &lt;section id="sotd"&gt;&lt;/section&gt;&lt;!-- Wordt automatisch gevuld --&gt;
+  &lt;section data-include-format="markdown" class="informative" data-include="ch01.md"&gt;&lt;/section&gt;
+  &lt;section data-include-format="markdown" data-include="ch02.md"&gt;&lt;/section&gt;
+  &lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;
+  &lt;section id='conformance'&gt;&lt;/section&gt;
+  &lt;section id='tof'&gt;&lt;/section&gt;
+  &lt;section id="index"&gt;&lt;/section&gt;
+&lt;/body&gt;
 </code></pre>
 </section><section id="voorbeelden"><div class="header-wrapper"><h3 id="x6-5-voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</h3><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 6.5"></a></div>
 <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
@@ -2158,16 +2158,16 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-2">definitie</a> om een woord te omschrijven.</p>
 </section><section id="optioneel-0"><div class="header-wrapper"><h4 id="x6-6-3-optioneel"><bdi class="secno">6.6.3 </bdi>Optioneel</h4><a class="self-link" href="#optioneel-0" aria-label="Permalink for Section 6.6.3"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<pre><code aria-busy="true">&lt;body&gt;
+  &lt;section id="abstract" data-include-format="markdown" data-include="abstract.md"&gt;&lt;/section&gt;
+  &lt;section id="sotd"&gt;&lt;/section&gt;&lt;!-- Wordt automatisch gevuld --&gt;
+  &lt;section data-include-format="markdown" class="informative" data-include="ch01.md"&gt;&lt;/section&gt;
+  &lt;section data-include-format="markdown" data-include="ch02.md"&gt;&lt;/section&gt;
+  &lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;
+  &lt;section id='conformance'&gt;&lt;/section&gt;
+  &lt;section id='tof'&gt;&lt;/section&gt;
+  &lt;section id="index"&gt;&lt;/section&gt;
+&lt;/body&gt;
 </code></pre>
 </section></section></section>
 
