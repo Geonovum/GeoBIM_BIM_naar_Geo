@@ -1403,7 +1403,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
@@ -1751,15 +1751,16 @@ De uitdaging van fundamentele oplossingen voor Geo- en BIM- integratie, is het o
       <figcaption><a class="self-link" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"></a>
         <span class="fig-title">
-        Voorbeeld van de 16 LoD's beschrven door de  <a href="https://3d.bk.tudelft.nl/lod/" target="_blank">TU Delft</a> in 2016.
+        Voorbeeld van de 16 LoD's beschreven door de  <a href="https://3d.bk.tudelft.nl/lod/" target="_blank">TU Delft</a> in 2016.
         </span>
       </span></figcaption>
 </figure>
 
-<p>Het framework is niet expliciet over het gebruik van een footprint of geprojecteerde dak contour bij de verschillende LoD-representaties. In de documentatie wordt het, in praktijk veel gebruikte, geprojecteerde dak contour bij LoD0.2, LoD0.3 en LoD1.2 genoemd. Maar het gebruik van de footprint wordt niet uitgesloten. In de praktijk wordt soms ook de footprint contour gebruikt. De footprint-gebaseerde geometrie kan worden uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gegenereerd door een opwaartse extrusie van de footprint, welke wordt verfijnd met dakvlakken.</p>
-<p>Net zoals bij het CityGML LoD framework lijkt dit framework vooral toepasbaar op gebouwen. Infrastructureke bouwwerken zoals bruggen, tunnels en sluizen worden niet beschreven in de documentatie. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel is, maar de bruikbaarheid is niet uitgebreid onderzocht.</p>
+<p>Het framework is niet expliciet over het gebruik van een footprint of geprojecteerde dak contour bij de verschillende LoD-representaties. In de documentatie wordt het, in praktijk veel gebruikte, geprojecteerde dak contour bij LoD0.2, LoD0.3 en LoD1.2 genoemd, omdat deze 3D modellen vaak op basis van data inwinning vanuit de lucht worden gegenereerd. Maar het gebruik van de footprint wordt niet uitgesloten. In de praktijk wordt soms ook de footprint contour gebruikt. De footprint-gebaseerde geometrie kan worden uitgebreid naar LoD1.3 en/of 2.2 waar een volumetrische vorm wordt gegenereerd door een opwaartse extrusie van de footprint, welke wordt verfijnd met dakvlakken.</p>
+<p>Net zoals bij het CityGML LoD framework is dit framework ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel is, maar dit vraagt om verdere verfijningen.</p>
 </section><section id="uitbreidingen-aanpassingen-van-de-lod-frameworks"><div class="header-wrapper"><h4 id="x2-2-3-uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</h4><a class="self-link" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks" aria-label="Permalink for Section 2.2.3"></a></div>
-<p>Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Voor beide frameworks geldt dat er nog steeds aspecten zijn die niet duidelijk zijn gedefinieerd. Modellen die in de praktijk beschikbaar zijn passen niet altijd helemaal op deze LoD frameworks. Ook zijn er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks. Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. Normaliter gaat men uit van veldmetingen om de LOD's te vormen. </p>
+<p>Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, omdat er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
+Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. Bij het opstellen van de eerdere frameworks, werd uit gegaan van metingen om de LOD's te vormen.</p>
 <p>In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als databron. In de eindrapportage van het onderzoek naar een <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf">BIM2GEO convertor</a> vindt men in appendix 7 de implementatie van het TUD LoD framework in de BIM2GEO converter. Er zijn kleine aanpassingen gedaan in het LoD framework zodat men rekening kan houden met de unieke beperkingen en mogelijkheden van BIM.</p>
 <p><mark> Zou dit een inspiratie kunnen zijn voor een verfijning van de LoDs? zie inwinningsregels <a href="https://geonovum.github.io/IMGeo-objectenhandboek/pand">https://geonovum.github.io/IMGeo-objectenhandboek/pand</a> </mark></p>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span><span class="issue-label">: Gebruik het aangepast BIM naar Geo conversie LoD Framework</span></div><aside class="">
@@ -2212,7 +2213,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
     <a class="tocxref" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"><span class="self-link">Figuur <bdi class="figno">7</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
-        Voorbeeld van de 16 LoD's beschrven door de  <span target="_blank">TU Delft</span> in 2016.
+        Voorbeeld van de 16 LoD's beschreven door de  <span target="_blank">TU Delft</span> in 2016.
         </span>
       </span></a>
   </li><li class="tofline">
