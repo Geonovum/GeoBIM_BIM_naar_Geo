@@ -216,7 +216,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
     <td> LoD0.0 </td>
-    <td> Een bounding surface om een gebouw of cluster van gebouwen. </td>
+    <td> Een 2D bounding surface om een gebouw of cluster van gebouwen. </td>
   </tr>
   <tr>
     <td> LoD0.1 </td>
@@ -224,7 +224,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
     <td> LoD0.2 </td>
-    <td> Een 2D projectie van alle elementen van een gebouw geplaatst op grondniveau en optioneel aangevuld door een kopie van dit oppervlakte op de tophoogte van het gebouw.</td>
+    <td> Een 2D projectie van alle elementen van een gebouw geplaatst op grondniveau en optioneel aangevuld door een 2D projectie op dakhoogte.</td>
   </tr>
   <tr>
      <td> LoD0.3 </td>
@@ -236,11 +236,11 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD1.2 </td>
-     <td> Een opwaartse extrusie van het LoD0.2 grondoppervlak naar de maximale gebouwhoogte (vaak de noklijn). </td>
+     <td> Een opwaartse extrusie van het LoD0.2 grondoppervlak naar de maximale gebouwhoogte (vaak de noklijn), waarbij kleinere details ook worden meegenomen (zoals uitstulpingen). </td>
   </tr>
   <tr>
      <td> LoD1.3 </td>
-     <td> Een neerwaartse extrusie van ieder LoD0.3 dakelement tot grondniveau en samengevoegd tot een enkel volume. </td>
+     <td> Een neerwaartse extrusie van ieder LoD0.3 dakelement, indien deze een minimaal hoogtesprong hebben (bijvoorbeeld 2m) tot grondniveau en samengevoegd tot een enkel volume. </td>
   </tr>
   <tr>
      <td> LoD2.0 </td>
@@ -248,7 +248,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD2.1 </td>
-     <td> Een neerwaartse extrusie van ieder dak element tot grondniveau samengevoegd tot een enkel volume. </td>
+     <td> Een neerwaartse extrusie van ieder dak element tot grondniveau samengevoegd tot een enkel volume. Het verschil met LoD2.0 is dat kleine details zoals uitstulpingen (groter dan 2 vierkante meter) ook worden meegenomen </td>
   </tr>
   <tr>
      <td> LoD2.2 </td>
@@ -256,15 +256,15 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD2.3 </td>
-     <td> LoD2.2 uitgebreid met expliciet gemodelleerde overhang als deze groter is dan 0.2m. </td>
+     <td> LoD2.2 uitgebreid met expliciet gemodelleerde overhang als deze langer is dan bijvoorbeeld 0.2m. In dit geval worden dus de werkelijke geometriën van roofprints en footprints gebruikt, waardoor het volume nauwkeuriger is </td>
   </tr>
   <tr>
      <td> LoD3.0 </td>
-     <td> LoD2.2 aangevuld met gedetailleerde informatie, zoals ramen, schoorstenen en dakkappelen. LoD3.2 detail op het dak. </td>
+     <td> LoD2.2 aangevuld met gedetailleerde informatie over dakstrucuren, zoals ramen op het dak. Dakkapellen of ramen in muren worden niet meegenomen. </td>
   </tr>  
   <tr>
      <td> LoD3.1 </td>
-     <td> LoD2.2 aangevuld met gedetailleerde informatie verkregen vanaf de grond. Deze LoD kan uitkragingen/overhang, ramen en deuren bevatten. LoD3.2 detail op de gevel (façade). </td>
+     <td> LoD2.2 aangevuld met gedetailleerde informatie verkregen vanaf de grond (in tegenstelling tot LoD3.0). Deze LoD kan uitkragingen/overhang, ramen en deuren bevatten, met LoD3.2 detail op de gevel (façade). </td>
   </tr>  
   <tr>
      <td> LoD3.2 </td>
@@ -473,5 +473,6 @@ zie [handreiking 3D Tiling](https://docs.geostandaarden.nl/3d/3d-tiling/) en zie
 
 
 er zijn ook betaalde converters of add-ins [cesium revit add in](https://cesium.com/blog/2024/12/03/cesium-design-tiler-and-revit-add-in/)
+
 
 
