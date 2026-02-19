@@ -306,7 +306,7 @@ In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modelle
 
 <mark>Klopt bovenstaande?</mark>
 
-%% **LoD1 & 1.0 vorm orientatie**
+**LoD1 & 1.0 vorm orientatie**
 
 In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 & 1.3 vormen gebazeerd op extrusie. Volgens [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf): " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.
 
@@ -336,7 +336,6 @@ Het is van belang dat de regels die gebruikt dienen te worden bij het ontwikkele
   <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van vorm en orientatie voor BIM naar GEO conversie. Voor vorm zou dit kunnen zijn: LoD1.0 is een bounding box model georiënteerd rond de z-as. 
 </aside>
 
-%%
 
 **Voetafdruk of dak omtrek als bron**
 
@@ -476,6 +475,7 @@ zie [handreiking 3D Tiling](https://docs.geostandaarden.nl/3d/3d-tiling/) en zie
 
 
 er zijn ook betaalde converters of add-ins [cesium revit add in](https://cesium.com/blog/2024/12/03/cesium-design-tiler-and-revit-add-in/)
+
 
 
 
