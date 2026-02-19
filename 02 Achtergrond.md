@@ -293,10 +293,10 @@ Net zoals bij het CityGML LoD framework is dit framework ontwikkeld voor gebouwe
 
 ## Uitbreidingen & aanpassingen van de LoD frameworks
 
-Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, omdat er nieuwe technologieën beschikbaar die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
+Zowel het CityGML LOD Framework als het TU Delft verfijnde framework worden beide gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, omdat er recent nieuwe technologieën beschikbaar zijn gekomen die het mogelijk maken om nieuwe data bronnen te gebruiken om GIS modellen te genereren. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
 Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. Bij het opstellen van de eerdere frameworks, werd uit gegaan van metingen om de LOD's te vormen.
 
-In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als databron. In de eindrapportage van het onderzoek naar een [BIM2GEO convertor](https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf) vindt men in appendix 7 de implementatie van het TUD LoD framework in de BIM2GEO converter. Er zijn kleine aanpassingen gedaan in het LoD framework zodat men rekening kan houden met de unieke beperkingen en mogelijkheden van BIM.
+In 2025 is er onderzoek gedaan naar mogelijke alternatieve LoDs voor GIS modellen die rekening houden met BIM als databron. In de eindrapportage van het onderzoek naar een [BIM2GEO convertor](https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf) vindt men in appendix 7 de implementatie van het TUD LoD framework in de BIM2GEO converter. Er zijn kleine aanpassingen gedaan in het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen.
 
 <mark> Zou dit een inspiratie kunnen zijn voor een verfijning van de LoDs? zie inwinningsregels https://geonovum.github.io/IMGeo-objectenhandboek/pand </mark>
 
@@ -474,6 +474,7 @@ zie [handreiking 3D Tiling](https://docs.geostandaarden.nl/3d/3d-tiling/) en zie
 
 
 er zijn ook betaalde converters of add-ins [cesium revit add in](https://cesium.com/blog/2024/12/03/cesium-design-tiler-and-revit-add-in/)
+
 
 
 
