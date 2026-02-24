@@ -1403,7 +1403,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
@@ -1768,7 +1768,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 </aside></div>
 
 <p><mark>Klopt bovenstaande?</mark></p>
-<p><strong>LoD1 &amp; 1.0 vorm orientatie</strong></p>
+<p><strong>LoD1 &amp; 1.0 vorm</strong></p>
 <p>In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 &amp; 1.3 vormen gebaseerd op extrusie. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.</p>
 <figure id="LOD1-block-model-van-een-BIM-model" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_box_extr.jpg" alt="Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts)." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
@@ -1782,6 +1782,8 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 
 
 
+
+
 <p><strong>Voetafdruk of dak omtrek als bron</strong></p>
 <p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.</p>
 <p>In de CityGML3.0 standaard wordt de voetafdruk genoemd als bronoppervlak voor de extrusie: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". </p>
@@ -1791,7 +1793,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
       <figcaption><a class="self-link" href="#Verschil-tussen-footprint-roofedge">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"></a>
         <span class="fig-title">
-        LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
+        Deze LoD1.2 representatie van het aula gebouw van de TU Delft is gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
         </span>
       </span></figcaption>
 </figure>
@@ -1901,23 +1903,23 @@ Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf.</p>
 </tr>
 </tbody></table>
 <p>In de onderstaande code fragmenten kan de <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/citygml/DenHaag_01.xml">XML</a> (boven) en <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json">CityJSON</a> (onder) encoding van CityGML vergeleken worden. Deze twee fragmenten laten de definitie zien van hetzelfde object met een aantal attributen. De geometrie is verwijderd uit de fragmenten. Het is duidelijk te zien dat de XML encoding veel meer karakters nodig heeft om dezelfde informatie over te brengen. Dit draagt bij aan de extra bestandsgrootte.</p>
-<pre><code class="xml" aria-busy="true">&lt;cityObjectMember&gt;
-    &lt;bldg:Building gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16"&gt;
-        &lt;gml:name&gt;{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}&lt;/gml:name&gt;
-        &lt;bldg:consistsOfBuildingPart&gt;
-    &lt;bldg:BuildingPart gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1"&gt;
-        &lt;gml:name&gt;{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}&lt;/gml:name&gt;
-        &lt;gen:doubleAttribute name="RelativeEavesHeight"&gt;&lt;gen:value&gt;3.133&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
-        &lt;gen:doubleAttribute name="AbsoluteEavesHeight"&gt;&lt;gen:value&gt;7.717&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
-        &lt;gen:doubleAttribute name="RelativeRidgeHeight"&gt;&lt;gen:value&gt;3.133&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
-        &lt;gen:doubleAttribute name="AbsoluteRidgeHeight"&gt;&lt;gen:value&gt;7.717&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+<pre><code class="xml hljs" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">cityObjectMember</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bldg:Building</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gml:name</span>&gt;</span>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}<span class="hljs-tag">&lt;/<span class="hljs-name">gml:name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">bldg:consistsOfBuildingPart</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bldg:BuildingPart</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gml:name</span>&gt;</span>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}<span class="hljs-tag">&lt;/<span class="hljs-name">gml:name</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"RelativeEavesHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>3.133<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"AbsoluteEavesHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>7.717<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"RelativeRidgeHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>3.133<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"AbsoluteRidgeHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>7.717<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
 
             ...
 
-    &lt;/bldg:BuildingPart&gt;
-&lt;/cityObjectMember&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bldg:BuildingPart</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">cityObjectMember</span>&gt;</span>
 </code></pre>
-<pre><code class="json" aria-busy="true">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
+<pre><code class="json hljs" aria-busy="false">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
     "type": "BuildingPart",
     "attributes": {
         "roofType": "1000",
@@ -1934,7 +1936,7 @@ Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf.</p>
 <p>Meer informatie over CityGML kan worden gevonden op de <a href="https://www.ogc.org/standards/citygml/">OGC website</a>. OGC heeft het data model voor de GML/XML encoding ontwikkeld. De CityJSON encoding is ontwikkeld onder leiding van de TU Delft en is later door OGC vastgesteld als community standaard. Meer over CityJSON kan worden gevonden op de <a href="https://www.cityjson.org/">CitySJON website</a>.</p>
 </section><section id="geojson"><div class="header-wrapper"><h4 id="x2-3-2-geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</h4><a class="self-link" href="#geojson" aria-label="Permalink for Section 2.3.2"></a></div>
 <p>GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.</p>
-<pre><code class="json" aria-busy="true">
+<pre><code class="json hljs" aria-busy="false">
 "type": "Feature",
     "properties": {
     "objectID": "GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1 Park",
@@ -1963,7 +1965,7 @@ Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf.</p>
 <title>Error</title>
 
 
-<pre aria-busy="true">Cannot GET /03%20Methode%20van%20BIM%20naar%20GEO%20brengen.md</pre>
+<pre aria-busy="false"><code class="hljs">Cannot GET /03%20Methode%20van%20BIM%20naar%20GEO%20brengen.md</code></pre>
 
 </section>
 <section id="geometrie-bim-naar-geo"><div class="header-wrapper"><h2 id="x3-geometrie-bim-naar-geo"><bdi class="secno">3. </bdi>Geometrie BIM naar GEO</h2><a class="self-link" href="#geometrie-bim-naar-geo" aria-label="Permalink for Section 3."></a></div>
@@ -2073,7 +2075,7 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <title>Error</title>
 
 
-<pre aria-busy="true">Cannot GET /07%20Toepassingen.md</pre>
+<pre aria-busy="false"><code class="hljs">Cannot GET /07%20Toepassingen.md</code></pre>
 
 </section>
 <section id="meer-inhoud"><div class="header-wrapper"><h2 id="x6-meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 6."></a></div>
@@ -2098,16 +2100,16 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
 </section><section id="optioneel"><div class="header-wrapper"><h3 id="x6-4-optioneel"><bdi class="secno">6.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 6.4"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="true">&lt;body&gt;
-  &lt;section id="abstract" data-include-format="markdown" data-include="abstract.md"&gt;&lt;/section&gt;
-  &lt;section id="sotd"&gt;&lt;/section&gt;&lt;!-- Wordt automatisch gevuld --&gt;
-  &lt;section data-include-format="markdown" class="informative" data-include="ch01.md"&gt;&lt;/section&gt;
-  &lt;section data-include-format="markdown" data-include="ch02.md"&gt;&lt;/section&gt;
-  &lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;
-  &lt;section id='conformance'&gt;&lt;/section&gt;
-  &lt;section id='tof'&gt;&lt;/section&gt;
-  &lt;section id="index"&gt;&lt;/section&gt;
-&lt;/body&gt;
+<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre>
 </section><section id="voorbeelden"><div class="header-wrapper"><h3 id="x6-5-voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</h3><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 6.5"></a></div>
 <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
@@ -2148,16 +2150,16 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-2">definitie</a> om een woord te omschrijven.</p>
 </section><section id="optioneel-0"><div class="header-wrapper"><h4 id="x6-6-3-optioneel"><bdi class="secno">6.6.3 </bdi>Optioneel</h4><a class="self-link" href="#optioneel-0" aria-label="Permalink for Section 6.6.3"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="true">&lt;body&gt;
-  &lt;section id="abstract" data-include-format="markdown" data-include="abstract.md"&gt;&lt;/section&gt;
-  &lt;section id="sotd"&gt;&lt;/section&gt;&lt;!-- Wordt automatisch gevuld --&gt;
-  &lt;section data-include-format="markdown" class="informative" data-include="ch01.md"&gt;&lt;/section&gt;
-  &lt;section data-include-format="markdown" data-include="ch02.md"&gt;&lt;/section&gt;
-  &lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;
-  &lt;section id='conformance'&gt;&lt;/section&gt;
-  &lt;section id='tof'&gt;&lt;/section&gt;
-  &lt;section id="index"&gt;&lt;/section&gt;
-&lt;/body&gt;
+<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre>
 </section></section></section>
 
@@ -2217,7 +2219,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
     <a class="tocxref" href="#Verschil-tussen-footprint-roofedge"><span class="self-link">Figuur <bdi class="figno">9</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
-        LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
+        Deze LoD1.2 representatie van het aula gebouw van de TU Delft is gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
         </span>
       </span></a>
   </li><li class="tofline">
