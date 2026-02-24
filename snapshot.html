@@ -1403,14 +1403,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
     <h2>
       Geonovum Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2025-03-28">19 februari 2026</time>
+      <time class="dt-published" datetime="2025-03-28">24 februari 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1769,7 +1769,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 
 <p><mark>Klopt bovenstaande?</mark></p>
 <p><strong>LoD1 &amp; 1.0 vorm orientatie</strong></p>
-<p>In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 &amp; 1.3 vormen gebazeerd op extrusie. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.</p>
+<p>In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 &amp; 1.3 vormen gebaseerd op extrusie. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.</p>
 <figure id="LOD1-block-model-van-een-BIM-model" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_box_extr.jpg" alt="Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts)." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
       <figcaption><a class="self-link" href="#LOD1-block-model-van-een-BIM-model">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">
@@ -1780,28 +1780,15 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
       </span></figcaption>
 </figure>
 
-<p>Het is van belang dat de regels die gebruikt dienen te worden bij het ontwikkelen van de blokvorm beter gedefinieerd worden. Bijvoorbeeld, is de blokvorm altijd zo gevormt dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen van het coordinaatreferentiestelsel? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt in de CityGML standaard met de term blokvorm. Dit staat echter nergens expliciet gedefinieerd.</p>
-<figure id="LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/2_achtergrond/verschil_boundingbox.jpg" alt="Een mogelijk extreem verschil tussen een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts) gebaseerd op hetzelfde bron model (links). Het verschil van beide vormen is 31.346m3" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"> 
-      <figcaption><a class="self-link" href="#LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">
-        <a class="self-link" href="#fig-LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"></a>
-        <span class="fig-title">
-        Een BIM-model (links) kan men converteren naar een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts). Het verschil van beide vormen in dit voorbeeld is 31.346m<sup>3</sup> 
-        </span>
-      </span></figcaption>
-</figure>
-
-<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom vorm en orientatie voor conversie</span></div><aside class="">
-  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van vorm en orientatie voor BIM naar GEO conversie. Voor vorm zou dit kunnen zijn: LoD1.0 is een bounding box model georiënteerd rond de z-as. 
-</p></aside></div>
 
 
 <p><strong>Voetafdruk of dak omtrek als bron</strong></p>
-<p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de beperkende oppervlaktes voor deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk.</p>
-<p>Opvallend is dat voor ruimtes de CityGML3.0 standaard wel erg duidelijk is: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". Hier wordt duidelijk de voetafdruk genoemd, als bronoppervlak voor de extrusie. Voor de buitenschil is de CityGML standaard en <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> een stuk onduidelijker: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op wat de beperkende bron voor de extrusie is.</p>
+<p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.</p>
+<p>In de CityGML3.0 standaard wordt de voetafdruk genoemd als bronoppervlak voor de extrusie: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". </p>
+<p>Voor de buitenschil is de CityGML standaard en <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> worden beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op het bronoppervlak voor de extrusie is.</p>
 <figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"> 
-      <figcaption><a class="self-link" href="#Verschil-tussen-footprint-roofedge">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">
+      <figcaption><a class="self-link" href="#Verschil-tussen-footprint-roofedge">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"></a>
         <span class="fig-title">
         LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
@@ -1809,10 +1796,12 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
       </span></figcaption>
 </figure>
 
-<p>Deze onduidelijkheid komt ook naar voren bij implementaties van deze frameworks. Zo is het 2DBAG/3DBAG inconsistent in de toepassing van het <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> framework. Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat één gebaseerd is op de dak omtrek en de ander op de voetafdruk.</p>
+<p>Welk bronoppervlak als basis wordt gebruikt, wordt niet altijd expliciet gemaakt. De 3DBAG gebruikt 2DBAG als bronoppervlak. De 2DBAG beschrijft de geometrie van een pand als volgt: "De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde."
+Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf.</p>
+<p>Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat één gebaseerd is op de dak omtrek en de ander op de voetafdruk.</p>
 <figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/3Dbag_verschillende_bron.jpg" alt="Voorbeeld verschil ronoppervlak extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"> 
-      <figcaption><a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">
+      <figcaption><a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-Voorbeeld-verschil-bronoppervlak-extrusie-3DBAGx"></a>
         <span class="fig-title">
         Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2
@@ -1826,7 +1815,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 
 
 <p>Zowel de voetafdruk als de dak omtrek zijn bruikbaar, maar op dit moment is het vaak onduidelijk voor de gebruiker welk oppervlak als bron voor de extrusie wordt gebruikt.</p>
-<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom voetafdruk of dakomtrek</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom voetafdruk of dakomtrek</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van voetafdruk of dakomtrek voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als bron gebruikt wordt.  
 </p></aside></div>
 
@@ -1912,23 +1901,23 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 </tr>
 </tbody></table>
 <p>In de onderstaande code fragmenten kan de <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/citygml/DenHaag_01.xml">XML</a> (boven) en <a href="https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json">CityJSON</a> (onder) encoding van CityGML vergeleken worden. Deze twee fragmenten laten de definitie zien van hetzelfde object met een aantal attributen. De geometrie is verwijderd uit de fragmenten. Het is duidelijk te zien dat de XML encoding veel meer karakters nodig heeft om dezelfde informatie over te brengen. Dit draagt bij aan de extra bestandsgrootte.</p>
-<pre><code class="xml hljs" aria-busy="false"><span class="hljs-tag">&lt;<span class="hljs-name">cityObjectMember</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bldg:Building</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gml:name</span>&gt;</span>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}<span class="hljs-tag">&lt;/<span class="hljs-name">gml:name</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">bldg:consistsOfBuildingPart</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bldg:BuildingPart</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gml:name</span>&gt;</span>{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}<span class="hljs-tag">&lt;/<span class="hljs-name">gml:name</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"RelativeEavesHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>3.133<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"AbsoluteEavesHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>7.717<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"RelativeRidgeHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>3.133<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">gen:doubleAttribute</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"AbsoluteRidgeHeight"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">gen:value</span>&gt;</span>7.717<span class="hljs-tag">&lt;/<span class="hljs-name">gen:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">gen:doubleAttribute</span>&gt;</span>
+<pre><code class="xml" aria-busy="true">&lt;cityObjectMember&gt;
+    &lt;bldg:Building gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16"&gt;
+        &lt;gml:name&gt;{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}&lt;/gml:name&gt;
+        &lt;bldg:consistsOfBuildingPart&gt;
+    &lt;bldg:BuildingPart gml:id="GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1"&gt;
+        &lt;gml:name&gt;{DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16}&lt;/gml:name&gt;
+        &lt;gen:doubleAttribute name="RelativeEavesHeight"&gt;&lt;gen:value&gt;3.133&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+        &lt;gen:doubleAttribute name="AbsoluteEavesHeight"&gt;&lt;gen:value&gt;7.717&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+        &lt;gen:doubleAttribute name="RelativeRidgeHeight"&gt;&lt;gen:value&gt;3.133&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
+        &lt;gen:doubleAttribute name="AbsoluteRidgeHeight"&gt;&lt;gen:value&gt;7.717&lt;/gen:value&gt;&lt;/gen:doubleAttribute&gt;
 
             ...
 
-    <span class="hljs-tag">&lt;/<span class="hljs-name">bldg:BuildingPart</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">cityObjectMember</span>&gt;</span>
+    &lt;/bldg:BuildingPart&gt;
+&lt;/cityObjectMember&gt;
 </code></pre>
-<pre><code class="json hljs" aria-busy="false">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
+<pre><code class="json" aria-busy="true">"GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1": {
     "type": "BuildingPart",
     "attributes": {
         "roofType": "1000",
@@ -1945,7 +1934,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 <p>Meer informatie over CityGML kan worden gevonden op de <a href="https://www.ogc.org/standards/citygml/">OGC website</a>. OGC heeft het data model voor de GML/XML encoding ontwikkeld. De CityJSON encoding is ontwikkeld onder leiding van de TU Delft en is later door OGC vastgesteld als community standaard. Meer over CityJSON kan worden gevonden op de <a href="https://www.cityjson.org/">CitySJON website</a>.</p>
 </section><section id="geojson"><div class="header-wrapper"><h4 id="x2-3-2-geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</h4><a class="self-link" href="#geojson" aria-label="Permalink for Section 2.3.2"></a></div>
 <p>GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteunt dan CityJSON.</p>
-<pre><code class="json hljs" aria-busy="false">
+<pre><code class="json" aria-busy="true">
 "type": "Feature",
     "properties": {
     "objectID": "GUID_DBDABF53-7DD5-4C2F-BE7F-51F29A0CBA16_1 Park",
@@ -1974,7 +1963,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 <title>Error</title>
 
 
-<pre aria-busy="false"><code class="hljs">Cannot GET /03%20Methode%20van%20BIM%20naar%20GEO%20brengen.md</code></pre>
+<pre aria-busy="true">Cannot GET /03%20Methode%20van%20BIM%20naar%20GEO%20brengen.md</pre>
 
 </section>
 <section id="geometrie-bim-naar-geo"><div class="header-wrapper"><h2 id="x3-geometrie-bim-naar-geo"><bdi class="secno">3. </bdi>Geometrie BIM naar GEO</h2><a class="self-link" href="#geometrie-bim-naar-geo" aria-label="Permalink for Section 3."></a></div>
@@ -1983,7 +1972,7 @@ Voor deze praktijkrichtlijn is het met name relevant om te kijken naar BIM als d
 In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry opslaan. Een software-gebruiker is zich niet altijd bewust van het gemodelleerde geometrie-formaat. In de GEO-formaten CityJSON, CityGML en GeoJSON maakt men voornamelijk gebruik van impliciete geometrie. Dit maakt het schema van Geo een stuk compacter dan dat van IFC. Complexe expliciete geometry kan bij conversie naar impliciete CityJSON geometrie een groot bestandsformaat opleveren.  </p>
 <figure id="drie_benaderingen_IFC_geometrie" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/Drie mogelijke benaderingen voor geometrie van 3D-objecten in IFC.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
-      <figcaption><a class="self-link" href="#drie_benaderingen_IFC_geometrie">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">
+      <figcaption><a class="self-link" href="#drie_benaderingen_IFC_geometrie">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-drie_benaderingen_IFC_geometrie"></a>
         <span class="fig-title">
         Drie verschillende benaderingen soorten geometrie in IFC <br> 
@@ -1997,7 +1986,7 @@ In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry op
 <p>De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig worden ifc-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie en vergroot de bestandsgrootte.</p>
 <figure id="Mesh_van_Geometrie" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
-    <figcaption><a class="self-link" href="#Mesh_van_Geometrie">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Mesh_van_Geometrien"></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></span></figcaption>
+    <figcaption><a class="self-link" href="#Mesh_van_Geometrie">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Mesh_van_Geometrien"></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></span></figcaption>
 </figure>
 
 </section><section id="shell-extractie"><div class="header-wrapper"><h3 id="x3-3-shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</h3><a class="self-link" href="#shell-extractie" aria-label="Permalink for Section 3.3"></a></div>
@@ -2084,7 +2073,7 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <title>Error</title>
 
 
-<pre aria-busy="false"><code class="hljs">Cannot GET /07%20Toepassingen.md</code></pre>
+<pre aria-busy="true">Cannot GET /07%20Toepassingen.md</pre>
 
 </section>
 <section id="meer-inhoud"><div class="header-wrapper"><h2 id="x6-meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 6."></a></div>
@@ -2095,7 +2084,7 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <p>
       </p><figure id="fig-onderschrift">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">14</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties"><div class="header-wrapper"><h3 id="x6-3-referenties"><bdi class="secno">6.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 6.3"></a></div>
@@ -2109,19 +2098,19 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
 </section><section id="optioneel"><div class="header-wrapper"><h3 id="x6-4-optioneel"><bdi class="secno">6.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 6.4"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<pre><code aria-busy="true">&lt;body&gt;
+  &lt;section id="abstract" data-include-format="markdown" data-include="abstract.md"&gt;&lt;/section&gt;
+  &lt;section id="sotd"&gt;&lt;/section&gt;&lt;!-- Wordt automatisch gevuld --&gt;
+  &lt;section data-include-format="markdown" class="informative" data-include="ch01.md"&gt;&lt;/section&gt;
+  &lt;section data-include-format="markdown" data-include="ch02.md"&gt;&lt;/section&gt;
+  &lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;
+  &lt;section id='conformance'&gt;&lt;/section&gt;
+  &lt;section id='tof'&gt;&lt;/section&gt;
+  &lt;section id="index"&gt;&lt;/section&gt;
+&lt;/body&gt;
 </code></pre>
 </section><section id="voorbeelden"><div class="header-wrapper"><h3 id="x6-5-voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</h3><a class="self-link" href="#voorbeelden" aria-label="Permalink for Section 6.5"></a></div>
-<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
 Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config.js</code>.
 </p></div>
 
@@ -2145,7 +2134,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>
       </p><figure id="fig-onderschrift-0">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">14</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties-0"><div class="header-wrapper"><h4 id="x6-6-2-referenties"><bdi class="secno">6.6.2 </bdi>Referenties</h4><a class="self-link" href="#referenties-0" aria-label="Permalink for Section 6.6.2"></a></div>
@@ -2159,16 +2148,16 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-2">definitie</a> om een woord te omschrijven.</p>
 </section><section id="optioneel-0"><div class="header-wrapper"><h4 id="x6-6-3-optioneel"><bdi class="secno">6.6.3 </bdi>Optioneel</h4><a class="self-link" href="#optioneel-0" aria-label="Permalink for Section 6.6.3"></a></div>
 <p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<pre><code aria-busy="true">&lt;body&gt;
+  &lt;section id="abstract" data-include-format="markdown" data-include="abstract.md"&gt;&lt;/section&gt;
+  &lt;section id="sotd"&gt;&lt;/section&gt;&lt;!-- Wordt automatisch gevuld --&gt;
+  &lt;section data-include-format="markdown" class="informative" data-include="ch01.md"&gt;&lt;/section&gt;
+  &lt;section data-include-format="markdown" data-include="ch02.md"&gt;&lt;/section&gt;
+  &lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;
+  &lt;section id='conformance'&gt;&lt;/section&gt;
+  &lt;section id='tof'&gt;&lt;/section&gt;
+  &lt;section id="index"&gt;&lt;/section&gt;
+&lt;/body&gt;
 </code></pre>
 </section></section></section>
 
@@ -2225,28 +2214,21 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
         </span>
       </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"><span class="self-link">Figuur <bdi class="figno">9</bdi></span> <span class="fig-title">
-        <span class="self-link"></span>
-        <span class="fig-title">
-        Een BIM-model (links) kan men converteren naar een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts). Het verschil van beide vormen in dit voorbeeld is 31.346m<sup>3</sup> 
-        </span>
-      </span></a>
-  </li><li class="tofline">
-    <a class="tocxref" href="#Verschil-tussen-footprint-roofedge"><span class="self-link">Figuur <bdi class="figno">10</bdi></span> <span class="fig-title">
+    <a class="tocxref" href="#Verschil-tussen-footprint-roofedge"><span class="self-link">Figuur <bdi class="figno">9</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
         LoD1.2 representatie van het aula gebouw van de TU Delft gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
         </span>
       </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title">
+    <a class="tocxref" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"><span class="self-link">Figuur <bdi class="figno">10</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
         Voorbeeld van het verschillende gebruik van bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is duidelijk gebaseerd op de dak omtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie duiden aan dat de voetafdruk, waarin de draaideuren van de entree zijn gerepresenteerd, is gebruikt als basis voor de extrusie. Beide 3DBAG representaties zijn LoD2.2
         </span>
       </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#drie_benaderingen_IFC_geometrie"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">
+    <a class="tocxref" href="#drie_benaderingen_IFC_geometrie"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
         Drie verschillende benaderingen soorten geometrie in IFC <br> 
@@ -2255,11 +2237,11 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
         </span>
       </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Mesh_van_Geometrie"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></span></a>
+    <a class="tocxref" href="#Mesh_van_Geometrie"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">14</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title">Onderschrift</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">15</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">14</bdi></span> <span class="fig-title">Onderschrift</span></a>
   </li>
       </ul></section>
 <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
