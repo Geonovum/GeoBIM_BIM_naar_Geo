@@ -300,7 +300,7 @@ In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen
 
 <!--
 <mark> Zou dit een inspiratie kunnen zijn voor een verfijning van de LoDs? zie inwinningsregels https://geonovum.github.io/IMGeo-objectenhandboek/pand </mark>
-Wellicht voor BGT en BAG (waar de betreffende 
+Het is interessant om te kijken hoe inwinregels van BGT en BAG kunnen worden verfijnd om betere reconstructie in 3D mogelijk te maken. Dat staat los van BIM-2-Geo.
 <aside class="note" title="Gebruik het aangepast BIM naar Geo conversie LoD Framework">
   <p><strong>AANBEVELING:</strong> Gebruik voor BIM naar Geo conversie het aangepast LoD Framework zoals beschreven in de <a href="https://3d.bk.tudelft.nl/pdfs/BIM2GEO_Converter.pdf" target="_blank" rel="noopener"> BIM2GEO Converter eindrapportage</a> </p>
 </aside>
@@ -310,7 +310,7 @@ Wellicht voor BGT en BAG (waar de betreffende
 
 **LoD1 & 1.0 vorm**
 
-In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 & 1.3 vormen gebaseerd op extrusie. Volgens [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf): " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.
+In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een extrusie model kan, afhankelijk van de vorm van het gebouw en afhankelijk van welk detail wordt meegenomen, een verschillende resulterende vorm hebben. [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) hebben de LoD1 definitie verfijnt door deze definitie op te splitsen o.a. door het detail niveau dat wordt meegenomen, zoals uitstulpingen en significante hoogtesprongen. Volgens [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf): " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen groter dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar op basis waarvan de extrusie precies plaats vindt is niet altijd duidelijk.
 
 <figure id="LOD1-block-model-van-een-BIM-model" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_box_extr.jpg" alt="Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts)." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
@@ -327,30 +327,14 @@ In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / ext
 Het is van belang dat de regels die gebruikt dienen te worden bij het ontwikkelen van de blokvorm beter gedefinieerd worden. Bijvoorbeeld, is de blokvorm altijd zo gevormt dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen van het coordinaatreferentiestelsel? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt in de CityGML standaard met de term blokvorm. Dit staat echter nergens expliciet gedefinieerd.
 -->
 
-<!--
-<figure id="LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/2_achtergrond/verschil_boundingbox.jpg" alt="Een mogelijk extreem verschil tussen een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts) gebaseerd op hetzelfde bron model (links). Het verschil van beide vormen is 31.346m3" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
-      <figcaption>
-        <a class="self-link" href="#fig-LOD1-verschil-tussen-de-oriëntatie-van-een-bounding-box"></bdi></a>
-        <span class="fig-title">
-        Een BIM-model (links) kan men converteren naar een kleinste bounding box geroteerd rond de z-as (midden) en een boundingbox die noord/west georiënteerd is (rechts). Het verschil van beide vormen in dit voorbeeld is 31.346m<sup>3</sup> 
-        </span>
-      </figcaption>
-</figure>
 
-<aside class="note" title="Maak aanvullende afspraken rondom vorm en orientatie voor conversie">
-  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van vorm en orientatie voor BIM naar GEO conversie. Voor vorm zou dit kunnen zijn: LoD1.0 is een bounding box model georiënteerd rond de z-as. 
-</aside>
-
--->
-
-**Voetafdruk of dak omtrek als bron**
+**Voetafdruk of dak omtrek als extrusie bron**
 
 LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.
 
 In de CityGML3.0 standaard wordt de voetafdruk genoemd als bronoppervlak voor de extrusie: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". 
 
-Voor de buitenschil is de CityGML standaard en [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) worden beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op het bronoppervlak voor de extrusie is.
+Voor de buitenschil worden in de CityGML standaard en de verfijning van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op het bronoppervlak voor de extrusie is.
 
 <figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
@@ -362,10 +346,11 @@ Voor de buitenschil is de CityGML standaard en [Biljecki et al.](https://pure.tu
       </figcaption>
 </figure>
 
-Welk bronoppervlak als basis wordt gebruikt, wordt niet altijd expliciet gemaakt. De 3DBAG gebruikt 2DBAG als bronoppervlak. De 2DBAG beschrijft de geometrie van een pand als volgt: "De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde."
-Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf.
+Welk bronoppervlak als basis wordt gebruikt, wordt niet altijd expliciet gemaakt. In Nederland wordt veelal gebruik gemaakt van de BAG als extrusie  bron, zoals voor [3DBAG](www.3dbag.nl)
+De 2DBAG beschrijft de geometrie van een pand als volgt: "De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde."
+Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf. Deze 2D geometrie valt dus niet samen met de voetprint, maar ook niet altijd met de roofprint, zeker niet als er sprake is van een aanzienlijke dakoversteek.
 
-Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat één gebaseerd is op de dak omtrek en de ander op de voetafdruk.
+Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij dit duidelijk kan worden gemaakt.
 
 <figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/3Dbag_verschillende_bron.jpg" alt="Voorbeeld verschil ronoppervlak extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
@@ -487,6 +472,7 @@ zie [handreiking 3D Tiling](https://docs.geostandaarden.nl/3d/3d-tiling/) en zie
 
 
 er zijn ook betaalde converters of add-ins [cesium revit add in](https://cesium.com/blog/2024/12/03/cesium-design-tiler-and-revit-add-in/)
+
 
 
 
