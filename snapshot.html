@@ -1411,7 +1411,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
@@ -1773,7 +1773,7 @@ Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naa
 
 
 <p><strong>LoD1 &amp; 1.0 vorm</strong></p>
-<p>In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een block model (bounding box) of een extrusie model kunnen, afhankelijk van de vorm van het gebouw, een erg verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen: LoD1.0 is een blokmodel en hogere LoD zoals 1.2 &amp; 1.3 vormen gebaseerd op extrusie. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen hoger dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar deze uitleg is nog steeds incompleet.</p>
+<p>In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een extrusie model kan, afhankelijk van de vorm van het gebouw en afhankelijk van welk detail wordt meegenomen, een verschillende resulterende vorm hebben. <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> hebben de LoD1 definitie verfijnt door deze definitie op te splitsen o.a. door het detail niveau dat wordt meegenomen, zoals uitstulpingen en significante hoogtesprongen. Volgens <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>: " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen groter dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar op basis waarvan de extrusie precies plaats vindt is niet altijd duidelijk.</p>
 <figure id="LOD1-block-model-van-een-BIM-model" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_box_extr.jpg" alt="Een BIM-model (links) kan men converteren naar een LOD1 block model (midden) en een LOD1 extrusie model (rechts)." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
       <figcaption><a class="self-link" href="#LOD1-block-model-van-een-BIM-model">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">
@@ -1787,11 +1787,10 @@ Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naa
 
 
 
-
-<p><strong>Voetafdruk of dak omtrek als bron</strong></p>
+<p><strong>Voetafdruk of dak omtrek als extrusie bron</strong></p>
 <p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.</p>
 <p>In de CityGML3.0 standaard wordt de voetafdruk genoemd als bronoppervlak voor de extrusie: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". </p>
-<p>Voor de buitenschil is de CityGML standaard en <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> worden beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op het bronoppervlak voor de extrusie is.</p>
+<p>Voor de buitenschil worden in de CityGML standaard en de verfijning van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op het bronoppervlak voor de extrusie is.</p>
 <figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"> 
       <figcaption><a class="self-link" href="#Verschil-tussen-footprint-roofedge">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">
@@ -1802,9 +1801,10 @@ Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naa
       </span></figcaption>
 </figure>
 
-<p>Welk bronoppervlak als basis wordt gebruikt, wordt niet altijd expliciet gemaakt. De 3DBAG gebruikt 2DBAG als bronoppervlak. De 2DBAG beschrijft de geometrie van een pand als volgt: "De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde."
-Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf.</p>
-<p>Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij duidelijk is dat één gebaseerd is op de dak omtrek en de ander op de voetafdruk.</p>
+<p>Welk bronoppervlak als basis wordt gebruikt, wordt niet altijd expliciet gemaakt. In Nederland wordt veelal gebruik gemaakt van de BAG als extrusie  bron, zoals voor <a href="www.3dbag.nl">3DBAG</a>
+De 2DBAG beschrijft de geometrie van een pand als volgt: "De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde."
+Dit valt samen met de grootste geprojecteerde omtrek, bezien van bovenaf. Deze 2D geometrie valt dus niet samen met de voetprint, maar ook niet altijd met de roofprint, zeker niet als er sprake is van een aanzienlijke dakoversteek.</p>
+<p>Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij dit duidelijk kan worden gemaakt.</p>
 <figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/3Dbag_verschillende_bron.jpg" alt="Voorbeeld verschil ronoppervlak extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"> 
       <figcaption><a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">
