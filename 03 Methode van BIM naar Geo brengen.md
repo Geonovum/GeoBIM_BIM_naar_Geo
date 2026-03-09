@@ -10,7 +10,7 @@ Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleind
 
 # Direct BIM/IFC openen
 
-Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is een erg makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanlevert. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
+Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is een eenvoudige manier van integratie. De eisen waaraan een BIM model moet voldoen om deze integratie te kunnen bewerkstelligen, zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen de viewer. Echter de applicaties die dit faciliteren zijn vaak commercieel en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanlevert. Integratie tussen verschillende software van andere leveranciers buiten dit systeem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
 Bijvoorbeeld: https://www.esri.com/en-us/arcgis/products/arcgis-geobim/
 Bijvoorbeeld: Autodesk Infraworks? 
@@ -21,9 +21,9 @@ Bijvoorbeeld: FME?
 
 # Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML) 
 
-Een andere methode om BIM naar Geo te brengen is een directe, 1 op 1, vertaling van het BIM bestand naar GEO. Hierbinnen kan onderscheid worden gemaakt tussen alleen de directe vertaling van de geometrie of een complete directe mapping inclusief attributen. Het verschil tussen de twee is dat een 1:1 mapping de attributen van het IFC model intact houdt terwijl een conversie van de geometrie alleen de geometrie overzet en de attributen negeert. Zowel een 1:1 conversie van de geometrie als een 1:1 mapping resulteert in een bestand dat kan worden gezien als een IFC model/structuur met een GIS extensie. Eén IFC-instantie resulteert in dit geval in één feature. Deze soort omzet is een makkelijk en relatief snel proces. Tijdens de conversie kunnen weinig fouten optreden. Het resulterende bestand kan worden geopend door iedere software die de GIS encoding ondersteunt. In dat opzicht is het veelzijdiger dan de vorige optie die de gebruiker bindt aan een software omgeving. Maar ookal heeft een 1:1 vertaald bestand een GIS encoding, het volgt niet een GIS datamodel. Dit beperkt de bruikbaarheid van deze modellen.
+Een andere methode om BIM naar Geo te brengen is een directe, 1-op-1, vertaling van het BIM bestand naar GEO. Hierbinnen kan onderscheid worden gemaakt tussen alleen de directe vertaling van de geometrie of een complete directe mapping inclusief attributen. Het verschil tussen de twee is dat de mapping inclusief de attributen, ook de attributen van het IFC model intact houdt, terwijl een conversie van de geometrie alleen de geometrie overzet en de attributen negeert. Zowel een 1:1 conversie van de geometrie als een 1:1 mapping resulteert in een bestand dat kan worden gezien als een IFC model/structuur met een GIS extensie. Eén IFC-instantie resulteert in dit geval in één feature. Dit soort omzetting is een makkelijk en relatief snel proces. Tijdens de conversie kunnen weinig fouten optreden. Het resulterende bestand kan worden geopend door iedere software die de GIS encoding ondersteunt. In dat opzicht is het veelzijdiger dan de vorige optie die de gebruiker bindt aan een software omgeving. Maar ook al heeft een 1:1 vertaald bestand een GIS encoding, het voldoet niet een GIS datamodel. Ook zijn niet alle IFC attributen te mappen naar Geo attributen en vice versa. Dit beperkt de bruikbaarheid van deze modellen.
 
-De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig worden ifc-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie en vergroot de bestandsgrootte.
+De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig worden IFC-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie, maar vergroot ook de bestandsgrootte.
 
 <figure id="Mesh_van_Geometrie">
       <img src="./media\Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau"/>
@@ -31,9 +31,9 @@ De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig
 </figure>
 
 ## GeoJSON
-GeoJSON is een zeer populaire codering voor geospatiale vectorgegevens. GeoJSON wordt breed ondersteund, ook in de meeste implementaties van API’s die voldoen aan de OGC API Features Standard. Echter, GeoJSON heeft opzettelijke beperkingen die het gebruik ervan in bepaalde geospatiale toepassingscontexten verhinderen of beperken. Zo is GeoJSON bijvoorbeeld beperkt tot WGS 84-coördinaten, ondersteunt het alleen de oorspronkelijke Simple Features geometrie-types en heeft het geen concept om features te classificeren op basis van hun type.
+GeoJSON is een zeer populaire codering voor geospatiale vectorgegevens. GeoJSON wordt breed ondersteund, ook in de meeste implementaties van API’s die voldoen aan de OGC API Features Standard. Echter, GeoJSON heeft beperkingen die het gebruik ervan in bepaalde geospatiale toepassingscontexten verhinderen of beperken. Zo is GeoJSON bijvoorbeeld beperkt tot WGS 84-coördinaten, ondersteunt het alleen de oorspronkelijke Simple Features geometrie-types en heeft het geen concept om features te classificeren op basis van hun type.
 
-Elke IFC-instantie wordt een GeoJSON feature. De properties van deze feature kan men gebruiken om de ifc-entiteit en de attributen weer te geven. 
+Elke IFC-instantie wordt na conversie een GeoJSON feature. De properties van deze feature kan men gebruiken om de IFC-entiteit en de attributen weer te geven. 
 
 Voorbeeld input IFC van een deur
 ```step
@@ -87,7 +87,7 @@ Resulteert na vertaling naar GeoJSON in:
     ]
 }
 ```
-Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen, in een toename van de bestandsgrootte. 
+Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen, juist in een toename van de bestandsgrootte. 
 
 | model | Bestandsgrootte IFC (KB) | Bestandsgrootte GeoJSON 1:1 mapping (KB)*|  
 |-|-|-|
