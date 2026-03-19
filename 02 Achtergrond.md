@@ -352,7 +352,7 @@ Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geom
       </figcaption>
 </figure>
 
-<mark> foto's aanpassen </mark>
+<mark> foto's aanpassen. </mark>
 
 <!-- De fotos van de gebouwen moet worden verwisseld met eigen fotos -->
 
