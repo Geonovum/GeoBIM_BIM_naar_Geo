@@ -364,7 +364,7 @@ Deze onduidelijkheid komt ook naar voren bij implementaties van deze frameworks.
       </figcaption>
 </figure>
 
-<mark> foto's aanpassen </mark>
+<mark> foto's aanpassen. </mark>
 
 <!-- De fotos van de gebouwen moet worden verwisseld met eigen fotos -->
 
