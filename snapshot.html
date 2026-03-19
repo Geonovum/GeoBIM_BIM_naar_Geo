@@ -1411,7 +1411,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">GeoBIM BIM naar Geo brengen</h1>
     
@@ -1472,7 +1472,7 @@ ul.index code{color:inherit}
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>TODO: vul in abstract.md een abstract in.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">2. </bdi>Achtergrondinformatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#soorten-informatie"><bdi class="secno">2.1 </bdi>Soorten informatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">2.1.1 </bdi>Documentatie</a></li><li class="tocline"><a class="tocxref" href="#alfanumeriek"><bdi class="secno">2.1.2 </bdi>Alfanumeriek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">2.2 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-information-need-en-level-of-development-in-bim"><bdi class="secno">2.2.1 </bdi>Level of Information Need en Level Of Development in BIM</a></li><li class="tocline"><a class="tocxref" href="#level-of-detail-lod-framework-in-gis"><bdi class="secno">2.2.2 </bdi>Level of Detail (LoD) Framework in GIS</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandsformaten"><bdi class="secno">2.3 </bdi>Bestandsformaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">2.3.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.3.3 </bdi>IFC</a></li><li class="tocline"><a class="tocxref" href="#x3d-tiles"><bdi class="secno">2.3.4 </bdi>3D Tiles</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#geometrie-bim-naar-geo"><bdi class="secno">3. </bdi>Geometrie BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#impliciete-en-expliciete-geometrie"><bdi class="secno">3.1 </bdi>Impliciete en expliciete geometrie</a></li><li class="tocline"><a class="tocxref" href="#meshing"><bdi class="secno">3.2 </bdi>Meshing</a></li><li class="tocline"><a class="tocxref" href="#shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voxelisatie"><bdi class="secno">3.3.1 </bdi>Voxelisatie</a></li><li class="tocline"><a class="tocxref" href="#hoge-resolutie-schil"><bdi class="secno">3.3.2 </bdi>Hoge resolutie schil</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuut-bim-naar-geo"><bdi class="secno">4. </bdi>Attribuut BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bim-classificatie-standaarden"><bdi class="secno">4.1 </bdi>BIM Classificatie standaarden</a></li><li class="tocline"><a class="tocxref" href="#geo-classificatie-standaarden"><bdi class="secno">4.2 </bdi>Geo Classificatie standaarden</a></li><li class="tocline"><a class="tocxref" href="#mapping-van-attributen"><bdi class="secno">4.3 </bdi>Mapping van Attributen</a></li><li class="tocline"><a class="tocxref" href="#status-van-objecten-van-bim-naar-geo"><bdi class="secno">4.4 </bdi>Status van objecten van BIM naar GEO</a></li></ol></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">5. </bdi>Eisen aan het BIM-model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatie-levering-specificatie"><bdi class="secno">5.1 </bdi>Informatie Levering Specificatie</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-de-geometrie-in-het-bim-model"><bdi class="secno">5.2 </bdi>Eisen aan de geometrie in het BIM-model</a></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">6.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">6.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">6.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">6.4 </bdi>Optioneel</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</a></li><li class="tocline"><a class="tocxref" href="#definities-0"><bdi class="secno">6.6 </bdi>Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen-0"><bdi class="secno">6.6.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties-0"><bdi class="secno">6.6.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel-0"><bdi class="secno">6.6.3 </bdi>Optioneel</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">2. </bdi>Achtergrondinformatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#soorten-informatie"><bdi class="secno">2.1 </bdi>Soorten informatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">2.1.1 </bdi>Documentatie</a></li><li class="tocline"><a class="tocxref" href="#alfanumeriek"><bdi class="secno">2.1.2 </bdi>Alfanumeriek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">2.2 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-information-need-en-level-of-development-in-bim"><bdi class="secno">2.2.1 </bdi>Level of Information Need en Level Of Development in BIM</a></li><li class="tocline"><a class="tocxref" href="#level-of-detail-lod-framework-in-gis"><bdi class="secno">2.2.2 </bdi>Level of Detail (LoD) Framework in GIS</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandsformaten"><bdi class="secno">2.3 </bdi>Bestandsformaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">2.3.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.3.3 </bdi>IFC</a></li><li class="tocline"><a class="tocxref" href="#x3d-tiles"><bdi class="secno">2.3.4 </bdi>3D Tiles</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#geometrie-bim-naar-geo"><bdi class="secno">3. </bdi>Geometrie BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#impliciete-en-expliciete-geometrie"><bdi class="secno">3.1 </bdi>Impliciete en expliciete geometrie</a></li><li class="tocline"><a class="tocxref" href="#meshing"><bdi class="secno">3.2 </bdi>Meshing</a></li><li class="tocline"><a class="tocxref" href="#shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voxelisatie"><bdi class="secno">3.3.1 </bdi>Voxelisatie</a></li><li class="tocline"><a class="tocxref" href="#hoge-resolutie-schil"><bdi class="secno">3.3.2 </bdi>Hoge resolutie schil</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuut-bim-naar-geo"><bdi class="secno">4. </bdi>Attribuut BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bim-classificatie-standaarden"><bdi class="secno">4.1 </bdi>BIM Classificatie standaarden</a></li><li class="tocline"><a class="tocxref" href="#geo-classificatie-standaarden"><bdi class="secno">4.2 </bdi>Geo Classificatie standaarden</a></li><li class="tocline"><a class="tocxref" href="#mapping-van-entiteiten"><bdi class="secno">4.3 </bdi>Mapping van Entiteiten</a></li><li class="tocline"><a class="tocxref" href="#mapping-van-attributen"><bdi class="secno">4.4 </bdi>Mapping van Attributen</a></li><li class="tocline"><a class="tocxref" href="#status-van-objecten-van-bim-naar-geo"><bdi class="secno">4.5 </bdi>Status van objecten van BIM naar GEO</a></li></ol></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">5. </bdi>Eisen aan het BIM-model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatie-levering-specificatie"><bdi class="secno">5.1 </bdi>Informatie Levering Specificatie</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-de-geometrie-in-het-bim-model"><bdi class="secno">5.2 </bdi>Eisen aan de geometrie in het BIM-model</a></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">6. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">6.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">6.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">6.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">6.4 </bdi>Optioneel</a></li><li class="tocline"><a class="tocxref" href="#voorbeelden"><bdi class="secno">6.5 </bdi>Voorbeelden</a></li><li class="tocline"><a class="tocxref" href="#definities-0"><bdi class="secno">6.6 </bdi>Definities</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afbeeldingen-0"><bdi class="secno">6.6.1 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties-0"><bdi class="secno">6.6.2 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel-0"><bdi class="secno">6.6.3 </bdi>Optioneel</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">8. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section id="introductie"><div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div>
@@ -1990,7 +1990,7 @@ In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry op
 </section><section id="shell-extractie"><div class="header-wrapper"><h3 id="x3-3-shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</h3><a class="self-link" href="#shell-extractie" aria-label="Permalink for Section 3.3"></a></div>
 <p>Zoals eerder beschreven is shell extractie vooral nog een experimentele vorm van BIM naar GIS brengen. Hierdoor zijn er nog geen standaard methodes ontwikkeld en gebruikt iedere software een eigen benadering. Dit hoofdstuk beschrijft de verschillende manieren waarop sommige schil modellen worden gemaakt door software. Dit is een selectie van de processen om een visualisatie te creëren van de complexheid van BIM naar GEO conversie.</p>
 <section id="voxelisatie"><div class="header-wrapper"><h4 id="x3-3-1-voxelisatie"><bdi class="secno">3.3.1 </bdi>Voxelisatie</h4><a class="self-link" href="#voxelisatie" aria-label="Permalink for Section 3.3.1"></a></div>
-<p>Een alternative shell extractie methode die wordt gebruikt is voxelisatie. Voxelisatie benaderd de vorm van een gebouw/bouwwerk met behulp van VOlumetriche piXELS (voxels). De resulterende vorm kan worden gezien als een blokkendoos representatie van het input model. Dit is op dit moment geen standaard GIS vorm die wordt ondersteund door de geaccepteerde LoD frameworks. Echter wordt dit wel als belangrijk beschouwd. Voxelisatie kan namelijk aspecten van een gebouw opslaan die verder alleen in hele complexe LoD modellen beschikbaar is (LoD3+), zoals overhang en gevelopeningen.</p>
+<p>Een alternative shell extractie methode die wordt gebruikt is voxelisatie. Voxelisatie benadert de vorm van een gebouw/bouwwerk met behulp van VOlumetriche piXELS (voxels). De resulterende vorm kan worden gezien als een blokkendoos representatie van het input model. Dit is op dit moment geen standaard GIS vorm die wordt ondersteund door de geaccepteerde LoD frameworks. Echter wordt dit wel als belangrijk beschouwd. Voxelisatie kan namelijk aspecten van een gebouw opslaan die verder alleen in hele complexe LoD modellen beschikbaar is (LoD3+), zoals overhang en gevelopeningen.</p>
 <p>Voxelisatie komt echter met unieke problemen waarvoor nog geen standaard methode voor is opgesteld. Zo is de vorm van het gevoxeliseerde model afhankelijk van de voxelgrootte en de rotatie van de grid dat gebruikt werd tijdens de voxelisatie.</p>
 
 
@@ -2013,8 +2013,136 @@ NEN2767-4</p>
 IMKL
 IMBAG
 IMBGT</p>
-</section><section id="mapping-van-attributen"><div class="header-wrapper"><h3 id="x4-3-mapping-van-attributen"><bdi class="secno">4.3 </bdi>Mapping van Attributen</h3><a class="self-link" href="#mapping-van-attributen" aria-label="Permalink for Section 4.3"></a></div>
-</section><section id="status-van-objecten-van-bim-naar-geo"><div class="header-wrapper"><h3 id="x4-4-status-van-objecten-van-bim-naar-geo"><bdi class="secno">4.4 </bdi>Status van objecten van BIM naar GEO</h3><a class="self-link" href="#status-van-objecten-van-bim-naar-geo" aria-label="Permalink for Section 4.4"></a></div>
+</section><section id="mapping-van-entiteiten"><div class="header-wrapper"><h3 id="x4-3-mapping-van-entiteiten"><bdi class="secno">4.3 </bdi>Mapping van Entiteiten</h3><a class="self-link" href="#mapping-van-entiteiten" aria-label="Permalink for Section 4.3"></a></div>
+<p>zie: <a href="https://ifc2citygml.github.io/">https://ifc2citygml.github.io/</a> (2019)
+zie: <a href="https://www.researchgate.net/figure/The-UML-diagram-of-the-developed-IfcADE-the-added-classes-are-in-beige-with-the_fig5_345918816">https://www.researchgate.net/figure/The-UML-diagram-of-the-developed-IfcADE-the-added-classes-are-in-beige-with-the_fig5_345918816</a> (2021)</p>
+<p><img src="./media/Mapping_IFC-naar_Geo_Entiteiten.png" alt="Mapping entiteiten IFC naar GEO"> (2018) George Floros</p>
+<p>Dit snap ik niet helemaal. Waarom wordt hier IFc Slab gebruik voor IfcRoof? </p>
+<p>Beter is het overzicht van Sjors Donkers (<a href="https://repository.tudelft.nl/record/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d">https://repository.tudelft.nl/record/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d</a>) (2013)</p>
+<p><a href="https://cejcheng.people.ust.hk/bimgis/">https://cejcheng.people.ust.hk/bimgis/</a></p>
+<p><img src="./media/ADE%20Voor%20CityGML%20om%20IFC%20te%20borgen.png" alt="ADE voor CityGML om IFC te borgen"></p>
+</section><section id="mapping-van-attributen"><div class="header-wrapper"><h3 id="x4-4-mapping-van-attributen"><bdi class="secno">4.4 </bdi>Mapping van Attributen</h3><a class="self-link" href="#mapping-van-attributen" aria-label="Permalink for Section 4.4"></a></div>
+<p>Attributen en properties van gebouw in IFC:</p>
+<div style="display: flex; gap: 20px;">
+  
+ 
+<table>
+    <tbody><tr><th> Attribuut </th>
+    <th>  Beschrijving</th>
+</tr><tr>
+    <td> GlobalId	
+    </td><td> IfcGloballyUniqueId
+</td></tr><tr>
+    <td> OwnerHistory	
+    </td><td> IfcOwnerHistory
+</td></tr><tr>
+    <td> Name	
+    </td><td> IfcLabel
+</td></tr><tr>
+    <td> Description	
+    </td><td> IfcText
+</td></tr><tr>
+    <td> ObjectType	
+    </td><td> IfcLabel
+</td></tr><tr>
+    <td> ObjectPlacement
+    </td><td> IfcObjectPlacement
+</td></tr><tr>
+    <td> Representation
+    </td><td> IfcProductRepresentation
+</td></tr><tr>
+    <td> LongName
+    </td><td> IfcLabel
+</td></tr><tr>
+    <td> CompositionType
+    </td><td> IfcElementCompositionEnum
+</td></tr><tr>
+    <td> ElevationOfRefHeight
+    </td><td> IfcLengthMeasure
+</td></tr><tr>
+    <td> ElevationOfTerrain
+    </td><td> IfcLengthMeasure
+</td></tr><tr>
+    <td> BuildingAddress	
+    </td><td> IfcPostalAddres
+</td></tr><tr>
+</tr></tbody></table>
+
+
+<table border="1" cellpadding="5">
+    <tbody><tr><th> Properties</th>
+    <th>  Beschrijving</th>
+</tr><tr>
+    <td> Reference	
+    </td><td> IfcGloballyUniqueId
+</td></tr><tr>
+    <td> BuildingID	
+    </td><td> A unique identifier assigned to a building.
+</td></tr><tr>
+    <td> IsPermanentID	
+    </td><td> Indicates whether identity is permanent
+</td></tr><tr>
+    <td> ConstructionMethod	
+    </td><td> The type of construction action
+</td></tr><tr>
+    <td> FireProtectionClass
+    </td><td> Main fire protection class for the building
+</td></tr><tr>
+    <td> SprinklerProtection
+    </td><td> Indication whether this object is sprinkler protected (TRUE) or not (FALSE).
+</td></tr><tr>
+    <td> SprinklerProtectionAutomatic
+    </td><td> Indication whether this object has an automatic sprinkler protection (TRUE) or not (FALSE). It should only be given, if the property "SprinklerProtection" is set to TRUE.
+</td></tr><tr>
+    <td> OccupancyType
+    </td><td> Occupancy type for this object. It is defined according to the presiding national building code.
+</td></tr><tr>
+    <td> NetPlannedArea
+    </td><td> Total planned net area of the object.
+</td></tr><tr>
+    <td> NumberOfStoreys
+    </td><td> The number of storeys within a building.
+</td></tr><tr>
+    <td> YearOfConstruction
+    </td><td> Year of construction of this building.
+</td></tr><tr>
+    <td> YearOfLastRefurbishment
+    </td><td> Year of last major refurbishment.
+</td></tr><tr>
+    <td> IsLandmarked
+    </td><td> This building is listed as a historic building
+</td></tr><tr>
+    <td> ElevationOfRefHeight
+    </td><td> Elevation above sea level of the reference height
+</td></tr><tr>
+    <td> ElevationOfTerrain
+    </td><td> Elevation above the minimal terrain level around the foot print of the building
+</td></tr></tbody></table>
+</div>
+
+<figure id="IMBAG" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/Attributen BAG.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IMBAG">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-IMBAG"></a>
+        <span class="fig-title">
+        Objecten en attributen uit de Basisregistratie Adressen en Gebouwen <br> 
+        <a href="https://www.geobasisregistraties.nl/documenten/2018/03/12/catalogus-2018" target="_blank">Catalogus Basisregistratie Adressen en Gebouwen</a>
+        </span>
+      </span></figcaption>
+</figure>
+
+<figure id="Attribuut_IMBOR_gebouw" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/Attributen Gebouw_IMBOR.png" alt="Attribuut_IMBOR_gebouw" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#Attribuut_IMBOR_gebouw">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-Attribuut_IMBOR_gebouw"></a>
+        <span class="fig-title">
+        Attributen van een gebouw volgens de IMBOR standaard <br> 
+        <a href="https://www.geobasisregistraties.nl/documenten/2018/03/12/catalogus-2018" target="_blank">IMBOR 2025</a>
+        </span>
+      </span></figcaption>
+</figure>
+
+</section><section id="status-van-objecten-van-bim-naar-geo"><div class="header-wrapper"><h3 id="x4-5-status-van-objecten-van-bim-naar-geo"><bdi class="secno">4.5 </bdi>Status van objecten van BIM naar GEO</h3><a class="self-link" href="#status-van-objecten-van-bim-naar-geo" aria-label="Permalink for Section 4.5"></a></div>
 <p><mark>Wouter?</mark></p>
 </section></section>
 <section id="eisen-aan-het-bim-model"><div class="header-wrapper"><h2 id="x5-eisen-aan-het-bim-model"><bdi class="secno">5. </bdi>Eisen aan het BIM-model</h2><a class="self-link" href="#eisen-aan-het-bim-model" aria-label="Permalink for Section 5."></a></div>
@@ -2082,7 +2210,7 @@ GeoBIM profiteert van BIM Basis Infra doordat:</p>
 <p>
       </p><figure id="fig-onderschrift">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">14</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties"><div class="header-wrapper"><h3 id="x6-3-referenties"><bdi class="secno">6.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 6.3"></a></div>
@@ -2132,7 +2260,7 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 <p>
       </p><figure id="fig-onderschrift-0">
         <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+        <figcaption><a class="self-link" href="#fig-onderschrift-0">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
       </figure>
     <p></p>
 </section><section id="referenties-0"><div class="header-wrapper"><h4 id="x6-6-2-referenties"><bdi class="secno">6.6.2 </bdi>Referenties</h4><a class="self-link" href="#referenties-0" aria-label="Permalink for Section 6.6.2"></a></div>
@@ -2230,9 +2358,25 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
   </li><li class="tofline">
     <a class="tocxref" href="#Mesh_van_Geometrie"><span class="self-link">Figuur <bdi class="figno">11</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#IMBAG"><span class="self-link">Figuur <bdi class="figno">12</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Objecten en attributen uit de Basisregistratie Adressen en Gebouwen <br> 
+        <span target="_blank">Catalogus Basisregistratie Adressen en Gebouwen</span>
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#Attribuut_IMBOR_gebouw"><span class="self-link">Figuur <bdi class="figno">13</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Attributen van een gebouw volgens de IMBOR standaard <br> 
+        <span target="_blank">IMBOR 2025</span>
+        </span>
+      </span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">14</bdi></span> <span class="fig-title">Onderschrift</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-onderschrift-0"><span class="self-link">Figuur <bdi class="figno">15</bdi></span> <span class="fig-title">Onderschrift</span></a>
   </li>
       </ul></section>
 <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
