@@ -15,12 +15,15 @@ if (alternateFormats === undefined) {
 
     const puppeteer = require("puppeteer");
 
+    const website_url =
+      process.env.PDF_SNAPSHOT_URL || "http://localhost:8081/snapshot.html";
+
     (async () => {
       const browser = await puppeteer.launch({
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
       });
       const page = await browser.newPage();
-      const website_url = "http://localhost:8081/snapshot.html";
+      console.log("Opening snapshot at:", website_url);
       await page.goto(website_url, { waitUntil: "networkidle0" });
       await page.emulateMediaType("print");
       await page.addStyleTag({ content: ".sidelabel {position: absolute}" });
