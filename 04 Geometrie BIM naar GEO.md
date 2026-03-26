@@ -40,8 +40,6 @@ Voxelisatie komt echter met unieke problemen waarvoor nog geen standaard methode
 
 ### Hoge resolutie schil
 
-
-
 <!-- verschil in pre-filtering, classe selectie, voxel filtering -->
 <!-- verschil in output van een enkele tool -->
 <!-- verschil in surface detection, ray casting, voxel assisted ray casting, alpha shapes -->
