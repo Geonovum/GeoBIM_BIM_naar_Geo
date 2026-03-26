@@ -53,7 +53,7 @@ Hier staat een tabel. Als de juiste style gekozen is ziet deze er goed uit.
 
 
 # Definities
-<dfn>Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor _definitie_ is betekenis of beschrijving.
+<dfn>definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor _definitie_ is betekenis of beschrijving.
 
 ## Afbeeldingen
 
