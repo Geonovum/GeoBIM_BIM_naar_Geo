@@ -6,11 +6,11 @@ Er zijn een aantal verschillende mogelijkheden om BIM modellen naar een GIS omge
 * (Gefilterde) 1:1 vertaling van BIM naar GEO
 * Shell extractie
 
-Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleinde.
+Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleinden.
 
 # Direct BIM/IFC openen
 
-Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is voor de gebruiker een erg makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen het ecosysteem van de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanlevert. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
+Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is voor de gebruiker een makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen het ecosysteem van de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanbiedt. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
 Bijvoorbeeld: https://www.esri.com/en-us/arcgis/products/arcgis-geobim/
 Bijvoorbeeld: Autodesk Infraworks? 
