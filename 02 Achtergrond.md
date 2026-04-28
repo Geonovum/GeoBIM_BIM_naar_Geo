@@ -310,21 +310,21 @@ Het is interessant om te kijken hoe inwinregels van BGT en BAG kunnen worden ver
 
 **LoD1 & 1.0 vorm**
 
-In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een extrusie model kan, afhankelijk van de vorm van het gebouw en afhankelijk van welk detail wordt meegenomen, een verschillende resulterende vorm hebben. [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) hebben de LoD1 definitie verfijnt door deze definitie op te splitsen o.a. door het detail niveau dat wordt meegenomen, zoals uitstulpingen en significante hoogtesprongen. Volgens [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf): " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". De beschrijving van dat dit de grofste modellen zijn, waarbij gebouwen groter dan 6 meter worden opgenomen maakt duidelijk dat LoD1.0 een blokmodel is, maar op basis waarvan de extrusie precies plaats vindt is niet altijd duidelijk.
+In de CityGML3.0 standaard wordt LoD1 beschreven met "LOD1 – Block model / extrusion objects". Een extrusie model kan, afhankelijk van de vorm van het gebouw en afhankelijk van welk detail wordt meegenomen, een verschillende resulterende vorm hebben. [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) hebben de LoD1 definitie verfijnt door deze definitie op te splitsen o.a. door het detail niveau dat wordt meegenomen, zoals uitstulpingen en significante hoogtesprongen. Volgens [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf): " ... LOD1.0 are the coarsest models: they require all buildings larger than 6 m to be acquired, and buildings may be aggregated". Deze beschrijving maakt duidelijk dat LoD1.0 een blokmodel is, maar op basis waarvan de extrusie precies plaats vindt is niet altijd expliciet.
 
 <!-- Dit heb ik eruit gehaald, omdat dit niet klopt. Het genereren van een blokvorm van gebouwen is orientatie-onafhankelijk, De muren worden opgetrokken vanaf de footprint of the roofprint.
 
-Het is van belang dat de regels die gebruikt dienen te worden bij het ontwikkelen van de blokvorm beter gedefinieerd worden. Bijvoorbeeld, is de blokvorm altijd zo gevormt dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen van het coordinaatreferentiestelsel? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt in de CityGML standaard met de term blokvorm. Dit staat echter nergens expliciet gedefinieerd.
+Het is van belang dat de regels die gebruikt dienen te worden bij het ontwikkelen van de blokvorm beter gedefinieerd worden. Bijvoorbeeld, is de blokvorm altijd zo gevormd dat de zijvlakken evenwijdig zijn aan de noord/zuid en oost/west assen van het coordinaatreferentiestelsel? Dit zou kunnen resulteren in een significante overschatting van het volume van het gerepresenteerde model. Voor de hand liggend zou zijn om LoD1.0 te modelleren als een kleinste bounding box geroteerd rond de z-as. Mogelijk is dit ook de representatie die bedoelt wordt in de CityGML standaard met de term blokvorm. Dit staat echter nergens expliciet gedefinieerd.
 -->
 
 
-**Voetafdruk of dak omtrek als extrusie bron**
+**Voetafdruk of dakomtrek als extrusie bron**
 
-LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm zijn. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.
+LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.
 
 In de CityGML3.0 standaard wordt de voetafdruk genoemd als bronoppervlak voor de extrusie: "LOD 1: Volumetric real-world objects (Spaces) are spatially represented by a vertical extrusion solid, i.e., a solid created from a horizontal footprint by vertical extrusion. A real real-world objects (Space Boundaries) can be spatially represented in LOD1 by a set of horizontal or vertical surfaces.". 
 
-Voor de buitenschil worden in de CityGML standaard en de verfijning van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op het bronoppervlak voor de extrusie is.
+Voor de buitenschil worden in de CityGML standaard en de verfijning van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Een aantal uitbreidingen voor LoD1.2, 1.3 en de 2.x groep worden beschreven, maar dit gaat niet in op wat het bronoppervlak voor de extrusie is.
 
 <figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
@@ -338,7 +338,7 @@ Voor de buitenschil worden in de CityGML standaard en de verfijning van [Biljeck
 
 Welk bronoppervlak als basis wordt gebruikt, wordt niet altijd expliciet gemaakt. In Nederland wordt veelal gebruik gemaakt van de BAG als extrusie  bron, zoals voor [3DBAG](www.3dbag.nl)
 De 2DBAG beschrijft de geometrie van een pand als volgt: "De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde."
-Dit valt samen met de grootste geprojecteerde omtrek, gezien van bovenaf. Deze 2D geometrie valt dus niet samen met de voetprint, maar ook niet altijd met de roofprint, zeker niet als er sprake is van een aanzienlijke dakoversteek. De BGT daarentegen modelleert maaiveldgeometrie van elk pand waarbij de geometrie de begrenzing van een pand aangeeft daar waar het de grond raakt. Dat valt samen met de voetafrduk.
+Dit valt samen met de grootste geprojecteerde omtrek, gezien van bovenaf. Deze 2D geometrie valt niet altijd samen met de voetafdruk, zeker niet als er sprake is van een aanzienlijke dakoversteek. De BGT daarentegen modelleert maaiveldgeometrie van elk pand waarbij de geometrie de begrenzing van een pand aangeeft daar waar het de grond raakt. Dat valt samen met de voetafdruk.
 
 Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geometrie duidelijk worden gemaakt.
 
@@ -347,7 +347,7 @@ Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geom
       <figcaption>
         <a class="self-link" href="#fig-Voorbeeld-verschil-bronoppervlak-extrusie-3DBAGx"></bdi></a>
         <span class="fig-title">
-        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is gebaseerd op de grootste omtrek van bovenaf welke samenvalt met de dakomtrek. Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie vallen buiten de geprojecteerde dak omtrek maar wel binnen de grootste omtrek vanaf boven gezien. De draaideuren van de entree zijn onderdeel van de 2DBAG geomtrie en daardoor ook de basis voor de extrusie in 3DBAG.
+        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is gebaseerd op de 2DBAG (d.w.z. de grootste omtrek van bovenaf welke samenvalt met de dakomtrek). Rechts is gebouw Echo, de twee halfronde kokers aan de voorgevel in de 3DBAG representatie vallen buiten de geprojecteerde dak omtrek maar wel binnen de grootste omtrek vanaf boven gezien. De draaideuren van de entree zijn onderdeel van de 2DBAG geomtrie en daardoor ook de basis voor de extrusie in 3DBAG.
         </span>
       </figcaption>
 </figure>
@@ -369,7 +369,7 @@ NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DB
 
 # Bestandsformaten
 
-Wanneer men een conversie wil doen van open BIM naar open GEO kan men van verschillende bestandsformaten gebruik maken. Hieronder zijn een aantal belangrijke bestandsformaten beschreven voor het converteren van open BIM naar open GEO beschreven.
+Wanneer men een conversie wil doen van open BIM naar open GEO kan men van verschillende bestandsformaten gebruik maken. Hieronder zijn een aantal belangrijke bestandsformaten beschreven voor het converteren van open BIM naar open GEO.
 
 ## CityGML XML & CityGML CityJSON
 
