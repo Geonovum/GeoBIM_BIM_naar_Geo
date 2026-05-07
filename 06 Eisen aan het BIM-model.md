@@ -98,6 +98,12 @@ Bij LOD 3.2
 
 -> IDS for making BAG attributes (BAG 2D) attributes
 
+-> IFC naar CityGML Mapping
+
+
+
+-> https://ucm.buildingsmart.org/en/use-cases/3536/en
+
 ## Informatie Leverings Specificatie
 In een ILS (informatie leveringsspecificatie) wordt vastgelegd welke informatie wanneer, en door welke partij geproduceerd moet worden. In deze richtlijn ligt hierbij de focus op _welke informatie_ geleverd moet worden. Het gaat dan om afspraken voor classificatie en het vastleggen van relevante kenmerken van objecten. Deze afspraken kunnen in tekst vastgelegd worden, of in computer-interpreteerbare vorm. Voor het laatste zijn twee gangbare methoden:
 - BuildingSMART heeft de standaard [Information Delivery Specification](https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/) (IDS) ontwikkeld. Dit is een XML-bestand dat aangeeft welke data vastgelegd dient te worden en waar de data aan moet voldoen (bijvoorbeeld datatypes). Tegelijkertijd kan dit bestand gebruikt worden om IFC-bestanden te valideren tegen deze eisen.
