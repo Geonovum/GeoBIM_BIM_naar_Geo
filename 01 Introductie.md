@@ -2,7 +2,7 @@
 
 Building Information Modelling (BIM) en Geografisch informatiesystemen (GIS) worden algemeen erkend als aanvullende bronnen van informatie. Waar BIM modellen worden gebruikt om een enkel gebouw, bouwwerk of kunstwerk in hoog detail te representeren worden GIS modellen gebruikt om grotere regio's te representeren met minder detail. Het integreren van deze twee databronnen kan zeer nuttig zijn voor zowel de BIM als GIS wereld.
 
-Ondanks het feit dat BIM en GIS gedeeltelijk dezelfde bouwwerken, infrastructuur of constructie modelleren op verschillende schaal en detail niveau is de integratie tussen beide werelden lastig. Beide velden hebben een andere modelleer benadering die overbrugt moet worden om succesvol BIM-modellen naar GIS te brengen.
+Ondanks het feit dat BIM en GIS gedeeltelijk dezelfde bouwwerken, infrastructuur of constructie modelleren op verschillende schaal en detail niveau is de integratie tussen beide werelden lastig. Beide velden hebben een andere modelleer benadering die overbrugd moet worden om succesvol BIM-modellen naar GIS te brengen.
 
 ![Wireframe representatie van een BIM en GIS model.](media/2_achtergrond/Verschil_IFC_GIS.JPG "Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).")
 
