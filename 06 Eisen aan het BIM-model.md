@@ -94,3 +94,9 @@ Bij LOD 3.2
 
 -> IDS for making BAG attributes (BAG 2D) attributes
 
+-> IFC naar CityGML Mapping
+
+
+
+-> https://ucm.buildingsmart.org/en/use-cases/3536/en
+

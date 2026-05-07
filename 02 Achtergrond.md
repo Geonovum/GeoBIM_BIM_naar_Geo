@@ -278,7 +278,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
 
 
 <figure id="Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/2_achtergrond/lodtud.png" alt="Voorbeeld van de 16 LoD's beschreven door de TU Delft" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="./media/2_achtergrond/LoDTUD.png" alt="Voorbeeld van de 16 LoD's beschreven door de TU Delft" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"></bdi></a>
         <span class="fig-title">
@@ -343,7 +343,7 @@ Dit valt samen met de grootste geprojecteerde omtrek, gezien van bovenaf. Deze 2
 Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geometrie duidelijk worden gemaakt.
 
 <figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/2_achtergrond/3Dbag_verschillende_bron.jpg" alt="Voorbeeld gebruik van 2DBAG voor extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
+      <img src="./media/2_achtergrond/3Dbag_verschillende_bron.png" alt="Voorbeeld gebruik van 2DBAG voor extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
       <figcaption>
         <a class="self-link" href="#fig-Voorbeeld-verschil-bronoppervlak-extrusie-3DBAGx"></bdi></a>
         <span class="fig-title">
@@ -351,12 +351,6 @@ Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geom
         </span>
       </figcaption>
 </figure>
-
-<mark> foto's aanpassen. </mark>
-
-<!-- De fotos van de gebouwen moet worden verwisseld met eigen fotos -->
-
-<!-- meer voorbeelden? -->
 
 Zowel de voetafdruk als de dak omtrek als de buitenste geprojecteerde voetafdruk zijn bruikbaar, maar op dit moment is het vaak onduidelijk voor de gebruiker welk oppervlak als bron voor de extrusie wordt gebruikt.
 

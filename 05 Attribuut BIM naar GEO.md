@@ -1,7 +1,5 @@
 # Attribuut BIM naar GEO
 
-
-
 ## BIM Classificatie standaarden 
 NL-SFB
 NLCS
@@ -10,9 +8,7 @@ NEN2767-4
 
 ## Geo Classificatie standaarden
 IMBOR
-
 DOOR
-
 
 NEN 3610
 IMKL
