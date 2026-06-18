@@ -10,14 +10,11 @@ Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleind
 
 # Direct BIM/IFC openen
 
-Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit is voor de gebruiker een makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen het ecosysteem van de viewer. Echter zijn de applicaties die dit faciliteren vaak commerciële en/of closed source software die een gebruiker binden aan de softwareleverancier die dit aanbiedt. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
+Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit kan in open, en soms ook in gesloten formaat. Dit is voor de gebruiker een makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen het ecosysteem van de viewer. De applicaties die dit faciliteren zijn vaak commerciële en/of closed-source software, die een geïntegreerde en stabiele gebruikerservaring bieden, maar waarbij dit doorgaans ten koste gaat van interoperabiliteit door de gebondenheid aan het ecosysteem van de leverancier. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
-Bijvoorbeeld: https://www.esri.com/en-us/arcgis/products/arcgis-geobim/
-Bijvoorbeeld: Autodesk Infraworks? 
-Bijvoorbeeld: Bentley OpenCities? 
-Bijvoorbeeld: FME? 
+Voorbeelden van toepassingen waarin Geo en BIM in één omgeving kan worden geopend zijn: [ArcGIS-GeoBIM](https://www.esri.com/en-us/arcgis/products/arcgis-geobim/), [Autodesk Forma](https://www.autodesk.com/nl/solutions/bim/bim-gis-collaboration),  [Autodesk Infraworks](https://www.autodesk.com/learn/ondemand/tutorial/use-the-connector-for-arcgis-to-import-data-into-infraworks), [Autodesk Infraworks](https://www.autodesk.com/learn/ondemand/module/how-to-connect-arcgis-data-to-infraworks-and-civil-3d),[Bentley OpenCities](https://www.bentley.com/software/opencities-planner/) of FME (https://support.safe.com/hc/en-us/articles/25407588693901-Working-with-BIM-Data-and-FME)
 
-<mark> Iemand met meer kennis kan hier meer info over direct BIM/IFC openen aan toevoegen </mark>
+Hoewel de onderliggende implementatie van het open van BIM in GEO doorgaans niet openbaar inzichtelijk is, bieden sommige oplossingen wel transparantie in de vorm van configureerbare en inzichtelijke workflows. Hierdoor is het conversieproces deels te volgen, maar blijft de exacte werking van de software vaak verborgen.
 
 # Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML) 
 
