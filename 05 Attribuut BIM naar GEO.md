@@ -7,13 +7,13 @@ Er zijn verschillende entiteit-mappingen beschikbaar tussen BIM en Geo. Zie hier
 De Universiteit van Hong Kong heeft ifc naar cityGML mappingen in een [bimgis](https://cejcheng.people.ust.hk/bimgis/) omgeving, en de technische universiteit Athene heeft onderstaande mapping.
 ![Mapping entiteiten IFC naar GEO](./media/Mapping_IFC-naar_Geo_Entiteiten.png) [(2018) George Floros](https://www.researchgate.net/figure/Semantic-mapping-from-IFC-to-CityGML-LoD-4_fig3_327604195)
 
-Het is niet mogelijk om elke entiteit in IFC naar CityGML te mappen. Men zal een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om een uitbreiding of meerdere uitbreidingen op CityGML te maken om IFC-entiteiten een plek te bieden. Dit is beschreven bij Biljecki in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
+Het is niet mogelijk om elke entiteit in IFC naar het basis CityGML-model te mappen. Men zal een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om IFC-entiteiten een plek te bieden. Dit is beschreven bij Biljecki in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
 
 ![IFC naar CityGML met een ADE](./media/IFC_naar_CityGML_en_ADE.png)
 
-![ADE voor CityGML om IFC te borgen](./media/ADE%20Voor%20CityGML%20om%20IFC%20te%20borgen.png)
+Een voorbeeld van een ADE voor IFC-entiteiten in CityGML is weergegeven in [bijlage 2](#-Entiteit-en-Attribuutmapping-tussen-BIM-en-GEO)
 
-Er zijn naast verschillende Level Of Details ook verschillende decompositie-niveaus die men vanuit één gedetailleerd BIM-model kan genereren. Zie [Bijlage 1](#Link nog maken!)
+Er zijn naast verschillende Level Of Details ook verschillende decompositie-niveaus die men vanuit één gedetailleerd BIM-model kan genereren. Zie [bijlage 1](#Entiteit-en-Attribuutmapping-tussen-BIM-en-GEO)
 
 Zoals in de [BIM basis ILS - hoofdstuk classificatie](https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/3-6-classificatiesystematiek/)aangegeven dient men naast het juist gebruik maken van entiteiten ook gebruik te maken van classificatie in BIM. Ook dit kan men gebruiken om te mappen. Er zijn verschillend BIM Classificatie standaarden als: 
 - NL-SFB
@@ -28,130 +28,50 @@ of soms domein-specifieke standaarden als SATO van Rijkswaterstaat voor Tunnels.
   <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitgebruik elkaar tegenspreken. </p>
 </aside>
 
-
-
-
 ## Mapping van Attributen
-Attributen en properties van gebouw in IFC:
-<div style="display: flex; gap: 20px;">
-  <!-- Eerste tabel -->
- 
-<table>
-    <th> Attribuut </th>
-    <th>  Beschrijving</th>
-<tr>
-    <td> GlobalId	
-    <td> IfcGloballyUniqueId
-<tr>
-    <td> OwnerHistory	
-    <td> IfcOwnerHistory
-<tr>
-    <td> Name	
-    <td> IfcLabel
-<tr>
-    <td> Description	
-    <td> IfcText
-<tr>
-    <td> ObjectType	
-    <td> IfcLabel
-<tr>
-    <td> ObjectPlacement
-    <td> IfcObjectPlacement
-<tr>
-    <td> Representation
-    <td> IfcProductRepresentation
-<tr>
-    <td> LongName
-    <td> IfcLabel
-<tr>
-    <td> CompositionType
-    <td> IfcElementCompositionEnum
-<tr>
-    <td> ElevationOfRefHeight
-    <td> IfcLengthMeasure
-<tr>
-    <td> ElevationOfTerrain
-    <td> IfcLengthMeasure
-<tr>
-    <td> BuildingAddress	
-    <td> IfcPostalAddres
-<tr>
-</table>
+Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen tussen beide modellen.
 
-<!-- Tweede tabel -->
-<table border="1" cellpadding="5">
-    <th> Properties</th>
-    <th>  Beschrijving</th>
-<tr>
-    <td> Reference	
-    <td> IfcGloballyUniqueId
-<tr>
-    <td> BuildingID	
-    <td> A unique identifier assigned to a building.
-<tr>
-    <td> IsPermanentID	
-    <td> Indicates whether identity is permanent
-<tr>
-    <td> ConstructionMethod	
-    <td> The type of construction action
-<tr>
-    <td> FireProtectionClass
-    <td> Main fire protection class for the building
-<tr>
-    <td> SprinklerProtection
-    <td> Indication whether this object is sprinkler protected (TRUE) or not (FALSE).
-<tr>
-    <td> SprinklerProtectionAutomatic
-    <td> Indication whether this object has an automatic sprinkler protection (TRUE) or not (FALSE). It should only be given, if the property "SprinklerProtection" is set to TRUE.
-<tr>
-    <td> OccupancyType
-    <td> Occupancy type for this object. It is defined according to the presiding national building code.
-<tr>
-    <td> NetPlannedArea
-    <td> Total planned net area of the object.
-<tr>
-    <td> NumberOfStoreys
-    <td> The number of storeys within a building.
-<tr>
-    <td> YearOfConstruction
-    <td> Year of construction of this building.
-<tr>
-    <td> YearOfLastRefurbishment
-    <td> Year of last major refurbishment.
-<tr>
-    <td> IsLandmarked
-    <td> This building is listed as a historic building
-<tr>
-    <td> ElevationOfRefHeight
-    <td> Elevation above sea level of the reference height
-<tr>
-    <td> ElevationOfTerrain
-    <td> Elevation above the minimal terrain level around the foot print of the building
-</table>
-</div>
+Hier zijn verschillende opties. 
 
-<figure id="IMBAG" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/Attributen BAG.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
-      <figcaption>
-        <a class="self-link" href="#fig-IMBAG"></bdi></a>
-        <span class="fig-title">
-        Objecten en attributen uit de Basisregistratie Adressen en Gebouwen <br> 
-        <a href="https://www.geobasisregistraties.nl/documenten/2018/03/12/catalogus-2018" target="_blank">Catalogus Basisregistratie Adressen en Gebouwen</a>
-        </span>
-      </figcaption>
-</figure>
+- 1-op-1 mapping 
+- Many-to-one mapping / aggregatie
+- One-to-many mapping
+- Afgeleide of berekende attributen
+- Transformaties tussen hiërarchische niveaus
 
-<figure id="Attribuut_IMBOR_gebouw" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/Attributen Gebouw_IMBOR.png" alt="Attribuut_IMBOR_gebouw" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
-      <figcaption>
-        <a class="self-link" href="#fig-Attribuut_IMBOR_gebouw"></bdi></a>
-        <span class="fig-title">
-        Attributen van een gebouw volgens de IMBOR standaard <br> 
-        <a href="https://www.geobasisregistraties.nl/documenten/2018/03/12/catalogus-2018" target="_blank">IMBOR 2025</a>
-        </span>
-      </figcaption>
+### 1-op-1 mapping
+Sommige attributen kan men direct, 1-op-1, mappen. Zo komt het attribuut "name" van een "IfcBuilding" eovereen met het attribuut "naam" van een "IMBOR:Gebouw". Beide attributen hebben dezelfde betekenis en kunnen daarom zonder aanvullende transformatie aan elkaar worden gekoppeld. De 1-op-1 mappingen vormen vaak een zeer beperkt deel van een totale attribuuttransformatie. Door verschillen in doel, structuur en detailniveau tussen BIM- en GEO-informatiemodellen moeten veel attributen worden afgeleid, geaggregeerd of via aanvullende transformatieregels worden bepaald.
+
+### Many-to-one mapping
+Een model kent bijvoorbeeld het attribuut: "Lengte", "Breedte", "hoogte". Een ontvangend model kent bijvoorbeeld "afmetingen" (l,b,h)	IMBOR.
+Bijvoorbeeld "straat", "huisnummer", "postcode", Bij een ander model een attribuut "adres". 
+
+### One-to-many mapping
+Objecttype = fietspad in BIM. In GEO is dit CityGML functie = fietspad en type verharding = asfalt. 
+Name = "Bank type B12 groen" in IMBOR: objecttype: Bank, typeaanduiding, kleur, groen 
+NLCS-naam is ook een goede hiervoor. 
+
+### Afgeleide of berekende attributen
+meerder buildingstoreys + geometrie wordt gebouwhoogte in BIM 
+De inhoud van de netto ruimten en de products wordt het Bruto Inhoud of er kan een BVO van berekend worden. 
+
+### Transformaties tussen hiërarchische niveaus
+Zowel in GEO- als BIM-informatiemodellen komen verschillende decompositieniveaus voor. Attributen van objecten op een hoger decompositieniveau kunnen worden afgeleid of geaggregeerd van objecten op een lager decompositieniveau. Daarbij is vaak sprake van een specifieke relatie tussen een attribuut van een samengesteld object en een attribuut van één of meerdere onderliggende objecttypen waaruit dat object is opgebouwd.
+
+Zo kan een objecttype "elementverharding" op een lager decompositieniveau bestaan uit een band, trottoirkolkdeksels en bestrating. Het attribuut "formaat" van een hoger decompositieniveau betreft het formaat van de stenen of tegels in het bestratingsvlak. Het betreft niet het formaat van een band of een trottoirkolk waaruit het object elementverharding ook bestaat. Een decompositieniveau lager kan het keiformaat van de bestrating afgeleid worden van de hele stenen waaruit het bestratingsvlak bestaat. 
+
+Expliciete afleidings- of aggregatieregels zijn nodig, waarin wordt vastgelegd van welk onderliggend objecttype en attribuut de waarde op een hoger decompositieniveau wordt afgeleid.
+
+<figure id="Afleiding_van_attribuut">
+      <img src="./media/Afleiding_van_attribuut.png" alt="Afleiding van attribuut"/>
+    <figcaption><a class="self-link" href="#fig-Afleiding_van_attribuut"></bdi></a><span class="fig-title">Afleiding van attribuut</span></figcaption>
 </figure>
 
 ## Status van objecten van BIM naar GEO
+Geo- en BIM-objecten beschrijven hetzelfde fysieke bouwwerk, maar vanuit verschillende perspectieven en detailniveaus. Gedurende de gehele levenscyclus van een gebouw, van ontwerp en realisatie tot beheer, renovatie en sloop,  hebben deze objecten met elkaar een relatie. Wijzigingen in BIM-objecten, zoals aanpassingen aan afmetingen, functies of constructieve elementen, hebben gevolgen voor de geo-objecten. Een consistente koppeling tussen geo- en BIM-data is daarom essentieel om informatie gedurende de levenscyclus van een object actueel en betrouwbaar te houden.
 
-<mark>Wouter?</mark>
+De Gebouwde Omgeving Referentie Architectuur (GEBORA) bestaat uit verschillende onderdelen, zie [GEBORA-onderdelen](https://www.digigo.nu/gebora-onderdelen/). Een van deze onderdelen is de [GEBORA Bouwwerk Levenscyclus](https://www.digigo.nu/gebora-bouwwerk-levenscyclus/). <mark> Aan de hand van dit model iets uitwerken </mark>
+
+
+
+
