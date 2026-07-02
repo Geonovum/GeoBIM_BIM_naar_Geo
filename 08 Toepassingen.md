@@ -82,37 +82,36 @@ Zoals eerder vermeld kan de applicatie op twee manieren ingesteld worden, via de
 
 De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn. In de afbeelding hierboven zijn de groepen weergegeven.
 
-* A: Algemene I/O instellingen
-* B: Verwachte output LoD en encoding
-* C: Aanvullende instellingen
-* D: Numerieke parameters
-* E: Geometrische parameters
+* A: Lint menu
+  * Het inladen van config pre-sets
+  * Zetten van voorkeuren
+  * Samenvatting weergeven van JSON instellingen (ook als deze niet beschikbaar zijn in de GUI)
+  * Verwijderen van JSON instellingen die niet beschikbaar zijn in de GUI
+  * Locatie aangeven van .exe en default pre-sets
+* B: Algemene I/O instellingen
+  * Instellen van input en output locaties
+* C: Verwachte output LoD en encoding
+  * De verwachte LoD output
+  * De verwachte format output aanvullend aan CityJSON
+* D: Aanvullende instellingen
+  * Interieur & exterieur output
+  * Voetafdruk en Dakuitlijn output
+  * voetafdruk getrimde volumetrische objecten
+  * Het gebruik van het IsExternal IFC attribuut
+* E: Numerieke parameters
+  * De voxelgrootte (belangrijk voor ray-casting en filtering processen)
+  * De voetafdrukhoogte
+* F: Geometrische parameters
+  * De gebruikte objecten
+  * De simplificatie van de objecten
+  * De precisie/tolerantie
+  * Gebruik van voxel pre-filtering
 
-De eerste groep zijn de algemene I/O instellingen (A). Dit gaat over waar de input bestanden staan en waar de output naartoe moet worden geschreven. Dit kan worden geconfigureerd door de bestandslocaties in de tekst balken in te vullen of via de "browse" button. De applicatie support meerdere input bestanden. Dus modellen die zijn opgesplitst in aspect modellen kunnen door de applicatie gebruikt worden. Het is aan te raden om modellen/bestanden waarvan het bekend is dat ze geen belang spelen voor de omzetting niet als input te gebruiken. Bijvoorbeeld modellen met alleen leidingen hoeven niet als input gebruikt te worden. Om de IFC objecten te selecteren die belangrijk zijn voor de omzetting leest het programma ieder IFC bestand in om vervolgens de selectie te maken. Als de selectie gedeeltelijk van te voren gemaakt kan worden door bepaalde bestanden buiten te sluiten dan zal dit het omzettingsprocess versnellen.
+Er is ook een simpele versie van de GUI beschikbaar. Deze is vooral gemaakt voor het laden van pre-set bestanden.
 
-De tweede groep zijn de verwachte output LoD en encoding (B). Afhankelijk van het doel van de GIS export kan hier een selectie van gemaakt worden. De eerste drie rijen van deze lijst is gesorteerd in complexiteit. De vierde rij valt hierbuiten, in deze rij staat de 1:1 vertaling/mapping. Dit zijn meestal relatief trage processen die maar in beperkte mate complex zijn.
+![De simpele GUI van de IfcEnvelopeExtractor](media/07_toepassingen/GUI_simple_example.JPG "De simpele versie van de GUI voor de envelope extractor")
 
-![Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt](media/07_toepassingen/output_alt_encoding.JPG "Voorbeeld van de resulterende bestanden als alternatieve encoding output wordt gebruikt.")
-
-Onderaan deze groep kan de encoding aangevuld worden. De tool zal altijd een CityJSON bestand genereren. Maar het is mogelijk om extra kopieën te genereren in .obj en/of .STEP encodig. Deze bestanden zijn enkel geometrisch. Semantische data zoals attributen woren niet in deze bestanden opgeslagen. De bestanden ondersteunen ook geen multi LoD, daarom wordt iedere LoD in een los bestand geplaatst. Deze kopieën hebben dezelfde naam als de gekozen output naam, maar ze zullen eLoDxx en iLoDxx toegevoegd hebben om de buiten- en binnenkant van het gebouw te representeren. Waarbij de xx vervangen wordt door de daadwerkelijke LoD. Deze instelling is nog niet volledige ondersteund voor iedere LoD door de software
-
-De derde groep zijn de aanvullende instellingen (C). Dit zijn instellingen die een abstractie extra detail kan geven, of juist detail kan wegnemen. Zo kan bijvoorbeeld via deze instellingingen gekozen worden voor alleen een export van het interieur. Er zijn twee instellingen die niet per se voor zichzelf spreken en extra uitleg nodig hebben.
-
-De eerste is "Footprint based abstraction". "Footprint based abstraction" dicteert of de modellen moeten worden gelimiteerd door de voetafdruk. Voor LoD1.2, 1.3 en 2.2 worden de oppervlaktes die het dak representeren naar de voetafdruk hoogte geëxtrudeerd. Dit betekend dat het dak de omvang van het gebouw bepaald. Als het dak over de voetafdruk van het gebouw heen hangt dan wordt het uiteindelijk grondoppervlak van de LoD1.2, 1.3 en 2.2 abstractie groter dan de daadwerkelijke voetafdruk. Als "Footprint based abstraction" wordt aangezet dan worden de dakoppervlaktes eerst bijgesneden zodat er nergens overhang is over de voetafdruk. Hierdoor zijn de grondoppervlaktes van LoD1.2, 1.3 en 2.2 identiek aan de daadwerkelijke voetafdruk van het gebouw. Een bijeffect hiervan is dat als er overhang in het gebouw aanwezig is de dakoppervlaktes nu kleiner zijn de LoD0.2, 0.3 en 0.4.
-
-![Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline, en een LoD2.2 vorm die is beperkt door de voetafdruk](media/07_toepassingen/footprintrestrictedex.jpg "Visualisatie van het verschil tussen een LoD2.2 vorm die gebaseerd is op de roof outline (midden), en een LoD2.2 vorm die is beperkt door de voetafdruk (rechts). Beide modellen zijn gebaseerd op dezelfde input (links).")
-
-De tweede is "Approximate areas and volumes". Zoals het woord "approximate" suggereert is dit een inschatting en niet de daadwerkelijke waarde. IFC modellen zijn geometrisch complex en het is niet altijd mogelijk om een gesloten schil te creëren. Zonder een geslote schil is het moeilijk de het volume te berekenen. Als "Approximate areas and volumes" wordt aangezet dan worden de volumes en oppervlaktes van de schillen berekend op basis van de voxelisatie. De kwaliteit en betrouwbaarheid van deze resultaten zijn erg afhankelijk van de grootte van de voxels die zijn gekozen.
-
-De vierde groep zijn de Numerieke parameters (D). Dit zijn de enige numerieke controle die de gebruiker over de applicatie heeft. De tool gebruikt voxels voor veel processen, hierdoor is het lastig om een correcte grootte te kiezen. Over het algemeen is iets kleiner dan de grootte van de kleinste nis gedeeld door twee in het model een goede waarde. Mocht dit onbekend zijn dan is 0.2 meter meestal goed.
-
-De voetafdruk hoogte is de waarde waarop de voetafdruk zich bevindt. Voor de meeste input modellen moet dit met de hand gemeten worden. Vaak is 0 correct, maar soms wordt het lokale coördinatensysteem gebruikt om foutieve georeferencie te compenseren. Als het IFC model gemaakt is volgens de [BIM basis ILS](https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/) van DigiGO dan kan de automatische instelling gebruikt worden om de tool zelf de voetafdruk hoogte te vinden. Het programma zoekt dan naar een verdieping die begint met "00" dat wordt gevolgd door een spatie.
-
-De vijfde groep zijn de Geometrische parameters(E). Deze instellingen gaan over de geometrie van het IFC bestand dat de tool gebruikt. De bovenste rij zijn drie check boxes die gaan over het tekst vak eronder. Dit tekst vak laat alle IFC classes zien de worden gebruikt door de software. De IfcBuildingElementProxy objecten kunnen hier aan toegevoegd worden door "Ignore Proxy Elements" uit te zetten. De standaard objecten worden uit deze lijst gehaald door "Use default div Object" uit te zetten. Er kunnen zelf object classes toegevoegd worden aan het tekst vak door het te ontgrendelen door "Custom div objects" aan te zetten. De software gebruikt alleen bestaande [IfcClasses](https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/link/alphabeticalorder-entities.htm). Dit is niet hoofdletter gevoelig.
-
-De onderste rij zijn weer drie check boxes. Dit zijn nog enkele losse instellingen die gerelateerd zijn aan de geometrie van het IFC bestand. "Use simple geo" dicteerd of void objecten moeten worden toegepast op volumetrische objecten. "Use high precision" dicteerd of een precisie van 1e-6m of 1e-4m moet worden gebruikt. "Use voxel filtering" dicteerd of er moet worden gefilterd met voxel intersecties voordat complexere filters worden toegepast. Voxels gebruiken om te filteren is sneller, maar ook minder precies.
-
-Als de instellingen zijn bepaald kan het programma direct worden gestart door de "Run" knop in te drukken, of een ConfigJSON kan worden gemaakt door de "Generate" knop te drukken.
+Een uitgebreide beschrijving van de GUI kan (in het engels) worden gevonden op de [GitHub van de EnvExtractor](https://github.com/tudelft3d/IFC_BuildingEnvExtractor/blob/master/Documentation/1_Gui.md).
 
 **ConfigJSON**
 
