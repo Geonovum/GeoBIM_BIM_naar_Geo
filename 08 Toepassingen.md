@@ -296,9 +296,11 @@ De representatie bestaat uit:
 De representatie bestaat uit:
 
 * Complex
-  * Als objecten met IsExternal aanwezig zijn $n \geq 1$ anders $n = 0$
+  * $n \geq 1$ 
   * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
-  * Groep van volumes dat is verzameld door de ruimte scheidende IFC objecten met het attribuut IsExternal dat de waarde True heeft in het model 1:1 over te zetten.
+  * Groep van volumes die op twee verschillende manieren kan zijn verzameld:
+    * Optie 1: Door de ruimte scheidende IFC objecten met het attribuut _IsExternal = True_ te verzamelen.
+    * Optie 2: Door met behulp van voxel assisted ray-casting de externe IFC objecten te verzamelen.
 
 #### LoD4.1
 
@@ -311,7 +313,7 @@ De representatie bestaat uit:
 * Complex
   * $n \geq 1$
   * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
-  * Groep van volumes dat is verzameld door de IFC objecten die zijn gekozen als ruimte scheidende objecten 1:1 over te zetten.
+  * Groep van volumes die is verzameld door de IFC objecten die zijn gekozen als ruimte scheidende objecten 1:1 over te zetten.
 
 #### LoD4.2
 
@@ -324,7 +326,7 @@ De representatie bestaat uit:
 * Complex
   * $n \geq 1$
   * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
-  * Groep van volumes dat is verzameld door de IFC objecten 1:1 over te zetten. Deze abstractie gebruikt geen versimpelde representatie van de ramen en deuren zoals de rest van de abstractie wel doet.
+  * Groep van volumes die is verzameld door de IFC objecten 1:1 over te zetten. Deze abstractie gebruikt geen versimpelde representatie van de ramen en deuren zoals de rest van de abstractie wel doet.
 
 #### LoD5.0/LoDv
 
