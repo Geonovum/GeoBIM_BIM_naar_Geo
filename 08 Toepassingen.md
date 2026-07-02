@@ -291,7 +291,7 @@ De representatie bestaat uit:
 
 ![Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD40.jpg "Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.")
 
-3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren.
+3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren. Dit kan worden gezien als de eerste stap in de creatie van LoD3.2. Waarbij LoDe.1 stap 2 is.
 
 De representatie bestaat uit:
 
@@ -327,6 +327,20 @@ De representatie bestaat uit:
   * $n \geq 1$
   * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
   * Groep van volumes die is verzameld door de IFC objecten 1:1 over te zetten. Deze abstractie gebruikt geen versimpelde representatie van de ramen en deuren zoals de rest van de abstractie wel doet.
+
+
+#### LoDe.1
+
+![Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoDe1.jpg "Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.")
+
+3D oppervlak representatie van het input BIM model. Dit kan worden gezien als de tweede stap in de LoD3.2 creatie. LoD4.0 kan worden beschouwd als de eerste stap.
+
+De representatie bestaat uit:
+
+* Buitenschil
+  * $n \geq 1$
+  * Type: _RoofSurface_, _GroundSurface_, _WallSurface_, _Window_ of _Door_
+  * een verzameling oppervlakken die wordt gecreëerd door de LoD4.0-objecten te nemen en de buitenste oppervlakken te isoleren met behulp van een raycasting-proces. Dit is niet een volumetrisch model.
 
 #### LoD5.0/LoDv
 
