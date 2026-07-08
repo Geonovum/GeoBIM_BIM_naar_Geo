@@ -1,4 +1,6 @@
-# Eisen aan het BIM-model 
+# Eisen aan model en mapping 
+
+## Eisen aan het BIM-model 
 
 Een succesvolle transformatie van een BIM model naar een GIS bestandsformaat begint al bij het maken van de juiste afspraken vóór de start van het modelleerwerk. Zonder duidelijke kaders is de kans groot dat het BIM-model geometrisch te complex of data-technisch te vervuild is voor gebruik in een geografisch informatiesysteem.
 
@@ -165,3 +167,24 @@ ex:Revisie a ex:StatusLijst .
 ```
 
 Om te voorkomen dat voor iedere ILS opnieuw nagedacht moet worden over objecten en kenmerken, is het sterk aan te raden om een standaard of ontologie te gebruiken als basis voor de ILS. Voorbeelden hiervan zijn de [ILS O&E](https://www.digigo.nu/ilsen-en-richtlijnen/ils-ontwerp-en-engineering/), [IMBOR](https://www.crow.nl/kennisproducten/imbor/) en de [NLCS](https://www.digigo.nu/standaarden/nlcs/). Daarnaast helpt het gebruik van standaarden om de herkenbaarheid van de data te vergroten tussen verschillende disciplines. 
+
+## Eisen aan het Geomodel 
+
+
+
+
+
+
+
+## Eisen aan de mapping
+
+### Afgesproken mapping
+[NLCS-IMGEO-mapping](https://www.geonovum.nl/nieuws/uitwisseling-geometrie-nederlandse-cad-standaard-en-imgeo)
+
+
+### Allignment ontology
+Een alignment ontology kan worden gebruikt om BIM naar GEO mappingen op een gestandaardiseerde en machineleesbare manier vast te leggen. In plaats van alleen een directe koppeling tussen entiteiten en attributen te beschrijven, legt een dergelijke ontology ook het type relatie vast, zoals een directe mapping, een procedurele afleiding, een mapping naar een ADE of een verrijking vanuit externe bronnen.
+
+Hiermee wordt niet alleen vastgelegd welke informatie wordt gemapt, maar ook hoe deze informatie tot stand komt. Een alignment ontology ondersteunt daarmee een transparante, uitbreidbare en herbruikbare beschrijving van BIM-naar-GEO-conversies.
+
+### API Process
