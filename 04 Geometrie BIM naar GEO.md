@@ -5,7 +5,7 @@ Geometrie van BIM en GEO kan impliciet of expliciet zijn. Impliciete geometrie i
 In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry opslaan. Een software-gebruiker is zich niet altijd bewust van het gemodelleerde geometrie-formaat. In de GEO-formaten CityJSON, CityGML en GeoJSON maakt men voornamelijk gebruik van impliciete geometrie. Dit maakt het schema van Geo een stuk compacter dan dat van IFC. Complexe expliciete geometrie kan bij conversie naar impliciete CityJSON geometrie een groot bestandsformaat opleveren.  
 
 <figure id="drie_benaderingen_IFC_geometrie" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/2_achtergrond/Drie mogelijke benaderingen voor geometrie van 3D-objecten in IFC.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <img src="media/2_achtergrond/Drie mogelijke benaderingen voor geometrie van 3D-objecten in IFC.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
         <a class="self-link" href="#fig-drie_benaderingen_IFC_geometrie"></bdi></a>
         <span class="fig-title">
@@ -20,7 +20,7 @@ In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry op
 De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig worden ifc-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie en vergroot de bestandsgrootte.
 
 <figure id="Mesh_van_Geometrie" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
     <figcaption><a class="self-link" href="#fig-Mesh_van_Geometrien"></bdi></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></figcaption>
 </figure>
 
