@@ -25,7 +25,7 @@ Dit soort omzetting is een makkelijk en relatief snel proces. Tijdens de convers
 Aanvullend is de overzetting van de geometrie niet een volledig 1:1 vertaling. IFC ondersteunt expliciete en impliciete geometrie terwijl de meeste GIS formats enkel expliciete geometrie ondersteunt. Dit betekend dat tijdens de conversie de impliciete geometrie moet worden overgezet naar breps of meshes. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie maar vergroot ook de bestandsgrootte van het resulterende GIS bestand.
 
 <figure id="Mesh_van_Geometrie">
-      <img src="./media\Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau"/>
+      <img src="media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau"/>
     <figcaption><a class="self-link" href="#fig-Mesh_van_Geometrien"></bdi></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></figcaption>
 </figure>
 

@@ -6,13 +6,13 @@ Voor het transformeren van BIM- naar GEO-informatie is het mappen van entiteiten
 Er zijn verschillende entiteit-mappingen ontwikkeld ter ontdersteuning van de conversie tussen BIM en Geo. Een vroeg voorbeeld is de Master Thesis [Automatic generation of CityGML LoD3 building models from IFC models](https://repository.tudelft.nl/record/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d) van Sjors Donkers (TU Delft, 2013). Daarnaast heeft de Universiteit Singapore een [ifc2citygml](https://ifc2citygml.github.io/) mapping (2019) gemaakt. Ook de technische universiteit Munich voorziet ook in een [mapping en converter](https://github.com/tum-gis/ifc-to-citygml3) van ifc naar Citygml 3. 
 De Universiteit van Hong Kong publiceert ifc naar cityGML mappingen in een [bimgis](https://cejcheng.people.ust.hk/bimgis/) omgeving, en de technische universiteit Athene heeft onderstaande mapping uitgewerkt.
 
-![Mapping entiteiten IFC naar GEO](./media/Mapping_IFC-naar_Geo_Entiteiten.png)</br>[(2018) George Floros](https://www.researchgate.net/figure/Semantic-mapping-from-IFC-to-CityGML-LoD-4_fig3_327604195)
+![Mapping entiteiten IFC naar GEO](media/Mapping_IFC-naar_Geo_Entiteiten.png)</br>[(2018) George Floros](https://www.researchgate.net/figure/Semantic-mapping-from-IFC-to-CityGML-LoD-4_fig3_327604195)
 
 De verschillende mappingen adresseren enkele of andere LOD's en/of attribuutmappingen en daarmee verschillende aspecten van een BIM naar GEO conversie. De verschillende benaderingen vullen elkaar aan en laten zien dat er geen algemeen geaccepteerde, uniforme mapping bestaat die alle aspecten van een BIM-naar-GEO-conversie afdekt.
 
 Het is niet mogelijk om elke entiteit in IFC naar het basis CityGML-model te mappen. Men zal een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om IFC-entiteiten een plek te bieden. Dit is beschreven bij Biljecki in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
 
-![IFC naar CityGML met een ADE](./media/Attribuutmapping/IFC_naar_CityGML_en_ADE.png)
+![IFC naar CityGML met een ADE](media/Attribuutmapping/IFC_naar_CityGML_en_ADE.png)
 
 Een voorbeeld van een ADE voor IFC-entiteiten in CityGML is weergegeven in [bijlage 2](#-Entiteit-en-Attribuutmapping-tussen-BIM-en-GEO)
 
@@ -61,7 +61,7 @@ Zo kan een objecttype "elementverharding" op een lager decompositieniveau bestaa
 Expliciete afleidings- of aggregatieregels zijn nodig, waarin wordt vastgelegd van welk onderliggend objecttype en attribuut de waarde op een hoger decompositieniveau wordt afgeleid.
 
 <figure id="Afleiding_van_attribuut">
-      <img src="./media/Attribuutmapping/Afleiding_van_attribuut.png" alt="Afleiding van attribuut"/>
+      <img src="media/Attribuutmapping/Afleiding_van_attribuut.png" alt="Afleiding van attribuut"/>
     <figcaption><a class="self-link" href="#fig-Afleiding_van_attribuut"></bdi></a><span class="fig-title">Afleiding van attribuut</span></figcaption>
 </figure>
 
@@ -71,24 +71,24 @@ Bij een conversie van IFC naar CityGML is het niet altijd mogelijk om alle benod
 
 Een totale BIM naar GEO entiteit en attribuutmapping zal een combinatie van de hierboven beschreven opties zijn. Zoals beschreven in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440). 
 
-<figure id="Routes_attribuut_mapping">
-      <img src="./media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes.png" alt="Routes van attribuutmapping"/>
-    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
+<figure id="Routes_attribuut_mapping_1">
+      <img src="media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes.png" alt="Routes van attribuutmapping"/>
+    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping_1"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
 In dit figuur betekent "0" de informatie die niet van BIM naar GEO hoeft te gaan. Het getal "1" staat voor CityGML en "2" voor een aanvulling op CityGML in de vorm van een ADE. Het getal "3" staat voor de externe bronnen die knnen ondersteunen in het genereren van CityGML. De letters "a" staan voor de directe 1 op 1 mappingen en "b" voor de procesmappingen. 
 
 Onderstaand voorbeeld laat zien hoe al deze routes binnen één conversie van BIM naar GEO gebruikt worden. In onderstaand voorbeeld worden *meubels* buiten beschouwing gelaten voor conversie ("0"). Voor de entiteit *raam* bestaat een 1 op 1 mapping naar CityGML ("1a"). Het *aantal verdiepingen* zal berekend kunnen worden om in CityGML te vertalen ("1b"). Het materiaaltype van een object kan een 1 op 1 mapping naar een CityGML ADE zijn ("2a"), het aantal toegangspunten van een kamer een procesmapping naar een ADE ("2b"). Tenslotte is het aantal bewoners alleen vanuit externe bronnen ("3") toe te voegen.
 
-<figure id="Routes_attribuut_mapping">
-      <img src="./media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes_Voorbeeld.png" alt="Routes van attribuutmapping"/>
-    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
+<figure id="Routes_attribuut_mapping_2">
+      <img src="media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes_Voorbeeld.png" alt="Routes van attribuutmapping"/>
+    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping_2"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
 Een voorbeeldresultaat van bovenstaande attribuutmapping is hieronder weergegeven. Een aantal attributen op gebouwniveau zijn basis CityGML. Een aantal aanvullende ADE properties voorzien meer informatie over dit gebouw na mapping.  
-<figure id="Routes_attribuut_mapping">
-      <img src="./media/Attribuutmapping/Attribuutmapping_ADE_Opties.png" alt="Routes van attribuutmapping"/>
-    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
+<figure id="Routes_attribuut_mapping_3">
+      <img src="media/Attribuutmapping/Attribuutmapping_ADE_Opties.png" alt="Routes van attribuutmapping"/>
+    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping_3"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
 

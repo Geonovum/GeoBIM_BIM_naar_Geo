@@ -6,7 +6,7 @@ Geo- en BIM-objecten kunnen hetzelfde fysieke bouwwerk beschrijven, maar vanuit 
 De Gebouwde Omgeving Referentie Architectuur (GEBORA) bestaat uit verschillende onderdelen, zie [GEBORA-onderdelen](https://www.digigo.nu/gebora-onderdelen/). Een van deze onderdelen is de [GEBORA Bouwwerk Levenscyclus](https://www.digigo.nu/gebora-bouwwerk-levenscyclus/). 
 
 <figure id="Gebora_levenscyclus">
-      <img src="./media/levenscyclus/Levenscyclus_GEBORA.png" alt="Gebora_levenscyclus"/>
+      <img src="media/levenscyclus/Levenscyclus_GEBORA.png" alt="Gebora_levenscyclus"/>
     <figcaption><a class="self-link" href="#fig-Gebora_levenscyclust"></bdi></a><span class="fig-title">Gebora levenscyclus</span></figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ Wanneer de *status* **vervallen** is vindt er geen BIM naar GEO conversie plaats
 Bij de integratie van BIM naar GEO ontstaat een uitdaging rondom de levenscyclus van objecten. Een geplande geometrie uit een BIM-model wordt gecombineerd met de bestaande GEO-registratie, maar zonder correcte toepassing van tijds- en levenscyclusattributen blijft de geometrie van bestaande bouwwerken die in ontwerp weg zouden gaan zichtbaar. Hierdoor worden de huidige en toekomstige situatie overlappend weergegeven.
 
 <figure id="Gebiedsontwikkeling_BIM_naar_GEO">
-      <img src="./media/levenscyclus/Gebiedsontwikkeling BIM naar GEO.png" alt="Gebiedsontwikkeling BIM naar GEO"/>
+      <img src="media/levenscyclus/Gebiedsontwikkeling BIM naar GEO.png" alt="Gebiedsontwikkeling BIM naar GEO"/>
     <figcaption><a class="self-link" href="#fig-Gebiedsontwikkeling_BIM_naar_GEOt"></bdi></a><span class="fig-title">Gebiedsontwikkeling BIM naar GEO</span></figcaption>
 </figure>
 

@@ -6,7 +6,7 @@ Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acern
 
 
 ## Decompositieniveau 1: 
-![Decompositie_niveau_1_IFC_naar_CityGML](./media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_1.png)
+![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_1.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,7 +45,7 @@ Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acern
 ```
 
 # Decompositieniveau 2: 
-![Decompositie_niveau_1_IFC_naar_CityGML](./media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_2.png)
+![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_2.png)
 
 ```xml 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -114,9 +114,9 @@ Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acern
 ```
 
 # Decompositieniveau 3: 
-![Decompositie_niveau_1_IFC_naar_CityGML](./media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_3.png)
+![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_3.png)
 
 
 
 # Decompositieniveau 4: 
-![Decompositie_niveau_1_IFC_naar_CityGML](./media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_4.png)
+![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_4.png)

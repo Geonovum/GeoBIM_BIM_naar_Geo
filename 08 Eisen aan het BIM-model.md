@@ -11,7 +11,7 @@ In Nederland bestaan landelijke BIM-afspraken. Deze afspraken zorgen voor een ee
 
 
 <figure id="ILS-IP-BUP-digigo" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/06_eisen/ILS_Protocl_en_BUP.png" alt="Informatie Levering Specificatie (ILS), Informatie Protocol (IP) en Bim Uitvoerings Plan (BUP) als contractuele afspraak over data-creatie, -overdracht en -gebruik." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/06_eisen/ILS_Protocl_en_BUP.png" alt="Informatie Levering Specificatie (ILS), Informatie Protocol (IP) en Bim Uitvoerings Plan (BUP) als contractuele afspraak over data-creatie, -overdracht en -gebruik." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">
@@ -26,7 +26,7 @@ In deze praktijkrichtlijn wordt voornamelijk de InformatieLeveringsSpecificatie 
 DigiGO beheert een aantal templates en sectorbrede standaarden zoals; de BIM basis ILS (met een focus op de bouw),de BIM basis Infra (met een focus op infrastructuur), de ILS Ontwerp&Engineering, het nationaal model Informatie Protocol, het nationaal template BIM UitvoeringsPlan. Deze richtlijnen en templates bieden een set afspraken en handvatten voor het gestructureerd en eenduidig uitwisselen van digitale informatie. De landelijke (sector) afspraken kunen binnen organisaties en projecten verder uitgewerkt worden en deze afpsraken kan men in contracten vastleggen.
 
 <figure id="BIM-digigo" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/06_eisen/BIM landschap.png" alt="Het BIM afspraken landschap" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/06_eisen/BIM landschap.png" alt="Het BIM afspraken landschap" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-BIMdigigo"></bdi></a>
         <span class="fig-title">
@@ -58,7 +58,7 @@ DigiGO beheert een aantal templates en sectorbrede standaarden zoals; de BIM bas
     Dit sluit aan op de aanbeveling in [Technical guidlines for digital building logbooks](https://www.ecorys.com/app/uploads/2019/02/DBL-Technical-Guidelines-for-DBLs.pdf) van Ecorys, TNO, Arcadis en Contecht. 
 
     <figure id="Physical_and_information_objects" style="display: block; text-align: center; margin: 0 auto;">
-          <img src="./media/06_eisen/Physical_and_information_object.png" alt="Semantisch model fysieke objecten en informatie objecten" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+          <img src="media/06_eisen/Physical_and_information_object.png" alt="Semantisch model fysieke objecten en informatie objecten" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
           <figcaption>
             <a class="self-link" href="#fig-Physical_and_information_objects"></bdi></a>
             <span class="fig-title">
@@ -99,7 +99,7 @@ De inhoud van eisen aan een BIM- en/of GEO-model komen uit een volgende behoefte
 |Project Informatie model (PIM) | "Tijdens het project wordt deze informatie vastgelegd in het Project Information Model. En materiaal, levensduur, constructie wordt naar het asset information model gestuurd" |
 
   <figure id="ISO-19650-dataproducten-en-relaties" style="display: block; text-align: center; margin: 0 auto;">
-          <img src="./media/06_eisen/ISO_19650_Datasets.png" alt="ISO 19650 dataproducten en relaties" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+          <img src="media/06_eisen/ISO_19650_Datasets.png" alt="ISO 19650 dataproducten en relaties" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
           <figcaption>
             <a class="self-link" href="#fig-19650-dataproducten-en-relatie"></bdi></a>
             <span class="fig-title">
