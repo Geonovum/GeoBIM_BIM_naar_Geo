@@ -18,7 +18,7 @@ Tegelvlak 123, Band 123, Band 124, Hoekstuk 123, Kaaststuk 123 en Opsluitband 12
 En stel men heeft een connectie gemaakt tussen BIM en GEO.
 
 <figure id="Situatie_weg_en_elementen">
-      <img src="media/evenscyclus/Weg_of_verharding_bestaande_uit_elementen.png" alt="Situatie_weg_en_elementent"/>
+      <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen.png" alt="Situatie_weg_en_elementent"/>
     <figcaption><a class="self-link" href="#fig-Situatie_weg_en_elementen"></bdi></a><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></figcaption>
 </figure>
 
@@ -87,6 +87,6 @@ Als deze maatregelen zijn *Uitgevoerd*.
 Dan onstaan Weg 123, 124, 125, Voetpad 123, 124 Parkeervak 123, etc. 
 
 <figure id="Nieuwe_weg_in_een_onbegroeid_terrein">
-      <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_nieuw_voetpad_in_bestaand_onbegroeid_terreindeel.png" alt="Nieuwe_weg_in_een_onbegroeid terrein"/>
+      <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_nieuw_voetpad_in_bestaand_onbegroeid_terreindeel.png" alt="Nieuwe weg in een onbegroeid terrein"/>
     <figcaption><a class="self-link" href="#fig-Nieuwe_weg_in_een_onbegroeid_terrein"></bdi></a><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></figcaption>
 </figure>
