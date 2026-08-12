@@ -1,7 +1,7 @@
 # Entiteit en Attribuutmapping tussen BIM en GEO
 
 <figure id="Attribuut_mapping_IFC_BAG_IMBOR" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/IFC_BAG_IMBOR_attribuut_mapping.png" alt="Attribuut_mapping_IFC_BAG_IMBOR" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/Attribuutmapping/IFC_BAG_IMBOR_attribuut_mapping.png" alt="Attribuut_mapping_IFC_BAG_IMBOR" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-Attribuut_IMBOR_gebouw"></bdi></a>
         <span class="fig-title">
@@ -9,7 +9,11 @@
       </figcaption>
 </figure>
 
-
-
-
-![ADE voor CityGML om IFC te borgen](media/ADE%20Voor%20CityGML%20om%20IFC%20te%20borgen.png)
+<figure id="ADE_voor_IFC_in_CitygML" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/Attribuutmapping/ADE Voor CityGML om IFC te borgen.png" alt="Attribuut_mapping_IFC_BAG_IMBOR" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-Attribuut_IMBOR_gebouw"></bdi></a>
+        <span class="fig-title">
+        ADE voor CityGML om IFC te borge
+      </figcaption>
+</figure>
