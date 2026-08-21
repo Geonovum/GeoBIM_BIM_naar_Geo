@@ -1,4 +1,4 @@
-# Toolkit
+# Toepassingen
 
 ## Handleiding/HowTo
 
@@ -35,10 +35,11 @@ Given the need to evolve software and standards rapidly to meet changing market 
         <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">
         IFC in ArcGIS in een 3D Object Scene Layers <br>
-        Bron: Esri</a>.
+        Bron: <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/transportation/common-patterns-for-bim-and-gis-integration">Esri </a></a>
         </span>
       </figcaption>
 </figure>
+
 
 ## IFC2GeoJSON 
 Het project [Ifc2GeoJSON](https://github.com/abdoulayediak/ifc2geojson) voorziet in tooling om IFC naar 3D GeoJSON te converteren. Ook is er een [ifc2gis-webapplicatie](https://ifc2gis.com/app/) van beschikbaar. 
@@ -49,10 +50,11 @@ Het project [Ifc2GeoJSON](https://github.com/abdoulayediak/ifc2geojson) voorziet
         <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">
         IFC in de tooling IFC2GIS met een selectie een gefilterde 1:1 vertaling<br>
-        Bron: Ifc2GIS</a>.
+        Bron: <a href="https://ifc2gis.com/">IFC2GIS </a></a>
         </span>
       </figcaption>
 </figure>
+
 
 In deze tool wordt web-ifc, tree.js en geojson gebruikt om de geometrie te veranderen. De [IfcGeometryLoader](https://github.com/ThatOpen/engine_web-ifc/blob/main/src/cpp/web-ifc/geometry/IfcGeometryLoader.cpp) voorziet in de transformatie van impliciete procedurele geometrie naar expliciete geometrie. Met deze functie is het mogelijk om parameters mee te geven voor het tesseleren van geometrie. In de Ifc2GeoJSON tool is het niet mogelijk deze parameters aan te passen. 
 
@@ -66,7 +68,6 @@ De functies onderscheiden in het detailniveau van het BIM-model en het detailniv
 - [BIM to GIS IFC LOD 200 to LOD 3 CityGML](https://support.safe.com/hc/en-us/articles/25407525412365-BIM-to-GIS-Advanced-IFC-LOD-200-to-LOD-3-CityGML)
 - [BIM to GIS IFC LOD 300 to LOD 4 CityGML](https://support.safe.com/hc/en-us/articles/25407718003341-BIM-to-GIS-Intermediate-IFC-LOD-300-to-LOD-4-CityGML)
 
-
 In de totale flow van de LOD100 naar LOD 2 CityGML conversie is te zien dat er een mesh gemaakt wordt van de Ifc geometrie van spaces en slabs.  
 
 <figure id="FME-LOD-2-workflow" style="display: block; text-align: center; margin: 0 auto;">
@@ -75,7 +76,7 @@ In de totale flow van de LOD100 naar LOD 2 CityGML conversie is te zien dat er e
         <a class="self-link" href="#fig-LOD-2-CityGML-workflow"></bdi></a>
         <span class="fig-title">
         FME LOD 2 CityGML workflow<br>
-        Bron: FME</a>
+        Bron: <a href="https://support.safe.com/hc/en-us/articles/25407429026829-BIM-Tutorial">FME </a></a>
         </span>
       </figcaption>
 </figure>
@@ -88,7 +89,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
         <a class="self-link" href="#fig-FME-LOD-3-workflow"></bdi></a>
         <span class="fig-title">
         FME LOD 3 CityGML workflow<br>
-        Bron: FME</a>
+        Bron: <a href="https://support.safe.com/hc/en-us/articles/25407429026829-BIM-Tutorial">FME </a></a>
         </span>
       </figcaption>
 </figure>
@@ -100,7 +101,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
         <a class="self-link" href="#fig-FME-IFC-Input-model"></bdi></a>
         <span class="fig-title">
         FME IFC Input model<br>
-        Bron: FME</a>
+        Bron: <a href="https://support.safe.com/hc/en-us/articles/25407429026829-BIM-Tutorial">FME </a></a>
         </span>
       </figcaption>
 </figure>
@@ -113,7 +114,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
         <a class="self-link" href="#fig-IFC-2-GIS"></bdi></a>
         <span class="fig-title">
         FME LOD 2 CityGML output<br>
-        Bron: FME</a>
+        Bron: <a href="https://support.safe.com/hc/en-us/articles/25407429026829-BIM-Tutorial">FME </a></a>
         </span>
       </figcaption>
 </figure>
@@ -124,7 +125,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
         <a class="self-link" href="#fig-IFC-3-GIS"></bdi></a>
         <span class="fig-title">
         FME LOD 3 CityGML output<br>
-        Bron: FME</a>
+        Bron: <a href="https://support.safe.com/hc/en-us/articles/25407429026829-BIM-Tutorial">FME </a></a>
         </span>
       </figcaption>
 </figure>
@@ -135,7 +136,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
         <a class="self-link" href="#fig-"IFC-4-GIS"></bdi></a>
         <span class="fig-title">
         FME LOD 4 CityGML output<br>
-        Bron: FME</a>
+        Bron: <a href="https://support.safe.com/hc/en-us/articles/25407429026829-BIM-Tutorial">FME </a></a> 
         </span>
       </figcaption>
 </figure>
@@ -153,10 +154,12 @@ Het creëeren van CityJSON is onderzocht in samenwerking met de TU-Delft. Dit is
         <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">
         Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC<br>
-        Bron: IFC Openshell Github</a>.
+        Bron: <a href="https://github.com/IfcOpenShell/IfcOpenShell">IFCOpenShell Github</a></a>
         </span>
       </figcaption>
 </figure>
+
+
 
 ## BIMShell
 BIMShell is een extensie van Trimble/Sketchup. Met deze extensie is het mogelijk om een footprint shell te maken. Dit genereert een omhulsel dat overeenkomt met de geëxtrudeerde voetafdruk van het model (langs de Z-as)
@@ -176,36 +179,34 @@ Genereert een omhulselversie van het model door de vlakken die zich aan de buite
         <a class="self-link" href="#fig-BIMShell-Input-Output"></bdi></a>
         <span class="fig-title">
         BIMShell input and output model<br>
-        Bron: Sketchup extensions</a>
+        Bron: <a href="https://extensions.sketchup.com/extension/cdd3801a-c15d-40f9-87c2-a729d55f60d4/bimshell">BIMShell SketchUp Extensions</a></a>
         </span>
       </figcaption>
 </figure>
 
 <figure id="BIMShell-Input" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png"alt="BIMShell input model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/BIMShell/BIMShell_02.png"alt="BIMShell input model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-BIMShell-Input"></bdi></a>
         <span class="fig-title">
         BIMShell input model<br>
-        Bron: Sketchup extensions</a>
+        Bron: <a href="https://extensions.sketchup.com/extension/cdd3801a-c15d-40f9-87c2-a729d55f60d4/bimshell">BIMShell SketchUp Extensions</a></a>
         </span>
       </figcaption>
 </figure>
 
 <figure id="BIMShell-Output" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png"alt="BIMShell output model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/BIMShell/BIMShell_03.png"alt="BIMShell output model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-BIMShell-Output"></bdi></a>
         <span class="fig-title">
         BIMShell output model<br>
-        Bron: Sketchup extensions</a>
+        Bron: <a href="https://extensions.sketchup.com/extension/cdd3801a-c15d-40f9-87c2-a729d55f60d4/bimshell">BIMShell SketchUp Extensions</a></a>
         </span>
       </figcaption>
 </figure>
 
 </div>
-
-Beelden: https://extensions.sketchup.com/
 
 
 ## IfcEnvelopeExtractor

@@ -8,11 +8,11 @@ Er zijn een aantal verschillende mogelijkheden om BIM modellen naar een GIS omge
 
 Iedere methode heeft een andere uitkomst en kan nuttig zijn voor andere doeleinden.
 
-# Direct BIM/IFC openen
+# Direct BIM/IFC openen in GEO
 
 Er zijn softwarepakketten die het mogelijk maken om BIM en GIS modellen te openen in een enkele omgeving/viewer. Dit kan in open, en soms ook in gesloten formaat. Dit is voor de gebruiker een makkelijke manier van integratie. De eisen waaraan een BIM model moet voldoen zijn simpel en het openen van het model in de GIS omgeving is relatief snel. Dit is ideaal voor renders/visualisaties, visuele analyses en analyses binnen het ecosysteem van de viewer. De applicaties die dit faciliteren zijn vaak commerciële en/of closed-source software, die een geïntegreerde en stabiele gebruikerservaring bieden, maar waarbij dit doorgaans ten koste gaat van interoperabiliteit door de gebondenheid aan het ecosysteem van de leverancier. Integratie tussen verschillende software van andere leveranciers buiten dit ecosysteem brengt vaak problemen met zich mee. Dit kan een gebruiker beperken tot een relatief kleine selectie aan analyse mogelijkheden. Het maakt het ook lastig om met andere partijen samen te werken en de data al dan niet publiekelijk te delen.
 
-Voorbeelden van toepassingen waarin Geo en BIM in één omgeving kan worden geopend zijn: [ArcGIS-GeoBIM](https://www.esri.com/en-us/arcgis/products/arcgis-geobim/), [Autodesk Forma](https://www.autodesk.com/nl/solutions/bim/bim-gis-collaboration),  [Autodesk Infraworks](https://www.autodesk.com/learn/ondemand/tutorial/use-the-connector-for-arcgis-to-import-data-into-infraworks), [Autodesk Infraworks](https://www.autodesk.com/learn/ondemand/module/how-to-connect-arcgis-data-to-infraworks-and-civil-3d),[Bentley OpenCities](https://www.bentley.com/software/opencities-planner/) of FME (https://support.safe.com/hc/en-us/articles/25407588693901-Working-with-BIM-Data-and-FME)
+Voorbeelden van toepassingen waarin Geo en BIM in één omgeving kan worden geopend zijn: [ArcGIS-GeoBIM](https://www.esri.com/en-us/arcgis/products/arcgis-geobim/), [Autodesk Forma](https://www.autodesk.com/nl/solutions/bim/bim-gis-collaboration), [Autodesk Infraworks](https://www.autodesk.com/learn/ondemand/tutorial/use-the-connector-for-arcgis-to-import-data-into-infraworks), [Autodesk Infraworks](https://www.autodesk.com/learn/ondemand/module/how-to-connect-arcgis-data-to-infraworks-and-civil-3d), [Bentley OpenCities](https://www.bentley.com/software/opencities-planner/) of [FME](https://support.safe.com/hc/en-us/articles/25407588693901-Working-with-BIM-Data-and-FME)
 
 Hoewel de onderliggende implementatie van het open van BIM in GEO doorgaans niet openbaar inzichtelijk is, bieden sommige oplossingen wel transparantie in de vorm van configureerbare en inzichtelijke workflows. Hierdoor is het conversieproces deels te volgen, maar blijft de exacte werking van de software vaak verborgen.
 
@@ -128,6 +128,7 @@ Een beperkte remedie voor deze problemen is een gefilterde 1:1 mapping. Hierbij 
 De filtering binnen de 1:1 mapping kan verder door worden gezet dan alleen de filtering van externe objecten. Zo heeft de [IfcEnvelopeExtractor](https://github.com/tudelft3d/IFC_BuildingEnvExtractor) als output LoDe.1. Dit is een non-standaard output die alleen de externe surfaces van een BIM model bevat. Dit kan worden gezien als een hybride GIS model dat tussen een 1:1 mapping en [shell extractie](#shell-extractie) in valt. Deze hybdride modellen hebben geen volumetrische objecten zoals in 1:1 mappings modellen. Net zoals schil modellen hebben deze hybride modellen een relatief klein aantal surfaces. De hybride modellen hebben ook een kleine bestandsgrootte. Ze onderscheiden zich echter weer van schil modellen doordat ze niet lucht-dicht (waterdicht) volumetrisch zijn. Voor sommige GIS gerelateerde operaties zijn deze modellen echter een uitkomst.
 
 ![Verschil tussen een e.1 model en ongefilterde 1:1 vertaling/mapping](media/03_methodes/VerschilFiltered_e_1.jpg "Wireframe representatie die het verschil tussen een e.1 representatie (rechts) en ongefilterde (links) 1:1 vertaling/mapping weergeeft")
+# Gefilterde 1:1 vertaling
 
 # Shell extractie
 

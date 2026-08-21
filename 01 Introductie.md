@@ -13,5 +13,22 @@ De laatste oplossing is interessant voor het integreren van BIM in een GIS omgev
 De uitdaging van fundamentele oplossingen voor Geo- en BIM- integratie, is het ontwikkelen van breed gedragen, gestandaardiseerde oplossingen voor conversie en vereiste modellering met duidelijke handreikingen zodat de BIM-naar-Geo oplossingen ook beschikbaar komen voor klein-tot-middelgrote projecten waar niet altijd de benodigde expertise beschikbaar is.
 
 # Leeswijzer
+Deze praktijkrichtlijn is als volgt opgebouwd: 
+
+Het eerste hoofdstuk, [GEOBIM informatielandschap](#geobim-informatielandschap), beschrijft de verschillende soorten informatie die uitmaken van BIM- en GEO-modellen. Ook wordt het verschil tussen BIM- en GEO-informatie en het gebruik van verschillende detail- en decompositielevels en -frameworks toegelicht. De laatste paragraaf van dit hoofdstuk schetst de gewenste uitbreiding en aanpassingen van de bestaande frameworks. Verschillende methodes van BIM naar Geo brengen zijn beschreven in [Hoofdstuk 3](#methodes-van-bim-naar-geo-brengen). De werkwijze van de methodes en de voor en nadelen van hiervan komen aan bod. Een belangrijke rol binnen al deze methodes speelt de manier waarop geometrie van BIM naar Geo wordt getransformeerd. [Hoofdstuk 4, Geometrie BIM naar GEO](#geometrie-bim-naar-geo) gaat hier verder op in. Het beschrijft de soort geometrie in BIM- en GEO-domein en behandeld verschillende manieren van geometrieconversie. Naast geometrische informatie dient men ook de attributen, de alfanumerieke informatie, om te zetten. [Hoofdstuk 5](#entiteit-en-attribuut-bim-naar-geo) licht toe hoe entiteiten en attributen van beide werelden kunnen worden gemapt. Wanneer BIM naar GEO wordt gebracht dient GEO hierop correct op te reageren. Op "aangelegde objecten" vanuit een gerealiseerd BIM-model hebben een andere effect op een GEO-dataset dan "verwijderde objecten". Levenscycluspatronen voor BIM- en GEO-informatie in de bouwketen worden beschreven in het hoofdstuk [Levenscyclus BIM en GEO](#levenscyclus-van-bim-naar-geo). [Hoofdstuk 7](#bim-naar-geo-datasets) behandelt nationaal van belang zijnde geo-datasets en de manier waarop BIM dit zou kunnen voeden. Het hoofdstuk geeft een inspiratie voor Informatie Levering Specificaties (ILS'en) en transformatieprofielen die daarbij gebruikt kunnen worden. Eisen aan het BIM-model waaronder ILS'en worden in het hoofdstuk [Eisen aan het model en mapping](#eisen-aan-model-en-mapping) beschreven. Het laatste hoofdstuk, [Toepassing](#toepassingen), geeft handvatten en inspiratie hoe men BIM naar GEO transformatie met verschillende tooling kan bewerkstelligen. De bijlagen voorzien in een aantal technische uitwerkingen. 
+
 
 # Toepassingsgebied
+Deze praktijkrichtlijn kan men gebruiken in het B&U- en Infra-domein. BIM naar GEO-conversie volgens deze richtlijn maakt het mogelijk om BIM-informatie te gebruiken binnen een ruimtelijke context. Hierdoor kunnen gebouw- en constructiegegevens worden gecombineerd met Geo-informatie en worden toegepast in ruimtelijke analyses op bouwwerk-, gebieds- en stadsniveau.
+
+BIM naar GEO-conversie conform deze richtlijn helpt bij het eenmalig vastleggen en meervoudig gebruiken van gegevens. Een bouwwerk hoeft bijvoorbeeld (deels) niet opnieuw in een GIS te worden gemodelleerd als de relevante informatie al in BIM beschikbaar is.
+
+De beschreven methoden en technieken in deze praktijkrichtlijn kan men gebruiken wanneer men informatie wil uitwisselen tussen verschillende softwarepakketten of applicaties, of wanneer men verschillende databronnen wil combineren en bevragen.
+
+De praktijkrichtlijn kan men gebruiken wanneer men een geschikte methodiek voor conversie af wil spreken in een specifieke use-case die past bij de benodigde informatiebehoefte van de beoogde datasets binnen de use case.
+
+Tenslotte kan men de richtlijn gebruiken als handleiding om BIM-naar-GEO transformatie in tooling toe te passen.
+
+De richtlijn focust op datasets en infromatieafspraken die in Nederland op nationaal niveau worden gebruikt.
+
+De praktijkrichtlijn kan daarnaast een basis vormen voor de standaardisatie van ILS, LOD-frameworks en transformatieprofielen. Door eenduidige afspraken te maken over welke informatie wordt uitgewisseld, op welk detailniveau en hoe deze tussen BIM- en Geo-modellen wordt vertaald, wordt een meer eenduidige en voorspelbare informatie-uitwisseling mogelijk.
