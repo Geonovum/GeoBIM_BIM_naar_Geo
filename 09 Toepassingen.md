@@ -6,7 +6,7 @@
 | - | - | - | - | - | - | - |
 | ESRI ArcGIS Pro| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | IFC2GeoJSON | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Save Software FME | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Save Software FME | ❌ | ✅ | ✅ | ❌ | ✅  | ❌ |
 | IfcConvert | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | BIMShell | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
 | IfcEnvelopeExtractor | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -14,17 +14,199 @@
 ✅ = volledige support
 ❌ = geen support
 
+
 # BIM bestanden in GIS omgeving brengen
 
 ## ESRI ArcGIS Pro
+In ESRI ArcGIS Pro zijn er tools beschikbaar om een bestaand BIM-model (IFC en Revit) om te zetten naar GEO. Er is tooling beschikbaar om BIM-modellen direct in de Esri software te laden. Een juiste geo-locatie te geven en te converteren naar een ESRI File GeoDataBase (.gdb). De beschikbaar tooling is beschreven op [Esri BIM en GIS](https://learn.arcgis.com/en/paths/bim-and-gis/) en op de [bimfile to geodatabase](https://doc.esri.com/en/arcgis-pro/latest/tool-reference/conversion/bimfile-to-geodatabase.html) webpagina's. 
 
-# 1:1 vertaling/mapping
+Met deze tooling is het mogelijk een 1 op 1 vertaling van het BIM-model te maken. Wel zal de orginele geometrie vertaald worden naar een Multipatch zoals beschreven in deze [ARcGIS documentatie](https://doc.esri.com/en/arcgis-pro/latest/help/data/revit/adding-revit-data-to-arcgis-pro.html). De 
+
+In de Esri-blog ["Common Patterns for BIM and GIS Integration"](https://www.esri.com/arcgis-blog/products/arcgis-pro/transportation/common-patterns-for-bim-and-gis-integration) staat beschreven dat het mogelijk is om alle informatie-uitwisseling via open standaarden (o.a. IFC en CityGML) plaats te laten vinden. Het converteren van gegevens van de ene standaard naar de andere kent vergelijkbare problemen als klassieke ETL-workflows. Dit leidt tot gegevensverlies, omdat bepaalde domein- of disciplinespecifieke informatie ontbreekt en omdat er verschillen zijn in de complexiteit waarmee geometrie wordt weergegeven. Het gegevensverlies kan nog groter worden wanneer gegevens vanuit een leveranciersspecifiek formaat via meerdere open standaarden worden geconverteerd en uiteindelijk weer in een ander leveranciersspecifiek formaat terechtkomen. Esri ondersteunt deze aanpak door 
+
+Esri ondersteunt deze aanpak doorgaans door gebruik te maken van bibliotheken en tools van derden om gegevens in open standaarden te kunnen lezen. Waar mogelijk willen we het aantal stappen in de gegevensconversie vereenvoudigen door te kijken naar ELT-workflows en -tools, bijvoorbeeld door IFC in de toekomst rechtstreeks in ArcGIS te kunnen lezen.
+There are other patterns of integration that we see evolving in the industry. One of them is the concept that all information exchange should happen through Standards. This includes specifications such as the Open Geospatial Consortium’s CityGML and IFC. This can be challenging when the standards were created for separate industries and workflows and only later attempted to be glued together. Converting data from one standard to another has similar issues to classic ETL workflows, resulting in data loss because of missing domain or discipline information and mismatch in graphic complexity. Data loss can be magnified when converting out of one vendor format, through multiple open standard formats, and then into another vendor format.
+
+Given the need to evolve software and standards rapidly to meet changing market expectation and technology capability, it’s hard to see that this pattern is going to be able to stabilize in a manner that consistently minimizes data loss for most cross-industry applications of BIM and GIS integration. Esri typically supports these patterns by making use of third-party libraries and tools to read open standard data. Whenever possible, we hope to simplify the number of hops in data conversion by looking at ELT workflows and tools, such as by directly reading IFC into ArcGIS in the future.
+
+<figure id="IFC-in-ArcGIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/ArcGIS/ArcGIS_IFC_to_3D_Ojbect_Scene_Layers.png"alt="IFC in ArcGIS in een 3D Object Scene Layers" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
+        <span class="fig-title">
+        IFC in ArcGIS in een 3D Object Scene Layers <br>
+        Bron: Esri</a>.
+        </span>
+      </figcaption>
+</figure>
+
+## IFC2GeoJSON 
+Het project [Ifc2GeoJSON](https://github.com/abdoulayediak/ifc2geojson) voorziet in tooling om IFC naar 3D GeoJSON te converteren. Ook is er een [ifc2gis-webapplicatie](https://ifc2gis.com/app/) van beschikbaar. 
+
+<figure id="IFC-2-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/ifc2gis/IFC2GIS_Kievitsweg.png"alt="IFC in ArcGIS in een 3D Object Scene Layers" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
+        <span class="fig-title">
+        IFC in de tooling IFC2GIS met een selectie een gefilterde 1:1 vertaling<br>
+        Bron: Ifc2GIS</a>.
+        </span>
+      </figcaption>
+</figure>
+
+In deze tool wordt web-ifc, tree.js en geojson gebruikt om de geometrie te veranderen. De [IfcGeometryLoader](https://github.com/ThatOpen/engine_web-ifc/blob/main/src/cpp/web-ifc/geometry/IfcGeometryLoader.cpp) voorziet in de transformatie van impliciete procedurele geometrie naar expliciete geometrie. Met deze functie is het mogelijk om parameters mee te geven voor het tesseleren van geometrie. In de Ifc2GeoJSON tool is het niet mogelijk deze parameters aan te passen. 
 
 ## Save Software FME
+FME software heeft verschillende functies beschikbaar om BIM naar GEO om te zetten. 
 
-# Shell extraction
+De functies onderscheiden in het detailniveau van het BIM-model en het detailniveau van de output. LOD 3 is hierbij het meest complex, omdat het geen n op 1, geen 1 op 1 maar een n op n mapping is.   
+
+- [Simplifying IFC geometries for easier conversion](https://support.safe.com/hc/en-us/articles/25407765402637-Simplifying-IFC-geometries-for-easier-conversion)  
+- [BIM to GIS IFC LOD 100 to LOD 2 CityGML](https://support.safe.com/hc/en-us/articles/25407431004173-BIM-to-GIS-Basic-IFC-LOD-100-to-LOD-2-CityGML)  
+- [BIM to GIS IFC LOD 200 to LOD 3 CityGML](https://support.safe.com/hc/en-us/articles/25407525412365-BIM-to-GIS-Advanced-IFC-LOD-200-to-LOD-3-CityGML)
+- [BIM to GIS IFC LOD 300 to LOD 4 CityGML](https://support.safe.com/hc/en-us/articles/25407718003341-BIM-to-GIS-Intermediate-IFC-LOD-300-to-LOD-4-CityGML)
+
+
+In de totale flow van de LOD100 naar LOD 2 CityGML conversie is te zien dat er een mesh gemaakt wordt van de Ifc geometrie van spaces en slabs.  
+
+<figure id="FME-LOD-2-workflow" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 2 Workflow.png"alt="IFC in ArcGIS in een 3D Object Scene Layers" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-LOD-2-CityGML-workflow"></bdi></a>
+        <span class="fig-title">
+        FME LOD 2 CityGML workflow<br>
+        Bron: FME</a>
+        </span>
+      </figcaption>
+</figure>
+
+De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. Voor een gebouw wordt er wederom een LOD100 mesh gemaakt. dit wordt aangevuld met een [citygmlgeometrysetter](https://hub.safe.com/publishers/safe-lab/transformers/citygmlgeometrysetter). Hiermeek kan een bepaalde citygml lod geduid worden. Verschillende Ifc entiteiten resulteren in de flow in verschillende CityGML concepten. 
+
+<figure id="FME-LOD-3-workflow" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 3 Workflow.png"alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-FME-LOD-3-workflow"></bdi></a>
+        <span class="fig-title">
+        FME LOD 3 CityGML workflow<br>
+        Bron: FME</a>
+        </span>
+      </figcaption>
+</figure>
+
+
+<figure id="FME-IFC-Input-model" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME IFC LOD 300.png"alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-FME-IFC-Input-model"></bdi></a>
+        <span class="fig-title">
+        FME IFC Input model<br>
+        Bron: FME</a>
+        </span>
+      </figcaption>
+</figure>
+
+
+<div style="display: flex; gap: 10px;">
+<figure id="IFC-2-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 2 CityGML.png"alt="FME LOD 2 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-IFC-2-GIS"></bdi></a>
+        <span class="fig-title">
+        FME LOD 2 CityGML output<br>
+        Bron: FME</a>
+        </span>
+      </figcaption>
+</figure>
+
+<figure id="IFC-3-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 3 CityGML.png"alt="FME LOD 3 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-IFC-3-GIS"></bdi></a>
+        <span class="fig-title">
+        FME LOD 3 CityGML output<br>
+        Bron: FME</a>
+        </span>
+      </figcaption>
+</figure>
+
+<figure id="IFC-4-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 4 CityGML.png"alt="FME LOD 4 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-"IFC-4-GIS"></bdi></a>
+        <span class="fig-title">
+        FME LOD 4 CityGML output<br>
+        Bron: FME</a>
+        </span>
+      </figcaption>
+</figure>
+</div>
+
+## IfcConvert
+[IFC convert](https://docs.ifcopenshell.org/ifcconvert.html#) is onderdeel van [IfcOpenShell](https://docs.ifcopenshell.org/). IfcOpenShell is een toolkit die ondersteunt bij het lezen, schrijven en bewerken van BIM met behulp van IFC. Met IfcConvert is het mogelijk om IFC te converteren naar formaten als .obj, .dae, .glb, .stp, .igs, .xml, .svg, .h5, .ttl, .ifc, .rdb en .json. 
+Het is mogelijk om specifieke elementen wel of niet mee te nemen met de IFCConvert tool zoals beschreven in de [IfcConver Usage](https://docs.ifcopenshell.org/ifcconvert/usage.html). 
+
+Het creëeren van CityJSON is onderzocht in samenwerking met de TU-Delft. Dit is onder andere beschreven in dit [githubissue](https://github.com/IfcOpenShell/IfcOpenShell/issues/2977). IfcConvert voorziet momenteel niet in CityJSON conversie. Wel is er een IfcCityJSON converter, maar deze converter converteert CityJSON naar IFC, en niet andersom. 
+
+<figure id="IFC-Open-Shell-CityGML-Output" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/IfcOpenShell/IfcConvert IfcOpenShell.png"alt="Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
+        <span class="fig-title">
+        Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC<br>
+        Bron: IFC Openshell Github</a>.
+        </span>
+      </figcaption>
+</figure>
 
 ## BIMShell
+BIMShell is een extensie van Trimble/Sketchup. Met deze extensie is het mogelijk om een footprint shell te maken. Dit genereert een omhulsel dat overeenkomt met de geëxtrudeerde voetafdruk van het model (langs de Z-as)
+
+Daarnaast bestaat de Voxel Shell functie. 
+Dit genereert een "gesloten benadering van de buitencontour van het model met behulp van een voxelgegevensstructuur. Hierbij kun je de voxelsresolutie instellen die wordt gebruikt om een omhulsel te maken. 
+
+Een kleinere resolutie zorgt voor een nauwkeuriger resultaat, maar vereist meer rekenkracht. Als het model openingen bevat die groter zijn dan de gekozen resolutie, is de kans groot dat het proces ook vlakken aan de binnenkant van het model genereert. Over het algemeen levert deze methode echter eenvoudigere modellen op dan de oorspronkelijke modellen.
+
+Tenslotte is er de Out Shell Faces 
+Genereert een omhulselversie van het model door de vlakken die zich aan de buitenzijde bevinden te kopiëren. Hierbij kan de resolutie van het geoptimaliseerde raster worden ingesteld dat wordt gebruikt om vanaf de buitenzijde van het model stralen (rays) op het model af te vuren. Net als bij Voxel Shell geldt dat wanneer de binnen- en buitenruimte van het model niet goed van elkaar te onderscheiden zijn (bijvoorbeeld door openingen, een open deur of ramen), het resulterende omhullende model waarschijnlijk ook vlakken aan de binnenzijde zal bevatten.
+
+<div style="display: flex; gap: 10px;">
+<figure id="BIMShell-Input-Output" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png"alt="BIMShell input and output model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-BIMShell-Input-Output"></bdi></a>
+        <span class="fig-title">
+        BIMShell input and output model<br>
+        Bron: Sketchup extensions</a>
+        </span>
+      </figcaption>
+</figure>
+
+<figure id="BIMShell-Input" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png"alt="BIMShell input model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-BIMShell-Input"></bdi></a>
+        <span class="fig-title">
+        BIMShell input model<br>
+        Bron: Sketchup extensions</a>
+        </span>
+      </figcaption>
+</figure>
+
+<figure id="BIMShell-Output" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png"alt="BIMShell output model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#fig-BIMShell-Output"></bdi></a>
+        <span class="fig-title">
+        BIMShell output model<br>
+        Bron: Sketchup extensions</a>
+        </span>
+      </figcaption>
+</figure>
+
+</div>
+
+Beelden: https://extensions.sketchup.com/
+
 
 ## IfcEnvelopeExtractor
 
@@ -78,7 +260,7 @@ Zoals eerder vermeld kan de applicatie op twee manieren ingesteld worden, via de
 
 **GUI**
 
-![De GUI van de IfcEnvelopeExtractor](media/07_toepassingen/menus.jpg "De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker")
+![De GUI van de IfcEnvelopeExtractor](media/07_toepassingen/EnvelopeExtractor/menus.jpg "De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker")
 
 De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn. In de afbeelding hierboven zijn de groepen weergegeven.
 
@@ -109,7 +291,7 @@ De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn.
 
 Er is ook een simpele versie van de GUI beschikbaar. Deze is vooral gemaakt voor het laden van pre-set bestanden.
 
-![De simpele GUI van de IfcEnvelopeExtractor](media/07_toepassingen/GUI_simple_example.JPG "De simpele versie van de GUI voor de envelope extractor")
+![De simpele GUI van de IfcEnvelopeExtractor](media/07_toepassingen/EnvelopeExtractor/GUI_simple_example.JPG "De simpele versie van de GUI voor de envelope extractor")
 
 Een uitgebreide beschrijving van de GUI kan (in het engels) worden gevonden op de [GitHub van de EnvExtractor](https://github.com/tudelft3d/IFC_BuildingEnvExtractor/blob/master/Documentation/1_Gui.md).
 
@@ -129,7 +311,7 @@ Niet iedere LoD die beschikbaar is in het framework van [Biljecki et al.](https:
 
 #### LoD0.0
 
-![Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD00.jpg "Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT")
+![Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD00.jpg "Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT")
 
 2D bounding box representatie van het input BIM model.
 
@@ -146,7 +328,7 @@ De representatie bestaat uit:
 
 #### LoD0.2
 
-![Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD02.jpg "Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven")
+![Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD02.jpg "Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven")
 
 Simpel 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).
 
@@ -171,7 +353,7 @@ De representatie bestaat uit:
 
 #### LoD0.3
 
-![Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD03.jpg "Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven")
+![Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD03.jpg "Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven")
 
 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).
 
@@ -192,7 +374,7 @@ De representatie bestaat uit:
 
 #### LoD0.4
 
-![Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD04.jpg "Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD04.jpg "Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.")
 
 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak dezelfde vorm behoud als de geometrische bron. Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).
 
@@ -209,7 +391,7 @@ De representatie bestaat uit:
 
 #### LoD1.0
 
-![Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD10.jpg "Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD10.jpg "Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.")
 
 3D bounding box representatie van het input BIM model.
 
@@ -222,7 +404,7 @@ De representatie bestaat uit:
 
 #### LoD1.2
 
-![Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD12.jpg "Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven")
+![Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD12.jpg "Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven")
 
 2.5D volumetrische representatie van het input BIM model met unform vlakke boven en onder oppervlaktes.
 
@@ -241,7 +423,7 @@ De representatie bestaat uit:
 
 #### LoD1.3
 
-![Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD13.jpg "Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD13.jpg "Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.")
 
 2.5D volumetrische representatie van het input BIM model met vlakke oppervlaktes. Ieder oppervlak heeft een normaal richting met een z-component dat gelijk is aan 1 of 0.
 
@@ -254,7 +436,7 @@ De representatie bestaat uit:
 
 #### LoD2.2
 
-![Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD22.jpg "Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven")
+![Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD22.jpg "Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven")
 
 2.5D volumetrische representatie van het input BIM model.
 
@@ -271,7 +453,7 @@ De representatie bestaat uit:
 
 #### LoD3.2
 
-![Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD32.jpg "Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven")
+![Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD32.jpg "Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven")
 
 3D volumetrische representatie van het input BIM model.
 
@@ -288,7 +470,7 @@ De representatie bestaat uit:
 
 #### LoD4.0
 
-![Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD40.jpg "Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD40.jpg "Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.")
 
 3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren. Dit kan worden gezien als de eerste stap in de creatie van LoD3.2. Waarbij LoDe.1 stap 2 is.
 
@@ -303,7 +485,7 @@ De representatie bestaat uit:
 
 #### LoD4.1
 
-![Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD41.jpg "Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD41.jpg "Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.")
 
 3D complex (geen schil) representatie van de ruimte scheidende objecten van het input BIM model.
 
@@ -316,7 +498,7 @@ De representatie bestaat uit:
 
 #### LoD4.2
 
-![Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD42.jpg "Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD42.jpg "Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.")
 
 3D complex (geen schil) representatie van van het input BIM model.
 
@@ -330,7 +512,7 @@ De representatie bestaat uit:
 
 #### LoDe.1
 
-![Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoDe1.jpg "Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoDe1.jpg "Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.")
 
 3D oppervlak representatie van het input BIM model. Dit kan worden gezien als de tweede stap in de LoD3.2 creatie. LoD4.0 kan worden beschouwd als de eerste stap.
 
@@ -343,7 +525,7 @@ De representatie bestaat uit:
 
 #### LoD5.0/LoDv
 
-![Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/LoD50.jpg "Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.")
+![Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT](media/07_toepassingen/EnvelopeExtractor/LoD50.jpg "Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.")
 
 3D voxelisatie representatie van het model.
 

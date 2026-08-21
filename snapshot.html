@@ -1452,7 +1452,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Geonovum Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2025-03-28">14 augustus 2026</time>
+      <time class="dt-published" datetime="2025-03-28">20 augustus 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1508,7 +1508,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>TODO: vul in abstract.md een abstract in.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">2. </bdi>Achtergrondinformatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#soorten-informatie"><bdi class="secno">2.1 </bdi>Soorten informatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">2.1.1 </bdi>Documentatie</a></li><li class="tocline"><a class="tocxref" href="#alfanumeriek"><bdi class="secno">2.1.2 </bdi>Alfanumeriek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">2.2 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-information-need-en-level-of-development-in-bim"><bdi class="secno">2.2.1 </bdi>Level of Information Need en Level Of Development in BIM</a></li><li class="tocline"><a class="tocxref" href="#level-of-detail-lod-framework-in-gis"><bdi class="secno">2.2.2 </bdi>Level of Detail (LoD) Framework in GIS</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandsformaten"><bdi class="secno">2.3 </bdi>Bestandsformaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">2.3.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.3.3 </bdi>IFC</a></li><li class="tocline"><a class="tocxref" href="#x3d-tiles"><bdi class="secno">2.3.4 </bdi>3D Tiles</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#methodes-van-bim-naar-geo-brengen"><bdi class="secno">3. </bdi>Methodes van BIM naar Geo Brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#direct-bim-ifc-openen"><bdi class="secno">3.1 </bdi>Direct BIM/IFC openen</a></li><li class="tocline"><a class="tocxref" href="#directe-1-op-1-vertaling-van-ifc-naar-geojson-of-cityjson-citygml"><bdi class="secno">3.2 </bdi>Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geojson-0"><bdi class="secno">3.2.1 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#citygml-en-cityjson"><bdi class="secno">3.2.2 </bdi>CityGML en CityJSON</a></li><li class="tocline"><a class="tocxref" href="#complicaties"><bdi class="secno">3.2.3 </bdi>Complicaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geometrie-bim-naar-geo"><bdi class="secno">4. </bdi>Geometrie BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#impliciete-en-expliciete-geometrie"><bdi class="secno">4.1 </bdi>Impliciete en expliciete geometrie</a></li><li class="tocline"><a class="tocxref" href="#meshing"><bdi class="secno">4.2 </bdi>Meshing</a></li><li class="tocline"><a class="tocxref" href="#shell-extractie-0"><bdi class="secno">4.3 </bdi>Shell extractie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voxelisatie"><bdi class="secno">4.3.1 </bdi>Voxelisatie</a></li><li class="tocline"><a class="tocxref" href="#hoge-resolutie-schil"><bdi class="secno">4.3.2 </bdi>Hoge resolutie schil</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#entiteit-en-attribuut-bim-naar-geo"><bdi class="secno">5. </bdi>Entiteit en Attribuut BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#entiteit-mapping"><bdi class="secno">5.1 </bdi>Entiteit mapping</a></li><li class="tocline"><a class="tocxref" href="#mapping-van-attributen"><bdi class="secno">5.2 </bdi>Mapping van Attributen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-op-1-mapping"><bdi class="secno">5.2.1 </bdi>1-op-1 mapping</a></li><li class="tocline"><a class="tocxref" href="#many-to-one-mapping"><bdi class="secno">5.2.2 </bdi>Many-to-one mapping</a></li><li class="tocline"><a class="tocxref" href="#one-to-many-mapping"><bdi class="secno">5.2.3 </bdi>One-to-many mapping</a></li><li class="tocline"><a class="tocxref" href="#afgeleide-of-berekende-attributen"><bdi class="secno">5.2.4 </bdi>Afgeleide of berekende attributen</a></li><li class="tocline"><a class="tocxref" href="#transformaties-tussen-hierarchische-niveaus"><bdi class="secno">5.2.5 </bdi>Transformaties tussen hiërarchische niveaus</a></li><li class="tocline"><a class="tocxref" href="#externe-bronnen"><bdi class="secno">5.2.6 </bdi>Externe bronnen</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#levenscyclus-van-bim-naar-geo"><bdi class="secno">6. </bdi>Levenscyclus van BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#status-van-objecten-van-bim-naar-geo"><bdi class="secno">6.1 </bdi>Status van objecten van BIM naar GEO</a></li><li class="tocline"><a class="tocxref" href="#levenscyclus-versies"><bdi class="secno">6.2 </bdi>Levenscyclus versies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-naar-geo-datasets"><bdi class="secno">7. </bdi>BIM naar Geo-datasets</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-model-en-mapping"><bdi class="secno">8. </bdi>Eisen aan model en mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">8.1 </bdi>Eisen aan het BIM-model</a></li><li class="tocline"><a class="tocxref" href="#landelijke-bim-afspraken"><bdi class="secno">8.2 </bdi>Landelijke BIM-afspraken</a></li><li class="tocline"><a class="tocxref" href="#informatie-leverings-specificatie-ils"><bdi class="secno">8.3 </bdi>Informatie Leverings Specificatie (ILS)</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model-ils"><bdi class="secno">8.4 </bdi>Eisen aan het BIM-model (ILS) </a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-geomodel"><bdi class="secno">8.5 </bdi>Eisen aan het Geomodel</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-de-mapping"><bdi class="secno">8.6 </bdi>Eisen aan de mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afgesproken-mapping"><bdi class="secno">8.6.1 </bdi>Afgesproken mapping</a></li><li class="tocline"><a class="tocxref" href="#allignment-ontology"><bdi class="secno">8.6.2 </bdi>Allignment ontology</a></li><li class="tocline"><a class="tocxref" href="#api-process"><bdi class="secno">8.6.3 </bdi>API Process</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#toolkit"><bdi class="secno">9. </bdi>Toolkit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#handleiding-howto"><bdi class="secno">9.1 </bdi>Handleiding/HowTo</a></li><li class="tocline"><a class="tocxref" href="#bim-bestanden-in-gis-omgeving-brengen"><bdi class="secno">9.2 </bdi>BIM bestanden in GIS omgeving brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#esri-arcgis-pro"><bdi class="secno">9.2.1 </bdi>ESRI ArcGIS Pro</a></li></ol></li><li class="tocline"><a class="tocxref" href="#x1-1-vertaling-mapping"><bdi class="secno">9.3 </bdi>1:1 vertaling/mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#save-software-fme"><bdi class="secno">9.3.1 </bdi>Save Software FME</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extraction"><bdi class="secno">9.4 </bdi>Shell extraction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bimshell"><bdi class="secno">9.4.1 </bdi>BIMShell</a></li><li class="tocline"><a class="tocxref" href="#ifcenvelopeextractor"><bdi class="secno">9.4.2 </bdi>IfcEnvelopeExtractor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#workflow"><bdi class="secno">9.4.2.1 </bdi>Workflow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bestands-correctie"><bdi class="secno">9.4.2.1.1 </bdi>bestands correctie</a></li><li class="tocline"><a class="tocxref" href="#applicatie-instellen"><bdi class="secno">9.4.2.1.2 </bdi>Applicatie instellen</a></li><li class="tocline"><a class="tocxref" href="#samenvoegen-van-gis-bestanden"><bdi class="secno">9.4.2.1.3 </bdi>Samenvoegen van GIS bestanden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#output-specificatie"><bdi class="secno">9.4.2.2 </bdi>Output specificatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lod0-0"><bdi class="secno">9.4.2.2.1 </bdi>LoD0.0</a></li><li class="tocline"><a class="tocxref" href="#lod0-2"><bdi class="secno">9.4.2.2.2 </bdi>LoD0.2</a></li><li class="tocline"><a class="tocxref" href="#lod0-3"><bdi class="secno">9.4.2.2.3 </bdi>LoD0.3</a></li><li class="tocline"><a class="tocxref" href="#lod0-4"><bdi class="secno">9.4.2.2.4 </bdi>LoD0.4</a></li><li class="tocline"><a class="tocxref" href="#lod1-0"><bdi class="secno">9.4.2.2.5 </bdi>LoD1.0</a></li><li class="tocline"><a class="tocxref" href="#lod1-2"><bdi class="secno">9.4.2.2.6 </bdi>LoD1.2</a></li><li class="tocline"><a class="tocxref" href="#lod1-3"><bdi class="secno">9.4.2.2.7 </bdi>LoD1.3</a></li><li class="tocline"><a class="tocxref" href="#lod2-2"><bdi class="secno">9.4.2.2.8 </bdi>LoD2.2</a></li><li class="tocline"><a class="tocxref" href="#lod3-2"><bdi class="secno">9.4.2.2.9 </bdi>LoD3.2</a></li><li class="tocline"><a class="tocxref" href="#lod4-0"><bdi class="secno">9.4.2.2.10 </bdi>LoD4.0</a></li><li class="tocline"><a class="tocxref" href="#lod4-1"><bdi class="secno">9.4.2.2.11 </bdi>LoD4.1</a></li><li class="tocline"><a class="tocxref" href="#lod4-2"><bdi class="secno">9.4.2.2.12 </bdi>LoD4.2</a></li><li class="tocline"><a class="tocxref" href="#lode-1"><bdi class="secno">9.4.2.2.13 </bdi>LoDe.1</a></li><li class="tocline"><a class="tocxref" href="#lod5-0-lodv"><bdi class="secno">9.4.2.2.14 </bdi>LoD5.0/LoDv</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#ifc2geojson"><bdi class="secno">9.4.3 </bdi>IFC2GeoJSON</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau"><bdi class="secno">A. </bdi>Mapping tussen IFC en CityGML op verschillend decompositieniveau</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#decompositieniveau-1"><bdi class="secno">A.1 </bdi>Decompositieniveau 1:</a></li><li class="tocline"><a class="tocxref" href="#decompositieniveau-2"><bdi class="secno">A.2 </bdi>Decompositieniveau 2:</a></li><li class="tocline"><a class="tocxref" href="#decompositieniveau-3"><bdi class="secno">A.3 </bdi>Decompositieniveau 3:</a></li><li class="tocline"><a class="tocxref" href="#decompositieniveau-4"><bdi class="secno">A.4 </bdi>Decompositieniveau 4:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#entiteit-en-attribuutmapping-tussen-bim-en-geo"><bdi class="secno">B. </bdi>Entiteit en Attribuutmapping tussen BIM en GEO</a></li><li class="tocline"><a class="tocxref" href="#levenscyclus"><bdi class="secno">C. </bdi>Levenscyclus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#situatie"><bdi class="secno">C.1 </bdi>Situatie</a></li><li class="tocline"><a class="tocxref" href="#vervangen-van-elementen"><bdi class="secno">C.2 </bdi>Vervangen van elementen</a></li><li class="tocline"><a class="tocxref" href="#nieuwe-weg-in-een-bestaande-weg"><bdi class="secno">C.3 </bdi>Nieuwe weg in een bestaande weg</a></li><li class="tocline"><a class="tocxref" href="#nieuwe-weg-in-een-bestaand-onbegroeid-terrein"><bdi class="secno">C.4 </bdi>Nieuwe weg in een bestaand onbegroeid terrein</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ifc-naar-imbor-mapping"><bdi class="secno">D. </bdi>IFC naar IMBOR Mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mermaid-diagram-attribuutflow"><bdi class="secno">D.1 </bdi>Mermaid Diagram: Attribuutflow</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeeld-ils"><bdi class="secno">E. </bdi>Voorbeeld ILS</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">F. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">G. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">H. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">H.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">H.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">I. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">I.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#introductie"><bdi class="secno">1. </bdi>Introductie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leeswijzer"><bdi class="secno">1.1 </bdi>Leeswijzer</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">1.2 </bdi>Toepassingsgebied</a></li></ol></li><li class="tocline"><a class="tocxref" href="#achtergrondinformatie"><bdi class="secno">2. </bdi>Achtergrondinformatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#soorten-informatie"><bdi class="secno">2.1 </bdi>Soorten informatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#documentatie"><bdi class="secno">2.1.1 </bdi>Documentatie</a></li><li class="tocline"><a class="tocxref" href="#alfanumeriek"><bdi class="secno">2.1.2 </bdi>Alfanumeriek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-geo-modellen"><bdi class="secno">2.2 </bdi>BIM &amp; GEO modellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-information-need-en-level-of-development-in-bim"><bdi class="secno">2.2.1 </bdi>Level of Information Need en Level Of Development in BIM</a></li><li class="tocline"><a class="tocxref" href="#level-of-detail-lod-framework-in-gis"><bdi class="secno">2.2.2 </bdi>Level of Detail (LoD) Framework in GIS</a></li><li class="tocline"><a class="tocxref" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.3 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bestandsformaten"><bdi class="secno">2.3 </bdi>Bestandsformaten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-xml-citygml-cityjson"><bdi class="secno">2.3.1 </bdi>CityGML XML &amp; CityGML CityJSON</a></li><li class="tocline"><a class="tocxref" href="#geojson"><bdi class="secno">2.3.2 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#ifc"><bdi class="secno">2.3.3 </bdi>IFC</a></li><li class="tocline"><a class="tocxref" href="#x3d-tiles"><bdi class="secno">2.3.4 </bdi>3D Tiles</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#methodes-van-bim-naar-geo-brengen"><bdi class="secno">3. </bdi>Methodes van BIM naar Geo Brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#direct-bim-ifc-openen"><bdi class="secno">3.1 </bdi>Direct BIM/IFC openen</a></li><li class="tocline"><a class="tocxref" href="#directe-1-op-1-vertaling-van-ifc-naar-geojson-of-cityjson-citygml"><bdi class="secno">3.2 </bdi>Directe 1 op 1 vertaling van IFC naar GeoJSON of CityJSON (CityGML)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geojson-0"><bdi class="secno">3.2.1 </bdi>GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#citygml-en-cityjson"><bdi class="secno">3.2.2 </bdi>CityGML en CityJSON</a></li><li class="tocline"><a class="tocxref" href="#complicaties"><bdi class="secno">3.2.3 </bdi>Complicaties</a></li></ol></li><li class="tocline"><a class="tocxref" href="#shell-extractie"><bdi class="secno">3.3 </bdi>Shell extractie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geometrie-bim-naar-geo"><bdi class="secno">4. </bdi>Geometrie BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#impliciete-en-expliciete-geometrie"><bdi class="secno">4.1 </bdi>Impliciete en expliciete geometrie</a></li><li class="tocline"><a class="tocxref" href="#meshing"><bdi class="secno">4.2 </bdi>Meshing</a></li><li class="tocline"><a class="tocxref" href="#shell-extractie-0"><bdi class="secno">4.3 </bdi>Shell extractie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#voxelisatie"><bdi class="secno">4.3.1 </bdi>Voxelisatie</a></li><li class="tocline"><a class="tocxref" href="#hoge-resolutie-schil"><bdi class="secno">4.3.2 </bdi>Hoge resolutie schil</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#entiteit-en-attribuut-bim-naar-geo"><bdi class="secno">5. </bdi>Entiteit en Attribuut BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#entiteit-mapping"><bdi class="secno">5.1 </bdi>Entiteit mapping</a></li><li class="tocline"><a class="tocxref" href="#mapping-van-attributen"><bdi class="secno">5.2 </bdi>Mapping van Attributen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x1-op-1-mapping"><bdi class="secno">5.2.1 </bdi>1-op-1 mapping</a></li><li class="tocline"><a class="tocxref" href="#many-to-one-mapping"><bdi class="secno">5.2.2 </bdi>Many-to-one mapping</a></li><li class="tocline"><a class="tocxref" href="#one-to-many-mapping"><bdi class="secno">5.2.3 </bdi>One-to-many mapping</a></li><li class="tocline"><a class="tocxref" href="#afgeleide-of-berekende-attributen"><bdi class="secno">5.2.4 </bdi>Afgeleide of berekende attributen</a></li><li class="tocline"><a class="tocxref" href="#transformaties-tussen-hierarchische-niveaus"><bdi class="secno">5.2.5 </bdi>Transformaties tussen hiërarchische niveaus</a></li><li class="tocline"><a class="tocxref" href="#externe-bronnen"><bdi class="secno">5.2.6 </bdi>Externe bronnen</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#levenscyclus-van-bim-naar-geo"><bdi class="secno">6. </bdi>Levenscyclus van BIM naar GEO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#status-van-objecten-van-bim-naar-geo"><bdi class="secno">6.1 </bdi>Status van objecten van BIM naar GEO</a></li><li class="tocline"><a class="tocxref" href="#levenscyclus-versies"><bdi class="secno">6.2 </bdi>Levenscyclus versies</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bim-naar-geo-datasets"><bdi class="secno">7. </bdi>BIM naar Geo-datasets</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-model-en-mapping"><bdi class="secno">8. </bdi>Eisen aan model en mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model"><bdi class="secno">8.1 </bdi>Eisen aan het BIM-model</a></li><li class="tocline"><a class="tocxref" href="#landelijke-bim-afspraken"><bdi class="secno">8.2 </bdi>Landelijke BIM-afspraken</a></li><li class="tocline"><a class="tocxref" href="#informatie-leverings-specificatie-ils"><bdi class="secno">8.3 </bdi>Informatie Leverings Specificatie (ILS)</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-bim-model-ils"><bdi class="secno">8.4 </bdi>Eisen aan het BIM-model (ILS) </a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-het-geomodel"><bdi class="secno">8.5 </bdi>Eisen aan het Geomodel</a></li><li class="tocline"><a class="tocxref" href="#eisen-aan-de-mapping"><bdi class="secno">8.6 </bdi>Eisen aan de mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#afgesproken-mapping"><bdi class="secno">8.6.1 </bdi>Afgesproken mapping</a></li><li class="tocline"><a class="tocxref" href="#allignment-ontology"><bdi class="secno">8.6.2 </bdi>Allignment ontology</a></li><li class="tocline"><a class="tocxref" href="#api-process"><bdi class="secno">8.6.3 </bdi>API Process</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#toolkit"><bdi class="secno">9. </bdi>Toolkit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#handleiding-howto"><bdi class="secno">9.1 </bdi>Handleiding/HowTo</a></li><li class="tocline"><a class="tocxref" href="#bim-bestanden-in-gis-omgeving-brengen"><bdi class="secno">9.2 </bdi>BIM bestanden in GIS omgeving brengen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#esri-arcgis-pro"><bdi class="secno">9.2.1 </bdi>ESRI ArcGIS Pro</a></li><li class="tocline"><a class="tocxref" href="#ifc2geojson"><bdi class="secno">9.2.2 </bdi>IFC2GeoJSON</a></li><li class="tocline"><a class="tocxref" href="#save-software-fme"><bdi class="secno">9.2.3 </bdi>Save Software FME</a></li><li class="tocline"><a class="tocxref" href="#ifcconvert"><bdi class="secno">9.2.4 </bdi>IfcConvert</a></li><li class="tocline"><a class="tocxref" href="#bimshell"><bdi class="secno">9.2.5 </bdi>BIMShell</a></li><li class="tocline"><a class="tocxref" href="#ifcenvelopeextractor"><bdi class="secno">9.2.6 </bdi>IfcEnvelopeExtractor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#workflow"><bdi class="secno">9.2.6.1 </bdi>Workflow</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bestands-correctie"><bdi class="secno">9.2.6.1.1 </bdi>bestands correctie</a></li><li class="tocline"><a class="tocxref" href="#applicatie-instellen"><bdi class="secno">9.2.6.1.2 </bdi>Applicatie instellen</a></li><li class="tocline"><a class="tocxref" href="#samenvoegen-van-gis-bestanden"><bdi class="secno">9.2.6.1.3 </bdi>Samenvoegen van GIS bestanden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#output-specificatie"><bdi class="secno">9.2.6.2 </bdi>Output specificatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lod0-0"><bdi class="secno">9.2.6.2.1 </bdi>LoD0.0</a></li><li class="tocline"><a class="tocxref" href="#lod0-2"><bdi class="secno">9.2.6.2.2 </bdi>LoD0.2</a></li><li class="tocline"><a class="tocxref" href="#lod0-3"><bdi class="secno">9.2.6.2.3 </bdi>LoD0.3</a></li><li class="tocline"><a class="tocxref" href="#lod0-4"><bdi class="secno">9.2.6.2.4 </bdi>LoD0.4</a></li><li class="tocline"><a class="tocxref" href="#lod1-0"><bdi class="secno">9.2.6.2.5 </bdi>LoD1.0</a></li><li class="tocline"><a class="tocxref" href="#lod1-2"><bdi class="secno">9.2.6.2.6 </bdi>LoD1.2</a></li><li class="tocline"><a class="tocxref" href="#lod1-3"><bdi class="secno">9.2.6.2.7 </bdi>LoD1.3</a></li><li class="tocline"><a class="tocxref" href="#lod2-2"><bdi class="secno">9.2.6.2.8 </bdi>LoD2.2</a></li><li class="tocline"><a class="tocxref" href="#lod3-2"><bdi class="secno">9.2.6.2.9 </bdi>LoD3.2</a></li><li class="tocline"><a class="tocxref" href="#lod4-0"><bdi class="secno">9.2.6.2.10 </bdi>LoD4.0</a></li><li class="tocline"><a class="tocxref" href="#lod4-1"><bdi class="secno">9.2.6.2.11 </bdi>LoD4.1</a></li><li class="tocline"><a class="tocxref" href="#lod4-2"><bdi class="secno">9.2.6.2.12 </bdi>LoD4.2</a></li><li class="tocline"><a class="tocxref" href="#lode-1"><bdi class="secno">9.2.6.2.13 </bdi>LoDe.1</a></li><li class="tocline"><a class="tocxref" href="#lod5-0-lodv"><bdi class="secno">9.2.6.2.14 </bdi>LoD5.0/LoDv</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#ifc2geojson-0"><bdi class="secno">9.2.7 </bdi>IFC2GeoJSON</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau"><bdi class="secno">A. </bdi>Mapping tussen IFC en CityGML op verschillend decompositieniveau</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#decompositieniveau-1"><bdi class="secno">A.1 </bdi>Decompositieniveau 1:</a></li><li class="tocline"><a class="tocxref" href="#decompositieniveau-2"><bdi class="secno">A.2 </bdi>Decompositieniveau 2:</a></li><li class="tocline"><a class="tocxref" href="#decompositieniveau-3"><bdi class="secno">A.3 </bdi>Decompositieniveau 3:</a></li><li class="tocline"><a class="tocxref" href="#decompositieniveau-4"><bdi class="secno">A.4 </bdi>Decompositieniveau 4:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#entiteit-en-attribuutmapping-tussen-bim-en-geo"><bdi class="secno">B. </bdi>Entiteit en Attribuutmapping tussen BIM en GEO</a></li><li class="tocline"><a class="tocxref" href="#levenscyclus"><bdi class="secno">C. </bdi>Levenscyclus</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#situatie"><bdi class="secno">C.1 </bdi>Situatie</a></li><li class="tocline"><a class="tocxref" href="#vervangen-van-elementen"><bdi class="secno">C.2 </bdi>Vervangen van elementen</a></li><li class="tocline"><a class="tocxref" href="#nieuwe-weg-in-een-bestaande-weg"><bdi class="secno">C.3 </bdi>Nieuwe weg in een bestaande weg</a></li><li class="tocline"><a class="tocxref" href="#nieuwe-weg-in-een-bestaand-onbegroeid-terrein"><bdi class="secno">C.4 </bdi>Nieuwe weg in een bestaand onbegroeid terrein</a></li></ol></li><li class="tocline"><a class="tocxref" href="#ifc-naar-imbor-mapping"><bdi class="secno">D. </bdi>IFC naar IMBOR Mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mermaid-diagram-attribuutflow"><bdi class="secno">D.1 </bdi>Mermaid Diagram: Attribuutflow</a></li></ol></li><li class="tocline"><a class="tocxref" href="#voorbeeld-ils"><bdi class="secno">E. </bdi>Voorbeeld ILS</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">F. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">G. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">H. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">H.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">H.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">I. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">I.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section id="introductie"><div class="header-wrapper"><h2 id="x1-introductie"><bdi class="secno">1. </bdi>Introductie</h2><a class="self-link" href="#introductie" aria-label="Permalink for Section 1."></a></div>
@@ -2645,7 +2645,7 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <td>✅</td>
 <td>✅</td>
 <td>❌</td>
-<td>❌</td>
+<td>✅</td>
 <td>❌</td>
 </tr>
 <tr>
@@ -2680,16 +2680,155 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 ❌ = geen support</p>
 </section><section id="bim-bestanden-in-gis-omgeving-brengen"><div class="header-wrapper"><h3 id="x9-2-bim-bestanden-in-gis-omgeving-brengen"><bdi class="secno">9.2 </bdi>BIM bestanden in GIS omgeving brengen</h3><a class="self-link" href="#bim-bestanden-in-gis-omgeving-brengen" aria-label="Permalink for Section 9.2"></a></div>
 <section id="esri-arcgis-pro"><div class="header-wrapper"><h4 id="x9-2-1-esri-arcgis-pro"><bdi class="secno">9.2.1 </bdi>ESRI ArcGIS Pro</h4><a class="self-link" href="#esri-arcgis-pro" aria-label="Permalink for Section 9.2.1"></a></div>
-</section></section><section id="x1-1-vertaling-mapping"><div class="header-wrapper"><h3 id="x9-3-1-1-vertaling-mapping"><bdi class="secno">9.3 </bdi>1:1 vertaling/mapping</h3><a class="self-link" href="#x1-1-vertaling-mapping" aria-label="Permalink for Section 9.3"></a></div>
-<section id="save-software-fme"><div class="header-wrapper"><h4 id="x9-3-1-save-software-fme"><bdi class="secno">9.3.1 </bdi>Save Software FME</h4><a class="self-link" href="#save-software-fme" aria-label="Permalink for Section 9.3.1"></a></div>
-</section></section><section id="shell-extraction"><div class="header-wrapper"><h3 id="x9-4-shell-extraction"><bdi class="secno">9.4 </bdi>Shell extraction</h3><a class="self-link" href="#shell-extraction" aria-label="Permalink for Section 9.4"></a></div>
-<section id="bimshell"><div class="header-wrapper"><h4 id="x9-4-1-bimshell"><bdi class="secno">9.4.1 </bdi>BIMShell</h4><a class="self-link" href="#bimshell" aria-label="Permalink for Section 9.4.1"></a></div>
-</section><section id="ifcenvelopeextractor"><div class="header-wrapper"><h4 id="x9-4-2-ifcenvelopeextractor"><bdi class="secno">9.4.2 </bdi>IfcEnvelopeExtractor</h4><a class="self-link" href="#ifcenvelopeextractor" aria-label="Permalink for Section 9.4.2"></a></div>
+<p>In ESRI ArcGIS Pro zijn er tools beschikbaar om een bestaand BIM-model (IFC en Revit) om te zetten naar GEO. Er is tooling beschikbaar om BIM-modellen direct in de Esri software te laden. Een juiste geo-locatie te geven en te converteren naar een ESRI File GeoDataBase (.gdb). De beschikbaar tooling is beschreven op <a href="https://learn.arcgis.com/en/paths/bim-and-gis/">Esri BIM en GIS</a> en op de <a href="https://doc.esri.com/en/arcgis-pro/latest/tool-reference/conversion/bimfile-to-geodatabase.html">bimfile to geodatabase</a> webpagina's. </p>
+<p>Met deze tooling is het mogelijk een 1 op 1 vertaling van het BIM-model te maken. Wel zal de orginele geometrie vertaald worden naar een Multipatch zoals beschreven in deze <a href="https://doc.esri.com/en/arcgis-pro/latest/help/data/revit/adding-revit-data-to-arcgis-pro.html">ARcGIS documentatie</a>. De </p>
+<p>In de Esri-blog <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/transportation/common-patterns-for-bim-and-gis-integration">"Common Patterns for BIM and GIS Integration"</a> staat beschreven dat het mogelijk is om alle informatie-uitwisseling via open standaarden (o.a. IFC en CityGML) plaats te laten vinden. Het converteren van gegevens van de ene standaard naar de andere kent vergelijkbare problemen als klassieke ETL-workflows. Dit leidt tot gegevensverlies, omdat bepaalde domein- of disciplinespecifieke informatie ontbreekt en omdat er verschillen zijn in de complexiteit waarmee geometrie wordt weergegeven. Het gegevensverlies kan nog groter worden wanneer gegevens vanuit een leveranciersspecifiek formaat via meerdere open standaarden worden geconverteerd en uiteindelijk weer in een ander leveranciersspecifiek formaat terechtkomen. Esri ondersteunt deze aanpak door </p>
+<p>Esri ondersteunt deze aanpak doorgaans door gebruik te maken van bibliotheken en tools van derden om gegevens in open standaarden te kunnen lezen. Waar mogelijk willen we het aantal stappen in de gegevensconversie vereenvoudigen door te kijken naar ELT-workflows en -tools, bijvoorbeeld door IFC in de toekomst rechtstreeks in ArcGIS te kunnen lezen.
+There are other patterns of integration that we see evolving in the industry. One of them is the concept that all information exchange should happen through Standards. This includes specifications such as the Open Geospatial Consortium’s CityGML and IFC. This can be challenging when the standards were created for separate industries and workflows and only later attempted to be glued together. Converting data from one standard to another has similar issues to classic ETL workflows, resulting in data loss because of missing domain or discipline information and mismatch in graphic complexity. Data loss can be magnified when converting out of one vendor format, through multiple open standard formats, and then into another vendor format.</p>
+<p>Given the need to evolve software and standards rapidly to meet changing market expectation and technology capability, it’s hard to see that this pattern is going to be able to stabilize in a manner that consistently minimizes data loss for most cross-industry applications of BIM and GIS integration. Esri typically supports these patterns by making use of third-party libraries and tools to read open standard data. Whenever possible, we hope to simplify the number of hops in data conversion by looking at ELT workflows and tools, such as by directly reading IFC into ArcGIS in the future.</p>
+<figure id="IFC-in-ArcGIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/ArcGIS/ArcGIS_IFC_to_3D_Ojbect_Scene_Layers.png" alt="IFC in ArcGIS in een 3D Object Scene Layers" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IFC-in-ArcGIS">Figuur <bdi class="figno">31</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></a>
+        <span class="fig-title">
+        IFC in ArcGIS in een 3D Object Scene Layers <br>
+        Bron: Esri.
+        </span>
+      </span></figcaption>
+</figure></section><section id="ifc2geojson"><div class="header-wrapper"><h4 id="x9-2-2-ifc2geojson"><bdi class="secno">9.2.2 </bdi>IFC2GeoJSON</h4><a class="self-link" href="#ifc2geojson" aria-label="Permalink for Section 9.2.2"></a></div>
+<p>Het project <a href="https://github.com/abdoulayediak/ifc2geojson">Ifc2GeoJSON</a> voorziet in tooling om IFC naar 3D GeoJSON te converteren. Ook is er een <a href="https://ifc2gis.com/app/">ifc2gis-webapplicatie</a> van beschikbaar. </p>
+<figure id="IFC-2-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/ifc2gis/IFC2GIS_Kievitsweg.png" alt="IFC in ArcGIS in een 3D Object Scene Layers" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IFC-2-GIS">Figuur <bdi class="figno">32</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></a>
+        <span class="fig-title">
+        IFC in de tooling IFC2GIS met een selectie een gefilterde 1:1 vertaling<br>
+        Bron: Ifc2GIS.
+        </span>
+      </span></figcaption>
+</figure><p>In deze tool wordt web-ifc, tree.js en geojson gebruikt om de geometrie te veranderen. De <a href="https://github.com/ThatOpen/engine_web-ifc/blob/main/src/cpp/web-ifc/geometry/IfcGeometryLoader.cpp">IfcGeometryLoader</a> voorziet in de transformatie van impliciete procedurele geometrie naar expliciete geometrie. Met deze functie is het mogelijk om parameters mee te geven voor het tesseleren van geometrie. In de Ifc2GeoJSON tool is het niet mogelijk deze parameters aan te passen. </p>
+</section><section id="save-software-fme"><div class="header-wrapper"><h4 id="x9-2-3-save-software-fme"><bdi class="secno">9.2.3 </bdi>Save Software FME</h4><a class="self-link" href="#save-software-fme" aria-label="Permalink for Section 9.2.3"></a></div>
+<p>FME software heeft verschillende functies beschikbaar om BIM naar GEO om te zetten. </p>
+<p>De functies onderscheiden in het detailniveau van het BIM-model en het detailniveau van de output. LOD 3 is hierbij het meest complex, omdat het geen n op 1, geen 1 op 1 maar een n op n mapping is.   </p>
+<ul>
+<li><a href="https://support.safe.com/hc/en-us/articles/25407765402637-Simplifying-IFC-geometries-for-easier-conversion">Simplifying IFC geometries for easier conversion</a>  </li>
+<li><a href="https://support.safe.com/hc/en-us/articles/25407431004173-BIM-to-GIS-Basic-IFC-LOD-100-to-LOD-2-CityGML">BIM to GIS IFC LOD 100 to LOD 2 CityGML</a>  </li>
+<li><a href="https://support.safe.com/hc/en-us/articles/25407525412365-BIM-to-GIS-Advanced-IFC-LOD-200-to-LOD-3-CityGML">BIM to GIS IFC LOD 200 to LOD 3 CityGML</a></li>
+<li><a href="https://support.safe.com/hc/en-us/articles/25407718003341-BIM-to-GIS-Intermediate-IFC-LOD-300-to-LOD-4-CityGML">BIM to GIS IFC LOD 300 to LOD 4 CityGML</a></li>
+</ul>
+<p>In de totale flow van de LOD100 naar LOD 2 CityGML conversie is te zien dat er een mesh gemaakt wordt van de Ifc geometrie van spaces en slabs.  </p>
+<figure id="FME-LOD-2-workflow" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 2 Workflow.png" alt="IFC in ArcGIS in een 3D Object Scene Layers" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#FME-LOD-2-workflow">Figuur <bdi class="figno">33</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-LOD-2-CityGML-workflow"></a>
+        <span class="fig-title">
+        FME LOD 2 CityGML workflow<br>
+        Bron: FME
+        </span>
+      </span></figcaption>
+</figure><p>De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. Voor een gebouw wordt er wederom een LOD100 mesh gemaakt. dit wordt aangevuld met een <a href="https://hub.safe.com/publishers/safe-lab/transformers/citygmlgeometrysetter">citygmlgeometrysetter</a>. Hiermeek kan een bepaalde citygml lod geduid worden. Verschillende Ifc entiteiten resulteren in de flow in verschillende CityGML concepten. </p>
+<figure id="FME-LOD-3-workflow" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 3 Workflow.png" alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#FME-LOD-3-workflow">Figuur <bdi class="figno">34</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-FME-LOD-3-workflow"></a>
+        <span class="fig-title">
+        FME LOD 3 CityGML workflow<br>
+        Bron: FME
+        </span>
+      </span></figcaption>
+</figure><figure id="FME-IFC-Input-model" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME IFC LOD 300.png" alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#FME-IFC-Input-model">Figuur <bdi class="figno">35</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-FME-IFC-Input-model"></a>
+        <span class="fig-title">
+        FME IFC Input model<br>
+        Bron: FME
+        </span>
+      </span></figcaption>
+</figure><div style="display: flex; gap: 10px;">
+<figure id="IFC-2-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 2 CityGML.png" alt="FME LOD 2 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IFC-2-GIS">Figuur <bdi class="figno">36</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-IFC-2-GIS"></a>
+        <span class="fig-title">
+        FME LOD 2 CityGML output<br>
+        Bron: FME
+        </span>
+      </span></figcaption>
+</figure><figure id="IFC-3-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 3 CityGML.png" alt="FME LOD 3 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IFC-3-GIS">Figuur <bdi class="figno">37</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-IFC-3-GIS"></a>
+        <span class="fig-title">
+        FME LOD 3 CityGML output<br>
+        Bron: FME
+        </span>
+      </span></figcaption>
+</figure><figure id="IFC-4-GIS" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/FME/FME LOD 4 CityGML.png" alt="FME LOD 4 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IFC-4-GIS">Figuur <bdi class="figno">38</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-" ifc-4-gis"=""></a>
+        <span class="fig-title">
+        FME LOD 4 CityGML output<br>
+        Bron: FME
+        </span>
+      </span></figcaption>
+</figure>
+</div></section><section id="ifcconvert"><div class="header-wrapper"><h4 id="x9-2-4-ifcconvert"><bdi class="secno">9.2.4 </bdi>IfcConvert</h4><a class="self-link" href="#ifcconvert" aria-label="Permalink for Section 9.2.4"></a></div>
+<p><a href="https://docs.ifcopenshell.org/ifcconvert.html#">IFC convert</a> is onderdeel van <a href="https://docs.ifcopenshell.org/">IfcOpenShell</a>. IfcOpenShell is een toolkit die ondersteunt bij het lezen, schrijven en bewerken van BIM met behulp van IFC. Met IfcConvert is het mogelijk om IFC te converteren naar formaten als .obj, .dae, .glb, .stp, .igs, .xml, .svg, .h5, .ttl, .ifc, .rdb en .json. 
+Het is mogelijk om specifieke elementen wel of niet mee te nemen met de IFCConvert tool zoals beschreven in de <a href="https://docs.ifcopenshell.org/ifcconvert/usage.html">IfcConver Usage</a>. </p>
+<p>Het creëeren van CityJSON is onderzocht in samenwerking met de TU-Delft. Dit is onder andere beschreven in dit <a href="https://github.com/IfcOpenShell/IfcOpenShell/issues/2977">githubissue</a>. IfcConvert voorziet momenteel niet in CityJSON conversie. Wel is er een IfcCityJSON converter, maar deze converter converteert CityJSON naar IFC, en niet andersom. </p>
+<figure id="IFC-Open-Shell-CityGML-Output" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/IfcOpenShell/IfcConvert IfcOpenShell.png" alt="Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#IFC-Open-Shell-CityGML-Output">Figuur <bdi class="figno">39</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></a>
+        <span class="fig-title">
+        Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC<br>
+        Bron: IFC Openshell Github.
+        </span>
+      </span></figcaption>
+</figure></section><section id="bimshell"><div class="header-wrapper"><h4 id="x9-2-5-bimshell"><bdi class="secno">9.2.5 </bdi>BIMShell</h4><a class="self-link" href="#bimshell" aria-label="Permalink for Section 9.2.5"></a></div>
+<p>BIMShell is een extensie van Trimble/Sketchup. Met deze extensie is het mogelijk om een footprint shell te maken. Dit genereert een omhulsel dat overeenkomt met de geëxtrudeerde voetafdruk van het model (langs de Z-as)</p>
+<p>Daarnaast bestaat de Voxel Shell functie. 
+Dit genereert een "gesloten benadering van de buitencontour van het model met behulp van een voxelgegevensstructuur. Hierbij kun je de voxelsresolutie instellen die wordt gebruikt om een omhulsel te maken. </p>
+<p>Een kleinere resolutie zorgt voor een nauwkeuriger resultaat, maar vereist meer rekenkracht. Als het model openingen bevat die groter zijn dan de gekozen resolutie, is de kans groot dat het proces ook vlakken aan de binnenkant van het model genereert. Over het algemeen levert deze methode echter eenvoudigere modellen op dan de oorspronkelijke modellen.</p>
+<p>Tenslotte is er de Out Shell Faces 
+Genereert een omhulselversie van het model door de vlakken die zich aan de buitenzijde bevinden te kopiëren. Hierbij kan de resolutie van het geoptimaliseerde raster worden ingesteld dat wordt gebruikt om vanaf de buitenzijde van het model stralen (rays) op het model af te vuren. Net als bij Voxel Shell geldt dat wanneer de binnen- en buitenruimte van het model niet goed van elkaar te onderscheiden zijn (bijvoorbeeld door openingen, een open deur of ramen), het resulterende omhullende model waarschijnlijk ook vlakken aan de binnenzijde zal bevatten.</p>
+<div style="display: flex; gap: 10px;">
+<figure id="BIMShell-Input-Output" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png" alt="BIMShell input and output model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#BIMShell-Input-Output">Figuur <bdi class="figno">40</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-BIMShell-Input-Output"></a>
+        <span class="fig-title">
+        BIMShell input and output model<br>
+        Bron: Sketchup extensions
+        </span>
+      </span></figcaption>
+</figure><figure id="BIMShell-Input" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png" alt="BIMShell input model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#BIMShell-Input">Figuur <bdi class="figno">41</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-BIMShell-Input"></a>
+        <span class="fig-title">
+        BIMShell input model<br>
+        Bron: Sketchup extensions
+        </span>
+      </span></figcaption>
+</figure><figure id="BIMShell-Output" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/07_toepassingen/BIMShell/BIMShell_01.png" alt="BIMShell output model" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
+      <figcaption><a class="self-link" href="#BIMShell-Output">Figuur <bdi class="figno">42</bdi></a> <span class="fig-title">
+        <a class="self-link" href="#fig-BIMShell-Output"></a>
+        <span class="fig-title">
+        BIMShell output model<br>
+        Bron: Sketchup extensions
+        </span>
+      </span></figcaption>
+</figure></div><p>Beelden: <a href="https://extensions.sketchup.com/">https://extensions.sketchup.com/</a></p>
+</section><section id="ifcenvelopeextractor"><div class="header-wrapper"><h4 id="x9-2-6-ifcenvelopeextractor"><bdi class="secno">9.2.6 </bdi>IfcEnvelopeExtractor</h4><a class="self-link" href="#ifcenvelopeextractor" aria-label="Permalink for Section 9.2.6"></a></div>
 <p>De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet alleen een 1:1 omzetting van IFC naar een ander GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>. Aanvullend zijn er een aantal experimentele LoDs en een 1:1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.</p>
 <p>De applicatie is toegankelijk via de <a href="https://github.com/tudelft3d/IFC_BuildingEnvExtractor">GitHub pagina</a>. Hier zijn de source code en gecompilde executables beschikbaar. De gecompilde executables zijn beschikbaar voor zowel Windows als Linux (Ubuntu). Gedetaillerde informatie over de methodes die ontwikkeld zijn in de code om de conversie uit te voeren, kan worden gevonden in het <a href="https://research.tudelft.nl/en/publications/bim2geo-converter/">technische report</a> van versie 0.2.6. Dit report is gebaseerd op een eerdere versie van de code, versie 0.3.x is de huidige versie, waarbij de dieper liggende logica gelijk of vergelijkbaar is gebleven.</p>
 <p>Controle over de applicatie kan op twee manieren worden uitgeoefend, via een Graphical User Interface (GUI) of via een configuratie bestand (ConfigJSON). De GUI is makkelijker en sneller om mee te werken, zeker voor gebruikers die geen programmeer ervaring hebben. De GUI geeft echter enkel controle over een sub-set van alle beschikbare instellingen. Dit is gedaan om de menu's overzichtelijk te houden. De beschikbare instellingen zijn gekozen op basis van wat de meest gebruikte instellingen zijn. Als deze instellingen te beperkend zijn moet er met de ConfigJSON gewerkt worden. De ConfigJSON is een lijst met instellingen in een JSON encoding.</p>
-<section id="workflow"><div class="header-wrapper"><h5 id="x9-4-2-1-workflow"><bdi class="secno">9.4.2.1 </bdi>Workflow</h5><a class="self-link" href="#workflow" aria-label="Permalink for Section 9.4.2.1"></a></div>
-<section id="bestands-correctie"><div class="header-wrapper"><h6 id="x9-4-2-1-1-bestands-correctie"><bdi class="secno">9.4.2.1.1 </bdi>bestands correctie</h6><a class="self-link" href="#bestands-correctie" aria-label="Permalink for Section 9.4.2.1.1"></a></div>
+<section id="workflow"><div class="header-wrapper"><h5 id="x9-2-6-1-workflow"><bdi class="secno">9.2.6.1 </bdi>Workflow</h5><a class="self-link" href="#workflow" aria-label="Permalink for Section 9.2.6.1"></a></div>
+<section id="bestands-correctie"><div class="header-wrapper"><h6 id="x9-2-6-1-1-bestands-correctie"><bdi class="secno">9.2.6.1.1 </bdi>bestands correctie</h6><a class="self-link" href="#bestands-correctie" aria-label="Permalink for Section 9.2.6.1.1"></a></div>
 <p>Niet ieder model kan door de IfcEnvelopeExtractor direct verwerkt worden. De software applicatie is ontwikkeld om te werken op veel verschillende modellen, maar niet ieder probleem kan ontweken worden. Daarom moeten modellen mogelijk handmatige gecorrigeerd worden voordat ze kunnen worden verwerkt. Er zijn aantal onderwerpen waarvan het aangeraden wordt om te controleren/corrigeren voor verwerking. Als alleen de buitenkant van het gebouw/bouwwerkt geexporteerd/converteerd moet worden hoeft alleen de georeferentie en het IfcClass gebruik gechecked te worden. Als ook de binnenkant geexporteerd/converteerd moet worden is het ook aangeraden dat de IfcSpace hiërarchie en de IfcBuildingStorey gerelateerde objecten gechecked worden.</p>
 <p><strong>Georeferencing</strong></p>
 <p>De IfcEnvelopeExtractor neemt de georeferentie over van het IFC bestand. Dit betekend dat als het model correct gegeorefereerd is dat het GIS model direct op de correcte locatie zal worden geplaatst. Echter is de aanwezigheid en kwaliteit van de georeferentie in IFC niet altijd gegarandeerd. Applicaties zoals <a href="https://ifcgref.bk.tudelft.nl/">IfcGref</a> maken het mogelijk om correcte georeferentie data van een bestand te controleren en eventueel toe te voegen of te corrigeren. De online versie van IfcGref kan IFC bestanden van maximaal 100mb verwerken. Als de bestanden zwaarder zijn dan 100mb kan vanaf de <a href="https://github.com/tudelft3d/ifcgref">GitHub pagina</a> de code verkregen worden om de applicatie lokaal te gebruiken. De 100mb limiet is dan niet meer aanwezig.</p>
@@ -2707,13 +2846,13 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <p>De IfcEnvelopeExtractor maakt het mogelijk om verdiepingen of informatie gerelateerd aan de verdiepingen te exporteren. Voor LoD0.2 en LoD0.3 export word een horizontale doorsnede gemaakt door het gebouw om een oppervlakte, of groep van oppervlaktes te maken. Voor LoD0.2 wordt dit door alle gebruikte objecten van het IFC model gedaan. Maar voor de LoD0.3 doorsnede worden alleen de objecten gebruikt die via IfcRelContainedInSpatialStructure objecten aan de verdieping (IfcBuildingStorey) gerelateerd zijn.</p>
 <p>Deze relatie tussen verdieping/IfcBuildingStorey en de andere producten is soms incorrect en moet gecorrigeerd worden als dat mogelijk is. Het beste is als dit direct gecorrigeerd kan worden in de bron waar de modellen vandaan komen. Als deze relatie verkeerd is in IFC dan is het waarschijnlijk ook incorrect in Revit, ArchiCAD of andere bron. Als het bronbestand niet beschikbaar is dan kan als alternatief een IFC editor gebruikt worden. Het veranderen van de relatie tussen objecten en verdiepingen is relatief makkelijk en door veel IFC editors ondersteunt.</p>
 <p>Een groter probleem is als een object met de goede verdieping is gerelateerd maar zo hoog is dat het meer dan een enkele verdieping overbrugt. Over het algemeen wordt het afgeraden dit soort objecten in een IFC model te hebben. Er is tot nu toe geen oplossing voor dit probleem gevonden. Het is in theorie mogelijk om hetzelfde object via twee (of meer) verschillende IfcRelContainedInSpatialStructure te relateren aan twee (of meer) verschillende verdiepingen. Dit is echter geen standaardoplossing en de meeste IFC viewers en editors zullen hier niet goed mee omgaan.</p>
-</section><section id="applicatie-instellen"><div class="header-wrapper"><h6 id="x9-4-2-1-2-applicatie-instellen"><bdi class="secno">9.4.2.1.2 </bdi>Applicatie instellen</h6><a class="self-link" href="#applicatie-instellen" aria-label="Permalink for Section 9.4.2.1.2"></a></div>
+</section><section id="applicatie-instellen"><div class="header-wrapper"><h6 id="x9-2-6-1-2-applicatie-instellen"><bdi class="secno">9.2.6.1.2 </bdi>Applicatie instellen</h6><a class="self-link" href="#applicatie-instellen" aria-label="Permalink for Section 9.2.6.1.2"></a></div>
 <p>Zoals eerder vermeld kan de applicatie op twee manieren ingesteld worden, via de GUI en via de ConfigJSON. Als eerste behandelen we de GUI. Aanvullend worden via de ConfigJSON alle instellingen behandeld die niet via de GUI configureerbaar zijn.</p>
 <p><strong>GUI</strong></p>
 <p>
       </p><figure id="fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">
-        <img src="media/07_toepassingen/menus.jpg" alt="De GUI van de IfcEnvelopeExtractor">
-        <figcaption><a class="self-link" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">Figuur <bdi class="figno">31</bdi></a> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/menus.jpg" alt="De GUI van de IfcEnvelopeExtractor">
+        <figcaption><a class="self-link" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker">Figuur <bdi class="figno">43</bdi></a> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></figcaption>
       </figure>
     <p></p>
 <p>De GUI is opgedeeld in groepen van instellingen die aan elkaar gerelateerd zijn. In de afbeelding hierboven zijn de groepen weergegeven.</p>
@@ -2758,23 +2897,23 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <p>Er is ook een simpele versie van de GUI beschikbaar. Deze is vooral gemaakt voor het laden van pre-set bestanden.</p>
 <p>
       </p><figure id="fig-de-simpele-versie-van-de-gui-voor-de-envelope-extractor">
-        <img src="media/07_toepassingen/GUI_simple_example.JPG" alt="De simpele GUI van de IfcEnvelopeExtractor">
-        <figcaption><a class="self-link" href="#fig-de-simpele-versie-van-de-gui-voor-de-envelope-extractor">Figuur <bdi class="figno">32</bdi></a> <span class="fig-title">De simpele versie van de GUI voor de envelope extractor</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/GUI_simple_example.JPG" alt="De simpele GUI van de IfcEnvelopeExtractor">
+        <figcaption><a class="self-link" href="#fig-de-simpele-versie-van-de-gui-voor-de-envelope-extractor">Figuur <bdi class="figno">44</bdi></a> <span class="fig-title">De simpele versie van de GUI voor de envelope extractor</span></figcaption>
       </figure>
     <p></p>
 <p>Een uitgebreide beschrijving van de GUI kan (in het engels) worden gevonden op de <a href="https://github.com/tudelft3d/IFC_BuildingEnvExtractor/blob/master/Documentation/1_Gui.md">GitHub van de EnvExtractor</a>.</p>
 <p><strong>ConfigJSON</strong></p>
-</section><section id="samenvoegen-van-gis-bestanden"><div class="header-wrapper"><h6 id="x9-4-2-1-3-samenvoegen-van-gis-bestanden"><bdi class="secno">9.4.2.1.3 </bdi>Samenvoegen van GIS bestanden</h6><a class="self-link" href="#samenvoegen-van-gis-bestanden" aria-label="Permalink for Section 9.4.2.1.3"></a></div>
+</section><section id="samenvoegen-van-gis-bestanden"><div class="header-wrapper"><h6 id="x9-2-6-1-3-samenvoegen-van-gis-bestanden"><bdi class="secno">9.2.6.1.3 </bdi>Samenvoegen van GIS bestanden</h6><a class="self-link" href="#samenvoegen-van-gis-bestanden" aria-label="Permalink for Section 9.2.6.1.3"></a></div>
 <p>De output van de BIM2Geo converter is een model van een enkel bouwwerk, of (afhankelijk van de BIM model) een relatief kleine cluster van gebowuen. Om dit model in de omgeving the plaatsen is het mogelijk om de CityJSON output samen te voegen met een CityJSON tegel van bijvoorbeeld de 3D bag. Op dit moment is het nog niet mogelijk om dit direct met de BIM2Geo converter te doen. Een alternatieve oplossing is het gebruiken van <a href="https://github.com/cityjson/cjio">cijo</a> (CityJSON/io).</p>
-</section></section><section id="output-specificatie"><div class="header-wrapper"><h5 id="x9-4-2-2-output-specificatie"><bdi class="secno">9.4.2.2 </bdi>Output specificatie</h5><a class="self-link" href="#output-specificatie" aria-label="Permalink for Section 9.4.2.2"></a></div>
+</section></section><section id="output-specificatie"><div class="header-wrapper"><h5 id="x9-2-6-2-output-specificatie"><bdi class="secno">9.2.6.2 </bdi>Output specificatie</h5><a class="self-link" href="#output-specificatie" aria-label="Permalink for Section 9.2.6.2"></a></div>
 <p>De IfcEnvelopeExtractor ondersteunt 12 verschillende "reguliere" LoD. Deze LoD volgen een aangepaste LoD framework dat zowel het framework van de CityGML2.0/3.0 standaard en van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> combineerd en op uitbreid. Een deel van de verschillen komt voort uit benodigde interpretatie van regels die niet duidelijk gedefinieerd zijn in de gebruikte/bestaande frameworks. Aanvullend is het framework van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> gebaseerd op modellen die zijn gemaakt op basis in-situ metingen gecombineerd met 2D polygonen. Hier zitten andere beperkingen aan dan aan modellen gebaseerd op BIM. Hierdoor zijn niet alle aspecten van het framework passend.</p>
 <p>Een deel van de volgende samenvatting van de output kan ook worden gevonden in het technische rapport van de <a href="https://repository.tudelft.nl/file/File_5924bb4a-a5e4-42ff-b1ed-48168728d12a?preview=1">IfcEnvelopeExtractor V0.2.6</a>. Dit document geeft ook een uitgebreide uitleg over de methodes die zijn gebruikt om de abstractie modellen te creëren. Echter is versie V0.3.2 van de software beschikbaar tijdens het schrijven van dit document. V0.3.2 gebruikt een aantal andere regels en methodes. Daarnaast is ook de mogelijke output uitgebreid, LoD4 werd nog niet ondersteunt door v0.2.</p>
 <p>Niet iedere LoD die beschikbaar is in het framework van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> wordt behandeld in deze lijst. Dat betekend niet dat ze niet belangrijk zijn, alleen dat de exctractor deze LoD niet als output genereerd.</p>
-<section id="lod0-0"><div class="header-wrapper"><h6 id="x9-4-2-2-1-lod0-0"><bdi class="secno">9.4.2.2.1 </bdi>LoD0.0</h6><a class="self-link" href="#lod0-0" aria-label="Permalink for Section 9.4.2.2.1"></a></div>
+<section id="lod0-0"><div class="header-wrapper"><h6 id="x9-2-6-2-1-lod0-0"><bdi class="secno">9.2.6.2.1 </bdi>LoD0.0</h6><a class="self-link" href="#lod0-0" aria-label="Permalink for Section 9.2.6.2.1"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD00.jpg" alt="Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">33</bdi></a> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD00.jpg" alt="Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">45</bdi></a> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></figcaption>
       </figure>
     <p></p>
 <p>2D bounding box representatie van het input BIM model.</p>
@@ -2793,11 +2932,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod0-2"><div class="header-wrapper"><h6 id="x9-4-2-2-2-lod0-2"><bdi class="secno">9.4.2.2.2 </bdi>LoD0.2</h6><a class="self-link" href="#lod0-2" aria-label="Permalink for Section 9.4.2.2.2"></a></div>
+</section><section id="lod0-2"><div class="header-wrapper"><h6 id="x9-2-6-2-2-lod0-2"><bdi class="secno">9.2.6.2.2 </bdi>LoD0.2</h6><a class="self-link" href="#lod0-2" aria-label="Permalink for Section 9.2.6.2.2"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">
-        <img src="media/07_toepassingen/LoD02.jpg" alt="Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">34</bdi></a> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD02.jpg" alt="Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">46</bdi></a> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>Simpel 2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2828,11 +2967,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod0-3"><div class="header-wrapper"><h6 id="x9-4-2-2-3-lod0-3"><bdi class="secno">9.4.2.2.3 </bdi>LoD0.3</h6><a class="self-link" href="#lod0-3" aria-label="Permalink for Section 9.4.2.2.3"></a></div>
+</section><section id="lod0-3"><div class="header-wrapper"><h6 id="x9-2-6-2-3-lod0-3"><bdi class="secno">9.2.6.2.3 </bdi>LoD0.3</h6><a class="self-link" href="#lod0-3" aria-label="Permalink for Section 9.2.6.2.3"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">
-        <img src="media/07_toepassingen/LoD03.jpg" alt="Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">35</bdi></a> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD03.jpg" alt="Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">47</bdi></a> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak een normaal richting heeft van (0,0,1). Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2857,11 +2996,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod0-4"><div class="header-wrapper"><h6 id="x9-4-2-2-4-lod0-4"><bdi class="secno">9.4.2.2.4 </bdi>LoD0.4</h6><a class="self-link" href="#lod0-4" aria-label="Permalink for Section 9.4.2.2.4"></a></div>
+</section><section id="lod0-4"><div class="header-wrapper"><h6 id="x9-2-6-2-4-lod0-4"><bdi class="secno">9.2.6.2.4 </bdi>LoD0.4</h6><a class="self-link" href="#lod0-4" aria-label="Permalink for Section 9.2.6.2.4"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD04.jpg" alt="Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">36</bdi></a> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD04.jpg" alt="Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">48</bdi></a> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D oppervlak representatie van het input BIM model waarbij ieder oppervlak dezelfde vorm behoud als de geometrische bron. Het model is 2.5D tussen oppervlaktes van dezelfde bron. Overhangende delen zijn toegestaan tussen oppervlaktes die andere types hebben of een andere bron hebben (zoals verschillende verdiepingen).</p>
@@ -2880,11 +3019,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod1-0"><div class="header-wrapper"><h6 id="x9-4-2-2-5-lod1-0"><bdi class="secno">9.4.2.2.5 </bdi>LoD1.0</h6><a class="self-link" href="#lod1-0" aria-label="Permalink for Section 9.4.2.2.5"></a></div>
+</section><section id="lod1-0"><div class="header-wrapper"><h6 id="x9-2-6-2-5-lod1-0"><bdi class="secno">9.2.6.2.5 </bdi>LoD1.0</h6><a class="self-link" href="#lod1-0" aria-label="Permalink for Section 9.2.6.2.5"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD10.jpg" alt="Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">37</bdi></a> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD10.jpg" alt="Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">49</bdi></a> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D bounding box representatie van het input BIM model.</p>
@@ -2897,11 +3036,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod1-2"><div class="header-wrapper"><h6 id="x9-4-2-2-6-lod1-2"><bdi class="secno">9.4.2.2.6 </bdi>LoD1.2</h6><a class="self-link" href="#lod1-2" aria-label="Permalink for Section 9.4.2.2.6"></a></div>
+</section><section id="lod1-2"><div class="header-wrapper"><h6 id="x9-2-6-2-6-lod1-2"><bdi class="secno">9.2.6.2.6 </bdi>LoD1.2</h6><a class="self-link" href="#lod1-2" aria-label="Permalink for Section 9.2.6.2.6"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">
-        <img src="media/07_toepassingen/LoD12.jpg" alt="Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">38</bdi></a> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD12.jpg" alt="Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">50</bdi></a> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model met unform vlakke boven en onder oppervlaktes.</p>
@@ -2924,11 +3063,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod1-3"><div class="header-wrapper"><h6 id="x9-4-2-2-7-lod1-3"><bdi class="secno">9.4.2.2.7 </bdi>LoD1.3</h6><a class="self-link" href="#lod1-3" aria-label="Permalink for Section 9.4.2.2.7"></a></div>
+</section><section id="lod1-3"><div class="header-wrapper"><h6 id="x9-2-6-2-7-lod1-3"><bdi class="secno">9.2.6.2.7 </bdi>LoD1.3</h6><a class="self-link" href="#lod1-3" aria-label="Permalink for Section 9.2.6.2.7"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD13.jpg" alt="Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">39</bdi></a> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD13.jpg" alt="Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">51</bdi></a> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model met vlakke oppervlaktes. Ieder oppervlak heeft een normaal richting met een z-component dat gelijk is aan 1 of 0.</p>
@@ -2941,11 +3080,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod2-2"><div class="header-wrapper"><h6 id="x9-4-2-2-8-lod2-2"><bdi class="secno">9.4.2.2.8 </bdi>LoD2.2</h6><a class="self-link" href="#lod2-2" aria-label="Permalink for Section 9.4.2.2.8"></a></div>
+</section><section id="lod2-2"><div class="header-wrapper"><h6 id="x9-2-6-2-8-lod2-2"><bdi class="secno">9.2.6.2.8 </bdi>LoD2.2</h6><a class="self-link" href="#lod2-2" aria-label="Permalink for Section 9.2.6.2.8"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">
-        <img src="media/07_toepassingen/LoD22.jpg" alt="Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">40</bdi></a> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD22.jpg" alt="Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">52</bdi></a> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>2.5D volumetrische representatie van het input BIM model.</p>
@@ -2964,11 +3103,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod3-2"><div class="header-wrapper"><h6 id="x9-4-2-2-9-lod3-2"><bdi class="secno">9.4.2.2.9 </bdi>LoD3.2</h6><a class="self-link" href="#lod3-2" aria-label="Permalink for Section 9.4.2.2.9"></a></div>
+</section><section id="lod3-2"><div class="header-wrapper"><h6 id="x9-2-6-2-9-lod3-2"><bdi class="secno">9.2.6.2.9 </bdi>LoD3.2</h6><a class="self-link" href="#lod3-2" aria-label="Permalink for Section 9.2.6.2.9"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">
-        <img src="media/07_toepassingen/LoD32.jpg" alt="Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">41</bdi></a> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD32.jpg" alt="Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven">Figuur <bdi class="figno">53</bdi></a> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></figcaption>
       </figure>
     <p></p>
 <p>3D volumetrische representatie van het input BIM model.</p>
@@ -2987,11 +3126,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod4-0"><div class="header-wrapper"><h6 id="x9-4-2-2-10-lod4-0"><bdi class="secno">9.4.2.2.10 </bdi>LoD4.0</h6><a class="self-link" href="#lod4-0" aria-label="Permalink for Section 9.4.2.2.10"></a></div>
+</section><section id="lod4-0"><div class="header-wrapper"><h6 id="x9-2-6-2-10-lod4-0"><bdi class="secno">9.2.6.2.10 </bdi>LoD4.0</h6><a class="self-link" href="#lod4-0" aria-label="Permalink for Section 9.2.6.2.10"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD40.jpg" alt="Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">42</bdi></a> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD40.jpg" alt="Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">54</bdi></a> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van de objecten die de buitenkant van het input BIM model representeren. Dit kan worden gezien als de eerste stap in de creatie van LoD3.2. Waarbij LoDe.1 stap 2 is.</p>
@@ -3008,11 +3147,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod4-1"><div class="header-wrapper"><h6 id="x9-4-2-2-11-lod4-1"><bdi class="secno">9.4.2.2.11 </bdi>LoD4.1</h6><a class="self-link" href="#lod4-1" aria-label="Permalink for Section 9.4.2.2.11"></a></div>
+</section><section id="lod4-1"><div class="header-wrapper"><h6 id="x9-2-6-2-11-lod4-1"><bdi class="secno">9.2.6.2.11 </bdi>LoD4.1</h6><a class="self-link" href="#lod4-1" aria-label="Permalink for Section 9.2.6.2.11"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD41.jpg" alt="Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">43</bdi></a> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD41.jpg" alt="Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">55</bdi></a> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van de ruimte scheidende objecten van het input BIM model.</p>
@@ -3025,11 +3164,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod4-2"><div class="header-wrapper"><h6 id="x9-4-2-2-12-lod4-2"><bdi class="secno">9.4.2.2.12 </bdi>LoD4.2</h6><a class="self-link" href="#lod4-2" aria-label="Permalink for Section 9.4.2.2.12"></a></div>
+</section><section id="lod4-2"><div class="header-wrapper"><h6 id="x9-2-6-2-12-lod4-2"><bdi class="secno">9.2.6.2.12 </bdi>LoD4.2</h6><a class="self-link" href="#lod4-2" aria-label="Permalink for Section 9.2.6.2.12"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoD42.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">44</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD42.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">56</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D complex (geen schil) representatie van van het input BIM model.</p>
@@ -3042,11 +3181,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lode-1"><div class="header-wrapper"><h6 id="x9-4-2-2-13-lode-1"><bdi class="secno">9.4.2.2.13 </bdi>LoDe.1</h6><a class="self-link" href="#lode-1" aria-label="Permalink for Section 9.4.2.2.13"></a></div>
+</section><section id="lode-1"><div class="header-wrapper"><h6 id="x9-2-6-2-13-lode-1"><bdi class="secno">9.2.6.2.13 </bdi>LoDe.1</h6><a class="self-link" href="#lode-1" aria-label="Permalink for Section 9.2.6.2.13"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lode-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">
-        <img src="media/07_toepassingen/LoDe1.jpg" alt="Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lode-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">45</bdi></a> <span class="fig-title">Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoDe1.jpg" alt="Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lode-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit">Figuur <bdi class="figno">57</bdi></a> <span class="fig-title">Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D oppervlak representatie van het input BIM model. Dit kan worden gezien als de tweede stap in de LoD3.2 creatie. LoD4.0 kan worden beschouwd als de eerste stap.</p>
@@ -3059,11 +3198,11 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section><section id="lod5-0-lodv"><div class="header-wrapper"><h6 id="x9-4-2-2-14-lod5-0-lodv"><bdi class="secno">9.4.2.2.14 </bdi>LoD5.0/LoDv</h6><a class="self-link" href="#lod5-0-lodv" aria-label="Permalink for Section 9.4.2.2.14"></a></div>
+</section><section id="lod5-0-lodv"><div class="header-wrapper"><h6 id="x9-2-6-2-14-lod5-0-lodv"><bdi class="secno">9.2.6.2.14 </bdi>LoD5.0/LoDv</h6><a class="self-link" href="#lod5-0-lodv" aria-label="Permalink for Section 9.2.6.2.14"></a></div>
 <p>
       </p><figure id="fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">
-        <img src="media/07_toepassingen/LoD50.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
-        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">Figuur <bdi class="figno">46</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
+        <img src="media/07_toepassingen/EnvelopeExtractor/LoD50.jpg" alt="Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT">
+        <figcaption><a class="self-link" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0">Figuur <bdi class="figno">58</bdi></a> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></figcaption>
       </figure>
     <p></p>
 <p>3D voxelisatie representatie van het model.</p>
@@ -3082,7 +3221,7 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </ul>
 </li>
 </ul>
-</section></section></section><section id="ifc2geojson"><div class="header-wrapper"><h4 id="x9-4-3-ifc2geojson"><bdi class="secno">9.4.3 </bdi>IFC2GeoJSON</h4><a class="self-link" href="#ifc2geojson" aria-label="Permalink for Section 9.4.3"></a></div>
+</section></section></section><section id="ifc2geojson-0"><div class="header-wrapper"><h4 id="x9-2-7-ifc2geojson"><bdi class="secno">9.2.7 </bdi>IFC2GeoJSON</h4><a class="self-link" href="#ifc2geojson-0" aria-label="Permalink for Section 9.2.7"></a></div>
 </section></section></section>
 <section class="appendix" id="mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau"><div class="header-wrapper"><h2 id="a-mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau"><bdi class="secno">A. </bdi>Mapping tussen IFC en CityGML op verschillend decompositieniveau</h2><a class="self-link" href="#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau" aria-label="Permalink for Appendix A."></a></div>
 <p>Vanuit een gedetailleerd BIM-model is het mogelijk om op verschillende decompositieniveaus naar GEO te mappen. </p>
@@ -3197,14 +3336,14 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <section class="appendix" id="entiteit-en-attribuutmapping-tussen-bim-en-geo"><div class="header-wrapper"><h2 id="b-entiteit-en-attribuutmapping-tussen-bim-en-geo"><bdi class="secno">B. </bdi>Entiteit en Attribuutmapping tussen BIM en GEO</h2><a class="self-link" href="#entiteit-en-attribuutmapping-tussen-bim-en-geo" aria-label="Permalink for Appendix B."></a></div>
 <figure id="Attribuut_mapping_IFC_BAG_IMBOR" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/Attribuutmapping/IFC_BAG_IMBOR_attribuut_mapping.png" alt="Attribuut_mapping_IFC_BAG_IMBOR" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
-      <figcaption><a class="self-link" href="#Attribuut_mapping_IFC_BAG_IMBOR">Figuur <bdi class="figno">47</bdi></a> <span class="fig-title">
+      <figcaption><a class="self-link" href="#Attribuut_mapping_IFC_BAG_IMBOR">Figuur <bdi class="figno">59</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-Attribuut_IMBOR_gebouw"></a>
         <span class="fig-title">
         Attribuut mapping van een IFC-entiteiten en attributen naar BAG-entiteiten en attributen en IMBOR-entiteiten en attributen. 
       </span></span></figcaption>
 </figure><figure id="ADE_voor_IFC_in_CitygML" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/Attribuutmapping/ADE Voor CityGML om IFC te borgen.png" alt="Attribuut_mapping_IFC_BAG_IMBOR" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
-      <figcaption><a class="self-link" href="#ADE_voor_IFC_in_CitygML">Figuur <bdi class="figno">48</bdi></a> <span class="fig-title">
+      <figcaption><a class="self-link" href="#ADE_voor_IFC_in_CitygML">Figuur <bdi class="figno">60</bdi></a> <span class="fig-title">
         <a class="self-link" href="#fig-Attribuut_IMBOR_gebouw"></a>
         <span class="fig-title">
         ADE voor CityGML om IFC te borge
@@ -3221,7 +3360,7 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <p>En stel men heeft een connectie gemaakt tussen BIM en GEO.</p>
 <figure id="Situatie_weg_en_elementen">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen.png" alt="Situatie_weg_en_elementent">
-    <figcaption><a class="self-link" href="#Situatie_weg_en_elementen">Figuur <bdi class="figno">49</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Situatie_weg_en_elementen"></a><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></span></figcaption>
+    <figcaption><a class="self-link" href="#Situatie_weg_en_elementen">Figuur <bdi class="figno">61</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Situatie_weg_en_elementen"></a><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></span></figcaption>
 </figure></section><section id="vervangen-van-elementen"><div class="header-wrapper"><h3 id="c-2-vervangen-van-elementen"><bdi class="secno">C.2 </bdi>Vervangen van elementen</h3><a class="self-link" href="#vervangen-van-elementen" aria-label="Permalink for Appendix C.2"></a></div>
 <p>Men zou elementen van het voetpad kunnen vervangen. In onderstaande situatie is een wijziging aangebracht:  </p>
 <ul>
@@ -3249,7 +3388,7 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 </code></pre>
 <figure id="Vervangen_van_elementen">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_elementen_vervangen.png" alt="Vervangen_van_elementen">
-    <figcaption><a class="self-link" href="#Vervangen_van_elementen">Figuur <bdi class="figno">50</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Vervangen_van_elementen"></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door vervanging weginrichtingselementen</span></span></figcaption>
+    <figcaption><a class="self-link" href="#Vervangen_van_elementen">Figuur <bdi class="figno">62</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Vervangen_van_elementen"></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door vervanging weginrichtingselementen</span></span></figcaption>
 </figure></section><section id="nieuwe-weg-in-een-bestaande-weg"><div class="header-wrapper"><h3 id="c-3-nieuwe-weg-in-een-bestaande-weg"><bdi class="secno">C.3 </bdi>Nieuwe weg in een bestaande weg</h3><a class="self-link" href="#nieuwe-weg-in-een-bestaande-weg" aria-label="Permalink for Appendix C.3"></a></div>
 <p>Men zou een nieuw voetpad kunnen maken. In onderstaande situatie is een nieuw voetpad gemaakt door: </p>
 <ul>
@@ -3266,7 +3405,7 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <p>Dan blijft het Voetpad 123 bestaan, maar krijgt een nieuwe versie en geometrie. Voetpad 125 ontstaat als nieuw object met de attributen en waarden van Voetpad 123. Voetpad 126 ontstaat met nieuwe attributen.   </p>
 <figure id="Nieuwe_weg_in_een_bestaande_weg">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_nieuw_voetpad_in_bestaand_voetpad.png" alt="Nieuwe_weg_in_een_bestaande_weg">
-    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_bestaande_weg">Figuur <bdi class="figno">51</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Nieuwe_weg_in_een_bestaande_weg"></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door een nieuwe weg in een bestaande weg</span></span></figcaption>
+    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_bestaande_weg">Figuur <bdi class="figno">63</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Nieuwe_weg_in_een_bestaande_weg"></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door een nieuwe weg in een bestaande weg</span></span></figcaption>
 </figure></section><section id="nieuwe-weg-in-een-bestaand-onbegroeid-terrein"><div class="header-wrapper"><h3 id="c-4-nieuwe-weg-in-een-bestaand-onbegroeid-terrein"><bdi class="secno">C.4 </bdi>Nieuwe weg in een bestaand onbegroeid terrein</h3><a class="self-link" href="#nieuwe-weg-in-een-bestaand-onbegroeid-terrein" aria-label="Permalink for Appendix C.4"></a></div>
 <p>Men zou nieuwe wegen kunnen maken in bestaand onbegroeid terrein. In onderstaande situatie is een nieuw situatie gemaakt door: </p>
 <ul>
@@ -3276,7 +3415,7 @@ De extractie-software werkt voor de actieve schema's (2x3, 4 en 4x3).</p>
 <p>Dan onstaan Weg 123, 124, 125, Voetpad 123, 124 Parkeervak 123, etc. </p>
 <figure id="Nieuwe_weg_in_een_onbegroeid_terrein">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_nieuw_voetpad_in_bestaand_onbegroeid_terreindeel.png" alt="Nieuwe weg in een onbegroeid terrein">
-    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_onbegroeid_terrein">Figuur <bdi class="figno">52</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Nieuwe_weg_in_een_onbegroeid_terrein"></a><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></span></figcaption>
+    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_onbegroeid_terrein">Figuur <bdi class="figno">64</bdi></a> <span class="fig-title"><a class="self-link" href="#fig-Nieuwe_weg_in_een_onbegroeid_terrein"></a><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></span></figcaption>
 </figure></section></section>
 <section class="appendix" id="ifc-naar-imbor-mapping"><div class="header-wrapper"><h2 id="d-ifc-naar-imbor-mapping"><bdi class="secno">D. </bdi>IFC naar IMBOR Mapping</h2><a class="self-link" href="#ifc-naar-imbor-mapping" aria-label="Permalink for Appendix D."></a></div>
 <p>Deze sectie beschrijft de <strong>semantische mapping</strong> van <strong>IFC 4.3</strong> naar <strong>IMBOR 2025</strong> (InformatieModel Beheer Openbare Ruimte). In tegenstelling tot de CityGML-mapping, richt deze mapping zich op <strong>beheeraspecten</strong> van infrastructurele objecten.</p>
@@ -3592,57 +3731,153 @@ ex:ActivityShape
             </span>
           </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker"><span class="self-link">Figuur <bdi class="figno">31</bdi></span> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></a>
+    <a class="tocxref" href="#IFC-in-ArcGIS"><span class="self-link">Figuur <bdi class="figno">31</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        IFC in ArcGIS in een 3D Object Scene Layers <br>
+        Bron: Esri.
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-de-simpele-versie-van-de-gui-voor-de-envelope-extractor"><span class="self-link">Figuur <bdi class="figno">32</bdi></span> <span class="fig-title">De simpele versie van de GUI voor de envelope extractor</span></a>
+    <a class="tocxref" href="#IFC-2-GIS"><span class="self-link">Figuur <bdi class="figno">32</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        IFC in de tooling IFC2GIS met een selectie een gefilterde 1:1 vertaling<br>
+        Bron: Ifc2GIS.
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">33</bdi></span> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></a>
+    <a class="tocxref" href="#FME-LOD-2-workflow"><span class="self-link">Figuur <bdi class="figno">33</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        FME LOD 2 CityGML workflow<br>
+        Bron: FME
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">34</bdi></span> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#FME-LOD-3-workflow"><span class="self-link">Figuur <bdi class="figno">34</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        FME LOD 3 CityGML workflow<br>
+        Bron: FME
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">35</bdi></span> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#FME-IFC-Input-model"><span class="self-link">Figuur <bdi class="figno">35</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        FME IFC Input model<br>
+        Bron: FME
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">36</bdi></span> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#IFC-2-GIS"><span class="self-link">Figuur <bdi class="figno">36</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        FME LOD 2 CityGML output<br>
+        Bron: FME
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">37</bdi></span> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#IFC-3-GIS"><span class="self-link">Figuur <bdi class="figno">37</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        FME LOD 3 CityGML output<br>
+        Bron: FME
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">38</bdi></span> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#IFC-4-GIS"><span class="self-link">Figuur <bdi class="figno">38</bdi></span> <span class="fig-title">
+        <span class="self-link" ifc-4-gis"=""></span>
+        <span class="fig-title">
+        FME LOD 4 CityGML output<br>
+        Bron: FME
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">39</bdi></span> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#IFC-Open-Shell-CityGML-Output"><span class="self-link">Figuur <bdi class="figno">39</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC<br>
+        Bron: IFC Openshell Github.
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">40</bdi></span> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#BIMShell-Input-Output"><span class="self-link">Figuur <bdi class="figno">40</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        BIMShell input and output model<br>
+        Bron: Sketchup extensions
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">41</bdi></span> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></a>
+    <a class="tocxref" href="#BIMShell-Input"><span class="self-link">Figuur <bdi class="figno">41</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        BIMShell input model<br>
+        Bron: Sketchup extensions
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">42</bdi></span> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#BIMShell-Output"><span class="self-link">Figuur <bdi class="figno">42</bdi></span> <span class="fig-title">
+        <span class="self-link"></span>
+        <span class="fig-title">
+        BIMShell output model<br>
+        Bron: Sketchup extensions
+        </span>
+      </span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">43</bdi></span> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-de-gui-van-de-ifcenvelopeextractor-bestaat-uit-een-menu-links-en-een-console-rechts-via-het-menu-kunnen-de-meest-voorkomende-instellingen-worden-aangepast-via-de-console-communiceerd-de-software-met-de-gebruiker"><span class="self-link">Figuur <bdi class="figno">43</bdi></span> <span class="fig-title">De GUI van de IfcEnvelopeExtractor bestaat uit een menu (links) en een console (rechts). Via het menu kunnen de meest voorkomende instellingen worden aangepast. Via de console communiceerd de software met de gebruiker</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">44</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-de-simpele-versie-van-de-gui-voor-de-envelope-extractor"><span class="self-link">Figuur <bdi class="figno">44</bdi></span> <span class="fig-title">De simpele versie van de GUI voor de envelope extractor</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lode-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">45</bdi></span> <span class="fig-title">Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">45</bdi></span> <span class="fig-title">Visualisatie van LoD0.0 gebaseerd op het institute IFC model van IAI/KIT</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0"><span class="self-link">Figuur <bdi class="figno">46</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-de-kamers-midden-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">46</bdi></span> <span class="fig-title">Visualisatie van LoD0.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links), de kamers (midden) en de verdiepingen (rechts) zijn los weergegeven</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Attribuut_mapping_IFC_BAG_IMBOR"><span class="self-link">Figuur <bdi class="figno">47</bdi></span> <span class="fig-title">
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-verdiepingen-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">47</bdi></span> <span class="fig-title">Visualisatie van LoD0.3 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de verdiepingen (rechts) zijn los weergegeven</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod0-4-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">48</bdi></span> <span class="fig-title">Visualisatie van LoD0.4 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">49</bdi></span> <span class="fig-title">Visualisatie van LoD1.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">50</bdi></span> <span class="fig-title">Visualisatie van LoD1.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod1-3-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">51</bdi></span> <span class="fig-title">Visualisatie van LoD1.3 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod2-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-buitenschil-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">52</bdi></span> <span class="fig-title">Visualisatie van LoD2.2 gebaseerd op het institute IFC model van IAI/KIT. Buitenschil (links) en de kamers (rechts) zijn los weergegeven</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod3-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-dak-en-voetafdruk-links-en-de-kamers-rechts-zijn-los-weergegeven"><span class="self-link">Figuur <bdi class="figno">53</bdi></span> <span class="fig-title">Visualisatie van LoD3.2 gebaseerd op het institute IFC model van IAI/KIT. Dak en voetafdruk (links) en de kamers (rechts) zijn los weergegeven</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-0-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">54</bdi></span> <span class="fig-title">Visualisatie van LoD4.0 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">55</bdi></span> <span class="fig-title">Visualisatie van LoD4.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">56</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lode-1-gebaseerd-op-het-institute-ifc-model-van-iai-kit"><span class="self-link">Figuur <bdi class="figno">57</bdi></span> <span class="fig-title">Visualisatie van LoDe.1 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-visualisatie-van-lod4-2-gebaseerd-op-het-institute-ifc-model-van-iai-kit-0"><span class="self-link">Figuur <bdi class="figno">58</bdi></span> <span class="fig-title">Visualisatie van LoD4.2 gebaseerd op het institute IFC model van IAI/KIT.</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#Attribuut_mapping_IFC_BAG_IMBOR"><span class="self-link">Figuur <bdi class="figno">59</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
         Attribuut mapping van een IFC-entiteiten en attributen naar BAG-entiteiten en attributen en IMBOR-entiteiten en attributen. 
       </span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#ADE_voor_IFC_in_CitygML"><span class="self-link">Figuur <bdi class="figno">48</bdi></span> <span class="fig-title">
+    <a class="tocxref" href="#ADE_voor_IFC_in_CitygML"><span class="self-link">Figuur <bdi class="figno">60</bdi></span> <span class="fig-title">
         <span class="self-link"></span>
         <span class="fig-title">
         ADE voor CityGML om IFC te borge
       </span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Situatie_weg_en_elementen"><span class="self-link">Figuur <bdi class="figno">49</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></span></a>
+    <a class="tocxref" href="#Situatie_weg_en_elementen"><span class="self-link">Figuur <bdi class="figno">61</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Vervangen_van_elementen"><span class="self-link">Figuur <bdi class="figno">50</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door vervanging weginrichtingselementen</span></span></a>
+    <a class="tocxref" href="#Vervangen_van_elementen"><span class="self-link">Figuur <bdi class="figno">62</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door vervanging weginrichtingselementen</span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Nieuwe_weg_in_een_bestaande_weg"><span class="self-link">Figuur <bdi class="figno">51</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door een nieuwe weg in een bestaande weg</span></span></a>
+    <a class="tocxref" href="#Nieuwe_weg_in_een_bestaande_weg"><span class="self-link">Figuur <bdi class="figno">63</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door een nieuwe weg in een bestaande weg</span></span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Nieuwe_weg_in_een_onbegroeid_terrein"><span class="self-link">Figuur <bdi class="figno">52</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></span></a>
+    <a class="tocxref" href="#Nieuwe_weg_in_een_onbegroeid_terrein"><span class="self-link">Figuur <bdi class="figno">64</bdi></span> <span class="fig-title"><span class="self-link"></span><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></span></a>
   </li>
       </ul></section>
 <section id="index" class="appendix"><div class="header-wrapper"><h2 id="h-index"><bdi class="secno">H. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix H."></a></div><section id="index-defined-here">
