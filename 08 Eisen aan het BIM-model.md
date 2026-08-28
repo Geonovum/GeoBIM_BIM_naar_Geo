@@ -40,7 +40,7 @@ DigiGO beheert een aantal templates en sectorbrede standaarden zoals; de BIM bas
 **ILS-onderdelen waarover men afspraken dient te maken voor BIM naar Geo**
 - Bestandsnaamconventies:  
     Bestandsnaamconventies beschrijven afspraken voor het eenduidig identificeren en beheren van informatiebestanden. De bestandsnaam bevat hierbij alleen noodzakelijke metadata voor beheer en uitwisseling en is niet bedoeld om inhoudelijke informatie over objecten of eigenschappen vast te leggen. Deze informatie dient onderdeel te zijn van het model of de dataset zelf. 
-- Eenheden:  
+- Eenheden (meters / millimeters):  
     Het consistent gebruik van eenheden voorkomt schaalfouten bij BIM naar GEO conversies. Het juist interpreteren van eenheden kan men bereiken door vaste afspraken te maken en na te leven over het gebruik van eenheden en/of de eenheden in het model of metadata te duiden. 
 - Georeferentie:  
     Er wordt per project een methode van georeferentie gekozen. Dit is cruciaal om BIM modellen correct te koppelen aan GIS data. Meestal gaat het om het RD-stelsel (EPSG:28992) en NAP hoogte (EPSG:EPSG:5709). Dit wordt projectafhankelijk vastgelegd. Zie [Georefereren GeoBIM](https://nl-digigo.github.io/geobim-georefereren/).
