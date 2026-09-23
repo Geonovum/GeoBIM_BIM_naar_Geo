@@ -96,7 +96,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
 <figure id="Alpha_Wrap_Bike" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_bike.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
-        <a class="self-link" href="#Alpha_Wrap_Principle></bdi></a>
+        <a class="self-link" href="#Alpha_Wrap_Bike"></bdi></a>
         <span class="fig-title">
         Verschillende vormen, alpha shapes, die resultaat zijn van een alpha wrapping methode <br> 
         bron:

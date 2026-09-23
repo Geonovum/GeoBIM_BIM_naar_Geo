@@ -7,7 +7,7 @@ De Gebouwde Omgeving Referentie Architectuur (GEBORA) bestaat uit verschillende 
 
 <figure id="Gebora_levenscyclus">
       <img src="media/levenscyclus/Levenscyclus_GEBORA.png" alt="Gebora_levenscyclus"/>
-    <figcaption><a class="self-link" href="#Gebora_levenscyclust"></bdi></a><span class="fig-title">Gebora levenscyclus</span></figcaption>
+    <figcaption><a class="self-link" href="#Gebora_levenscyclus"></bdi></a><span class="fig-title">Gebora levenscyclus</span></figcaption>
 </figure>
 
 Wanneer een functionele behoefte bestaat, bijvoorbeeld men wil wonen, dan wordt er een technische uitwerking gemaakt van een object die voorziet in de functionele behoefte. Bijvoorbeeld er wordt een woning ontworpen. De technische entiteit wordt vaak in BIM uitgewerkt. Na verschillende ontwerp-iteraties wordt de entiteit gerealiseerd en voorziet het, bij goed ontwerp, in de functionele behoefte. 
