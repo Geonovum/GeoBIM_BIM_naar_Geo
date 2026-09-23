@@ -1,6 +1,4 @@
-# Bijlage F — Voorbeeld-IDS'en
-
-<mark>Redactie: bijlageletter nog vast te stellen; deze bijlage sluit aan op de bestaande bijlage met het voorbeeld voor status en maatregel.</mark>
+# Voorbeeld-IDS'en
 
 Deze bijlage bevat de uitgeschreven specificaties bij het hoofdstuk *Eisen aan model en mapping*. De voorbeelden zijn opgesteld volgens buildingSMART IDS 1.0 en gevalideerd tegen het bijbehorende XML-schema.
 

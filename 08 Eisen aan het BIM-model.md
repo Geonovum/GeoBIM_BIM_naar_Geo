@@ -195,7 +195,7 @@ De rolverdeling is daarbij scherp: de ILS beschrijft *wat* er geleverd wordt, he
 DigiGO beheert een aantal templates en sectorbrede standaarden, waaronder de BIM Basis ILS (gericht op de bouw), de BIM Basis Infra (gericht op infrastructuur), de ILS Ontwerp & Engineering, het nationaal model Informatieprotocol en het nationaal template BIM Uitvoeringsplan. Deze richtlijnen bieden een set afspraken en handvatten voor het gestructureerd en eenduidig uitwisselen van digitale informatie. Organisaties en projecten werken de landelijke sectorafspraken verder uit en leggen die uitwerking vast in contracten.
 
 <figure id="BIM-digigo" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/06_eisen/BIM landschap.png" alt="Het BIM afspraken landschap" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/06_eisen/BIM_landschap.png" alt="Het BIM afspraken landschap" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-BIMdigigo"></bdi></a>
         <span class="fig-title">

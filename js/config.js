@@ -78,9 +78,9 @@ let respecConfig = {
         companyURL: "https://3d.bk.tudelft.nl/",
       },
       {
-        name: "Jeffrey Truijens",
-        company: "VDNDP",
-        companyURL: "https://vdndp.nl/",
+        name: "Lex Ransijn",
+        company: "VDC Base",
+        companyURL: "https://vdcbase.com/,
       },
       {
         name: "Wouter Lubbers",

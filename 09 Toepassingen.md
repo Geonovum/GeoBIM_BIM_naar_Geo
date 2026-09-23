@@ -84,7 +84,7 @@ In de totale flow van de LOD100 naar LOD 2 CityGML conversie is te zien dat er e
 De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. Voor een gebouw wordt er wederom een LOD100 mesh gemaakt. dit wordt aangevuld met een [citygmlgeometrysetter](https://hub.safe.com/publishers/safe-lab/transformers/citygmlgeometrysetter). Hiermeek kan een bepaalde citygml lod geduid worden. Verschillende Ifc entiteiten resulteren in de flow in verschillende CityGML concepten. 
 
 <figure id="FME-LOD-3-workflow" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/FME/FME LOD 3 Workflow.png"alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/FME/FME-LOD-3-Workflow.png"alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-FME-LOD-3-workflow"></bdi></a>
         <span class="fig-title">
@@ -96,7 +96,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
 
 
 <figure id="FME-IFC-Input-model" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/FME/FME IFC LOD 300.png"alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/FME/FME-IFC-LOD-300.png"alt="FME LOD 3 CityGML workflow" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-FME-IFC-Input-model"></bdi></a>
         <span class="fig-title">
@@ -109,7 +109,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
 
 <div style="display: flex; gap: 10px;">
 <figure id="IFC-2-GIS" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/FME/FME LOD 2 CityGML.png"alt="FME LOD 2 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/FME/FME-LOD-2-CityGML.png"alt="FME LOD 2 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-IFC-2-GIS"></bdi></a>
         <span class="fig-title">
@@ -120,7 +120,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
 </figure>
 
 <figure id="IFC-3-GIS" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/FME/FME LOD 3 CityGML.png"alt="FME LOD 3 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/FME/FME-LOD-3-CityGML.png"alt="FME LOD 3 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-IFC-3-GIS"></bdi></a>
         <span class="fig-title">
@@ -131,7 +131,7 @@ De totale flow van de LOD200 naar LOD 3 CityGML conversie is het meest complex. 
 </figure>
 
 <figure id="IFC-4-GIS" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/FME/FME LOD 4 CityGML.png"alt="FME LOD 4 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/FME/FME-LOD-4-CityGML.png"alt="FME LOD 4 CityGML output" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-"IFC-4-GIS"></bdi></a>
         <span class="fig-title">
@@ -149,7 +149,7 @@ Het is mogelijk om specifieke elementen wel of niet mee te nemen met de IFCConve
 Het creëeren van CityJSON is onderzocht in samenwerking met de TU-Delft. Dit is onder andere beschreven in dit [githubissue](https://github.com/IfcOpenShell/IfcOpenShell/issues/2977). IfcConvert voorziet momenteel niet in CityJSON conversie. Wel is er een IfcCityJSON converter, maar deze converter converteert CityJSON naar IFC, en niet andersom. 
 
 <figure id="IFC-Open-Shell-CityGML-Output" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/07_toepassingen/IfcOpenShell/IfcConvert IfcOpenShell.png"alt="Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/07_toepassingen/IfcOpenShell/IfcConvert-IfcOpenShell.png"alt="Ifc Open shell onderzoek naar OBJ en CityGML output vanuit IFC" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">

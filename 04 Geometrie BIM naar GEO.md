@@ -56,15 +56,54 @@ ray-casting op zichzelf resulteert niet in een gesloten buitenschil. De polygone
 
 De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en traag. Er zijn veel optimalisaties om dit process the versnellen. Een correct gemodelleerd BIM model maakt gebruik van types/classes voor objecten. Op basis van deze types kan er al een filtering worden toegepast. Meubels (IfcFurniture) zullen bijvoorbeeld niet zo snel deel uitmaken van de buitenschil van een gebouw. Objecten met dit type hoeven dus niet behandeld te worden door het ray-casting proces, maar kunnen direct worden genegeerd. Dit versnelt het proces doordat vanaf deze objecten dus geen ray-casting hoeft te worden gedaan, maar ook omdat het voor deze objecten niet nodig is de rays van andere polygonen te snijden.
 
+<figure id="Ray_Casting_BIM" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/03_methodes/Ray Casting BIM 2.jpg" alt="Principe van Raycasting" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+      <figcaption>
+        <a class="self-link" href="#fig-Ray_Casting_BIM"></bdi></a>
+        <span class="fig-title">
+        Principe van Raycasting BIM <br> 
+        bron:
+        <a href="https://www.sciencedirect.com/science/article/pii/S109396872600229X#f0035" target="_blank">A two‐stage recursive ray tracing algorithm to automatically identify external building objects in building information models</a> 
+        </span>
+      </figcaption>
+</figure>
+
 De IfcEnvelopeExtractor gebruikt "voxel assisted ray-casting". Het gebruikt een voxelisatie om de hoeveelheid en lengte van de rays voor het ray-casting process te beperken. Dit wordt gedaan door de voxels die om een punt op een polygoon liggen te evalueren. Als er geen voxels om het punt heen liggen die geclassificeerd als "external" dan kan de aanname worden gedaan dat deze polygoon geen rol speelt bij het modelleren van de buitenschil. Als deze voxels wel om het punt heen liggen dan kunnen de middelpunten van deze voxels worden gebruikt als eindpunt voor de rays. Dit zorgt ervoor dat er geen onnodig lange lijnen worden getrokken waardoor de hoeveelheid berekeningen kan worden teruggedrongen.
 
 Aanvullend kan een nog voor de aanvang van het ray-casting proces een filtering van objecten worden gedaan met behulp van de voxels. Met voxels is het makkelijk om te bepalen of ze buiten of binnen het gebouw liggen, maar ook of de voxels snijden met de geometrie. De voxels die snijden met het gebouw en een buurman hebben die buiten het gebouw ligt kunnen worden gezien als een buitenschil voxels. De geometrie van het gebouw dat snijdt met deze buitenschil voxels kan worden geïsoleerd en worden gezien als "mogelijk" deel van de buitenschil. Door deze selectie kan al een deel van de interne objecten worden genegeerd. 
 
 De kwaliteit van de resultaten van deze twee voxel ondersteunde processen is erg gevoelig voor het formaat van de voxels. Als de voxels te groot zijn kan dit resulteren in objecten die incorrect worden verwaarloost. Als de voxels te klein zijn vertraagd het process hevig en is het mogelijk dat de buiten en binnenkant van het gebouw niet correct uit elkaar kan worden gehouden.
 
+
 #### Alpha shapes
 
-Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. Beknopt wordt dit gedaan door stapsgewijs een gesloten primitive vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitive vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen. Afhankelijk van de gekozen primitive vorm en het formaat is de resulterende alpha shape anders.
+Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. Beknopt wordt dit gedaan door stapsgewijs een gesloten primitive vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitive vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.
+
+<figure id="Alpha_Wrap_Principle" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/03_methodes/alpha_wrap_overview_CGAL.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+      <figcaption>
+        <a class="self-link" href="#fig-Alpha_Wrap_Principle></bdi></a>
+        <span class="fig-title">
+        Principe van Alpha Wrapping BIM <br> 
+        bron:
+        <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/" target="_blank">CGAL: 3D Alpha Wrapping</a> 
+        </span>
+      </figcaption>
+</figure>
+
+ Afhankelijk van de gekozen primitive vorm en het formaat is de resulterende alpha shape anders.
+
+<figure id="Alpha_Wrap_Bike" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/03_methodes/alpha_wrap_bike.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+      <figcaption>
+        <a class="self-link" href="#fig-Alpha_Wrap_Principle></bdi></a>
+        <span class="fig-title">
+        Verschillende vormen, alpha shapes, die resultaat zijn van een alpha wrapping methode <br> 
+        bron:
+        <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/" target="_blank">CGAL: 3D Alpha Wrapping</a> 
+        </span>
+      </figcaption>
+</figure>
 
 Omdat het alpha shape process enkel werken met puntenwolken moet de BIM geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-casting processen.
 
