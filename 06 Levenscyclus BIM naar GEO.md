@@ -57,69 +57,29 @@ Wanneer men BIM naar GEO brengt kan bestaande GEO-data wijzigigen. Er kunnen nie
 
 Onderstaand voorbeeld toont een manier waarop meerdere versies van een bouwwerk gemodelleerd kunnen worden. Een "nen3610:begingeldigheid" geeft aan wanneer een object is ontstaan. Een "nen3610:eindgeldigheid" beschrijft wanneer een object niet meer geldig is. Wanneer een object geen waarde heeft voor "nen3610:eindgeldigheid" bestaat het object. Wanneer een bouwwerk verwijderd wordt ontstaat een nieuwe versie die een "Status", "Buiten Gebruik" heeft met een waarde "nen3610:begingeldigheid" die overeenkomt met de "nen3610:eindgeldigheid" van de versie die niet meer in gebruik is.    
 
-<figure id="Bouwwerk-versies-1">
-
-<pre class="mermaid" id="mermaid-bouwwerk-versies-1">
-flowchart LR
-    A[Bouwwerk_123] -->|nen3610:versie| B
-    subgraph B["Bouwwerk_123_v1"]
-        B1["nen2660:hasState<br/>InGebruik"]
-        B2["nen3610:begingeldigheid<br/>2024-03-10"] 
-        B3["nen3610:eindgeldigheid<br/>2026-02-23"]
-    end
-    A -->|nen3610:versie| C
-    subgraph C["Bouwwerk_123_v2"]
-        C1[nen2660:Status:<br/> Buiten Gebruik]
-        C2["nen3610:begingeldigheid<br/>2026-02-23"] 
-        C3["nen3610:eindgeldigheid<br/> "]
-    end
-</pre>
-<figcaption>Voorbeeld- van een bouwwerk dat in een nieuwe versie buiten gebruik is.</figcaption>
+<figure id="Voorbeeld-van-verschillende-gebouw-versies-in-levencyclus" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/levenscyclus/Bouwwerk_met_verschillende_versies-Bouwwerk.png" alt="Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levencyclus"></a>
+        <span class="fig-title">
+        Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is.</a>.
+        </span>
+      </figcaption>
 </figure>
+
 
 Onderstaand voorbeeld toont GEO- en BIM-versies van een bouwwerk. Een Bouwwerk in een BIM-omgeving kan een plan zijn voor een bestaand Bouwwerk die bestaat in een (GEO-)registratie. Het plan kan dan een versie zijn van het bouwwerk. Wanneer het plan (BIM) daadwerkelijk gerealiseerd is, is de versie van het plan "einde geldigheid". Er ontstaat dan een versie die een gerealiseerd plan is met een "begin geldigheid". Dit gerealiseerde plan "invalideert" een versie in de GEO-omgeving en genereert een versie in de GEO-omgeving. 
 
-<figure id="Bouwwerk-versies-2">
+<figure id="Voorbeeld-van-verschillende-gebouw-versies-in-levencyclus-met-geo-en-bim" style="display: block; text-align: center; margin: 0 auto;">
+      <<img src="./media/levenscyclus/Bouwwerk_met_verschillende_versies-Bouwwerk_2.png" alt="Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is met gebruik van Geo en BIM" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levencyclus-met-geo-en-bim"></a>
+        <span class="fig-title">
+        Voorbeeld van een bouwwerk met GEO- en BIM-versies. Waarbij een gerealiseerde BIM-versie een GEO-versie genereert.</a>.
+        </span>
+      </figcaption>
+</figure>
 
-<pre class="mermaid" id="mermaid-bouwwerk-versies-2">
-flowchart TB
-    A[Bouwwerk_123] -->|nen3610:versie| B
-    subgraph B["GEO_Bouwwerk_123_v1"]
-        direction TB
-        B1["nen2660:hasState<br/>InGebruik"]
-        B2["nen3610:begingeldigheid<br/>2024-03-10"] 
-        B3["nen3610:eindgeldigheid<br/> 2026-06-08"]
-        B4["rdf:type<br/> nen2660:RealizedEntity"]
-    end
-    A -->|nen3610:versie| C
-    subgraph C["BIM_Bouwwerk_123_v1"]
-        direction TB
-        C1["nen2660:Status:<br/> Buiten Gebruik"]
-        C2["nen3610:begingeldigheid<br/>2026-02-23"]
-        C3["nen3610:eindgeldigheid<br/> 2026-06-08"]
-        C4["rdf:type<br/> nen2660:PlannedEntity"]
-    end
-    A -->|nen3610:versie| D
-    subgraph D["BIM_Bouwwerk_123_v2"]
-        direction TB
-        D1["nen2660:Status:<br/> Buiten Gebruik"]
-        D2["nen3610:begingeldigheid<br/>2026-06-08"]
-        D3["nen3610:eindgeldigheid<br/> "]
-        D4["rdf:type<br/> nen2660:RealizedEntity"]
-    end
-    A -->|nen3610:versie| E    
-    subgraph E["GEO_Bouwwerk_123_v2"]
-        direction TB
-        E1["nen2660:Status:<br/> Buiten Gebruik"]
-        E2["nen3610:begingeldigheid<br/>2026-06-08"]
-        E3["nen3610:eindgeldigheid<br/> "]
-        E4["rdf:type<br/> nen2660:RealizedEntity"]
-    end
-    B -->|prov:wasInvalidatedBy| D
-    C -->|nen2660:IsPlanFor| B
-    C -->|nen2660:isRealizedBy| D
-    D -->|prov:generated| E
-</pre>
-<figcaption>Voorbeeld van een bouwwerk met GEO- en BIM-versies. Waarbij een gerealiseerde BIM-versie een GEO-versie genereert.</figcaption>
+<figcaption></figcaption>
 </figure>
 

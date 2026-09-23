@@ -11,7 +11,7 @@ In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry op
         <span class="fig-title">
         Drie verschillende benaderingen soorten geometrie in IFC <br> 
         bron:
-        <a href="https://resolver.tudelft.nl/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d" target="_blank">Automatic generation of CityGML LoD3 building models from IFC models</a> S. Donkers
+        <a href="https://resolver.tudelft.nl/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d" >Automatic generation of CityGML LoD3 building models from IFC models</a> S. Donkers
         </span>
       </figcaption>
 </figure>
@@ -63,7 +63,7 @@ De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en t
         <span class="fig-title">
         Principe van Raycasting BIM <br> 
         bron:
-        <a href="https://www.sciencedirect.com/science/article/pii/S109396872600229X#f0035" target="_blank">A two‐stage recursive ray tracing algorithm to automatically identify external building objects in building information models</a> 
+        <a href="https://www.sciencedirect.com/science/article/pii/S109396872600229X#f0035" >A two‐stage recursive ray tracing algorithm to automatically identify external building objects in building information models</a> 
         </span>
       </figcaption>
 </figure>
@@ -86,7 +86,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
         <span class="fig-title">
         Principe van Alpha Wrapping BIM <br> 
         bron:
-        <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/" target="_blank">CGAL: 3D Alpha Wrapping</a> 
+        <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/" >CGAL: 3D Alpha Wrapping</a> 
         </span>
       </figcaption>
 </figure>
@@ -100,7 +100,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
         <span class="fig-title">
         Verschillende vormen, alpha shapes, die resultaat zijn van een alpha wrapping methode <br> 
         bron:
-        <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/" target="_blank">CGAL: 3D Alpha Wrapping</a> 
+        <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/" >CGAL: 3D Alpha Wrapping</a> 
         </span>
       </figcaption>
 </figure>

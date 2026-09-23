@@ -139,7 +139,7 @@ Voorbeeld van de verschilende LOD's van één kolom.
         <span class="fig-title">
         Verschillende LOD's van een kolom <br> 
         Copyright © 2025 by BIMForum, All rights reserved, CC BY-NC-ND 4.0 <br>
-        <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/" target="_blank">Level of Development (LOD) Specification</a>
+        <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/" >Level of Development (LOD) Specification</a>
         </span>
       </figcaption>
 </figure>
@@ -183,7 +183,7 @@ De documentatie van CityGML over LOD is algemeen. De volgende definitie kunnen w
       <figcaption>
         <a class="self-link" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard"></a>
         <span class="fig-title">
-        Voorbeeld van de 4 LoDs van een gebouw beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" target="_blank">CityGML3.0 standaard</a>.
+        Voorbeeld van de 4 LoDs van een gebouw beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" >CityGML3.0 standaard</a>.
         </span>
       </figcaption>
 </figure>
@@ -199,7 +199,7 @@ In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken
       <figcaption>
         <a class="self-link" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model"></bdi></a>
         <span class="fig-title">
-        Voorbeeld van de 4 LoDs beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" target="_blank">CityGML3.0 standaard</a> toegepast op een brug model.
+        Voorbeeld van de 4 LoDs beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" >CityGML3.0 standaard</a> toegepast op een brug model.
         </span>
       </figcaption>
 </figure>
@@ -292,7 +292,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
       <figcaption>
         <a class="self-link" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"></a>
         <span class="fig-title">
-        Voorbeeld van de 16 LoD's beschreven door de  <a href="https://3d.bk.tudelft.nl/lod/" target="_blank">TU Delft</a> in 2016.
+        Voorbeeld van de 16 LoD's beschreven door de  <a href="https://3d.bk.tudelft.nl/lod/" >TU Delft</a> in 2016.
         </span>
       </figcaption>
 </figure>
