@@ -135,7 +135,7 @@ Voorbeeld van de verschilende LOD's van één kolom.
 <figure id="LODS-van-een-kolom" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/LOD/Level_Of_Development_Kolom.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#LODS-van-een-kolom"></bdi></a>
+        <a class="self-link" href="#LODS-van-een-kolom"></a>
         <span class="fig-title">
         Verschillende LOD's van een kolom <br> 
         Copyright © 2025 by BIMForum, All rights reserved, CC BY-NC-ND 4.0 <br>
@@ -181,7 +181,7 @@ De documentatie van CityGML over LOD is algemeen. De volgende definitie kunnen w
 <figure id="Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/LoDCityGML.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard"></bdi></a>
+        <a class="self-link" href="#Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard"></a>
         <span class="fig-title">
         Voorbeeld van de 4 LoDs van een gebouw beschreven door de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail" target="_blank">CityGML3.0 standaard</a>.
         </span>
@@ -290,7 +290,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
 <figure id="Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/LoDTUD.png" alt="Voorbeeld van de 16 LoD's beschreven door de TU Delft" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"></bdi></a>
+        <a class="self-link" href="#Voorbeeld-van-de-16-LoDs-beschreven-door-de-TUDelft"></a>
         <span class="fig-title">
         Voorbeeld van de 16 LoD's beschreven door de  <a href="https://3d.bk.tudelft.nl/lod/" target="_blank">TU Delft</a> in 2016.
         </span>
@@ -327,7 +327,7 @@ LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervl
 <figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
       <figcaption>
-        <a class="self-link" href="#Verschil-tussen-footprint-roofedge"></bdi></a>
+        <a class="self-link" href="#Verschil-tussen-footprint-roofedge"></a>
         <span class="fig-title">
         Deze LoD1.2 representatie van het aula gebouw van de TU Delft is gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
         </span>
@@ -346,7 +346,7 @@ Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geom
 <figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/3Dbag_verschillende_bron.png" alt="Voorbeeld gebruik van 2DBAG voor extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
       <figcaption>
-        <a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"></bdi></a>
+        <a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"></a>
         <span class="fig-title">
         Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is gebaseerd op de 2DBAG. De overhang van dit gebouw zal natuurlijk gerepresenteerd zijn in de dakuitlijn, maar ook in de BAG polygoon. Rechts is gebouw Echo, de luifels van dit gebouw zijn wel deel van de volledige dakomtrek maar niet van de 2DBAG polygoon. De draaideuren van de entree die onder deze luifels staan zijn wel onderdeel van de 2DBAG geometrie en daardoor ook de basis voor de extrusie in 3DBAG. Dit geeft gebruikers mogelijk, incorrect, de indruk dat de voetprint of de BGT polygoon als bron is voor sommige extrusies.
         </span>

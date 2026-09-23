@@ -26,7 +26,7 @@ Aanvullend is de overzetting van de geometrie niet een volledig 1:1 vertaling. I
 
 <figure id="Mesh_van_Geometrien_1">
       <img src="media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau"/>
-    <figcaption><a class="self-link" href="#Mesh_van_Geometrien_1"></bdi></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></figcaption>
+    <figcaption><a class="self-link" href="#Mesh_van_Geometrien_1"></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></figcaption>
 </figure>
 
 ## GeoJSON

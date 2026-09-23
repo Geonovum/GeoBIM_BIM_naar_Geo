@@ -19,7 +19,7 @@ En stel men heeft een connectie gemaakt tussen BIM en GEO.
 
 <figure id="Situatie_weg_en_elementen">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen.png" alt="Situatie_weg_en_elementent"/>
-    <figcaption><a class="self-link" href="#Situatie_weg_en_elementen"></bdi></a><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></figcaption>
+    <figcaption><a class="self-link" href="#Situatie_weg_en_elementen"></a><span class="fig-title">Wegen die bestaan uit weginrichtingselementen</span></figcaption>
 </figure>
 
 ## Vervangen van elementen
@@ -55,7 +55,7 @@ example:voetpad_123 nen2660:haspart
 
 <figure id="Vervangen_van_elementen">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_elementen_vervangen.png" alt="Vervangen_van_elementen"/>
-    <figcaption><a class="self-link" href="#Vervangen_van_elementen"></bdi></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door vervanging weginrichtingselementen</span></figcaption>
+    <figcaption><a class="self-link" href="#Vervangen_van_elementen"></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door vervanging weginrichtingselementen</span></figcaption>
 </figure>
 
 ## Nieuwe weg in een bestaande weg
@@ -74,7 +74,7 @@ Dan blijft het Voetpad 123 bestaan, maar krijgt een nieuwe versie en geometrie. 
 
 <figure id="Nieuwe_weg_in_een_bestaande_weg">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_nieuw_voetpad_in_bestaand_voetpad.png" alt="Nieuwe_weg_in_een_bestaande_weg"/>
-    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_bestaande_weg"></bdi></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door een nieuwe weg in een bestaande weg</span></figcaption>
+    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_bestaande_weg"></a><span class="fig-title">Verandering in Wegen die bestaan uit weginrichtingselementent door een nieuwe weg in een bestaande weg</span></figcaption>
 </figure>
 
 ## Nieuwe weg in een bestaand onbegroeid terrein
@@ -88,5 +88,5 @@ Dan onstaan Weg 123, 124, 125, Voetpad 123, 124 Parkeervak 123, etc.
 
 <figure id="Nieuwe_weg_in_een_onbegroeid_terrein">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen_nieuw_voetpad_in_bestaand_onbegroeid_terreindeel.png" alt="Nieuwe weg in een onbegroeid terrein"/>
-    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_onbegroeid_terrein"></bdi></a><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></figcaption>
+    <figcaption><a class="self-link" href="#Nieuwe_weg_in_een_onbegroeid_terrein"></a><span class="fig-title">Nieuwe weg in een onbegroeid terrein</span></figcaption>
 </figure>
