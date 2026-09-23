@@ -79,7 +79,3 @@ Onderstaand voorbeeld toont GEO- en BIM-versies van een bouwwerk. Een Bouwwerk i
         </span>
       </figcaption>
 </figure>
-
-<figcaption></figcaption>
-</figure>
-
