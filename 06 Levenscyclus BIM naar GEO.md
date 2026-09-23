@@ -59,7 +59,7 @@ Onderstaand voorbeeld toont een manier waarop meerdere versies van een bouwwerk 
 
 <figure id="Bouwwerk-versies-1">
 
-```mermaid
+<pre class="mermaid" id="mermaid-bouwwerk-versies-1">
 flowchart LR
     A[Bouwwerk_123] -->|nen3610:versie| B
     subgraph B["Bouwwerk_123_v1"]
@@ -73,7 +73,7 @@ flowchart LR
         C2["nen3610:begingeldigheid<br/>2026-02-23"] 
         C3["nen3610:eindgeldigheid<br/> "]
     end
-```
+</pre>
 <figcaption>Voorbeeld- van een bouwwerk dat in een nieuwe versie buiten gebruik is.</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ Onderstaand voorbeeld toont GEO- en BIM-versies van een bouwwerk. Een Bouwwerk i
 
 <figure id="Bouwwerk-versies-2">
 
-```mermaid
+<pre class="mermaid" id="mermaid-bouwwerk-versies-2">
 flowchart TB
     A[Bouwwerk_123] -->|nen3610:versie| B
     subgraph B["GEO_Bouwwerk_123_v1"]
@@ -119,7 +119,7 @@ flowchart TB
     C -->|nen2660:IsPlanFor| B
     C -->|nen2660:isRealizedBy| D
     D -->|prov:generated| E
-```
+</pre>
 <figcaption>Voorbeeld van een bouwwerk met GEO- en BIM-versies. Waarbij een gerealiseerde BIM-versie een GEO-versie genereert.</figcaption>
 </figure>
 
