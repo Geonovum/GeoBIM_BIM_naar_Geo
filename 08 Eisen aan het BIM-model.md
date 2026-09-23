@@ -1,20 +1,19 @@
 # Eisen aan model en mapping
 
 ## Eisen aan het BIM-model
+Een succesvolle transformatie van een BIM model naar een GIS bestandsformaat begint bij het maken van de juiste afspraken vóór de start van het modelleerwerk. Zonder duidelijke kaders bestaat de kans dat een BIM-model te complex of kwalitatief ontoereikend is. Dit kan de mogelijkheden voor gebruik in een geografische informatiesystemen en conversie naar GEO reduceren.
 
-### Waarom eisen vóóraf worden gesteld
+Een BIM-model is vaak niet geschikt voor hergebruik in een geografisch informatiesysteem. Een model dat men maakt en gebruikt voor ontwerp, calculatie en/of uitvoering, kan tegelijkertijd onbruikbaar zijn voor conversie naar GEO omdat de informatie die nodig is voor de conversie niet zijn vastgelegd. Redenen hiervan zijn; de georeferentie ontbreekt, er is onduidelijkheid over de gebruikte eenheden (Units),  objecten (Entiteiten: IfcWall, IfcSpaces, IfcSensor) zijn gemodelleerd als generieke bouwdelen zonder typering (Attributen: ObjectType, Name), of de geometrie is visueel acceptabel maar niet gesloten (Geometrie). Zulke tekortkomingen zijn achteraf niet of alleen tegen hoge kosten te herstellen.
 
-Een BIM-model is zelden vanzelf geschikt voor hergebruik in een geografisch informatiesysteem. Een model dat prima voldoet voor ontwerp, calculatie of uitvoering, kan tegelijkertijd onbruikbaar zijn voor conversie naar GEO: de georeferentie ontbreekt (IfcMapconversion), eenheden (Units) zijn niet helder,  objecten (Entiteiten: IfcWall, IfcSpaces, IfcSensor) zijn gemodelleerd als generieke bouwdelen zonder typering (Attributen: ObjectType, Name), of de geometrie is weliswaar visueel correct maar niet gesloten (Geometrie). Zulke tekortkomingen zijn achteraf niet of alleen tegen hoge kosten te herstellen, omdat de informatie die nodig is voor de conversie op dat moment eenvoudigweg nooit is vastgelegd.
-
-Een succesvolle transformatie van BIM naar een GIS-formaat begint daarom vóór het modelleerwerk, met expliciete afspraken over wat er geleverd wordt, in welke vorm en met welke kwaliteit. Die afspraken zijn geen administratieve last: ze zijn de enige manier om automatische conversie betrouwbaar en herhaalbaar te maken. Zonder kaders blijft elke conversie handwerk, en daarmee een eenmalige exercitie in plaats van een reproduceerbaar proces.
+Een succesvolle transformatie van BIM naar een GIS-formaat begint daarom vóór het modelleerwerk, met expliciete afspraken over wat er geleverd wordt, in welke vorm en met welke kwaliteit. Het maken van deze afspraken en zich hieraan houden in het modelleerwerk maakt automatische conversie betrouwbaar en herhaalbaar. Zonder kaders blijft elke conversie handwerk, en daarmee een eenmalige exercitie in plaats van een reproduceerbaar proces.
 
 Voor het vastleggen van die afspraken biedt de [ISO 19650](https://www.iso.org/sectors/building-construction/building-information-modelling)-reeks — de internationale norm voor informatiemanagement in de gebouwde omgeving — het procesframework: wie levert welke informatie, wanneer, in welke vorm en op basis waarvan wordt die informatie geaccepteerd.
 
-### Van informatiebehoefte naar model: de keten van ISO 19650
+## Van informatiebehoefte naar model: de keten van ISO 19650
 
 ISO 19650 gaat uit van een ketenbenadering. Informatie wordt niet alleen voor de eigen organisatie gecreëerd, maar juist voor uitwisseling en hergebruik door andere partijen. Dat uitgangspunt is voor GeoBIM essentieel: de partij die het BIM-model maakt is doorgaans niet de partij die er in de GEO-omgeving mee verder werkt.
 
-De norm kent daarvoor een cascade van informatiebehoeften. Elke eis in een ILS is uiteindelijk te herleiden tot een organisatiedoel; omgekeerd is een eis zonder herleidbaar doel een eis die geschrapt kan worden. Het expliciet maken van die keten is de meest effectieve manier om te voorkomen dat een ILS uitgroeit tot een verlanglijst.
+De norm kent daarvoor een cascade van informatiebehoeften. Elke eis in een Informatie Levering Specificatie (ILS) is uiteindelijk te herleiden tot een organisatiedoel; omgekeerd is een eis zonder herleidbaar doel een eis die geschrapt kan worden. Het expliciet maken van die keten is de meest effectieve manier om te voorkomen dat een ILS uitgroeit tot een verlanglijst.
 
 | Behoefte/Eis | Voorbeeld |
 |--------------|-----------|
@@ -36,10 +35,7 @@ De norm kent daarvoor een cascade van informatiebehoeften. Elke eis in een ILS i
           </figcaption>
     </figure>
 
-
-Een ILS is in deze termen de Nederlandse invulling van een EIR. 
-
-<mark>Redactie: de herziening van ISO 19650 (DIS 2026) vervangt de term EIR door IPR en gaat van een 8- naar een 9-stapsproces. Overweeg een korte transitieparagraaf, zodat deze praktijkrichtlijn bij publicatie niet direct verouderde terminologie hanteert.</mark>
+Een ILS is in deze termen de Nederlandse invulling van een EIR. De herziening van ISO 19650 (DIS 2026) vervangt de term EIR door IPR en gaat van een 8- naar een 9-stapsproces. 
 
 ### Generieke eisen aan het BIM-model voor conversie naar GEO
 
@@ -62,31 +58,7 @@ Consistent gebruik van eenheden voorkomt schaalfouten bij conversie. Fouten van 
 
 #### 4. Georeferentie
 
-Georeferentie is de meest kritische eis: zonder correcte georeferentie is elk ander gegeven in het model ruimtelijk waardeloos. Per project wordt een methode van georeferentie gekozen en vastgelegd. In Nederland gaat het doorgaans om het RD-stelsel (EPSG:28992) in combinatie met NAP-hoogte (EPSG:5709); de samengestelde CRS is EPSG:7415.
-
-##### Level of Georeferencing
-
-Voor het niveau waarop de georeferentie is vastgelegd, hanteert de praktijkrichtlijn [Georefereren GeoBIM](https://nl-digigo.github.io/GeoBIM_Georefereren/) het begrip *level van georeferentie-informatie*, teruggaand op het onderzoek van Clemen en Görne naar *Level of Georeferencing*:
-
-| Level | Wat is vastgelegd | Wat is daarmee mogelijk |
-|-------|-------------------|-------------------------|
-| 10 | Een adres | De locatie is bekend; plaatsing, rotatie en schaal niet |
-| 20 | Eén coördinaat (lengte- en breedtegraad) | Plaatsing in 2D en 3D; geen rotatie of schaal |
-| 30 | Verplaatsing van het grondvlak ten opzichte van het modelnulpunt | Plaatsing en rotatie ten opzichte van het noorden; geen CRS, geen schaal |
-| 40 | Georeferentie van het totaalmodel als aparte entiteit | Plaatsing en rotatie, expliciet geduid; geen CRS, geen schaal |
-| **50** | **Bron- en doelcoördinatenstelsel plus translatie, rotatie en schaling** | **Volledige, expliciete transformatie tussen modelstelsel en projectiestelsel** |
-| 60 | Koppeling van modelpunten aan ingemeten punten | Berekening van een volledige transformatie uit referentiepunten |
-
-De richtlijn beveelt **level 50 aan voor de integratie van BIM-modellen en geodata**, en level 60 voor constructiedoeleinden. Voor BIM naar GEO is level 50 dus het werkbare minimum: alles daaronder mist ofwel het coördinatenstelsel, ofwel de schaal, ofwel beide.
-
-In IFC wordt level 50 gedragen door twee entiteiten: `IfcProjectedCRS` voor het doelstelsel en `IfcMapConversion` voor de transformatie — `Eastings`, `Northings`, `OrthogonalHeight` voor de verschuiving, `XAxisAbscissa` en `XAxisOrdinate` voor de rotatie, en `Scale` voor de schaling.
-
-Voor RDNAP is er een nuance. De richtlijn beveelt `IfcMapConversionScaled` aan, een subtype van `IfcMapConversion` dat in IFC4X3_ADD2 is toegevoegd en met `FactorX`, `FactorY` en `FactorZ` een afzonderlijke schaal per as toestaat. Dat is nauwkeuriger dan één enkele `Scale`, en voor de combinatie van RD en NAP ook nodig. Een ILS die alleen `IfcMapConversion` benoemt, sluit die aanbevolen route dus per ongeluk uit — zie *Wat een IDS wél en niet kan toetsen* voor waarom dat in IDS niet vanzelf goed gaat.
-
-Twee aandachtspunten die in de praktijk telkens terugkeren:
-
-- **Ware noorden versus modelnoorden.** De rotatie hoort in `IfcMapConversion` (`XAxisAbscissa`/`XAxisOrdinate`) te staan en niet in de plaatsing van de geometrie. Een model dat "gedraaid gemodelleerd" is zonder dat die rotatie is vastgelegd, komt scheef in de kaart terecht.
-- **Afstand tot de oorsprong.** Modellen met een willekeurige lokale oorsprong ver van de gerefereerde nulpositie leiden tot precisieverlies. Toets bij ontvangst of de modelgeometrie zich in de buurt van de opgegeven oorsprong bevindt.
+Georeferentie is de meest kritische eis: zonder correcte georeferentie is elk ander gegeven in het model ruimtelijk waardeloos. Per project wordt een methode van georeferentie gekozen en vastgelegd. Zie hiervoor praktijkrichtlijn [Georefereren GeoBIM](https://nl-digigo.github.io/GeoBIM_Georefereren/)
 
 > **Eis** — Het model bevat een georeferentie op level 50: `IfcProjectedCRS` met een expliciete EPSG-aanduiding, en `IfcMapConversion` of `IfcMapConversionScaled` met verschuiving, rotatie en schaling. Voor Nederlandse projecten is de doel-CRS EPSG:7415 (RD + NAP), of EPSG:28992 (RD) in combinatie met EPSG:5709 (NAP) als verticaal datum.
 
@@ -208,7 +180,7 @@ Concreet betekent dit:
 In Nederland bestaan landelijke BIM-afspraken die zorgen voor een eenduidige werkwijze en die interoperabiliteit, datakwaliteit en samenwerking bevorderen. Conform ISO 19650 zijn deze afspraken opgebouwd uit drie samenhangende onderdelen: de InformatieLeveringsSpecificatie (ILS), het Informatieprotocol (IP) en het BIM Uitvoeringsplan (BUP). Samen beschrijven zij de informatie-eisen, de afspraken over informatiebeheer, verantwoordelijkheden en eigendom, en de inrichting van de BIM-samenwerking.
 
 <figure id="ILS-IP-BUP-digigo" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/06_eisen/ILS_Protocl_en_BUP.png" alt="Informatie Levering Specificatie (ILS), Informatie Protocol (IP) en Bim Uitvoerings Plan (BUP) als contractuele afspraak over data-creatie, -overdracht en -gebruik." style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <img src="media/06_eisen/ILS_Protocl_en_BUP.png" alt="Informatie Levering Specificatie (ILS), Informatie Protocol (IP) en Bim Uitvoerings Plan (BUP) als contractuele afspraak over data-creatie, -overdracht en -gebruik." style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
         <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">
