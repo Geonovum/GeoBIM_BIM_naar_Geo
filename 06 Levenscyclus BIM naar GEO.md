@@ -7,7 +7,7 @@ De Gebouwde Omgeving Referentie Architectuur (GEBORA) bestaat uit verschillende 
 
 <figure id="Gebora_levenscyclus">
       <img src="media/levenscyclus/Levenscyclus_GEBORA.png" alt="Gebora_levenscyclus"/>
-    <figcaption><a class="self-link" href="#fig-Gebora_levenscyclust"></bdi></a><span class="fig-title">Gebora levenscyclus</span></figcaption>
+    <figcaption><a class="self-link" href="#Gebora_levenscyclust"></bdi></a><span class="fig-title">Gebora levenscyclus</span></figcaption>
 </figure>
 
 Wanneer een functionele behoefte bestaat, bijvoorbeeld men wil wonen, dan wordt er een technische uitwerking gemaakt van een object die voorziet in de functionele behoefte. Bijvoorbeeld er wordt een woning ontworpen. De technische entiteit wordt vaak in BIM uitgewerkt. Na verschillende ontwerp-iteraties wordt de entiteit gerealiseerd en voorziet het, bij goed ontwerp, in de functionele behoefte. 
@@ -47,7 +47,7 @@ Bij de integratie van BIM naar GEO ontstaat een uitdaging rondom de levenscyclus
 
 <figure id="Gebiedsontwikkeling_BIM_naar_GEO">
       <img src="media/levenscyclus/Gebiedsontwikkeling-BIM-naar-GEO.png" alt="Gebiedsontwikkeling BIM naar GEO"/>
-    <figcaption><a class="self-link" href="#fig-Gebiedsontwikkeling_BIM_naar_GEO"></bdi></a><span class="fig-title">Gebiedsontwikkeling BIM naar GEO</span></figcaption>
+    <figcaption><a class="self-link" href="#Gebiedsontwikkeling_BIM_naar_GEO"></bdi></a><span class="fig-title">Gebiedsontwikkeling BIM naar GEO</span></figcaption>
 </figure>
 
 Bovenstaand voorbeeld is gemaakt met een toepassing die gebruik maakt van 3D Tiles volgens de [[3DTILES]] Standaard. Deze standaard kent de functie "style.show". Hierin kan men met een boolean (true/false) per object (feature) aangeven of deze wordt weergegeven. Het brengen van BIM naar GEO en het correct weergeven van temporele (ontwerp)situaties is geen opgave voor een standaard, maar voor de applicaties en toepassingen.   

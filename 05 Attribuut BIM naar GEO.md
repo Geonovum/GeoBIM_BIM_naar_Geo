@@ -62,7 +62,7 @@ Expliciete afleidings- of aggregatieregels zijn nodig, waarin wordt vastgelegd v
 
 <figure id="Afleiding_van_attribuut">
       <img src="media/Attribuutmapping/Afleiding_van_attribuut.png" alt="Afleiding van attribuut"/>
-    <figcaption><a class="self-link" href="#fig-Afleiding_van_attribuut"></bdi></a><span class="fig-title">Afleiding van attribuut</span></figcaption>
+    <figcaption><a class="self-link" href="#Afleiding_van_attribuut"></bdi></a><span class="fig-title">Afleiding van attribuut</span></figcaption>
 </figure>
 
 ### Externe bronnen
@@ -73,7 +73,7 @@ Een totale BIM naar GEO entiteit en attribuutmapping zal een combinatie van de h
 
 <figure id="Routes_attribuut_mapping_1">
       <img src="media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes.png" alt="Routes van attribuutmapping"/>
-    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping_1"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
+    <figcaption><a class="self-link" href="#Routes_attribuut_mapping_1"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
 In dit figuur betekent "0" de informatie die niet van BIM naar GEO hoeft te gaan. Het getal "1" staat voor CityGML en "2" voor een aanvulling op CityGML in de vorm van een ADE. Het getal "3" staat voor de externe bronnen die knnen ondersteunen in het genereren van CityGML. De letters "a" staan voor de directe 1 op 1 mappingen en "b" voor de procesmappingen. 
@@ -82,13 +82,13 @@ Onderstaand voorbeeld laat zien hoe al deze routes binnen één conversie van BI
 
 <figure id="Routes_attribuut_mapping_2">
       <img src="media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes_Voorbeeld.png" alt="Routes van attribuutmapping"/>
-    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping_2"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
+    <figcaption><a class="self-link" href="#Routes_attribuut_mapping_2"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
 Een voorbeeldresultaat van bovenstaande attribuutmapping is hieronder weergegeven. Een aantal attributen op gebouwniveau zijn basis CityGML. Een aantal aanvullende ADE properties voorzien meer informatie over dit gebouw na mapping.  
 <figure id="Routes_attribuut_mapping_3">
       <img src="media/Attribuutmapping/Attribuutmapping_ADE_Opties.png" alt="Routes van attribuutmapping"/>
-    <figcaption><a class="self-link" href="#fig-Routes_attribuut_mapping_3"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
+    <figcaption><a class="self-link" href="#Routes_attribuut_mapping_3"></bdi></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
 

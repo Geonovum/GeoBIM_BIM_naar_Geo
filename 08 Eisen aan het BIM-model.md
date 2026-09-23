@@ -28,7 +28,7 @@ De norm kent daarvoor een cascade van informatiebehoeften. Elke eis in een Infor
   <figure id="ISO-19650-dataproducten-en-relaties" style="display: block; text-align: center; margin: 0 auto;">
           <img src="media/06_eisen/ISO_19650_Datasets.png" alt="ISO 19650 dataproducten en relaties" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
           <figcaption>
-            <a class="self-link" href="#fig-19650-dataproducten-en-relatie"></bdi></a>
+            <a class="self-link" href="#ISO-19650-dataproducten-en-relaties"></bdi></a>
             <span class="fig-title">
             ISO 19650 dataproducten en relaties
             </span>
@@ -154,7 +154,7 @@ Aanvullende metadata in DCAT- of GeoDCAT-vorm bevordert publicatie, catalogiseri
    <figure id="Physical_and_information_objects" style="display: block; text-align: center; margin: 0 auto;">
           <img src="media/06_eisen/Physical_and_information_object.png" alt="Semantisch model fysieke objecten en informatie objecten" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
           <figcaption>
-            <a class="self-link" href="#fig-Physical_and_information_objects"></bdi></a>
+            <a class="self-link" href="#Physical_and_information_objects"></bdi></a>
             <span class="fig-title">
             Semantisch model fysieke objecten en informatie objecten
             </span>
@@ -182,7 +182,7 @@ In Nederland bestaan landelijke BIM-afspraken die zorgen voor een eenduidige wer
 <figure id="ILS-IP-BUP-digigo" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/06_eisen/ILS_Protocl_en_BUP.png" alt="Informatie Levering Specificatie (ILS), Informatie Protocol (IP) en Bim Uitvoerings Plan (BUP) als contractuele afspraak over data-creatie, -overdracht en -gebruik." style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#fig-ILS-IP-BUP-digigo"></bdi></a>
+        <a class="self-link" href="#ILS-IP-BUP-digigo"></bdi></a>
         <span class="fig-title">
         Informatie Levering Specificatie (ILS), Informatie Protocol (IP) en Bim Uitvoerings Plan (BUP) als contractuele afspraak over data-creatie, -overdracht en -gebruik. <br>
         Bron: <a href="https://www.digigo.nu/ilsen-en-richtlijnen/informatieprotocol/">DigiGO</a>.
@@ -197,7 +197,7 @@ DigiGO beheert een aantal templates en sectorbrede standaarden, waaronder de BIM
 <figure id="BIM-digigo" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/06_eisen/BIM_landschap.png" alt="Het BIM afspraken landschap" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#fig-BIMdigigo"></bdi></a>
+        <a class="self-link" href="#BIM-digigo"></bdi></a>
         <span class="fig-title">
         Samenwerking in BIM op basis van sectorafspraken
         </span>

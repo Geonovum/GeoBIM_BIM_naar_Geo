@@ -7,7 +7,7 @@ In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry op
 <figure id="drie_benaderingen_IFC_geometrie" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/2_achtergrond/Drie_mogelijke_benaderingen_voorgeometrie_van_3Dobjecten_in_IFC.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
-        <a class="self-link" href="#fig-drie_benaderingen_IFC_geometrie"></bdi></a>
+        <a class="self-link" href="#drie_benaderingen_IFC_geometrie"></bdi></a>
         <span class="fig-title">
         Drie verschillende benaderingen soorten geometrie in IFC <br> 
         bron:
@@ -21,7 +21,7 @@ De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig
 
 <figure id="Mesh_van_Geometrien_2" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
-    <figcaption><a class="self-link" href="#fig-Mesh_van_Geometrien_2"></bdi></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></figcaption>
+    <figcaption><a class="self-link" href="#Mesh_van_Geometrien_2"></bdi></a><span class="fig-title">Meshing van dezelfde geometrie op verschillend detailniveau</span></figcaption>
 </figure>
 
 ## Shell extractie
@@ -57,9 +57,9 @@ ray-casting op zichzelf resulteert niet in een gesloten buitenschil. De polygone
 De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en traag. Er zijn veel optimalisaties om dit process the versnellen. Een correct gemodelleerd BIM model maakt gebruik van types/classes voor objecten. Op basis van deze types kan er al een filtering worden toegepast. Meubels (IfcFurniture) zullen bijvoorbeeld niet zo snel deel uitmaken van de buitenschil van een gebouw. Objecten met dit type hoeven dus niet behandeld te worden door het ray-casting proces, maar kunnen direct worden genegeerd. Dit versnelt het proces doordat vanaf deze objecten dus geen ray-casting hoeft te worden gedaan, maar ook omdat het voor deze objecten niet nodig is de rays van andere polygonen te snijden.
 
 <figure id="Ray_Casting_BIM" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/03_methodes/Ray Casting BIM 2.jpg" alt="Principe van Raycasting" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+      <img src="media/03_methodes/Ray-Casting-BIM-2.jpg" alt="Principe van Raycasting" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
-        <a class="self-link" href="#fig-Ray_Casting_BIM"></bdi></a>
+        <a class="self-link" href="#Ray_Casting_BIM"></bdi></a>
         <span class="fig-title">
         Principe van Raycasting BIM <br> 
         bron:
@@ -82,7 +82,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
 <figure id="Alpha_Wrap_Principle" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_overview_CGAL.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
-        <a class="self-link" href="#fig-Alpha_Wrap_Principle></bdi></a>
+        <a class="self-link" href="#Alpha_Wrap_Principle"></bdi></a>
         <span class="fig-title">
         Principe van Alpha Wrapping BIM <br> 
         bron:
@@ -96,7 +96,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
 <figure id="Alpha_Wrap_Bike" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_bike.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
-        <a class="self-link" href="#fig-Alpha_Wrap_Principle></bdi></a>
+        <a class="self-link" href="#Alpha_Wrap_Principle></bdi></a>
         <span class="fig-title">
         Verschillende vormen, alpha shapes, die resultaat zijn van een alpha wrapping methode <br> 
         bron:
