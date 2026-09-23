@@ -80,7 +80,7 @@ let respecConfig = {
       {
         name: "Lex Ransijn",
         company: "VDC Base",
-        companyURL: "https://vdcbase.com/,
+        companyURL: "https://vdcbase.com/",
       },
       {
         name: "Wouter Lubbers",
