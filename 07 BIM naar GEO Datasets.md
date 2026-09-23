@@ -27,14 +27,14 @@ Het opdelen van Informatie Levering Specificaties in afzonderlijke specificaties
 
 Onderstaand overzicht laat zien hoe verschillende ILS'en in samenhang kunnen worden toegepast voor landelijke datasets. Het dient als een verkennend toepassingsprofiel en is bedoeld als inspiratie voor verdere uitwerking.
 
-| ILS Geometrie | ILS Informatiemodel | Dataset | 
-|--|--|--|
-|ILS Gebouw LOD0_vlak, <br> ILS Weg LOD0_vlak, <br> ILS Brug LOD0_vlak, <br> ILS Spoor lod0_lijn, <br> ILS Terrein LOD0_vlak, <br>ILS Water LOD0_vlak <br> ILS meubilair LOD0_punt| ILS basisregistratie, ILS BGT|BGT|
-|ILS Gebouw LOD 0_vlak|ILS basisregistratie, ILS BAG|BAG|
-|ILS Gebouw LOD 1.2_volume <br> ILS Gebouw LOD 1.3_volume <br> ILS Gebouw LOD 2.2_volume |ILS basisregistratie, ILS BAG| 3D BAG|
-|ILS Weg LOD 1.2_multivlak <br> ILS Gebouw LOD 1.3_volume <br> ILS Gebouw LOD 2.2_volume |ILS basisregistratie, ILS 3DBasisvoorziening| 3D basisvoorziening|
-|ILS Weg LOD 0_lijn |ILS NWB| NWB |
-|ILS Bebouwing LOD 0_vlak <br> ILS Bebouwing LOD 0_lijn <br> ILS Bebouwing LOD 0_punt <br> etc. |ILS 1 GIS | 1 GIS |
-|ILS Gebouw LOD0_vlak, <br> ILS Weg LOD0_vlak, <br> ILS Brug LOD0_vlak, <br> ILS Spoor lod0_lijn, <br> ILS Terrein LOD0_vlak, <br>ILS Water LOD0_vlak <br> ILS meubilair LOD0_punt |ILS IMBOR | IMBOR |
+| ILS Geometrie | ILS Informatiemodel | Transformatieprofiel | Dataset | 
+|--|--|--|--|
+|ILS Gebouw LOD0_vlak, <br> ILS Weg LOD0_vlak, <br> ILS Brug LOD0_vlak, <br> ILS Spoor lod0_lijn, <br> ILS Terrein LOD0_vlak, <br>ILS Water LOD0_vlak <br> ILS meubilair LOD0_punt| ILS basisregistratie, ILS BGT|BIM2BGT|BGT|
+|ILS Gebouw LOD 0_vlak|ILS basisregistratie, ILS BAG|BIM2BAG2D|BAG|
+|ILS Gebouw LOD 1.2_volume <br> ILS Gebouw LOD 1.3_volume <br> ILS Gebouw LOD 2.2_volume |ILS basisregistratie, ILS BAG|BIM2BAG3D| 3D BAG|
+|ILS Weg LOD 1.2_multivlak <br> ILS Gebouw LOD 1.3_volume <br> ILS Gebouw LOD 2.2_volume |ILS basisregistratie, ILS 3DBasisvoorziening| BIM2BV3D |3D basisvoorziening|
+|ILS Weg LOD 0_lijn |ILS NWB|BIM2NWB |NWB |
+|ILS Bebouwing LOD 0_vlak <br> ILS Bebouwing LOD 0_lijn <br> ILS Bebouwing LOD 0_punt <br> etc. |ILS 1 GIS |BIM21GIS | 1 GIS |
+|ILS Gebouw LOD0_vlak, <br> ILS Weg LOD0_vlak, <br> ILS Brug LOD0_vlak, <br> ILS Spoor lod0_lijn, <br> ILS Terrein LOD0_vlak, <br>ILS Water LOD0_vlak <br> ILS meubilair LOD0_punt |ILS IMBOR | BIM2IMBOR |  IMBOR |
 
 

@@ -69,8 +69,8 @@ let respecConfig = {
     [
       {
         name: "Jasper van der Vaart",
-        company: "TU Delft",
-        companyURL: "https://3d.bk.tudelft.nl/",
+        company: "GISmantike",
+        companyURL: "https://gismantike.nl/",
       },
       {
         name: "Jantien Stoter",
