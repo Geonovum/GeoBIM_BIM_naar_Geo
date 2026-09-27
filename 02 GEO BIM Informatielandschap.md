@@ -222,7 +222,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
     <td> LoD0.0 </td>
-    <td> Voetafdruk of dakuitlijn van alle gebouwen of onderdelen die groter zijn dan 6m. De representaties van gebouwen die aan elkaar grenzen mogen worden samengevoegd </td>
+    <td> Voetafdruk, dakuitlijn of grootste geprojecteerde omtrek van gebouwen of onderdelen die groter zijn dan 6m. De representaties van gebouwen die aan elkaar grenzen mogen worden samengevoegd </td>
   </tr>
   <tr>
     <td> LoD0.1 </td>
@@ -238,7 +238,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD1.0 </td>
-     <td> Een opwaartse extrusie van de LoD0.0 voetafdruk of neerwaartse extrusie van de LoD0.0 dakuitlijn  </td>
+     <td> Een opwaartse extrusie van de LoD0.0 voetafdruk of neerwaartse extrusie van de LoD0.0 dakuitlijn naar een afgesproken hoogte </td>
   </tr>
     <tr>
      <td> LoD1.1 </td>
@@ -258,11 +258,11 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD2.1 </td>
-     <td> Een neerwaartse extrusie van ieder dak element tot grondniveau samengevoegd tot een enkel volume. Het verschil met LoD2.0 is dat kleine details zoals uitstulpingen (groter dan 2 vierkante meter) ook worden meegenomen </td>
+     <td> Een neerwaartse extrusie van ieder dak element tot grondniveau (of opwaartse extrusie van het grondvlak tot het dakelement) samengevoegd met het dakelement tot een enkel volume. Het verschil met LoD2.0 is dat kleine details zoals uitstulpingen (groter dan 2 vierkante meter) ook worden meegenomen </td>
   </tr>
   <tr>
      <td> LoD2.2 </td>
-     <td> Een neerwaartse extrusie van ieder dak element en dak bovenbouw (zoals dakkapellen) met minimale omvang tot grondniveau samengevoegd tot een enkel volume. </td>
+     <td> Een neerwaartse extrusie van ieder dak element en dak bovenbouw (zoals dakkapellen) met minimale omvang tot grondniveau samengevoegd met het dakelement tot een enkel volume. Het kan ook gaan om een opwaartse extrusie van het grondvlak tot het dakelement </td>
   </tr>
   <tr>
      <td> LoD2.3 </td>
@@ -297,17 +297,17 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
       </figcaption>
 </figure>
 
-Dit framework stelt strengere eisen aan de LoD abstracties dan het CityGML2.0/3.0 LoD framework maar kan nog steeds tot verschillende interpretaties leiden. Een van de onduidelijkheden betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework, of gerelateerde bronnen. Hierdoor wordt in de praktijk de dak contour (dakuitlijn), de voetafdruk of een andere bron gebruikt. Hierdoor kunnen verschillende bronnen resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld kan worden. Zie meer hierover bij het hoofdstuk [Uitbreidingen & aanpassingen van de LoD frameworks](#uitbreidingen-aanpassingen-van-de-lod-frameworks)
+Dit framework is een verfijning van de eisen voor de LoD abstracties ten opzichte van het CityGML2.0/3.0 LoD framework maar kan nog steeds tot verschillende interpretaties leiden. Een van de onduidelijkheden betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework. Hierdoor wordt in de praktijk de dak contour (dakuitlijn), de voetafdruk of een andere brongeometrie (zoals de geprojeceerde maximale omvang) gebruikt. Dit kan resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld wordt. Zie meer hierover bij het hoofdstuk [Uitbreidingen & aanpassingen van de LoD frameworks](#uitbreidingen-aanpassingen-van-de-lod-frameworks)
 
 <aside class="note" title="voetafdruk (BGT) vs roofoutline vs geprojecteerde maximale omtrek (BAG)">
-  <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x groepen: voetafdruk, geprojecteerde maximale omtrek, roof outline, 2DBAG, 2DBGT. Het LoD framework van de TUD kan hiervoor worden gebruikt om duidelijk te maken welke bron-geometrie gebruikt moet worden voor de extrusie voor de LoD groepen (LoD1.x en 2.x). </a> </p>
+  <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x extensies: voetafdruk, geprojecteerde maximale omtrek, roof outline, 2DBAG, 2DBGT. Het LoD framework van de TUD kan hiervoor worden aangepast om duidelijk te maken welke bron-geometrie gebruikt is voor de extrusie voor de betreffende LoD groepen (LoD1.x en 2.x). </a> </p>
 </aside>
 
-Dit LoD framework is ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor [vegetatie](https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af), [infrastructuur/transport](https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/) en [terrein](https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/). Deze worden ook gebruikt in de praktijk, ook al is dat minder dan het verfijnde LoD-framework voor gebouwen.
+Dit aangepaste LoD framework is ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor [vegetatie](https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af), [infrastructuur/transport](https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/) en [terrein](https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/). Deze worden ook gebruikt in de praktijk, ook al is dat minder dan het verfijnde LoD-framework voor gebouwen.
 
 ## Uitbreidingen & aanpassingen van de LoD frameworks
 
-Zowel het CityGML2.0 LoD Framework, het CityGML3.0 LoD framework, als het TU Delft verfijnde framework worden gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, mede omdat er recent technologieën beschikbaar zijn gekomen die het mogelijk maken om GIS modellen te genereren op andere manieren. Bij het opstellen van de bestaande frameworks, werd uitgegaan van metingen om de LOD abstracties te vormen. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
+Zowel het CityGML2.0 LoD Framework, het CityGML3.0 LoD framework, als het TU Delft verfijnde framework worden gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, mede omdat er recent technologieën beschikbaar zijn gekomen die het mogelijk maken om GIS modellen te genereren op andere manieren. Bij het opstellen van de bestaande frameworks, werd uitgegaan van de toenbeschikbare inwintechniek van metingen om de LOD abstracties te vormen. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
 Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. 
 
 In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen die rekening houden met BIM als databron. In de publicatie [Defining LoDs to support BIM-based 3D building abstractions in GIS](https://research.tudelft.nl/en/publications/defining-lods-to-support-bim-based-3d-building-abstractions-in-gi/) zijn aanvullingen beschreven op het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen. LoDe.1, een van de experimentele LoD die uit dit onderzoek voort is gekomen, wordt op dit moment toegepast voor visualisatie door de gemeente Eindhoven als alternatief voor 1:1 vertaling.
