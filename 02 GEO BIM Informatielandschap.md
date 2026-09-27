@@ -28,9 +28,9 @@ BIM en GIS modellen spelen ieder een unieke rol die onlosmakelijk met elkaar ver
 
 Er zijn een aantal redenen voor deze verschillen:
 
-* Een GIS model bevat informatie over grote clusters van gebouwen, mogelijk zelfs van complete steden. De informatie opslaan op een BIM schaal voor deze gebieden zal zeer zware modellen opleveren die lastig, zo niet onmogelijk, zijn om mee te werken.
-* GIS data/formats zijn ontwikkeld om te werken met andere bronnen dan BIM data. Waar in BIM vaak handmatig wordt gemodelleerd (al dan niet aangevuld door programmeren/ai) worden de meeste GIS modellen gebaseerd op metingen. Voor gebouwen zijn deze metingen vaak LiDAR scans. De data afkomstig van deze scans kunnen ruis en occlusion (gaten in de metingen) bevatten en hebben een beperkte resolutie. Met deze data is het niet mogelijk om snel op grote schaal zeer gedetailleerde modellen te creëren.
-* GIS modellen spelen, vaker, een publieke rol dan BIM data. GIS data is beschikbaar voor gebruikers om te downloaden en te verwerken. Als GIS data alle informatie over de opgeslagen gebouwen zou bevatten, zoals in BIM modellen, zou dit mogelijk tot data veiligheidsproblemen leiden. Aanvullend zal er dan ook zoveel data beschikbaar zijn, waardoor de gebruiker door het bomen het bos niet meer kunnen zien. Bovendien zit in BIM modellen data waarvoor het niet in het belang van de ontwerper is om deze data te delen. Op deze data kunnen auteursrechten rusten.
+* Een GIS model bevat informatie over grote clusters van gebouwen, mogelijk zelfs van complete steden of op landelijke schaal. De informatie opslaan op een BIM schaal voor deze gebieden zal zeer zware modellen opleveren die lastig, zo niet onmogelijk, zijn om mee te werken.
+* GIS data/formats zijn ontwikkeld om te werken met data die op basis van andere bronnen is ingewonnen dan BIM. Waar in BIM vaak handmatig wordt gemodelleerd (al dan niet aangevuld door programmeren/ai) worden de meeste GIS modellen gebaseerd op metingen. Voor gebouwen zijn deze metingen vaak LiDAR scans. De data afkomstig van deze scans kunnen ruis en occlusion (gaten in de metingen) bevatten en hebben een beperkte resolutie. Met deze data is het niet mogelijk om snel op grote schaal zeer gedetailleerde modellen te creëren.
+* GIS modellen spelen, vaker, een publieke rol dan BIM data. GIS data is beschikbaar voor gebruikers om te downloaden en te verwerken. Als GIS data alle informatie over de opgeslagen gebouwen zou bevatten, zoals in BIM modellen, zou dit mogelijk tot privacy- en data veiligheidsproblemen leiden. Aanvullend zal er dan ook zoveel data beschikbaar zijn, waardoor de gebruiker door het bomen het bos niet meer kunnen zien. Bovendien zit in BIM modellen data waarvoor het niet in het belang van de ontwerper is om deze data te delen. Op deze data kunnen auteursrechten rusten.
 
 Om enerzijds in een GIS-omgeving te kunnen worden toegepast en anderzijds in een BIM-omgeving, zijn GIS-data en BIM-data op een verschillende manier opgebouwd. Geometrisch gezien is een gebouw in een BIM model geconstrueerd uit verschillende losse objecten. Wanden, vloeren en deuren zijn allemaal volumetrische objecten die samen een bouwwerk vormen. In GIS modellen is deze omsluiting gerepresenteerd als een enkel object. Losse objecten, zoals losse wanden, vloeren en deuren, komen in GIS modellen relatief weinig voor. Een gebouw in GIS kan worden gezien als een gesloten schil die de grens tussen het gebouw en de lucht aanduidt.
 
@@ -96,7 +96,7 @@ De ISO 19650, de procesnorm voor informatiemanagement, schrijft voor dat in het 
 Ook maakt men naast de hierboven genoemde aspecten afspraken over decompositieniveau. Tekent men een afvalbak als één geheel object, bestaat deze uit één losse bak en één losse poer of is deze nog verder gedecomponeerd? 
 
 ## Level of Development in BIM
-Naast het hierboven beschreven Level Of Information Need bestaat binnen het BIM-domein het Level Of Development (LOD). Dit Level of Development is gedefinieerd door het American Institue of Architects (AIA) en doorontwikkeld door het [BIMForum](https://bimforum.org/resource/lod-level-of-development-lod-specification/). Dit wordt gebruikt om het ontwikkelniveau aan te duiden van zowel de geometrie als de verbonden informatie in een BIM model. Er bestaan verschillende intrepetaties over hoeveel LOD niveaus er zijn en wat de inhoud hiervan precies betekent. Om hier meer eenduidigheid in te krijgen heeft het BIM-forum een update van de definities geleverd. De ontwikkelniveaus die onderscheiden worden zijn: 
+Naast het hierboven beschreven Level Of Information Need bestaat binnen het BIM-domein het Level Of Development (LOD). Dit Level of Development is gedefinieerd door het American Institue of Architects (AIA) en doorontwikkeld door het [BIMForum](https://bimforum.org/resource/lod-level-of-development-lod-specification/). Dit wordt gebruikt om het ontwikkelniveau aan te duiden van zowel de geometrie als de daaraan verbonden informatie in een BIM model. Er bestaan verschillende intrepetaties over hoeveel LOD niveaus er zijn en wat de inhoud hiervan precies betekent. Om hier meer eenduidigheid in te krijgen heeft het BIM-forum een update van de definities geleverd. De ontwikkelniveaus die onderscheiden worden zijn: 
 
 - **LOD100 - Concept niveau**
   - Het model bevat: Generieke massa van een bouwwerk. Oppervlakte, hoogte, inhoud, volume, locatie en orientatie kunnen worden gemodelleerd in 2D, 3D of ander soort data. 
@@ -151,7 +151,7 @@ In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd ee
 
 De GIS Level of Details worden gedefinieerd in de [CityGML3.0](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail) standaard. De standaard definieert 4 hoofdniveaus, LOD0 tot LOD3. Hierbij krijgt de geometrie van een model bij hoger LOD niveau meer detail. De hoofdniveaus worden breed ondersteund in toepassingen.
 
-De documentatie van CityGML over LOD is algemeen. De volgende definitie kunnen worden gegeven ten aanzien van gebouwen:
+De documentatie van CityGML over LOD is algemeen. De volgende definities kunnen worden gegeven ten aanzien van gebouwen:
 
 <table>
   <caption> LoD van een gebouw zoals beschreven in de CityGML3.0 standaard </caption>
@@ -192,7 +192,7 @@ De in CityGML3.0 standaard beschreven LoDs kunnen worden gebruikt voor zowel ext
 
 In CityGML3.0 is de rol van LoD3 veranderd om de BIM achtige structuur te ondersteunen die voorheen onder LoD4 viel. Dit betekent dat LoD3 kan zijn opgebouwd als een schil model maar ook als een collectie van constructieve elementen. Ondanks het feit dat LoD4 officieel niet meer wordt ondersteund, komt het in de praktijk nog voor. In deze modellen is LoD3 opgebouwd als een schil model en LoD4 een als een collectie van constructieve elementen.
 
-In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden in de documentatie niet zo uitgebreid beschreven als gebouwen. In theorie kunnen de LoDs ook toegepast worden op deze bouwwerken omdat het LoD framework van CityGML open en flexibel is. De verschillend LoD abstracties van infrastructurele bouwwerken lijken minder bruikbaar omdat gebouwen en infrastructuur bouwwerken erg van vorm verschillen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor [vegetatie](https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af), [infrastructuur/transport](https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/) en [terrein](https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/). Deze worden ook gebruikt in de praktijk, ook al is dat minder dan de LoDs voor gebouwen.
+In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden in de documentatie niet zo uitgebreid beschreven als gebouwen. In theorie kunnen de LoDs ook toegepast worden op deze bouwwerken omdat het LoD framework van CityGML open en flexibel is. De verschillend LoD abstracties van infrastructurele bouwwerken lijken minder bruikbaar omdat gebouwen en infrastructuur bouwwerken erg van vorm verschillen. 
 
 <figure id="Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/LoDCityGMLBrug.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
@@ -210,7 +210,7 @@ In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken
 
 **Verfijnd LoD framework 3D Geoinformation, TU Delft**
 
-Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar daarmee is het soms ook moeilijk om precies vast te stellen hoe een abstractie verschilt van het originele gebouw in de werkelijkheid. In 2016 heeft [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) daarom een verfijning geschreven die voortbouwt op het CityGML2.0 LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo is LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.
+Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar daarmee is het soms ook moeilijk om precies vast te stellen hoe een abstractie het originele gebouw in de werkelijkheid weergeeft. In 2016 heeft [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) daarom een verfijning gemaakt die voortbouwt op het CityGML2.0 LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo is LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.
 
 Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de volgende manier worden gedefinieerd:
 
@@ -238,15 +238,15 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD1.0 </td>
-     <td> Een opwaartse extrusie van LoD0.0  </td>
+     <td> Een opwaartse extrusie van de LoD0.0 voetafdruk of neerwaartse extrusie van de LoD0.0 dakuitlijn  </td>
   </tr>
     <tr>
      <td> LoD1.1 </td>
-     <td> Een opwaartse extrusie van LoD0.1 naar de maximale gebouwhoogte (vaak de noklijn). </td>
+     <td> Een opwaartse extrusie van LoD0.1 naar de afgesproken gebouwhoogte (vaak de noklijn) (of neerwaartse extrusie van de dakuitlijn). </td>
   </tr>
   <tr>
      <td> LoD1.2 </td>
-     <td> Een opwaartse extrusie van LoD0.2 naar de maximale gebouwhoogte (vaak de noklijn). </td>
+     <td> Een opwaartse extrusie van LoD0.2 naar de afgesproken gebouwhoogte (vaak de noklijn) of neerwaartse extrusie van de dakuitlijn. </td>
   </tr>
   <tr>
      <td> LoD1.3 </td>
@@ -297,17 +297,17 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
       </figcaption>
 </figure>
 
-Dit framework stelt strengere eisen aan de LoD abstracties dan het CityGML2.0/3.0 LoD framework maar bevat helaas nog steeds veel onduidelijkheden. Een van de centrale problemen betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework, of gerelateerde bronnen. Hierdoor wordt in de praktijk de dak contour, de voetafdruk of een andere bron gebruikt. Het framework stelt ook geen duidelijke manier om de bron die is gebruikt aan te duiden, hierdoor kunnen verschillende bronnen resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld is of, volgens het framework, hoeft te worden. Zie meer hierover bij het hoofdstuk [Uitbreidingen & aanpassingen van de LoD frameworks](#uitbreidingen-aanpassingen-van-de-lod-frameworks)
+Dit framework stelt strengere eisen aan de LoD abstracties dan het CityGML2.0/3.0 LoD framework maar kan nog steeds tot verschillende interpretaties leiden. Een van de onduidelijkheden betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework, of gerelateerde bronnen. Hierdoor wordt in de praktijk de dak contour (dakuitlijn), de voetafdruk of een andere bron gebruikt. Hierdoor kunnen verschillende bronnen resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld kan worden. Zie meer hierover bij het hoofdstuk [Uitbreidingen & aanpassingen van de LoD frameworks](#uitbreidingen-aanpassingen-van-de-lod-frameworks)
 
-<aside class="note" title="voetafdruk vs roofoutline">
-  <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x groepen: voetafdruk, roof outline, 2DBAG of 2DBGT. Of verbeter het LoD framework van de TUD zodat het duidelijk is welke data gebruikt moet worden voor de extrusie LoD groepen (LoD1.x en 2.x). </a> </p>
+<aside class="note" title="voetafdruk (BGT) vs roofoutline vs geprojecteerde maximale omtrek (BAG)">
+  <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x groepen: voetafdruk, geprojecteerde maximale omtrek, roof outline, 2DBAG, 2DBGT. Het LoD framework van de TUD kan hiervoor worden gebruikt om duidelijk te maken welke bron-geometrie gebruikt moet worden voor de extrusie voor de LoD groepen (LoD1.x en 2.x). </a> </p>
 </aside>
 
-Net zoals bij het CityGML LoD framework is dit framework ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel is, maar dit vraagt ook om verdere verfijningen en afspraken.
+Dit LoD framework is ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor [vegetatie](https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af), [infrastructuur/transport](https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/) en [terrein](https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/). Deze worden ook gebruikt in de praktijk, ook al is dat minder dan het verfijnde LoD-framework voor gebouwen.
 
 ## Uitbreidingen & aanpassingen van de LoD frameworks
 
-Zowel het CityGML2.0 LoD Framework, het CityGML3.0 LoD framework, als het TU Delft verfijnde framework worden gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, mede omdat er recent technologieën beschikbaar zijn gekomen die het mogelijk maken om nieuwe (BIM) data bronnen te gebruiken om GIS modellen te genereren. Bij het opstellen van de bestaande frameworks, werd uitgegaan van metingen om de LOD abstracties te vormen. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
+Zowel het CityGML2.0 LoD Framework, het CityGML3.0 LoD framework, als het TU Delft verfijnde framework worden gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, mede omdat er recent technologieën beschikbaar zijn gekomen die het mogelijk maken om GIS modellen te genereren op andere manieren. Bij het opstellen van de bestaande frameworks, werd uitgegaan van metingen om de LOD abstracties te vormen. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
 Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. 
 
 In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen die rekening houden met BIM als databron. In de publicatie [Defining LoDs to support BIM-based 3D building abstractions in GIS](https://research.tudelft.nl/en/publications/defining-lods-to-support-bim-based-3d-building-abstractions-in-gi/) zijn aanvullingen beschreven op het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen. LoDe.1, een van de experimentele LoD die uit dit onderzoek voort is gekomen, wordt op dit moment toegepast voor visualisatie door de gemeente Eindhoven als alternatief voor 1:1 vertaling.
