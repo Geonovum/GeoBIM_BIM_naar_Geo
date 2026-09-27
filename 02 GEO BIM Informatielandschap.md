@@ -347,16 +347,16 @@ Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geom
       <figcaption>
         <a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"></a>
         <span class="fig-title">
-        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd. De overhang van dit gebouw is gerepresenteerd in de BAG polygoon. Rechts is gebouw Echo, de luifels van dit gebouw vallen binnen de geprojecteerde dakomtrek. De draaideuren van de entree die onder deze luifels vallen niet binnen deze geometrie en zijn wel als zodani zichtbaar in de 2DBAG geometrie en daardoor ook de basis voor de extrusie in 3DBAG.
+        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd. De BAG polygoon (de geprojecteerde buitenomtrek) omvat de overhang van dit gebouw. Rechts is gebouw Echo, de luifels van dit gebouw vallen binnen de geprojecteerde dakomtrek. De draaideuren van de entree daarentegen vallen daarbuiten en zijn daarom zodanig zichtbaar in de 2DBAG geometrie. Deze wordt gebruikt als de basis voor de extrusie in 3DBAG.
         </span>
       </figcaption>
 </figure>
 
-NB1: Uit de definitie van de 2DBAG geometrie volgt ook dat ondergrondse onderdelen worden meegenomen in de 2D geometrie zoals ondergrondse parkeergarages. Bij de 3DBAG reconstructie worden deze pand-delen uit de geometrie gefilterd op basis van de hoogte data op deze locaties.
-NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DBAG, net als AHN, een soort bovenaanzicht geeft van de panden. Daarom passen beide data bronnen goed op elkaar. Er loopt momenteel een onderzoek om onderdoorgangen en dakoverhang te modelleren in 3DBAG door deze te detecteren op basis van een BGT-BAG analyse en de hoogte vervolgens te detecteren in oblieke luchtfoto's.
+NB1: Uit de definitie van de 2DBAG geometrie volgt ook dat ondergrondse onderdelen worden meegenomen in de 2D geometrie zoals ondergrondse parkeergarages. Bij de 3DBAG reconstructie worden deze pand-delen uit de geometrie gefilterd op basis van de hoogte data van het maaiveld op deze locaties.
+NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DBAG, net als AHN, een opname is van de panden van bovenaf gezien. Daarom passen beide data bronnen goed op elkaar. Er loopt momenteel een onderzoek om onderdoorgangen en dakoverhang te modelleren in 3DBAG door deze te detecteren op basis van een BGT-BAG analyse en de hoogte vervolgens te detecteren in oblieke luchtfoto's en straatniveau LiDAR. De resultaten hiervan zullen in de 2026 release van de 3DBAG worden geïmplementeerd.
 
 <aside class="note" title="Maak aanvullende afspraken rondom voetafdruk of dakomtrek">
-  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van voetafdruk of dakomtrek voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusie bron gebruikt wordt. Maak duidelijk of dakuitlijn == BAG polygoon, voetprint == BGT polygoon of juist niet.
+  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het gebruik van voetafdruk, dakomtrek of andere doorsnede voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusie bron gebruikt wordt. Maak duidelijk of de BAG polygoon (bovenaanzicht) of BGT polygoon (voetafdruk), of een andere geometrie als extrusie bron is gebruik.
 </aside>
 
 <aside class="note" title="Vastgestelde transformatieprofielen voor BIM naar GEO per toepassing">
