@@ -1,8 +1,10 @@
 # Geometrie BIM naar GEO
 
 ## Impliciete en expliciete geometrie
-Geometrie van BIM en GEO kan impliciet of expliciet zijn. Impliciete geometrie is geometrie die volledig is uitgeschreven, zoals alle coördinaten van de vertices, edges, faces en curves. Er is geen procedure of wiskundige berekening nodig om de geometrie op te stellen. Bij impliciete geometrie is dit anders. De geometrie is beschreven als een wiskundige of procedurele definitie. Pas bij rendering of conversie wordt geometrie vertaald naar vertices, edges, faces en curves. 
-In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry opslaan. Een software-gebruiker is zich niet altijd bewust van het gemodelleerde geometrie-formaat. In de GEO-formaten CityJSON, CityGML en GeoJSON maakt men voornamelijk gebruik van impliciete geometrie. Dit maakt het schema van Geo een stuk compacter dan dat van IFC. Complexe expliciete geometrie kan bij conversie naar impliciete CityJSON geometrie een groot bestandsformaat opleveren.  
+Geometrie kan impliciet of expliciet zijn gedefinieerd. Expliciete geometrie is geometrie die volledig is uitgeschreven, dat wil zeggen: alle coördinaten van de vertices, edges, faces en curves. Er is geen procedure of wiskundige berekening nodig om de geometrie op te stellen. Bij impliciete geometrie is dit anders. De geometrie is beschreven als een wiskundige of procedurele definitie. Pas bij rendering of conversie wordt geometrie vertaald naar vertices, edges, faces en curves. 
+In de GEO-formaten CityJSON, CityGML en GeoJSON maakt men voornamelijk gebruik van expliciete geometrie. In Geo wordt impliciete geometrie met name gebruikt om een geometrie één keer te definiëren en om deze vervolgens meerdere keren te hergebruiken met verschillende translaties, rotaties en schalingen. Dat voorkomt in Geo redundante opslag van identieke geometrieën zoals voor een boom, lantaarnpaal of bankje.
+In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometrie opslaan. Een software-gebruiker is zich niet altijd bewust van het gemodelleerde geometrie-formaat. 
+Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON geometrie een groot bestandsformaat opleveren.  
 
 <figure id="drie_benaderingen_IFC_geometrie" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/2_achtergrond/Drie_mogelijke_benaderingen_voorgeometrie_van_3Dobjecten_in_IFC.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
@@ -17,7 +19,7 @@ In het open-BIM-formaat IFC, kan men zowel impliciete als expliciete geometry op
 </figure>
 
 ## Meshing
-De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig worden ifc-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie en vergroot de bestandsgrootte.
+De geometriën van het BIM-model worden vertaald naar Geo-geometriën. Waar nodig worden ifc-geometrieën omgezet naar solids of polygonen. Dit kan op verschillende detailniveaus. Een hoger detailniveau resulteert in een nauwkeurigere representatie en vergroot de bestandsgrootte.
 
 <figure id="Mesh_van_Geometrien_2" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/Mesh_van_Geometrie.png" alt="Meshing van geometrie op verschillend detailniveau" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
@@ -25,7 +27,7 @@ De geometriën van het BIM-model wordt vertaald naar Geo-geometriën. Waar nodig
 </figure>
 
 ## Shell extractie
-Zoals eerder beschreven is shell extractie nu nog veelal beschikbaar in experimentele vorm voor het van BIM naar GIS brengen. Hierdoor zijn er nog geen standaard methodes ontwikkeld en gebruikt iedere software een eigen benadering. Dit hoofdstuk beschrijft de verschillende manieren waarop sommige schil modellen worden gemaakt door software. Dit is een selectie van de processen om een complex BIM model te converteren naar een versimpeld GEO model.
+Zoals eerder beschreven is shell extractie nu nog veelal beschikbaar in experimentele vorm voor het van BIM naar GIS brengen. Hierdoor zijn er nog geen standaard methodes ontwikkeld en gebruikt iedere software een eigen benadering. Dit hoofdstuk beschrijft de verschillende manieren waarop sommige schil modellen worden gegenereerd door verschillende beschikbare software. Dit is een selectie van de processen om een complex BIM model te converteren naar een versimpeld Geo model.
 
 ### Voxelisatie
 Een shell extractie methode die wordt gebruikt is voxelisatie. Voxelisatie benadert de vorm van een gebouw/bouwwerk met behulp van VOlumetriche piXELS (voxels). De resulterende vorm kan worden gezien als een blokkendoos representatie van het input model. Dit is op dit moment geen standaard GIS vorm die wordt ondersteund door de geaccepteerde LoD frameworks. Echter wordt dit wel als belangrijke output beschouwd. Voxelisatie kan namelijk aspecten van een gebouw opslaan die verder alleen in hele complexe LoD modellen beschikbaar is (LoD3+), zoals overhang en gevelopeningen. Voxelistatie is minder precies dan deze LoD3+ modellen maar het is wel een stuk robuuster en sneller. Daar waar een LoD3+ vorm niet gemaakt kan worden door een schil extractor kan mogelijk een voxelistatie wel gemaakt worden.
