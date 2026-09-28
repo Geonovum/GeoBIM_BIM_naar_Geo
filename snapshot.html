@@ -1442,7 +1442,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Geonovum Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2025-03-28">27 september 2026</time>
+      <time class="dt-published" datetime="2025-03-28">28 september 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -2048,7 +2048,7 @@ NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DB
     ]
 }
 </code></pre>
-<p>Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen, juist in een toename van de bestandsgrootte. </p>
+<p>Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen en coordinaten, juist in een toename van de bestandsgrootte. </p>
 <table>
 <thead>
 <tr>
@@ -2095,11 +2095,11 @@ NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DB
 </tbody></table>
 <p>Een voorbeeld tool om van ifc naar geojson te converteren is <a href="https://citygeometrix.com/ifc2gis/">ifc2gis converter</a></p>
 </section><section id="citygml-en-cityjson"><div class="header-wrapper"><h4 id="x3-2-2-citygml-en-cityjson"><bdi class="secno">3.2.2 </bdi>CityGML en CityJSON</h4><a class="self-link" href="#citygml-en-cityjson" aria-label="Permalink for Section 3.2.2"></a></div>
-<p>Het is ook mogelijk om een 1-op-1 vertaling naar de CityGML (JSON encoding) te maken. Het datamodel van CityGML geeft de optie om IFC types te vertalen naar CityGML types. Zo heeft CityGML bijvoorbeeld de types "Building", "BuildingPart" en "Buildingroom" voor een gebouw-model of "Bridge", "BridgePart" en "BridgeFurniture" voor een brug-model. Gebruik van deze types bij de 1:1 mapping geeft meer betekenis aan de dataset dan de directe GeoJSON vertaling. De IFC-attributen kunnen direct worden vertaald naar de CityGML "attributes".</p>
+<p>Het is ook mogelijk om een IFC 1-op-1 vertaling naar de CityGML (JSON encoding) te maken. Het datamodel van CityGML geeft de optie om IFC types te vertalen naar CityGML types. Zo heeft CityGML bijvoorbeeld de types "Building", "BuildingPart" en "Buildingroom" voor een gebouw-model of "Bridge", "BridgePart" en "BridgeFurniture" voor een brug-model. Gebruik van deze types bij de 1:1 mapping geeft meer betekenis aan de dataset dan de directe GeoJSON vertaling. De IFC-attributen kunnen direct worden vertaald naar de CityGML "attributes".</p>
 </section><section id="complicaties"><div class="header-wrapper"><h4 id="x3-2-3-complicaties"><bdi class="secno">3.2.3 </bdi>Complicaties</h4><a class="self-link" href="#complicaties" aria-label="Permalink for Section 3.2.3"></a></div>
-<p>Zoals vermeld kunnen veel viewers en analyse software de 1:1 vertaalde GeoJSON, CityJSON of CityGML bestanden openen. Ondanks dat in CityJSON/CityGML het mogelijk is om extra betekenis van het model aan te duiden geldt voor al deze modellen dat analyses maar beperkt kunnen worden toegepast. Analysesoftware verwacht vaak een specifiek datamodel. Doordat het vertaalde model hier meestal niet aan voldoet, kan dit resulteren in trage, onbetrouwbare of niet functionele analyses.</p>
-<p>Bijvoorbeeld: Een zonlichtsimulatie test alle vlakken die mogelijk zonlicht ontvangen. Bij een shell extractie zal deze analyse snel gedaan kunnen worden, zie <a href="#shell-extractie">shell extractie</a>, omdat de buitenkant van een bouwwerk bekend is. Bij een directe 1 op 1 vertaling is dat niet het geval en zal deze analyse op alle oppervlaktes van het model gedaan worden. Dit resulteert een traag proces dat mogelijk niet succesvol is.   </p>
-<p>Een ander probleem is dat door het expliciet maken van de impliciete IFC geometrie, de 1:1 mappings bestanden erg zwaar kunnen zijn. Een stedelijk model gevuld met deze soort modellen zal veel problemen kunnen geven. IFC modellen hebben soms een kleinere bestandsgrootte en goed geoptimaliseerde IFC of IFCZIP modellen kunnen zelfs enkele malen kleiner zijn.</p>
+<p>Zoals vermeld kunnen veel viewers en analyse software de 1:1 vertaalde GeoJSON, CityJSON of CityGML bestanden openen. Ondanks dat in CityJSON/CityGML het mogelijk is om extra betekenis van het model aan te duiden, geldt voor al deze 1-op-1 vertaalde modellen dat analyses maar beperkt kunnen worden toegepast. Analysesoftware verwacht vaak een specifiek geo-gebaseerd datamodel. Doordat het vertaalde 1-op-1-model hier niet aan voldoet, kan dit resulteren in trage, onbetrouwbare of niet-functionele analyses.</p>
+<p>Bijvoorbeeld: Een zonlichtsimulatie test alle vlakken die mogelijk zonlicht ontvangen. Bij een shell extractie zal deze analyse snel gedaan kunnen worden, zie <a href="#shell-extractie">shell extractie</a>, omdat met deze abstractie de buitenkant van een bouwwerk bekend is. Bij een directe 1-op-1-vertaling is dat niet het geval en zal deze analyse op alle oppervlaktes van het model gedaan moeten worden. Dit resulteert in een traag proces dat mogelijk niet succesvol is.   </p>
+<p>Een ander probleem is dat door het expliciet maken van de impliciete IFC geometrie, de 1-op-1 mappings bestanden erg zwaar kunnen zijn. Een stedelijk model gevuld met dit soort modellen zal veel problemen kunnen geven. De oorspronkelijke IFC-modellen hebben daarom soms een kleinere bestandsgrootte. Goed geoptimaliseerde IFC- of IFCZIP-modellen kunnen zelfs enkele malen kleiner zijn.</p>
 <table>
 <thead>
 <tr>
