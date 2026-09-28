@@ -86,8 +86,8 @@ Resulteert na vertaling naar GeoJSON in:
     ]
 }
 ```
-Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen, juist in een toename van de bestandsgrootte. 
-
+Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen en coordinaten, juist in een toename van de bestandsgrootte. 
+ 
 | model | Bestandsgrootte IFC (KB) | Bestandsgrootte GeoJSON 1:1 mapping (KB)*|  
 |-|-|-|
 | A20 Corridor    | 7.787     | 2.094  |   
@@ -101,15 +101,15 @@ Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar 
 Een voorbeeld tool om van ifc naar geojson te converteren is [ifc2gis converter](https://citygeometrix.com/ifc2gis/)
 
 ## CityGML en CityJSON
-Het is ook mogelijk om een 1-op-1 vertaling naar de CityGML (JSON encoding) te maken. Het datamodel van CityGML geeft de optie om IFC types te vertalen naar CityGML types. Zo heeft CityGML bijvoorbeeld de types "Building", "BuildingPart" en "Buildingroom" voor een gebouw-model of "Bridge", "BridgePart" en "BridgeFurniture" voor een brug-model. Gebruik van deze types bij de 1:1 mapping geeft meer betekenis aan de dataset dan de directe GeoJSON vertaling. De IFC-attributen kunnen direct worden vertaald naar de CityGML "attributes".
+Het is ook mogelijk om een IFC 1-op-1 vertaling naar de CityGML (JSON encoding) te maken. Het datamodel van CityGML geeft de optie om IFC types te vertalen naar CityGML types. Zo heeft CityGML bijvoorbeeld de types "Building", "BuildingPart" en "Buildingroom" voor een gebouw-model of "Bridge", "BridgePart" en "BridgeFurniture" voor een brug-model. Gebruik van deze types bij de 1:1 mapping geeft meer betekenis aan de dataset dan de directe GeoJSON vertaling. De IFC-attributen kunnen direct worden vertaald naar de CityGML "attributes".
 
 ## Complicaties
 
-Zoals vermeld kunnen veel viewers en analyse software de 1:1 vertaalde GeoJSON, CityJSON of CityGML bestanden openen. Ondanks dat in CityJSON/CityGML het mogelijk is om extra betekenis van het model aan te duiden geldt voor al deze modellen dat analyses maar beperkt kunnen worden toegepast. Analysesoftware verwacht vaak een specifiek datamodel. Doordat het vertaalde model hier meestal niet aan voldoet, kan dit resulteren in trage, onbetrouwbare of niet functionele analyses.
+Zoals vermeld kunnen veel viewers en analyse software de 1:1 vertaalde GeoJSON, CityJSON of CityGML bestanden openen. Ondanks dat in CityJSON/CityGML het mogelijk is om extra betekenis van het model aan te duiden, geldt voor al deze 1-op-1 vertaalde modellen dat analyses maar beperkt kunnen worden toegepast. Analysesoftware verwacht vaak een specifiek geo-gebaseerd datamodel. Doordat het vertaalde 1-op-1-model hier niet aan voldoet, kan dit resulteren in trage, onbetrouwbare of niet-functionele analyses.
 
-Bijvoorbeeld: Een zonlichtsimulatie test alle vlakken die mogelijk zonlicht ontvangen. Bij een shell extractie zal deze analyse snel gedaan kunnen worden, zie [shell extractie](#shell-extractie), omdat de buitenkant van een bouwwerk bekend is. Bij een directe 1 op 1 vertaling is dat niet het geval en zal deze analyse op alle oppervlaktes van het model gedaan worden. Dit resulteert een traag proces dat mogelijk niet succesvol is.   
+Bijvoorbeeld: Een zonlichtsimulatie test alle vlakken die mogelijk zonlicht ontvangen. Bij een shell extractie zal deze analyse snel gedaan kunnen worden, zie [shell extractie](#shell-extractie), omdat met deze abstractie de buitenkant van een bouwwerk bekend is. Bij een directe 1-op-1-vertaling is dat niet het geval en zal deze analyse op alle oppervlaktes van het model gedaan moeten worden. Dit resulteert in een traag proces dat mogelijk niet succesvol is.   
 
-Een ander probleem is dat door het expliciet maken van de impliciete IFC geometrie, de 1:1 mappings bestanden erg zwaar kunnen zijn. Een stedelijk model gevuld met deze soort modellen zal veel problemen kunnen geven. IFC modellen hebben soms een kleinere bestandsgrootte en goed geoptimaliseerde IFC of IFCZIP modellen kunnen zelfs enkele malen kleiner zijn.
+Een ander probleem is dat door het expliciet maken van de impliciete IFC geometrie, de 1-op-1 mappings bestanden erg zwaar kunnen zijn. Een stedelijk model gevuld met dit soort modellen zal veel problemen kunnen geven. De oorspronkelijke IFC-modellen hebben daarom soms een kleinere bestandsgrootte. Goed geoptimaliseerde IFC- of IFCZIP-modellen kunnen zelfs enkele malen kleiner zijn.
 
 | Model | Bestandsgrootte IFC (KB) | Bestandsgrootte CityJSON 1:1 mapping (KB) | Bestandsgrootte gefilterde CityJSON 1:1 mapping (KB) | Bestandsgrootte CityJSON LoD3.2 shell extractie (KB) |
 | - | - | - | - | - |
