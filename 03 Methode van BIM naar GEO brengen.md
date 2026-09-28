@@ -134,7 +134,7 @@ Ook is het mogelijk om specifieke entiteiten om te zetten. Zo kan men kiezen om 
 
 # Shell extractie
 
-Een bestand dat volledig een GIS data model volgt, kan alleen worden gecreëerd door een vorm van shell extractie. Bij shell extractie wordt een schil model gemaakt van een BIM model. De shell extractie draagt bij aan een betere interoperabiliteit, hoewel hierbij een deel van de oorspronkelijke data verloren gaat. Dit geldt zowel voor de geometrie als de attributen. Volumetrische externe objecten zoals wanden (buiten muren) en daken worden oppervlaktes die deel zijn van een volumetrische schil. Interne elementen kunnen volledig vervallen. Dit proces is dus ook niet omkeerbaar.
+Een bestand dat volledig een GIS data model volgt, kan alleen worden gecreëerd door een vorm van shell extractie toe te passen. Bij shell extractie wordt een schil model gegenereerd van een BIM model. Dit is dus een ander principe dan het hierboven genoemde 'filteren' op basis van een bepaald attribuut of eigenschap. De shell extractie draagt bij aan een betere interoperabiliteit, hoewel hierbij een deel van de oorspronkelijke data verloren gaat. Dit geldt zowel voor de geometrie als de attributen. Volumetrische externe objecten zoals wanden (buiten muren) en daken worden oppervlaktes die deel zijn van een volumetrische schil. Interne elementen kunnen volledig vervallen. Dit proces is dus ook niet omkeerbaar.
 
 ![Wireframe representatie van een BIM en GIS model.](media/2_achtergrond/Verschil_IFC_GIS.JPG "Een wireframe representatie van een BIM model (links) en een exterieur GIS model (rechts).")
 
