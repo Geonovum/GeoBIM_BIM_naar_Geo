@@ -1,33 +1,33 @@
 # Entiteit en Attribuut BIM naar GEO
 
-Voor het transformeren van BIM- naar GEO-informatie is het mappen van entiteiten en attributen van belang. Waar geometrie vooral de vorm en locatie van een ding vastlegt, beschrijft de entiteit wat het ding is en bevatten attributen gegevens over eigenschappen zoals materiaal, functie, voorkomen, afmeting of classificatie. Bij de transformatie van BIM naar Geo moeten naast geometrie ook deze entiteiten en attributen correct worden vertaald tussen standaarden. Omdat BIM- en GEO-standaarden verschillen in datastructuur, niveaus van detail en semantische definitie is dit een uitdaging. 
+Voor het transformeren van BIM- naar GEO-informatie is het mappen van entiteiten en attributen van belang. Waar geometrie vooral de vorm en locatie van een ding vastlegt, beschrijft de entiteit wat het ding is en bevatten attributen gegevens over eigenschappen zoals materiaal, functie, voorkomen, afmeting of classificatie. Bij de transformatie van BIM naar Geo moeten naast geometrie ook deze entiteiten en attributen correct worden vertaald tussen standaarden. Omdat BIM- en GEO-standaarden verschillen in datastructuur, niveaus van detail en semantische definitie, is dit een uitdaging. 
 
 ## Entiteit mapping 
-Er zijn verschillende entiteit-mappingen ontwikkeld ter ontdersteuning van de conversie tussen BIM en Geo. Een vroeg voorbeeld is de Master Thesis [Automatic generation of CityGML LoD3 building models from IFC models](https://repository.tudelft.nl/record/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d) van Sjors Donkers (TU Delft, 2013). Daarnaast heeft de Universiteit Singapore een [ifc2citygml](https://ifc2citygml.github.io/) mapping (2019) gemaakt. Ook de technische universiteit Munich voorziet ook in een [mapping en converter](https://github.com/tum-gis/ifc-to-citygml3) van ifc naar Citygml 3. 
-De Universiteit van Hong Kong publiceert ifc naar cityGML mappingen in een [bimgis](https://cejcheng.people.ust.hk/bimgis/) omgeving, en de technische universiteit Athene heeft onderstaande mapping uitgewerkt.
+Er zijn verschillende entiteit-mappingen van IFC naar CityGML/CityJSONontwikkeld ter ondersteuning van de conversie tussen BIM en Geo. Een vroeg voorbeeld is de Master Thesis [Automatic generation of CityGML LoD3 building models from IFC models](https://repository.tudelft.nl/record/uuid:31380219-f8e8-4c66-a2dc-548c3680bb8d) van Sjors Donkers (TU Delft, 2013). Daarnaast heeft de Universiteit Singapore een [ifc2citygml](https://ifc2citygml.github.io/) mapping (2019) gemaakt. Ook de technische universiteit Munich voorziet ook in een [mapping en converter](https://github.com/tum-gis/ifc-to-citygml3) van ifc naar Citygml 3. 
+De Universiteit van Hong Kong heeft ifc naar cityGML mappingen gepubliceerd in een [bimgis](https://cejcheng.people.ust.hk/bimgis/) omgeving, en de technische universiteit Athene heeft onderstaande mapping uitgewerkt.
 
 ![Mapping entiteiten IFC naar GEO](media/Attribuutmapping/Mapping_IFC-naar_Geo_Entiteiten.png)</br>[(2018) George Floros](https://www.researchgate.net/figure/Semantic-mapping-from-IFC-to-CityGML-LoD-4_fig3_327604195)
 
 De verschillende mappingen adresseren enkele of andere LOD's en/of attribuutmappingen en daarmee verschillende aspecten van een BIM naar GEO conversie. De verschillende benaderingen vullen elkaar aan en laten zien dat er geen algemeen geaccepteerde, uniforme mapping bestaat die alle aspecten van een BIM-naar-GEO-conversie afdekt.
 
-Het is niet mogelijk om elke entiteit in IFC naar het basis CityGML-model te mappen. Men zal een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om IFC-entiteiten een plek te bieden. Dit is beschreven bij Biljecki in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
+Het is niet mogelijk om elke entiteit in IFC naar het basis CityGML-model te mappen. Men zal altijd een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om alle IFC-entiteiten een plek te bieden. Dit is beschreven door Biljecki et al in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
 
 ![IFC naar CityGML met een ADE](media/Attribuutmapping/IFC_naar_CityGML_en_ADE.png)
 
-Een voorbeeld van een ADE voor IFC-entiteiten in CityGML is weergegeven in [bijlage 2](#entiteit-en-attribuutmapping-tussen-bim-en-geo)
+Een voorbeeld van een Application Domain Extension voor IFC-entiteiten in CityGML is weergegeven in [bijlage 2](#entiteit-en-attribuutmapping-tussen-bim-en-geo)
 
 Er zijn naast verschillende Level Of Details ook verschillende decompositie-niveaus die men vanuit één gedetailleerd BIM-model kan genereren. Zie [bijlage 1](#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau)
 
-Zoals in de [BIM basis ILS - hoofdstuk classificatie](https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/3-6-classificatiesystematiek/)aangegeven dient men naast het juist gebruik maken van entiteiten ook gebruik te maken van classificatie in BIM. Ook dit kan men gebruiken om te mappen. Er zijn verschillend BIM Classificatie standaarden als: NL-SFB, NLCS, ETIM, NEN2767-4, IMBOR of soms domein-specifieke standaarden als SATO van Rijkswaterstaat voor Tunnels. 
+Zoals in de [BIM basis ILS - hoofdstuk classificatie](https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/3-6-classificatiesystematiek/) aangegeven dient men naast het juiste gebruik van entiteiten ook gebruik te maken van de juiste classificatie in BIM. Ook classificaties kan men mappen. Er zijn verschillend BIM Classificatie standaarden als: NL-SFB, NLCS, ETIM, NEN2767-4, IMBOR of soms domein-specifieke standaarden als SATO van Rijkswaterstaat voor Tunnels. 
 
 <aside class="note" title="Entiteit-mapping op basis van Entiteit of op basis van Clasificatie">
-  <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitgebruik elkaar tegenspreken. </p>
+  <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitsgebruik elkaar tegenspreken. </p>
 </aside>
 
 ## Mapping van Attributen
-Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen tussen beide modellen.
+Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen van bron-naar-doel model.
 
-Hier zijn verschillende opties. 
+Voor de mapping zijn verschillende opties. 
 
 - 1-op-1 mapping 
 - Processing: 
@@ -38,7 +38,7 @@ Hier zijn verschillende opties.
 - Externe bronnen
 
 ### 1-op-1 mapping
-Sommige attributen kan men direct, 1-op-1, mappen. Zo komt het attribuut "name" van een "IfcBuilding" eovereen met het attribuut "naam" van een "IMBOR:Gebouw". Beide attributen hebben dezelfde betekenis en kunnen daarom zonder aanvullende transformatie aan elkaar worden gekoppeld. De 1-op-1 mappingen vormen vaak een zeer beperkt deel van een totale attribuuttransformatie. Door verschillen in doel, structuur en detailniveau tussen BIM- en GEO-informatiemodellen moeten veel attributen worden afgeleid, geaggregeerd of via aanvullende transformatieregels worden bepaald.
+Sommige attributen kan men direct, 1-op-1, mappen. Zo komt het attribuut "name" van een "IfcBuilding" overeen met het attribuut "naam" van een "IMBOR:Gebouw". Beide attributen hebben dezelfde betekenis en kunnen daarom zonder aanvullende transformatie aan elkaar worden gekoppeld. De 1-op-1 mappingen vormen vaak een zeer beperkt deel van een totale attribuuttransformatie. Door verschillen in doel, structuur en detailniveau tussen BIM- en GEO-informatiemodellen moeten veel attributen worden afgeleid, geaggregeerd of via aanvullende transformatieregels worden bepaald.
 
 ### Many-to-one mapping
 Een model kent bijvoorbeeld het attribuut: "Lengte", "Breedte", "hoogte". Een ontvangend model kent bijvoorbeeld "afmetingen" (l,b,h)	IMBOR.
