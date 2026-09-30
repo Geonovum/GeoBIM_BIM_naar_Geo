@@ -2243,7 +2243,7 @@ Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON geometr
 <p>Aanvullend kan nog voor de aanvang van het ray-casting proces een filtering van objecten worden gedaan met behulp van de voxels. Met voxels is het makkelijk om te bepalen of ze buiten of binnen het gebouw liggen, maar ook of de voxels snijden met de geometrie. De voxels die snijden met het gebouw en een buurman hebben die buiten het gebouw ligt kunnen worden gezien als een buitenschil voxels. De geometrie van het gebouw dat snijdt met deze buitenschil voxels kan worden geïsoleerd en worden gezien als "mogelijk" deel van de buitenschil. Door deze selectie kan ook al een deel van de interne objecten worden genegeerd. </p>
 <p>De kwaliteit van de resultaten van deze twee voxel ondersteunde processen is erg gevoelig voor het formaat van de voxels. Als de voxels te groot zijn, kan dit resulteren in objecten die incorrect worden verwaarloosd. Als de voxels te klein zijn, vertraagt het process hevig en is het mogelijk dat de buiten- en binnenkant van het gebouw niet correct worden gedetecteerd.</p>
 </section><section id="alpha-shapes"><div class="header-wrapper"><h5 id="x4-3-2-2-alpha-shapes"><bdi class="secno">4.3.2.2 </bdi>Alpha shapes</h5><a class="self-link" href="#alpha-shapes" aria-label="Permalink for Section 4.3.2.2"></a></div>
-<p>Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. Beknopt wordt dit gedaan door stapsgewijs een gesloten primitive vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitive vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.</p>
+<p>Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. In het kort: dit wordt gedaan door stapsgewijs een gesloten primitieve vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitieve vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.</p>
 <figure id="Alpha_Wrap_Principle" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_overview_CGAL.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
       <figcaption><a class="self-link" href="#Alpha_Wrap_Principle">Figuur <bdi class="figno">20</bdi></a> <span class="fig-title">
@@ -2254,7 +2254,7 @@ Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON geometr
         <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/">CGAL: 3D Alpha Wrapping</a> 
         </span>
       </span></figcaption>
-</figure><p> Afhankelijk van de gekozen primitive vorm en het formaat is de resulterende alpha shape anders.</p>
+</figure><p> Afhankelijk van de gekozen primitieve vorm en het formaat is de resulterende alpha shape anders.</p>
 <figure id="Alpha_Wrap_Bike" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_bike.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
       <figcaption><a class="self-link" href="#Alpha_Wrap_Bike">Figuur <bdi class="figno">21</bdi></a> <span class="fig-title">
@@ -2265,7 +2265,7 @@ Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON geometr
         <a href="https://cgal.github.io/cgal-web/2022/05/18/alpha_wrap/">CGAL: 3D Alpha Wrapping</a> 
         </span>
       </span></figcaption>
-</figure><p>Omdat het alpha shape process enkel werken met puntenwolken moet de BIM geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-casting processen.</p>
+</figure><p>Omdat het alpha shape proces enkel werkt met puntenwolken, moet de BIM geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-casting processen.</p>
 <p>De resulterende vorm van de alpha shape is altijd een gesloten object. Dit is een "correct" schilmodel, echter is het een benadering van de buitenschil. De alpha shape is bijna altijd anders dan de bron BIM geometrie. De alpha shape is een hoge resolutie mesh die vooral in concave hoeken zal afwijken van de buitenschil van het input BIM model.</p>
 <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="6"><span>Noot</span><span class="issue-label">: Plaats voor alpha shape in GIS</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Onderzoek naar de bruikbaarheid/gewenstheid van alpha shapes in GIS. Als alpha shapes bruikbaar worden bevonden moet de inpassing in een LoD framework worden onderzocht.  </p>
