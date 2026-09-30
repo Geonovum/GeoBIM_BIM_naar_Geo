@@ -59,13 +59,11 @@ Ray-casting op zichzelf resulteert niet in een gesloten buitenschil. De polygone
 De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en traag. Er zijn veel optimalisaties om dit proces te versnellen. Een correct gemodelleerd BIM model maakt gebruik van (de juiste) types/classes voor objecten. Op basis van deze types kan er al een filtering worden toegepast voorafgaand aan de ray-casting. Meubels (IfcFurniture) zullen bijvoorbeeld niet zo snel deel uitmaken van de buitenschil van een gebouw. Objecten met dit type hoeven dus niet behandeld te worden door het ray-casting proces, maar kunnen direct worden genegeerd. Dit versnelt het proces doordat vanaf deze objecten dus geen ray-casting hoeft te worden gedaan, maar ook omdat het voor deze objecten niet nodig is de rays van andere polygonen te snijden.
 
 <figure id="Ray_Casting_BIM" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="media/03_methodes/Ray-Casting-BIM-2.jpg" alt="Principe van Raycasting" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+      <img src="media/04_geometrie_BIM_naar_Geo/Ray-Casting-BIM.jpg" alt="Principe van Raycasting" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
       <figcaption>
         <a class="self-link" href="#Ray_Casting_BIM"></a>
         <span class="fig-title">
-        Principe van Raycasting BIM <br> 
-        bron:
-        <a href="https://www.sciencedirect.com/science/article/pii/S109396872600229X#f0035" >A two‐stage recursive ray tracing algorithm to automatically identify external building objects in building information models</a> 
+        Een voorbeeld van een ray-casting proces. De afbeelding laat 2 ray-cast processen zien in een 2D plattegrond van een kamer. Links is een punt zichtbaar omdat de lijnen die eruit worden getrokken niet snijden met geometrie. Rechts is het punt niet zichtbaar omdat alle lijnen die eruit worden getrokken wel snijden met geometrie.          
         </span>
       </figcaption>
 </figure>
