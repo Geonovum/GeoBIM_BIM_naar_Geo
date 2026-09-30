@@ -79,7 +79,7 @@ De kwaliteit van de resultaten van deze twee voxel ondersteunde processen is erg
 
 #### Alpha shapes
 
-Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. Beknopt wordt dit gedaan door stapsgewijs een gesloten primitive vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitive vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.
+Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. In het kort: dit wordt gedaan door stapsgewijs een gesloten primitieve vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitieve vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.
 
 <figure id="Alpha_Wrap_Principle" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_overview_CGAL.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
@@ -93,7 +93,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
       </figcaption>
 </figure>
 
- Afhankelijk van de gekozen primitive vorm en het formaat is de resulterende alpha shape anders.
+ Afhankelijk van de gekozen primitieve vorm en het formaat is de resulterende alpha shape anders.
 
 <figure id="Alpha_Wrap_Bike" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_bike.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
@@ -107,7 +107,7 @@ Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt di
       </figcaption>
 </figure>
 
-Omdat het alpha shape process enkel werken met puntenwolken moet de BIM geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-casting processen.
+Omdat het alpha shape proces enkel werkt met puntenwolken, moet de BIM geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-casting processen.
 
 De resulterende vorm van de alpha shape is altijd een gesloten object. Dit is een "correct" schilmodel, echter is het een benadering van de buitenschil. De alpha shape is bijna altijd anders dan de bron BIM geometrie. De alpha shape is een hoge resolutie mesh die vooral in concave hoeken zal afwijken van de buitenschil van het input BIM model.
 
