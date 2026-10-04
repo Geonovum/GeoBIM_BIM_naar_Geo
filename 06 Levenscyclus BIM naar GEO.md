@@ -62,7 +62,7 @@ Onderstaand voorbeeld toont een manier waarop meerdere versies van een bouwwerk 
       <figcaption>
         <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levencyclus"></a>
         <span class="fig-title">
-        Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is.</a>.
+        Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is.</a>
         </span>
       </figcaption>
 </figure>
@@ -75,7 +75,7 @@ Onderstaand voorbeeld toont de GEO- en BIM-versies van een bouwwerk. Een Bouwwer
       <figcaption>
         <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levencyclus-met-geo-en-bim"></a>
         <span class="fig-title">
-        Voorbeeld van een bouwwerk met GEO- en BIM-versies. Waarbij een gerealiseerde BIM-versie een GEO-versie genereert.</a>.
+        Voorbeeld van een bouwwerk met GEO- en BIM-versies. Waarbij een gerealiseerde BIM-versie een GEO-versie genereert.</a>
         </span>
       </figcaption>
 </figure>
