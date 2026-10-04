@@ -1,11 +1,11 @@
 # Eisen aan model en mapping
 
 ## Eisen aan het BIM-model
-Een succesvolle transformatie van een BIM model naar een GIS bestandsformaat begint bij het maken van de juiste afspraken vóór de start van het modelleerwerk. Zonder duidelijke kaders bestaat de kans dat een BIM-model te complex of kwalitatief ontoereikend is. Dit kan de mogelijkheden voor gebruik in een geografische informatiesystemen en conversie naar GEO reduceren.
+Een succesvolle transformatie van een BIM model naar een GIS bestandsformaat begint bij het maken van de juiste afspraken vóór de start van het modelleerwerk. Zonder duidelijke kaders bestaat de kans dat een BIM-model te complex of kwalitatief ontoereikend is. Dit kan de mogelijkheden voor gebruik in een geografische informatiesystemen en conversie naar GEO, in een later stadium, reduceren.
 
-Een BIM-model is vaak niet geschikt voor hergebruik in een geografisch informatiesysteem. Een model dat men maakt en gebruikt voor ontwerp, calculatie en/of uitvoering, kan tegelijkertijd onbruikbaar zijn voor conversie naar GEO omdat de informatie die nodig is voor de conversie niet zijn vastgelegd. Redenen hiervan zijn; de georeferentie ontbreekt, er is onduidelijkheid over de gebruikte eenheden (Units),  objecten (Entiteiten: IfcWall, IfcSpaces, IfcSensor) zijn gemodelleerd als generieke bouwdelen zonder typering (Attributen: ObjectType, Name), of de geometrie is visueel acceptabel maar niet gesloten (Geometrie). Zulke tekortkomingen zijn achteraf niet of alleen tegen hoge kosten te herstellen.
+Een BIM-model is vaak niet geschikt voor hergebruik in een geografisch informatiesysteem. Een model dat men maakt en gebruikt voor ontwerp, calculatie en/of uitvoering, kan tegelijkertijd onbruikbaar zijn voor conversie naar GEO omdat de informatie die nodig is voor de conversie niet is vastgelegd. Redenen hiervan zijn; de georeferentie ontbreekt, er is onduidelijkheid over de gebruikte eenheden (Units),  objecten (Entiteiten: IfcWall, IfcSpaces, IfcSensor) zijn gemodelleerd als generieke bouwdelen zonder typering (Attributen: ObjectType, Name), of de geometrie is visueel acceptabel maar niet gesloten (Geometrie). Zulke tekortkomingen zijn achteraf niet of alleen tegen hoge kosten te herstellen.
 
-Een succesvolle transformatie van BIM naar een GIS-formaat begint daarom vóór het modelleerwerk, met expliciete afspraken over wat er geleverd wordt, in welke vorm en met welke kwaliteit. Het maken van deze afspraken en zich hieraan houden in het modelleerwerk maakt automatische conversie betrouwbaar en herhaalbaar. Zonder kaders blijft elke conversie handwerk, en daarmee een eenmalige exercitie in plaats van een reproduceerbaar proces.
+Een succesvolle transformatie van BIM naar een GIS-formaat begint daarom vóór het modelleerwerk, met expliciete afspraken over hoe er wordt gemodelleerd en wat er wordt geleverd, in welke vorm en met welke kwaliteit. Het maken van deze afspraken en zich hieraan houden in het modelleerwerk maken automatische conversie betrouwbaar, robuust en herhaalbaar. Zonder kaders blijft elke conversie handwerk, en daarmee een eenmalige exercitie in plaats van een reproduceerbaar proces.
 
 Voor het vastleggen van die afspraken biedt de [ISO 19650](https://www.iso.org/sectors/building-construction/building-information-modelling)-reeks — de internationale norm voor informatiemanagement in de gebouwde omgeving — het procesframework: wie levert welke informatie, wanneer, in welke vorm en op basis waarvan wordt die informatie geaccepteerd.
 
@@ -35,7 +35,7 @@ De norm kent daarvoor een cascade van informatiebehoeften. Elke eis in een Infor
           </figcaption>
     </figure>
 
-Een ILS is in deze termen de Nederlandse invulling van een EIR. De herziening van ISO 19650 (DIS 2026) vervangt de term EIR door IPR en gaat van een 8- naar een 9-stapsproces. 
+Een ILS is in deze termen de Nederlandse invulling van een EIR (Exchange Information Requirements). De herziening van ISO 19650 (DIS 2026) vervangt de term EIR door IPR (Information Product Requirement) en gaat van een 8- naar een 9-stapsproces. 
 
 ### Generieke eisen aan het BIM-model voor conversie naar GEO
 
@@ -45,12 +45,12 @@ Onderstaande onderwerpen komen in vrijwel elke BIM-naar-GEO-toepassing terug. Ze
 
 Leg vast in welk schema geleverd wordt. IFC4 en IFC4X3_ADD2 (gepubliceerd als ISO 16739-1:2024) zijn de schema's waarop de huidige generatie IDS- en conversiesoftware is gebouwd; IFC2X3 wordt door veel gereedschap nog ondersteund, maar mist `IfcMapConversion` en `IfcProjectedCRS` en is daarmee ongeschikt voor een sluitende georeferentie. Waar bestaande software nog IFC2X3 oplevert, is dat een reden om de leveringsafspraak op de exportinstellingen te richten en niet op het beschikbare bestand.
 
-> **Eis** — De modellen worden geleverd als IFC-STEP bestanden volgens schema IFC4 of IFC4X3_ADD2. Het gebruikte schema en format wordt in de leveringsafspraak benoemd; het bestand is schemavalide.
+> **Eis** — De modellen worden geleverd als IFC-STEP bestanden volgens schema IFC4 of IFC4X3_ADD2. Het gebruikte schema en format worden in de leveringsafspraak benoemd; het bestand is schemavalide.
 
 
 #### 2. Bestandsnaamgeving en informatiecontainers
 
-Bestandsnaamconventies beschrijven afspraken voor het eenduidig identificeren en beheren van informatiebestanden. De bestandsnaam bevat alleen de metadata die nodig is voor beheer en uitwisseling. De aanbeveling is om in de Pset_ProjectInformation gegevens te zetten over Projectcode, discipline, status, versie — en is niet bedoeld om al deze inhoudelijke informatie in de bestandsnaam op te nemen. . Die informatie hoort in het model of de dataset zelf. ISO 19650-4 biedt hiervoor een uitgewerkte conventie.
+Bestandsnaamconventies beschrijven afspraken voor het eenduidig identificeren en beheren van informatiebestanden. De bestandsnaam bevat alleen de metadata die nodig zijn voor beheer en uitwisseling. De aanbeveling is om in de Pset_ProjectInformation gegevens te zetten over Projectcode, discipline, status, versie — en is niet bedoeld om al deze inhoudelijke informatie in de bestandsnaam op te nemen. Die informatie hoort in het model of de dataset zelf. ISO 19650-4 biedt hiervoor een uitgewerkte conventie.
 
 #### 3. Eenheden en maatvoering
 
@@ -86,7 +86,7 @@ De verwachting is dat elk land dit pad bewandelt: nationale ruimtelijke concepte
 
 - **Het is schemaconform.** Er wordt geen eigen property set en geen eigen entiteit geïntroduceerd. Generieke IFC-software leest het model zonder aanpassing; alleen de betekenis van de term vraagt om een externe bron.
 - **Het is toetsbaar.** `ObjectType` is een gewoon IFC-attribuut en dus met een IDS-attribuutfacet te selecteren én te verifiëren. Een eigen Pset zou dat ook kunnen, maar zou de eis buiten het schema plaatsen en de IDS moeilijker combineerbaar maken met andere bron-ILS'en.
-- **Het is uitwisselbaar.** Zolang de termenlijst als classificatie in de [bSDD](https://search.bsdd.buildingsmart.org/) is gepubliceerd, heeft elke term een URI met een definitie erachter. Daarmee is een nationale term internationaal interpreteerbaar zonder dat het schema hoeft te veranderen, en is de vertaalslag naar een GEO-objecttype een mapping tussen twee URI's in plaats van tussen twee tekstwaarden.
+- **Het is uitwisselbaar.** Zolang de termenlijst als classificatie in de [bSDD](https://search.bsdd.buildingsmart.org/) is gepubliceerd, heeft elke term een URI met daaraan gekoppelde definitie. Daarmee is een nationale term internationaal interpreteerbaar zonder dat het schema hoeft te veranderen, en is de vertaalslag naar een GEO-objecttype een mapping tussen twee URI's in plaats van tussen twee tekstwaarden.
 
 De prijs van het patroon is dat `ObjectType` een vrij tekstveld is: zonder afspraak levert het precies hetzelfde interpretatieprobleem op als een ontbrekende typering. De termenlijst moet daarom vast, gepubliceerd en versiebeheerd zijn, en de ILS moet de toegestane waarden opsommen — niet slechts eisen dat het veld gevuld is.
 
@@ -112,7 +112,7 @@ Voor conversie naar GEO is dat tweede het bruikbare deel. Een mapping van "Verbl
 Twee praktische aandachtspunten:
 
 - **Consistentie is per term te toetsen, niet generiek.** IDS kent geen variabelen en kan de waarde van het ene facet niet vergelijken met die van het andere. De eis "classificatie is gelijk aan `ObjectType`" is dus niet in één specificatie uit te drukken. Zij wordt afgedwongen door per begrip één specificatie te schrijven die op `ObjectType` selecteert en de bijbehorende classificatie verplicht stelt. Dat is precies de opbouw die de ILS voor Ruimten in de Omgevingswet al hanteert: één specificatie per begrip, met de bSDD-URI als `identifier`.
-- **Leg de schrijfwijze van het classificatiesysteem vast.** Het classificatiefacet in IDS vergelijkt met `IfcClassification.Name` in het IFC-bestand. Systeemnaam, code en URI-fragment kunnen van elkaar verschillen — een dictionary die *Omgevingswet Ruimten* heet, kan in de URI `Omgevingswet-Ruimten` dragen. De ILS moet daarom expliciet voorschrijven welke exacte tekenreeks in `IfcClassification.Name` hoort te staan, en welke waarden voor `Source`, `Edition` en `Location` gelden. Zonder die afspraak matcht het facet niet en faalt een verder correct model.
+- **Leg de schrijfwijze van het classificatiesysteem vast.** Het classificatiefacet in IDS wordt vergeleken met `IfcClassification.Name` in het IFC-bestand. Systeemnaam, code en URI-fragment kunnen van elkaar verschillen — een dictionary die *Omgevingswet Ruimten* heet, kan in de URI `Omgevingswet-Ruimten` dragen. De ILS moet daarom expliciet voorschrijven welke exacte tekenreeks in `IfcClassification.Name` hoort te staan, en welke waarden voor `Source`, `Edition` en `Location` gelden. Zonder die afspraak matcht het facet niet en faalt een verder correct model.
 
 > **Eis** — Objecten met een nationale typering volgens het `USERDEFINED`-patroon dragen daarnaast een `IfcClassificationReference` met dezelfde term, uit de bSDD-publicatie waarin die termenlijst is opgenomen. De ILS legt de exacte schrijfwijze van de systeemnaam, de editie en de `Location`-URI vast, en dwingt de koppeling tussen term en classificatie per begrip af.
 
@@ -163,7 +163,7 @@ Aanvullende metadata in DCAT- of GeoDCAT-vorm bevordert publicatie, catalogiseri
 
 ### Wat betekent dit praktisch voor GeoBIM-gebruik?
 
-Door deze afspraken wordt een BIM-model geschikt voor koppeling en hergebruik binnen een GEO-omgeving. Objecten kunnen automatisch worden herkend en vertaald naar geo-objecten doordat geometrie, semantiek, classificatie en metadata eenduidig zijn vastgelegd. De noodzaak voor handmatige bewerking neemt af en BIM-informatie wordt betrouwbaarder bruikbaar voor beheer, analyse en besluitvorming.
+Door deze afspraken wordt een BIM-model geschikt voor koppeling en hergebruik binnen een GEO-omgeving. Objecten kunnen automatisch worden herkend en vertaald naar geo-objecten doordat geometrie, semantiek, classificatie en metadata eenduidig en zo specifiek mogelijk zijn vastgelegd. De noodzaak voor handmatige bewerking neemt af en BIM-informatie wordt betrouwbaarder bruikbaar voor beheer, analyse en besluitvorming.
 
 Concreet betekent dit:
 
@@ -210,7 +210,7 @@ Gestandaardiseerd BIM is een voorwaarde voor BIM-naar-GEO-conversie, maar het is
 
 Een ILS legt vast welke informatie, wanneer en door welke partij geproduceerd moet worden.
 
-In Nederland wordt "ILS" gebruikt als overkoepelende term. Daardoor bevat een ILS in de praktijk vaak elementen van wat volgens de [buildingSMART-terminologie](https://user.buildingsmart.org/knowledge-base/terminology/) een IDM (Information Delivery Manual), een IDS (Information Delivery Specification) of een EIR (Exchange Information Requirements) heet. In de buildingSMART-systematiek omvat een IDM zowel een EIR als een IDS. Dat verschil is meer dan terminologisch: een IDM beschrijft het *proces* en de rollen, een IDS beschrijft de *toetsbare* eis op een informatiecontainer. Wie beide in één document vermengt, krijgt eisen die niet te automatiseren zijn.
+In Nederland wordt "ILS" gebruikt als overkoepelende term. Daardoor bevat een ILS in de praktijk vaak elementen van wat volgens de [buildingSMART-terminologie](https://user.buildingsmart.org/knowledge-base/terminology/) een IDM (Information Delivery Manual), een IDS (Information Delivery Specification) of een EIR (Exchange Information Requirements) heet. In de buildingSMART-systematiek omvat een IDM zowel een EIR als een IDS. Dat verschil is meer dan terminologisch: een IDM beschrijft het *proces* en de rollen, een IDS beschrijft de *toetsbare* eis op een informatiecontainer. Als beide in één document worden vermengd, ontstaan eisen die niet te automatiseren zijn.
 
 Een ILS conform het begrip IDS kan in mens- en/of computerinterpreteerbare vorm worden opgesteld. Voor het laatste zijn twee gangbare routes:
 
@@ -276,7 +276,7 @@ Voor BIM-naar-GEO-conversie blijft een controle in drie trappen de aangewezen we
 2. **Semantische validatie (IDS/SHACL)** — zijn de vereiste objecten, typeringen, classificaties en eigenschappen aanwezig en correct gevuld? **Inclusief de aanwezigheid en vorm van de georeferentie.**
 3. **Geometrisch-topologische validatie** — zijn volumes gesloten en niet-zelfdoorsnijdend, zijn er geen doublures of ongewenste doorsnijdingen, telt de opbouw van grof naar fijn op, en kloppen de georeferentiewaarden ten opzichte van de werkelijke geometrie?
 
-Ten opzichte van de gangbare voorstelling verschuift georeferentie hiermee gedeeltelijk van trap 1 naar trap 2. Dat is winst: wat in de ILS staat, kan de indiener zelf vooraf controleren met dezelfde tooling waarmee het bevoegd gezag toetst. Wat in trap 1 en 3 overblijft, vraagt nog steeds om afspraken in de tekstuele ILS en om aanvullende, geometrische controlesoftware. Een ILS voor BIM naar GEO kan dus nog altijd niet uitsluitend uit een IDS-bestand bestaan — maar het IDS-deel is groter dan vaak wordt gedacht.
+Ten opzichte van de gangbare voorstelling verschuift de georeferentie hiermee gedeeltelijk van trap 1 naar trap 2. Dat is winst: wat in de ILS staat, kan de indiener zelf vooraf controleren met dezelfde tooling waarmee het bevoegd gezag toetst. Wat in trap 1 en 3 overblijft, vraagt nog steeds om afspraken in de tekstuele ILS en om aanvullende, geometrische controlesoftware. Een ILS voor BIM naar GEO kan dus nog altijd niet uitsluitend uit een IDS-bestand bestaan — maar het IDS-deel is groter dan vaak wordt gedacht.
 
 ## Werken met meerdere IDS'en
 
@@ -300,13 +300,13 @@ Een IDS-bestand is een geordende lijst van onderling onafhankelijke specificatie
 
 Daaruit volgt dat samenstellen eenvoudig is: **de samengestelde IDS bevat de specificatie-elementen van alle bron-ILS'en, ongewijzigd, in één `ids:specifications`-blok.** Het resultaat is zonder verdere bewerking geldig volgens het IDS 1.0-schema, en een validator behandelt de samengevoegde specificaties precies zoals hij de losse bestanden achter elkaar zou behandelen.
 
-De IDS-standaard voorziet deze werkwijze ook expliciet. Het schema merkt bij het `identifier`-attribuut van een specificatie op dat globale uniciteit niet kan worden afgedwongen *"because of the possibility to combine different 'specification' elements from several ids files"*. Samenstellen is dus voorzien — maar de standaard legt niet vast wat er semantisch gebeurt en welke regels daarbij gelden. Dat is precies het gat dat deze praktijkrichtlijn invult.
+De IDS-standaard voorziet in deze werkwijze ook expliciet. Het schema merkt bij het `identifier`-attribuut van een specificatie op dat globale uniciteit niet kan worden afgedwongen *"because of the possibility to combine different 'specification' elements from several ids files"*. Samenstellen is dus voorzien — maar de standaard legt niet vast wat er semantisch gebeurt en welke regels daarbij gelden. Dat is precies het gat dat deze praktijkrichtlijn invult.
 
 De betekenis van samenstellen is **additief**. Een model voldoet aan de samengestelde IDS dan en slechts dan als het aan elke afzonderlijke specificatie voldoet. De volgorde van de specificaties doet er niet toe, en een bron-ILS toevoegen kan het geheel alleen strenger maken, nooit soepeler.
 
 ### Wanneer spreken twee specificaties elkaar tegen?
 
-Aanscherping is geen tegenspraak. Als de ene bron-ILS eist dat een eigenschap aanwezig is en een andere eist dat diezelfde eigenschap een bepaalde waarde heeft, dan geldt in de samenstelling gewoon de strengste eis. Hetzelfde geldt voor dubbel geformuleerde eisen: dat is redundantie, hinderlijk voor het onderhoud maar niet fout.
+Aanscherping is geen tegenspraak. Als de ene bron-ILS eist dat een eigenschap aanwezig is en een andere eist dat diezelfde eigenschap een bepaalde waarde heeft, dan geldt in de samenstelling de strengste eis. Hetzelfde geldt voor dubbel geformuleerde eisen: dat is redundantie, hinderlijk voor het onderhoud maar niet fout.
 
 Van een echte tegenspraak is sprake wanneer twee specificaties **overlappende applicability** hebben en hun eisen **door geen enkel object tegelijk vervuld kunnen worden**. Drie herkenbare vormen:
 
