@@ -10,7 +10,7 @@ De Universiteit van Hong Kong heeft ifc naar cityGML mappingen gepubliceerd in e
 
 De verschillende mappingen adresseren enkele of andere LOD's en/of attribuutmappingen en daarmee verschillende aspecten van een BIM naar GEO conversie. De verschillende benaderingen vullen elkaar aan en laten zien dat er geen algemeen geaccepteerde, uniforme mapping bestaat die alle aspecten van een BIM-naar-GEO-conversie afdekt.
 
-Het is niet mogelijk om elke entiteit in IFC naar het basis CityGML-model te mappen. Men zal altijd een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om alle IFC-entiteiten een plek te bieden. Dit is beschreven door Biljecki et al in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
+Het is niet mogelijk om elke entiteit in IFC naar een entiteit in het basis CityGML-model te mappen. Men zal altijd een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om alle IFC-entiteiten een plek te bieden. Dit is beschreven door Biljecki et al in [Extending CityGML for IFC-sourced 3D city models](https://doi.org/10.1016/j.autcon.2020.103440)
 
 ![IFC naar CityGML met een ADE](media/Attribuutmapping/IFC_naar_CityGML_en_ADE.png)
 
@@ -21,11 +21,11 @@ Er zijn naast verschillende Level Of Details ook verschillende decompositie-nive
 Zoals in de [BIM basis ILS - hoofdstuk classificatie](https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/3-6-classificatiesystematiek/) aangegeven dient men naast het juiste gebruik van entiteiten ook gebruik te maken van de juiste classificatie in BIM. Ook classificaties kan men mappen. Er zijn verschillend BIM Classificatie standaarden als: NL-SFB, NLCS, ETIM, NEN2767-4, IMBOR of soms domein-specifieke standaarden als SATO van Rijkswaterstaat voor Tunnels. 
 
 <aside class="note" title="Entiteit-mapping op basis van Entiteit of op basis van Clasificatie">
-  <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitsgebruik elkaar tegenspreken. </p>
+  <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen tussen IFC en CityGML/CityJSON. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitsgebruik elkaar tegenspreken. </p>
 </aside>
 
 ## Mapping van Attributen
-Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen van bron-naar-doel model.
+Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen in de attributen van bron-naar-doel model.
 
 Voor de mapping zijn verschillende opties. 
 
@@ -42,7 +42,7 @@ Sommige attributen kan men direct, 1-op-1, mappen. Zo komt het attribuut "name" 
 
 ### Many-to-one mapping
 Een model kent bijvoorbeeld het attribuut: "Lengte", "Breedte", "hoogte". Een ontvangend model kent bijvoorbeeld "afmetingen" (l,b,h)	IMBOR.
-Bijvoorbeeld "straat", "huisnummer", "postcode", Bij een ander model een attribuut "adres". 
+Bijvoorbeeld "straat", "huisnummer", "postcode". Bij een ander model vormen deze gezamenlijke attributen het attribuut "adres". 
 
 ### One-to-many mapping
 Objecttype = fietspad in BIM. In GEO is dit CityGML functie = fietspad en type verharding = asfalt. 
