@@ -41,22 +41,22 @@ Voor de mapping zijn verschillende opties.
 Sommige attributen kan men direct, 1-op-1, mappen. Zo komt het attribuut "name" van een "IfcBuilding" overeen met het attribuut "naam" van een "IMBOR:Gebouw". Beide attributen hebben dezelfde betekenis en kunnen daarom zonder aanvullende transformatie aan elkaar worden gekoppeld. De 1-op-1 mappingen vormen vaak een zeer beperkt deel van een totale attribuuttransformatie. Door verschillen in doel, structuur en detailniveau tussen BIM- en GEO-informatiemodellen moeten veel attributen worden afgeleid, geaggregeerd of via aanvullende transformatieregels worden bepaald.
 
 ### Many-to-one mapping
-Een model kent bijvoorbeeld het attribuut: "Lengte", "Breedte", "hoogte". Een ontvangend model kent bijvoorbeeld "afmetingen" (l,b,h)	IMBOR.
+Een bron model kent bijvoorbeeld het attribuut: "Lengte", "Breedte", "hoogte", waarbij het doel-model het attribuut "afmetingen" (l,b,h) kent (IMBOR).
 Bijvoorbeeld "straat", "huisnummer", "postcode". Bij een ander model vormen deze gezamenlijke attributen het attribuut "adres". 
 
 ### One-to-many mapping
-Objecttype = fietspad in BIM. In GEO is dit CityGML functie = fietspad en type verharding = asfalt. 
+Objecttype = fietspad in BIM. In GEO is dit CityGML met als functie attribuut = fietspad en type verharding attribuut = asfalt. 
 Name = "Bank type B12 groen" in IMBOR: objecttype: Bank, typeaanduiding, kleur, groen 
 NLCS-naam is ook een goede hiervoor. 
 
 ### Afgeleide of berekende attributen
-meerder buildingstoreys + geometrie wordt gebouwhoogte in BIM 
-De inhoud van de netto ruimten en de products wordt het Bruto Inhoud of er kan een BVO van berekend worden. 
+Meerdere buildingstoreys + geometrie wordt gebouwhoogte in BIM 
+De inhoud van de netto ruimten en de products wordt het Bruto Inhoud of er kan een Brutto Vloer Oppervlak (BVO) van berekend worden. 
 
 ### Transformaties tussen hiërarchische niveaus
-Zowel in GEO- als BIM-informatiemodellen komen verschillende decompositieniveaus voor. Attributen van objecten op een hoger decompositieniveau kunnen worden afgeleid of geaggregeerd van objecten op een lager decompositieniveau. Daarbij is vaak sprake van een specifieke relatie tussen een attribuut van een samengesteld object en een attribuut van één of meerdere onderliggende objecttypen waaruit dat object is opgebouwd.
+Zowel in GEO- als BIM-informatiemodellen komen verschillende decompositieniveaus voor. Attributen van objecten op een hoger decompositieniveau kunnen worden afgeleid of geaggregeerd uit objecten op een lager decompositieniveau. Daarbij is vaak sprake van een specifieke relatie tussen een attribuut van een samengesteld object en een attribuut van één of meerdere onderliggende objecttypen waaruit dat object is opgebouwd.
 
-Zo kan een objecttype "elementverharding" op een lager decompositieniveau bestaan uit een band, trottoirkolkdeksels en bestrating. Het attribuut "formaat" van een hoger decompositieniveau betreft het formaat van de stenen of tegels in het bestratingsvlak. Het betreft niet het formaat van een band of een trottoirkolk waaruit het object elementverharding ook bestaat. Een decompositieniveau lager kan het keiformaat van de bestrating afgeleid worden van de hele stenen waaruit het bestratingsvlak bestaat. 
+Zo kan een objecttype "elementverharding" op een lager decompositieniveau bestaan uit een band, trottoirkolkdeksels en bestrating. Het attribuut "formaat" van een hoger decompositieniveau betreft het formaat van de stenen of tegels in het bestratingsvlak. Het betreft niet het formaat van een band of een trottoirkolk waaruit het object elementverharding ook bestaat. Een decompositieniveau lager kan het keiformaat van de bestrating worden afgeleid uit de hele stenen waaruit het bestratingsvlak bestaat. 
 
 Expliciete afleidings- of aggregatieregels zijn nodig, waarin wordt vastgelegd van welk onderliggend objecttype en attribuut de waarde op een hoger decompositieniveau wordt afgeleid.
 
@@ -76,9 +76,9 @@ Een totale BIM naar GEO entiteit en attribuutmapping zal een combinatie van de h
     <figcaption><a class="self-link" href="#Routes_attribuut_mapping_1"></a><span class="fig-title">Routes van attribuut mapping</span></figcaption>
 </figure>
 
-In dit figuur betekent "0" de informatie die niet van BIM naar GEO hoeft te gaan. Het getal "1" staat voor CityGML en "2" voor een aanvulling op CityGML in de vorm van een ADE. Het getal "3" staat voor de externe bronnen die knnen ondersteunen in het genereren van CityGML. De letters "a" staan voor de directe 1 op 1 mappingen en "b" voor de procesmappingen. 
+In dit figuur betekent "0" de informatie die niet van BIM naar GEO hoeft te gaan. Het getal "1" staat voor aanwezig in CityGML en "2" voor een aanvulling op CityGML in de vorm van een ADE. Het getal "3" staat voor de externe bronnen die kunnen ondersteunen in het genereren van CityGML. De letters "a" staan voor de directe 1-op-1-mappingen en "b" voor de procesmappingen. 
 
-Onderstaand voorbeeld laat zien hoe al deze routes binnen één conversie van BIM naar GEO gebruikt worden. In onderstaand voorbeeld worden *meubels* buiten beschouwing gelaten voor conversie ("0"). Voor de entiteit *raam* bestaat een 1 op 1 mapping naar CityGML ("1a"). Het *aantal verdiepingen* zal berekend kunnen worden om in CityGML te vertalen ("1b"). Het materiaaltype van een object kan een 1 op 1 mapping naar een CityGML ADE zijn ("2a"), het aantal toegangspunten van een kamer een procesmapping naar een ADE ("2b"). Tenslotte is het aantal bewoners alleen vanuit externe bronnen ("3") toe te voegen.
+Onderstaand voorbeeld laat zien hoe al deze routes binnen één conversie van BIM naar GEO gebruikt worden. In onderstaand voorbeeld worden *meubels* buiten beschouwing gelaten voor de conversie ("0"). Voor de entiteit *raam* bestaat een 1-op-1-mapping naar CityGML ("1a"). Het *aantal verdiepingen* kan worden berekend en in CityGML worden vertaald ("1b"). Het materiaaltype van een object kan een 1-op-1-mapping naar een CityGML ADE zijn ("2a"); het aantal toegangspunten van een kamer kan een procesmapping naar een ADE zijn ("2b"). Tenslotte is het aantal bewoners alleen vanuit externe bronnen ("3") toe te voegen.
 
 <figure id="Routes_attribuut_mapping_2">
       <img src="media/Attribuutmapping/Attribuutmapping_Verschillende_Mapping_Routes_Voorbeeld.png" alt="Routes van attribuutmapping"/>
