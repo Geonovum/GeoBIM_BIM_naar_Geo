@@ -332,7 +332,7 @@ Uit het bovenstaande volgen zeven afspraken. Zij vullen aan wat de IDS-standaard
 
 ### Wat een samenstelstap moet controleren
 
-Omdat de standaard zelf niets controleert, hoort de controle in het samenstelproces te zitten. Een samenstelstap — handmatig of met gereedschap — signaleert ten minste:
+Omdat de standaard zelf niets controleert, hoort de controle in het samenstelproces te zitten. Een samenstelstap — handmatig of met een tool — signaleert ten minste:
 
 - specificaties met identieke of overlappende applicability;
 - `required` tegenover `prohibited` op hetzelfde facet binnen die overlap;
@@ -376,7 +376,7 @@ Onderstaande tabel maakt die eisen expliciet en geeft ze een specificatienummer,
 | Dakoppervlak | `IfcRoof` en onderliggende `IfcSlab` | `IfcSlab.PredefinedType` onderscheidt `ROOF` van `FLOOR`; het dak heeft daadwerkelijk geometrie | GEB-05 |
 | *alle producten* | `IfcMapConversion` of `IfcMapConversionScaled`, plus `IfcProjectedCRS` | georeferentie op level 50 aanwezig en juist | GEO-01, GEO-02 — aanwezigheid en vorm in IDS; juistheid als geometrische controle |
 
-De laatste regel is de belangrijkste. Zonder georeferentie zijn alle afgeleide vlakken geometrisch correct en ruimtelijk waardeloos. Het is tegelijk de regel die het scherpst laat zien waar de grens van IDS ligt: dát er een `IfcMapConversion` is en dát de zes transformatieattributen gevuld zijn, is met een IDS af te dwingen; of het model daarmee ook werkelijk op de goede plek en in de goede richting terechtkomt, blijkt pas uit de geometrie. Zie *Wat een IDS wél en niet kan toetsen* voor die scheidslijn, en de bijlage voor de uitgewerkte specificaties.
+De laatste regel is de belangrijkste. Zonder georeferentie zijn alle afgeleide vlakken geometrisch correct maar ruimtelijk waardeloos. Het is tegelijk de regel die het scherpst laat zien waar de grens van IDS ligt: dát er een `IfcMapConversion` is en dát de zes transformatieattributen gevuld zijn, is met een IDS af te dwingen; of het model daarmee ook werkelijk op de goede plek en in de goede richting terechtkomt, blijkt pas uit de geometrie. Zie *Wat een IDS wél en niet kan toetsen* voor die scheidslijn, en de bijlage voor de uitgewerkte specificaties.
 
 De uitgeschreven specificaties GEB-01 tot en met GEB-05 staan in de bijlage.
 
