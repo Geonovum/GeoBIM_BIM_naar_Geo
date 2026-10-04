@@ -1442,7 +1442,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Geonovum Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2025-03-28">30 september 2026</time>
+      <time class="dt-published" datetime="2025-03-28">04 oktober 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -2278,15 +2278,15 @@ Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON geometr
 De Universiteit van Hong Kong heeft ifc naar cityGML mappingen gepubliceerd in een <a href="https://cejcheng.people.ust.hk/bimgis/">bimgis</a> omgeving, en de technische universiteit Athene heeft onderstaande mapping uitgewerkt.</p>
 <p><img src="media/Attribuutmapping/Mapping_IFC-naar_Geo_Entiteiten.png" alt="Mapping entiteiten IFC naar GEO"><br><a href="https://www.researchgate.net/figure/Semantic-mapping-from-IFC-to-CityGML-LoD-4_fig3_327604195">(2018) George Floros</a></p>
 <p>De verschillende mappingen adresseren enkele of andere LOD's en/of attribuutmappingen en daarmee verschillende aspecten van een BIM naar GEO conversie. De verschillende benaderingen vullen elkaar aan en laten zien dat er geen algemeen geaccepteerde, uniforme mapping bestaat die alle aspecten van een BIM-naar-GEO-conversie afdekt.</p>
-<p>Het is niet mogelijk om elke entiteit in IFC naar het basis CityGML-model te mappen. Men zal altijd een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om alle IFC-entiteiten een plek te bieden. Dit is beschreven door Biljecki et al in <a href="https://doi.org/10.1016/j.autcon.2020.103440">Extending CityGML for IFC-sourced 3D city models</a></p>
+<p>Het is niet mogelijk om elke entiteit in IFC naar een entiteit in het basis CityGML-model te mappen. Men zal altijd een keuze moeten maken in welke entiteiten hierbij van belang zijn. Het is mogelijk om één uitbreiding of meerdere uitbreidingen op CityGML te maken om alle IFC-entiteiten een plek te bieden. Dit is beschreven door Biljecki et al in <a href="https://doi.org/10.1016/j.autcon.2020.103440">Extending CityGML for IFC-sourced 3D city models</a></p>
 <p><img src="media/Attribuutmapping/IFC_naar_CityGML_en_ADE.png" alt="IFC naar CityGML met een ADE"></p>
 <p>Een voorbeeld van een Application Domain Extension voor IFC-entiteiten in CityGML is weergegeven in <a href="#entiteit-en-attribuutmapping-tussen-bim-en-geo">bijlage 2</a></p>
 <p>Er zijn naast verschillende Level Of Details ook verschillende decompositie-niveaus die men vanuit één gedetailleerd BIM-model kan genereren. Zie <a href="#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau">bijlage 1</a></p>
 <p>Zoals in de <a href="https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/3-6-classificatiesystematiek/">BIM basis ILS - hoofdstuk classificatie</a> aangegeven dient men naast het juiste gebruik van entiteiten ook gebruik te maken van de juiste classificatie in BIM. Ook classificaties kan men mappen. Er zijn verschillend BIM Classificatie standaarden als: NL-SFB, NLCS, ETIM, NEN2767-4, IMBOR of soms domein-specifieke standaarden als SATO van Rijkswaterstaat voor Tunnels. </p>
 <div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>Noot</span><span class="issue-label">: Entiteit-mapping op basis van Entiteit of op basis van Clasificatie</span></div><aside class="">
-  <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitsgebruik elkaar tegenspreken. </p>
+  <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen tussen IFC en CityGML/CityJSON. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitsgebruik elkaar tegenspreken. </p>
 </aside></div></section><section id="mapping-van-attributen"><div class="header-wrapper"><h3 id="x5-2-mapping-van-attributen"><bdi class="secno">5.2 </bdi>Mapping van Attributen</h3><a class="self-link" href="#mapping-van-attributen" aria-label="Permalink for Section 5.2"></a></div>
-<p>Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen van bron-naar-doel model.</p>
+<p>Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen in de attributen van bron-naar-doel model.</p>
 <p>Voor de mapping zijn verschillende opties. </p>
 <ul>
 <li>1-op-1 mapping </li>
@@ -2303,7 +2303,7 @@ De Universiteit van Hong Kong heeft ifc naar cityGML mappingen gepubliceerd in e
 <p>Sommige attributen kan men direct, 1-op-1, mappen. Zo komt het attribuut "name" van een "IfcBuilding" overeen met het attribuut "naam" van een "IMBOR:Gebouw". Beide attributen hebben dezelfde betekenis en kunnen daarom zonder aanvullende transformatie aan elkaar worden gekoppeld. De 1-op-1 mappingen vormen vaak een zeer beperkt deel van een totale attribuuttransformatie. Door verschillen in doel, structuur en detailniveau tussen BIM- en GEO-informatiemodellen moeten veel attributen worden afgeleid, geaggregeerd of via aanvullende transformatieregels worden bepaald.</p>
 </section><section id="many-to-one-mapping"><div class="header-wrapper"><h4 id="x5-2-2-many-to-one-mapping"><bdi class="secno">5.2.2 </bdi>Many-to-one mapping</h4><a class="self-link" href="#many-to-one-mapping" aria-label="Permalink for Section 5.2.2"></a></div>
 <p>Een model kent bijvoorbeeld het attribuut: "Lengte", "Breedte", "hoogte". Een ontvangend model kent bijvoorbeeld "afmetingen" (l,b,h)	IMBOR.
-Bijvoorbeeld "straat", "huisnummer", "postcode", Bij een ander model een attribuut "adres". </p>
+Bijvoorbeeld "straat", "huisnummer", "postcode". Bij een ander model vormen deze gezamenlijke attributen het attribuut "adres". </p>
 </section><section id="one-to-many-mapping"><div class="header-wrapper"><h4 id="x5-2-3-one-to-many-mapping"><bdi class="secno">5.2.3 </bdi>One-to-many mapping</h4><a class="self-link" href="#one-to-many-mapping" aria-label="Permalink for Section 5.2.3"></a></div>
 <p>Objecttype = fietspad in BIM. In GEO is dit CityGML functie = fietspad en type verharding = asfalt. 
 Name = "Bank type B12 groen" in IMBOR: objecttype: Bank, typeaanduiding, kleur, groen 
