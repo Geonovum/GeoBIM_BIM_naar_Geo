@@ -222,7 +222,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
     <td> LoD0.0 </td>
-    <td> Voetafdruk, dakuitlijn of grootste geprojecteerde omtrek van gebouwen of onderdelen die groter zijn dan 6m. De representaties van gebouwen die aan elkaar grenzen mogen worden samengevoegd </td>
+    <td> Voetafdruk, dakuitlijn of geprojecteerde omtrek van gebouwen of onderdelen die groter zijn dan 6m. De representaties van gebouwen die aan elkaar grenzen mogen worden samengevoegd </td>
   </tr>
   <tr>
     <td> LoD0.1 </td>
@@ -339,7 +339,7 @@ In de CityGML3.0 standaard wordt de voetafdruk genoemd als [bronoppervlak voor d
 Daarnaast wordt de term "voetafdruk/footprint" ook niet altijd consistent gebruikt. Het wordt soms ook gebruikt voor een polygoon die een horizontale doorsnede op een bepaalde hoogte door het gehele bouwwerk representeert of voor een geometrie die de geprojecteerde gebouwomvang representeert met uitzondering van dakoverstek of luifels. Ook hier zou bij het gebruik van deze termen consistenter kunnen zoals [de eisen voor het BGT](https://geonovum.github.io/IMGeo-objectenhandboek/pand). Hierdoor wordt het duidelijk wat wordt bedoeld: de daklijn (roof edge), voetafdruk (footprint), een doorsnede op een bepaalde hoogte of een geprojecteerde omvang. 
 
 In Nederland wordt voor 3D gebouw reconstructie veelal gebruik gemaakt van de 2DBAG als extrusie bron voor LoD1.x en 2.x groepen, zoals bij het [3DBAG](https://www.3dbag.nl). De BAG-catalogus beschrijft de 2D BAG geometrie als volgt: “De geometrie betreft het loodrechte bovenaanzicht van het object met de ware vorm, afmeting en oriëntatie en positie ten opzichte van de aarde, inclusief alle zichtbare en onzichtbare delen boven en onder de grond, maar exclusief alle delen die kunnen bewegen ten opzichte van de aarde.” 
-Voor de BAG gelden enkele uitzonderingen. Dakoverstekken worden alleen meegenomen wanneer het gaat om bouwelementen die daadwerkelijk een afgesloten en bruikbare binnenruimte creëren. Bouwelementen zoals dakoverstekken en dakranden, goten en uitstekende dakranden, entree-overkappingen en vergelijkbare beschuttende constructies worden daarom niet opgenomen in de BAG-geometrie. 
+Voor de BAG gelden enkele uitzonderingen voor de elementen die hierbij worden meegenomen. Dakoverstekken worden alleen meegenomen wanneer het gaat om bouwelementen die daadwerkelijk een afgesloten en bruikbare binnenruimte creëren. Bouwelementen zoals dakoverstekken en dakranden, goten en uitstekende dakranden, entree-overkappingen en vergelijkbare beschuttende constructies worden daarom niet opgenomen in de BAG-geometrie. 
 De BGT bevat de zogenaamde voetafdruk- of maaiveldgeometrie, dat wil zeggen de begrenzing van een pand daar waar het de grond raakt. In veel gevallen valt de BGT-geometrie samen met de BAG-geometrie. Een uitzondering is bijvoorbeeld een gebouw op 'palen'. In de BGT wordt de voetafdruk van deze kolommen opgenomen als deze voldoen aan bepaalde voorwaarden. De eisen van BAG-geometrie in relatie tot de BAG-geometrie staan beschreven in het [IMGEO objecten handboel](https://geonovum.github.io/IMGeo-objectenhandboek/pand).
 Deze eisen voor de 2D-geometrie zijn belangrijk om te begrijpen wat de impact is op de extrusie als de BAG (of BGT) als extrusiebron wordt gebruikt.
 
@@ -350,7 +350,7 @@ Op het faculteitsterrein van de TU Delft staan twee gebouwen die de impact van d
       <figcaption>
         <a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"></a>
         <span class="fig-title">
-        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie, zoals gedaan wordt in de 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd. De BAG polygoon (de geprojecteerde buitenomtrek) omvat de overhang van dit gebouw, omdat deze overhang een bouwvolume betreft. Rechts is gebouw Echo. De luifels van dit gebouw zijn wel deel van de volledige dakomtrek maar niet van de 2DBAG polygoon (omdat de dakoverstekken geen bouwelementen bevatten die onderdeel zijn van een bouwvolume). De draaideuren van de entree die onder deze luifels staan zijn, volgens de BAG-eisen, wel onderdeel van de 2DBAG geometrie en daardoor ook de basis voor de extrusie in 3DBAG. Dit geeft mogelijk, incorrect, de indruk dat de voetprint of de BGT polygoon als bron is voor sommige extrusies. De inwin eisen van de 2D extrusiebron zijn daarom belangrijk om de verschillen in de 3D reconstructie te begrijpen.
+        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie, zoals gedaan wordt in de 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd. De BAG polygoon (de geprojecteerde buitenomtrek) omvat de overhang van dit gebouw, omdat deze overhang een bouwvolume betreft. Rechts is gebouw Echo. De luifels van dit gebouw zijn wel deel van de volledige dakomtrek maar niet van de 2DBAG polygoon (omdat de dakoverstekken geen bouwelementen bevatten die onderdeel zijn van een bouwvolume). De draaideuren van de entree die onder deze luifels staan zijn, volgens de BAG-eisen, wel onderdeel van de 2DBAG geometrie en daardoor ook de basis voor de extrusie in 3DBAG. Dit geeft mogelijk, incorrect, de indruk dat de voetprint of de BGT polygoon als bron is voor sommige extrusies. De specificaties van de 2D extrusiebron zijn daarom belangrijk om de verschillen in de 3D reconstructie te begrijpen.
         </span>
       </figcaption>
 </figure>
@@ -361,6 +361,8 @@ NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DB
 <aside class="note" title="Maak aanvullende afspraken rondom voetafdruk of dakomtrek">
   <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het gebruik van voetafdruk, dakomtrek of andere doorsnede voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusie bron gebruikt wordt. Maak duidelijk of de BAG polygoon (bovenaanzicht) of BGT polygoon (voetafdruk), of een andere geometrie als extrusie bron is gebruik.
 </aside>
+
+De [3DBAG beschrijving van de gebruikte extrusiebron](https://docs.3dbag.nl/en/overview/sources/) is in lijn met deze aanbeveling aangepast.
 
 <aside class="note" title="Vastgestelde transformatieprofielen voor BIM naar GEO per toepassing">
   <p><strong>AANBEVELING:</strong> Genereer transformatieprofielen, "Inwinregels BIM", voor elke officiële gestandaardiseerde keten waarin BIM als bron voor GEO-data wordt gebruikt. Dit profiel beschrijft de eisen en regels voor de vertaling van BIM naar GEO en omvat minimaal een eenduidige LOD-definitie, een ILS/informatie-eis, een object- en attribuutmapping, geometrische en semantische transformaties/generalisiatieregels en validatiecriteria. Het profiel vormt daarmee de gestandaardiseerde brug tussen BIM-data en de eisen van de betreffende GEO-inwinningstraat. </a> </p>
