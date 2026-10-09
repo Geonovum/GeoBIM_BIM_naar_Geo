@@ -320,7 +320,7 @@ Een formeel en vastgesteld standaard LoD framework voor BIM- en geo-modellen maa
   <p><strong>AANBEVELING:</strong> Brein het bestaande LoD-framework uit om Lods te standaardiseren op nationaal of internationaal niveau ten behoeve van BIM naar Geo conversie. </a> </p>
 </aside>
 
-**Voetafdruk of dakomtrek (of maximale geprojecteerde gebouwomtrek) als extrusie bron**
+**Voetafdruk of dakomtrek (of andere geprojecteerde gebouwomtrek) als extrusie bron**
 
 LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan het model dat is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en ook de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek òf een andere bron/vorm te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn. 
 
