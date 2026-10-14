@@ -312,7 +312,15 @@ Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naa
 
 In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen die rekening houden met BIM als databron. In de publicatie [Defining LoDs to support BIM-based 3D building abstractions in GIS](https://research.tudelft.nl/en/publications/defining-lods-to-support-bim-based-3d-building-abstractions-in-gi/) zijn aanvullingen beschreven op het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen. LoDe.1, een van de experimentele LoD op basis van dit onderzoek is ontwikkeld, wordt op dit moment toegepast voor visualisatie door de gemeente Eindhoven als alternatief voor 1:1 vertaling.
 
-<!-- TODO: contact met de gemeente eindhoven over publicatie afbeelding waarin LoDe.1 gebruikt wordt -->
+<figure id="LoDe1-gemeente-endhoven" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/2_achtergrond/LoDe1_Eindhoven.jpg" alt="3D stadsmodel van de gemeente eindhoven met een aantal LoDe.1 modellen omringt door LoD2.2" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
+      <figcaption>
+        <a class="self-link" href="#LoDe1-gemeente-endhoven"></a>
+        <span class="fig-title">
+        Voorbeeld van het 3D stadsmodel van de gemeente Eindhoven dat is verrijkt met LoDe.1 modellen via de IfcEnvelopeExtractor. Deze modellen worden omringt door LoD2.2 modellen. 
+        </span>
+      </figcaption>
+</figure>
 
 Een formeel en vastgesteld standaard LoD framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z GEO-model.
 
