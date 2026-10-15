@@ -353,7 +353,7 @@ De term "dakuitlijn" kan worden gebruikt voor een polygoon die de projectie van 
       <figcaption>
         <a class="self-link" href="#Verschil-tussen-roofedge-BAGvorm"></a>
         <span class="fig-title">
-        Het verschil tussen de polygoon gegenereerd op basis van BAG-richtlijnen en een daadwerkelijke dakuitlijn is goed zichtbaar bij een gebouw met balkons. Het gebouw (links) heeft een polygoon die gegenereerd is op basis van BAG richtlijnen (rechts in blauw) die kleiner is en een andere vorm heeft dan de dakuitlijn (rechts in rood). Dit BIM model is gebruikt voor [ILS voor ruimten in de omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) gemaakt door de gemeente Rotterdam en Kuiper compagnons. De dakuitlijn en polygoon op basis van BAG-richtlijnen zijn gegenereerd door de IfcEnvelopeExtractor met het BIM model als input. NB: de polygoon die gegenereerd is op basis van BAG richtlijnen valt niet samen met de werkelijke BAG polygoon. Dit moet nog nader worden onderzocht.
+        Het verschil tussen de BAG polygoon en een dakuitlijn is goed zichtbaar bij een gebouw met balkons. Het gebouw (links) heeft een BAG polygoon (rechts in grijs) die kleiner is en een andere vorm heeft dan de dakuitlijn (rechts in rood). Als de regels voor het opstellen van een BAG vorm die wij hebben gevonden worden gevolgd, zoals bij de BAG output van de IfcEnvelopeExtractor, ontstaat er echter een andere polygoon (rechts in blauw) dan de daadwerkelijke BAG vorm van de 2DBAG database (rechts in grijs). Dit voorbeeld BIM model is gebruikt voor [ILS voor ruimten in de omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) gemaakt door de gemeente Rotterdam en Kuiper compagnons.
         </span>
       </figcaption>
 </figure>
