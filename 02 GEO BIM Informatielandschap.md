@@ -325,7 +325,7 @@ In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen
 Een formeel en vastgesteld standaard LoD framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z GEO-model.
 
 <aside class="note" title="Gestandaardiseerd LoD Framework">
-  <p><strong>AANBEVELING:</strong> Breid het bestaande LoD-framework uit om Lods te standaardiseren op nationaal of internationaal niveau ten behoeve van BIM naar Geo conversie. </a> </p>
+  <p><strong>AANBEVELING:</strong> Breid het bestaande LoD-framework uit om LoDs te standaardiseren op nationaal of internationaal niveau ten behoeve van BIM naar Geo conversie. </a> </p>
 </aside>
 
 **Voetafdruk of dakomtrek (of andere geprojecteerde gebouwomtrek) als extrusie bron**
@@ -353,7 +353,7 @@ De term "dakuitlijn" kan worden gebruikt voor een polygoon die de projectie van 
       <figcaption>
         <a class="self-link" href="#Verschil-tussen-roofedge-BAGvorm"></a>
         <span class="fig-title">
-        Het verschil tussen de BAG polygoon en een dakuitlijn is goed zichtbaar bij een gebouw met balkons. Het gebouw (links) heeft een BAG polygoon (rechts in blauw) die kleiner is en een andere vorm heeft dan de dakuitlijn (rechts in rood). Dit BIM model is gebruikt voor [ILS voor ruimten in de omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) gemaakt door de gemeente Rotterdam en Kuiper compagnons. De dakuitlijn en BAG polygoon zijn gegenereerd door de IfcEnvelopeExtractor met het BIM model als input.
+        Het verschil tussen de polygoon gegenereerd op basis van BAG-richtlijnen en een daadwerkelijke dakuitlijn is goed zichtbaar bij een gebouw met balkons. Het gebouw (links) heeft een polygoon die gegenereerd is op basis van BAG richtlijnen (rechts in blauw) die kleiner is en een andere vorm heeft dan de dakuitlijn (rechts in rood). Dit BIM model is gebruikt voor [ILS voor ruimten in de omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) gemaakt door de gemeente Rotterdam en Kuiper compagnons. De dakuitlijn en polygoon op basis van BAG-richtlijnen zijn gegenereerd door de IfcEnvelopeExtractor met het BIM model als input. NB: de polygoon die gegenereerd is op basis van BAG richtlijnen valt niet samen met de werkelijke BAG polygoon. Dit moet nog nader worden onderzocht.
         </span>
       </figcaption>
 </figure>
