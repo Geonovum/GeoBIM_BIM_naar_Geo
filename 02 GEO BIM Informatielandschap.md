@@ -28,9 +28,9 @@ BIM en GIS modellen spelen ieder een unieke rol die onlosmakelijk met elkaar ver
 
 Er zijn een aantal redenen voor deze verschillen:
 
-* Een GIS model bevat informatie over grote clusters van gebouwen, mogelijk zelfs van complete steden. De informatie opslaan op een BIM schaal voor deze gebieden zal zeer zware modellen opleveren die lastig, zo niet onmogelijk, zijn om mee te werken.
-* GIS data/formats zijn ontwikkeld om te werken met andere bronnen dan BIM data. Waar in BIM vaak handmatig wordt gemodelleerd (al dan niet aangevuld door programmeren/ai) worden de meeste GIS modellen gebaseerd op metingen. Voor gebouwen zijn deze metingen vaak LiDAR scans. De data afkomstig van deze scans kunnen ruis en occlusion (gaten in de metingen) bevatten en hebben een beperkte resolutie. Met deze data is het niet mogelijk om snel op grote schaal zeer gedetailleerde modellen te creëren.
-* GIS modellen spelen, vaker, een publieke rol dan BIM data. GIS data is beschikbaar voor gebruikers om te downloaden en te verwerken. Als GIS data alle informatie over de opgeslagen gebouwen zou bevatten, zoals in BIM modellen, zou dit mogelijk tot data veiligheidsproblemen leiden. Aanvullend zal er dan ook zoveel data beschikbaar zijn, waardoor de gebruiker door het bomen het bos niet meer kunnen zien. Bovendien zit in BIM modellen data waarvoor het niet in het belang van de ontwerper is om deze data te delen. Op deze data kunnen auteursrechten rusten.
+* Een GIS model bevat informatie over grote clusters van gebouwen, mogelijk zelfs van complete steden of op landelijke schaal. De informatie opslaan op een BIM schaal voor deze gebieden zal zeer zware modellen opleveren die lastig, zo niet onmogelijk, zijn om mee te werken.
+* GIS data/formats zijn ontwikkeld om te werken met data die op basis van andere bronnen is ingewonnen dan BIM. Waar in BIM vaak handmatig wordt gemodelleerd (al dan niet aangevuld door programmeren/ai) worden de meeste GIS modellen gebaseerd op metingen. Voor gebouwen zijn deze metingen vaak LiDAR scans. De data afkomstig van deze scans kunnen ruis en occlusion (gaten in de metingen) bevatten en hebben een beperkte resolutie. Met deze data is het niet mogelijk om snel op grote schaal zeer gedetailleerde modellen te creëren.
+* GIS modellen spelen, vaker, een publieke rol dan BIM data. GIS data is beschikbaar voor gebruikers om te downloaden en te verwerken. Als GIS data alle informatie over de opgeslagen gebouwen zou bevatten, zoals in BIM modellen, zou dit mogelijk tot privacy- en data veiligheidsproblemen leiden. Aanvullend zal er dan ook zoveel data beschikbaar zijn, waardoor de gebruiker door het bomen het bos niet meer kunnen zien. Bovendien zit in BIM modellen data waarvoor het niet in het belang van de ontwerper is om deze data te delen. Op deze data kunnen auteursrechten rusten.
 
 Om enerzijds in een GIS-omgeving te kunnen worden toegepast en anderzijds in een BIM-omgeving, zijn GIS-data en BIM-data op een verschillende manier opgebouwd. Geometrisch gezien is een gebouw in een BIM model geconstrueerd uit verschillende losse objecten. Wanden, vloeren en deuren zijn allemaal volumetrische objecten die samen een bouwwerk vormen. In GIS modellen is deze omsluiting gerepresenteerd als een enkel object. Losse objecten, zoals losse wanden, vloeren en deuren, komen in GIS modellen relatief weinig voor. Een gebouw in GIS kan worden gezien als een gesloten schil die de grens tussen het gebouw en de lucht aanduidt.
 
@@ -218,7 +218,7 @@ In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd ee
 
 De GIS Level of Details worden gedefinieerd in de [CityGML3.0](https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail) standaard. De standaard definieert 4 hoofdniveaus, LOD0 tot LOD3. Hierbij krijgt de geometrie van een model bij hoger LOD niveau meer detail. De hoofdniveaus worden breed ondersteund in toepassingen.
 
-De documentatie van CityGML over LOD is algemeen. De volgende definitie kunnen worden gegeven ten aanzien van gebouwen:
+De documentatie van CityGML over LOD is algemeen. De volgende definities kunnen worden gegeven ten aanzien van gebouwen:
 
 <table>
   <caption> LoD van een gebouw zoals beschreven in de CityGML3.0 standaard </caption>
@@ -259,7 +259,7 @@ De in CityGML3.0 standaard beschreven LoDs kunnen worden gebruikt voor zowel ext
 
 In CityGML3.0 is de rol van LoD3 veranderd om de BIM achtige structuur te ondersteunen die voorheen onder LoD4 viel. Dit betekent dat LoD3 kan zijn opgebouwd als een schil model maar ook als een collectie van constructieve elementen. Ondanks het feit dat LoD4 officieel niet meer wordt ondersteund, komt het in de praktijk nog voor. In deze modellen is LoD3 opgebouwd als een schil model en LoD4 een als een collectie van constructieve elementen.
 
-In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden in de documentatie niet zo uitgebreid beschreven als gebouwen. In theorie kunnen de LoDs ook toegepast worden op deze bouwwerken omdat het LoD framework van CityGML open en flexibel is. De verschillend LoD abstracties van infrastructurele bouwwerken lijken minder bruikbaar omdat gebouwen en infrastructuur bouwwerken erg van vorm verschillen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor [vegetatie](https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af), [infrastructuur/transport](https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/) en [terrein](https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/). Deze worden ook gebruikt in de praktijk, ook al is dat minder dan de LoDs voor gebouwen.
+In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken zoals bruggen, tunnels en sluizen worden in de documentatie niet zo uitgebreid beschreven als gebouwen. In theorie kunnen de LoDs ook toegepast worden op deze bouwwerken omdat het LoD framework van CityGML open en flexibel is. De verschillend LoD abstracties van infrastructurele bouwwerken lijken minder bruikbaar omdat gebouwen en infrastructuur bouwwerken erg van vorm verschillen. 
 
 <figure id="Voorbeeld-van-de-4-LoDs-beschreven-door-de-CityGML3-0-standaard-toegepast-op-een-brug-model" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/LoDCityGMLBrug.png" alt="Voorbeeld van de 4 LoDs beschreven door de CityGML3.0 standaard" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
@@ -277,7 +277,7 @@ In de praktijk wordt het LoD framework vooral gebruikt voor gebouwen. Bouwwerken
 
 **Verfijnd LoD framework 3D Geoinformation, TU Delft**
 
-Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar daarmee is het soms ook moeilijk om precies vast te stellen hoe een abstractie verschilt van het originele gebouw in de werkelijkheid. In 2016 heeft [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) daarom een verfijning geschreven die voortbouwt op het CityGML2.0 LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo is LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.
+Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar daarmee is het soms ook moeilijk om precies vast te stellen hoe een abstractie het originele gebouw in de werkelijkheid weergeeft. In 2016 heeft [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) daarom een verfijning gemaakt die voortbouwt op het CityGML2.0 LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo is LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.
 
 Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de volgende manier worden gedefinieerd:
 
@@ -289,7 +289,7 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
     <td> LoD0.0 </td>
-    <td> Voetafdruk of dakuitlijn van alle gebouwen of onderdelen die groter zijn dan 6m. De representaties van gebouwen die aan elkaar grenzen mogen worden samengevoegd </td>
+    <td> Voetafdruk, dakuitlijn of geprojecteerde omtrek van gebouwen of onderdelen die groter zijn dan 6m. De representaties van gebouwen die aan elkaar grenzen mogen worden samengevoegd </td>
   </tr>
   <tr>
     <td> LoD0.1 </td>
@@ -305,15 +305,15 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD1.0 </td>
-     <td> Een opwaartse extrusie van LoD0.0  </td>
+     <td> Een opwaartse extrusie van de LoD0.0 voetafdruk of neerwaartse extrusie van de LoD0.0 dakuitlijn naar een afgesproken hoogte </td>
   </tr>
     <tr>
      <td> LoD1.1 </td>
-     <td> Een opwaartse extrusie van LoD0.1 naar de maximale gebouwhoogte (vaak de noklijn). </td>
+     <td> Een opwaartse extrusie van LoD0.1 naar de afgesproken gebouwhoogte (vaak de noklijn) (of neerwaartse extrusie van de dakuitlijn). </td>
   </tr>
   <tr>
      <td> LoD1.2 </td>
-     <td> Een opwaartse extrusie van LoD0.2 naar de maximale gebouwhoogte (vaak de noklijn). </td>
+     <td> Een opwaartse extrusie van LoD0.2 naar de afgesproken gebouwhoogte (vaak de noklijn) of neerwaartse extrusie van de dakuitlijn. </td>
   </tr>
   <tr>
      <td> LoD1.3 </td>
@@ -325,11 +325,11 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
   </tr>
   <tr>
      <td> LoD2.1 </td>
-     <td> Een neerwaartse extrusie van ieder dak element tot grondniveau samengevoegd tot een enkel volume. Het verschil met LoD2.0 is dat kleine details zoals uitstulpingen (groter dan 2 vierkante meter) ook worden meegenomen </td>
+     <td> Een neerwaartse extrusie van ieder dak element tot grondniveau (of opwaartse extrusie van het grondvlak tot het dakelement) samengevoegd met het dakelement tot een enkel volume. Het verschil met LoD2.0 is dat kleine details zoals uitstulpingen (groter dan 2 vierkante meter) ook worden meegenomen </td>
   </tr>
   <tr>
      <td> LoD2.2 </td>
-     <td> Een neerwaartse extrusie van ieder dak element en dak bovenbouw (zoals dakkapellen) met minimale omvang tot grondniveau samengevoegd tot een enkel volume. </td>
+     <td> Een neerwaartse extrusie van ieder dak element en dak bovenbouw (zoals dakkapellen) met minimale omvang tot grondniveau samengevoegd met het dakelement tot een enkel volume. Het kan ook gaan om een opwaartse extrusie van het grondvlak tot het dakelement </td>
   </tr>
   <tr>
      <td> LoD2.3 </td>
@@ -364,67 +364,91 @@ Op basis van meerdere bronnen kunnen de LoDs van het verfijnde framework op de v
       </figcaption>
 </figure>
 
-Dit framework stelt strengere eisen aan de LoD abstracties dan het CityGML2.0/3.0 LoD framework maar bevat helaas nog steeds veel onduidelijkheden. Een van de centrale problemen betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework, of gerelateerde bronnen. Hierdoor wordt in de praktijk de dak contour, de voetafdruk of een andere bron gebruikt. Het framework stelt ook geen duidelijke manier om de bron die is gebruikt aan te duiden, hierdoor kunnen verschillende bronnen resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld is of, volgens het framework, hoeft te worden. Zie meer hierover bij het hoofdstuk [Uitbreidingen & aanpassingen van de LoD frameworks](#uitbreidingen-aanpassingen-van-de-lod-frameworks)
+Dit framework is een verfijning van de eisen voor de LoD abstracties ten opzichte van het CityGML2.0/3.0 LoD framework maar kan nog steeds tot verschillende interpretaties leiden. Een van de onduidelijkheden betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework. Hierdoor wordt in de praktijk de dak contour (dakuitlijn), de voetafdruk of een andere brongeometrie (zoals de geprojeceerde maximale omvang) gebruikt. Dit kan resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld wordt. Zie meer hierover bij het hoofdstuk [Uitbreidingen & aanpassingen van de LoD frameworks](#uitbreidingen-aanpassingen-van-de-lod-frameworks)
 
-<aside class="note" title="voetafdruk vs roofoutline">
-  <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x groepen: voetafdruk, roof outline, 2DBAG of 2DBGT. Of verbeter het LoD framework van de TUD zodat het duidelijk is welke data gebruikt moet worden voor de extrusie LoD groepen (LoD1.x en 2.x). </a> </p>
+<aside class="note" title="voetafdruk (BGT) vs roofoutline vs geprojecteerde maximale omtrek (BAG)">
+  <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x extensies: voetafdruk, geprojecteerde maximale omtrek, roof outline, 2DBAG, 2DBGT. Het LoD framework van de TUD kan hiervoor worden aangepast om duidelijk te maken welke bron-geometrie gebruikt is voor de extrusie voor de betreffende LoD groepen (LoD1.x en 2.x). </a> </p>
 </aside>
 
-Net zoals bij het CityGML LoD framework is dit framework ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. In theorie kunnen de LoDs toegepast worden op deze bouwwerken omdat het framework open en flexibel is, maar dit vraagt ook om verdere verfijningen en afspraken.
+Dit aangepaste LoD framework is ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor [vegetatie](https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af), [infrastructuur/transport](https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/) en [terrein](https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/). Deze worden ook gebruikt in de praktijk, ook al is dat minder dan het verfijnde LoD-framework voor gebouwen.
 
 ## Uitbreidingen & aanpassingen van de LoD frameworks
 
-Zowel het CityGML2.0 LoD Framework, het CityGML3.0 LoD framework, als het TU Delft verfijnde framework worden gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, mede omdat er recent technologieën beschikbaar zijn gekomen die het mogelijk maken om nieuwe (BIM) data bronnen te gebruiken om GIS modellen te genereren. Bij het opstellen van de bestaande frameworks, werd uitgegaan van metingen om de LOD abstracties te vormen. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
+Zowel het CityGML2.0 LoD Framework, het CityGML3.0 LoD framework, als het TU Delft verfijnde framework worden gebruikt in de praktijk. Modellen die in de praktijk beschikbaar zijn passen soms niet helemaal op deze LoD frameworks, mede omdat er recent technologieën beschikbaar zijn gekomen die het mogelijk maken om GIS modellen te genereren op andere manieren. Bij het opstellen van de bestaande frameworks, werd uitgegaan van de destijds-beschikbare inwintechniek van metingen om de LOD abstracties te vormen. De CityGML1.0 LoD standaard werd geïntroduceerd in 2008 en versie 3.0 is nog steeds in grote lijnen vergelijkbaar met de 1.0 versie. De TU Delft verfijning is uit 2016. Het is daarom ook belangrijk dat er onderzoek gedaan wordt naar uitbreidingen en aanpassingen van deze twee bestaande LoD frameworks afgestemd op nieuwe mogelijkheden. 
 Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naar BIM als databron voor 3D-GIS-bestanden en hoe en welke bestaande, nieuwe of aangepaste LoDs hiermee kunnen worden gegenereerd. 
 
-In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen die rekening houden met BIM als databron. In de publicatie [Defining LoDs to support BIM-based 3D building abstractions in GIS](https://research.tudelft.nl/en/publications/defining-lods-to-support-bim-based-3d-building-abstractions-in-gi/) zijn aanvullingen beschreven op het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen. LoDe.1, een van de experimentele LoD die uit dit onderzoek voort is gekomen, wordt op dit moment toegepast voor visualisatie door de gemeente Eindhoven als alternatief voor 1:1 vertaling.
+In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS modellen die rekening houden met BIM als databron. In de publicatie [Defining LoDs to support BIM-based 3D building abstractions in GIS](https://research.tudelft.nl/en/publications/defining-lods-to-support-bim-based-3d-building-abstractions-in-gi/) zijn aanvullingen beschreven op het LoD framework zodat men rekening kan houden met de unieke beperkingen, maar vooral ook mogelijkheden van BIM modellen. LoDe.1, een van de experimentele LoD op basis van dit onderzoek is ontwikkeld, wordt op dit moment toegepast voor visualisatie door de gemeente Eindhoven als alternatief voor 1:1 vertaling.
 
-<!-- TODO: contact met de gemeente eindhoven over publicatie afbeelding waarin LoDe.1 gebruikt wordt -->
-
-Een formeel en vastgesteld standaard LoD framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z GEO-model.
-
-<aside class="note" title="Gestandaardiseerd LoD Framework">
-  <p><strong>AANBEVELING:</strong> Laat een aangepast LoD-framework standaardiseren op nationaal of internationaal niveau ten behoeve van BIM naar Geo conversie. </a> </p>
-</aside>
-
-**Voetafdruk of dakomtrek als extrusie bron**
-
-LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze vorm. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan als het model is gebaseerd op de dak omtrek. Veel gebouwen hebben een dak dat over de gevel (en ook de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dak omtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dak omtrek òf een andere bron/vorm te gebruiken, is meestal afhankelijk van welk van beide voor handen is. Het is belangrijk om hier expliciet in te zijn.
-
-<figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
-      <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen Voetafdruk en dak omtrek gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
+<figure id="LoDe1-gemeente-endhoven" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/2_achtergrond/LoDe1_Eindhoven.jpg" alt="3D stadsmodel van de gemeente eindhoven met een aantal LoDe.1 modellen omringt door LoD2.2" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
       <figcaption>
-        <a class="self-link" href="#Verschil-tussen-footprint-roofedge"></a>
+        <a class="self-link" href="#LoDe1-gemeente-endhoven"></a>
         <span class="fig-title">
-        Deze LoD1.2 representatie van het aula gebouw van de TU Delft is gebaseerd op de dakomtrek (Links). Met rood is het deel is aangeven dat zou vervallen ten opzicht van een voetafdruk gebaseerde extrusie. Het vervallende deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
+        Voorbeeld van het 3D stadsmodel van de gemeente Eindhoven dat is verrijkt met LoDe.1 modellen via de IfcEnvelopeExtractor. Deze modellen worden omringt door LoD2.2 modellen. 
         </span>
       </figcaption>
 </figure>
 
-In de CityGML3.0 standaard wordt de voetafdruk genoemd als [bronoppervlak voor de extrusie van ruimtes](https://docs.ogc.org/is/20-010/20-010.html#toc30), maar voor de buitenschil is het onduidelijk wat de data bron is. In het TUD verfijnde LoD framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) worden beide opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van deze text zou een LoD1 zowel gebaseerd kunnen zijn op de voetafdruk als de dak omtrek. Bij de LoD2.x groep wordt beschreven dat: "When roof overhangs are not available, the walls are usually obtained as projections from the roof edges to the ground, inherently increasing the volume of the building". Er wordt verder geen uitleg gegeven of dit wel of niet resulteert in een LoD2 model dat past in het opgestelde framework.
+Een formeel en vastgesteld standaard LoD framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z GEO-model.
 
-Daarnaast is het ook niet geheel duidelijk wat er bedoelt word met de term "voetafdruk/footprint". Dit kan mogelijk een polygoon zijn die een horizontale doorsnede op een bepaalde hoogte door het gehele bouwwerk representeerd. Maar er zouden ook extra eisen aan verbonden kunnen zijn. Zoals bijvoorbeeld een polygoon die aan [de eisen voor het BGT](https://geonovum.github.io/IMGeo-objectenhandboek/pand) voldoet. Ook zou het mogelijk kunnen zijn dat met de term voetprint soms de dakuitlijn op maaiveld niveau wordt bedoelt.
+<aside class="note" title="Gestandaardiseerd LoD Framework">
+  <p><strong>AANBEVELING:</strong> Breid het bestaande LoD-framework uit om LoDs te standaardiseren op nationaal of internationaal niveau ten behoeve van BIM naar Geo conversie. </a> </p>
+</aside>
 
-Een vergelijkbaar probleem is dan ook de term "dakuitlijn". In Nederland wordt veelal gebruik gemaakt van de 2DBAG als extrusie bron voor LoD1.x en 2.x groepen, zoals bij het [3DBAG](https://www.3dbag.nl).
-[De 3DBAG website beschrijft de geometrie van een (2D)BAG pand](https://docs.3dbag.nl/en/overview/sources/#bag) als volgt: "The polygons in the BAG represent the outline of the building as the projection of the building as seen from above (including underground parts)". Dit klinkt alsof de bron voor extrusie de dakuitlijn is, echter is deze beschrijving van (2D)BAG pand een erg beknopte beschrijving die niet direct de waarheid overbrengt. (2D)BAG geometrie zijn polygonen die aan veel [strengere eisen](https://geonovum.github.io/IMGeo-objectenhandboek/pand) voldoen. (2D)BAG zal dan ook in veel gevallen anders zijn dan de dakuitlijn van een gebouw.
+**Voetafdruk of dakomtrek (of andere geprojecteerde gebouwomtrek) als extrusie bron**
 
-Op het faculteitsterrein van de TU Delft staan twee gebouwen waarbij de BAG-geometrie, en de verschillen duidelijk worden gemaakt.
+LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze volumetrische vorm. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan het model dat is gebaseerd op de dakomtrek. Veel gebouwen hebben een dak dat over de gevel (en ook de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dakomtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dakomtrek òf een andere bron/vorm te gebruiken, is meestal afhankelijk van welke van deze voorhanden is. Het is belangrijk om hier expliciet in te zijn. 
+
+<figure id="Verschil-tussen-footprint-roofedge" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/2_achtergrond/verschil_voet_dak.jpg" alt="Extreem voorbeeld van het verschil tussen voetafdruk- en dakomtrek- gebaseerde extrusiemodellen" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
+      <figcaption>
+        <a class="self-link" href="#Verschil-tussen-footprint-roofedge"></a>
+        <span class="fig-title">
+        Deze LoD1.2 representatie van het Aula gebouw van de TU Delft is gebaseerd op de dakomtrek (Links). Met rood is het deel aangegeven dat zou vervallen ten opzichte van een op voetafdruk gebaseerde extrusie. Het vervallen deel is rechts geïsoleerd weergegeven. Het verschil in volume tussen de twee resulterende vormen is ongeveer 54.000m<sup>3</sup> 
+        </span>
+      </figcaption>
+</figure>
+
+In de CityGML 3.0 standaard wordt de term "voetafdruk" genoemd als [bronoppervlak voor de extrusie van ruimtes](https://docs.ogc.org/is/20-010/20-010.html#toc30), maar voor de extrusie van de buitenschil is het onduidelijk wat de data bron kan zijn. In het TUD verfijnde LoD framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf) worden voetafdruk én dakomtrek als opties genoemd: "LOD0 is a representation of footprints and optionally roof edge polygons marking the transition from 2D to 3D GIS. LOD1 is a coarse prismatic model usually obtained by extruding an LOD0 model.". Op basis van dit framework kan een LoD1 zowel gebaseerd zijn op de voetafdruk als op de dakomtrek. Bij de LoD2.x groep wordt beschreven dat: "When roof overhangs are not available, the walls are usually obtained as projections from the roof edges to the ground, inherently increasing the volume of the building". De LoD2.X modellen kunnen dus ook gebaseerd zijn op zowel de dakomtrek als de voetafdruk.
+
+Daarnaast worden de termen "voetafdruk/footprint" en "dakuitlijn/dakomtrek" niet altijd consistent gebruikt. Zo kunnen bijvoorbeeld polygonen die de dakuitlijn van hetzelfde gebouw representeren verschillende vormen hebben afhankelijk van de interpretatie/gebruik van dit concept.
+
+De term "dakuitlijn" kan worden gebruikt voor een polygoon die de projectie van het bovenaanzicht van een gebouw/model representeert. Echter wordt deze term soms ook gebruikt voor de 2DBAG polygoon, of in ieder geval het bovengrondse deel van de 2DBAG geometrie. Terwijl volgens de [BAG specificaties](https://imbag.github.io/praktijkhandleiding/), de BAG polygoon niet altijd de dakuitlijn als zodanig representeert. Dakoverstekken worden alleen meegenomen wanneer het gaat om bouwelementen die daadwerkelijk een afgesloten en bruikbare binnenruimte creëren. Bouwelementen zoals dakoverstekken, dakranden, goten, entree-overkappingen en vergelijkbare beschuttende constructies worden daarom NIET opgenomen in de BAG-geometrie.
+
+<figure id="Verschil-tussen-roofedge-BAGvorm" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="./media/2_achtergrond/Verschil_dakuitlijn_BAG_vorm.jpg" alt="Verschil tussen de dakuitlijn en een BAG polygoon in het model dat is gebruikt voor de ILS voor ruimtes" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
+      <figcaption>
+        <a class="self-link" href="#Verschil-tussen-roofedge-BAGvorm"></a>
+        <span class="fig-title">
+        Het verschil tussen de BAG polygoon en een dakuitlijn is goed zichtbaar bij een gebouw met balkons. Het gebouw (links) heeft een BAG polygoon (rechts in grijs) die kleiner is en een andere vorm heeft dan de dakuitlijn (rechts in rood). Als de regels voor het opstellen van een BAG vorm die wij hebben gevonden worden gevolgd, zoals bij de BAG output van de IfcEnvelopeExtractor, ontstaat er echter een andere polygoon (rechts in blauw) dan de daadwerkelijke BAG vorm van de 2DBAG database (rechts in grijs). Dit voorbeeld BIM model is gebruikt voor [ILS voor ruimten in de omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) gemaakt door de gemeente Rotterdam en Kuiper compagnons.
+        </span>
+      </figcaption>
+</figure>
+
+In Nederland wordt voor 3D gebouw reconstructie veelal gebruik gemaakt van de 2DBAG als extrusie bron voor LoD1.x en 2.x groepen, zoals bij het [3DBAG](https://www.3dbag.nl). Tot voor kort ([September 2026](https://web.archive.org/web/20260928002948/https://docs.3dbag.nl/nl/overview/sources/)) beschreef de website van het 3DBAG de 2DBAG-bron geometrie als volgt: “De polygonen in de BAG representeren de omlijning van panden als de projectie van bovenaf (inclusief ondergrondse delen).”. Dit is conform de BAG-specificaties, maar zonder de bovenstaande uitzonderingen te benoemen. Hierdoor was het niet duidelijk dat de gebruikte extrusiebron (de 2DBAG) niet de dakuitlijn representeert, maar de projectie van bovenaf met de genoemde uitsluitingen. Op de 3DBAG website is deze [beschrijving voor de BAG polygoon](https://docs.3dbag.nl/nl/overview/sources/) aangevuld om dit te verduidelijken.
+
+De term "voetafdruk/footprint" heeft een vergelijkbaar probleem in gebruik. Het wordt soms gebruikt voor een polygoon die een horizontale doorsnede op een bepaalde hoogte (vaak maaiveld hoogte) door het gehele bouwwerk representeert. Maar de voetafdruk polygoon kan ook een vorm zijn die aan strengere eisen voldoet, zoals een BGT polygoon.
+
+De BGT bevat de zogenaamde voetafdruk- of maaiveldgeometrie, dat wil zeggen de begrenzing van een pand daar waar het de grond raakt. In veel gevallen valt de BGT-geometrie samen met de BAG-geometrie. Een uitzondering is bijvoorbeeld een gebouw op 'palen'. In de BGT wordt de voetafdruk van deze kolommen opgenomen als deze voldoen aan bepaalde voorwaarden. De eisen van BAG-geometrie in relatie tot de BGT-geometrie staan beschreven in het [IMGEO objecten handboel](https://geonovum.github.io/IMGeo-objectenhandboek/pand).
+Het is belangrijk om deze eisen aan de 2D geometrie te begrijpen om ook te begrijpen wat de impact is op de extrusie als de BAG (of BGT) als extrusiebron wordt gebruikt.
+
+Op het faculteitsterrein van de TU Delft staan twee gebouwen die de impact van de extrusiebron op de te reconstrueren geometrie duidelijk maken, gebruikmakend van de BAG als extrusiebron.
 
 <figure id="Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/2_achtergrond/3Dbag_verschillende_bron.png" alt="Voorbeeld gebruik van 2DBAG voor extrusie 3DBAG" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/> 
       <figcaption>
         <a class="self-link" href="#Voorbeeld-verschil-bronoppervlak-extrusie-3DBAG"></a>
         <span class="fig-title">
-        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie in het 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd, de 3DBAG representatie van dit gebouw is gebaseerd op de 2DBAG. De overhang van dit gebouw zal natuurlijk gerepresenteerd zijn in de dakuitlijn, maar ook in de BAG polygoon. Rechts is gebouw Echo, de luifels van dit gebouw zijn wel deel van de volledige dakomtrek maar niet van de 2DBAG polygoon. De draaideuren van de entree die onder deze luifels staan zijn wel onderdeel van de 2DBAG geometrie en daardoor ook de basis voor de extrusie in 3DBAG. Dit geeft gebruikers mogelijk, incorrect, de indruk dat de voetprint of de BGT polygoon als bron is voor sommige extrusies.
+        Voorbeeld van het gebruik van 2DBAG als bronoppervlaktes voor de extrusie, zoals gedaan wordt in de 3DBAG. Links in de figuur is de aula van de TU Delft gevisualiseerd. De BAG polygoon (de geprojecteerde buitenomtrek) omvat de overhang van dit gebouw, omdat deze overhang een bouwvolume betreft. Rechts is gebouw Echo. De luifels van dit gebouw zijn wel deel van de volledige dakomtrek, maar niet van de 2DBAG-polygoon (omdat de dakoverstekken geen bouwelementen bevatten die onderdeel zijn van een bouwvolume). De draaideuren van de entree die onder deze luifels staan zijn, volgens de BAG-eisen, wel onderdeel van de 2DBAG geometrie en daardoor ook de basis voor de extrusie in 3DBAG. Dit geeft mogelijk, incorrect, de indruk dat de voetprint of de BGT polygoon als bron is voor deze extrusie. De specificaties van de 2D extrusiebron zijn daarom belangrijk om de verschillen in de 3D reconstructie te begrijpen.
         </span>
       </figcaption>
 </figure>
 
-NB1: Uit de definitie van de 2DBAG geometrie volgt ook dat ondergrondse onderdelen worden meegenomen in de 2D geometrie zoals ondergrondse parkeergarages. Bij de 3DBAG reconstructie worden deze pand-delen uit de geometrie gefilterd op basis van de hoogte data op deze locaties.
-NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DBAG, net als AHN, een soort bovenaanzicht geeft van de panden. Daarom passen beide data bronnen goed op elkaar. Er loopt momenteel een onderzoek om onderdoorgangen en dakoverhang te modelleren in 3DBAG door deze te detecteren op basis van een BGT-BAG analyse en de hoogte vervolgens te detecteren in oblieke luchtfoto's.
+NB1: Uit de definitie van de 2DBAG geometrie volgt ook dat ondergrondse onderdelen worden meegenomen in de 2D geometrie zoals ondergrondse parkeergarages. Bij de 3DBAG reconstructie worden deze pand-delen uit de geometrie gefilterd op basis van de hoogte data van het maaiveld op deze locaties.
+NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DBAG, net als AHN, een soort van bovenaanzicht geeft van de panden. Daarom passen beide data bronnen goed op elkaar, zeker daar waar het gaat om gebouwen met kolommen en onderdoorgangen. Er loopt momenteel een onderzoek om onderdoorgangen te modelleren in 3DBAG door deze te detecteren op basis van een BGT-BAG analyse en de hoogte vervolgens te detecteren in oblieke luchtfoto's en straatniveau LiDAR. De resultaten hiervan zullen in de 2026 release van de 3DBAG worden geïmplementeerd [Peters et al, 2026](https://research.tudelft.nl/en/publications/automatische-modellering-van-onderdoorgangen-in-de-3dbag/).
 
 <aside class="note" title="Maak aanvullende afspraken rondom voetafdruk of dakomtrek">
-  <p><strong>AANBEVELING:</strong> Maak aanvullende afspraken rondom het converteren van voetafdruk of dakomtrek voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusie bron gebruikt wordt. Maak duidelijk of dakuitlijn == BAG polygoon, voetprint == BGT polygoon of juist niet.
+  <p><strong>AANBEVELING:</strong> Maak duidelijke afspraken rondom het gebruik van voetafdruk, dakomtrek, BAG polygoon, BGT polygoon of andere bron polygoon voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusie bron gebruikt wordt. Maak duidelijk of de BAG polygoon (bovenaanzicht) of BGT polygoon (voetafdruk), of een andere geometrie als extrusie bron is gebruikt.
 </aside>
 
 <aside class="note" title="Vastgestelde transformatieprofielen voor BIM naar GEO per toepassing">
@@ -442,7 +466,7 @@ CityGML is een open conceptueel datamodel voor het opslaan van 3D Geo data. City
 
 Naast een datamodel is CityGML ook een data encoding. De gelijke benaming van het datamodel en data encoding kan tot verwarring leiden. Voor het conceptuele data model CityGML, is zowel een GML, JSON als RDF encoding beschikbaar.
 
-De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat ook lastig is om te lezen door gebruikers. Een alternatief is [CityJSON](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json), een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder en zie [CityJSON bestandsgrootte](https://www.cityjson.org/filesize/) voor meer informatie). CityJSON komt echter ook met beperkingen. Zo is niet het gehele CityGML datamodel in de CityJSON encoding beschikbaar. Ook is CityJSON vatbaarder voor niet standaard gebruik.
+De GML encoding is gebaseerd op een XML datamodel. XML is een vrij zwaar datatype wat ook lastig is om te lezen door gebruikers. Een alternatief is [CityJSON](https://3d.bk.tudelft.nl/opendata/cityjson/3dcities/v2.0/DenHaag_01.city.json), een encoding gebaseerd op een JSON datamodel. Deze encoding is lichter dan XML en ook makkelijker door gebruikers te begrijpen. Een CityGML bestand in de XML encoding is ongeveer 7 keer zwaarder dan een CityGML bestand in de CityJSON encoding (zie tabel hieronder en zie [CityJSON bestandsgrootte](https://www.cityjson.org/filesize/) voor meer informatie). CityJSON kent echter ook beperkingen. Zo is niet het gehele CityGML datamodel in de CityJSON encoding beschikbaar.
 
 Er is software beschikbaar die CityGML bestanden van de ene naar de andere encoding kan omzetten, waardoor afhankelijk van de toepassing de ene of de andere encodig kan worden gebruikt.
 
@@ -498,7 +522,7 @@ Meer informatie over CityGML kan worden gevonden op de [OGC website](https://www
 
 ## GeoJSON
 
-GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden door meer GIS applicaties ondersteund dan CityJSON.
+GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, net zoals CityGML CityJSON, gebaseerd op de JSON encoding. De manier waarop de data is opgeslagen is echter anders. Ten opzichte van CityGML heeft GeoJSON meer beperkingen. Maar, de GeoJSON bestanden zijn over het algemeen minder zwaar en worden ook door meer generieke GIS applicaties (dan 3D) ondersteund.
 
 ```json
 
@@ -518,15 +542,15 @@ GeoJSON is een datamodel voor het uitwisselen van geospatiale gegevens. Het is, 
 
 ## IFC
 
-De Industry Foundation Classes (IFC) zijn een set van gestandaardiseerde, digitale beschrijvingen van de gebouwde omgeving voor Bouw Informatie Modellen (BIM). IFC is een open internationale standaard voor het delen van data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien, van ontwerp en constructie tot beheer. De standaard wordt voornamelijk gebruikt in de Architectuur, Engineering en Constructie (AEC) industrie. IFC bestaat uit een schema, een documentatie, property (kenmerken) en quantity (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is net als andere open standaarden software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om Gebouwen, Wegen, Spoor, Waterwegen en Havenfaciliteiten te modelleren. 
+De Industry Foundation Classes (IFC) zijn een set van gestandaardiseerde, digitale beschrijvingen van objecten in de gebouwde omgeving voor Bouw Informatie Modellen (BIM). IFC is een open internationale standaard voor het delen van data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien, van ontwerp en constructie tot beheer. De standaard wordt voornamelijk gebruikt in de Architectuur, Engineering en Constructie (AEC) industrie. IFC bestaat uit een schema, een documentatie, property (kenmerken) en quantity (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is net als andere open standaarden software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om Gebouwen, Wegen, Spoor, Waterwegen en Havenfaciliteiten te modelleren. 
 
 In deze praktijrichtlijn wordt de BIM naar GEO workflow beschreven voor open uitwisseling van BIM en GEO. Hiervoor baseert de praktijkrichtlijn zich voornamelijk op IFC uitwisselformaat voor BIM en CitGML (JSON-encoding) voor GEO. 
 
 ## 3D Tiles
 
-Voor het grootschalig streamen en renderen van BIM-modellen is de OGC standaard [3D Tiles](https://www.ogc.org/standards/3dtiles/) te gebruiken. Het formaat kan gescript met een tileset.json schakelen naar verschillende Level of Detail. Deze standaard is primair bedoeld voor visualisatie en niet voor het modelleren of analyseren van modellen. GlTF en het binary formaat daarvan, GLB, is het primaire tegelformaat voor 3D Tiles. Het is mogelijk om attribuutinformatie mee te nemen in dit bestandsformaat, maar dient vanwege de snelheid van streamen en renderen zoveel mogelijk beperkt te blijven. Wanneer dit van belang is kan men beter een bestandsformaat als CityJSON kiezen. 
+Voor het grootschalig streamen en renderen van BIM-modellen is de OGC standaard [3D Tiles](https://www.ogc.org/standards/3dtiles/) te gebruiken. Het formaat kan gescript met een tileset.json schakelen naar verschillende Level of Detail. Deze standaard is primair bedoeld voor visualisatie en niet voor het modelleren of analyseren van modellen. GlTF en het binary formaat daarvan, GLB, is het primaire tegelformaat voor 3D Tiles. Het is mogelijk om attribuutinformatie mee te nemen in dit bestandsformaat, maar dient vanwege de snelheid van streamen en renderen zoveel mogelijk beperkt te blijven. Wanneer attributen van belang zijn, kan men beter een bestandsformaat als CityJSON kiezen. 
 
-zie [handreiking 3D Tiling](https://docs.geostandaarden.nl/3d/3d-tiling/) en zie convertors als [ifc2b3dm](https://github.com/Erfan-Shooraj/ifc2b3dm). Er zijn ook betaalde converters of add-ins [cesium revit add in](https://cesium.com/blog/2024/12/03/cesium-design-tiler-and-revit-add-in/) die men kan gebruiken. 
+Voor meer informatie, zie [handreiking 3D Tiling](https://docs.geostandaarden.nl/3d/3d-tiling/) en zie convertors als [ifc2b3dm](https://github.com/Erfan-Shooraj/ifc2b3dm). Er zijn ook betaalde converters of add-ins [cesium revit add in](https://cesium.com/blog/2024/12/03/cesium-design-tiler-and-revit-add-in/) die men kan gebruiken. 
 
 
 
