@@ -343,7 +343,6 @@ Omdat de standaard zelf niets controleert, hoort de controle in het samenstelpro
 
 Een samenstelling die op een van deze punten afgaat, wordt niet gepubliceerd.
 
-<mark>Redactie: er is een proof-of-concept-tool die meerdere IDS-bestanden inleest, per fase verdeelt en per eis optioneel/verplicht laat zetten. Hier een verwijzing opnemen bij "optionele configuratietools voor IDS", naast de beschikbare commerciële en gratis IDS-editors. Link nog toe te voegen; beheer en status van de tool zijn nog niet belegd.</mark>
 
 ## Van BIM-eis naar GEO-product
 
@@ -400,8 +399,8 @@ Onderstaande tabel koppelt de generieke eisen uit dit hoofdstuk aan de methoden 
 
 Twee begripskwesties die bij het uitwerken van deze mapping opgelost moeten worden:
 
-- **`IfcBuilding` is niet hetzelfde als een pand.** Een `IfcBuilding` kan meerdere panden omvatten of juist een deel van een pand zijn. De afbakening moet expliciet worden afgesproken: afleiden uit de externe elementen op maaiveldniveau, of expliciet aangeven met bijvoorbeeld een `IfcZone` per pand. <mark>Redactie: dit is een normatieve keuze die nog gemaakt moet worden.</mark>
-- **De attributenmapping van de basisregistraties naar IFC is nog niet compleet.** Voor de identificatie bestaat een afspraak; voor de overige attributen nog niet. <mark>Redactie: dit is een aparte werkzaamheid, buiten deze praktijkrichtlijn te beleggen.</mark>
+- **`IfcBuilding` is niet hetzelfde als een pand.** Een `IfcBuilding` kan meerdere panden omvatten of juist een deel van een pand zijn. De afbakening moet expliciet worden afgesproken: afleiden uit de externe elementen op maaiveldniveau, of expliciet aangeven met bijvoorbeeld een `IfcZone` per pand. 
+- **De attributenmapping van de basisregistraties naar IFC is nog niet compleet.** Voor de identificatie bestaat een afspraak; voor de overige attributen nog niet. 
 
 ---
 

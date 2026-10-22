@@ -53,84 +53,148 @@ Over het algemeen is een gebouw in een BIM-bestand op het hoogst beschikbare det
 <!-- Heeft BIM een Level of detail? Internet geeft bij "Level of detail BIM" vooral Level of Development, en de bronnen die level of detail noemen beschrijven vervolgens level of development en niet een andere term. -->
  
 ## Level of Information Need in BIM
-De ISO 19650, de procesnorm voor informatiemanagement, schrijft voor dat in het BIM-werk een Level of Information Need moet worden gedefinieerd. In de ISO 7817-1:2024 staat beschreven hoe men dat doet. Voor geometrische informatie worden binnen het BIM-domein afspraken gemaakt over: 
+De ISO 19650-serie schrijft voor dat een opdrachtgever vastlegt welke informatie hij nodig heeft. Hoe je die informatiebehoefte per object beschrijft, staat in NEN-EN-ISO 7817-1:2024 (de opvolger van NEN-EN 17412-1:2020). Deze methode heet het Level of Information Need (LOIN).
+
+Het LOIN is geen schaal met vaste niveaus. Het is een manier om per informatie-uitwisseling vast te leggen welke informatie nodig is en waarom. Hetzelfde object kan daardoor in één project meerdere informatiebehoeften hebben: een wand vraagt voor een kostenraming om andere informatie dan voor een omgevingsvergunning of voor een conversie naar een 3D-stadsmodel.
+
+**Eerst het waarom: de voorwaarden**
+
+Voordat je bepaalt hoe gedetailleerd een object moet zijn, leg je vier dingen vast. Zonder deze voorwaarden is een informatiebehoefte niet te beoordelen: "gedetailleerd genoeg" bestaat alleen ten opzichte van een doel.
 
 <table>
-  <caption> Level Of Information Need aspecten </caption>
+  <caption> Voorwaarden voor het bepalen van een Level of Information Need </caption>
+  <tr>
+    <th style = "width:200px;"> Voorwaarde </th>
+    <th style = "width:500px;"> Vraag </th>
+  </tr>
+  <tr>
+    <td> Doel </td>
+    <td> Waarvoor wordt de informatie gebruikt? Bijvoorbeeld: toetsing van de maximale bouwhoogte in een omgevingsvergunning, of het afleiden van een LoD2-gebouwmodel. </td>
+  </tr>
+  <tr>
+    <td> Leveringsmoment </td>
+    <td> Op welk moment in het proces moet de informatie beschikbaar zijn? Bijvoorbeeld: bij de vergunningaanvraag of bij de oplevering. </td>
+  </tr>
+  <tr>
+    <td> Actoren </td>
+    <td> Wie levert de informatie en wie ontvangt en gebruikt haar? Bijvoorbeeld: de ontwerpende partij levert, de gemeente of de beheerder van een basisregistratie ontvangt. </td>
+  </tr>
+  <tr>
+    <td> Object en decompositie </td>
+    <td> Om welk object gaat het, en in welke onderdelen is het opgedeeld? Tekent men een afvalbak als één geheel, als een losse bak en een losse poer, of nog verder gedecomponeerd? </td>
+  </tr>
+</table>
+
+**Dan het wat: geometrie, alfanumerieke informatie en documentatie**
+
+Per object en per doel wordt de informatiebehoefte uitgesplitst in de drie soorten informatie die ook aan het begin van dit hoofdstuk zijn beschreven. Voor geometrische informatie worden afspraken gemaakt over vijf aspecten:
+
+<table>
+  <caption> Aspecten van geometrische informatie in het Level of Information Need </caption>
   <tr>
     <th style = "width:200px;"> Aspect </th>
     <th style = "width:500px;"> Beschrijving </th>
   </tr>
   <tr>
-    <td> <img src="./media/LOIN/LOIN_Detail.png" alt="LOIN Detail" title="LOIN Detail" width="190"> Detail 
-    </td>
-      <td> Het aspect detail beschrijft de complexiteit van de geometrie van het object in relatie tot het voorkomen van dit object in de echte wereld. </td>
+    <td> <img src="./media/LOIN/LOIN_Detail.png" alt="LOIN Detail" title="LOIN Detail" width="190"> Detail </td>
+    <td> Hoe complex is de geometrie van het object vergeleken met het object in de werkelijkheid? Wie gewend is aan de Level of Development-niveaus van het BIMForum, kan de omschrijving van zo'n niveau hier als waarde gebruiken, maar dan per objecttype en niet voor het hele model. Zie <a href="#level-of-development-in-bim">Level of Development in BIM</a>. </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Dimensie.png" alt="LOIN Dimensie" title="LOIN Dimensie" width="190"> Dimensie
-    </td>
-      <td> Dit aspect beschrijft de dimensies waarmee objecten worden weergegeven. Dit kan 0D, 1D, 2D of 3D zijn. Zelfs hogere dimensies zijn mogelijk wanneer bijvoorbeeld tijd, of meting wordt toegevoegd. </td>
+    <td> <img src="./media/LOIN/LOIN_Dimensie.png" alt="LOIN Dimensie" title="LOIN Dimensie" width="190"> Dimensie </td>
+    <td> In hoeveel dimensies wordt het object weergegeven: 0D, 1D, 2D of 3D? Hogere dimensies zijn mogelijk wanneer bijvoorbeeld tijd wordt toegevoegd. </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Locatie.png" alt="LOIN Locatie" title="LOIN Locatie" width="190"> Locatie
-    </td>
-      <td> Het aspect locatie beschrijft de manier waarop geometrie een locatie heeft. Dit kan absoluut zijn met eigen coordinaten of t.o.v. een ander object. </td>
-  </tr>
+    <td> <img src="./media/LOIN/LOIN_Locatie.png" alt="LOIN Locatie" title="LOIN Locatie" width="190"> Locatie </td>
+    <td> Hoe is de plaats van het object vastgelegd: absoluut in een coördinatenstelsel, of relatief ten opzichte van een ander object? Voor conversie naar GEO is dit aspect bepalend, omdat het object zonder absolute locatie niet in een geo-omgeving kan worden geplaatst. </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Voorkomen.png" alt="LOIN Voorkomen" title="LOIN Voorkomen" width="190"> Voorkomen
-    </td>
-      <td> Het aspect voorkomen beschrijft of het object een kleur of textuur heeft ten opzichte van het voorkomen in de echte wereld. </td>
+    <td> <img src="./media/LOIN/LOIN_Voorkomen.png" alt="LOIN Voorkomen" title="LOIN Voorkomen" width="190"> Voorkomen </td>
+    <td> Heeft het object een kleur of textuur, en in hoeverre komt die overeen met het object in de werkelijkheid? </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Parametrische_Functionaliteit.png" alt="LOIN Parametrische Functionaliteit" title="LOIN Parametrische Functionaliteit" width="190"> Parametrische Functionaliteit
-    </td>
-      <td> Dit aspect beschrijft de parametrische functionaliteit die een object heeft. Kan men deze nog aanpassen, en hoe? </td>
+    <td> <img src="./media/LOIN/LOIN_Parametrische_Functionaliteit.png" alt="LOIN Parametrische Functionaliteit" title="LOIN Parametrische Functionaliteit" width="190"> Parametrische functionaliteit </td>
+    <td> Moet het object na levering nog aanpasbaar zijn, en zo ja, hoe? </td>
   </tr>
 </table>
 
-Ook maakt men naast de hierboven genoemde aspecten afspraken over decompositieniveau. Tekent men een afvalbak als één geheel object, bestaat deze uit één losse bak en één losse poer of is deze nog verder gedecomponeerd? 
+Voor **alfanumerieke informatie** wordt vastgelegd hoe het object geïdentificeerd wordt (bijvoorbeeld entiteit, type en classificatie) en welke eigenschappen het moet hebben. Dit deel is het best toetsbaar: het kan worden vastgelegd in een IDS en automatisch worden gecontroleerd (zie [InformatieLeveringsSpecificatie (ILS)](#informatieleveringsspecificatie-ils)). Voor **documentatie** wordt vastgelegd welke documenten, zoals tekeningen, certificaten of rapporten, aan het object gekoppeld moeten zijn.
+
+**Een voorbeeld**
+
+Onderstaand voorbeeld laat zien hoe voor één doel twee objecten elk een eigen informatiebehoefte krijgen. Het voorbeeld is illustratief.
+
+<table>
+  <caption> Voorbeeld Level of Information Need voor toetsing van de maximale bouwhoogte </caption>
+  <tr>
+    <th style = "width:180px;"> </th>
+    <th style = "width:260px;"> Bouwperceel </th>
+    <th style = "width:260px;"> Buitenwand (IfcWall) </th>
+  </tr>
+  <tr>
+    <td> Doel </td>
+    <td colspan="2"> Toetsing maximale bouwhoogte, omgevingsvergunning </td>
+  </tr>
+  <tr>
+    <td> Leveringsmoment </td>
+    <td colspan="2"> Indienen vergunningaanvraag </td>
+  </tr>
+  <tr>
+    <td> Actoren </td>
+    <td colspan="2"> Levert: ontwerpende partij · Ontvangt: gemeente </td>
+  </tr>
+  <tr>
+    <td> Detail </td>
+    <td> Contour van het perceel </td>
+    <td> Vereenvoudigd volume, zonder aansluitdetails </td>
+  </tr>
+  <tr>
+    <td> Dimensie </td>
+    <td> 2D </td>
+    <td> 3D </td>
+  </tr>
+  <tr>
+    <td> Locatie </td>
+    <td> Absoluut (RD) </td>
+    <td> Absoluut (RD en NAP), via de georeferentie van het model </td>
+  </tr>
+  <tr>
+    <td> Voorkomen </td>
+    <td> Niet vereist </td>
+    <td> Niet vereist </td>
+  </tr>
+  <tr>
+    <td> Parametrische functionaliteit </td>
+    <td> Niet vereist </td>
+    <td> Niet vereist </td>
+  </tr>
+  <tr>
+    <td> Alfanumeriek </td>
+    <td> Kadastrale aanduiding </td>
+    <td> Unieke identificatie (GlobalId), IsExternal </td>
+  </tr>
+  <tr>
+    <td> Documentatie </td>
+    <td> Geen </td>
+    <td> Geen </td>
+  </tr>
+</table>
+
+
+Let op: het GIS-begrip Level of Detail (LoD) uit CityGML is iets anders dan de BIM-begrippen in deze paragraaf. Het wordt behandeld in [Level of Detail (LoD) Framework in GIS](#level-of-detail-lod-framework-in-gis).
+
+<aside class="note" title="Gebruik het Level of Information Need als uitgangspunt">
+  <p><strong>AANBEVELING:</strong> Gebruik het Level of Information Need (NEN-EN-ISO 7817-1) om de informatiebehoefte voor BIM naar GEO-conversie vast te leggen: per object, per doel en per leveringsmoment. Leg de alfanumerieke eisen vast in een IDS. Level of Development-niveaus mogen als aanvulling worden gebruikt om het aspect detail te omschrijven, maar het LOIN is leidend.</p>
+</aside>
 
 ## Level of Development in BIM
-Naast het hierboven beschreven Level Of Information Need bestaat binnen het BIM-domein het Level Of Development (LOD). Dit Level of Development is gedefinieerd door het American Institue of Architects (AIA) en doorontwikkeld door het [BIMForum](https://bimforum.org/resource/lod-level-of-development-lod-specification/). Dit wordt gebruikt om het ontwikkelniveau aan te duiden van zowel de geometrie als de daaraan verbonden informatie in een BIM model. Er bestaan verschillende intrepetaties over hoeveel LOD niveaus er zijn en wat de inhoud hiervan precies betekent. Om hier meer eenduidigheid in te krijgen heeft het BIM-forum een update van de definities geleverd. De ontwikkelniveaus die onderscheiden worden zijn: 
+In de BIM-praktijk wordt nog veel gewerkt met het Level of Development (LOD) van het [BIMForum](https://bimforum.org/resource/lod-level-of-development-lod-specification/), oorspronkelijk opgesteld door het American Institute of Architects (AIA). De volledige omschrijvingen per niveau staan in de [LOD Specification](https://bimforum.org/resource/lod-level-of-development-lod-specification/). Het BIMForum onderscheidt de volgende niveaus:
 
-- **LOD100 - Concept niveau**
-  - Het model bevat: Generieke massa van een bouwwerk. Oppervlakte, hoogte, inhoud, volume, locatie en orientatie kunnen worden gemodelleerd in 2D, 3D of ander soort data. 
-  - Het model is bedoeld voor: Analyse, kostenramingen of planning.
-  - Geometrie: Conceptuele massa's van het totaal model en symbolische elementen. Informatie over elementen kunnen afgeleid worden uit andere model elementen (b.v. het aantal verdiepingen kan men afleiden uit een 3D gebouwmodel)  
-
-- **LOD200 - Globale geometrie**
-  - Het model bevat: Elementen van het model zijn gemodelleerd als geabstraheerde systemen of samenstellingen met benaderde hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Analyse, kostenramingen of planning.
-  - Geometrie: Gemodelleerde elementen kunnen worden gezien als abstracte ruimtereserveringen, vaak als herkenbaar element. Het afleiden van informatie uit deze modellen is een schatting/benadering. 
-
-- **LOD300 - Nauwkeurige geometry**
-  - Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.
-  - Geometrie: Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint. 
-
-- **LOD350 - Nauwkeurige geometry (met aansluiting)**
-  - Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. En heeft de koppeling naar andere elementen van systemen of samenstellingen. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.
-  - Geometrie: Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint
-
-- **LOD400 – Adapted to realization/ execution**
-  - Het model bevat: Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie, orientatie en complete fabricatie, samenstellign en detail informatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.
-  - Geometrie: Onderdelen hebben voldoende detail en nauwkeurigheid voor fabricage/constructie. Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint
-
-- **LOD 500 – “as built”**
-  - Het model bevat: Elementen van het model zijn gemodelleerd als construeerde samenstellingen met accurate en actuele hoeveelheden, afmetingen, vorm, locatie, orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Generiek gebruik 
-  - Geometrie: Dit level is geen "extra level" dat iets extra toevoegt op de voorgaande LOD's, maar is een afronding van alle voorgaande LOD's. Aangevuld met de werkelijke uitvoering van het bouwwerk. 
-
-Elke opvolgende LOD bouwt voort op het vorige level. Een BIM-model kan verschillende LOD's voor verschillende elementen in één model bevatten.  
-
-Voorbeeld van de verschilende LOD's van één kolom.
+- **LOD 100 – Conceptniveau**
+- **LOD 200 – Globale geometrie**
+- **LOD 300 – Nauwkeurige geometrie**
+- **LOD 350 – Nauwkeurige geometrie met aansluitingen**
+- **LOD 400 – Geschikt voor fabricage en uitvoering**
+- **LOD 500 – As built**
 
 <figure id="LODS-van-een-kolom" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/LOD/Level_Of_Development_Kolom.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
@@ -144,7 +208,10 @@ Voorbeeld van de verschilende LOD's van één kolom.
       </figcaption>
 </figure>
 
-Level Of Information Need en Level Of Development vullen elkaar aan. De Levels Of Development kunnen worden gebruikt om het detailniveau van een object te duiden in het LOIN Raamwerk. 
+
+
+Het Level of Development is een verouderde aanpak. Eén getal bundelt detail, betrouwbaarheid, beoogd gebruik en projectfase, wordt vaak voor een heel model afgesproken en is niet te herleiden tot toetsbare eigenschappen in IFC. Het Level of Information Need is de genormeerde opvolger en splitst deze onderdelen per object en per doel uit. Wie met LOD-niveaus werkt, kan de omschrijving van een niveau gebruiken als waarde voor het aspect *Detail* binnen een LOIN.
+
 
 ## Level of Detail (LoD) Framework in GIS
 In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd een GIS model is in relatie tot het object in werkelijkheid. Het onderscheidt zich van BIM Level of Development omdat informatie buiten de geometrie, zoals attributen of documenten van minder belang zijn voor de classificatie. 

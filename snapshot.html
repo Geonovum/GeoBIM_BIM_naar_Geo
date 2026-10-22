@@ -1442,7 +1442,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     <h2>
       Geonovum Praktijkrichtlijn<br>
       Werkversie
-      <time class="dt-published" datetime="2025-03-28">20 oktober 2026</time>
+      <time class="dt-published" datetime="2025-03-28">22 oktober 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1575,92 +1575,130 @@ BIM-classificaties zoals NL-SfB, NLCS en IMBOR kunnen ondersteunen bij het maken
 </figure><p>Over het algemeen is een gebouw in een BIM-bestand op het hoogst beschikbare detailniveau gerepresenteerd. In een GIS-bestand is dit vaak niet het geval. Een gebouw kan op meerde manieren gerepresenteerd worden in een enkel GIS-bestand. Dit kan variëren van (vanuit GIS bezien) zeer gedetailleerde volumetrische vormen tot zeer versimpelde non-volumetrische oppervlakte. Deze variatie in representaties is aanwezig om toepassingen op verschillende detailniveaus mogelijk te maken, maar ook omdat GIS data bronnen niet altijd alle data beschikbaar hebben om alle bouwwerken op dezelfde manier te reconstrueren. Het is dus mogelijk om lagere precisie data te combineren met hogere precisie data indien er beperkte data bronnen beschikbaar zijn. Om de verschillende kwaliteit van de representaties aan te duiden wordt de term “Level of Detail” (LoD) gebruikt in 3D GIS. In BIM is er ook een manier om de granulariteit van decompositie en detail te duiden. Hier voor kan men het “Level Of Information Need” (LOIN) gebruiken en/of het “Level Of Development” (LOD) en “Level of Detail” (LOD). Dat de termen GIS Level of Detail en BIM Level of Detail en Level Of Development dezelfde afkorting (LoD &amp; LOD) gebruiken, zorgt soms voor verwarring. </p>
 
 <section id="level-of-information-need-in-bim"><div class="header-wrapper"><h4 id="x2-2-1-level-of-information-need-in-bim"><bdi class="secno">2.2.1 </bdi>Level of Information Need in BIM</h4><a class="self-link" href="#level-of-information-need-in-bim" aria-label="Permalink for Section 2.2.1"></a></div>
-<p>De ISO 19650, de procesnorm voor informatiemanagement, schrijft voor dat in het BIM-werk een Level of Information Need moet worden gedefinieerd. In de ISO 7817-1:2024 staat beschreven hoe men dat doet. Voor geometrische informatie worden binnen het BIM-domein afspraken gemaakt over: </p>
+<p>De ISO 19650-serie schrijft voor dat een opdrachtgever vastlegt welke informatie hij nodig heeft. Hoe je die informatiebehoefte per object beschrijft, staat in NEN-EN-ISO 7817-1:2024 (de opvolger van NEN-EN 17412-1:2020). Deze methode heet het Level of Information Need (LOIN).</p>
+<p>Het LOIN is geen schaal met vaste niveaus. Het is een manier om per informatie-uitwisseling vast te leggen welke informatie nodig is en waarom. Hetzelfde object kan daardoor in één project meerdere informatiebehoeften hebben: een wand vraagt voor een kostenraming om andere informatie dan voor een omgevingsvergunning of voor een conversie naar een 3D-stadsmodel.</p>
+<p><strong>Eerst het waarom: de voorwaarden</strong></p>
+<p>Voordat je bepaalt hoe gedetailleerd een object moet zijn, leg je vier dingen vast. Zonder deze voorwaarden is een informatiebehoefte niet te beoordelen: "gedetailleerd genoeg" bestaat alleen ten opzichte van een doel.</p>
 <table>
-  <caption> Level Of Information Need aspecten </caption>
+  <caption> Voorwaarden voor het bepalen van een Level of Information Need </caption>
+  <tbody><tr>
+    <th style="width:200px;"> Voorwaarde </th>
+    <th style="width:500px;"> Vraag </th>
+  </tr>
+  <tr>
+    <td> Doel </td>
+    <td> Waarvoor wordt de informatie gebruikt? Bijvoorbeeld: toetsing van de maximale bouwhoogte in een omgevingsvergunning, of het afleiden van een LoD2-gebouwmodel. </td>
+  </tr>
+  <tr>
+    <td> Leveringsmoment </td>
+    <td> Op welk moment in het proces moet de informatie beschikbaar zijn? Bijvoorbeeld: bij de vergunningaanvraag of bij de oplevering. </td>
+  </tr>
+  <tr>
+    <td> Actoren </td>
+    <td> Wie levert de informatie en wie ontvangt en gebruikt haar? Bijvoorbeeld: de ontwerpende partij levert, de gemeente of de beheerder van een basisregistratie ontvangt. </td>
+  </tr>
+  <tr>
+    <td> Object en decompositie </td>
+    <td> Om welk object gaat het, en in welke onderdelen is het opgedeeld? Tekent men een afvalbak als één geheel, als een losse bak en een losse poer, of nog verder gedecomponeerd? </td>
+  </tr>
+</tbody></table><p><strong>Dan het wat: geometrie, alfanumerieke informatie en documentatie</strong></p>
+<p>Per object en per doel wordt de informatiebehoefte uitgesplitst in de drie soorten informatie die ook aan het begin van dit hoofdstuk zijn beschreven. Voor geometrische informatie worden afspraken gemaakt over vijf aspecten:</p>
+<table>
+  <caption> Aspecten van geometrische informatie in het Level of Information Need </caption>
   <tbody><tr>
     <th style="width:200px;"> Aspect </th>
     <th style="width:500px;"> Beschrijving </th>
   </tr>
   <tr>
-    <td> <img src="./media/LOIN/LOIN_Detail.png" alt="LOIN Detail" title="LOIN Detail" width="190"> Detail 
-    </td>
-      <td> Het aspect detail beschrijft de complexiteit van de geometrie van het object in relatie tot het voorkomen van dit object in de echte wereld. </td>
+    <td> <img src="./media/LOIN/LOIN_Detail.png" alt="LOIN Detail" title="LOIN Detail" width="190"> Detail </td>
+    <td> Hoe complex is de geometrie van het object vergeleken met het object in de werkelijkheid? Wie gewend is aan de Level of Development-niveaus van het BIMForum, kan de omschrijving van zo'n niveau hier als waarde gebruiken, maar dan per objecttype en niet voor het hele model. Zie <a href="#level-of-development-in-bim">Level of Development in BIM</a>. </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Dimensie.png" alt="LOIN Dimensie" title="LOIN Dimensie" width="190"> Dimensie
-    </td>
-      <td> Dit aspect beschrijft de dimensies waarmee objecten worden weergegeven. Dit kan 0D, 1D, 2D of 3D zijn. Zelfs hogere dimensies zijn mogelijk wanneer bijvoorbeeld tijd, of meting wordt toegevoegd. </td>
+    <td> <img src="./media/LOIN/LOIN_Dimensie.png" alt="LOIN Dimensie" title="LOIN Dimensie" width="190"> Dimensie </td>
+    <td> In hoeveel dimensies wordt het object weergegeven: 0D, 1D, 2D of 3D? Hogere dimensies zijn mogelijk wanneer bijvoorbeeld tijd wordt toegevoegd. </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Locatie.png" alt="LOIN Locatie" title="LOIN Locatie" width="190"> Locatie
-    </td>
-      <td> Het aspect locatie beschrijft de manier waarop geometrie een locatie heeft. Dit kan absoluut zijn met eigen coordinaten of t.o.v. een ander object. </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Voorkomen.png" alt="LOIN Voorkomen" title="LOIN Voorkomen" width="190"> Voorkomen
-    </td>
-      <td> Het aspect voorkomen beschrijft of het object een kleur of textuur heeft ten opzichte van het voorkomen in de echte wereld. </td>
+    <td> <img src="./media/LOIN/LOIN_Locatie.png" alt="LOIN Locatie" title="LOIN Locatie" width="190"> Locatie </td>
+    <td> Hoe is de plaats van het object vastgelegd: absoluut in een coördinatenstelsel, of relatief ten opzichte van een ander object? Voor conversie naar GEO is dit aspect bepalend, omdat het object zonder absolute locatie niet in een geo-omgeving kan worden geplaatst. </td>
   </tr>
   <tr>
-    <td>
-      <img src="./media/LOIN/LOIN_Parametrische_Functionaliteit.png" alt="LOIN Parametrische Functionaliteit" title="LOIN Parametrische Functionaliteit" width="190"> Parametrische Functionaliteit
-    </td>
-      <td> Dit aspect beschrijft de parametrische functionaliteit die een object heeft. Kan men deze nog aanpassen, en hoe? </td>
+    <td> <img src="./media/LOIN/LOIN_Voorkomen.png" alt="LOIN Voorkomen" title="LOIN Voorkomen" width="190"> Voorkomen </td>
+    <td> Heeft het object een kleur of textuur, en in hoeverre komt die overeen met het object in de werkelijkheid? </td>
   </tr>
-</tbody></table><p>Ook maakt men naast de hierboven genoemde aspecten afspraken over decompositieniveau. Tekent men een afvalbak als één geheel object, bestaat deze uit één losse bak en één losse poer of is deze nog verder gedecomponeerd? </p>
-</section><section id="level-of-development-in-bim"><div class="header-wrapper"><h4 id="x2-2-2-level-of-development-in-bim"><bdi class="secno">2.2.2 </bdi>Level of Development in BIM</h4><a class="self-link" href="#level-of-development-in-bim" aria-label="Permalink for Section 2.2.2"></a></div>
-<p>Naast het hierboven beschreven Level Of Information Need bestaat binnen het BIM-domein het Level Of Development (LOD). Dit Level of Development is gedefinieerd door het American Institue of Architects (AIA) en doorontwikkeld door het <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/">BIMForum</a>. Dit wordt gebruikt om het ontwikkelniveau aan te duiden van zowel de geometrie als de daaraan verbonden informatie in een BIM model. Er bestaan verschillende intrepetaties over hoeveel LOD niveaus er zijn en wat de inhoud hiervan precies betekent. Om hier meer eenduidigheid in te krijgen heeft het BIM-forum een update van de definities geleverd. De ontwikkelniveaus die onderscheiden worden zijn: </p>
+  <tr>
+    <td> <img src="./media/LOIN/LOIN_Parametrische_Functionaliteit.png" alt="LOIN Parametrische Functionaliteit" title="LOIN Parametrische Functionaliteit" width="190"> Parametrische functionaliteit </td>
+    <td> Moet het object na levering nog aanpasbaar zijn, en zo ja, hoe? </td>
+  </tr>
+</tbody></table><p>Voor <strong>alfanumerieke informatie</strong> wordt vastgelegd hoe het object geïdentificeerd wordt (bijvoorbeeld entiteit, type en classificatie) en welke eigenschappen het moet hebben. Dit deel is het best toetsbaar: het kan worden vastgelegd in een IDS en automatisch worden gecontroleerd (zie <a href="#informatieleveringsspecificatie-ils">InformatieLeveringsSpecificatie (ILS)</a>). Voor <strong>documentatie</strong> wordt vastgelegd welke documenten, zoals tekeningen, certificaten of rapporten, aan het object gekoppeld moeten zijn.</p>
+<p><strong>Een voorbeeld</strong></p>
+<p>Onderstaand voorbeeld laat zien hoe voor één doel twee objecten elk een eigen informatiebehoefte krijgen. Het voorbeeld is illustratief.</p>
+<table>
+  <caption> Voorbeeld Level of Information Need voor toetsing van de maximale bouwhoogte </caption>
+  <tbody><tr>
+    <th style="width:180px;"> </th>
+    <th style="width:260px;"> Bouwperceel </th>
+    <th style="width:260px;"> Buitenwand (IfcWall) </th>
+  </tr>
+  <tr>
+    <td> Doel </td>
+    <td colspan="2"> Toetsing maximale bouwhoogte, omgevingsvergunning </td>
+  </tr>
+  <tr>
+    <td> Leveringsmoment </td>
+    <td colspan="2"> Indienen vergunningaanvraag </td>
+  </tr>
+  <tr>
+    <td> Actoren </td>
+    <td colspan="2"> Levert: ontwerpende partij · Ontvangt: gemeente </td>
+  </tr>
+  <tr>
+    <td> Detail </td>
+    <td> Contour van het perceel </td>
+    <td> Vereenvoudigd volume, zonder aansluitdetails </td>
+  </tr>
+  <tr>
+    <td> Dimensie </td>
+    <td> 2D </td>
+    <td> 3D </td>
+  </tr>
+  <tr>
+    <td> Locatie </td>
+    <td> Absoluut (RD) </td>
+    <td> Absoluut (RD en NAP), via de georeferentie van het model </td>
+  </tr>
+  <tr>
+    <td> Voorkomen </td>
+    <td> Niet vereist </td>
+    <td> Niet vereist </td>
+  </tr>
+  <tr>
+    <td> Parametrische functionaliteit </td>
+    <td> Niet vereist </td>
+    <td> Niet vereist </td>
+  </tr>
+  <tr>
+    <td> Alfanumeriek </td>
+    <td> Kadastrale aanduiding </td>
+    <td> Unieke identificatie (GlobalId), IsExternal </td>
+  </tr>
+  <tr>
+    <td> Documentatie </td>
+    <td> Geen </td>
+    <td> Geen </td>
+  </tr>
+</tbody></table><p>Let op: het GIS-begrip Level of Detail (LoD) uit CityGML is iets anders dan de BIM-begrippen in deze paragraaf. Het wordt behandeld in <a href="#level-of-detail-lod-framework-in-gis">Level of Detail (LoD) Framework in GIS</a>.</p>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span><span class="issue-label">: Gebruik het Level of Information Need als uitgangspunt</span></div><aside class="">
+  <p><strong>AANBEVELING:</strong> Gebruik het Level of Information Need (NEN-EN-ISO 7817-1) om de informatiebehoefte voor BIM naar GEO-conversie vast te leggen: per object, per doel en per leveringsmoment. Leg de alfanumerieke eisen vast in een IDS. Level of Development-niveaus mogen als aanvulling worden gebruikt om het aspect detail te omschrijven, maar het LOIN is leidend.</p>
+</aside></div></section><section id="level-of-development-in-bim"><div class="header-wrapper"><h4 id="x2-2-2-level-of-development-in-bim"><bdi class="secno">2.2.2 </bdi>Level of Development in BIM</h4><a class="self-link" href="#level-of-development-in-bim" aria-label="Permalink for Section 2.2.2"></a></div>
+<p>In de BIM-praktijk wordt nog veel gewerkt met het Level of Development (LOD) van het <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/">BIMForum</a>, oorspronkelijk opgesteld door het American Institute of Architects (AIA). De volledige omschrijvingen per niveau staan in de <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/">LOD Specification</a>. Het BIMForum onderscheidt de volgende niveaus:</p>
 <ul>
-<li><p><strong>LOD100 - Concept niveau</strong></p>
-<ul>
-<li>Het model bevat: Generieke massa van een bouwwerk. Oppervlakte, hoogte, inhoud, volume, locatie en orientatie kunnen worden gemodelleerd in 2D, 3D of ander soort data. </li>
-<li>Het model is bedoeld voor: Analyse, kostenramingen of planning.</li>
-<li>Geometrie: Conceptuele massa's van het totaal model en symbolische elementen. Informatie over elementen kunnen afgeleid worden uit andere model elementen (b.v. het aantal verdiepingen kan men afleiden uit een 3D gebouwmodel)</li>
+<li><strong>LOD 100 – Conceptniveau</strong></li>
+<li><strong>LOD 200 – Globale geometrie</strong></li>
+<li><strong>LOD 300 – Nauwkeurige geometrie</strong></li>
+<li><strong>LOD 350 – Nauwkeurige geometrie met aansluitingen</strong></li>
+<li><strong>LOD 400 – Geschikt voor fabricage en uitvoering</strong></li>
+<li><strong>LOD 500 – As built</strong></li>
 </ul>
-</li>
-<li><p><strong>LOD200 - Globale geometrie</strong></p>
-<ul>
-<li>Het model bevat: Elementen van het model zijn gemodelleerd als geabstraheerde systemen of samenstellingen met benaderde hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
-<li>Het model is bedoeld voor: Analyse, kostenramingen of planning.</li>
-<li>Geometrie: Gemodelleerde elementen kunnen worden gezien als abstracte ruimtereserveringen, vaak als herkenbaar element. Het afleiden van informatie uit deze modellen is een schatting/benadering.</li>
-</ul>
-</li>
-<li><p><strong>LOD300 - Nauwkeurige geometry</strong></p>
-<ul>
-<li>Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
-<li>Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.</li>
-<li>Geometrie: Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint.</li>
-</ul>
-</li>
-<li><p><strong>LOD350 - Nauwkeurige geometry (met aansluiting)</strong></p>
-<ul>
-<li>Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. En heeft de koppeling naar andere elementen van systemen of samenstellingen. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
-<li>Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.</li>
-<li>Geometrie: Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint</li>
-</ul>
-</li>
-<li><p><strong>LOD400 – Adapted to realization/ execution</strong></p>
-<ul>
-<li>Het model bevat: Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie, orientatie en complete fabricatie, samenstellign en detail informatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
-<li>Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.</li>
-<li>Geometrie: Onderdelen hebben voldoende detail en nauwkeurigheid voor fabricage/constructie. Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint</li>
-</ul>
-</li>
-<li><p><strong>LOD 500 – “as built”</strong></p>
-<ul>
-<li>Het model bevat: Elementen van het model zijn gemodelleerd als construeerde samenstellingen met accurate en actuele hoeveelheden, afmetingen, vorm, locatie, orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. </li>
-<li>Het model is bedoeld voor: Generiek gebruik </li>
-<li>Geometrie: Dit level is geen "extra level" dat iets extra toevoegt op de voorgaande LOD's, maar is een afronding van alle voorgaande LOD's. Aangevuld met de werkelijke uitvoering van het bouwwerk.</li>
-</ul>
-</li>
-</ul>
-<p>Elke opvolgende LOD bouwt voort op het vorige level. Een BIM-model kan verschillende LOD's voor verschillende elementen in één model bevatten.  </p>
-<p>Voorbeeld van de verschilende LOD's van één kolom.</p>
 <figure id="LODS-van-een-kolom" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/LOD/Level_Of_Development_Kolom.png" alt="Verschillende LOD's van een kolom" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;">
       <figcaption><a class="self-link" href="#LODS-van-een-kolom">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">
@@ -1671,7 +1709,7 @@ BIM-classificaties zoals NL-SfB, NLCS en IMBOR kunnen ondersteunen bij het maken
         <a href="https://bimforum.org/resource/lod-level-of-development-lod-specification/">Level of Development (LOD) Specification</a>
         </span>
       </span></figcaption>
-</figure><p>Level Of Information Need en Level Of Development vullen elkaar aan. De Levels Of Development kunnen worden gebruikt om het detailniveau van een object te duiden in het LOIN Raamwerk. </p>
+</figure><p>Het Level of Development is een verouderde aanpak. Eén getal bundelt detail, betrouwbaarheid, beoogd gebruik en projectfase, wordt vaak voor een heel model afgesproken en is niet te herleiden tot toetsbare eigenschappen in IFC. Het Level of Information Need is de genormeerde opvolger en splitst deze onderdelen per object en per doel uit. Wie met LOD-niveaus werkt, kan de omschrijving van een niveau gebruiken als waarde voor het aspect <em>Detail</em> binnen een LOIN.</p>
 </section><section id="level-of-detail-lod-framework-in-gis"><div class="header-wrapper"><h4 id="x2-2-3-level-of-detail-lod-framework-in-gis"><bdi class="secno">2.2.3 </bdi>Level of Detail (LoD) Framework in GIS</h4><a class="self-link" href="#level-of-detail-lod-framework-in-gis" aria-label="Permalink for Section 2.2.3"></a></div>
 <p>In GIS wordt “Level of Detail” gebruikt om aan te geven hoe gedetailleerd een GIS model is in relatie tot het object in werkelijkheid. Het onderscheidt zich van BIM Level of Development omdat informatie buiten de geometrie, zoals attributen of documenten van minder belang zijn voor de classificatie. </p>
 <p>De GIS Level of Details worden gedefinieerd in de <a href="https://docs.ogc.org/guides/20-066.html#overview-section-levelsofdetail">CityGML3.0</a> standaard. De standaard definieert 4 hoofdniveaus, LOD0 tot LOD3. Hierbij krijgt de geometrie van een model bij hoger LOD niveau meer detail. De hoofdniveaus worden breed ondersteund in toepassingen.</p>
@@ -1719,7 +1757,7 @@ BIM-classificaties zoals NL-SfB, NLCS en IMBOR kunnen ondersteunen bij het maken
       </span></figcaption>
 </figure>
 #fi
-<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Noot</span><span class="issue-label">: LoD voor buggen en tunnels</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: LoD voor buggen en tunnels</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Verzamel de wensen voor GIS representaties van bruggen en tunnels. Onderzoek op basis hiervan welke aanpassingen aan de huidige LoD frameworks nodig zijn.  </p>
 </aside></div><p><strong>Verfijnd LoD framework 3D Geoinformation, TU Delft</strong></p>
 <p>Het CityGML LoD framework is relatief open en generiek. Dit maakt het makkelijk om een model in het framework te passen. Maar daarmee is het soms ook moeilijk om precies vast te stellen hoe een abstractie het originele gebouw in de werkelijkheid weergeeft. In 2016 heeft <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a> daarom een verfijning gemaakt die voortbouwt op het CityGML2.0 LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo is LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard. Ontwikkelingen in 3D data inwinning en modellering alsmede gebruik in de praktijk en de zo opgedane ervaringen, leiden voortdurend tot inzichten die de standaard en LoD beschrijvingen kunnen verbeteren.</p>
@@ -1803,7 +1841,7 @@ BIM-classificaties zoals NL-SfB, NLCS en IMBOR kunnen ondersteunen bij het maken
         </span>
       </span></figcaption>
 </figure><p>Dit framework is een verfijning van de eisen voor de LoD abstracties ten opzichte van het CityGML2.0/3.0 LoD framework maar kan nog steeds tot verschillende interpretaties leiden. Een van de onduidelijkheden betreft het gebruik van een voetafdruk of een geprojecteerd dak contour bij de verschillende volumetrische LoD-representaties die gebaseerd zijn op extrusie (LoD1.x en 2.x). Het gebruik van een van beide wordt niet duidelijk beschreven of uitgesloten door het framework. Hierdoor wordt in de praktijk de dak contour (dakuitlijn), de voetafdruk of een andere brongeometrie (zoals de geprojeceerde maximale omvang) gebruikt. Dit kan resulteren in verschillende representaties van hetzelfde gebouw zonder dat dit expliciet vermeld wordt. Zie meer hierover bij het hoofdstuk <a href="#uitbreidingen-aanpassingen-van-de-lod-frameworks">Uitbreidingen &amp; aanpassingen van de LoD frameworks</a></p>
-<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Noot</span><span class="issue-label">: voetafdruk (BGT) vs roofoutline vs geprojecteerde maximale omtrek (BAG)</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Noot</span><span class="issue-label">: voetafdruk (BGT) vs roofoutline vs geprojecteerde maximale omtrek (BAG)</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Ontwikkel een duidelijke standaard voor het aangeven van bron geometrie voor de LoD1.x en 2.x extensies: voetafdruk, geprojecteerde maximale omtrek, roof outline, 2DBAG, 2DBGT. Het LoD framework van de TUD kan hiervoor worden aangepast om duidelijk te maken welke bron-geometrie gebruikt is voor de extrusie voor de betreffende LoD groepen (LoD1.x en 2.x).  </p>
 </aside></div><p>Dit aangepaste LoD framework is ontwikkeld voor gebouwen en niet voor infrastructurele bouwwerken zoals bruggen, tunnels en sluizen. Er zijn wel initiatieven om LoDs van andere type objecten dan bouwwerken te definieren, zoals voor <a href="https://repository.tudelft.nl/record/uuid:8b8967a8-0a0f-498f-9d37-71c6c3e532af">vegetatie</a>, <a href="https://isprs-archives.copernicus.org/articles/XLII-4-W10/89/2018/">infrastructuur/transport</a> en <a href="https://isprs-annals.copernicus.org/articles/IV-4-W8/75/2019/">terrein</a>. Deze worden ook gebruikt in de praktijk, ook al is dat minder dan het verfijnde LoD-framework voor gebouwen.</p>
 </section><section id="uitbreidingen-aanpassingen-van-de-lod-frameworks"><div class="header-wrapper"><h4 id="x2-2-4-uitbreidingen-aanpassingen-van-de-lod-frameworks"><bdi class="secno">2.2.4 </bdi>Uitbreidingen &amp; aanpassingen van de LoD frameworks</h4><a class="self-link" href="#uitbreidingen-aanpassingen-van-de-lod-frameworks" aria-label="Permalink for Section 2.2.4"></a></div>
@@ -1819,7 +1857,7 @@ Voor de voorliggende praktijkrichtlijn is het met name relevant om te kijken naa
         </span>
       </span></figcaption>
 </figure><p>Een formeel en vastgesteld standaard LoD framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z GEO-model.</p>
-<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Noot</span><span class="issue-label">: Gestandaardiseerd LoD Framework</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Noot</span><span class="issue-label">: Gestandaardiseerd LoD Framework</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Breid het bestaande LoD-framework uit om LoDs te standaardiseren op nationaal of internationaal niveau ten behoeve van BIM naar Geo conversie.  </p>
 </aside></div><p><strong>Voetafdruk of dakomtrek (of andere geprojecteerde gebouwomtrek) als extrusie bron</strong></p>
 <p>LoD1, 2, 1.2, 1.3, 2.1, 2.2 en 2.3 zijn vormen die gemaakt zijn door een oppervlak te extruderen. Het is van belang dat gespecificeerd wordt welke oppervlaktes de basis vormen voor het genereren van deze volumetrische vorm. Een model dat gebaseerd is op de voetafdruk zal in de meeste gevallen een andere vorm hebben dan het model dat is gebaseerd op de dakomtrek. Veel gebouwen hebben een dak dat over de gevel (en ook de voetafdruk) heen uitsteekt. Bij deze gebouwen zal een extrusie gebaseerd op de dakomtrek dus groter uitvallen dan een extrusie gebaseerd op de voetafdruk. De keuze om òf voetafdruk òf dakomtrek òf een andere bron/vorm te gebruiken, is meestal afhankelijk van welke van deze voorhanden is. Het is belangrijk om hier expliciet in te zijn. </p>
@@ -1857,9 +1895,9 @@ Het is belangrijk om deze eisen aan de 2D geometrie te begrijpen om ook te begri
       </span></figcaption>
 </figure><p>NB1: Uit de definitie van de 2DBAG geometrie volgt ook dat ondergrondse onderdelen worden meegenomen in de 2D geometrie zoals ondergrondse parkeergarages. Bij de 3DBAG reconstructie worden deze pand-delen uit de geometrie gefilterd op basis van de hoogte data van het maaiveld op deze locaties.
 NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DBAG, net als AHN, een soort van bovenaanzicht geeft van de panden. Daarom passen beide data bronnen goed op elkaar, zeker daar waar het gaat om gebouwen met kolommen en onderdoorgangen. Er loopt momenteel een onderzoek om onderdoorgangen te modelleren in 3DBAG door deze te detecteren op basis van een BGT-BAG analyse en de hoogte vervolgens te detecteren in oblieke luchtfoto's en straatniveau LiDAR. De resultaten hiervan zullen in de 2026 release van de 3DBAG worden geïmplementeerd <a href="https://research.tudelft.nl/en/publications/automatische-modellering-van-onderdoorgangen-in-de-3dbag/">Peters et al, 2026</a>.</p>
-<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom voetafdruk of dakomtrek</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Noot</span><span class="issue-label">: Maak aanvullende afspraken rondom voetafdruk of dakomtrek</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Maak duidelijke afspraken rondom het gebruik van voetafdruk, dakomtrek, BAG polygoon, BGT polygoon of andere bron polygoon voor BIM naar GEO conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusie bron gebruikt wordt. Maak duidelijk of de BAG polygoon (bovenaanzicht) of BGT polygoon (voetafdruk), of een andere geometrie als extrusie bron is gebruikt.
-</p></aside></div><div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Noot</span><span class="issue-label">: Vastgestelde transformatieprofielen voor BIM naar GEO per toepassing</span></div><aside class="">
+</p></aside></div><div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Noot</span><span class="issue-label">: Vastgestelde transformatieprofielen voor BIM naar GEO per toepassing</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Genereer transformatieprofielen, "Inwinregels BIM", voor elke officiële gestandaardiseerde keten waarin BIM als bron voor GEO-data wordt gebruikt. Dit profiel beschrijft de eisen en regels voor de vertaling van BIM naar GEO en omvat minimaal een eenduidige LOD-definitie, een ILS/informatie-eis, een object- en attribuutmapping, geometrische en semantische transformaties/generalisiatieregels en validatiecriteria. Het profiel vormt daarmee de gestandaardiseerde brug tussen BIM-data en de eisen van de betreffende GEO-inwinningstraat.  </p>
 </aside></div></section></section><section id="bestandsformaten"><div class="header-wrapper"><h3 id="x2-3-bestandsformaten"><bdi class="secno">2.3 </bdi>Bestandsformaten</h3><a class="self-link" href="#bestandsformaten" aria-label="Permalink for Section 2.3"></a></div>
 <p>Wanneer men een conversie wil doen van open BIM naar open GEO kan men van verschillende bestandsformaten gebruik maken. Hieronder zijn een aantal belangrijke bestandsformaten beschreven voor het converteren van open BIM naar open GEO.</p>
@@ -2194,7 +2232,7 @@ NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DB
 <p>Aanvullend is shell extractie een complex proces waarbij problemen kunnen optreden, mede afhankelijk van de kwaliteit van de input modellen. Schil modellen met een hoge precisie kunnen alleen gecreëerd worden indien de input BIM modellen voldoen aan strenge eisen. Deze eisen zijn niet alleen semantisch (dat wil zeggen eisen om specifieke attributen te gebruiken) maar ook geometrisch. Dit maakt het lastig om deze eisen af te dwingen met een Informatie Levering Specificatie (ILS/IDS). Zelfs als alle eisen nageleefd worden, zijn er situaties waarbij het schil model niet correct gemaakt kan worden.</p>
 <p>Schil modellen met een lagere nauwkeurigheid of precisie stellen lagere eisen aan het input BIM model. Zo kunnen blok modellen of voxelisaties worden gemaakt van bijna alle BIM modellen, ook van schets/klad modellen. Hoe hoger de verwachte precisie van het GIS model, hoe strenger de eisen aan het input model en hoe complexer het proces om de schil extractie te creëren.</p>
 <p>Het genereren van schil modellen van BIM bestanden is momenteel vooral beschikbaar in experimentele, onderzoeks software. Verschillende methodes worden nog steeds (door)ontwikkeld en onderzocht. Er is nog geen standaard methode voor deze conversie. De beschikbare software oplossingen werken op basis van verschillende methodes en kunnen daardoor ook andere output genereren op basis van dezelfde BIM input. Daarnaast werkt niet alle shell extractie software volgens het LoD framework dat in GIS wordt aangehouden. Zo genereert de toepassing <a href="https://bimshell.app/">BIMShell</a> alleen een hoge kwaliteit schil en een voxelisatie. De toepassing <a href="https://github.com/tudelft3d/IFC_BuildingEnvExtractor">IfcEnvelopeExtractor</a> volgt een aangepaste intepretatie van het LoD framework van <a href="https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf">Biljecki et al.</a>. Output kan daardoor verschillen tussen verschillende toepassingen en software pakketten.</p>
-<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Noot</span><span class="issue-label">: Aanbeveling voor shell-extractie standaard?</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Noot</span><span class="issue-label">: Aanbeveling voor shell-extractie standaard?</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Welke aanbeveling voor shell-extractie doen wij? </p>
 </aside></div><p>Ondanks deze problemen leveren deze schil modellen gegenereeerd op basis van een BIM bron ook veel voordelen. De resulterende modellen hebben een kleine bestandsgrootte en worden ondersteund door vrijwel alle beschikbare GIS software. Deze modellen zijn daarnaast ook de enige modellen die vanwege hun geometrische kwaliteit voor complexe GIS analyses gebruikt kunnen worden.</p>
 <p>
@@ -2285,7 +2323,7 @@ Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON geometr
       </span></figcaption>
 </figure><p>Omdat het alpha shape proces enkel werkt met puntenwolken, moet de BIM geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-casting processen.</p>
 <p>De resulterende vorm van de alpha shape is altijd een gesloten object. Dit is een "correct" schilmodel, echter is het een benadering van de buitenschil. De alpha shape is bijna altijd anders dan de bron BIM geometrie. De alpha shape is een hoge resolutie mesh die vooral in concave hoeken zal afwijken van de buitenschil van het input BIM model.</p>
-<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="6"><span>Noot</span><span class="issue-label">: Plaats voor alpha shape in GIS</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="6"><span>Noot</span><span class="issue-label">: Plaats voor alpha shape in GIS</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Onderzoek naar de bruikbaarheid/gewenstheid van alpha shapes in GIS. Als alpha shapes bruikbaar worden bevonden moet de inpassing in een LoD framework worden onderzocht.  </p>
 </aside></div><p>De afwijking in de concave hoeken komt omdat de primitieve vorm die wordt gebruikt om de alpha shape bij te snijden niet diep in de concave hoeken past. Deze afwijking kan in beperkte mate worden gecorrigeerd door de primitief die wordt gebruikt kleiner te maken. Een te kleine primitief zorgt echter voor een trager en minder robuust proces. Aanvullend heeft een kleinere primitief ook een hogere resolutie puntenwolk nodig. Als de diameter van de primitief kleiner is dan de afstand tussen 2 punten op een polygoon van het BIM model dan zal deze polygoon niet correct gerepresenteerd worden in de output.</p>
 <p><a href="https://www.tandfonline.com/doi/abs/10.1080/17538947.2024.2368708%4010.1080/tfocoll.2025.0.issue-3D_modeling_and_algorithms">Wang et al.</a> laten zien dat de alpha shape op zichzelf niet het resultaat hoeft te zijn van de shell extractie maar ook als een tussenstap kan worden gebruikt. Bij dit onderzoek gebruiken ze de alpha shape om de polygonen die deel zijn van de buitenschil van het BIM model te vinden. Dit wordt gedaan door te testen welke polygonen van het BIM model het dichtst bij het zwaartepunt van iedere driehoek van de alpha shape mesh liggen. </p>
@@ -2303,7 +2341,7 @@ De Universiteit van Hong Kong heeft ifc naar cityGML mappingen gepubliceerd in e
 <p>Een voorbeeld van een Application Domain Extension voor IFC-entiteiten in CityGML is weergegeven in <a href="#entiteit-en-attribuutmapping-tussen-bim-en-geo">bijlage 2</a></p>
 <p>Er zijn naast verschillende Level Of Details ook verschillende decompositie-niveaus die men vanuit één gedetailleerd BIM-model kan genereren. Zie <a href="#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau">bijlage 1</a></p>
 <p>Zoals in de <a href="https://www.digigo.nu/ilsen-en-richtlijnen/bim-basis-ils/3-6-classificatiesystematiek/">BIM basis ILS - hoofdstuk classificatie</a> aangegeven dient men naast het juiste gebruik van entiteiten ook gebruik te maken van de juiste classificatie in BIM. Ook classificaties kan men mappen. Er zijn verschillend BIM Classificatie standaarden als: NL-SFB, NLCS, ETIM, NEN2767-4, IMBOR of soms domein-specifieke standaarden als SATO van Rijkswaterstaat voor Tunnels. </p>
-<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>Noot</span><span class="issue-label">: Entiteit-mapping op basis van Entiteit of op basis van Clasificatie</span></div><aside class="">
+<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>Noot</span><span class="issue-label">: Entiteit-mapping op basis van Entiteit of op basis van Clasificatie</span></div><aside class="">
   <p><strong>AANBEVELING:</strong> Maak afspraken over de manier van mappen tussen IFC en CityGML/CityJSON. Of men op basis van entiteit of classificatie mapt. En wat leidend is wanneer classificatie en entiteitsgebruik elkaar tegenspreken. </p>
 </aside></div></section><section id="mapping-van-attributen"><div class="header-wrapper"><h3 id="x5-2-mapping-van-attributen"><bdi class="secno">5.2 </bdi>Mapping van Attributen</h3><a class="self-link" href="#mapping-van-attributen" aria-label="Permalink for Section 5.2"></a></div>
 <p>Entiteitmapping beschrijft hoe objecttypen uit een BIM-model worden gekoppeld aan objecttypen in een GEO-model, terwijl attribuutmapping beschrijft hoe de eigenschappen van deze objecten worden vertaald en overgenomen in de attributen van bron-naar-doel model.</p>
@@ -2858,7 +2896,6 @@ De inhoud van de netto ruimten en de products wordt het Bruto Inhoud of er kan e
 <li>het aantal overgenomen specificaties per bron-ILS, zodat een stilzwijgend weggevallen bron opvalt.</li>
 </ul>
 <p>Een samenstelling die op een van deze punten afgaat, wordt niet gepubliceerd.</p>
-<p><mark>Redactie: er is een proof-of-concept-tool die meerdere IDS-bestanden inleest, per fase verdeelt en per eis optioneel/verplicht laat zetten. Hier een verwijzing opnemen bij "optionele configuratietools voor IDS", naast de beschikbare commerciële en gratis IDS-editors. Link nog toe te voegen; beheer en status van de tool zijn nog niet belegd.</mark></p>
 </section></section><section id="van-bim-eis-naar-geo-product"><div class="header-wrapper"><h3 id="x8-6-van-bim-eis-naar-geo-product"><bdi class="secno">8.6 </bdi>Van BIM-eis naar GEO-product</h3><a class="self-link" href="#van-bim-eis-naar-geo-product" aria-label="Permalink for Section 8.6"></a></div>
 <section id="elke-conversiemethode-veronderstelt-een-ils"><div class="header-wrapper"><h4 id="x8-6-1-elke-conversiemethode-veronderstelt-een-ils"><bdi class="secno">8.6.1 </bdi>Elke conversiemethode veronderstelt een ILS</h4><a class="self-link" href="#elke-conversiemethode-veronderstelt-een-ils" aria-label="Permalink for Section 8.6.1"></a></div>
 <p>Hoofdstuk 9 beschrijft de methoden om BIM naar GEO te brengen. Die methoden staan niet los van dit hoofdstuk: <strong>elke methode veronderstelt eisen aan het BIM-model, of die nu zijn opgeschreven of niet.</strong></p>
@@ -2997,8 +3034,8 @@ De inhoud van de netto ruimten en de products wordt het Bruto Inhoud of er kan e
 </tbody></table>
 <p>Twee begripskwesties die bij het uitwerken van deze mapping opgelost moeten worden:</p>
 <ul>
-<li><strong><code>IfcBuilding</code> is niet hetzelfde als een pand.</strong> Een <code>IfcBuilding</code> kan meerdere panden omvatten of juist een deel van een pand zijn. De afbakening moet expliciet worden afgesproken: afleiden uit de externe elementen op maaiveldniveau, of expliciet aangeven met bijvoorbeeld een <code>IfcZone</code> per pand. <mark>Redactie: dit is een normatieve keuze die nog gemaakt moet worden.</mark></li>
-<li><strong>De attributenmapping van de basisregistraties naar IFC is nog niet compleet.</strong> Voor de identificatie bestaat een afspraak; voor de overige attributen nog niet. <mark>Redactie: dit is een aparte werkzaamheid, buiten deze praktijkrichtlijn te beleggen.</mark></li>
+<li><strong><code>IfcBuilding</code> is niet hetzelfde als een pand.</strong> Een <code>IfcBuilding</code> kan meerdere panden omvatten of juist een deel van een pand zijn. De afbakening moet expliciet worden afgesproken: afleiden uit de externe elementen op maaiveldniveau, of expliciet aangeven met bijvoorbeeld een <code>IfcZone</code> per pand. </li>
+<li><strong>De attributenmapping van de basisregistraties naar IFC is nog niet compleet.</strong> Voor de identificatie bestaat een afspraak; voor de overige attributen nog niet.</li>
 </ul>
 <hr>
 <blockquote>
@@ -3845,9 +3882,22 @@ Deze genereert een omhulselversie van het model door de vlakken die zich aan de 
 <li><strong>Attributen (properties)</strong>: Attributen uit de IMBOR Startset</li>
 </ul>
 <section id="mermaid-diagram-attribuutflow"><div class="header-wrapper"><h3 id="d-1-mermaid-diagram-attribuutflow"><bdi class="secno">D.1 </bdi>Mermaid Diagram: Attribuutflow</h3><a class="self-link" href="#mermaid-diagram-attribuutflow" aria-label="Permalink for Appendix D.1"></a></div>
-<pre><svg id="diagram-1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="792.75" style="max-width: 560.703125px;" viewBox="0 0 560.703125 792.75"><style>
-#diagram-1 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#diagram-1 .error-icon{fill:#552222;}#diagram-1 .error-text{fill:#552222;stroke:#552222;}#diagram-1 .edge-thickness-normal{stroke-width:2px;}#diagram-1 .edge-thickness-thick{stroke-width:3.5px;}#diagram-1 .edge-pattern-solid{stroke-dasharray:0;}#diagram-1 .edge-pattern-dashed{stroke-dasharray:3;}#diagram-1 .edge-pattern-dotted{stroke-dasharray:2;}#diagram-1 .marker{fill:#333333;stroke:#333333;}#diagram-1 .marker.cross{stroke:#333333;}#diagram-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#diagram-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#diagram-1 .cluster-label text{fill:#333;}#diagram-1 .cluster-label span{color:#333;}#diagram-1 .label text,#diagram-1 span{fill:#333;color:#333;}#diagram-1 .node rect,#diagram-1 .node circle,#diagram-1 .node ellipse,#diagram-1 .node polygon,#diagram-1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#diagram-1 .node .label{text-align:center;}#diagram-1 .node.clickable{cursor:pointer;}#diagram-1 .arrowheadPath{fill:#333333;}#diagram-1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#diagram-1 .flowchart-link{stroke:#333333;fill:none;}#diagram-1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#diagram-1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#diagram-1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#diagram-1 .cluster text{fill:#333;}#diagram-1 .cluster span{color:#333;}#diagram-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#diagram-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
-</style><g transform="translate(0, 0)"><marker id="flowchart-pointEnd" class="marker flowchart" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-pointStart" class="marker flowchart" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-circleEnd" class="marker flowchart" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-circleStart" class="marker flowchart" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-crossEnd" class="marker cross flowchart" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-crossStart" class="marker cross flowchart" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"><g class="cluster default" id="IMBOR"><rect style="" rx="0" ry="0" x="161.140625" y="8" width="391.5625" height="380.75"></rect><g class="cluster-label" transform="translate(330.6953125, 13)"><foreignObject width="52.453125"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">IMBOR</span></div></foreignObject></g></g><g class="cluster default" id="IFC"><rect style="" rx="0" ry="0" x="8" y="408.75" width="298.171875" height="376"></rect><g class="cluster-label" transform="translate(144.1953125, 413.75)"><foreignObject width="25.78125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">IFC</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M81.42889747191012,577.25L90.54751872659176,558.25C99.66613998127342,539.25,117.9033824906367,501.25,131.18867041198502,482.25C144.47395833333334,463.25,152.80729166666666,463.25,162.84375,463.25C172.88020833333334,463.25,184.61979166666666,463.25,190.48958333333334,463.25L196.359375,463.25" id="L-A-B-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M100.14606741573033,577.25L106.14516034644195,573.0833333333334C112.14425327715355,568.9166666666666,124.14243913857678,560.5833333333334,134.30819873595507,556.4166666666666C144.47395833333334,552.25,152.80729166666666,552.25,164.25260416666666,552.25C175.69791666666666,552.25,190.25520833333334,552.25,197.53385416666666,552.25L204.8125,552.25" id="L-A-D-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-D" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M100.14606741573033,616.25L106.14516034644195,620.4166666666666C112.14425327715355,624.5833333333334,124.14243913857678,632.9166666666666,134.30819873595507,637.0833333333334C144.47395833333334,641.25,152.80729166666666,641.25,161.140625,641.25C169.47395833333334,641.25,177.80729166666666,641.25,181.97395833333334,641.25L186.140625,641.25" id="L-A-E-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-E" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M81.42889747191012,616.25L90.54751872659176,635.25C99.66613998127342,654.25,117.9033824906367,692.25,131.18867041198502,711.25C144.47395833333334,730.25,152.80729166666666,730.25,161.95572916666666,730.25C171.10416666666666,730.25,181.06770833333334,730.25,186.04947916666666,730.25L191.03125,730.25" id="L-A-G-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-G" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M245.22315950920245,148L255.38127875766872,130.875C265.53939800613495,113.75,285.8556365030675,79.5,306.1843286682004,62.375C326.5130208333333,45.25,346.8541666666667,45.25,367.5651041666667,46.89149562702779C388.2760416666667,48.53299125405558,409.3567708333333,51.815982508111155,419.8971354166667,53.45747813513895L430.4375,55.098973762166736" id="L-H-I-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-I" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M258.0546875,152.5276341305753L266.07421875,147.60636177547943C274.09375,142.68508942038355,290.1328125,132.84254471019176,308.3229166666667,127.92127235509588C326.5130208333333,123,346.8541666666667,123,370.8997395833333,126.57003808717731C394.9453125,130.14007617435462,422.6953125,137.28015234870927,436.5703125,140.8501904358866L450.4453125,144.4202285230639" id="L-H-K-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-K" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M258.0546875,182.4723658694247L266.07421875,187.3936382245206C274.09375,192.31491057961648,290.1328125,202.15745528980824,308.3229166666667,207.07872764490412C326.5130208333333,212,346.8541666666667,212,367.1953125,214.61688884186768C387.5364583333333,217.23377768373538,407.8776041666667,222.46755536747074,418.0481770833333,225.08444420933844L428.21875,227.7013330512061" id="L-H-L-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-L" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M244.24841994382024,187L254.56899578651687,206C264.8895716292135,225,285.53072331460675,263,306.02187207397003,282C326.5130208333333,301,346.8541666666667,301,368.3059895833333,303.9026661024122C389.7578125,306.80533220482437,412.3203125,312.61066440964873,423.6015625,315.5133305120609L434.8828125,318.4159966144731" id="L-H-N-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-N" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M270.953125,463.25L276.8229166666667,463.25C282.6927083333333,463.25,294.4322916666667,463.25,310.47265625,401.2083333333333C326.5130208333333,339.1666666666667,346.8541666666667,215.08333333333334,367.5651041666667,150.3296304133164C388.2760416666667,85.57592749329949,409.3567708333333,80.15185498659896,419.8971354166667,77.4398187332487L430.4375,74.72778247989844" id="L-B-I-0" class=" edge-thickness-normal edge-pattern-dotted flowchart-link LS-B LE-I" style="fill:none;stroke-width:2px;stroke-dasharray:3;" marker-end="url(#flowchart-pointEnd)"></path><path d="M262.5,552.25L269.7786458333333,552.25C277.0572916666667,552.25,291.6145833333333,552.25,309.0638020833333,490.2083333333333C326.5130208333333,428.1666666666667,346.8541666666667,304.0833333333333,370.8997395833333,238.47162857948933C394.9453125,172.85992382564538,422.6953125,165.71984765129073,436.5703125,162.1498095641134L450.4453125,158.5797714769361" id="L-D-K-0" class=" edge-thickness-normal edge-pattern-dotted flowchart-link LS-D LE-K" style="fill:none;stroke-width:2px;stroke-dasharray:3;" marker-end="url(#flowchart-pointEnd)"></path><path d="M281.171875,641.25L285.3385416666667,641.25C289.5052083333333,641.25,297.8385416666667,641.25,312.17578125,579.2083333333334C326.5130208333333,517.1666666666666,346.8541666666667,393.0833333333333,367.1953125,328.424777824799C387.5364583333333,263.76622231626465,407.8776041666667,258.53244463252923,418.0481770833333,255.91555579066156L428.21875,253.2986669487939" id="L-E-L-0" class=" edge-thickness-normal edge-pattern-dotted flowchart-link LS-E LE-L" style="fill:none;stroke-width:2px;stroke-dasharray:3;" marker-end="url(#flowchart-pointEnd)"></path><path d="M276.28125,730.25L281.2630208333333,730.25C286.2447916666667,730.25,296.2083333333333,730.25,311.3606770833333,666.125C326.5130208333333,602,346.8541666666667,473.75,368.3059895833333,407.99543306531245C389.7578125,342.2408661306249,412.3203125,338.9817322612498,423.6015625,337.3521653265623L434.8828125,335.7225983918747" id="L-G-N-0" class=" edge-thickness-normal edge-pattern-dotted flowchart-link LS-G LE-N" style="fill:none;stroke-width:2px;stroke-dasharray:3;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(367.1953125, 91)"><g class="label" transform="translate(-36.0234375, -12)"><foreignObject width="72.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">mapt naar</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(367.1953125, 180)"><g class="label" transform="translate(-36.0234375, -12)"><foreignObject width="72.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">mapt naar</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(367.1953125, 269)"><g class="label" transform="translate(-36.0234375, -12)"><foreignObject width="72.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">mapt naar</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(367.1953125, 345.5)"><g class="label" transform="translate(-36.0234375, -12)"><foreignObject width="72.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">mapt naar</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-I-33" transform="translate(477.9609375, 62.5)"><rect class="basic label-container" style="" rx="0" ry="0" x="-47.5234375" y="-19.5" width="95.046875" height="39"></rect><g class="label" style="" transform="translate(-40.0234375, -12)"><foreignObject width="80.046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">identificatie</span></div></foreignObject></g></g><g class="node default default" id="flowchart-H-32" transform="translate(233.65625, 167.5)"><rect class="basic label-container" style="" rx="0" ry="0" x="-24.3984375" y="-19.5" width="48.796875" height="39"></rect><g class="label" style="" transform="translate(-16.8984375, -12)"><foreignObject width="33.796875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Brug</span></div></foreignObject></g></g><g class="node default default" id="flowchart-K-35" transform="translate(477.9609375, 151.5)"><rect class="basic label-container" style="" rx="0" ry="0" x="-27.515625" y="-19.5" width="55.03125" height="39"></rect><g class="label" style="" transform="translate(-20.015625, -12)"><foreignObject width="40.03125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">naam</span></div></foreignObject></g></g><g class="node default default" id="flowchart-L-37" transform="translate(477.9609375, 240.5)"><rect class="basic label-container" style="" rx="0" ry="0" x="-49.7421875" y="-19.5" width="99.484375" height="39"></rect><g class="label" style="" transform="translate(-42.2421875, -12)"><foreignObject width="84.484375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">beschrijving</span></div></foreignObject></g></g><g class="node default default" id="flowchart-N-39" transform="translate(477.9609375, 329.5)"><rect class="basic label-container" style="" rx="0" ry="0" x="-43.078125" y="-19.5" width="86.15625" height="39"></rect><g class="label" style="" transform="translate(-35.578125, -12)"><foreignObject width="71.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">geometrie</span></div></foreignObject></g></g><g class="node default default" id="flowchart-B-25" transform="translate(233.65625, 463.25)"><rect class="basic label-container" style="" rx="0" ry="0" x="-37.296875" y="-19.5" width="74.59375" height="39"></rect><g class="label" style="" transform="translate(-29.796875, -12)"><foreignObject width="59.59375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">GlobalId</span></div></foreignObject></g></g><g class="node default default" id="flowchart-A-24" transform="translate(72.0703125, 596.75)"><rect class="basic label-container" style="" rx="0" ry="0" x="-39.0703125" y="-19.5" width="78.140625" height="39"></rect><g class="label" style="" transform="translate(-31.5703125, -12)"><foreignObject width="63.140625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">IfcBridge</span></div></foreignObject></g></g><g class="node default default" id="flowchart-D-27" transform="translate(233.65625, 552.25)"><rect class="basic label-container" style="" rx="0" ry="0" x="-28.84375" y="-19.5" width="57.6875" height="39"></rect><g class="label" style="" transform="translate(-21.34375, -12)"><foreignObject width="42.6875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Name</span></div></foreignObject></g></g><g class="node default default" id="flowchart-E-29" transform="translate(233.65625, 641.25)"><rect class="basic label-container" style="" rx="0" ry="0" x="-47.515625" y="-19.5" width="95.03125" height="39"></rect><g class="label" style="" transform="translate(-40.015625, -12)"><foreignObject width="80.03125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Description</span></div></foreignObject></g></g><g class="node default default" id="flowchart-G-31" transform="translate(233.65625, 730.25)"><rect class="basic label-container" style="" rx="0" ry="0" x="-42.625" y="-19.5" width="85.25" height="39"></rect><g class="label" style="" transform="translate(-35.125, -12)"><foreignObject width="70.25" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Geometry</span></div></foreignObject></g></g></g></g></g></svg></pre>
+<pre><code class="mermaid hljs" data-processed="true" aria-busy="false">IMBOR
+IFC
+mapt naar
+mapt naar
+mapt naar
+mapt naar
+identificatie
+Brug
+naam
+beschrijving
+geometrie
+GlobalId
+IfcBridge
+Name
+Description
+Geometry</code></pre>
 </section></section>
 <section class="appendix" id="voorbeeld-ils"><div class="header-wrapper"><h2 id="e-voorbeeld-ils"><bdi class="secno">E. </bdi>Voorbeeld ILS</h2><a class="self-link" href="#voorbeeld-ils" aria-label="Permalink for Appendix E."></a></div>
 <p>in IDS:</p>
@@ -4353,7 +4403,7 @@ ex:ActivityShape
 
 
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="h-referenties"><bdi class="secno">H. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix H."></a></div><section id="normatieve-referenties">
+<div class="mermaidTooltip" style="opacity: 0;"></div><section id="references" class="appendix"><div class="header-wrapper"><h2 id="h-referenties"><bdi class="secno">H. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix H."></a></div><section id="normatieve-referenties">
     <div class="header-wrapper"><h3 id="h-1-normatieve-referenties"><bdi class="secno">H.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix H.1"></a></div>
     <dl class="bibliography"><dt id="bib-3dtiles">[3DTILES]</dt><dd>
       <a href="http://docs.opengeospatial.org/cs/18-053r2/18-053r2.html"><cite>3D Tiles Specification 1.0</cite></a>.  Open Geospatial Consortium (OGC). 2019-01-31. Approved for public release. URL: <a href="http://docs.opengeospatial.org/cs/18-053r2/18-053r2.html">http://docs.opengeospatial.org/cs/18-053r2/18-053r2.html</a>
@@ -4599,4 +4649,6 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Geonovum Praktijkrichtlijn - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Geonovum Praktijkrichtlijn - Werkversie</div><div id="ddiagram-1"><svg id="diagram-1" width="400" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="768 0 512 512"><style>
+#diagram-1 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#diagram-1 .error-icon{fill:#552222;}#diagram-1 .error-text{fill:#552222;stroke:#552222;}#diagram-1 .edge-thickness-normal{stroke-width:2px;}#diagram-1 .edge-thickness-thick{stroke-width:3.5px;}#diagram-1 .edge-pattern-solid{stroke-dasharray:0;}#diagram-1 .edge-pattern-dashed{stroke-dasharray:3;}#diagram-1 .edge-pattern-dotted{stroke-dasharray:2;}#diagram-1 .marker{fill:#333333;stroke:#333333;}#diagram-1 .marker.cross{stroke:#333333;}#diagram-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#diagram-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#diagram-1 .cluster-label text{fill:#333;}#diagram-1 .cluster-label span{color:#333;}#diagram-1 .label text,#diagram-1 span{fill:#333;color:#333;}#diagram-1 .node rect,#diagram-1 .node circle,#diagram-1 .node ellipse,#diagram-1 .node polygon,#diagram-1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#diagram-1 .node .label{text-align:center;}#diagram-1 .node.clickable{cursor:pointer;}#diagram-1 .arrowheadPath{fill:#333333;}#diagram-1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#diagram-1 .flowchart-link{stroke:#333333;fill:none;}#diagram-1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#diagram-1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#diagram-1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#diagram-1 .cluster text{fill:#333;}#diagram-1 .cluster span{color:#333;}#diagram-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#diagram-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
+</style><g></g><g><path class="error-icon" d="m411.313,123.313c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32-9.375,9.375-20.688-20.688c-12.484-12.5-32.766-12.5-45.25,0l-16,16c-1.261,1.261-2.304,2.648-3.31,4.051-21.739-8.561-45.324-13.426-70.065-13.426-105.867,0-192,86.133-192,192s86.133,192 192,192 192-86.133 192-192c0-24.741-4.864-48.327-13.426-70.065 1.402-1.007 2.79-2.049 4.051-3.31l16-16c12.5-12.492 12.5-32.758 0-45.25l-20.688-20.688 9.375-9.375 32.001-31.999zm-219.313,100.687c-52.938,0-96,43.063-96,96 0,8.836-7.164,16-16,16s-16-7.164-16-16c0-70.578 57.422-128 128-128 8.836,0 16,7.164 16,16s-7.164,16-16,16z"></path><path class="error-icon" d="m459.02,148.98c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l16,16c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16.001-16z"></path><path class="error-icon" d="m340.395,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16-16c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l15.999,16z"></path><path class="error-icon" d="m400,64c8.844,0 16-7.164 16-16v-32c0-8.836-7.156-16-16-16-8.844,0-16,7.164-16,16v32c0,8.836 7.156,16 16,16z"></path><path class="error-icon" d="m496,96.586h-32c-8.844,0-16,7.164-16,16 0,8.836 7.156,16 16,16h32c8.844,0 16-7.164 16-16 0-8.836-7.156-16-16-16z"></path><path class="error-icon" d="m436.98,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688l32-32c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32c-6.251,6.25-6.251,16.375-0.001,22.625z"></path><text class="error-text" x="1240" y="250" font-size="150px" style="text-anchor: middle;">Syntax error in graph</text><text class="error-text" x="1050" y="400" font-size="100px" style="text-anchor: middle;">mermaid version 9.0.0</text></g></svg></div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
