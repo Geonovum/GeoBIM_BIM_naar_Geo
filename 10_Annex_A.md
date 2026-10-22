@@ -6,7 +6,18 @@ Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acern
 
 
 ## Decompositieniveau 1: 
-![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_1.png)
+
+
+<figure id="Decompositie_niveau_1_IFC_naar_CityGML" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_1.png" alt="Decompositie_niveau_1_IFC_naar_CityGML" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#Decompositie_niveau_1_IFC_naar_CityGML"></a>
+        <span class="fig-title">
+        Decompositie niveau 1 IFC naar CityGML
+      </figcaption>
+</figure>
+
+Voorbeeld CityGML beschrijving decompositieniveau 1: 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,8 +56,17 @@ Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acern
 ```
 
 # Decompositieniveau 2: 
-![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_2.png)
 
+<figure id="Decompositie_niveau_2_IFC_naar_CityGML" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_2.png" alt="Decompositie_niveau_1_IFC_naar_CityGML" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#Decompositie_niveau_2_IFC_naar_CityGML"></a>
+        <span class="fig-title">
+        Decompositie niveau 2 IFC naar CityGML
+      </figcaption>
+</figure>
+
+Voorbeeld CityGML beschrijving decompositieniveau 2: 
 ```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <core:CityModel 	xmlns:core="http://www.opengis.net/citygml/3.0"
@@ -114,9 +134,24 @@ Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acern
 ```
 
 # Decompositieniveau 3: 
-![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_3.png)
+<figure id="Decompositie_niveau_3_IFC_naar_CityGML" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_3.png" alt="Decompositie_niveau_1_IFC_naar_CityGML" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#Decompositie_niveau_3_IFC_naar_CityGML"></a>
+        <span class="fig-title">
+        Decompositie niveau 3 IFC naar CityGML
+      </figcaption>
+</figure>
+
 
 
 
 # Decompositieniveau 4: 
-![Decompositie_niveau_1_IFC_naar_CityGML](media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_4.png)
+<figure id="Decompositie_niveau_4_IFC_naar_CityGML" style="display: block; text-align: center; margin: 0 auto;">
+      <img src="media/IFC_CITYGML_BRIDGE/IFC_To_CityGML_Use_Case_Bridge_V2-Decompositie_niveau_4.png" alt="Decompositie_niveau_1_IFC_naar_CityGML" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <figcaption>
+        <a class="self-link" href="#Decompositie_niveau_4_IFC_naar_CityGML"></a>
+        <span class="fig-title">
+        Decompositie niveau 4 IFC naar CityGML
+      </figcaption>
+</figure>
