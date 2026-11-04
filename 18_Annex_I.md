@@ -1,4 +1,4 @@
-# Workflow IfcEnvelopExtractor
+# Workflow IfcEnvelopeExtractor
 
 ## bestands correctie
 
@@ -276,7 +276,7 @@ De representatie bestaat uit:
 * Complex
   * $n \geq 1$
   * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
-  * Groep van volumes die is verzameld door de IFC objecten die zijn gekozen als ruimte scheidende objecten 1:1 over te zetten.
+  * Groep van volumes die is verzameld door de IFC objecten die zijn gekozen als ruimte scheidende objecten 1-op-1 over te zetten.
 
 ### LoD4.2
 
@@ -289,7 +289,7 @@ De representatie bestaat uit:
 * Complex
   * $n \geq 1$
   * Type: ieder IfcClass type dat in het model zit met voorafgaand een "+". Zoals bijvoorbeeld _IfcWall_ ->  _+IfcWall_
-  * Groep van volumes die is verzameld door de IFC objecten 1:1 over te zetten. Deze abstractie gebruikt geen versimpelde representatie van de ramen en deuren zoals de rest van de abstractie wel doet.
+  * Groep van volumes die is verzameld door de IFC objecten 1-op-1 over te zetten. Deze abstractie gebruikt geen versimpelde representatie van de ramen en deuren zoals de rest van de abstractie wel doet.
 
 
 ### LoDe.1

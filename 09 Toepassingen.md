@@ -2,7 +2,7 @@
 
 ## Handleiding/HowTo
 
-| Applicatie | BIM/IFC direct openen | 1:1 vertaling | Gefilterde 1:1 vertaling | Shell extractie | CityGML LoD support | CityJSON LoD support |
+| Applicatie | BIM/IFC direct openen | 1-op-1 vertaling | Gefilterde 1-op-1 vertaling | Shell extractie | CityGML LoD support | CityJSON LoD support |
 | - | - | - | - | - | - | - |
 | ESRI ArcGIS Pro| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | IFC2GeoJSON | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
@@ -20,7 +20,7 @@
 ## ESRI ArcGIS Pro
 In ESRI ArcGIS Pro zijn er tools beschikbaar om een bestaand BIM-model (IFC en Revit) om te zetten naar GEO. Er is tooling beschikbaar om BIM-modellen direct in de Esri software te laden. Een juiste geo-locatie te geven en te converteren naar een ESRI File GeoDataBase (.gdb). De beschikbaar tooling is beschreven op [Esri BIM en GIS](https://learn.arcgis.com/en/paths/bim-and-gis/) en op de [bimfile to geodatabase](https://doc.esri.com/en/arcgis-pro/latest/tool-reference/conversion/bimfile-to-geodatabase.html) webpagina's. 
 
-Met deze tooling is het mogelijk een 1 op 1 vertaling van het BIM-model te maken. Wel zal de orginele geometrie vertaald worden naar een Multipatch zoals beschreven in deze [ARcGIS documentatie](https://doc.esri.com/en/arcgis-pro/latest/help/data/revit/adding-revit-data-to-arcgis-pro.html). 
+Met deze tooling is het mogelijk een 1-op-1 vertaling van het BIM-model te maken. Wel zal de orginele geometrie vertaald worden naar een Multipatch zoals beschreven in deze [ARcGIS documentatie](https://doc.esri.com/en/arcgis-pro/latest/help/data/revit/adding-revit-data-to-arcgis-pro.html). 
 
 In de Esri-blog ["Common Patterns for BIM and GIS Integration"](https://www.esri.com/arcgis-blog/products/arcgis-pro/transportation/common-patterns-for-bim-and-gis-integration) staat beschreven dat het mogelijk is om alle informatie-uitwisseling via open standaarden (o.a. IFC en CityGML) plaats te laten vinden. Het converteren van gegevens van de ene standaard naar de andere kent vergelijkbare problemen als klassieke ETL-workflows. Dit leidt tot gegevensverlies, omdat bepaalde domein- of disciplinespecifieke informatie ontbreekt en omdat er verschillen zijn in de complexiteit waarmee geometrie wordt weergegeven. Het gegevensverlies kan nog groter worden wanneer gegevens vanuit een leveranciersspecifiek formaat via meerdere open standaarden worden geconverteerd en uiteindelijk weer in een ander leveranciersspecifiek formaat terechtkomen. 
 
@@ -49,7 +49,7 @@ Het project [Ifc2GeoJSON](https://github.com/abdoulayediak/ifc2geojson) voorziet
       <figcaption>
         <a class="self-link" href="#IFC-2-GIS"></a>
         <span class="fig-title">
-        IFC in de tooling IFC2GIS met een selectie een gefilterde 1:1 vertaling<br>
+        IFC in de tooling IFC2GIS met een selectie een gefilterde 1-op-1 vertaling<br>
         Bron: <a href="https://ifc2gis.com/">IFC2GIS </a></a>
         </span>
       </figcaption>
@@ -61,7 +61,7 @@ In deze tool wordt web-ifc, tree.js en geojson gebruikt om de geometrie om te ze
 ## Save Software FME
 FME software heeft verschillende functies beschikbaar om BIM naar GEO om te zetten. 
 
-De functies onderscheiden in het detailniveau van het BIM-model en het detailniveau van de output. LoD 3 is hierbij het meest complex, omdat het geen n op 1, geen 1 op 1 maar een n op n mapping (en dientengevolge conversie) is.   
+De functies onderscheiden in het detailniveau van het BIM-model en het detailniveau van de output. LoD 3 is hierbij het meest complex, omdat het geen n op 1, geen 1-op-1 maar een n op n mapping (en dientengevolge conversie) is.   
 
 - [Simplifying IFC geometries for easier conversion](https://support.safe.com/hc/en-us/articles/25407765402637-Simplifying-IFC-geometries-for-easier-conversion)  
 - [BIM to GIS IFC LOD 100 to LOD 2 CityGML](https://support.safe.com/hc/en-us/articles/25407431004173-BIM-to-GIS-Basic-IFC-LOD-100-to-LOD-2-CityGML)  
@@ -210,7 +210,7 @@ Deze genereert een omhulselversie van het model door de vlakken die zich aan de 
 
 ## IfcEnvelopeExtractor
 
-De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet alleen een 1:1 omzetting van IFC naar een GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf). Aanvullend zijn er een aantal experimentele LoDs en een 1:1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.
+De IfcEnvelopeExtractor is een open source C++ applicatie die BIM modellen in de IFC encoding kan omzetten naar Wavefront OBJ, STEP en CityGML CityJSON. Deze omzetting is niet alleen een 1-op-1 omzetting van IFC naar een GIS bestandstype. De applicatie zet de geometrie van het input bestand om naar GIS representaties volgens de GIS syntax. De conversie volgt hierbij het LoD framework van [Biljecki et al.](https://pure.tudelft.nl/ws/portalfiles/portal/4377508/Biljecki2016to.pdf). Aanvullend zijn er een aantal experimentele LoDs en een 1-op-1 conversie beschikbaar. De tool support de conversie van IFC naar in totaal 17 verschillende LoDs, zie appendix ... voor meer informatie.
 
 De applicatie is toegankelijk via de [GitHub pagina](https://github.com/tudelft3d/IFC_BuildingEnvExtractor). Hier zijn de source code en gecompilde executables beschikbaar. De gecompilede executables zijn beschikbaar voor zowel Windows als Linux (Ubuntu). Gedetaillerde informatie over de methodes die ontwikkeld zijn in de code om de conversie uit te voeren, kan worden gevonden in het [technische report](https://research.tudelft.nl/en/publications/bim2geo-converter/) van versie 0.2.6. Dit report is gebaseerd op een eerdere versie van de code, versie 0.3.x is de huidige versie, waarbij de dieper liggende logica gelijk of vergelijkbaar is gebleven.
 
