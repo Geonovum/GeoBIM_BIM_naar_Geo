@@ -217,7 +217,7 @@ De applicatie is toegankelijk via de [GitHub pagina](https://github.com/tudelft3
 Controle over de applicatie kan op twee manieren worden uitgeoefend, via een Graphical User Interface (GUI) of via een configuratie bestand (ConfigJSON). De GUI is makkelijker en sneller om mee te werken, zeker voor gebruikers die geen programmeer ervaring hebben. De GUI geeft echter enkel controle over een sub-set van alle beschikbare instellingen. Dit is gedaan om de menu's overzichtelijk te houden. De beschikbare instellingen zijn gekozen op basis van wat de meest gebruikte instellingen zijn. Als deze instellingen te beperkend zijn moet er met de ConfigJSON gewerkt worden. De ConfigJSON is een lijst met instellingen in een JSON encoding.
 
 
-De workflow van de IfcEnvelopeExtractor wordt beschreven in [Bijlage Workflow IfcEnvelopExtractor](#workflow-IfcEnvelopExtractor)
+De workflow van de IfcEnvelopeExtractor wordt beschreven in [Bijlage Workflow IfcEnvelopExtractor](#workflow-ifcenvelopextractor)
 
 ## IFC2GeoJSON
 ifc2gis is een gebruiksvriendelijke webtool die IFC-bestanden (BIM) omzet naar GeoJSON-formaat, zodat ze bruikbaar zijn in GIS-toepassingen. De tool is ideaal voor stedenbouwkundigen, architecten en ontwikkelaars die werken met digitale tweelingen en slimme steden. De tool Ifc2GeoJSON is momenteel als applicatie [ifc2gis](https://ifc2gis.com/app/) via het web te gebruiken. Conversies zijn te doen voor volledige 1-op-1-vertaling als via een gefilterde 1-op-1-vertaling. De tool ondersteunt geen geometrische shell-extracties.

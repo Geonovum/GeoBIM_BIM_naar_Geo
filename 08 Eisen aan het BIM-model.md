@@ -409,6 +409,6 @@ Twee begripskwesties die bij het uitwerken van deze mapping opgelost moeten word
 - `IfcBuilding` is niet hetzelfde als een pand. Een `IfcBuilding` kan meerdere panden omvatten of juist een deel van een pand zijn. De afbakening moet expliciet worden afgesproken: afleiden uit de externe elementen op maaiveldniveau, of expliciet aangeven met bijvoorbeeld een `IfcZone` per pand. 
 - De attributenmapping van de basisregistraties naar IFC is nog niet compleet. Voor de identificatie bestaat een afspraak; voor de overige attributen nog niet. 
 
-Zie voor praktijkvoorbeelden van de IDS [Praktijkvoorbeelden IDS](#praktijkvoorbeelden-ils)
+Zie voor praktijkvoorbeelden van de IDS [Praktijkvoorbeelden IDS](#praktijkvoorbeelden-ids)
 
 Zie ook de use case-beschrijving [IFC to CityGML conversion](https://ucm.buildingsmart.org/en/use-cases/3536/en) in de buildingSMART Use Case Management-omgeving.

@@ -6,12 +6,12 @@ Onderstaand voorbeeld van een Level of Information Need voor toetsing van maxima
 
 Bouwperceel:
 
-<table style="border-collapse: collapse; width: 100%; sans-serif; font-size: 13px; color: #344054;">
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 13px; color: #344054;">
   <tr>
     <th colspan="6" style="background-color: #6B8FB8; color: white; border: 1px solid #D9E0E8; padding: 12px;">
       Vereisten
     </th>
-    <th colspan="4" style="background-color: #9782B5; color: white; border: 1px solid #D9E0E8; padding: 12px;">
+    <th style="background-color: #9782B5; color: white; border: 1px solid #D9E0E8; padding: 12px;">
       Level of Information Need (LOIN)
     </th>
   </tr>
@@ -21,7 +21,7 @@ Bouwperceel:
     <th style="background-color: #DCE8F5; border: 1px solid #D9E0E8; padding: 10px;">Wanneer</th>
     <th colspan="2" style="background-color: #DDECE3; border: 1px solid #D9E0E8; padding: 10px;">Wie</th>
     <th colspan="2" style="background-color: #F6E6D5; border: 1px solid #D9E0E8; padding: 10px;">Wat</th>
-    <th colspan="4" style="background-color: #EAE2F4; border: 1px solid #D9E0E8; padding: 10px;">Hoe</th>
+    <th style="background-color: #EAE2F4; border: 1px solid #D9E0E8; padding: 10px;">Hoe</th>
   </tr>
 
   <tr>
@@ -31,7 +31,7 @@ Bouwperceel:
     <th style="background-color: #EDF5F0; border: 1px solid #D9E0E8; padding: 10px; color:grey">Actor informatieleverancier</th>
     <th style="background-color: #FBF2E9; border: 1px solid #D9E0E8; padding: 10px; color:grey">Object</th>
     <th style="background-color: #FBF2E9; border: 1px solid #D9E0E8; padding: 10px; color:grey">Decompositie</th>
-    <th colspan="4" style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color:grey">Informatiebehoefte</th>
+    <th style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color:grey">Informatiebehoefte</th>
   </tr>
 
   <tr>
@@ -53,7 +53,7 @@ Bouwperceel:
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">
       Geen decompositie
     </td>
-    <td colspan="4" style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
+    <td style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
       <table style="border-collapse: collapse; width: 100%; font-size: 12px;">
         <tr>
           <td rowspan="5" style="background-color: #EAE2F4; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">
@@ -111,7 +111,7 @@ Muur:
     <th colspan="6" style="background-color: #6B8FB8; color: #344054; border: 1px solid #D9E0E8; padding: 12px;">
       Vereisten
     </th>
-    <th colspan="4" style="background-color: #9782B5; color: #344054; border: 1px solid #D9E0E8; padding: 12px;">
+    <th style="background-color: #9782B5; color: #344054; border: 1px solid #D9E0E8; padding: 12px;">
       Level of Information Need (LOIN)
     </th>
   </tr>
@@ -121,7 +121,7 @@ Muur:
     <th style="background-color: #DCE8F5; border: 1px solid #D9E0E8; padding: 10px;">Wanneer</th>
     <th colspan="2" style="background-color: #DDECE3; border: 1px solid #D9E0E8; padding: 10px;">Wie</th>
     <th colspan="2" style="background-color: #F6E6D5; border: 1px solid #D9E0E8; padding: 10px;">Wat</th>
-    <th colspan="4" style="background-color: #EAE2F4; border: 1px solid #D9E0E8; padding: 10px;">Hoe</th>
+    <th style="background-color: #EAE2F4; border: 1px solid #D9E0E8; padding: 10px;">Hoe</th>
   </tr>
 
   <tr>
@@ -131,7 +131,7 @@ Muur:
     <th style="background-color: #EDF5F0; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Actor informatie-<br>leverancier</th>
     <th style="background-color: #FBF2E9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Object</th>
     <th style="background-color: #FBF2E9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Decompositie</th>
-    <th colspan="4" style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Informatiebehoefte</th>
+    <th style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Informatiebehoefte</th>
   </tr>
 
   <tr>
@@ -141,7 +141,7 @@ Muur:
     <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">Ontwerpende partij Y</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Buitenwand</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">IfcWall</td>
-    <td colspan="4" style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
+    <td style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
       <table style="border-collapse: collapse; width: 100%; font-size: 12px; color: #344054;">
         <tr>
           <td rowspan="5" style="background-color: #EAE2F4; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Geometrische informatie</td>
@@ -193,14 +193,14 @@ Muur:
 <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 13px; color: #344054;">
   <tr>
     <th colspan="6" style="background-color: #6B8FB8; color: #344054; border: 1px solid #D9E0E8; padding: 12px;">Vereisten</th>
-    <th colspan="4" style="background-color: #9782B5; color: #344054; border: 1px solid #D9E0E8; padding: 12px;">Level of Information Need (LOIN)</th>
+    <th style="background-color: #9782B5; color: #344054; border: 1px solid #D9E0E8; padding: 12px;">Level of Information Need (LOIN)</th>
   </tr>
   <tr>
     <th style="background-color: #DCE8F5; border: 1px solid #D9E0E8; padding: 10px;">Waarom</th>
     <th style="background-color: #DCE8F5; border: 1px solid #D9E0E8; padding: 10px;">Wanneer</th>
     <th colspan="2" style="background-color: #DDECE3; border: 1px solid #D9E0E8; padding: 10px;">Wie</th>
     <th colspan="2" style="background-color: #F6E6D5; border: 1px solid #D9E0E8; padding: 10px;">Wat</th>
-    <th colspan="4" style="background-color: #EAE2F4; border: 1px solid #D9E0E8; padding: 10px;">Hoe</th>
+    <th style="background-color: #EAE2F4; border: 1px solid #D9E0E8; padding: 10px;">Hoe</th>
   </tr>
   <tr>
     <th style="background-color: #EDF3FA; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Doel</th>
@@ -209,7 +209,7 @@ Muur:
     <th style="background-color: #EDF5F0; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Actor informatie-<br>leverancier</th>
     <th style="background-color: #FBF2E9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Object</th>
     <th style="background-color: #FBF2E9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Decompositie</th>
-    <th colspan="4" style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Informatiebehoefte</th>
+    <th style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Informatiebehoefte</th>
   </tr>
   <tr>
     <td style="background-color: #F5F8FC; border: 1px solid #D9E0E8; padding: 10px;">CO2-berekening</td>
@@ -218,7 +218,7 @@ Muur:
     <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">Buitenruimte ontwerpers</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Weg</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Autoweg, fietspad, voetpad, parkeervak, OV-baan (decompositie conform IMGeo)</td>
-    <td colspan="4" style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
+    <td style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
       <table style="border-collapse: collapse; width: 100%; font-size: 12px; color: #344054;">
         <tr>
           <td rowspan="5" style="background-color: #EAE2F4; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Geometrische informatie</td>
