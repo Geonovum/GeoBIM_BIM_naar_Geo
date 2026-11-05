@@ -1,34 +1,37 @@
-# Level Of Development
+# Level of Development
 
-Binnen het BIM-domein bestaat het Level Of Development (LOD). Dit is in het BIM-domein een vertrouwde werkwijze die nog veel wordt gebruikt, hoewel er inmiddels een eigentijdser alternatief beschikbaar is (Level Of Information Need). De ontwikkelniveaus die onderscheiden worden zijn: 
+Deze bijlage beschrijft de niveaus van het Level of Development (LOD), zoals die in de BIM-praktijk nog veel worden gebruikt. Zie [Level of Development in BIM](#level-of-development-in-bim) voor de verhouding tot het Level of Information Need.
 
-**LOD100 - Concept niveau**
-  - Het model bevat: Generieke massa van een bouwwerk. Oppervlakte, hoogte, inhoud, volume, locatie en orientatie kunnen worden gemodelleerd in 2D, 3D of ander soort data. 
-  - Het model is bedoeld voor: Analyse, kostenramingen of planning.
-  - Geometrie: Conceptuele massa's van het totaal model en symbolische elementen. Informatie over elementen kunnen afgeleid worden uit andere model elementen (b.v. het aantal verdiepingen kan men afleiden uit een 3D gebouwmodel)  
+Bron: Nederlandse samenvatting van de [LOD Specification](https://bimforum.org/resource/lod-level-of-development-lod-specification/) van het BIMForum.
 
-**LOD200 - Globale geometrie**
-  - Het model bevat: Elementen van het model zijn gemodelleerd als geabstraheerde systemen of samenstellingen met benaderde hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Analyse, kostenramingen of planning.
-  - Geometrie: Gemodelleerde elementen kunnen worden gezien als abstracte ruimtereserveringen, vaak als herkenbaar element. Het afleiden van informatie uit deze modellen is een schatting/benadering. 
-Onderstaand voorbeeld laat zien hoe voor één doel twee objecten elk een eigen informatiebehoefte krijgen. Het voorbeeld is illustratief.
+De ontwikkelniveaus die onderscheiden worden zijn:
 
- **LOD300 - Nauwkeurige geometry**
-  - Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.
-  - Geometrie: Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint. 
+**LOD 100 – Conceptniveau**
+- Het model bevat: generieke massa van een bouwwerk. Oppervlakte, hoogte, inhoud, volume, locatie en oriëntatie kunnen worden gemodelleerd in 2D, 3D of andere soorten data.
+- Het model is bedoeld voor: analyse, kostenramingen of planning.
+- Geometrie: conceptuele massa's van het totale model en symbolische elementen. Informatie over elementen kan worden afgeleid uit andere modelelementen (het aantal verdiepingen kan bijvoorbeeld worden afgeleid uit een 3D-gebouwmodel).
 
-  **LOD350 - Nauwkeurige geometry (met aansluiting)**
-  - Het model bevat:  Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en orientatie. En heeft de koppeling naar andere elementen van systemen of samenstellingen. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.
-  - Geometrie: Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint
+**LOD 200 – Globale geometrie**
+- Het model bevat: elementen die zijn gemodelleerd als geabstraheerde systemen of samenstellingen met benaderde hoeveelheden, afmetingen, vorm, locatie en oriëntatie. Niet-geometrische informatie kan aan het model worden gekoppeld.
+- Het model is bedoeld voor: analyse, kostenramingen of planning.
+- Geometrie: gemodelleerde elementen kunnen worden gezien als abstracte ruimtereserveringen, vaak als herkenbaar element. Informatie die uit deze modellen wordt afgeleid, is een schatting of benadering.
 
-**LOD400 – Adapted to realization/ execution**
-  - Het model bevat: Elementen van het model zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie, orientatie en complete fabricatie, samenstellign en detail informatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Constructie, analyse, kostenramingen of planning.
-  - Geometrie: Onderdelen hebben voldoende detail en nauwkeurigheid voor fabricage/constructie. Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen vanuit het model worden gemeten zonder niet gemodelleerde informatie te raadplegen om tot goed resultaat te komen. Het element heeft de juiste positionering t.o.v. het Project Basepoint.
+**LOD 300 – Nauwkeurige geometrie**
+- Het model bevat: elementen die zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en oriëntatie. Niet-geometrische informatie kan aan het model worden gekoppeld.
+- Het model is bedoeld voor: constructie, analyse, kostenramingen of planning.
+- Geometrie: gemodelleerde elementen kunnen in het model worden gemeten zonder dat niet-gemodelleerde informatie hoeft te worden geraadpleegd. Elk element heeft de juiste positie ten opzichte van het Project Base Point.
 
-  **LOD 500 – “as built”**
-  - Het model bevat: Elementen van het model zijn gemodelleerd als construeerde samenstellingen met accurate en actuele hoeveelheden, afmetingen, vorm, locatie, orientatie. Niet-geometrische informatie kan aan het model gekoppeld worden. 
-  - Het model is bedoeld voor: Generiek gebruik 
-  - Geometrie: Dit level is geen "extra level" dat iets extra toevoegt op de voorgaande LOD's, maar is een afronding van alle voorgaande LOD's. Aangevuld met de werkelijke uitvoering van het bouwwerk. 
+**LOD 350 – Nauwkeurige geometrie met aansluitingen**
+- Het model bevat: elementen die zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en oriëntatie, inclusief de koppelingen met elementen van andere systemen of samenstellingen. Niet-geometrische informatie kan aan het model worden gekoppeld.
+- Het model is bedoeld voor: constructie, analyse, kostenramingen of planning.
+- Geometrie: onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen in het model worden gemeten zonder dat niet-gemodelleerde informatie hoeft te worden geraadpleegd. Elk element heeft de juiste positie ten opzichte van het Project Base Point.
+
+**LOD 400 – Geschikt voor fabricage en uitvoering**
+- Het model bevat: elementen die zijn gemodelleerd als nauwkeurige systemen of samenstellingen met accurate hoeveelheden, afmetingen, vorm, locatie en oriëntatie, en met volledige fabricage-, samenstellings- en detailinformatie. Niet-geometrische informatie kan aan het model worden gekoppeld.
+- Het model is bedoeld voor: constructie, analyse, kostenramingen of planning.
+- Geometrie: onderdelen hebben voldoende detail en nauwkeurigheid voor fabricage en uitvoering. Onderdelen die nodig zijn voor ondersteuning, verbinding of aansluiting met andere elementen zijn gemodelleerd. Gemodelleerde elementen kunnen in het model worden gemeten zonder dat niet-gemodelleerde informatie hoeft te worden geraadpleegd. Elk element heeft de juiste positie ten opzichte van het Project Base Point.
+
+**LOD 500 – As built**
+- Het model bevat: elementen die zijn gemodelleerd als gerealiseerde samenstellingen met accurate en actuele hoeveelheden, afmetingen, vorm, locatie en oriëntatie. Niet-geometrische informatie kan aan het model worden gekoppeld.
+- Het model is bedoeld voor: generiek gebruik.
+- Geometrie: dit niveau voegt geen extra detail toe aan de voorgaande niveaus, maar rondt ze af en vult ze aan met de werkelijke uitvoering van het bouwwerk.

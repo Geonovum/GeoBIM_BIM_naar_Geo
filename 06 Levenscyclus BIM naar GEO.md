@@ -170,9 +170,9 @@ Onderstaand voorbeeld toont hoe meerdere versies van een bouwwerk gemodelleerd k
 <figure id="Voorbeeld-van-verschillende-gebouw-versies-in-levenscyclus" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/levenscyclus/Bouwwerk_met_verschillende_versies-Bouwwerk.png" alt="Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levenscyclus">
+        <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levenscyclus"></a>
         <span class="fig-title">
-        Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is.</a>
+        Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is.
         </span>
       </figcaption>
 </figure>
@@ -182,9 +182,9 @@ Onderstaand voorbeeld toont de Geo- en BIM-versies van een bouwwerk. Een bouwwer
 <figure id="Voorbeeld-van-verschillende-gebouw-versies-in-levenscyclus-met-geo-en-bim" style="display: block; text-align: center; margin: 0 auto;">
       <img src="./media/levenscyclus/Bouwwerk_met_verschillende_versies-Bouwwerk_2.png" alt="Voorbeeld van een bouwwerk dat in een nieuwe versie buiten gebruik is met gebruik van Geo en BIM" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>
       <figcaption>
-        <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levenscyclus-met-geo-en-bim">
+        <a class="self-link" href="#Voorbeeld-van-verschillende-gebouw-versies-in-levenscyclus-met-geo-en-bim"></a>
         <span class="fig-title">
-        Voorbeeld van een bouwwerk met Geo- en BIM-versies, waarbij een gerealiseerde BIM-versie een Geo-versie genereert.</a>
+        Voorbeeld van een bouwwerk met Geo- en BIM-versies, waarbij een gerealiseerde BIM-versie een Geo-versie genereert.
         </span>
       </figcaption>
 </figure>

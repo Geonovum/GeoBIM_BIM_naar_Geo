@@ -1,14 +1,10 @@
 # IFC naar IMBOR Mapping
 
-Deze sectie beschrijft de **semantische mapping** van **IFC 4.3** naar **IMBOR 2025** (InformatieModel Beheer Openbare Ruimte). In tegenstelling tot de CityGML-mapping, richt deze mapping zich op **beheeraspecten** van infrastructurele objecten.
+Deze bijlage geeft een eerste voorbeeld van een **semantische mapping** van **IFC 4.3** naar **IMBOR 2025** (InformatieModel Beheer Openbare Ruimte). In tegenstelling tot de CityGML-mapping in [bijlage A](#mapping-tussen-ifc-en-citygml-op-verschillend-decompositieniveau) richt deze mapping zich op **beheeraspecten** van infrastructurele objecten.
 
-De mapping is uitgewerkt voor:
-- **Entiteiten (klassen)**: Brug (Vaste en beweegbare), Dek, Pijler
-- **Attributen (properties)**: Attributen uit de IMBOR Startset
+Het voorbeeld beperkt zich tot de entiteit `IfcBridge` en de IMBOR-klasse Brug, met een aantal basisattributen. Een volledige mapping, bijvoorbeeld voor dek, pijler en de attributen uit de IMBOR Startset, moet nog worden uitgewerkt.
 
-
-
-## Mermaid Diagram: Attribuutflow
+## Attribuutmapping IfcBridge – IMBOR Brug
 
 ```mermaid
 flowchart LR

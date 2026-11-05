@@ -1,6 +1,6 @@
 # LOIN voorbeelden 
 
-**LOIN voorbeeld voor maximale bouwhoogte**
+**LOIN-voorbeeld voor maximale bouwhoogte**
 
 Onderstaand voorbeeld van een Level of Information Need voor toetsing van maximale bouwhoogte laat zien hoe voor één doel twee objecten elk een eigen informatiebehoefte krijgen. Het voorbeeld is illustratief.
 
@@ -83,12 +83,12 @@ Bouwperceel:
             Alfanumerieke informatie
           </td>
           <td style="background-color: #F3EEF9; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Identificatie</td>
-          <td colspan = "2" style="background-color: #FCFAFE; border: 1px solid #DCD3E8; padding: 9px;">BAG ID</td>
+          <td colspan = "2" style="background-color: #FCFAFE; border: 1px solid #DCD3E8; padding: 9px;">Kadastrale aanduiding (BRK)</td>
           </tr>
         <tr>
           <td style="background-color: #F3EEF9; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Informatie-inhoud</td>
           <td style="background-color: #FCFAFE; border: 1px solid #DCD3E8; padding: 9px;">Geen</td>
-          <td style="background-color: #F7F3FB; border: 1px solid #DCD3E8; padding: 9px;"> nvt</td>
+          <td style="background-color: #F7F3FB; border: 1px solid #DCD3E8; padding: 9px;">N.v.t.</td>
         </tr>
         <tr>
           <td style="background-color: #EAE2F4; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Documentatie</td>
@@ -102,7 +102,7 @@ Bouwperceel:
 
 <br>
 
-Muur:
+Buitenwand:
 
 <!-- TABEL 1: LOIN VOOR EEN BUITENWAND -->
 <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 13px; color: #344054;">
@@ -140,7 +140,7 @@ Muur:
     <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">Gemeente X</td>
     <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">Ontwerpende partij Y</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Buitenwand</td>
-    <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">IfcWall</td>
+    <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Geen decompositie (gemodelleerd als <code>IfcWall</code>)</td>
     <td style="background-color: #F8F5FC; border: 1px solid #D9E0E8; padding: 8px;">
       <table style="border-collapse: collapse; width: 100%; font-size: 12px; color: #344054;">
         <tr>
@@ -167,7 +167,7 @@ Muur:
         <tr>
           <td rowspan="2" style="background-color: #EAE2F4; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Alfanumerieke informatie</td>
           <td style="background-color: #F3EEF9; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Identificatie</td>
-          <td colspan="2" style="background-color: #FCFAFE; border: 1px solid #DCD3E8; padding: 9px;">Kadastrale ID</td>
+          <td colspan="2" style="background-color: #FCFAFE; border: 1px solid #DCD3E8; padding: 9px;">IFC-GUID</td>
         </tr>
         <tr>
           <td style="background-color: #F3EEF9; border: 1px solid #DCD3E8; padding: 9px; font-weight: bold;">Informatie-inhoud</td>
@@ -186,7 +186,7 @@ Muur:
 
 <br>
 
-**LOIN voorbeeld voor de modellering van een weg t.b.v. CO2 berekening** 
+**LOIN-voorbeeld voor de modellering van een weg ten behoeve van een CO₂-berekening** 
 
 <!-- TABEL 2: LOIN VOOR EEN WEG TEN BEHOEVE VAN EEN CO2-BEREKENING -->
 
@@ -212,9 +212,9 @@ Muur:
     <th style="background-color: #F3EEF9; border: 1px solid #D9E0E8; padding: 10px; color: grey;">Informatiebehoefte</th>
   </tr>
   <tr>
-    <td style="background-color: #F5F8FC; border: 1px solid #D9E0E8; padding: 10px;">CO2-berekening</td>
-    <td style="background-color: #F5F8FC; border: 1px solid #D9E0E8; padding: 10px;">Advies Duurzaamheid/Klimaatmitigatie. Berekening CO2-consumptie t.b.v. deeloplevering VO Masterplan</td>
-    <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">CO2-berekening experts gemeente X</td>
+    <td style="background-color: #F5F8FC; border: 1px solid #D9E0E8; padding: 10px;">CO₂-berekening</td>
+    <td style="background-color: #F5F8FC; border: 1px solid #D9E0E8; padding: 10px;">Advies Duurzaamheid/Klimaatmitigatie. Berekening CO₂-uitstoot ten behoeve van deeloplevering VO Masterplan</td>
+    <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">Experts CO₂-berekening gemeente X</td>
     <td style="background-color: #F4F8F5; border: 1px solid #D9E0E8; padding: 10px;">Buitenruimte ontwerpers</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Weg</td>
     <td style="background-color: #FDF8F2; border: 1px solid #D9E0E8; padding: 10px;">Autoweg, fietspad, voetpad, parkeervak, OV-baan (decompositie conform IMGeo)</td>
