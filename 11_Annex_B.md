@@ -1,4 +1,4 @@
-# Entiteit en Attribuutmapping tussen BIM en GEO
+# Entiteit en Attribuutmapping tussen BIM en Geo
 
 <figure id="Attribuut_mapping_IFC_BAG_IMBOR" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/Attribuutmapping/IFC_BAG_IMBOR_attribuut_mapping.png" alt="Attribuut_mapping_IFC_BAG_IMBOR" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"/>

@@ -1,6 +1,6 @@
 # Mapping tussen IFC en CityGML op verschillend decompositieniveau 
 
-Vanuit een gedetailleerd BIM-model is het mogelijk om op verschillende decompositieniveaus naar GEO te mappen. 
+Vanuit een gedetailleerd BIM-model is het mogelijk om op verschillende decompositieniveaus naar Geo te mappen. 
 
 Onderstaand voorbeeld laat zien dat vanuit eenzelfde IFC BIM-model van het Acerno Viaduct er verschillende transformaties mogelijk zijn. 
 

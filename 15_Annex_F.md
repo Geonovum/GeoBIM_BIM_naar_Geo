@@ -10,15 +10,15 @@ Elke specificatie draagt een `identifier` met een herkomstprefix, zodat na samen
 
 | Prefix | Bron-ILS | Onderwerp |
 |--------|----------|-----------|
-| `GEB-` | `ILS.Gebouw` | ruimtelijke structuur, typering en geometrie van een bouwwerk |
-| `BR-` | `ILS.Basisregistratie` | generieke attributen voor levering aan een basisregistratie |
-| `BGT-` | `ILS.BGT` | specifieke eisen voor levering aan de BGT |
+| `GEB-` | `ILS-Gebouw` | ruimtelijke structuur, typering en geometrie van een bouwwerk |
+| `BR-` | `ILS-Basisregistratie` | generieke attributen voor levering aan een basisregistratie |
+| `BGT-` | `ILS-BGT` | specifieke eisen voor levering aan de BGT |
 
 In alle voorbeelden is `ifcVersion="IFC4 IFC4X3_ADD2"` aangehouden. Entiteits- en typenamen staan in hoofdletters; dat is een eis van de IDS-standaard.
 
-## F.2 ILS.Gebouw
+## F.2 ILS-Gebouw
 
-Deze bron-ILS maakt de eisen expliciet die de LOD 0.2-methode uit hoofdstuk 9 impliciet aan het BIM-model stelt. De nummers corresponderen met de tabel in *Uitgewerkt: de impliciete ILS achter LOD 0.2*.
+Deze bron-ILS maakt de eisen expliciet die de LOD 0.2-methode met de [IfcEnvelopeExtractor](#ifcenvelopeextractor) impliciet aan het BIM-model stelt. De nummers corresponderen met de tabel in [Voorbeeld: ILS-uitwerking voor LOD 0.2 Gebouw](#voorbeeld-ils-uitwerking-voor-lod-0-2-gebouw).
 
 Let bij het lezen op twee dingen. De specificaties GEB-01 en GEB-03a gebruiken `minOccurs="1"` op de applicability: dat dwingt af dat het model daadwerkelijk bouwlagen respectievelijk ruimten bevat. GEB-02 en GEB-03b gebruiken `minOccurs="0"`: die eisen gelden voorwaardelijk — *als* er wanden zijn, moeten ze aan een bouwlaag hangen; *als* een ruimte `USERDEFINED` is, moet `ObjectType` gevuld zijn — maar dwingen hun aanwezigheid niet af.
 
@@ -29,7 +29,7 @@ Let bij het lezen op twee dingen. De specificaties GEB-01 en GEB-03a gebruiken `
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.Gebouw</ids:title>
+    <ids:title>ILS-Gebouw</ids:title>
     <ids:version>0.1</ids:version>
     <ids:description>Eisen aan de ruimtelijke structuur, typering en geometrie van een bouwwerk, benodigd voor afleiding van vlakproducten naar GEO.</ids:description>
     <ids:purpose>Bron-ILS, bedoeld om samengesteld te worden met een basisregistratie- en een datasetspecifieke ILS.</ids:purpose>
@@ -195,7 +195,7 @@ Voor `IfcRoof` en `IfcSlab` in dakfunctie geldt dat `IfcRoof` in IFC4 een samens
 
 Analoog aan GEB-04a gelden GEB-04b voor `IFCSLAB` met `Pset_SlabCommon` en GEB-04c voor `IFCROOF` met `Pset_RoofCommon`. Die zijn hier weggelaten omdat ze alleen in propertySet en applicability verschillen.
 
-## F.3 ILS.Basisregistratie
+## F.3 ILS-Basisregistratie
 
 Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. In een uitgewerkte versie horen hier ook identificatie, status en bronhouder in.
 
@@ -206,7 +206,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.Basisregistratie</ids:title>
+    <ids:title>ILS-Basisregistratie</ids:title>
     <ids:version>0.1</ids:version>
     <ids:description>Generieke attributen die bij levering aan een basisregistratie in het model aanwezig moeten zijn.</ids:description>
   </ids:info>
@@ -234,7 +234,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
 </ids:ids>
 ```
 
-## F.4 ILS.BGT
+## F.4 ILS-BGT
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -243,7 +243,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.BGT</ids:title>
+    <ids:title>ILS-BGT</ids:title>
     <ids:version>0.1</ids:version>
     <ids:description>Aanvullende eisen bij levering van een bouwwerk aan de BGT.</ids:description>
   </ids:info>
@@ -282,9 +282,9 @@ Hieronder is de samenstelling verkort weergegeven met één specificatie per bro
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.BGT.Gebouw (samengesteld)</ids:title>
+    <ids:title>ILS-BGT-Gebouw (samengesteld)</ids:title>
     <ids:version>0.1</ids:version>
-    <ids:description>Samenstelling van ILS.Gebouw 0.1, ILS.Basisregistratie 0.1 en ILS.BGT 0.1. Alleen deze samenstelling is contractueel; de bron-ILS'en zijn bouwstenen.</ids:description>
+    <ids:description>Samenstelling van ILS-Gebouw 0.1, ILS-Basisregistratie 0.1 en ILS-BGT 0.1. Alleen deze samenstelling is contractueel; de bron-ILS'en zijn bouwstenen.</ids:description>
     <ids:milestone>Levering bouwwerk aan de BGT</ids:milestone>
   </ids:info>
   <ids:specifications>
@@ -434,7 +434,7 @@ Daarmee wordt de nationale begrippenset de as waarlangs de hele ILS is georganis
 </ids:specification>
 ```
 
-Let op wat hier gebeurt met de drie IFC-attributen. `ObjectType` draagt het **juridische begrip** (Verblijfsruimte), `Name` de **functionele aanduiding** (Slaapkamer) en `Description` de **bepalingsmethode** waarmee de inhoud is bepaald. Drie betekenislagen, drie standaardattributen, geen enkele eigen property set. Dat is precies wat het patroon bruikbaar maakt voor conversie naar GEO: elk van die lagen is met generieke IFC-software leesbaar en met een IDS-attribuutfacet te selecteren.
+Let op wat hier gebeurt met de drie IFC-attributen. `ObjectType` draagt het **juridische begrip** (Verblijfsruimte), `Name` de **functionele aanduiding** (Slaapkamer) en `Description` de **bepalingsmethode** waarmee de inhoud is bepaald. Drie betekenislagen, drie standaardattributen, geen enkele eigen property set. Dat is precies wat het patroon bruikbaar maakt voor conversie naar Geo: elk van die lagen is met generieke IFC-software leesbaar en met een IDS-attribuutfacet te selecteren.
 
 <mark>Redactie: in de gepubliceerde v1.1 staat de classificatiefacet op `cardinality="optional"`. Hierboven is `required` aangehouden, conform de eis in *Classificatie*; dit is een wijzigingsvoorstel richting de beheerder van de ILS.</mark>
 
@@ -653,11 +653,11 @@ Ter vergelijking: dezelfde test met een specificatie die alléén `IFCMAPCONVERS
 
 ## F.9 Aanvullende specificaties
 
-De volgende specificaties horen bij hogere detailniveaus en zijn hier los opgenomen; zij kunnen in een bron-ILS `ILS.Openingen` worden ondergebracht.
+De volgende specificaties horen bij hogere detailniveaus en zijn hier los opgenomen; zij kunnen in een bron-ILS `ILS-Openingen` worden ondergebracht.
 
 ### Ramen vullen een sparing
 
-Openingsvlakken in de GEO-dataset worden afgeleid uit de sparing in de wand, niet uit het volume van het kozijn. Een raam dat als los volume tegen een dichte wand is geplaatst, levert geen opening op.
+Openingsvlakken in de Geo-dataset worden afgeleid uit de sparing in de wand, niet uit het volume van het kozijn. Een raam dat als los volume tegen een dichte wand is geplaatst, levert geen opening op.
 
 ```xml
 <ids:specification name="Ramen vullen een sparing"

@@ -25,7 +25,7 @@ Hoewel de onderliggende implementatie van het openen van BIM in Geo doorgaans ni
 
 # Directe 1-op-1-vertaling 
 
-Een andere methode om BIM naar Geo te brengen is een zo direct mogelijke 1-op-1 vertaling van alle elementen in het BIM-bestand naar GEO. Hierbinnen kan onderscheid worden gemaakt tussen alleen de directe vertaling van de geometrie of een complete directe mapping inclusief attributen. Het verschil tussen de twee is dat de mapping inclusief de attributen ook de attributen van het IFC-model zo veel als mogelijk intact houdt, terwijl een conversie van de geometrie alleen de geometrie overzet en de attributen negeert. Een 1-op-1-conversie van enkel de geometrie resulteert meestal in structureel andere bestanden (zoals obj) terwijl een 1-op-1-mapping meestal de IFC-structuur (in beperkte mate) vasthoudt. De bestanden die ontstaan door deze 1-op-1-mapping kunnen dus worden gezien als een IFC-model/structuur met een GIS-extensie. Eén IFC-instantie resulteert in dit geval in één feature. 
+Een andere methode om BIM naar Geo te brengen is een zo direct mogelijke 1-op-1 vertaling van alle elementen in het BIM-bestand naar Geo. Hierbinnen kan onderscheid worden gemaakt tussen alleen de directe vertaling van de geometrie of een complete directe mapping inclusief attributen. Het verschil tussen de twee is dat de mapping inclusief de attributen ook de attributen van het IFC-model zo veel als mogelijk intact houdt, terwijl een conversie van de geometrie alleen de geometrie overzet en de attributen negeert. Een 1-op-1-conversie van enkel de geometrie resulteert meestal in structureel andere bestanden (zoals obj) terwijl een 1-op-1-mapping meestal de IFC-structuur (in beperkte mate) vasthoudt. De bestanden die ontstaan door deze 1-op-1-mapping kunnen dus worden gezien als een IFC-model/structuur met een GIS-extensie. Eén IFC-instantie resulteert in dit geval in één feature. 
 
 Dit soort omzetting is een makkelijk en relatief snel proces. Tijdens de conversie kunnen weinig fouten optreden. Het resulterende bestand kan worden geopend door iedere software die de GIS-encoding ondersteunt. In dat opzicht is het veelzijdiger dan de vorige optie die de gebruiker bindt aan een softwareomgeving. Maar ook al heeft een 1-op-1 vertaald bestand een GIS-encoding, het voldoet niet aan een GIS-datamodel. Ook zijn lang niet alle IFC-attributen te mappen naar Geo-attributen en vice versa. Dit beperkt de bruikbaarheid van deze modellen.
 
@@ -91,7 +91,7 @@ Resulteert na vertaling naar GeoJSON in:
     ]
 }
 ```
-Vertaling van BIM naar GEO kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen en coördinaten, juist in een toename van de bestandsgrootte. 
+Vertaling van BIM naar Geo kan resulteren in een kleinere bestandsgrootte. Maar wanneer het BIM-model veel impliciete geometrie bevat, beschreven door een functie, resulteert het expliciet maken van deze geometrie, beschreven door grenzen en coördinaten, juist in een toename van de bestandsgrootte. 
  
 | model | Bestandsgrootte IFC (KB) | Bestandsgrootte GeoJSON 1-op-1-mapping (KB)|  
 |-|-|-|

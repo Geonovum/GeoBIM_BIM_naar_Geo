@@ -1,6 +1,6 @@
 # Levenscyclus
 
-Onderstaande beelden visualiseren de flow van wijzigingen bij BIM en GEO. 
+Onderstaande beelden visualiseren de flow van wijzigingen bij BIM en Geo. 
 
 De flow is gebaseerd op de [levensduur en historie van de bgt](https://docs.geostandaarden.nl/imgeo/catalogus/bgt/#levensduur-en-historie). 
 
@@ -15,7 +15,7 @@ En stel men heeft in BIM entiteitsinstanties op een lager decompositieniveau (kl
 
 Tegelvlak 123, Band 123, Band 124, Hoekstuk 123, Kaaststuk 123 en Opsluitband 123.
 
-En stel men heeft een connectie gemaakt tussen BIM en GEO.
+En stel men heeft een connectie gemaakt tussen BIM en Geo.
 
 <figure id="Situatie_weg_en_elementen">
       <img src="media/levenscyclus/Weg_of_verharding_bestaande_uit_elementen.png" alt="Situatie_weg_en_elementent"/>

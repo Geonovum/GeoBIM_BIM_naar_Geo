@@ -19,7 +19,7 @@
  - Geen nationale property sets. In plaats van een eigen `Pset` wordt gewerkt met de bestaande IFC-attributen `Name`, `ObjectType` en `Description`, met `PredefinedType = USERDEFINED` en een Nederlandse term in `ObjectType`. Daarmee blijft het model leesbaar voor generieke IFC-software — en blijft de bijbehorende IDS combineerbaar met andere bron-ILS'en, omdat er geen eigen naamruimte in het spel is.
  - Optelbaarheid als toetsbare eis. Doordat ruimten sluitend en zonder overlap gemodelleerd moeten zijn, is de som van de ruimten per bouwlaag controleerbaar tegen de bouwlaaginhoud. Dit is dezelfde eis die hierboven onder *Geometrierepresentatie* is opgenomen — vanuit een andere behoefte, met dezelfde uitkomst.
 
- Voor deze praktijkrichtlijn: een ruimtemodel is een bruikbare tussenlaag tussen bouwdeelgerichte BIM-modellen en objectgerichte GEO-datasets.
+ Voor deze praktijkrichtlijn: een ruimtemodel is een bruikbare tussenlaag tussen bouwdeelgerichte BIM-modellen en objectgerichte Geo-datasets.
 
  ### Praktijkvoorbeeld 3 — Afleiden in plaats van extra attributen eisen
 

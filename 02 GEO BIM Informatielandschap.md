@@ -13,7 +13,7 @@ Zowel BIM- als Geo-modellen maken deel uit van een breder informatielandschap. I
 Deze soorten informatie worden ieder op een andere manier verwerkt, zowel door mensen als software. Het maken van dit onderscheid helpt daarmee ook om de juiste keuzes te maken bij het converteren en beheren van informatie. De nadruk van deze praktijkrichtlijn ligt op geometrische informatie, maar de overige soorten zullen ook behandeld worden.
 
 ## Geometrisch model
-Geometrische informatie beschrijft waar een object zich bevindt en hoe het eruitziet. Dit omvat onder andere de vorm, afmetingen, positie en ruimtelijke relaties van objecten. De manier waarop geometrie wordt gemodelleerd verschilt per toepassingsgebied en informatiemodel. Zie het hoofdstuk [Geometrie BIM naar GEO](#geometrie-bim-naar-geo) voor een toelichting op de verschillende manieren van het modelleren van geometrie.
+Geometrische informatie beschrijft waar een object zich bevindt en hoe het eruitziet. Dit omvat onder andere de vorm, afmetingen, positie en ruimtelijke relaties van objecten. De manier waarop geometrie wordt gemodelleerd verschilt per toepassingsgebied en informatiemodel. Zie het hoofdstuk [Geometrie BIM naar Geo](#geometrie-bim-naar-geo) voor een toelichting op de verschillende manieren van het modelleren van geometrie.
 
 ## Alfanumeriek
 
@@ -24,7 +24,7 @@ Bij de stap van BIM naar Geo is het technisch goed mogelijk om alle kenmerken ov
 ## Documentatie
 Omdat documentatie ongestructureerde data bevat, kan deze niet uitgedrukt worden in BIM- of GIS-standaarden. Hierdoor is dit soort informatie ook niet geschikt voor conversie. Er kan wel een link bestaan tussen (geometrische) objecten en documenten (bijvoorbeeld _IfcRelAssociatesDocument_ in IFC of _externalReference_ in CityGML). Het kan nodig zijn om documenten die gekoppeld zijn aan een BIM-model ook te behouden in een Geo-context.
 
-# Verschillen tussen BIM- en GEO-modellen
+# Verschillen tussen BIM- en Geo-modellen
 
 BIM- en GIS-modellen spelen ieder een eigen rol, en die rollen zijn onlosmakelijk met elkaar verbonden. BIM-modellen representeren een gebouw op een architectonische schaal terwijl GIS-modellen hetzelfde gebouw representeren op een stedelijke schaal. De gebouwen gemodelleerd in BIM-modellen hebben een hoog detailniveau. Objecten zoals kozijnen, deurklinken en scharnieren zijn op een gedetailleerde en precieze manier gemodelleerd. GIS-objecten die dezelfde gebouwen representeren zijn veel simpeler. Kleine details die aanwezig zijn in BIM-modellen worden over het algemeen niet, of niet expliciet, gemodelleerd in GIS.
 
@@ -106,7 +106,7 @@ Per object en per doel wordt de informatiebehoefte uitgesplitst in de drie soort
   </tr>
   <tr>
     <td> <img src="./media/LOIN/LOIN_Locatie.png" alt="LOIN Locatie" title="LOIN Locatie" width="190"> Locatie </td>
-    <td> Deze waarde duidt hoe de plaats van een object is vastgelegd. Bijvoorbeeld absoluut in een coördinatenstelsel of relatief ten opzichte van een ander object. Voor conversie naar GEO is dit aspect bepalend, omdat het object zonder absolute locatie niet in een geo-omgeving kan worden geplaatst. </td>
+    <td> Deze waarde duidt hoe de plaats van een object is vastgelegd. Bijvoorbeeld absoluut in een coördinatenstelsel of relatief ten opzichte van een ander object. Voor conversie naar Geo is dit aspect bepalend, omdat het object zonder absolute locatie niet in een geo-omgeving kan worden geplaatst. </td>
   </tr>
   <tr>
     <td> <img src="./media/LOIN/LOIN_Voorkomen.png" alt="LOIN Voorkomen" title="LOIN Voorkomen" width="190"> Voorkomen </td>
@@ -121,7 +121,7 @@ Per object en per doel wordt de informatiebehoefte uitgesplitst in de drie soort
 Het LOIN geeft met alfanumerieke informatie de mogelijkheid om vast te leggen welke niet-geometrische attributen bij een object vastgelegd dienen te worden. Bijvoorbeeld entiteit-type, classificatie of eigenschappen. Met documentatie stelt men in het LOIN vast welke documenten, zoals tekeningen, certificaten of rapporten, aan een object gekoppeld moeten zijn.
 
 <aside class="note" title="Gebruik het Level of Information Need als uitgangspunt">
-  <p><strong>AANBEVELING:</strong> Gebruik het Level of Information Need (NEN-EN-ISO 7817-1) om de informatiebehoefte voor BIM-naar-GEO-conversie vast te leggen: per object, per doel en per leveringsmoment. Leg de alfanumerieke eisen vast in een IDS. Level of Development-niveaus mogen als aanvulling worden gebruikt om het aspect detail te omschrijven. Het LOIN is leidend.</p>
+  <p><strong>AANBEVELING:</strong> Gebruik het Level of Information Need (NEN-EN-ISO 7817-1) om de informatiebehoefte voor BIM-naar-Geo-conversie vast te leggen: per object, per doel en per leveringsmoment. Leg de alfanumerieke eisen vast in een IDS. Level of Development-niveaus mogen als aanvulling worden gebruikt om het aspect detail te omschrijven. Het LOIN is leidend.</p>
 </aside>
 
 ## Level of Development in BIM
@@ -324,7 +324,7 @@ In 2025 is er onderzoek gedaan naar mogelijke aanvullende LoDs voor GIS-modellen
       </figcaption>
 </figure>
 
-Een formeel en vastgesteld standaard LOD-framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z GEO-model.
+Een formeel en vastgesteld standaard LOD-framework voor BIM- en geo-modellen maakt mogelijk dat men kan stellen: dit BIM-model voldoet aan LOD X en kan volgens transformatieprofiel Y worden geëxporteerd naar een LoD Z Geo-model.
 
 <aside class="note" title="Gestandaardiseerd LOD-framework">
   <p><strong>AANBEVELING:</strong> Breid het bestaande LoD-framework uit om LoDs te standaardiseren op nationaal of internationaal niveau ten behoeve van BIM-naar-Geo-conversie. </p>
@@ -384,17 +384,17 @@ NB1: Uit de definitie van de 2DBAG-geometrie volgt ook dat ondergrondse onderdel
 NB2: Voor de 3DBAG is gekozen voor 2DBAG als extrusiebron en niet BGT, omdat 2DBAG, net als AHN, een soort van bovenaanzicht geeft van de panden. Daarom passen beide databronnen goed op elkaar, zeker daar waar het gaat om gebouwen met kolommen en onderdoorgangen. In 2026 loopt een onderzoek om onderdoorgangen te modelleren in 3DBAG door deze te detecteren op basis van een BGT-BAG-analyse en de hoogte vervolgens te detecteren in oblieke luchtfoto's en LiDAR op straatniveau. De resultaten hiervan implemenenteert men in de 2026 release van de 3DBAG. [Peters et al, 2026](https://research.tudelft.nl/en/publications/automatische-modellering-van-onderdoorgangen-in-de-3dbag/).
 
 <aside class="note" title="Maak aanvullende afspraken rondom voetafdruk of dakomtrek">
-  <p><strong>AANBEVELING:</strong> Maak duidelijke afspraken rondom het gebruik van voetafdruk, dakomtrek, BAG-polygoon, BGT-polygoon of andere bronpolygoon voor BIM-naar-GEO-conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusiebron gebruikt wordt. Maak duidelijk of de BAG-polygoon (bovenaanzicht) of BGT-polygoon (voetafdruk), of een andere geometrie als extrusiebron is gebruikt.</p>
+  <p><strong>AANBEVELING:</strong> Maak duidelijke afspraken rondom het gebruik van voetafdruk, dakomtrek, BAG-polygoon, BGT-polygoon of andere bronpolygoon voor BIM-naar-Geo-conversie en gebruik dit consistent in implementaties. Maak kenbaar welk oppervlak als extrusiebron gebruikt wordt. Maak duidelijk of de BAG-polygoon (bovenaanzicht) of BGT-polygoon (voetafdruk), of een andere geometrie als extrusiebron is gebruikt.</p>
 </aside>
 
-<aside class="note" title="Vastgestelde transformatieprofielen voor BIM-naar-GEO per toepassing">
-  <p><strong>AANBEVELING:</strong> Stel transformatieprofielen op, "Inwinregels BIM", voor elke officiële gestandaardiseerde keten waarin BIM als bron voor GEO-data wordt gebruikt. Dit profiel beschrijft de eisen en regels voor de vertaling van BIM-naar-GEO en omvat minimaal een eenduidige LOD-definitie, een ILS/informatie-eis, een object- en attribuutmapping, geometrische en semantische transformaties/generalisatieregels en validatiecriteria. Het profiel vormt daarmee de gestandaardiseerde brug tussen BIM-data en de eisen van de betreffende GEO-inwinningstraat. </p>
+<aside class="note" title="Vastgestelde transformatieprofielen voor BIM-naar-Geo per toepassing">
+  <p><strong>AANBEVELING:</strong> Stel transformatieprofielen op, "Inwinregels BIM", voor elke officiële gestandaardiseerde keten waarin BIM als bron voor Geo-data wordt gebruikt. Dit profiel beschrijft de eisen en regels voor de vertaling van BIM-naar-Geo en omvat minimaal een eenduidige LOD-definitie, een ILS/informatie-eis, een object- en attribuutmapping, geometrische en semantische transformaties/generalisatieregels en validatiecriteria. Het profiel vormt daarmee de gestandaardiseerde brug tussen BIM-data en de eisen van de betreffende Geo-inwinningstraat. </p>
 </aside>
 
 
 # Bestandsformaten
 
-Wanneer men een conversie wil doen van open BIM naar open GEO kan men van verschillende bestandsformaten gebruik maken. Hieronder zijn een aantal belangrijke bestandsformaten beschreven voor het converteren van open BIM naar open GEO.
+Wanneer men een conversie wil doen van open BIM naar open Geo kan men van verschillende bestandsformaten gebruik maken. Hieronder zijn een aantal belangrijke bestandsformaten beschreven voor het converteren van open BIM naar open Geo.
 
 ## CityGML XML & CityGML CityJSON
 
@@ -482,7 +482,7 @@ GeoJSON is een open uitwisselformaat voor geografische gegevens. Het is, net zoa
 
 De Industry Foundation Classes (IFC) zijn een set van gestandaardiseerde, digitale beschrijvingen van objecten in de gebouwde omgeving voor bouwinformatiemodellen (BIM). IFC is een open internationale standaard voor het delen van data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien, van ontwerp en constructie tot beheer. De standaard wordt voornamelijk gebruikt in de AEC-sector (Architecture, Engineering & Construction). IFC bestaat uit een schema, een documentatie, property (kenmerken) en quantity (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is net als andere open standaarden software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om gebouwen, wegen, spoor, waterwegen en havenfaciliteiten te modelleren. 
 
-In deze praktijkrichtlijn wordt de BIM-naar-GEO-workflow beschreven voor open uitwisseling van BIM en GEO. Hiervoor baseert de praktijkrichtlijn zich voornamelijk op het IFC-uitwisselformaat voor BIM en CityGML (JSON-encoding) voor Geo. 
+In deze praktijkrichtlijn wordt de BIM-naar-Geo-workflow beschreven voor open uitwisseling van BIM en Geo. Hiervoor baseert de praktijkrichtlijn zich voornamelijk op het IFC-uitwisselformaat voor BIM en CityGML (JSON-encoding) voor Geo. 
 
 ## 3D Tiles
 

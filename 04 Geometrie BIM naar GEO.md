@@ -1,8 +1,8 @@
-# Geometrie BIM naar GEO
+# Geometrie BIM naar Geo
 
 ## Impliciete en expliciete geometrie
 Geometrie kan impliciet of expliciet zijn gedefinieerd. Expliciete geometrie is geometrie die volledig is uitgeschreven, dat wil zeggen: alle coördinaten van de vertices, edges, faces en curves. Er is geen procedure of wiskundige berekening nodig om de geometrie op te stellen. Bij impliciete geometrie is dit anders. De geometrie is beschreven als een wiskundige of procedurele definitie. Pas bij rendering of conversie wordt geometrie vertaald naar vertices, edges, faces en curves. 
-In de GEO-formaten CityJSON, CityGML en GeoJSON maakt men voornamelijk gebruik van expliciete geometrie. In het open-BIM-formaat IFC kan men zowel impliciete als expliciete geometrie opslaan. Een softwaregebruiker is zich niet altijd bewust van het type geometrie dat is gemodelleerd. 
+In de Geo-formaten CityJSON, CityGML en GeoJSON maakt men voornamelijk gebruik van expliciete geometrie. In het open-BIM-formaat IFC kan men zowel impliciete als expliciete geometrie opslaan. Een softwaregebruiker is zich niet altijd bewust van het type geometrie dat is gemodelleerd. 
 Complexe impliciete geometrie kan bij conversie naar expliciete CityJSON-geometrie een groot bestand opleveren.  
 
 <figure id="drie_benaderingen_IFC_geometrie" style="display: block; text-align: center; margin: 0 auto;">
