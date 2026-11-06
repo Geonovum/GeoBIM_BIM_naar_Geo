@@ -39,7 +39,7 @@ Een ILS is in deze termen de Nederlandse invulling van een EIR (Exchange Informa
 
 ## Generieke eisen aan het BIM-model voor conversie naar Geo
 
-Onderstaande onderwerpen komen in vrijwel elke BIM-naar-Geo-toepassing terug. Ze zijn geordend van drager (bestand / information container) naar inhoud (geometrie en semantiek). Welke van deze eisen daadwerkelijk gelden en hoe streng, hangt af van het Geo-product dat gemaakt moet worden; die koppeling wordt gelegd in [Van BIM-eis naar Geo-product](#van-bim-eis-naar-geo-product).
+Onderstaande onderwerpen komen in vrijwel elke BIM-naar-Geo-toepassing terug. Ze zijn geordend van drager (bestand / information container) naar inhoud (geometrie en semantiek). Welke van deze eisen daadwerkelijk gelden en hoe streng, hangt af van het Geo-product dat gemaakt moet worden; die koppeling wordt gelegd in [Van BIM-eis naar Geo-product](#van-bim-eis-naar-ils-naar-geo-product).
 
 ### Bestandsformaat en schema
 

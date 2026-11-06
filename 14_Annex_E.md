@@ -1,6 +1,6 @@
 # Voorbeeld ILS
 
-Deze bijlage laat zien hoe dezelfde eisen uit een ILS op twee manieren machineleesbaar kunnen worden vastgelegd en afgedwongen: als IDS voor IFC-modellen en als SHACL voor linked data volgens NEN 2660-2 [[NEN2660-2]] (zie [InformatieLeveringsSpecificatie (ILS)](#informatieleveringsspecificatie-ils)). Het voorbeeld gaat over maatregelen en de status daarvan, zoals beschreven in het hoofdstuk [Levenscyclus van BIM naar Geo](#levenscyclus-van-bim-naar-geo). Dat hoofdstuk is leidend: de maatregel komt uit de GWSW-maatregelenlijst en kan worden aangevuld met het IFC-taaktype.
+Deze bijlage laat zien hoe dezelfde eisen uit een ILS op twee manieren machineleesbaar kunnen worden vastgelegd en afgedwongen: als IDS voor IFC-modellen en als SHACL voor linked data volgens NEN 2660-2 [[NEN2660-2]] (zie [InformatieLeveringsSpecificatie (ILS)](#informatieleveringsspecificatie-ils-en-information-delivery-specification-ids)). Het voorbeeld gaat over maatregelen en de status daarvan, zoals beschreven in het hoofdstuk [Levenscyclus van BIM naar Geo](#levenscyclus-van-bim-naar-geo). Dat hoofdstuk is leidend: de maatregel komt uit de GWSW-maatregelenlijst en kan worden aangevuld met het IFC-taaktype.
 
 Het hoofdstuk Levenscyclus onderscheidt drie begrippen, die in dit voorbeeld elk op hun eigen plek staan:
 
