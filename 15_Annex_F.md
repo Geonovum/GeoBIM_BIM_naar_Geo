@@ -1,26 +1,26 @@
 # Voorbeeld-IDS'en
 
-Deze bijlage bevat de uitgeschreven specificaties bij het hoofdstuk *Eisen aan model en mapping*. De voorbeelden zijn opgesteld volgens buildingSMART IDS 1.0 en gevalideerd tegen het bijbehorende XML-schema.
+Deze bijlage bevat de uitgeschreven specificaties bij het hoofdstuk [Eisen aan het BIM-model](#eisen-aan-het-bim-model). De voorbeelden zijn opgesteld volgens buildingSMART IDS 1.0 [[IDS10]] en gevalideerd tegen het bijbehorende XML-schema.
 
-De bijlage is opgebouwd volgens de modulaire werkwijze uit *Werken met meerdere IDS'en*: eerst drie bron-ILS'en, dan de samenstelling daarvan tot één gepubliceerde IDS, en tot slot een voorbeeld van wat er misgaat wanneer twee bron-ILS'en elkaar tegenspreken.
+De bijlage is opgebouwd volgens de modulaire werkwijze uit [Samenstellen van IDS'en](#samenstellen-van-ids-en): eerst drie bron-ILS'en, dan de samenstelling daarvan tot één gepubliceerde IDS, en tot slot een voorbeeld van wat er gebeurt wanneer twee bron-ILS'en elkaar tegenspreken.
 
-## F.1 Leeswijzer
+## Leeswijzer
 
 Elke specificatie draagt een `identifier` met een herkomstprefix, zodat na samenvoeging zichtbaar blijft uit welke bron-ILS een gefaalde eis afkomstig is:
 
 | Prefix | Bron-ILS | Onderwerp |
 |--------|----------|-----------|
-| `GEB-` | `ILS.Gebouw` | ruimtelijke structuur, typering en geometrie van een bouwwerk |
-| `BR-` | `ILS.Basisregistratie` | generieke attributen voor levering aan een basisregistratie |
-| `BGT-` | `ILS.BGT` | specifieke eisen voor levering aan de BGT |
+| `GEB-` | `ILS-Gebouw` | ruimtelijke structuur, typering en geometrie van een bouwwerk |
+| `BR-` | `ILS-Basisregistratie` | generieke attributen voor levering aan een basisregistratie |
+| `BGT-` | `ILS-BGT` | specifieke eisen voor levering aan de BGT |
 
 In alle voorbeelden is `ifcVersion="IFC4 IFC4X3_ADD2"` aangehouden. Entiteits- en typenamen staan in hoofdletters; dat is een eis van de IDS-standaard.
 
-## F.2 ILS.Gebouw
+## ILS-Gebouw
 
-Deze bron-ILS maakt de eisen expliciet die de LOD 0.2-methode uit hoofdstuk 9 impliciet aan het BIM-model stelt. De nummers corresponderen met de tabel in *Uitgewerkt: de impliciete ILS achter LOD 0.2*.
+Deze bron-ILS maakt de eisen expliciet die de LoD0.2-methode met de [IfcEnvelopeExtractor](#ifcenvelopeextractor) impliciet aan het BIM-model stelt. De nummers corresponderen met de tabel in [Voorbeeld: ILS-uitwerking voor LOD 0.2 Gebouw](#voorbeeld-ils-uitwerking-voor-lod-0-2-gebouw).
 
-Let bij het lezen op twee dingen. De specificaties GEB-01 en GEB-03a gebruiken `minOccurs="1"` op de applicability: dat dwingt af dat het model daadwerkelijk bouwlagen respectievelijk ruimten bevat. GEB-02 en GEB-03b gebruiken `minOccurs="0"`: die eisen gelden voorwaardelijk — *als* er wanden zijn, moeten ze aan een bouwlaag hangen; *als* een ruimte `USERDEFINED` is, moet `ObjectType` gevuld zijn — maar dwingen hun aanwezigheid niet af.
+Let bij het lezen op twee dingen. De specificaties GEB-01 en GEB-03a gebruiken `minOccurs="1"` op de applicability: dat dwingt af dat het model daadwerkelijk bouwlagen respectievelijk ruimten bevat. GEB-02 en GEB-03b gebruiken `minOccurs="0"`. Die eisen gelden voorwaardelijk: *als* er wanden zijn, moeten ze aan een bouwlaag hangen; *als* een ruimte `USERDEFINED` is, moet `ObjectType` gevuld zijn. Ze dwingen niet af dat zulke objecten aanwezig zijn.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -29,7 +29,7 @@ Let bij het lezen op twee dingen. De specificaties GEB-01 en GEB-03a gebruiken `
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.Gebouw</ids:title>
+    <ids:title>ILS-Gebouw</ids:title>
     <ids:version>0.1</ids:version>
     <ids:description>Eisen aan de ruimtelijke structuur, typering en geometrie van een bouwwerk, benodigd voor afleiding van vlakproducten naar GEO.</ids:description>
     <ids:purpose>Bron-ILS, bedoeld om samengesteld te worden met een basisregistratie- en een datasetspecifieke ILS.</ids:purpose>
@@ -195,7 +195,7 @@ Voor `IfcRoof` en `IfcSlab` in dakfunctie geldt dat `IfcRoof` in IFC4 een samens
 
 Analoog aan GEB-04a gelden GEB-04b voor `IFCSLAB` met `Pset_SlabCommon` en GEB-04c voor `IFCROOF` met `Pset_RoofCommon`. Die zijn hier weggelaten omdat ze alleen in propertySet en applicability verschillen.
 
-## F.3 ILS.Basisregistratie
+## ILS-Basisregistratie
 
 Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. In een uitgewerkte versie horen hier ook identificatie, status en bronhouder in.
 
@@ -206,7 +206,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.Basisregistratie</ids:title>
+    <ids:title>ILS-Basisregistratie</ids:title>
     <ids:version>0.1</ids:version>
     <ids:description>Generieke attributen die bij levering aan een basisregistratie in het model aanwezig moeten zijn.</ids:description>
   </ids:info>
@@ -234,7 +234,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
 </ids:ids>
 ```
 
-## F.4 ILS.BGT
+## ILS-BGT
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -243,7 +243,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.BGT</ids:title>
+    <ids:title>ILS-BGT</ids:title>
     <ids:version>0.1</ids:version>
     <ids:description>Aanvullende eisen bij levering van een bouwwerk aan de BGT.</ids:description>
   </ids:info>
@@ -269,7 +269,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
 </ids:ids>
 ```
 
-## F.5 De samengestelde IDS
+## De samengestelde IDS
 
 De samenstelling van de drie bron-ILS'en is het bestand waaraan daadwerkelijk geleverd en getoetst wordt. De specificaties zijn ongewijzigd overgenomen; alleen het `ids:info`-blok is nieuw en benoemt welke bronnen in welke versie zijn verwerkt.
 
@@ -282,9 +282,9 @@ Hieronder is de samenstelling verkort weergegeven met één specificatie per bro
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
   <ids:info>
-    <ids:title>ILS.BGT.Gebouw (samengesteld)</ids:title>
+    <ids:title>ILS-BGT-Gebouw (samengesteld)</ids:title>
     <ids:version>0.1</ids:version>
-    <ids:description>Samenstelling van ILS.Gebouw 0.1, ILS.Basisregistratie 0.1 en ILS.BGT 0.1. Alleen deze samenstelling is contractueel; de bron-ILS'en zijn bouwstenen.</ids:description>
+    <ids:description>Samenstelling van ILS-Gebouw 0.1, ILS-Basisregistratie 0.1 en ILS-BGT 0.1. Alleen deze samenstelling is contractueel; de bron-ILS'en zijn bouwstenen.</ids:description>
     <ids:milestone>Levering bouwwerk aan de BGT</ids:milestone>
   </ids:info>
   <ids:specifications>
@@ -327,11 +327,11 @@ Hieronder is de samenstelling verkort weergegeven met één specificatie per bro
 </ids:ids>
 ```
 
-Merk op dat `BR-01` en `BGT-01` dezelfde applicability hebben — alle bouwwerken — maar verschillende eisen stellen. Dat is geen tegenspraak maar een stapeling: een bouwwerk moet zowel een bouwjaar als een naam hebben. Dit is het normale geval bij samenstellen.
+`BR-01` en `BGT-01` hebben dezelfde applicability (alle bouwwerken), maar stellen verschillende eisen. Dat is geen tegenspraak, maar een combinatie van eisen: een bouwwerk moet zowel een bouwjaar als een naam hebben. Dit is het normale geval bij samenstellen.
 
 Validatie van deze samenstelling tegen een model met één bouwwerk, één bouwlaag, een naam en een bouwjaar levert drie geslaagde specificaties op.
 
-## F.6 Wat er gebeurt bij een tegenspraak
+## Wat er gebeurt bij een tegenspraak
 
 Onderstaande samenstelling bevat een bewuste fout: een tweede bron-ILS verbiedt de eigenschap die de eerste verplicht stelt, voor dezelfde selectie objecten.
 
@@ -379,19 +379,19 @@ Onderstaande samenstelling bevat een bewuste fout: een tweede bron-ILS verbiedt 
 
 Dit bestand is schemavalide. Een validator meldt geen fout in de specificatie zelf, maar rapporteert bij elk model dat één van beide specificaties faalt: bevat het model een bouwjaar, dan faalt `X-01`; ontbreekt het bouwjaar, dan faalt `BR-01`. Geen enkel model kan slagen.
 
-De consequentie is dat de fout zich manifesteert als een modelfout bij de leverancier, terwijl hij in werkelijkheid in de afspraak zit. Daarom hoort de controle op tegenspraken in het samenstelproces, vóór publicatie — zie *Wat een samenstelstap moet controleren*.
+De fout lijkt daardoor een modelfout van de leverancier, terwijl hij in werkelijkheid in de afspraak zit. Daarom hoort de controle op tegenspraken in het samenstelproces, vóór publicatie (zie [Wat een samenstelstap moet controleren](#wat-een-samenstelstap-moet-controleren)).
 
-## F.7 Nationale ruimtetypen: het USERDEFINED-patroon in de praktijk
+## Nationale ruimtetypen: het USERDEFINED-patroon in de praktijk
 
 De volgende voorbeelden zijn ontleend aan de *ILS voor Ruimten in de Omgevingswet*, de leveringsspecificatie voor ruimtemodellering bij vergunningaanvragen. Zij laten zien hoe een nationale begrippenset binnen het IFC-schema wordt ondergebracht, zonder eigen property sets en zonder schema-uitbreiding.
 
-Het Nederlandse bouwregelgevingsdomein onderscheidt ruimtelijke begrippen die het internationale `IfcSpaceTypeEnum` niet kent. In plaats van die begrippen in een eigen `Pset` te zetten, worden zij vastgelegd als `PredefinedType = USERDEFINED` met de Nederlandse term in `ObjectType`, en gepubliceerd als classificatie in de bSDD. Zie *Nationale typering: het USERDEFINED-patroon* voor de onderbouwing.
+Het Nederlandse bouwregelgevingsdomein onderscheidt ruimtelijke begrippen die het internationale `IfcSpaceTypeEnum` niet kent. In plaats van die begrippen in een eigen `Pset` te zetten, worden zij vastgelegd als `PredefinedType = USERDEFINED` met de Nederlandse term in `ObjectType`, en gepubliceerd als classificatie in de bSDD. Zie [Nationale typering met het USERDEFINED-patroon](#nationale-typering-met-het-userdefined-patroon) voor de onderbouwing.
 
 ### De term als selectiecriterium
 
-Het aardige van dit patroon is dat `ObjectType` niet alleen een eis is, maar ook een **selectiecriterium**. In onderstaande specificatie zit de nationale term in de *applicability*: de specificatie geldt voor precies die ruimten die als verblijfsruimte zijn aangemerkt, en stelt daar vervolgens de eisen aan die het Besluit bouwwerken leefomgeving aan een verblijfsruimte stelt.
+Een voordeel van dit patroon is dat `ObjectType` niet alleen een eis is, maar ook een **selectiecriterium**. In onderstaande specificatie zit de nationale term in de *applicability*: de specificatie geldt voor precies die ruimten die als verblijfsruimte zijn aangemerkt, en stelt daar vervolgens de eisen aan die het Besluit bouwwerken leefomgeving aan een verblijfsruimte stelt.
 
-Daarmee wordt de nationale begrippenset de as waarlangs de hele ILS is georganiseerd — één specificatie per begrip, elk met een bSDD-URI als `identifier`.
+Daarmee wordt de nationale begrippenset de as waarlangs de hele ILS is georganiseerd: één specificatie per begrip, elk met een bSDD-URI als `identifier`.
 
 ```xml
 <ids:specification name="9.12b Verblijfsruimte"
@@ -434,13 +434,13 @@ Daarmee wordt de nationale begrippenset de as waarlangs de hele ILS is georganis
 </ids:specification>
 ```
 
-Let op wat hier gebeurt met de drie IFC-attributen. `ObjectType` draagt het **juridische begrip** (Verblijfsruimte), `Name` de **functionele aanduiding** (Slaapkamer) en `Description` de **bepalingsmethode** waarmee de inhoud is bepaald. Drie betekenislagen, drie standaardattributen, geen enkele eigen property set. Dat is precies wat het patroon bruikbaar maakt voor conversie naar GEO: elk van die lagen is met generieke IFC-software leesbaar en met een IDS-attribuutfacet te selecteren.
+De drie IFC-attributen hebben elk een eigen rol. `ObjectType` draagt het **juridische begrip** (Verblijfsruimte), `Name` de **functionele aanduiding** (Slaapkamer) en `Description` de **bepalingsmethode** waarmee de inhoud is bepaald. Zo worden drie betekenislagen vastgelegd in drie standaardattributen, zonder eigen property set. Dat maakt het patroon bruikbaar voor conversie naar Geo: elk van die lagen is met generieke IFC-software leesbaar en met een IDS-attribuutfacet te selecteren.
 
-<mark>Redactie: in de gepubliceerde v1.1 staat de classificatiefacet op `cardinality="optional"`. Hierboven is `required` aangehouden, conform de eis in *Classificatie*; dit is een wijzigingsvoorstel richting de beheerder van de ILS.</mark>
+In de gepubliceerde versie 1.1 van de ILS voor Ruimten in de Omgevingswet staat het classificatiefacet op `cardinality="optional"`. Hierboven is `required` aangehouden, conform de eis in [Classificatie](#classificatie). Dit is een wijzigingsvoorstel aan de beheerder van die ILS.
 
 ### De classificatie als tweede drager
 
-De classificatiefacet in de specificatie hierboven doet het werk dat `ObjectType` niet kan doen. De term `Verblijfsruimte` krijgt via `IfcClassificationReference` een `Location`-URI, een systeemnaam en een editie mee — en daarmee een definitie waar een conversieregel naar kan verwijzen. De waarde is identiek aan `ObjectType`; de betekenis eromheen is dat niet.
+Het classificatiefacet in de specificatie hierboven doet het werk dat `ObjectType` niet kan doen. De term `Verblijfsruimte` krijgt via `IfcClassificationReference` een `Location`-URI, een systeemnaam en een editie mee, en daarmee een definitie waar een conversieregel naar kan verwijzen. De waarde is identiek aan `ObjectType`; de betekenis eromheen is dat niet.
 
 De begrippen zijn gepubliceerd als bSDD-dictionary *Omgevingswet Ruimten* van buildingSMART Nederland, versie 0.3.0 (`bsnl`, nl-NL). Elke term heeft daarin een eigen URI van de vorm:
 
@@ -451,9 +451,9 @@ https://identifier.buildingsmart.org/uri/bsnl/Omgevingswet-Ruimten/0.3.0/class/V
 Twee dingen om vast te leggen in de ILS voordat dit werkt:
 
 - **De schrijfwijze van de systeemnaam.** Het IDS-classificatiefacet vergelijkt `system` met `IfcClassification.Name` in het IFC-bestand. De dictionary heet *Omgevingswet Ruimten* met een spatie, terwijl het URI-fragment `Omgevingswet-Ruimten` met een koppelteken draagt. Kies één schrijfwijze voor `IfcClassification.Name` en houd die aan in alle specificaties.
-- **De schrijfwijze van de term zelf.** Klassecode en klassenaam kunnen in de bSDD verschillen — `Kadastraal-Perceel` tegenover `Kadastraal Perceel`, `Tarra-Ruimte` tegenover `Tarra Ruimte`. Omdat `ObjectType` en de classificatiewaarde gelijk moeten zijn, moet de ILS expliciet zeggen of de **naam** of de **code** de te leveren waarde is.
+- **De schrijfwijze van de term zelf.** Klassecode en klassenaam kunnen in de bSDD verschillen, bijvoorbeeld `Kadastraal-Perceel` tegenover `Kadastraal Perceel`, `Tarra-Ruimte` tegenover `Tarra Ruimte`. Omdat `ObjectType` en de classificatiewaarde gelijk moeten zijn, moet de ILS expliciet zeggen of de **naam** of de **code** de te leveren waarde is.
 
-Naast de specificaties per begrip staat één generieke regel die borgt dat elke nationaal getypeerde ruimte überhaupt een classificatie uit dit systeem draagt — ongeacht welke term:
+Naast de specificaties per begrip staat één generieke regel die borgt dat elke nationaal getypeerde ruimte een classificatie uit dit systeem draagt, ongeacht welke term:
 
 ```xml
 <ids:specification name="Ruimte geclassificeerd volgens de nationale termenlijst"
@@ -476,13 +476,13 @@ Naast de specificaties per begrip staat één generieke regel die borgt dat elke
 </ids:specification>
 ```
 
-Deze regel toetst alleen dát er geclassificeerd is, niet *waarmee*. De koppeling tussen de term in `ObjectType` en dezelfde term in de classificatie is niet generiek uit te drukken: **IDS kent geen variabelen en kan de waarde van het ene facet niet vergelijken met die van het andere.** Die koppeling wordt daarom per begrip afgedwongen — één specificatie per term, die op `ObjectType` selecteert en de bijbehorende classificatiewaarde verplicht stelt, zoals `9.12b Verblijfsruimte` hierboven.
+Deze regel toetst alleen dát er geclassificeerd is, niet *waarmee*. De koppeling tussen de term in `ObjectType` en dezelfde term in de classificatie is niet generiek uit te drukken: **IDS kent geen variabelen en kan de waarde van het ene facet niet vergelijken met die van het andere.** Die koppeling wordt daarom per begrip afgedwongen: één specificatie per term, die op `ObjectType` selecteert en de bijbehorende classificatiewaarde verplicht stelt, zoals `9.12b Verblijfsruimte` hierboven.
 
-Dat verklaart meteen waarom de opbouw "één specificatie per begrip" hier geen omslachtigheid is maar een noodzaak: het is de enige manier waarop de gelijkheid van typering en classificatie machinaal controleerbaar wordt.
+De opbouw "één specificatie per begrip" is daarom noodzakelijk: het is de enige manier waarop de gelijkheid van typering en classificatie machinaal controleerbaar wordt.
 
 ### De sluitregel
 
-De specificatie hierboven vertrouwt erop dat `ObjectType` gevuld is. Om dat af te dwingen — en om te voorkomen dat een model wél `ObjectType = Verblijfsruimte` draagt maar `PredefinedType = SPACE` in plaats van `USERDEFINED` — hoort er één generieke specificatie naast te staan die het patroon zelf bewaakt:
+De specificatie hierboven vertrouwt erop dat `ObjectType` gevuld is. Om dat af te dwingen, en om te voorkomen dat een model wél `ObjectType = Verblijfsruimte` draagt maar `PredefinedType = SPACE` in plaats van `USERDEFINED`, hoort er één generieke specificatie naast te staan die het patroon zelf bewaakt:
 
 ```xml
 <ids:specification name="Nationale ruimtetypering conform IFC"
@@ -519,21 +519,21 @@ De specificatie hierboven vertrouwt erop dat `ObjectType` gevuld is. Om dat af t
 </ids:specification>
 ```
 
-Deze specificatie doet drie dingen tegelijk. Zij maakt de where-rule `CorrectPredefinedType` van `IfcSpace` — die voorschrijft dat `ObjectType` bestaat zodra `PredefinedType` de waarde `USERDEFINED` heeft — tot een expliciete leveringseis. Zij beperkt `ObjectType` tot de gepubliceerde termenlijst, zodat het vrije tekstveld niet opnieuw een interpretatieprobleem wordt. En zij is met één regel uit te breiden wanneer de termenlijst groeit, zonder dat de specificaties per begrip hoeven te veranderen.
+Deze specificatie doet drie dingen tegelijk. Zij maakt de where-rule `CorrectPredefinedType` van `IfcSpace` (die voorschrijft dat `ObjectType` bestaat zodra `PredefinedType` de waarde `USERDEFINED` heeft) tot een expliciete leveringseis. Zij beperkt `ObjectType` tot de gepubliceerde termenlijst, zodat het vrije tekstveld niet opnieuw een interpretatieprobleem wordt. En zij is met één regel uit te breiden wanneer de termenlijst groeit, zonder dat de specificaties per begrip hoeven te veranderen.
 
-> **Voor andere landen.** Hetzelfde patroon is elders zonder aanpassing toepasbaar: een eigen `USERDEFINED`-lijst in de eigen taal, gepubliceerd in de bSDD onder een eigen naamruimte, plus één sluitregel als hierboven. Het IFC-schema hoeft daarvoor niet te wijzigen, en modellen uit verschillende landen blijven onderling leesbaar — de termen verschillen, het mechanisme niet.
+> **Voor andere landen.** Hetzelfde patroon is elders zonder aanpassing toepasbaar: een eigen `USERDEFINED`-lijst in de eigen taal, gepubliceerd in de bSDD onder een eigen naamruimte, plus één sluitregel als hierboven. Het IFC-schema hoeft daarvoor niet te wijzigen, en modellen uit verschillende landen blijven onderling leesbaar: de termen verschillen, het mechanisme is hetzelfde.
 
 Voor typering op het type-object in plaats van op de occurrence geldt hetzelfde met andere attributen: `IfcSpaceType` draagt `PredefinedType` en `ElementType`, waarbij `ElementType` de rol van `ObjectType` overneemt.
 
-## F.8 Georeferentie in een IDS
+## Georeferentie in een IDS
 
-Georeferentie wordt vaak buiten de IDS gehouden, in de veronderstelling dat het er niet in past. De ILS voor Ruimten in de Omgevingswet laat zien dat dat maar ten dele klopt: specificaties die rechtstreeks `IFCMAPCONVERSION` en `IFCPROJECTEDCRS` als applicability nemen, zijn schemavalide en worden door gangbare validatiesoftware uitgevoerd. Zie *Wat een IDS wél en niet kan toetsen* voor de onderbouwing en voor de kanttekening richting de IDS-standaardcommissie.
+Georeferentie wordt vaak buiten de IDS gehouden, in de veronderstelling dat het er niet in past. De ILS voor Ruimten in de Omgevingswet laat zien dat dat maar ten dele klopt: specificaties die rechtstreeks `IFCMAPCONVERSION` en `IFCPROJECTEDCRS` als applicability nemen, zijn schemavalide en worden door gangbare validatiesoftware uitgevoerd. Zie [Mogelijkheden en grenzen van IDS](#mogelijkheden-en-grenzen-van-ids) voor de onderbouwing en voor de kanttekening richting de IDS-standaardcommissie.
 
-Onderstaande specificaties dwingen level 50 af zoals beschreven in de praktijkrichtlijn [Georefereren GeoBIM](https://nl-digigo.github.io/GeoBIM_Georefereren/).
+Onderstaande specificaties dwingen level 50 af zoals beschreven in de praktijkrichtlijn Georefereren GeoBIM [[GEOBIM-GEOREF]].
 
-### GEO-01 — de transformatie
+### GEO-01: de transformatie
 
-`IfcMapConversionScaled` is een subtype van `IfcMapConversion` en wordt door de praktijkrichtlijn Georefereren aanbevolen voor RDNAP, omdat het een afzonderlijke schaal per as toestaat. **IDS kent geen automatische overerving in het entiteitsfacet** — de gebruikershandleiding stelt expliciet dat alle entiteiten afzonderlijk moeten worden opgesomd. Een specificatie die alleen `IFCMAPCONVERSION` noemt, treft een `IfcMapConversionScaled` dus niet, en keurt daarmee juist de aanbevolen route af. Beide moeten in de opsomming staan.
+`IfcMapConversionScaled` is een subtype van `IfcMapConversion` en wordt door de praktijkrichtlijn Georefereren aanbevolen voor RDNAP, omdat het een afzonderlijke schaal per as toestaat. **IDS kent geen automatische overerving in het entiteitsfacet.** De gebruikershandleiding stelt expliciet dat alle entiteiten afzonderlijk moeten worden opgesomd. Een specificatie die alleen `IFCMAPCONVERSION` noemt, treft een `IfcMapConversionScaled` dus niet, en keurt daarmee juist de aanbevolen route af. Beide moeten in de opsomming staan.
 
 ```xml
 <ids:specification name="Georeferentie level 50 aanwezig"
@@ -574,9 +574,9 @@ Onderstaande specificaties dwingen level 50 af zoals beschreven in de praktijkri
 </ids:specification>
 ```
 
-De `minOccurs="1"` op de applicability doet hier het zware werk: hij dwingt af dat er überhaupt een transformatie in het model zit. Een model zonder georeferentie levert nul toepasbare objecten op en faalt daarmee op deze specificatie.
+Het attribuut `minOccurs="1"` op de applicability is hier bepalend: het dwingt af dat er een transformatie in het model zit. Een model zonder georeferentie levert nul toepasbare objecten op en faalt daarmee op deze specificatie.
 
-### GEO-02 — het coördinatenstelsel
+### GEO-02: het coördinatenstelsel
 
 ```xml
 <ids:specification name="Doelcoordinatenstelsel is RD of RD+NAP"
@@ -629,11 +629,11 @@ EPSG:7415 is de samengestelde CRS en bevat de hoogtecomponent al. EPSG:28992 is 
 </ids:specification>
 ```
 
-Dit patroon — de conditie in de applicability, het gevolg in de requirements — is de manier waarop een "als … dan …"-regel in IDS wordt uitgedrukt. Het komt in deze bijlage vaker terug: ook GEB-03b en de specificaties per ruimtebegrip werken zo.
+Met dit patroon (de conditie in de applicability, het gevolg in de requirements) wordt een "als … dan …"-regel in IDS uitgedrukt. Het komt in deze bijlage vaker terug: ook GEB-03b en de specificaties per ruimtebegrip werken zo.
 
 ### Wat deze specificaties niet doen
 
-Zij toetsen **aanwezigheid en vorm**, niet **juistheid**. Of het model met deze waarden werkelijk op de goede plek belandt, of de vastgelegde rotatie overeenkomt met de oriëntatie van de geometrie, en of `Scale` consistent is met de `IfcUnitAssignment` van het model — dat blijft een geometrische controle. In de praktijk vangt de vormcontrole niettemin het merendeel van de fouten: ontbrekende of half ingevulde georeferentie komt aanzienlijk vaker voor dan een verkeerd ingevulde.
+Zij toetsen **aanwezigheid en vorm**, niet **juistheid**. Of het model met deze waarden werkelijk op de goede plek belandt, of de vastgelegde rotatie overeenkomt met de oriëntatie van de geometrie, en of `Scale` consistent is met de `IfcUnitAssignment` van het model, blijft een geometrische controle. Toch vindt de vormcontrole in de praktijk de meeste fouten: ontbrekende of half ingevulde georeferentie komt aanzienlijk vaker voor dan een verkeerd ingevulde.
 
 ### Verificatie
 
@@ -643,21 +643,21 @@ Deze specificaties zijn tegen vijf modellen uitgevoerd:
 |---|---|---|---|
 | IFC4, volledige `IfcMapConversion`, EPSG:28992 + EPSG:5709 | geslaagd | geslaagd | geslaagd |
 | IFC4X3, `IfcMapConversionScaled`, EPSG:7415 | geslaagd | geslaagd | n.v.t. |
-| Zonder enige georeferentie | **gefaald** — nul toepasbare objecten | **gefaald** | n.v.t. |
+| Zonder enige georeferentie | **gefaald** (nul toepasbare objecten) | **gefaald** | n.v.t. |
 | `Scale` leeg, doel-CRS EPSG:4326 | **gefaald** op de attribuuteis | **gefaald** op de waarde | n.v.t. |
 | EPSG:28992 zonder `VerticalDatum` | geslaagd | geslaagd | **gefaald** |
 
 De laatste rij laat zien waarom GEO-02b nodig is: een model dat RD als doelstelsel opgeeft zonder het verticale datum te duiden, komt door GEO-02a heen en levert toch hoogten zonder betekenis.
 
-Ter vergelijking: dezelfde test met een specificatie die alléén `IFCMAPCONVERSION` opsomt, faalt op het tweede model — het model dat de door de praktijkrichtlijn aanbevolen RDNAP-route volgt.
+Ter vergelijking: dezelfde test met een specificatie die alléén `IFCMAPCONVERSION` opsomt, faalt op het tweede model, het model dat de door de praktijkrichtlijn aanbevolen RDNAP-route volgt.
 
-## F.9 Aanvullende specificaties
+## Aanvullende specificaties
 
-De volgende specificaties horen bij hogere detailniveaus en zijn hier los opgenomen; zij kunnen in een bron-ILS `ILS.Openingen` worden ondergebracht.
+De volgende specificaties horen bij hogere detailniveaus en zijn hier los opgenomen; zij kunnen in een bron-ILS `ILS-Openingen` worden ondergebracht.
 
 ### Ramen vullen een sparing
 
-Openingsvlakken in de GEO-dataset worden afgeleid uit de sparing in de wand, niet uit het volume van het kozijn. Een raam dat als los volume tegen een dichte wand is geplaatst, levert geen opening op.
+Openingsvlakken in de Geo-dataset worden afgeleid uit de sparing in de wand, niet uit het volume van het kozijn. Een raam dat als los volume tegen een dichte wand is geplaatst, levert geen opening op.
 
 ```xml
 <ids:specification name="Ramen vullen een sparing"
@@ -719,4 +719,4 @@ Waar classificatie en IFC-entiteit uiteenlopen, is niet vast te stellen welke va
 </ids:specification>
 ```
 
-Wie strakker wil sturen, splitst deze specificatie op subcodeniveau: `31.2` vereist `IFCWINDOW`, `31.3` vereist `IFCDOOR` en `31.4` vereist `IFCCURTAINWALL`. Dat is meteen een goed voorbeeld van *aanscherpen zonder tegenspraak*: de striktere variant is een deelverzameling van de ruimere en kan er zonder conflict naast bestaan.
+Voor een strengere controle kan deze specificatie per subcode worden opgesplitst: `31.2` vereist `IFCWINDOW`, `31.3` vereist `IFCDOOR` en `31.4` vereist `IFCCURTAINWALL`. Dit is een voorbeeld van *aanscherpen zonder tegenspraak*: de striktere variant is een deelverzameling van de ruimere en kan er zonder conflict naast bestaan.
