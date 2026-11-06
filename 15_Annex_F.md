@@ -1,10 +1,10 @@
 # Voorbeeld-IDS'en
 
-Deze bijlage bevat de uitgeschreven specificaties bij het hoofdstuk [Eisen aan het BIM-model](#eisen-aan-het-bim-model). De voorbeelden zijn opgesteld volgens buildingSMART IDS 1.0 en gevalideerd tegen het bijbehorende XML-schema.
+Deze bijlage bevat de uitgeschreven specificaties bij het hoofdstuk [Eisen aan het BIM-model](#eisen-aan-het-bim-model). De voorbeelden zijn opgesteld volgens buildingSMART IDS 1.0 [[IDS10]] en gevalideerd tegen het bijbehorende XML-schema.
 
 De bijlage is opgebouwd volgens de modulaire werkwijze uit [Samenstellen van IDS'en](#samenstellen-van-ids-en): eerst drie bron-ILS'en, dan de samenstelling daarvan tot één gepubliceerde IDS, en tot slot een voorbeeld van wat er gebeurt wanneer twee bron-ILS'en elkaar tegenspreken.
 
-## F.1 Leeswijzer
+## Leeswijzer
 
 Elke specificatie draagt een `identifier` met een herkomstprefix, zodat na samenvoeging zichtbaar blijft uit welke bron-ILS een gefaalde eis afkomstig is:
 
@@ -16,7 +16,7 @@ Elke specificatie draagt een `identifier` met een herkomstprefix, zodat na samen
 
 In alle voorbeelden is `ifcVersion="IFC4 IFC4X3_ADD2"` aangehouden. Entiteits- en typenamen staan in hoofdletters; dat is een eis van de IDS-standaard.
 
-## F.2 ILS-Gebouw
+## ILS-Gebouw
 
 Deze bron-ILS maakt de eisen expliciet die de LoD0.2-methode met de [IfcEnvelopeExtractor](#ifcenvelopeextractor) impliciet aan het BIM-model stelt. De nummers corresponderen met de tabel in [Voorbeeld: ILS-uitwerking voor LOD 0.2 Gebouw](#voorbeeld-ils-uitwerking-voor-lod-0-2-gebouw).
 
@@ -195,7 +195,7 @@ Voor `IfcRoof` en `IfcSlab` in dakfunctie geldt dat `IfcRoof` in IFC4 een samens
 
 Analoog aan GEB-04a gelden GEB-04b voor `IFCSLAB` met `Pset_SlabCommon` en GEB-04c voor `IFCROOF` met `Pset_RoofCommon`. Die zijn hier weggelaten omdat ze alleen in propertySet en applicability verschillen.
 
-## F.3 ILS-Basisregistratie
+## ILS-Basisregistratie
 
 Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. In een uitgewerkte versie horen hier ook identificatie, status en bronhouder in.
 
@@ -234,7 +234,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
 </ids:ids>
 ```
 
-## F.4 ILS-BGT
+## ILS-BGT
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -269,7 +269,7 @@ Een minimale bron-ILS met een attribuut dat elke basisregistratie nodig heeft. I
 </ids:ids>
 ```
 
-## F.5 De samengestelde IDS
+## De samengestelde IDS
 
 De samenstelling van de drie bron-ILS'en is het bestand waaraan daadwerkelijk geleverd en getoetst wordt. De specificaties zijn ongewijzigd overgenomen; alleen het `ids:info`-blok is nieuw en benoemt welke bronnen in welke versie zijn verwerkt.
 
@@ -331,7 +331,7 @@ Hieronder is de samenstelling verkort weergegeven met één specificatie per bro
 
 Validatie van deze samenstelling tegen een model met één bouwwerk, één bouwlaag, een naam en een bouwjaar levert drie geslaagde specificaties op.
 
-## F.6 Wat er gebeurt bij een tegenspraak
+## Wat er gebeurt bij een tegenspraak
 
 Onderstaande samenstelling bevat een bewuste fout: een tweede bron-ILS verbiedt de eigenschap die de eerste verplicht stelt, voor dezelfde selectie objecten.
 
@@ -381,7 +381,7 @@ Dit bestand is schemavalide. Een validator meldt geen fout in de specificatie ze
 
 De fout lijkt daardoor een modelfout van de leverancier, terwijl hij in werkelijkheid in de afspraak zit. Daarom hoort de controle op tegenspraken in het samenstelproces, vóór publicatie (zie [Wat een samenstelstap moet controleren](#wat-een-samenstelstap-moet-controleren)).
 
-## F.7 Nationale ruimtetypen: het USERDEFINED-patroon in de praktijk
+## Nationale ruimtetypen: het USERDEFINED-patroon in de praktijk
 
 De volgende voorbeelden zijn ontleend aan de *ILS voor Ruimten in de Omgevingswet*, de leveringsspecificatie voor ruimtemodellering bij vergunningaanvragen. Zij laten zien hoe een nationale begrippenset binnen het IFC-schema wordt ondergebracht, zonder eigen property sets en zonder schema-uitbreiding.
 
@@ -525,11 +525,11 @@ Deze specificatie doet drie dingen tegelijk. Zij maakt de where-rule `CorrectPre
 
 Voor typering op het type-object in plaats van op de occurrence geldt hetzelfde met andere attributen: `IfcSpaceType` draagt `PredefinedType` en `ElementType`, waarbij `ElementType` de rol van `ObjectType` overneemt.
 
-## F.8 Georeferentie in een IDS
+## Georeferentie in een IDS
 
 Georeferentie wordt vaak buiten de IDS gehouden, in de veronderstelling dat het er niet in past. De ILS voor Ruimten in de Omgevingswet laat zien dat dat maar ten dele klopt: specificaties die rechtstreeks `IFCMAPCONVERSION` en `IFCPROJECTEDCRS` als applicability nemen, zijn schemavalide en worden door gangbare validatiesoftware uitgevoerd. Zie [Mogelijkheden en grenzen van IDS](#mogelijkheden-en-grenzen-van-ids) voor de onderbouwing en voor de kanttekening richting de IDS-standaardcommissie.
 
-Onderstaande specificaties dwingen level 50 af zoals beschreven in de praktijkrichtlijn [Georefereren GeoBIM](https://nl-digigo.github.io/GeoBIM_Georefereren/).
+Onderstaande specificaties dwingen level 50 af zoals beschreven in de praktijkrichtlijn Georefereren GeoBIM [[GEOBIM-GEOREF]].
 
 ### GEO-01: de transformatie
 
@@ -651,7 +651,7 @@ De laatste rij laat zien waarom GEO-02b nodig is: een model dat RD als doelstels
 
 Ter vergelijking: dezelfde test met een specificatie die alléén `IFCMAPCONVERSION` opsomt, faalt op het tweede model, het model dat de door de praktijkrichtlijn aanbevolen RDNAP-route volgt.
 
-## F.9 Aanvullende specificaties
+## Aanvullende specificaties
 
 De volgende specificaties horen bij hogere detailniveaus en zijn hier los opgenomen; zij kunnen in een bron-ILS `ILS-Openingen` worden ondergebracht.
 

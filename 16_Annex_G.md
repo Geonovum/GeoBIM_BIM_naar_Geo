@@ -2,7 +2,7 @@
 
 Deze bijlage beschrijft de niveaus van het Level of Development (LOD), zoals die in de BIM-praktijk nog veel worden gebruikt. Zie [Level of Development in BIM](#level-of-development-in-bim) voor de verhouding tot het Level of Information Need.
 
-Bron: Nederlandse samenvatting van de [LOD Specification](https://bimforum.org/resource/lod-level-of-development-lod-specification/) van het BIMForum.
+Bron: Nederlandse samenvatting van de LOD Specification van het BIMForum [[BIMFORUM-LOD]].
 
 De ontwikkelniveaus die onderscheiden worden zijn:
 
