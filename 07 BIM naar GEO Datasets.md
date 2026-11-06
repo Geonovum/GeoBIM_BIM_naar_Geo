@@ -11,7 +11,7 @@ Overzicht van een aantal nationale/regionale datasets
 
 | Naam | Informatiemodel/structuur | Geometrie LOD | Domein |
 |--|--|--|--|
-|BGT| [IMBGT](https://docs.geostandaarden.nl/imgeo/catalogus/bgt/)| LOD0 |  Landelijke grootschalige topografie (Infra en gebouwen)|
+|BGT| IMBGT [[IMGEO]]| LOD0 |  Landelijke grootschalige topografie (Infra en gebouwen)|
 |BAG| [IMBAG](https://www.geobasisregistraties.nl/documenten/2018/03/12/catalogus-2018) | LOD0 | Landelijk (NL) (gebouwen) |
 |3DBAG| [3DBAG Schema](https://docs.3dbag.nl/nl/schema/layers/) | lod12_3d, lod12_2d, lod13_3d, lod13_2d,lod22_3d, lod22_2d | Landelijk (NL) (gebouwen)|
 |3DBasisvoorziening| [Productbeschrijving 3D Basisvoorziening](https://3d.kadaster.nl/productbeschrijving/) | LOD2.2 en LOD1.3 voor gebouwen, LOD1.2 voor wegen, water en terrein | Landelijk (NL) (gebouwen)|
@@ -19,7 +19,7 @@ Overzicht van een aantal nationale/regionale datasets
 |SpoorInBeeld |[spoorinbeeld datastructuur](https://360geo.freshdesk.com/support/solutions/articles/103000031417-datastructuur-algemeen-or-datastructure-in-general)|nvt (Pointclouds en luchtfoto's)| 3D Spoortracés Nederland|
 |Beeldmateriaal |[Beeldmateriaal product en dienstcatalogus](https://cuatro.sim-cdn.nl/beeldmateriaal/uploads/gebruikershandleiding_beeldmateriaal_0.pdf?cb=9ScYg8fF)|nvt (Pointclouds en luchtfoto's)|Landelijk / stedelijk|
 |1GiS|[Data-eisen 1GIS](https://standaarden.rws.nl/#/standaard/6058-1-1)|LOD0| Landelijk, beheerde water/wegen-infrastructuur|
-|assetmanagementmodellen|[IMBOR](https://www.crow.nl/Onderwerpen/assetmanagement-en-beheer-openbare-ruimte/datagedreven-werken/imbor-de-standaard-voor-beheer-van-de-openbare-ruimte/)|LOD0 (gekoppeld aan IMBGT)| Assetbeheer openbare ruimte| 
+|assetmanagementmodellen|IMBOR [[IMBOR]]|LOD0 (gekoppeld aan IMBGT)| Assetbeheer openbare ruimte| 
 
 ## BIM-eisen per Geo-dataset
 De vereisten die per Geo-dataset gesteld moeten worden aan een BIM-model zijn op te delen in twee categorieën: geometrische vereisten en semantische vereisten. De geometrische vereisten beschrijven de benodigde geometrische representatie en het vereiste detailniveau (LOD), terwijl de semantische vereisten betrekking hebben op de benodigde attributen, classificaties en eigenschappen voor de betreffende geo-dataset. De vereisten stelt men vast in informatieleveringsspecificaties (ILS'en). Hoe een ILS is opgebouwd en welke generieke eisen gelden, staat in [InformatieLeveringsSpecificatie (ILS)](#informatieleveringsspecificatie-ils).

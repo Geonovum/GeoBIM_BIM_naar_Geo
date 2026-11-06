@@ -33,9 +33,9 @@ Een shell-extractiemethode die wordt gebruikt is voxelisatie. Voxelisatie benade
 
 Voxelisatie komt met specifieke problemen waarvoor nog geen goede oplossingen zijn. Zo is de vorm van het gevoxeliseerde model afhankelijk van de voxelgrootte en de rotatie van het grid dat gebruikt werd tijdens de voxelisatie.
 
-[Van der Vaart et al.](https://isprs-annals.copernicus.org/articles/X-4-W5-2024/297/2024/) beschrijven het effect van verschillende voxelgrootte op het volume en oppervlakte van een externe schilrepresentatie van een IFC-model. Hieruit blijkt dat de oppervlakte van de voetafdruk, het volume van de gehele schil en de visuele representatie beter worden benaderd met kleinere voxels. Als de voxelgrootte correct wordt gekozen, is het voxel-gebaseerde model ook preciezer op deze aspecten dan de LoD2.2-representaties.
+Van der Vaart et al. [[VANDERVAART2024]] beschrijven het effect van verschillende voxelgrootte op het volume en oppervlakte van een externe schilrepresentatie van een IFC-model. Hieruit blijkt dat de oppervlakte van de voetafdruk, het volume van de gehele schil en de visuele representatie beter worden benaderd met kleinere voxels. Als de voxelgrootte correct wordt gekozen, is het voxel-gebaseerde model ook preciezer op deze aspecten dan de LoD2.2-representaties.
 
-Op basis van de grootte van een model wordt een "ideale" voxelgrootte gepresenteerd door [Van der Vaart et. all](https://isprs-annals.copernicus.org/articles/X-4-W5-2024/297/2024/). Deze waardes zijn mogelijk al verouderd, zo zijn elementen zoals bestandsgrootte niet meegenomen en ook is het onderzoek gedaan met een oude versie van de [IfcEnvelopeExtractor](https://github.com/tudelft3d/IFC_BuildingEnvExtractor). Sinds dit onderzoek is de voxelisatiecode versneld en zijn de rekentijden uit het onderzoek niet meer representatief. 
+Op basis van de grootte van een model wordt een "ideale" voxelgrootte gepresenteerd door Van der Vaart et al. [[VANDERVAART2024]]. Deze waardes zijn mogelijk al verouderd, zo zijn elementen zoals bestandsgrootte niet meegenomen en ook is het onderzoek gedaan met een oude versie van de [IfcEnvelopeExtractor](https://github.com/tudelft3d/IFC_BuildingEnvExtractor). Sinds dit onderzoek is de voxelisatiecode versneld en zijn de rekentijden uit het onderzoek niet meer representatief. 
 
 <figure>
   <img src="media/04_geometrie_BIM_naar_Geo/scherp_vox_gif.gif" alt="Animatie die het effect op de voxelschil laat zien bij verfijning van voxelgrootte." />
@@ -72,7 +72,6 @@ De IfcEnvelopeExtractor gebruikt "voxel assisted ray-casting". Het gebruikt een 
 Aanvullend kan nog voor de aanvang van het ray-castingproces een filtering van objecten worden gedaan met behulp van de voxels. Met voxels is het makkelijk om te bepalen of ze buiten of binnen het gebouw liggen, maar ook of de voxels snijden met de geometrie. De voxels die snijden met het gebouw en een buurman hebben die buiten het gebouw ligt kunnen worden gezien als een buitenschilvoxels. De geometrie van het gebouw dat snijdt met deze buitenschilvoxels kan worden geïsoleerd en worden gezien als "mogelijk" deel van de buitenschil. Door deze selectie kan ook al een deel van de interne objecten worden genegeerd. 
 
 De kwaliteit van de resultaten van deze twee voxelondersteunde processen is erg gevoelig voor het formaat van de voxels. Als de voxels te groot zijn, kan dit resulteren in objecten die incorrect worden verwaarloosd. Als de voxels te klein zijn, vertraagt het process sterk en is het mogelijk dat de buiten- en binnenkant van het gebouw niet correct worden gedetecteerd.
-
 
 #### Alpha shapes
 
@@ -114,7 +113,7 @@ De resulterende vorm van de alpha shape is altijd een gesloten object. Dit is ee
 
 De afwijking in de concave hoeken komt omdat de primitieve vorm die wordt gebruikt om de alpha shape bij te snijden niet diep in de concave hoeken past. Deze afwijking kan in beperkte mate worden gecorrigeerd door de primitief die wordt gebruikt kleiner te maken. Een te kleine primitief zorgt echter voor een trager en minder robuust proces. Aanvullend heeft een kleinere primitief ook een puntenwolk met hogere resolutie nodig. Als de diameter van de primitief kleiner is dan de afstand tussen 2 punten op een polygoon van het BIM-model dan zal deze polygoon niet correct gerepresenteerd worden in de output.
 
-[Wang et al.](https://doi.org/10.1080/17538947.2024.2368708) laten zien dat de alpha shape op zichzelf niet het resultaat hoeft te zijn van de shell-extractie maar ook als een tussenstap kan worden gebruikt. Bij dit onderzoek gebruiken ze de alpha shape om de polygonen die deel zijn van de buitenschil van het BIM-model te vinden. Dit wordt gedaan door te testen welke polygonen van het BIM-model het dichtst bij het zwaartepunt van iedere driehoek van de alpha-shapemesh liggen. 
+Wang et al. [[WANG2024]] laten zien dat de alpha shape op zichzelf niet het resultaat hoeft te zijn van de shell-extractie maar ook als een tussenstap kan worden gebruikt. Bij dit onderzoek gebruiken ze de alpha shape om de polygonen die deel zijn van de buitenschil van het BIM-model te vinden. Dit wordt gedaan door te testen welke polygonen van het BIM-model het dichtst bij het zwaartepunt van iedere driehoek van de alpha-shapemesh liggen. 
 
 Deze groep van polygonen heeft echter hetzelfde probleem als de groep van polygonen die worden gevonden bij het ray-castingproces. De groep moet worden gecorrigeerd voordat een gesloten buitenschil kan worden gemaakt. 
 

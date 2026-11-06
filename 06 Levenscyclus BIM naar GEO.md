@@ -203,9 +203,9 @@ Onderstaande tabel toont de levenscyclus van een bouwwerk van aanleg tot verwijd
 | Verwijderen in ontwerp | Verwijderen | Gepland of In voorbereiding | B7 eindGeldigheid, B8 geldig (Buiten gebruik) | G3 geldig (Buiten gebruik) ¹ |
 | Verwijderd | Verwijderen | Uitgevoerd | B8 eindGeldigheid (eindstand) | G3 eindGeldigheid (eindstand) en het object een objectEindtijd |
 
-### Toepassing van levenscyclus in basisregistraties
+## Toepassing van levenscyclus in basisregistraties
 
-De tabellen hierboven beschrijven de levenscyclus op een algemene manier, op basis van NEN 3610. In de praktijk legt elke registratie de levenscyclus op een eigen manier vast. Grofweg zijn er drie benaderingen:
+De tabellen hierboven beschrijven de levenscyclus op een algemene manier, op basis van NEN 3610 [[NEN3610]]. In de praktijk legt elke registratie de levenscyclus op een eigen manier vast. Grofweg zijn er drie benaderingen:
 
 - een **statuslevenscyclus**: het object houdt van plan tot sloop dezelfde identificatie en doorloopt verschillende statussen (bijvoorbeeld BAG en IMKL);
 - alleen de **bestaande situatie met formele historie**: een object vervalt wanneer het niet meer bestaat, maar de identificatie blijft geregistreerd (BGT);
@@ -213,7 +213,7 @@ De tabellen hierboven beschrijven de levenscyclus op een algemene manier, op bas
 
 Voor een BIM-naar-Geo-conversie bepaalt deze benadering of plangegevens kunnen worden opgenomen, of een plan leidt tot een nieuwe versie of een nieuw object, en hoe het einde van een object wordt vastgelegd. Hieronder is dit voor een aantal registraties uitgewerkt.
 
-#### BGT en IMGEO
+### BGT en IMGEO
 
 De BGT legt alleen de bestaande situatie vast, met formele historie; toekomstige topografie hoort niet in de BGT. IMGeo kan daarnaast plantopografie bevatten, als apart planobject met een eigen identificatie. Onderstaande tabel vergelijkt per situatie de tabel over de levenscyclus hierboven met de werkwijze in BGT en IMGeo.
 
@@ -231,7 +231,7 @@ De BGT legt alleen de bestaande situatie vast, met formele historie; toekomstige
 
 ### BAG
 
-De BAG houdt zowel materiële als formele historie bij, volgens het [Historiemodel BAG 2018](https://www.kadaster.nl/documents/1953498/2762071/Specificatie+BAG+historiemodel.pdf/09c12207-d198-0ebd-024c-6ad640338f13?t=1582290695009). Elke wijziging, zoals een statuswijziging van "Pand in gebruik" naar "Verbouwing pand", levert geen nieuw object op, maar een nieuw *voorkomen* van hetzelfde object. Het vorige voorkomen krijgt een eindGeldigheid en een eindRegistratie. De begingeldigheid volgt uit een brondocument, zoals een vergunning, en kan ook in de toekomst liggen. Daardoor kan de BAG een plansituatie al vastleggen.
+De BAG houdt zowel materiële als formele historie bij, volgens het Historiemodel BAG 2018 [[BAG-HISTORIE]]. Elke wijziging, zoals een statuswijziging van "Pand in gebruik" naar "Verbouwing pand", levert geen nieuw object op, maar een nieuw *voorkomen* van hetzelfde object. Het vorige voorkomen krijgt een eindGeldigheid en een eindRegistratie. De begingeldigheid volgt uit een brondocument, zoals een vergunning, en kan ook in de toekomst liggen. Daardoor kan de BAG een plansituatie al vastleggen.
 
 Het einde van een object legt de BAG niet vast met een eindGeldigheid, maar met een *eindstatus* op het laatste voorkomen, bijvoorbeeld "Pand gesloopt". Dat laatste voorkomen houdt geen eindGeldigheid, zodat het object later nog kan "herleven". Correcties met terugwerkende kracht zijn niet toegestaan: een fout wordt hersteld als een reguliere wijziging. Alleen een voorkomen met een begingeldigheid in de toekomst mag *inactief* worden gemaakt.
 
@@ -239,7 +239,7 @@ Ten opzichte van de tabel over de levenscyclus betekent dit dat de BAG plan, uit
 
 ### IMKL
 
-[IMKL](https://docs.geostandaarden.nl/kl/imkl/), het informatiemodel voor de uitwisseling van kabels en leidingen (KLIC), is een uitbreiding op het INSPIRE-thema Utility Networks. IMKL beschrijft alleen de huidige situatie: er zijn geen verschillende versies van hetzelfde object in omloop. De levenscyclus wordt vastgelegd met de INSPIRE-attributen:
+IMKL [[IMKL]], het informatiemodel voor de uitwisseling van kabels en leidingen (KLIC), is een uitbreiding op het INSPIRE-thema Utility Networks. IMKL beschrijft alleen de huidige situatie: er zijn geen verschillende versies van hetzelfde object in omloop. De levenscyclus wordt vastgelegd met de INSPIRE-attributen:
 
 - *validFrom*: het tijdstip waarop het object in de werkelijkheid voor het eerst aanwezig is. Voor geplande objecten kan dit in de toekomst liggen;
 - *validTo*: het tijdstip vanaf wanneer het object niet meer in de werkelijkheid voorkomt, bijvoorbeeld wanneer een kabel uit de grond is gehaald;
@@ -253,7 +253,7 @@ De toestand van een net-element wordt aangegeven met *currentStatus*. INSPIRE ke
 
 Ten opzichte van de tabel over de levenscyclus kent IMKL dus geen aparte status voor een leiding in aanleg (underConstruction) of een ontmantelde leiding (decommissioned). Een verwijderde leiding wordt vastgelegd met *validTo*, net als de objectEindtijd in NEN 3610. Leidingen die buiten gebruik zijn, blijven onderdeel van IMKL: ze liggen nog in de grond en zijn relevant bij graafwerkzaamheden. Met de huidige modellering is het niet mogelijk om een geplande statuswijziging uit wisselen. Dit komt omdat er van ieder object slechts 1 versie wordt uitgewisseld en bij een geplande wijziging is er sprake van twee versies: de huidige en de gepland. Geplande aanleg en verwijdering kunnen wel uitgewisseld worden omdat er dan slechts 1 versie hoeft te worden uitgewisseld.
 
-### Weergave van plan- en bestaande situatie
+## Weergave van plan- en bestaande situatie
 Bij het integreren van BIM in Geo ontstaat een uitdaging rondom de levenscyclus van objecten. Een geplande geometrie uit een BIM-model wordt gecombineerd met de bestaande Geo-registratie, maar zonder correcte toepassing van tijds- en levenscyclusattributen blijft de geometrie van bouwwerken die in ontwerp zijn, zichtbaar. Hierdoor worden de huidige en toekomstige situaties overlappend weergegeven.
 
 <figure id="Gebiedsontwikkeling_BIM_naar_GEO">

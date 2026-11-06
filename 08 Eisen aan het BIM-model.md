@@ -7,7 +7,7 @@ Een BIM-model is vaak niet geschikt voor hergebruik in een geografisch informati
 
 Een succesvolle transformatie van BIM naar een GIS-formaat begint daarom vóór het modelleerwerk, met expliciete afspraken over hoe er wordt gemodelleerd en wat er wordt geleverd, in welke vorm en met welke kwaliteit. Door deze afspraken te maken en ze bij het modelleren na te leven, wordt automatische conversie betrouwbaar, robuust en herhaalbaar. Zonder kaders blijft elke conversie handwerk, en daarmee een eenmalige exercitie in plaats van een reproduceerbaar proces.
 
-Voor het vastleggen van die afspraken biedt de [ISO 19650](https://www.iso.org/sectors/building-construction/building-information-modelling)-reeks, de internationale norm voor informatiemanagement in de gebouwde omgeving, het procesframework: wie levert welke informatie, wanneer, in welke vorm en op basis waarvan wordt die informatie geaccepteerd.
+Voor het vastleggen van die afspraken biedt de ISO 19650-reeks [[ISO19650-1]], de internationale norm voor informatiemanagement in de gebouwde omgeving, het procesframework: wie levert welke informatie, wanneer, in welke vorm en op basis waarvan wordt die informatie geaccepteerd.
 
 ## Informatieketen volgens ISO 19650
 
@@ -43,7 +43,7 @@ Onderstaande onderwerpen komen in vrijwel elke BIM-naar-Geo-toepassing terug. Ze
 
 ### Bestandsformaat en schema
 
-Leg vast in welk schema geleverd wordt. IFC4 en IFC4X3_ADD2 (gepubliceerd als ISO 16739-1:2024) zijn de schema's waarop de huidige generatie IDS- en conversiesoftware is gebouwd; IFC2X3 wordt door veel software nog ondersteund, maar mist `IfcMapConversion` en `IfcProjectedCRS` en is daarmee ongeschikt voor een sluitende georeferentie. Veel BIM-software kan IFC in meerdere versies exporteren, maar staat standaard nog vaak op IFC2X3. Leg daarom in de leveringsafspraak niet alleen vast dát er een IFC-bestand wordt geleverd, maar ook met welke exportinstellingen het wordt gemaakt: schema IFC4 of IFC4X3_ADD2, met georeferentie.
+Leg vast in welk schema geleverd wordt. IFC4 en IFC4X3_ADD2 (gepubliceerd als ISO 16739-1:2024 [[ISO16739-1]]) zijn de schema's waarop de huidige generatie IDS- en conversiesoftware is gebouwd; IFC2X3 wordt door veel software nog ondersteund, maar mist `IfcMapConversion` en `IfcProjectedCRS` en is daarmee ongeschikt voor een sluitende georeferentie. Veel BIM-software kan IFC in meerdere versies exporteren, maar staat standaard nog vaak op IFC2X3. Leg daarom in de leveringsafspraak niet alleen vast dát er een IFC-bestand wordt geleverd, maar ook met welke exportinstellingen het wordt gemaakt: schema IFC4 of IFC4X3_ADD2, met georeferentie.
 
 <aside class="note" title="Bestandsformaat en schema">
   <p><strong>AANBEVELING:</strong> De modellen worden geleverd als IFC-STEP-bestanden volgens schema IFC4 of IFC4X3_ADD2. Het gebruikte schema en format worden in de leveringsafspraak benoemd; het bestand is schemavalide.</p>
@@ -52,7 +52,7 @@ Leg vast in welk schema geleverd wordt. IFC4 en IFC4X3_ADD2 (gepubliceerd als IS
 
 ### Bestandsnaamgeving en informatiecontainers
 
-Bestandsnaamconventies beschrijven afspraken voor het eenduidig identificeren en beheren van informatiebestanden. De bestandsnaam bevat alleen de metadata die nodig zijn voor beheer en uitwisseling. Gegevens als projectcode, discipline, status en versie horen niet allemaal in de bestandsnaam; leg deze vast in het model, bijvoorbeeld in Pset_ProjectInformation. ISO 19650-4 biedt hiervoor een uitgewerkte conventie.
+Bestandsnaamconventies beschrijven afspraken voor het eenduidig identificeren en beheren van informatiebestanden. De bestandsnaam bevat alleen de metadata die nodig zijn voor beheer en uitwisseling. Gegevens als projectcode, discipline, status en versie horen niet allemaal in de bestandsnaam; leg deze vast in het model, bijvoorbeeld in Pset_ProjectInformation. [[ISO19650-4]] biedt hiervoor een uitgewerkte conventie.
 
 ### Eenheden en maatvoering
 
@@ -60,7 +60,7 @@ Consistent gebruik van eenheden voorkomt schaalfouten bij conversie. Fouten van 
 
 ### Georeferentie
 
-Georeferentie is de meest kritische eis: zonder correcte georeferentie is elk ander gegeven in het model ruimtelijk onbruikbaar. Per project wordt een methode van georeferentie gekozen en vastgelegd. Zie hiervoor de praktijkrichtlijn [Georefereren GeoBIM](https://nl-digigo.github.io/GeoBIM_Georefereren/).
+Georeferentie is de meest kritische eis: zonder correcte georeferentie is elk ander gegeven in het model ruimtelijk onbruikbaar. Per project wordt een methode van georeferentie gekozen en vastgelegd. Zie hiervoor de praktijkrichtlijn Georefereren GeoBIM [[GEOBIM-GEOREF]].
 
 <aside class="note" title="Georeferentie op level 50">
   <p><strong>AANBEVELING:</strong> Het model bevat een georeferentie op level 50: <code>IfcProjectedCRS</code> met een expliciete EPSG-aanduiding, en <code>IfcMapConversion</code> of <code>IfcMapConversionScaled</code> met verschuiving, rotatie en schaling. Voor Nederlandse projecten is de doel-CRS EPSG:7415 (RD + NAP), of EPSG:28992 (RD) in combinatie met EPSG:5709 (NAP) als verticaal datum.</p>
@@ -94,7 +94,7 @@ De verwachting is dat elk land deze aanpak volgt: nationale ruimtelijke concepte
 
 - Het is schemaconform. Er wordt geen eigen property set en geen eigen entiteit geïntroduceerd. Generieke IFC-software leest het model zonder aanpassing; alleen de betekenis van de term vraagt om een externe bron.
 - Het is toetsbaar. `ObjectType` is een gewoon IFC-attribuut en dus met een IDS-attribuutfacet te selecteren en te verifiëren. Een eigen Pset zou dat ook kunnen, maar zou de eis buiten het schema plaatsen en de IDS moeilijker combineerbaar maken met andere bron-ILS'en.
-- Het is uitwisselbaar. Zolang de termenlijst als classificatie in de [bSDD](https://search.bsdd.buildingsmart.org/) is gepubliceerd, heeft elke term een URI met daaraan gekoppelde definitie. Daarmee is een nationale term internationaal interpreteerbaar zonder dat het schema hoeft te veranderen, en is de vertaalslag naar een Geo-objecttype een mapping tussen twee URI's in plaats van tussen twee tekstwaarden.
+- Het is uitwisselbaar. Zolang de termenlijst als classificatie in de bSDD [[BSDD]] is gepubliceerd, heeft elke term een URI met daaraan gekoppelde definitie. Daarmee is een nationale term internationaal interpreteerbaar zonder dat het schema hoeft te veranderen, en is de vertaalslag naar een Geo-objecttype een mapping tussen twee URI's in plaats van tussen twee tekstwaarden.
 
 Het nadeel van dit patroon is dat `ObjectType` een vrij tekstveld is: zonder afspraak ontstaat hetzelfde interpretatieprobleem als bij een ontbrekende typering. De termenlijst moet daarom vast, gepubliceerd en versiebeheerd zijn. De ILS somt de toegestane waarden op en eist niet alleen dat het veld gevuld is.
 
@@ -102,11 +102,11 @@ Het nadeel van dit patroon is dat `ObjectType` een vrij tekstveld is: zonder afs
   <p><strong>AANBEVELING:</strong> Waar geen passend <code>PredefinedType</code> bestaat, wordt <code>PredefinedType = USERDEFINED</code> gebruikt in combinatie met een waarde uit een gepubliceerde nationale termenlijst in <code>ObjectType</code> (occurrence) of <code>ElementType</code> (type-object). De ILS somt de toegestane waarden op en verwijst naar de bSDD-URI van de betreffende classificatie. Er wordt geen eigen property set geïntroduceerd om nationale typering vast te leggen.</p>
 </aside>
 
-Een uitgewerkt voorbeeld van dit patroon, ontleend aan de ILS voor Ruimten in de Omgevingswet, staat in bijlage [F.7 Nationale ruimtetypen](#f-7-nationale-ruimtetypen-het-userdefined-patroon-in-de-praktijk).
+Een uitgewerkt voorbeeld van dit patroon, ontleend aan de ILS voor Ruimten in de Omgevingswet, staat in bijlage [Nationale ruimtetypen](#nationale-ruimtetypen-het-userdefined-patroon-in-de-praktijk).
 
 ### Classificatie
 
-Door middel van classificatie kan een object verder worden gespecificeerd en eenduidig worden gecategoriseerd volgens een gestandaardiseerde systematiek. In Nederland zijn [NL-SfB](https://ketenstandaard.nl/nlbe-sfb-facts/), [NLCS](https://www.digigo.nu/standaarden/nlcs/) en [ETIM](https://www.etim-international.com/) gangbaar. Classificatie wordt in IFC vastgelegd via `IfcClassificationReference` en `IfcRelAssociatesClassification`, en niet als eigenschap in een property set, omdat IFC bij een classificatiereferentie ook de naam, versie en bron van het classificatiesysteem meeneemt.
+Door middel van classificatie kan een object verder worden gespecificeerd en eenduidig worden gecategoriseerd volgens een gestandaardiseerde systematiek. In Nederland zijn [NL-SfB](https://ketenstandaard.nl/nlbe-sfb-facts/), NLCS [[NLCS]] en [ETIM](https://www.etim-international.com/) gangbaar. Classificatie wordt in IFC vastgelegd via `IfcClassificationReference` en `IfcRelAssociatesClassification`, en niet als eigenschap in een property set, omdat IFC bij een classificatiereferentie ook de naam, versie en bron van het classificatiesysteem meeneemt.
 
 Let bij het formuleren van eisen op het detailniveau van de code. NL-SfB-code 31 staat voor buitenwandopeningen en omvat zowel ramen (31.2x), deuren (31.3x) als puien (31.4x). Een regel die 31 rechtstreeks aan `IfcWindow` koppelt, is dus te grof; gebruik de subcodes, of laat de eis meerdere entiteiten toe. Voor eenduidige verwijzing is het aan te raden classificatiecodes te ontsluiten via de [bSDD](https://search.bsdd.buildingsmart.org/), zodat de eis naar een URI verwijst in plaats van naar een tekstuele code.
 
@@ -119,7 +119,7 @@ Voor conversie naar Geo is de classificatie het meest bruikbaar. Een mapping van
 
 Twee praktische aandachtspunten:
 
-- Consistentie is per term te toetsen, niet generiek. IDS kent geen variabelen en kan de waarde van het ene facet (een controle) niet vergelijken met die van het andere. De eis "classificatie is gelijk aan `ObjectType`" is dus niet in één specificatie uit te drukken. Zij wordt afgedwongen door per begrip één specificatie te schrijven die op `ObjectType` selecteert en de bijbehorende classificatie verplicht stelt. De ILS voor Ruimten in de Omgevingswet is op deze manier opgebouwd. Met één specificatie per begrip en de bSDD-URI als `identifier`.
+- Consistentie is per term te toetsen, niet generiek. IDS kent geen variabelen en kan de waarde van het ene facet (een controle) niet vergelijken met die van het andere. De eis "classificatie is gelijk aan `ObjectType`" is dus niet in één specificatie uit te drukken. Zij wordt afgedwongen door per begrip één specificatie te schrijven die op `ObjectType` selecteert en de bijbehorende classificatie verplicht stelt. De ILS voor Ruimten in de Omgevingswet [[ILS-RUIMTEN]] is op deze manier opgebouwd. Met één specificatie per begrip en de bSDD-URI als `identifier`.
 - Leg de schrijfwijze van het classificatiesysteem vast. Het classificatiefacet in IDS wordt vergeleken met `IfcClassification.Name` in het IFC-bestand. Systeemnaam, code en URI-fragment kunnen van elkaar verschillen: een dictionary die Omgevingswet Ruimten heet, kan in de URI `Omgevingswet-Ruimten` dragen. De ILS moet daarom expliciet voorschrijven welke exacte tekenreeks in `IfcClassification.Name` hoort te staan, en welke waarden voor `Source`, `Edition` en `Location` gelden. Zonder die afspraak matcht het facet niet en faalt een verder correct model.
 
 <aside class="note" title="Classificatie van nationale typering">
@@ -225,7 +225,7 @@ DigiGO beheert een aantal templates en sectorbrede standaarden, waaronder de BIM
 
 Gestandaardiseerd BIM is een voorwaarde voor BIM-naar-Geo-conversie, maar het is geen voldoende voorwaarde. Aan beide zijden bestaan afspraken (de BIM Basis ILS aan de ene kant, [BGT|IMGeo](https://www.geonovum.nl/geo-standaarden/bgt-imgeo) en de basisregistraties aan de andere), maar een verbindende laag tussen beide werelden ontbreekt. Een model dat volgens de BIM Basis ILS is opgebouwd en een dataset volgens IMGeo sluiten daardoor niet één-op-één op elkaar aan. Een toekomstig toepassingsprofiel kan die koppeling ondersteunen door afspraken vast te leggen over objectidentificatie, geometrie, semantiek en informatie-uitwisseling.
 
-## InformatieLeveringsSpecificatie (ILS)
+## InformatieLeveringsSpecificatie (ILS) en Information Delivery Specification (IDS)
 
 Een ILS legt vast welke informatie, wanneer en door welke partij geproduceerd moet worden.
 
@@ -233,10 +233,10 @@ In Nederland wordt "ILS" gebruikt als overkoepelende term. Daardoor bevat een IL
 
 Een ILS conform het begrip IDS kan in mens- en/of computerinterpreteerbare vorm worden opgesteld. Voor het laatste zijn twee gangbare routes:
 
-- buildingSMART heeft de standaard [Information Delivery Specification](https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/) (IDS) ontwikkeld, sinds versie 1.0 een vastgestelde buildingSMART-standaard. Een IDS is een XML-bestand dat aangeeft welke data vastgelegd moet worden en waaraan die moet voldoen. Hetzelfde bestand kan in uiteenlopende applicaties worden gebruikt om IFC-bestanden tegen die eisen te valideren.
-- Vanuit de Nederlandse en Europese normalisatie zijn respectievelijk [NEN 2660-2](https://www.nen.nl/en/nen-2660-2-2022-nl-291667) en Building information modelling (BIM) — Semantic modelling and linking (SML) [NEN-EN 17632](https://www.nen.nl/nen-en-17632-1-2022-en-304869) ontwikkeld. Hiermee is het mogelijk om via de Linked Data-standaard SHACL restricties vast te leggen en door de computer te laten valideren. Hoe modellen volgens NEN 2660-2 technisch worden uitgewerkt, beschrijven de [Technische modelleerrichtlijnen voor linked data in de gebouwde omgeving](https://nl-digigo.github.io/modelleerrichtlijnen-ld-go/). Deze richtlijnen zijn niet normatief en sluiten aan op NEN 2660-2 en NL-SBB.
+- buildingSMART heeft de standaard Information Delivery Specification (IDS) [[IDS10]] ontwikkeld, sinds versie 1.0 een vastgestelde buildingSMART-standaard. Een IDS is een XML-bestand dat aangeeft welke data vastgelegd moet worden en waaraan die moet voldoen. Hetzelfde bestand kan in uiteenlopende applicaties worden gebruikt om IFC-bestanden tegen die eisen te valideren.
+- Vanuit de Nederlandse en Europese normalisatie zijn respectievelijk NEN 2660-2 [[NEN2660-2]] en Building information modelling (BIM) — Semantic modelling and linking (SML) NEN-EN 17632 [[EN17632-1]] ontwikkeld. Hiermee is het mogelijk om via de Linked Data-standaard SHACL restricties vast te leggen en door de computer te laten valideren. Hoe modellen volgens NEN 2660-2 technisch worden uitgewerkt, beschrijven de [Technische modelleerrichtlijnen voor linked data in de gebouwde omgeving](https://nl-digigo.github.io/modelleerrichtlijnen-ld-go/). Deze richtlijnen zijn niet normatief en sluiten aan op NEN 2660-2 en NL-SBB.
 
-Om te voorkomen dat voor iedere ILS opnieuw over objecten en kenmerken wordt nagedacht, is het sterk aan te raden een bestaande standaard of ontologie als basis te gebruiken. Voorbeelden zijn de [ILS O&E](https://www.digigo.nu/ilsen-en-richtlijnen/ils-ontwerp-en-engineering/), [IMBOR](https://www.crow.nl/kennisproducten/imbor/) en de [NLCS](https://www.digigo.nu/standaarden/nlcs/). Hergebruik van standaarden vergroot bovendien de herkenbaarheid van de data tussen disciplines.
+Om te voorkomen dat voor iedere ILS opnieuw over objecten en kenmerken wordt nagedacht, is het sterk aan te raden een bestaande standaard of ontologie als basis te gebruiken. Voorbeelden zijn de ILS O&E [[ILS-OE]], IMBOR [[IMBOR]] en de NLCS [[NLCS]]. Hergebruik van standaarden vergroot bovendien de herkenbaarheid van de data tussen disciplines.
 
 ### Opbouw van een IDS
 
@@ -283,7 +283,7 @@ Daarmee is een aanzienlijk deel van level 50 wel machinaal af te dwingen vanuit 
 
 De scheidslijn loopt dus niet tussen "georeferentie wel of niet", maar tussen aanwezigheid en vorm, die met IDS toetsbaar zijn, en juistheid, die alleen is vast te stellen door de geometrie zelf te bekijken. Dat onderscheid is belangrijk: met de eerste toets worden de meeste fouten uit de praktijk al gevonden, omdat ontbrekende of half ingevulde georeferentie veel vaker voorkomt dan verkeerd ingevulde waarden.
 
-Hierbij is één technisch punt van belang. IDS kent geen automatische overerving van entiteiten; de gebruikershandleiding stelt expliciet dat alle entiteiten afzonderlijk moeten worden opgesomd. Een specificatie op `IFCMAPCONVERSION` is daardoor niet van toepassing op `IfcMapConversionScaled`, ook al is dat een subtype hiervan. Dit kan leiden tot tenonrechte afgekeurde modellen. Momenteel dienen al de entiteiten (sub- en superklassen) waar regels voor gelden dus expliciet in de opsomming in de IDS staan. De uitgewerkte specificaties staan in bijlage [F.8 Georeferentie in een IDS](#f-8-georeferentie-in-een-ids).
+Hierbij is één technisch punt van belang. IDS kent geen automatische overerving van entiteiten; de gebruikershandleiding stelt expliciet dat alle entiteiten afzonderlijk moeten worden opgesomd. Een specificatie op `IFCMAPCONVERSION` is daardoor niet van toepassing op `IfcMapConversionScaled`, ook al is dat een subtype hiervan. Dit kan leiden tot tenonrechte afgekeurde modellen. Momenteel dienen al de entiteiten (sub- en superklassen) waar regels voor gelden dus expliciet in de opsomming in de IDS staan. De uitgewerkte specificaties staan in bijlage [Georeferentie in een IDS](#georeferentie-in-een-ids).
 
 Dat dit werkt, berust op implementatiegedrag en niet op een expliciete uitspraak in de standaard. De IDS-documentatie beschrijft het entiteitsfacet in termen van objecten en gaat niet in op entiteiten die niet van `IfcRoot` zijn afgeleid. Software zoals BIM.works voert dergelijke specificaties uit, maar of dat zo blijft, is niet vastgelegd. Een implementatie die de objectgerichte lezing strikt volgt, zou de specificatie kunnen negeren zonder dat iemand het merkt; dat is erger dan falen. Voor georeferentie, de meest kritische eis bij elke koppeling tussen BIM en Geo, is dat onbevredigend. Deze praktijkrichtlijn gaat in de tussentijd uit van de werkende praktijk.
 
@@ -340,7 +340,7 @@ Van een echte tegenspraak is sprake wanneer twee specificaties overlappende appl
 
 Een tegenspraak die niet wordt opgemerkt, geeft geen foutmelding. Een samengestelde IDS met een tegenspraak is gewoon schemavalide. De validator meldt alleen dat één van de twee specificaties faalt, en dat voor elk model, ongeacht de inhoud. De fout presenteert zich als "het model voldoet niet", terwijl in werkelijkheid de afspraak niet klopt. Daardoor komt de fout ten onrechte bij de leverancier van het model terecht in plaats van bij de beheerder van de afspraak.
 
-> Deze eigenschappen zijn nagegaan op de IDS 1.0-schemadefinitie en op werkende bestanden. Drie bron-ILS'en zijn samengevoegd tot één IDS en tegen een IFC-model gevalideerd: alle specificaties slagen, zonder enige aanpassing aan de specificaties zelf. Een opzettelijk tegenstrijdige samenstelling is als schemavalide geaccepteerd zonder waarschuwing, en faalde vervolgens in beide richtingen: bij een model met de eigenschap faalde de verbiedende specificatie, bij een model zonder die eigenschap de verplichtende. Zie bijlage [F.6 Wat er gebeurt bij een tegenspraak](#f-6-wat-er-gebeurt-bij-een-tegenspraak).
+> Deze eigenschappen zijn nagegaan op de IDS 1.0-schemadefinitie en op werkende bestanden. Drie bron-ILS'en zijn samengevoegd tot één IDS en tegen een IFC-model gevalideerd: alle specificaties slagen, zonder enige aanpassing aan de specificaties zelf. Een opzettelijk tegenstrijdige samenstelling is als schemavalide geaccepteerd zonder waarschuwing, en faalde vervolgens in beide richtingen: bij een model met de eigenschap faalde de verbiedende specificatie, bij een model zonder die eigenschap de verplichtende. Zie bijlage [Wat er gebeurt bij een tegenspraak](#wat-er-gebeurt-bij-een-tegenspraak).
 
 ### Regels voor samenstellen
 
@@ -369,7 +369,7 @@ Omdat de standaard zelf niets controleert, hoort de controle in het samenstelpro
   <p><strong>AANBEVELING:</strong> Controleer elke samengestelde IDS vóór publicatie op de bovenstaande punten, handmatig of met een tool. Publiceer een samenstelling pas als die op alle punten voldoet. De beheerder van de doeldataset is verantwoordelijk voor deze controle.</p>
 </aside>
 
-## Van BIM-eis naar Geo-product
+## Van BIM-eis naar ILS naar Geo-product
 
 ### ILS voor conversiemethode
 
@@ -401,14 +401,14 @@ Onderstaande tabel maakt die eisen expliciet en geeft ze een specificatienummer,
 | — | `IfcBuildingStorey` | ten minste één bouwlaag, benoemd, startend met "00_" zoals in de BIM Basis ILS, met ingevulde `Elevation` | GEB-06 |
 | BGT-polygoon/Grondvoetafdrukoppervlak| fysieke elementen op maaiveldniveau aanwezig | ten minste één `IfcElement` aanwezig op bouwlaagniveau 00 | GEB-05 |
 | — | `IfcBuildingStorey` | ten minste één bouwlaag, benoemd, startend met "00_" zoals in de BIM Basis ILS, met ingevulde `Elevation` | GEB-06 |
-| — | BVO-data aanwezig | BVO kan op vier manieren worden gemodelleerd: - Gebouwinhoud aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Gebouwinhoud en `Description` Bruto Inhoud. - Bouwlaaginhoud aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Bouwlaaginhoud en `Description` Bruto Inhoud. - Gebruikseenheid aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Gebruikseenheid en `Description` Bruto Inhoud. - Gebruiksfunctie aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Gebruiksfunctie en `Description` Bruto Inhoud. Aanvullend moet ieder object een `IsExternal` waarde hebben| GEB-07 |
+| — | BVO-data aanwezig | BVO kan op vier manieren worden gemodelleerd: - Gebouwinhoud aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Gebouwinhoud en `Description` Bruto Inhoud. - Bouwlaaginhoud aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Bouwlaaginhoud en `Description` Bruto Inhoud. - Gebruikseenheid aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Gebruikseenheid en `Description` Bruto Inhoud. - Gebruiksfunctie aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Gebruiksfunctie en `Description` Bruto Inhoud. Aanvullend moet ieder object een `IsExternal` waarde hebben| GEB-07 |
 | Dakomtrek | fysieke elementen aanwezig | ten minste één `IfcElement` aanwezig | GEB-08 |
-| BAG-polygoon/Dakomtrek | BVO-data aanwezig | BVO kan op vier manieren worden gemodelleerd: - Gebouwinhoud aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Gebouwinhoud en `Description` Bruto Inhoud. - Bouwlaaginhoud aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Bouwlaaginhoud en `Description` Bruto Inhoud. - Gebruikseenheid aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Gebruikseenheid en `Description` Bruto Inhoud. - Gebruiksfunctie aanwezig volgens [ILS voor ruimten in de Omgevingswet](https://www.digigo.nu/ils-voor-ruimten/) met `ObjectType` Gebruiksfunctie en `Description` Bruto Inhoud. Aanvullend moet ieder object een `IsExternal` waarde hebben| GEB-07 |
+| BAG-polygoon/Dakomtrek | BVO-data aanwezig | BVO kan op vier manieren worden gemodelleerd: - Gebouwinhoud aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Gebouwinhoud en `Description` Bruto Inhoud. - Bouwlaaginhoud aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Bouwlaaginhoud en `Description` Bruto Inhoud. - Gebruikseenheid aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Gebruikseenheid en `Description` Bruto Inhoud. - Gebruiksfunctie aanwezig volgens ILS voor ruimten in de Omgevingswet [[ILS-RUIMTEN]] met `ObjectType` Gebruiksfunctie en `Description` Bruto Inhoud. Aanvullend moet ieder object een `IsExternal` waarde hebben| GEB-07 |
 | alle producten | `IfcMapConversion` of `IfcMapConversionScaled`, plus `IfcProjectedCRS` | georeferentie op level 50 aanwezig en juist | GEO-01, GEO-02 (aanwezigheid en vorm in IDS; juistheid als geometrische controle) |
 
-De laatste regel is de belangrijkste. Zonder georeferentie zijn alle afgeleide vlakken geometrisch correct maar ruimtelijk onbruikbaar. Het is tegelijk de regel die het scherpst laat zien waar de grens van IDS ligt: dat er een `IfcMapConversion` is en dat de zes transformatieattributen gevuld zijn, is met een IDS af te dwingen; of het model daarmee ook werkelijk op de goede plek en in de goede richting terechtkomt, blijkt pas uit de geometrie. Zie [Mogelijkheden en grenzen van IDS](#mogelijkheden-en-grenzen-van-ids) voor die scheidslijn, en bijlage [F.8 Georeferentie in een IDS](#f-8-georeferentie-in-een-ids) voor de uitgewerkte specificaties.
+De laatste regel is de belangrijkste. Zonder georeferentie zijn alle afgeleide vlakken geometrisch correct maar ruimtelijk onbruikbaar. Het is tegelijk de regel die het scherpst laat zien waar de grens van IDS ligt: dat er een `IfcMapConversion` is en dat de zes transformatieattributen gevuld zijn, is met een IDS af te dwingen; of het model daarmee ook werkelijk op de goede plek en in de goede richting terechtkomt, blijkt pas uit de geometrie. Zie [Mogelijkheden en grenzen van IDS](#mogelijkheden-en-grenzen-van-ids) voor die scheidslijn, en bijlage [Georeferentie in een IDS](#georeferentie-in-een-ids) voor de uitgewerkte specificaties.
 
-De uitgeschreven specificaties GEB-01 tot en met GEB-05 staan in bijlage [F.2 ILS-Gebouw](#f-2-ils-gebouw).
+De uitgeschreven specificaties GEB-01 tot en met GEB-05 staan in bijlage [ILS-Gebouw](#ils-gebouw).
 
 ### Overzicht van eisen per Geo-product
 
