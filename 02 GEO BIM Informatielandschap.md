@@ -457,7 +457,7 @@ In de onderstaande codefragmenten kan de [XML](https://3d.bk.tudelft.nl/opendata
 }
 ```
 
-Meer informatie over CityGML is te vinden in de standaard [[CITYGML30]] en op de [OGC-website](https://www.ogc.org/standards/citygml/). OGC heeft het datamodel voor de GML/XML-encoding ontwikkeld. De CityJSON-encoding is ontwikkeld onder leiding van de TU Delft en is later door OGC vastgesteld als OGC-communitystandaard. Meer over CityJSON is te vinden in de specificatie [[CITYJSON20]] en op de [CityJSON-website](https://www.cityjson.org/).
+Meer informatie over CityGML is te vinden in de standaard [[CITYGML30]] en op de [OGC-website](https://www.ogc.org/standards/citygml/). Het OGC heeft het datamodel voor de GML/XML-encoding ontwikkeld. De CityJSON-encoding is ontwikkeld onder leiding van de TU Delft en is later door het OGC vastgesteld als OGC-communitystandaard. Meer over CityJSON is te vinden in de specificatie [[CITYJSON20]] en op de [CityJSON-website](https://www.cityjson.org/).
 
 ## GeoJSON
 
@@ -481,7 +481,7 @@ GeoJSON is een open uitwisselformaat voor geografische gegevens. Het is, net zoa
 
 ## IFC
 
-De Industry Foundation Classes (IFC) zijn een set van gestandaardiseerde, digitale beschrijvingen van objecten in de gebouwde omgeving voor bouwinformatiemodellen (BIM). IFC is een open internationale standaard voor het delen van data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien, van ontwerp en constructie tot beheer. De standaard wordt voornamelijk gebruikt in de AEC-sector (Architecture, Engineering & Construction). IFC bestaat uit een schema, een documentatie, property (kenmerken) en quantity (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is net als andere open standaarden software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om gebouwen, wegen, spoor, waterwegen en havenfaciliteiten te modelleren. 
+De Industry Foundation Classes (IFC) is een open internationale standaard voor het delen van Building Information Modelling (BIM) data van de gebouwde omgeving. De standaard bevat definities voor data die benodigd is voor gebouwen en infrastructurele werken over de gehele levenscyclus bezien, van ontwerp en constructie tot beheer. De standaard wordt voornamelijk gebruikt in de AEC-sector (Architecture, Engineering & Construction). IFC bestaat uit een schema, een documentatie, property- (kenmerken) en quantity- (hoeveelheden) sets en het mechanisme van het uitwisselformaat. IFC biedt machine-interpreteerbare informatie en maakt daarmee automatisering van workflows mogelijk. Het is, net als andere open standaarden, software-onafhankelijk en voor iedereen beschikbaar. Binnen het formaat is het mogelijk om gebouwen, wegen, spoor, waterwegen en havenfaciliteiten te modelleren. 
 
 In deze praktijkrichtlijn wordt de BIM-naar-Geo-workflow beschreven voor open uitwisseling van BIM en Geo. Hiervoor baseert de praktijkrichtlijn zich voornamelijk op het IFC-uitwisselformaat voor BIM en CityGML (JSON-encoding) voor Geo. 
 
