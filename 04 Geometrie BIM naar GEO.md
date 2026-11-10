@@ -33,7 +33,7 @@ Een shell-extractiemethode die wordt gebruikt is voxelisatie. Voxelisatie benade
 
 Voxelisatie komt met specifieke problemen waarvoor nog geen goede oplossingen zijn. Zo is de vorm van het gevoxeliseerde model afhankelijk van de voxelgrootte en de rotatie van het grid dat gebruikt werd tijdens de voxelisatie.
 
-Van der Vaart et al. [[VANDERVAART2024]] beschrijven het effect van verschillende voxelgrootte op het volume en oppervlakte van een externe schilrepresentatie van een IFC-model. Hieruit blijkt dat de oppervlakte van de voetafdruk, het volume van de gehele schil en de visuele representatie beter worden benaderd met kleinere voxels. Als de voxelgrootte correct wordt gekozen, is het voxel-gebaseerde model ook preciezer op deze aspecten dan de LoD2.2-representaties.
+Van der Vaart et al. [[VANDERVAART2024]] beschrijven het effect van verschillende voxelgroottes op het volume en oppervlakte van een externe schilrepresentatie van een IFC-model. Hieruit blijkt dat de oppervlakte van de voetafdruk, het volume van de gehele schil en de visuele representatie beter worden benaderd met kleinere voxels. Als de voxelgrootte correct wordt gekozen, is het voxel-gebaseerde model ook preciezer op deze aspecten dan de LoD2.2-representaties.
 
 Op basis van de grootte van een model wordt een "ideale" voxelgrootte gepresenteerd door Van der Vaart et al. [[VANDERVAART2024]]. Deze waardes zijn mogelijk al verouderd, zo zijn elementen zoals bestandsgrootte niet meegenomen en ook is het onderzoek gedaan met een oude versie van de [IfcEnvelopeExtractor](https://github.com/tudelft3d/IFC_BuildingEnvExtractor). Sinds dit onderzoek is de voxelisatiecode versneld en zijn de rekentijden uit het onderzoek niet meer representatief. 
 
@@ -55,7 +55,7 @@ De eerste stap van een ray-castingproces is puntenpopulatie. In de meest simpele
 
 De polygonen die gevonden worden bij ray-casting spelen een rol bij het modelleren van de buitenschil. Maar deze kunnen mogelijk gedeeltelijk deel van de buitenschil en deel van het interieur zijn. Aanvullend kunnen er kleine gaten tussen polygonen aanwezig zijn in het BIM-model. Deze kleine gaten worden mee overgenomen en moeten op een manier gesloten worden voordat een gesloten buitenschil kan worden gemaakt.
 
-De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en traag. Er zijn veel optimalisaties om dit proces te versnellen. Een correct gemodelleerd BIM-model maakt gebruik van (de juiste) types/classes voor objecten. Op basis van deze types kan er al een filtering worden toegepast voorafgaand aan de ray-casting. Meubels (IfcFurniture) zullen bijvoorbeeld niet zo snel deel uitmaken van de buitenschil van een gebouw. Objecten met dit type hoeven dus niet behandeld te worden door het ray-castingproces, maar kunnen direct worden genegeerd. Dit versnelt het proces doordat vanaf deze objecten dus geen ray-casting hoeft te worden gedaan, maar ook omdat het voor deze objecten niet nodig is de rays van andere polygonen te snijden.
+De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en traag. Er zijn veel optimalisaties om dit proces te versnellen. Een correct gemodelleerd BIM-model maakt gebruik van (de juiste) types/classes voor objecten. Op basis van deze types kan er al een filtering worden toegepast voorafgaand aan de ray-casting. Meubels (IfcFurniture) zullen bijvoorbeeld niet zo snel deel uitmaken van de buitenschil van een gebouw. Objecten met dit type hoeven dus niet behandeld te worden door het ray-castingproces en kunnen direct worden genegeerd. Dit versnelt het proces doordat vanaf deze objecten geen ray-casting hoeft te worden gedaan, maar ook omdat het voor deze objecten niet nodig is om te testen of de rays van andere polygonen ze snijden.
 
 <figure id="Ray_Casting_BIM" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/04_geometrie_BIM_naar_Geo/Ray-Casting-BIM.jpg" alt="Principe van Raycasting" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
@@ -67,7 +67,7 @@ De beschreven manier van ray-casting is erg simpel, maar ook relatief zwaar en t
       </figcaption>
 </figure>
 
-De IfcEnvelopeExtractor gebruikt "voxel assisted ray-casting". Het gebruikt een voxelisatie om de hoeveelheid en lengte van de rays voor het raycastingproces te beperken. Dit wordt gedaan door de voxels die om een punt op een polygoon liggen te evalueren. Als er geen voxels om het punt heen liggen die geclassificeerd zijn als "external" dan kan de aanname worden gedaan dat deze polygoon geen rol speelt bij het modelleren van de buitenschil. Als er wel 'external' voxels om het punt heen liggen dan kunnen de middelpunten van deze voxels worden gebruikt als eindpunt voor de rays. Dit zorgt ervoor dat er geen onnodig lange lijnen worden getrokken waardoor de hoeveelheid berekeningen kan worden teruggedrongen.
+De IfcEnvelopeExtractor gebruikt "voxel assisted ray-casting". Het gebruikt een voxelisatie om de hoeveelheid en lengte van de rays voor het raycastingproces te beperken. Dit wordt gedaan door de voxels die om een punt op een polygoon liggen te evalueren. Als er geen voxels om het punt heen liggen die geclassificeerd zijn als "external" dan kan de aanname worden gedaan dat deze polygoon geen rol speelt bij het modelleren van de buitenschil. Als er wel 'external' voxels om het punt heen liggen dan kunnen de middelpunten van deze voxels worden gebruikt als eindpunt voor de rays. Dit zorgt ervoor dat er geen onnodig lange lijnen worden getrokken en dus kan de hoeveelheid berekeningen worden teruggedrongen.
 
 Aanvullend kan nog voor de aanvang van het ray-castingproces een filtering van objecten worden gedaan met behulp van de voxels. Met voxels is het makkelijk om te bepalen of ze buiten of binnen het gebouw liggen, maar ook of de voxels snijden met de geometrie. De voxels die snijden met het gebouw en een buurman hebben die buiten het gebouw ligt kunnen worden gezien als een buitenschilvoxels. De geometrie van het gebouw dat snijdt met deze buitenschilvoxels kan worden geïsoleerd en worden gezien als "mogelijk" deel van de buitenschil. Door deze selectie kan ook al een deel van de interne objecten worden genegeerd. 
 
@@ -75,7 +75,7 @@ De kwaliteit van de resultaten van deze twee voxelondersteunde processen is erg 
 
 #### Alpha shapes
 
-Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. In het kort: dit wordt gedaan door stapsgewijs een gesloten primitieve vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitieve vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.
+Alpha shapes of Alpha wrapping is een proces waarbij polygonen worden gemaakt die puntenwolken omsluiten. Dit wordt gedaan door stapsgewijs een gesloten primitieve vorm (vaak een bal in 3D of een cirkel in 2D) te gebruiken om een polygoon (de alpha shape) bij te snijden totdat deze de puntenwolk strak omhult. De primitieve vorm kan alleen delen van de polygoon wegsnijden als er geen punten in de vorm liggen.
 
 <figure id="Alpha_Wrap_Principle" style="display: block; text-align: center; margin: 0 auto;">
       <img src="media/03_methodes/alpha_wrap_overview_CGAL.png" alt="Principe van Alpha Wrapping" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
@@ -105,7 +105,7 @@ Afhankelijk van de gekozen primitieve vorm en het formaat is de resulterende alp
 
 Omdat het alpha-shapeproces enkel werkt met puntenwolken, moet de BIM-geometrie omgezet worden naar een puntenwolk. Dit kan worden gedaan op een vergelijkbare manier als bij de ray-castingprocessen.
 
-De resulterende vorm van de alpha shape is altijd een gesloten object. Dit is een "correct" schilmodel, maar wel een benadering van de buitenschil. De alpha shape is bijna altijd anders dan de BIM-brongeometrie. De alpha shape is een mesh met hoge resolutie die vooral in concave hoeken zal afwijken van de buitenschil van het input-BIM-model.
+De resulterende vorm van de alpha shape is altijd een gesloten object. Dit is een "correct" schilmodel, maar wel enkel een benadering van de buitenschil. De alpha shape is bijna altijd anders dan de BIM-brongeometrie. De alpha shape is een mesh met hoge resolutie die vooral in concave hoeken zal afwijken van de buitenschil van het input-BIM-model.
 
 <aside class="note" title="Plaats voor alpha shape in GIS">
   <p><strong>AANBEVELING:</strong> Onderzoek de bruikbaarheid en wenselijkheid van alpha shapes in GIS. Als alpha shapes bruikbaar worden bevonden moet de inpassing in een LoD-framework worden onderzocht. </p>
@@ -115,7 +115,7 @@ De afwijking in de concave hoeken komt omdat de primitieve vorm die wordt gebrui
 
 Wang et al. [[WANG2024]] laten zien dat de alpha shape op zichzelf niet het resultaat hoeft te zijn van de shell-extractie maar ook als een tussenstap kan worden gebruikt. Bij dit onderzoek gebruiken ze de alpha shape om de polygonen die deel zijn van de buitenschil van het BIM-model te vinden. Dit wordt gedaan door te testen welke polygonen van het BIM-model het dichtst bij het zwaartepunt van iedere driehoek van de alpha-shapemesh liggen. 
 
-Deze groep van polygonen heeft echter hetzelfde probleem als de groep van polygonen die worden gevonden bij het ray-castingproces. De groep moet worden gecorrigeerd voordat een gesloten buitenschil kan worden gemaakt. 
+De resulterende groep van polygonen heeft echter hetzelfde probleem als de groep van polygonen die worden gevonden bij het ray-castingproces. De groep moet worden gecorrigeerd voordat een gesloten buitenschil kan worden gemaakt. 
 
 ### Keuze van een techniek
 
